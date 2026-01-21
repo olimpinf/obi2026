@@ -314,10 +314,10 @@ seguindo o link "Acesso Escolas" no alto da página inicial, usando o nome de us
 nome de usuário: {username}
 senha: {password}
 
-Por favor note que no momento estão abertas apenas as inscrições para a Competição Feminina da OBI2025.
+Por favor note que no momento estão abertas apenas as inscrições para a Competição Feminina da OBI2026.
 
 ---
-Coordenação da OBI2025
+Coordenação da OBI2026
 Email: olimpinf@ic.unicamp.br
 WhatsApp e Telegram: (19) 3199-7399
 
@@ -453,7 +453,7 @@ https://olimpiada.ic.unicamp.br/info/como_participar_escola/
 Atenciosamente
 
 ---
-Coordenação da OBI2025
+Coordenação da OBI2026
 Email: olimpinf@ic.unicamp.br
 WhatsApp e Telegram: (19) 3199-7399
 
@@ -486,7 +486,7 @@ correspondente no formulário.
 Atenciosamente,
 
 ---
-Coordenação da OBI2025
+Coordenação da OBI2026
 Email: olimpinf@ic.unicamp.br
 WhatsApp e Telegram: (19) 3199-7399
 

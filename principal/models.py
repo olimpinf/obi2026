@@ -352,6 +352,7 @@ class School(models.Model):
     school_deleg_name = models.CharField('Coordenador local',max_length=100)
     school_deleg_email = models.CharField('Email',max_length=100,validators = [EmailValidator(message=u'Por favor entre um endereço válido de email')])
     school_deleg_username = models.CharField('Nome de usuário',max_length=100)
+    school_deleg_cpf = models.CharField('CPF',max_length=16)
     school_change_coord = models.BooleanField("Novo coord",null=True,blank=True) 
 
     school_ok = models.BooleanField(default=False) 

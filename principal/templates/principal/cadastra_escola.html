@@ -10,21 +10,35 @@
   function make_fields_readonly(state) {
       var color='#ffffff';
       if (state) color='#efefef';
-    $("#id_school_zip").prop('readonly', state).css('background-color', color);
-    $("#id_school_address").prop('readonly', state).css('background-color', color);
-    $("#id_school_address_number").prop('readonly', state).css('background-color', color);
-    $("#id_school_address_complement").prop('readonly', state).css('background-color', color);
-    $("#id_school_address_district").prop('readonly', state).css('background-color', color);
-    $("#id_school_city").prop('readonly', state).css('background-color', color);
-    $("#id_school_state").prop('readonly', state).css('background-color', color);
-    $("#id_school_name").prop('readonly', state).css('background-color', color);
-    $("#id_school_phone").prop('readonly', state).css('background-color', color);
-
+      $("#id_school_zip").prop('readonly', state).css('background-color', color);
+      $("#id_school_address").prop('readonly', state).css('background-color', color);
+      $("#id_school_address_number").prop('readonly', state).css('background-color', color);
+      $("#id_school_address_complement").prop('readonly', state).css('background-color', color);
+      $("#id_school_address_district").prop('readonly', state).css('background-color', color);
+      $("#id_school_city").prop('readonly', state).css('background-color', color);
+      $("#id_school_state").prop('readonly', state).css('background-color', color);
+      $("#id_school_name").prop('readonly', state).css('background-color', color);
+      $("#id_school_phone").prop('readonly', state).css('background-color', color);
   }
   $(document).ready(function() {
     // Initially disable the all fields except school_type
       make_fields_readonly(true);
       $('#id_school_inep_code').prop('readonly', true).css('background-color', '#efefef');
+      $('#id_school_deleg_email').prop('readonly', true).css('background-color', '#efefef');
+      var first_school=$('#id_first_school').val();
+      console.log('first_school', first_school);
+      if (first_school=="True") {
+	  console.log('make user data editable');
+	  $('#id_school_deleg_name').prop('readonly', false).css('background-color', '#ffffff');
+	  $('#id_school_deleg_phone').prop('readonly', false).css('background-color', '#ffffff');
+	  $('#id_school_deleg_cpf').prop('readonly', false).css('background-color', '#ffffff');
+      }
+      else {
+	  console.log('make user data readonly');
+	  $('#id_school_deleg_name').prop('readonly', true).css('background-color', '#efefef');
+	  $('#id_school_deleg_phone').prop('readonly', true).css('background-color', '#efefef');
+	  $('#id_school_deleg_cpf').prop('readonly', true).css('background-color', '#efefef');
+      }
     
     // Enable/disable INEP code field based on school type selection
     $('#id_school_type').on('change', function() {

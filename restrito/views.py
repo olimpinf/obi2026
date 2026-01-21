@@ -95,11 +95,15 @@ def password_reset(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def index(request):
+
+    
     # check if there are compets to validate
     try:
-        school_id = request.user.deleg.deleg_school.pk
-    except:
         school_id = request.user.colab.colab_school.pk
+    except:
+        school_ids = School.objects.filter(school_deleg_username=request.user.username)
+        print("number of schools:", len(school_ids))
+        school_id = request.user.deleg.deleg_school.pk
     school = School.objects.get(pk=school_id)
 
     try:

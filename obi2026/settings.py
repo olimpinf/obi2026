@@ -151,6 +151,22 @@ DATABASES = {
         'PASSWORD': 'guga.LC',
         'HOST': 'localhost',
         'PORT': '',
+    },
+    'obi2025': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'obi2025',
+        'USER': 'obi',
+        'PASSWORD': 'guga.LC',
+        'HOST': 'localhost',
+        'PORT': '',
+    },
+    'obi2024': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'obi2024',
+        'USER': 'obi',
+        'PASSWORD': 'guga.LC',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

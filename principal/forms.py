@@ -17,7 +17,7 @@ from .models import (LEVEL_CHOICES_FORM, PARTIC_TYPE_CHOICES_FORM,
                      SCHOOL_TYPE_CHOICES, SEX_CHOICES, SEX_F, SEX_M,
                      STATE_CHOICES, Compet, School, Colab, SubWWW, capitalize_name,
                      validate_compet_level, validate_username, CompetAutoRegister)
-from .utils.utils import format_compet_id
+from .utils.utils import format_compet_id, validate_cpf_cnpj, validate_only_cpf
 from obi.settings import YEAR
 
 _old_init = ModelFormOptions.__init__
@@ -87,162 +87,40 @@ class RegisterEmailForm(forms.Form):
                     'fields': ('deleg_email')}),
         )
 
-class RegisterSchoolForm2(forms.Form):
-    # def clean(self):
-    #     cleaned_data = super().clean()
-    #     print("cleaned_data", cleaned_data)
-    #     school_type = int(cleaned_data.get('school_type'))
-    #     try:
-    #         school_inep_code = int(cleaned_data.get('school_inep_code'))
-    #     except:
-    #         school_inep_code = 0
-    #         self.cleaned_data['school_inep_code'] = 0
-    #     if school_type in [REGULAR_PUBLIC,REGULAR_PRIVATE] and school_inep_code == 0:
-    #         self.add_error('school_inep_code','Informe o Código INEP da Escola')
-    #     school_name = cleaned_data.get('school_name').lower()
-    #     school_city = cleaned_data.get('school_city').lower()
-    #     school_state = cleaned_data.get('school_state').lower()
-        
-    #     #if School.objects.filter(school_name__iexact=school_name, school_city__iexact=school_city, school_state__iexact=school_state).exists():
-    #         #self.add_error('school_name','Escola com esse nome já cadastrada nessa cidade.')
-    #         #messages.error(request, 'Aviso: escola com esse nome já cadastrada nessa cidade, cadastro efetuado mas entraremos em contato para esclarecer a situação. ')
-    #     return self.cleaned_data
-
-    school_type = forms.ChoiceField(
-        label='Tipo da Escola',
-        required=True,
-        choices= (SCHOOL_TYPE_CHOICES ),
-        widget=forms.Select(attrs={'class':'form-select'}),
-        )
-    school_inep_code = forms.IntegerField(
-        label='Código INEP da Escola',
-        help_text='Obrigatório para escolas do Ensino Básico. Informe o código INEP e pressione a tecla TAB no seu teclado; os dados da escola serão preenchidos automaticamente. Se você não sabe o código INEP de sua escola, <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">consulte aqui</a>.',
-        required=False,
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        )
-    school_name = forms.CharField(
-        label='Nome da Escola', 
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=200,
-        )
-    school_phone = forms.CharField(
-        label='Telefone da Escola, com DDD',
-        max_length=16,
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        help_text='Para contato com a Escola durante o processo de verificação de dados. Não informe telefone pessoal.',
-        )
-    school_zip = forms.CharField(
-        label='CEP da Escola',
-        max_length=10,
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        help_text='Informe o CEP e pressione a tecla TAB no seu teclado; os campos Logradouro, Bairro, Cidade e Estado serão completados automaticamente. Se você não sabe o CEP, <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">consulte aqui</a>.'
-       )
-    school_address = forms.CharField(
-        label='Logradouro',
-        max_length=256,
-        widget=forms.Textarea(attrs={'class':'form-control'}),
-        required=False,
-        )
-    school_address_number = forms.CharField(
-        label='Número',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=16,
-        required=False,
-        )
-    school_address_complement = forms.CharField(
-        label='Complemento',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=128,
-        required=False,
-        )
-    school_address_district = forms.CharField(
-        label='Bairro/Distrito',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=32,
-        )
-    school_city = forms.CharField(
-        label='Cidade',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=128,
-        )
-    school_state = forms.ChoiceField(
-        label='Estado',
-        choices=(STATE_CHOICES),
-        widget=forms.Select(attrs={'class':'form-select'}),
-        #widget=forms.TextInput(attrs={'readonly':'readonly'})
-        )
-    school_deleg_name = forms.CharField(
-        label='Nome',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=200,
-        help_text='Insira o nome completo, com a grafia correta, da pessoa que será o Coordenador Local da OBI na escola. O nome será utilizado durante a verificação de dados para habilitar a escola e também na emissão do Certificado de Participação.',
-        )
-    school_deleg_phone = forms.CharField(
-        label='Telefone pessoal, com DDD',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=16,
-        help_text='Para contato em caso de emergência.',
-        required = True,
-        )
-    school_deleg_email = forms.EmailField(
-        label = 'Email',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        required = True,
-        #disabled=True,
-        help_text = 'Endereço para contato com a pessoa que será o Coordenador Local da OBI na escola.' 
-        )
-    school_deleg_cpf = forms.CharField(
-        label='CPF',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=16,
-        required = True,
-        help_text='Informe o número de seu CPF.',
-        )
-    school_deleg_username = forms.CharField(
-        label='Nome de usuário',
-        widget=forms.TextInput(attrs={'class':'form-control'}),
-        max_length=64,
-        help_text='Escolha um identificador para acessar o sistema da OBI como coordenador local. Utilize apenas letras, números e os caracteres hífen ("-"), sublinhado ("_"), ponto (".") e arroba ("@"). Quando a escola for habilitada, a senha será gerada automaticamente e enviada para o endereço de email informado.',
-        validators = [validate_username]
-        )
-
-    school_change_coord = forms.ChoiceField(
-        label='Informe se este cadastro está sendo feito porque a escola já está cadastrada e houve mudança de Coordenador Local da OBI na escola.',
-        choices=((False,'Não houve mudança ou a escola não está cadastrada.'),(True,'Sim, houve mudança de coordenador em relação ao ano passado, e o coordenador anterior está ciente da alteração.')),
-        widget=forms.RadioSelect(attrs={'class':'horizontal'}),
-        required=True,
-        help_text='Antes de responder a esta pergunta, <a href="/consulta_escolas">consulte as escolas cadastradas</a>.'
-    )
-    school_code = forms.IntegerField(widget=forms.HiddenInput(),required=False)
-    school_prev = forms.IntegerField(widget=forms.HiddenInput(),required=False)
-    school_is_known = forms.BooleanField(widget=forms.HiddenInput(),required=False)
-    class Meta:
-        fieldsets = (
-            ('Dados da Escola', {
-                    'fields': ('school_type','school_inep_code','school_name')}),
-        )
 
 class RegisterSchoolForm(forms.Form):
-    # def clean(self):
-    #     cleaned_data = super().clean()
-    #     print("cleaned_data", cleaned_data)
-    #     school_type = int(cleaned_data.get('school_type'))
-    #     try:
-    #         school_inep_code = int(cleaned_data.get('school_inep_code'))
-    #     except:
-    #         school_inep_code = 0
-    #         self.cleaned_data['school_inep_code'] = 0
-    #     if school_type in [REGULAR_PUBLIC,REGULAR_PRIVATE] and school_inep_code == 0:
-    #         self.add_error('school_inep_code','Informe o Código INEP da Escola')
-    #     school_name = cleaned_data.get('school_name').lower()
-    #     school_city = cleaned_data.get('school_city').lower()
-    #     school_state = cleaned_data.get('school_state').lower()
-        
-    #     #if School.objects.filter(school_name__iexact=school_name, school_city__iexact=school_city, school_state__iexact=school_state).exists():
-    #         #self.add_error('school_name','Escola com esse nome já cadastrada nessa cidade.')
-    #         #messages.error(request, 'Aviso: escola com esse nome já cadastrada nessa cidade, cadastro efetuado mas entraremos em contato para esclarecer a situação. ')
-    #     return self.cleaned_data
+    def clean(self):
+        cleaned_data = super().clean()
+        school_type = int(cleaned_data.get('school_type'))
+        try:
+            school_inep_code = int(cleaned_data.get('school_inep_code'))
+        except:
+            school_inep_code = 0
+            self.cleaned_data['school_inep_code'] = 0
+        if school_type in [REGULAR_PUBLIC,REGULAR_PRIVATE] and school_inep_code == 0:
+            self.add_error('school_inep_code','Informe o Código INEP da Escola')
+        if School.objects.filter(school_inep_code=school_inep_code).exists():
+            self.add_error('school_inep_code','Escola com esse código INEP já cadastrada nessa cidade.')
+        #    messages.error(request, 'Aviso: escola com esse nome já cadastrada nessa cidade, cadastro efetuado mas entraremos em contato para esclarecer a situação. ')
 
+        # check document and name are OK
+        name = cleaned_data.get('school_deleg_name')
+        validated = cleaned_data.get('school_deleg_cpf')
+        print("will call verifica_nome_cpf", name, validated)
+        if not verifica_nome_cpf(name, validated):
+            self.add_error("school_deleg_cpf", "Nome não confere com o CPF nos registros da Receita Federal. Por favor informe o nome completo, como consta do CPF.")
+
+        return validated
+        
+        return self.cleaned_data
+
+    def clean_school_deleg_cpf(self):
+        document = self.cleaned_data.get('school_deleg_cpf')
+        validated = validate_only_cpf(document)
+        if not validated:
+            self.add_error("school_deleg_cpf", "Documento inválido")
+        return validated
+    
     school_type = forms.ChoiceField(
         label='Tipo da Escola',
         required=True,
@@ -347,6 +225,7 @@ class RegisterSchoolForm(forms.Form):
         required=False,
         help_text='Antes de responder a esta pergunta, <a href="/consulta_escolas">consulte as escolas cadastradas</a>.'
     )
+    first_school = forms.BooleanField(widget=forms.HiddenInput(),required=False)
     school_code = forms.IntegerField(widget=forms.HiddenInput(),required=False)
     school_prev = forms.IntegerField(widget=forms.HiddenInput(),required=False)
     school_is_known = forms.BooleanField(widget=forms.HiddenInput(),required=False)
@@ -357,7 +236,7 @@ class RegisterSchoolForm(forms.Form):
             ('Coordenador Local da OBI{}'.format(YEAR), {
                     'fields': ('school_deleg_name','school_deleg_phone','school_deleg_email', 'school_deleg_cpf')}),
             ('hidden', {
-                    'fields': ('school_is_known','school_code','school_prev')}),
+                    'fields': ('first_school','school_is_known','school_code','school_prev')}),
         )
 
 class ConsultaEscolasForm(forms.Form):

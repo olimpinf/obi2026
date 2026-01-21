@@ -404,8 +404,9 @@ def exec_cadastra_escola(f, is_auto=False):
                             school_state=f['school_state'],
                             school_deleg_name=f['school_deleg_name'],
                             school_deleg_phone=f['school_deleg_phone'],
+                            school_deleg_cpf=f['school_deleg_cpf'],
                             school_deleg_email=f['school_deleg_email'],
-                            school_deleg_username=f['school_deleg_cpf'],
+                            school_deleg_username=f['school_deleg_email'],
                             school_is_known=f['school_is_known'],
                             school_change_coord=f['school_change_coord'],
                             )
@@ -755,12 +756,17 @@ WhatsApp e Telegram: (19) 3199-7399
 def cadastra_escola(request, hash):
     #msg = 'Período de cadastro de escolas terminou.'
     #return aviso(request, msg)
+    try:
+        email_req = EmailRequest.objects.get(hash=hash)
+    except:
+        logger.info("get cadastra_escola fail validation")
+        return render(request, 'principal/erro.html', {'msg': 'Erro na solicitação.'})
 
+    first_school = not School.objects.filter(school_deleg_username=email_req.email).exists()
+    print('first_school', first_school)
     if request.method == 'POST':
         form = RegisterSchoolForm(request.POST)
-        print('-------------------------------------------------------------------------')
         print(form)
-        print('-------------------------------------------------------------------------')
         # logger.info('RegisterSchoolForm --  school_type={}; school_zip={}; school_address={}; school_address_number={}; school_address_complement={}; school_address_district={}; school_phone={}; school_city={}; school_state={};school_deleg_name={}; school_deleg_phone={}; school_deleg_email={}; school_deleg_cpf={},school_is_known={}'.format(form['school_type'],
         #                                                 form['school_zip'],
         #                                                 form['school_address'],
@@ -788,21 +794,29 @@ def cadastra_escola(request, hash):
                 template = loader.get_template('principal/cadastra_escola_erro.html')
                 context = {'school':f, 'erro': msg}
                 return HttpResponse(template.render(context, request))
-        else:
-            logger.info("get cadastra_escola fail validation")
-            return render(request, 'principal/erro.html', {'msg': 'Erro na solicitação, dados inválidos.'})
+        # else:
+        #     logger.info("get cadastra_escola fail validation")
+        #     print("Form errors:", form.errors)
+        #     print("Form errors as dict:", form.errors.as_data())
+        #     return render(request, 'principal/erro.html', {'msg': 'Erro na solicitação, dados inválidos.'})
     else:
         logger.info("get cadastra_escola")
-        try:
-            email_req = EmailRequest.objects.get(hash=hash)
-        except:
-            logger.info("get cadastra_escola fail validation")
-            return render(request, 'principal/erro.html', {'msg': 'Erro na solicitação.'})
 
-        data = {'email': email_req.email}
-        initial = {'school_deleg_email': email_req.email}
-        form = RegisterSchoolForm(initial=initial)
-        return render(request, 'principal/cadastra_escola.html', {'form': form, 'title': 'Cadastra Escola', 'school_is_known':False})
+        if first_school:
+            #data = {'email': email_req.email}
+            initial = {'school_deleg_email': email_req.email,'first_school':True}
+            form = RegisterSchoolForm(initial=initial)
+        else:
+            school = School.objects.filter(school_deleg_username=email_req.email)[0]
+            #data = {'email': email_req.email, 'school_deleg_name': school.school_deleg_name}
+            initial = {'school_deleg_email': email_req.email,
+                       'school_deleg_name': school.school_deleg_name,
+                       'school_deleg_phone': school.school_deleg_phone,
+                       'school_deleg_cpf': school.school_deleg_cpf,
+                       'first_school':False}
+            form = RegisterSchoolForm(initial=initial)
+            
+    return render(request, 'principal/cadastra_escola.html', {'form': form, 'title': 'Cadastra Escola', 'school_is_known':False})
     
 def cadastra_escola_fase3(request):
     #msg = 'Período de cadastro de escolas terminou.'

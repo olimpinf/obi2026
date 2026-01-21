@@ -79,8 +79,8 @@ def consulta_cpf(cpf):
 
 def verifica_nome_cpf(nome,cpf):
 
-    if DEBUG:
-        return True    
+    #if DEBUG:
+    #    return True    
     
     cpf = re.sub(r'\D', '', cpf)
     data = consulta_cpf(cpf)
