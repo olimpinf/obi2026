@@ -1,0 +1,54 @@
+<h4 class="mt-4">Visualização</h4>
+  
+  <p style="margin-top:0;margin-botton:0;">
+    <div style="margin-bottom: 3px; text-indent: -45px; padding-left: 45px;">
+      <input type="radio" name="calendar_list" {% if as_calendar %}checked{% endif %} value="as_calendar" id="id_calendar_list_0" onchange="changeCalendarList()">&nbsp;Mostrar como calendário
+    </div>
+
+    <div style="margin-bottom: 3px; text-indent: -45px; padding-left: 45px;">
+      <input type="radio" name="calendar_list" {% if not as_calendar %}checked{% endif %} value="as_list" id="id_calendar_list_1"onchange="changeCalendarList()">&nbsp;Mostrar como lista
+
+    </div>
+    <hr>
+    <div style="margin-bottom: 3px; text-indent: -45px; padding-left: 45px;">
+      <input type="checkbox" name="show_only_test_days" value="show_only_test_days" id="show_only_test_days" onchange="showOnlyTestDays()">&nbsp;Mostrar apenas dias de provas
+    </div>
+  </p>
+
+<hr>
+  <p>
+    Marque as modalidades que deseja visualizar:
+    <form action="" method="post">
+  {% csrf_token %}
+
+  
+    <ul id="myList">
+      <small>
+  {{ competition_list|safe }}
+      </small>
+    </ul>
+
+  </form>
+
+
+  <div class="mb-2">
+    <button class="btn btn-secondary btn-sm" onclick="doSelectAll()">Marcar todos</button>  
+    <button class="btn btn-secondary btn-sm" onclick="doDeselectAll()">Desmarcar todos</button>
+  </div>
+
+    
+  <h6>Observação</h6>
+
+    <p>
+      <span class="black-bkgd" style="width:20px;height:20px;vertical-align:middle;text-align:center;display:inline-block">&nbsp;</span>
+      <span>Dia com mais de {% if thecalendar == 'obi' %}um evento{% else %} um evento{% endif %}</span>
+    </p>
+    <div class="mt-4"> 
+      <h4>Instruções</h4>
+      <p>Posicione o mouse em cima do dia para visualizar a competição e o evento naquele dia; clique no dia para visualizar mais detalhes do evento.
+	Os eventos de uma modalidade têm a mesma cor no calendário.
+      </p>
+    </div>
+      
+</div>
+

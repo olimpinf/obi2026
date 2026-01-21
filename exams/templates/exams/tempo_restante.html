@@ -1,0 +1,51 @@
+{% load i18n %}
+{% load static %}<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <!-- Set refresh time -->
+    <meta http-equiv="refresh" content="15" >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="{% static "img/icon-tile.png" %}">
+    <link rel="stylesheet" href="{% static "css/obi2020.css" %}" >
+    <script src="{% static "js/lib/webfontloader/webfontloader.js" %}"></script>
+    <script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="{% static "js/lib/modernizr.js" %}"></script>
+  </head>
+
+  <body style="color:#fff; font-family:'Roboto', 'Lucida Grande', 'Lucida Sans', sans-serif;">
+  <div style="
+  width: 80%;
+  height: 120px;
+  border-radius: 15px;
+  text-align: center;
+  margin: auto;
+  font-weight: 700;
+  position: relative;
+  top: 0px;
+  background:var(--bg-color4); 
+  ">
+    <div>Tempo restante</div>
+    <span style="font-size: 400%;position:relative;top:-15px">{{tempo}}</span>
+  </div>
+  </body>

@@ -1,0 +1,128 @@
+title:Zero para cancelar
+template:tasks/tarefa_programacao.html
+
+<p>
+Seu chefe está ao telefone, nervoso.  Ele quer que você compute a soma
+de uma sequência de números que ele vai falar para você ao telefone,
+para saber o total das vendas em sua mais recente viagem de negócios.
+
+<p>Infelizmente, de vez em quando seu chefe fala números errados para
+você ao telefone.
+
+<p>Felizmente, seu chefe rapidamente percebe que falou um número errado
+e diz &quot;zero&quot;, que como combinado previamente quer dizer
+<i>ignore o último número corrente</i>.
+
+<p>Infelizmente, seu chefe pode cometer erros repetidos, e diz
+&quot;zero&quot; para cada erro.
+
+<p>Por exemplo, seu chefe pode falar ao telefone &quot;Um, três,
+cinco, quatro, zero, zero, sete, zero, zero, seis&quot;, o que
+significa uma soma total igual a 7, conforme explicado na tabela abaixo:
+
+<table class="basic center">
+  <tr>
+    <th align="center">Fala do chefe</th><th align="center">Números correntes</th><th align="center">Explicação</th>
+  </tr>
+  <tr>
+    <td>&quot;um, três, cinco, quatro&quot;</td><td>1,3,5,4</td><td>registre os quatro números </td>
+  </tr>
+  <tr>
+    <td>&quot;zero, zero&quot;</td><td>1, 3</td><td>ignore os dois últimos números </td>
+  </tr>
+  <tr>
+    <td>&quot;sete&quot;     </td><td>1, 3, 7</td><td>registre o sete ao final da lista </td>
+  </tr>
+  <tr>
+    <td>&quot;zero, zero&quot;</td><td>1 </td><td>ignore os dois últimos números </td>
+  </tr>
+  <tr>
+    <td>&quot;seis&quot;   </td><td> 1, 6</td><td>registre seis ao final da lista </td>
+  </tr>
+</table>
+
+<p>Para não deixar seu chefe ainda mais nervoso, escreva um programa
+que determine a soma total dos números falados por seu chefe ao
+telefone.
+
+
+
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N, a quantidade de
+números inteiros (incluindo os &quot;zeros&quot;) que o seu chefe falou ao telefone.
+Cada uma das N linhas seguintes contém um número inteiro X<sub>i</sub>.
+
+
+
+
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha na saída,
+contendo um único inteiro, a soma correta dos números, levando em conta
+que o valor 0 significa erro, conforme descrito.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  100 000
+<li> 0  &leq;  X<sub>i</sub>  &leq;  100, para (1  &leq;  i  &leq;  N)
+<li> 0  &leq;   resultado  &leq;  1 000 000
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+3
+0
+4
+0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+1
+3
+5
+4
+0
+0
+7
+0
+0
+6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,119 @@
+title:Manchas de pele
+template:tasks/tarefa_programacao.html
+
+<p>
+O laboratório de dermatologia da Linearlândia está implementando um
+software para contar o número de manchas presentes numa imagem digital
+de N por M pixels. Cada pixel na imagem é preto ou branco e dois
+pixels pretos distintos A e B pertencem à mesma mancha se e somente
+se: existir uma sequência de pixels
+[P<sub>1</sub>,P<sub>2</sub>,...,P<sub>k</sub>], onde k &geq; 2,
+A=P<sub>1</sub>, B=P<sub>k</sub> e para todo 1 &leq; i<k,
+P<sub>i</sub> é ortogonalmente adjacente a P<sub>i</sub>+1
+(P<sub>i</sub> imediatamente acima, abaixo, à esquerda ou à direita de
+P<sub>i</sub>+1).
+
+<div class="center">
+<img src="/static/img/task_images/2019f3pj_manchas.png" width="600px" />
+</div>
+
+<p>
+A figura acima, para N=8 e M=9, ilustra uma imagem digital onde existem
+oito manchas. Dada a imagem, seu programa deve contar o número de manchas
+presentes.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém dois inteiros N e M, representando,
+respectivamente, o número de linhas e colunas da imagem. As N linhas seguintes contêm,
+cada uma, M inteiros P representando os pixels da imagem.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma linha contendo um inteiro, o número de manchas na imagem.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  1000
+<li> 1 &leq;  M &leq;  1000
+<li> O valor de P é 1, representando um pixel preto, ou 0, representando um pixel branco.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, N=M=2.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, N=1.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, N,M &leq;  100.
+<li> Para um conjunto de casos de testes valendo outros 50 pontos, 
+nenhuma restrição adicional (<i> Atenção, para essa parcial, não é recomendada uma implementação recursiva!</i>)
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8 9
+1 0 0 0 0 0 1 1 1
+1 1 0 1 1 1 0 1 1
+1 0 0 0 0 1 0 1 0
+0 0 1 0 0 1 1 1 0
+0 1 1 0 0 0 0 1 0
+0 1 0 0 1 1 0 0 0
+0 0 0 1 0 1 0 0 1
+1 1 1 0 0 0 0 1 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 1
+0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 10
+0 0 1 0 1 1 1 0 1 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

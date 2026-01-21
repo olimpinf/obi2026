@@ -1,0 +1,90 @@
+{% extends "base_two_columns.html" %}
+{% load static %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}<h1>{{ pagetitle }}</h1>{% endblock %}
+
+{% block content %}
+<form action="{% url 'week:process_payment' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+
+     <div class="center">
+       <p>Comprovante de pagamento: <br>
+	 <img src="{% static imgpath %}" width="100%">
+     </div>
+    
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+    <fieldset class="border p-2">
+      <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+      <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+      </ul>
+    </fieldset>
+    {% endif %}
+  {% endfor %}
+<p>
+  Verifique que consegue visualizar a imagem do comprovante de pagamento e que a lista de participantes incluídos no pagamento e os dados para emissão da Nota Fiscal estão corretos. Se necessário, clique no botão "Voltar à página anterior" para modificar os dados.
+</p>
+<button type="submit" class="btn btn-primary mt-4">Confirmar</button>
+<a class="myButton action" href="javascript: history.go(-1)">Voltar à página anterior</a>
+
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  <h2>Instruções</h2>
+  <ul>
+    <li>
+  Verifique que consegue visualizar a imagem do comprovante de pagamento e que a lista de participantes incluídos no pagamento e os dados para emissão da Nota Fiscal estão corretos.
+  <li>Se necessário, clique no botão "Voltar à página anterior" para modificar os dados.
+  </ul>
+
+  {% comment %}
+  <h2>Veja também</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+           {% if not page.url == flatpage.url %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+    {% endblock browse %}
+  </ul>
+  {% endcomment %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+
+{% endblock %}
+
+

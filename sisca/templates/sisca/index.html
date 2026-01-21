@@ -1,0 +1,64 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Sistema de Correção Automatizada{% endblock %}
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block content %}
+
+<p><font color="#aa0000"><em>O sistema Sisca será desativado permanentemente em 31/07/2023.</em></font>
+
+<p><font color="#aa0000"><em>Um sistema com funcionalidade similar, mas tecnologia de processamento de imagens
+      mais avançada, está disponível para testes no link a seguir.</em></font>
+
+<p><font color="#aa0000"><em><a href="https://web.scangrader.com/pt">https://web.scangrader.com/pt</a></em></font>
+
+<p><font color="#aa0000"><em><b>Note que folhas de respostas geradas pelo
+      Sisca, apesar de similares em formato, NÃO poderão ser
+      processadas nesse novo sistema. Você deve usar as folhas de
+      respostas geradas pelo novo sistema.</b></em></font>
+  
+  
+<h2>Sisca - Sistema de Correção Automatizada</h2>
+<p>A OBI disponibiliza gratuitamente, para escolas em geral, a
+  ferramenta de correção automatizada de testes de múltipla escolha
+  desenvolvida pela OBI e utilizada na correção das provas da
+  Modalidade Iniciação. A ferramenta, denominada <b>Sisca</b> 
+  (<i><b>Sis</b>tema de <b>C</b>orreção <b>A</b>utomatizada</i>), está
+  disponível para uso, sem custo, por escolas públicas ou privadas.
+</p>
+<p>
+  O sistema Sisca gera folhas de respostas personalizadas (por exemplo
+  com o nome da escola, disciplina e data da prova). As folhas devem ser
+  então impressas em papel e distribuídas aos alunos para preenchimento durante
+  a prova.
+</p>
+<p>
+  O sistema também disponibiliza a correção automatizada das folhas de
+  respostas preenchidas. Para isso, as folhas de respostas preenchidas
+  pelos participantes devem ser digitalizadas (escaneadas) e enviadas
+  pela internet para correção, juntamente com um arquivo de gabarito
+  que descreve as respostas esperadas. O resultado da correção é enviado em
+  uma mensagem de correio eletrônico, contendo dois arquivos: um
+  relatório de correção (formato texto), e uma planilha (formato csv).
+</p>
+<p>Escolha no menu à direita a funcionalidade desejada (gerador ou
+  corretor de folhas de respostas).
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% include 'sisca/includes/see_also_sisca.html' %}
+
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

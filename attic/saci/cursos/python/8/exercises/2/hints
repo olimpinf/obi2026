@@ -1,0 +1,51 @@
+variables_set,saci_input_int,variables_set,saci_input_int,variables_set,saci_input_int,controls_if,logic_compare,variables_get,variables_get,saci_text_print,variables_get,logic_compare,variables_get,variables_get,saci_text_print,variables_get,saci_text_print,variables_get
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas seu programa não está produzindo o resultado correto.
+Verifique se selecionou corretamente as operações de comparação nos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_logic_compare.png" height="45px"/>.
+Leia novamente o enunciado e corrija sua solução. Falta muito pouco!
+<br>
+
+@variables_set,saci_input_int,variables_set,saci_input_int,variables_set,saci_input_int
+
+Você está no caminho certo, já montou 
+os blocos corretos para ler da entrada os valores das cartas. Agora
+você precisa usar um bloco de execução condicional
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para comparar as cartas.
+Note que você deve configurar o bloco de execução
+condicional para as comparações encadeadas necessárias.
+<p>
+Pense na estratégia de solução. Há dois pares de cartas iguais e
+conhecemos três dessas cartas; vamos chamá-las de cartaA, cartaB e
+cartaC. Temos que encontrar duas cartas iguais entre as cartas que
+conhecemos; a resposta do problema é a carta que não é igual.
+Ou seja, se a cartaA é igual à cartaB, a solução é a carta C; senão,
+se a carta A é igual à carta C, a solução é a carta B; caso contrário,
+a resposta é a carta A (porque nesse caso a cartaC é igual à carta B).
+<br>
+
+@empty
+
+Pense na estratégia de solução. Há dois pares de cartas iguais e
+conhecemos três dessas cartas; vamos chamá-las de cartaA, cartaB e
+cartaC. Temos que encontrar duas cartas iguais entre as cartas que
+conhecemos; a resposta do problema é a carta que não é igual.
+Ou seja, se a cartaA é igual à cartaB, a solução é a carta C; senão,
+se a carta A é igual à carta C, a solução é a carta B; caso contrário,
+a resposta é a carta A (porque nesse caso a cartaC é igual à carta B).
+<p>
+Você precisa iniciar criando três variáveis para armazenar os valores
+das três cartas; cada valor deve ser lido da entrada com um bloco 
+<img align="middle" src="/static/saci/blockly_images/block_input_num.png" height="40px"/>.
+<p>
+Para criar uma variável clique no menu <b>Variáveis</b> da Barra de Ferramentas,
+e então clique no botão "Crie variável..." e escolha um nome para a variável.
+<p>
+Então você deve usar um bloco
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para comparar as cartas.
+Note que você deve configurar o bloco de execução
+condicional para as comparações encadeadas necessárias.
+<br>

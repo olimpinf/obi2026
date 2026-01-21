@@ -1,0 +1,18 @@
+Installation & Usage
+Method 1: Cookie-Based (Recommended)
+bash# Install dependencies
+pip install requests selenium
+
+# Download ChromeDriver (if not already installed)
+# For Ubuntu/Debian:
+sudo apt install chromium-chromedriver
+
+# Run the script
+python auto_login.py student123 password123
+
+# Or reuse existing session
+python auto_login.py student123 --reuse-session
+
+# Or use password file for security
+echo "password123" > .password
+python auto_login.py student123 --password-file .password

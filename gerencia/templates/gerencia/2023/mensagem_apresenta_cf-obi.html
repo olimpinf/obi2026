@@ -1,0 +1,56 @@
+{% if compet.compet_name %}
+{{ greetings }} {{compet.compet_name}},
+{% elif coord_name %}
+{{ greetings }} {{coord_name}},
+{% elif coord_name %}
+{{ greetings }} {{colab_name}},
+{% endif %}
+Em 2023, ocorrerá a Competição Feminina da OBI, uma competição que visa incentivar a participação feminina nesta olimpíada.
+
+A coordenação da OBI convida todas as inscritas nas modalidades Programação Júnior, Programação Nível 1 ou Programação Nível 2 da OBI2023 para realizar também esta prova, que ocorrerá entre a Fase Estadual e a Fase Nacional. Para participar, não é necessário fazer uma nova inscrição nem ter feito as provas da Fase Local e Estadual da OBI.
+
+**************
+Participantes:
+**************
+Todas as competidoras inscritas na modalidade Programação Nível Júnior, Programação Nível 1 ou Programação Nível 2 da OBI2023 estão habilitadas a fazer a prova.
+
+*****
+Data:
+*****
+20 de agosto de 2023 (domingo)
+
+********
+Horário:
+********
+Início à escolha entre 13:00 e 20:00 (GMT-03:00, horário de Brasília). O Ambiente de Prova fecha às 23:00 (GMT-03:00, horário de Brasília).
+
+******
+Prova:
+******
+A competição será totalmente online, realizada por meio do Ambiente de Prova da OBI2023 (acesso com a senha da OBI). As competidoras deverão dispor de computador e acesso à Internet para entrar no sistema e fazer a prova. As competidoras terão 3 horas no intervalo de tempo indicado para resolver 4 problemas de programação. As linguagens de programação permitidas seguem o regulamento da OBI.
+{% if compet.compet_name %}
+Para acessar a Prova da Competição Feminina da OBI entre na sua página pessoal na OBI2023, através link "ACESSO COMPETIDORES" da página da OBI2023:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se:
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+{% endif %}
+
+*************
+Certificados:
+*************
+Todas as competidoras que fizerem a prova receberão certificados digitais de participação.
+
+**********
+Premiação:
+**********
+As premiadas receberão camisetas da Competição Feminina da OBI, medalhas e serão convidadas para participar da Fase Nacional da OBI2023, a ser realizada no dia 30 de setembro de 2023.
+
+
+Para mais informações, consulte a página no site:
+https://olimpiada.ic.unicamp.br/competicao_feminina
+
+{% include 'includes/signature.html' %}

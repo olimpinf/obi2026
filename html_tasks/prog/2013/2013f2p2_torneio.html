@@ -1,0 +1,102 @@
+title:Torneio
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Juquinha foi convidado para participar do prestigiado torneio de tênis
+de Rolando Barros, na Nlogônia. O torneio é composto de N rodadas no
+estilo mata-mata: todo jogador que perde uma partida é eliminado do
+torneio, e o vencedor desta partida avança para a próxima
+rodada. Como o número de jogadores ativos cai pela metade a cada
+rodada, é necessário que o número de jogadores participantes seja uma
+potência de 2.
+
+<center>
+<img src="/static/img/task_images/2013f2p2_torneio.png" width="70%">
+</center>
+
+Os jogadores são inicialmente dispostos na chave por sorteio. Em uma
+disposição é atribuido a cada jogador um valor de 1 a 2^N, que corresponde
+a sua posição na chave do torneio. Jogadores vencedores avançam para a
+direita da chave, e disputam com o vencedor da sub-chave vizinha. Na
+imagem acima, caso os jogadores das posições 1 e 3 vençam suas
+partidas na primeira rodada, estes se enfrentarão na segunda rodada.</p>
+
+<p>Juquinha não quer perder a chance de tornar-se um jogador mundialmente
+famoso, e para isso contratou você para ajudá-lo em suas análises
+estatísticas. Ele atribuiu a cada jogador um coeficiente de habilidade
+H_i, e sabe que se dois jogadores disputarem uma partida, aquele com
+maior coeficiente de habilidade certamente será o vencedor. Seu papel
+é calcular quantas disposições iniciais dos jogadores forçam Juquinha
+perder na K-ésima rodada (ou vencer o torneio, caso K = N+1). Duas
+disposições são consideradas distintas se para algum jogador foi
+atribuido um valor diferente nas duas disposições.</p>
+<h3>Entrada</h3>
+A primeira linha contém dois inteiros N e K. Cada uma das próximas 2^N linhas
+seguintes contêm um único inteiro representando o coeficiente de habilidade de um jogador.
+O coeficiente de Juquinha é representado pelo primeiro desses inteiros.
+
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma única linha contendo um único inteiro indicando
+o número de disposições iniciais que forçam Juquinha a perder na K-ésima rodada
+(ou ganhar o torneio, se K = N+1). Como este número pode ser muito grande,
+imprima o resto que este número deixa quando dividido por 1.000.000.007 (10<sup>9</sup> + 7).
+<h3>Restrições</h3><ul>
+  <li> 1  ≤  N  ≤  16</li>
+  <li> 1  ≤  K  ≤  N+1</li>
+  <li> 0  ≤  coeficiente de habilidade de um jogador  ≤  10<sup>9</sup></li>
+  <li> Não existem dois jogadores diferentes com a mesma habilidade.</li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+  <li> Em um conjunto de casos de testes que totaliza 30 pontos, N  ≤  3</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 2
+3
+4
+2
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+16
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 2
+7
+5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

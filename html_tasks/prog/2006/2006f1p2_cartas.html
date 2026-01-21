@@ -1,0 +1,131 @@
+title:Jogo de Cartas
+template:tasks/tarefa_programacao.html
+
+<p>Marlene está jogando um passatempo de sua autoria. Ela possui um baralho com N cartas, 
+numeradas de 1 a N, tal que não existem duas cartas com o mesmo número. O jogo consiste de 
+várias rodadas, e são utilizadas três pilhas denominadas Compra, Descarte e Morto. 
+
+<p>Inicialmente, as cartas são embaralhadas e colocadas com a face
+para cima, constituindo a pilha Compra (as pilhas Descarte e Morto
+estão inicialmente vazias). Marlene então tira as cartas da pilha
+Compra, uma a uma, e as coloca na pilha Descarte, com as faces para
+baixo, na mesma ordem, até encontrar a carta com o número 1. Quando a
+encontra, Marlene a coloca na pilha Morto e recomeça o processo de
+retirar cartas da pilha Compra, agora procurando a próxima carta na
+sequência (2), e o processo e repetido para as outras cartas na
+sequência (3, 4, ...).
+
+<p>
+Quando as cartas da pilha Compra terminam, encerra-se uma rodada.
+Nesse momento, Marlene vira a pilha Descarte de modo que as cartas
+fiquem com a face para cima (sem re-embaralhar) e a coloca no lugar da
+pilha Compra. Inicia-se uma nova rodada, e processo recomeça, com
+Marlene procurando a próxima carta na sequência. Repete-se esse
+processo até que a carta removida do baralho seja a de número N,
+quando o jogo acaba. O resultado do jogo é o número de rodadas.
+
+<center>
+<p><em>Primeira Rodada</em>
+<table>
+<tr>
+<th colspan="3">Compra</th><th colspan="3">Descarte</th><th colspan="3">Morto</th>
+</tr>
+<td>1</td><td>3</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td>
+<tr>
+<td>3</td><td>2</td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td>
+</tr>
+<tr>
+<td>2</td><td></td><td></td><td>3</td><td></td><td></td><td>1</td><td></td><td></td>
+</tr>
+<tr>
+<td></td><td></td><td></td><td>3</td><td></td><td></td><td>1</td><td>2</td><td></td>
+</tr>
+</table>
+<em>Fim da primeira rodada</em>
+
+
+<p><em>Segunda Rodada</em>
+<table>
+<tr>
+<th colspan="3">Compra</th><th colspan="3">Descarte</th><th colspan="3">Morto</th>
+</tr>
+<td>3</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td></td>
+<tr>
+<td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+</tr>
+</table>
+
+<em>Fim do jogo. Houve duas rodadas.</em>
+</center>
+
+<p>Escreva um programa que, dada a ordem em que as cartas estão na
+pilha Compra no início do jogo, determine o número de rodadas do jogo.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N que 
+indica quantas cartas existem no baralho. A segunda linha contém 
+N inteiros, representando as cartas do baralho, na sequência em que serão tiradas por 
+Marlene da pilha Compras.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma única linha, contendo um único inteiro, o número de 
+rodadas do jogo.
+
+<h3>Restrições</h3>
+<ul>
+  <li>1 &leq; N &leq; 100 000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+3
+2 1 3
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+2
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+5
+3 5 1 4 2
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+3
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+3 6 7 1 5 4 2
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+6
+</pre>
+ </td>
+ </tr>
+</table>

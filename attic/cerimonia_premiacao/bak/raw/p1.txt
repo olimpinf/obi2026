@@ -1,0 +1,18 @@
+1	1	10500	Thiago Mota Martins	Farias Brito Pré Vestibular Central	Fortaleza	CE
+2	2	10250	Willian Wang	Colégio Etapa	São Paulo	SP
+
+3	3	9600	Eduardo Quirino de Oliveira	Colégio Pódion	Brasília	DF
+3	3	9600	Pedro Gomes Cabral	Colégio 17 de Agosto	Recife	PE
+
+4	5	8850	Guilherme Alfaia Caetano	Farias Brito Pré Vestibular Central	Fortaleza	CE
+5	6	8433	Igor Brito Andrade	Ari de Sá Cavalcante Aldeota	Fortaleza	CE
+5	7	8208	Antonio Ítalo Lima Lopes	Farias Brito Pré Vestibular Central	Fortaleza	CE
+6	8	8016	Ygor de Santana Moura	Ari de Sá Cavalcante Aldeota	Fortaleza	CE
+6	9	7958	Rembrandt Asafe Vasconcelos Costa	Universidade Federal de Campina Grande	Campina Grande	PB
+7	10	7641	João Lucas Farias Vasconcelos	Colégio Farias Brito Sobralense	Sobral	CE
+7	11	7541	Lucas Padovan	Colégio Cidade de Bragança	Bragança Paulista	SP
+
+8	HM	12	7391	Guilherme Rodrigues Tafelli da Silva	Algar Telecom - Ufu	Uberlândia	MG
+8	HM	13	6891	Daví Henrique Silva Guimarães	Centro Campinense de Educação Ltda Colégio Motiva	Campina Grande	PB
+9	HM	14	6791	Samyra Vitoria Lima de Almeida	Colégio Farias Brito Pré- Vestibular Aldeota	Fortaleza	CE
+9	HM	15	6704	Francisco Moreira Machado Neto	Ari de Sá Cavalcante Aldeota	Fortaleza	CE

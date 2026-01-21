@@ -1,0 +1,144 @@
+title:Sequência
+template:tasks/tarefa_programacao.html
+
+<p>
+O professor da importante disciplina de Indução Matemática está
+tentando resolver uma versão generalizada de um problema muito
+tradicional: encontrar o valor máximo possível para a soma dos
+elementos de uma subsequência contígua de uma sequência de números
+inteiros quaisquer. Mais rigorosamente, dado uma sequência
+S=[s<sub>1</sub>,s<sub>2</sub>,...,s<sub>N</sub>], onde s<sub>i</sub>
+é um número inteiro qualquer, para 1 &leq; i &leq; N,
+maximizar <i>soma</i>(i,j)=s<sub>i</sub>+s<sub>i+1</sub>+...+s<sub>j</sub>
+entre todos os possíveis pares (i,j), onde 1 &leq; i &leq; j &leq; N.
+
+<p>Na versão do professor, entretanto, alguns elementos da sequência são
+especiais e estão marcados. Além da sequência marcada, são dadas como
+entrada duas cotas: L e H, com L &leq;  H. O objetivo agora é
+encontrar o valor máximo possível para a soma dos elementos de uma
+subsequência contígua, que contenha pelo menos L e no máximo H
+elementos marcados.
+
+<p>
+Por definição, uma subsequência vazia (de zero elementos) tem soma
+igual a zero. Mas note que, como podemos ter uma cota inferior para o
+número de elementos marcados, a subsequência contígua de soma máxima
+pode ter soma negativa!
+
+ 
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém três inteiros N, L
+ e H, indicando respectivamente o número de elementos na sequência,
+ a cota inferior L e a cota superior H. A segunda linha contém N
+ inteiros s<sub>i</sub>, para 1 &leq;  i &leq;  N, definindo os elementos da
+ sequência. A terceira linha contém N inteiros m<sub>i</sub>, para 1 &leq; 
+ i &leq;  N, indicando as marcas. Se o i-ésimo elemento está marcado,
+ o valor é m<sub>i</sub>=1. Se não estiver marcado, m<sub>i</sub>=0.
+
+ 
+<h3>Saída</h3>
+<p>Imprima uma única linha contendo um inteiro, representando o valor
+ máximo possível para a soma dos elementos de uma subsequência
+ contígua, que contenha pelo menos L e no máximo H elementos marcados.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup>
+<li> 0 &leq;  L &leq;  H &leq;  20
+<li> -10<sup>3</sup> &leq;  s<sub>i</sub> &leq;  10<sup>3</sup>, para 1 &leq;  i &leq;  N
+ <li> O número de elementos marcados na sequência é maior ou igual a
+ L; portanto sempre existe solução.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 15 pontos, N  &leq;  10<sup>2</sup>
+<li> Para um conjunto de casos de testes valendo 30 pontos, N  &leq;  10<sup>4</sup>
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14 3 4
+9 0 -23 -12 7 1 -13 2 -1 9 -16 -1 14 12
+1 0 0 1 0 1 0 0 1 1 0 0 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+19
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14 7 20
+9 0 -23 -12 7 1 -13 2 -1 9 -16 -1 14 12
+1 0 0 1 0 1 0 0 1 1 0 0 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-12
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14 5 5
+9 0 -23 -12 7 1 -13 2 -1 9 -16 -1 14 12
+1 0 0 1 0 1 0 0 1 1 0 0 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+14
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14 0 20
+9 0 -23 -12 7 1 -13 2 -1 9 -16 -1 14 12
+1 0 0 1 0 1 0 0 1 1 0 0 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+26
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

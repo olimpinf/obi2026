@@ -1,0 +1,91 @@
+title:Blefe
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Pedro está desenvolvendo um jogo on-line para dois jogadores, em que o
+objetivo é forçar um erro do adversário, blefando. A questão é que, à
+medida que o jogo prossegue, mais tempo é necessário para verificar se
+uma jogada é válida ou não, ou seja, se é um blefe ou não. Daí que Pedro
+precisa da sua ajuda para implementar um algoritmo rápido para
+verificar se uma jogada é ou não um blefe.</p>
+
+<p>Considere um conjunto A fixo de N números inteiros, positivos ou
+negativos, e uma sequência de números inteiros B, inicialmente
+vazia. Os jogadores se alternam em jogadas que consistem em incluir um
+número por vez no final da sequência B. Quando chega a sua vez, um
+jogador deve fazer uma de duas jogadas válidas possíveis: <em> </em>(i) incluir em
+B qualquer um dos números do conjunto A; <em> </em>(ii) ou incluir em B um
+número que é a soma de dois números quaisquer que já estejam em B 
+(note a soma não é de números necessariamente distintos, pode ser a soma de um número com ele
+mesmo).</p>
+
+<p>Nesta tarefa, você deve escrever um programa que, dado o conjunto A
+e uma sequência B, diga se todas as jogadas foram válidas, ou mostre
+qual é a primeira jogada inválida em B.</p>
+<h3>Entrada</h3>
+A entrada consiste de três linhas. A primeira linha contém dois
+números N e M, respectivamente o tamanho do conjunto A e o
+tamanho da sequência B. A segunda linha contém os N números
+inteiros do conjunto A. A terceira linha contém os M números
+inteiros da sequência B.
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha. A linha deve conter a palavra "<span class="tt">sim</span>"
+caso todas as jogadas em B sejam válidas; se houver alguma jogada inválida em B,
+a linha deve conter o primeiro número inválido em B.
+<h3>Restrições</h3><ul>
+<li> 1 ≤  N ≤  10<sup>3</sup> e 1 ≤  M ≤  10<sup>4</sup></li>
+<li> O valor de todos os números em A e em B está entre -10<sup>9</sup> e
+  10<sup>9</sup></li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+<li> Em um conjunto de casos de teste equivalente a 30 pontos, N ≤ 
+  50 e M ≤  500.</li> 
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 11
+34 9 -2 77 -11 5
+34 5 -2 32 -11 -6 28 66 -2 -22 33
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+sim
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 8
+34 9 -2 77 -11 5
+-11 77 -2 75 9 48 7 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+48
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

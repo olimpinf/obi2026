@@ -1,0 +1,7 @@
+# Solução do Desafio da Aula 4
+
+alfa = 1234
+delta = 5678
+gama = "Beta"
+print(alfa * delta)
+print(gama)

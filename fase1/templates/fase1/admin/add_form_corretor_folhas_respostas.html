@@ -1,0 +1,61 @@
+{% extends "admin/add_form.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; 
+<a href="{% url 'admin:app_list' 'fase1' %}">{{ app_label|capfirst }}</a>
+&rsaquo; 
+Modalidade Iniciação - Correção
+&rsaquo; 
+Correção Automatizada
+
+</div>
+{% endblock %}
+{% endif %}
+
+
+{% block content_title %}<h1>Correção Automatizada</h1>{% endblock %}
+
+{% block content_extra %}
+<p><font color="red">Clique apenas uma vez o botão <em>Enviar</em> e aguarde</font>.<br> O envio do arquivo pela 
+Internet pode demorar (até alguns minutos), principalmente no caso de arquivos
+com muitas Folhas de Respostas. 
+
+
+<h2>Instruções</h2>
+
+<ol>
+<li>Certifique-se de que o número de inscrição está corretamente
+preenchido no caso de Folhas de Respostas avulsas (nas Folhas de Respostas
+pré-prenchidas o número de inscrição já vem corretamente preenchido!).
+<li><font color="red">Não submeta Folhas de Respostas de competidores que não compareceram.</font>
+<li>Separe as Folhas de Respostas dos competidores em lotes, separados pelo nível (Júnior, 1 e 2).
+<li>Para cada lote (contendo Folhas de Respostas de um único nível),
+digitalize (escaneie) as Folhas de Respostas, e salve em um arquivo de
+formato PDF. Muitos aplicativos permitem salvar várias páginas
+digitalizadas em um único arquivo, geralmente de tipo PDF. Ou seja, o
+aplicativo gera um único arquivo no formato PDF contendo as imagens
+digitalizadas.
+<li>Para cada arquivo de Folhas de Respostas digitalizadas, utilize o
+formulário acima para submeter para a correção automatizada.
+<li>O resultado da correção será enviado para o endereço de correio eletrônico do Coordenador Local da OBI.
+<li>A pontuação dos competidores será inserida automaticamente, mas
+solicitamos que os Coordenadores verifiquem nos arquivos recebidos por
+email se está tudo correto, se as Folhas de Resposta foram
+corretamente corrigidas. Os arquivos enviados por email pelo Corretor
+Automatizado indicam condições de erro como Número de Inscrição
+incorreto ou mal preenchido, dificuldade de processar o arquivo
+submetido, etc.
+<li>Verifique a pontuação inserida automaticamente, utilizando o
+formulário
+formulário <a href="/restrito/fase1/inserepontosini/">
+Insere/Modifica Pontuação</a> para consultar as pontuações dos
+competidores.
+<li>Em caso de erros na correção automatizada de um competidor, siga
+o procedimento para correção manual para esse competidor.
+</ol>
+{% endblock %}

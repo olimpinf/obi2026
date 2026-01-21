@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+
+\newcommand\BackgroundPic{
+  \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{
+      \vfill
+      \centering
+      \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{letterhead.pdf}
+      \vfill
+    }
+  }
+}
+
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+
+
+\thispagestyle{plain}
+\pagenumbering{gobble}
+
+\vspace*{2cm}
+
+\hfill Campinas, 23 de novembro de 2025
+
+\vspace*{1cm}
+
+\noindent
+Sr(a). Professor(a)\\
+\vspace*{0.5cm}
+
+\noindent
+em nome da Olimpíada Brasileira de Informática -- OBI, venho por meio desta
+informar que 
+
+\begin{center}
+  \emph{Fernando Graminholi Gonçalves}
+\end{center}
+
+\noindent
+foi convidado para participar como \emph{Professor} da Semana Olímpica da OBI, que ocorrerá no Instituto de
+Computação da UNICAMP, com os melhores alunos classificados na
+OBI, entre os dias 30 de novembro e 6 de dezembro de
+2025.
+
+Gostaríamos de solicitar a sua colaboração, se possível, para permitir
+que Fernando possa adiar (ou adiantar) a realização de provas e outras
+atividades de sua disciplina, bem como abonar suas faltas naquela
+semana.  Os professores da Semana Olímpica são em sua maioria
+ex-competidores experientes da própria OBI, que ajudaram na preparação
+das provas da OBI. Fernando demonstrou comprometimento e dedicação
+excepcionais na preparação das provas das três fases da OBI2025 e
+da Seletiva para Competições Internacionais (esta última ocorrerá
+durante a Semana Olímpica).
+Tenho certeza de que, com o mesmo comprometimento e dedicação, poderá
+recuperar o conhecimento e atividades não vistos durante o período em
+que participar da Semana Olímpica da OBI.
+
+A OBI é uma promoção da SBC -- Sociedade Brasileira de Computação, com
+coordenação do Instituto de Computação da Unicamp, e reúne anualmente
+mais de 110 mil competidores de todo o país. Para mais informações, por
+favor consulte\\
+ \texttt{http://olimpiada.ic.unicamp.br}.
+
+\vspace*{3mm}
+
+Atenciosamente,
+
+\vfill
+
+\begin{center}
+\includegraphics[width=5cm]{signature_blue.jpg}\\
+Prof. Dr. Ricardo Anido\\
+Instituto de Computação - UNICAMP\\
+Coordenador da OBI2025
+\end{center}
+
+\vfill
+
+\end{document}

@@ -1,0 +1,398 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+
+    {% if week and week.status != 'Não Respondeu' %}
+        <h2>Semana Olímpica</h2>
+        <p>Você foi convidado para a Semana Olímpica. Veja o status de sua participação em <a href="{% url 'week:partic' %}"><u>Participantes</u></a>.</p>
+
+
+        <p><a href="{% url 'compet:emite_carta' %}"><u>Clique aqui</u></a> para obter uma carta do Coordenação da OBI2025 solicitando cooperação
+        dos professores de sua escola quanto à reposição de provas ou atividades escolares durante a Semana Olímpica.</p>
+
+        <ul>
+            <li><b>Manifestação de interesse</b>:
+            {% if week.form_info %}
+                OK
+            {% else %}
+                {% if week.status is null %}
+                    Não informada
+                    <ul>
+                      <li><a href="{% url 'week:confirm' %}"><u>Informe interesse em participar</u></a>&nbsp;&nbsp;&nbsp;OU&nbsp;&nbsp;&nbsp;<a href="{% url 'week:deny' %}"><u>Informe que NÃO irá participar</u></a></li>
+                    </ul>
+                {% else %}
+                    <b>Não participará</b>
+                {% endif %}
+            {% endif %}
+            </li>
+
+            {% if week.form_info or week.status is null %}
+                <li><b>Pagamento da taxa de ressarcimento</b>:
+                {% if week.tax_paid != True %}
+                    Aguardando confirmação
+                {% elif week.payment %}
+                    OK
+                {% else %}
+                    Aguardando confirmação
+                {% endif %}
+                </li>
+
+                {% comment %}
+                {% if week.tax_paid != True %}
+                    <ul>
+                        <li><a href="{% url 'week:inform_payment' %}"><u>Formulário para envio de comprovante de pagamento</u></a></li>
+                    </ul>
+                {% elif week.payment %}
+                    <li><a href="{% url 'week:emit_receipt' week.payment %}"><u>Recibo</u></a></li>
+                {% endif %}
+
+
+                {% if week.form_arrival %}
+                    <li><a href={% url 'compet:certificado_semana' %}>Certificado de Participação na Semana Olímpica</a></li>
+                {% endif %}
+                {% endcomment %}
+            {% endif %}
+        </ul>
+
+        {% comment %}
+        <li>Haverá uma pequena Cerimônia de Encerramento da Semana Olímpica da OBI2022, sábado 11/12, iniciando 10:00. Todos estão convidados! Link:  <span class="ttt"><a href="https://www.youtube.com/watch?v=GtHmZwOPNz0">https://www.youtube.com/watch?v=GtHmZwOPNz0</a></span></li>
+        <ul>
+            <li>
+            {% if week.form_info != True %}
+                <em>Interesse em participar não informado</em> [<a href="{% url 'week:confirm' %}">Informe interesse em participar</a>]
+            {% elif week.tax != None %}
+                <em>Participação confirmada</em>
+            {% else %}
+                <em>Participação pendente</em>
+                <br/>
+                Sua participação ainda está pendente, estamos aguardando a confirmação do recebimento da Taxa de Ressarcimento. Entre em
+                contato com o Coordenador Local da OBI na sua escola, muitas escolas pagam a taxa para os alunos. Se
+                sua escola não vai pagar a taxa, você mesmo pode pagá-la. Veja como <a href="{% url 'week:index' %}">clicando aqui</a>.
+            {% endif %}
+            </li>
+            <li>Por favor complete o <a href="https://forms.gle/ce2vYmgCrKP2SFbZ8">Questionário sobre conhecimento em programação</a> para ajudar a programação dos professores
+            (o questionário é anônimo).</li>
+        </ul>
+        {% endcomment %}
+    {% endif %}
+
+    
+
+{% comment %}
+<h2>Resultado final </h2>
+{% if compet.compet_points_fase1 >= 0 %}
+<p><i>Classificação</i>: <b>{{ compet.compet_rank_final }}<sup><u>o</u></sup> lugar</b> entre {{ num_compet_level }} competidores na sua modalidade e nível
+  {% if compet.compet_medal == 'o' %}
+  (medalha de ouro)
+  {% elif compet.compet_medal == 'p' %}
+  (medalha de prata)
+  {% elif compet.compet_medal == 'b' %}
+  (medalha de bronze)
+  {% elif compet.compet_medal == 'h' %}
+  (honra ao mérito)
+  {% endif %}
+</p>
+{% endif %}
+{% if compet.compet_points_fase1 >= 0 %}
+<div class="mb-4">
+<h2>Certificado</h2>
+<a href="{% url 'principal:emite_certificado' '2025' 'obi' 'compet' compet.compet_id %}">Clique aqui</a> para baixar o seu certificado da OBI2025.
+</div>
+{% endif %}
+{% endcomment %}
+
+{% comment %}
+
+{% if compet.compet_id in compets_invited  %}
+<h2>Semana Treinamento</h2>
+<ul>
+  <li>A Semana de Treinamento para Competições Internacionais ocorrerá
+  no IC-Unicamp entre 3 (chegada) e 9 (saída) de dezembro de 2025.</li>
+  <li><a href="/semana">Clique aqui</a> para mais informações sobre a Semana Olímpica.
+<li><a href="{% url 'compet:emite_carta_treinamento' %}"><u>Clique aqui</u></a>
+  para obter uma carta do Coordenação da OBI2025 solicitando
+  cooperação dos professores de sua escola quanto à reposição de
+  provas ou atividades escolares durante a Semana de Treinamento</li>
+</ul>
+{% endif %}
+{% endcomment %}
+
+{% comment %}
+{% endcomment %}
+
+<h2>Provas agendadas</h2>
+    <blockquote>
+
+        {% if coming_exams %}
+            {% for ex in coming_exams %}
+                <h4>{{ex.exam_title}}</h4>
+                <ul>
+                    {% if ex.exam_descriptor == 'testef1' %}
+                        <li>Esta é uma prova Teste, cujo único propósito é permitir que os competidores se habituem com o ambiente de prova.</li>
+		        <li>Início do período de realização: {{ ex.exam_date_start|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Término do período para realização: {{ ex.exam_date_finish|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Duração: {{ ex.exam_duration|get_item:level|obi_format_exam_duration }} a partir do momento de início</li>
+                        {% if ex.exam_duration_notice|get_item:level %}
+                        <li>{{ ex.exam_duration_notice|get_item:level|safe }}</li>
+                        {% endif %}
+		    
+                        {% if  compet.mod == 'p' %}
+		        <li>O professor Coordenador Local da OBI na sua escola entregará a senha de acesso ao Ambiente de Prova (não é a mesma
+			  senha usada para o acesso à sua página pessoal). O nome de usuário para acesso ao Ambiente de Prova é o seu número de inscrição (completo, como 01234-A).
+                            {% if ex.exam_show_link %}    
+                            {# to make link visible to compet prog #}
+                            <li><a href="https://{{ compet.level }}.provas.ic.unicamp.br">Link para acesso</a></li>
+                            {% else %}
+                            <li>O link para acesso estará disponível durante o período de aplicação da prova.</li>
+                            {% endif %}
+                        {% endif %}
+                    {% elif ex.exam_descriptor == 'provaf1' %}
+                        <li><span style="font-weight:600">A prova deve ser realizada na escola, sob supervisão de um professor. Verifique com o professor Coordenador Local da OBI em sua escola o dia e
+                        horário em que a prova será aplicada.</span></li>
+                        <li>Início do período de realização: {{ ex.exam_date_start|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Término do período para realização: {{ ex.exam_date_finish|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Duração: {{ ex.exam_duration|get_item:level|obi_format_exam_duration }} a partir do momento de início</li>
+                        {% if ex.exam_duration_notice|get_item:level %}
+                            <li>{{ ex.exam_duration_notice|get_item:level|safe }}</li>
+                        {% endif %}
+			    
+                        {% if  compet.mod == 'p' %}
+		            <li>O professor Coordenador Local da OBI na sua escola entregará a senha de acesso ao Ambiente de Prova (não é a mesma
+			      senha usada para o acesso à sua página pessoal). O nome de usuário para acesso ao Ambiente de Prova é o seu número de inscrição (completo, como 01234-A).
+                            {% if ex.exam_show_link %}    
+                                {# to make link visible to compet prog #}
+                                <li><a href="https://{{ compet.level }}.provas.ic.unicamp.br">Link para acesso ao ambiente de prova</a></li>
+                            {% else %}
+                                <li>O link para acesso ao ambiente de prova será informado pelo Coordenador Local da OBI na sua escola.</li>
+			    {% endif %}
+			<li>Antes da prova, leia a <a href="/static/extras/misc/FolhaInformacoes.pdf">Folha de Informações sobre a Prova da Fase 1</a>.
+				
+                        {% endif %}
+                    {% elif ex.exam_descriptor == 'provaf2' %}
+                        <li><span style="font-weight:600">A prova deve ser realizada na escola, sob supervisão de um professor. Verifique com o professor Coordenador Local da OBI em sua escola o
+                        horário em que a prova será aplicada.</span></li>
+                        <li>Início do período de realização: {{ ex.exam_date_start|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Término do período para realização: {{ ex.exam_date_finish|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Duração: {{ ex.exam_duration|get_item:level|obi_format_exam_duration }} a partir do momento de início</li>
+                        {% if ex.exam_duration_notice|get_item:level %}
+                            <li>{{ ex.exam_duration_notice|get_item:level|safe }}</li>
+                        {% endif %}
+			    
+                        {% if  compet.mod == 'p' %}
+		            <li>O professor Coordenador Local da OBI na sua escola informará o endereço do Ambiente de Prova e entregará a senha de acesso (não é a mesma
+			      senha usada para o acesso à sua página pessoal). O nome de usuário para acesso ao Ambiente de Prova é o seu número de inscrição (completo, como 01234-A).
+			      {% comment %}
+                            {% if ex.exam_show_link %}    
+                                {# to make link visible to compet prog #}
+                                <li><a href="https://{{ compet.level }}.provas.ic.unicamp.br">Link para acesso</a></li>
+                            {% else %}
+                                <li>O link para acesso estará disponível durante o período de aplicação da prova.</li>
+                            {% endif %}
+			      {% endcomment %}
+                        {% endif %}
+                    {% elif ex.exam_descriptor == 'provaf2b' %}
+                        <li><span style="font-weight:600">A prova deve ser realizada na escola, sob supervisão de um professor. Verifique com o professor Coordenador Local da OBI em sua escola o
+                            horário em que a prova será aplicada.</span></li>
+		    <li>Esta é uma prova "extra", oferecida porque muitos competidores da Modalidade Programação Nível 2 foram prejudicados pela lentidão do ambiente de provas no dia 16/8.
+		      <li>Esta prova é opcional. A classificação para a Fase 3 será computada independentemente pela prova do Turno A (16/8) e pela Prova do Turno B (26/8). O competidor poderá ser classificado para a Fase 3 tanto pela sua pontuação no Turno A como no Turno B.
+                        <li>Início do período de realização: {{ ex.exam_date_start|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Término do período para realização: {{ ex.exam_date_finish|get_item:mod|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Duração: {{ ex.exam_duration|get_item:level|obi_format_exam_duration }} a partir do momento de início</li>
+                        {% if ex.exam_duration_notice|get_item:level %}
+                            <li>{{ ex.exam_duration_notice|get_item:level|safe }}</li>
+                        {% endif %}
+			    
+                        {% if  compet.mod == 'p' %}
+		            <li>O professor Coordenador Local da OBI na sua escola informará o endereço do Ambiente de Prova e entregará a senha de acesso (não é a mesma
+			      senha usada para o acesso à sua página pessoal). O nome de usuário para acesso ao Ambiente de Prova é o seu número de inscrição (completo, como 01234-A).
+			      {% comment %}
+                            {% if ex.exam_show_link %}    
+                                {# to make link visible to compet prog #}
+                                <li><a href="https://{{ compet.level }}.provas.ic.unicamp.br">Link para acesso</a></li>
+                            {% else %}
+                                <li>O link para acesso estará disponível durante o período de aplicação da prova.</li>
+                            {% endif %}
+			      {% endcomment %}
+                        {% endif %}
+                    {% elif ex.exam_descriptor == 'cfobif1' %}
+                        <li><span style="font-weight:600">A prova deve ser realizada na escola, sob supervisão de um(a) professor(a). Verifique com o(a) professor(a) Coordenador(a) Local da OBI em sua escola o
+                        horário em que a prova será aplicada.</span></li>
+                        <li>Início do período de realização: {{ ex.exam_date_start|get_item:"p"|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Término do período para realização: {{ ex.exam_date_finish|get_item:"p"|date:"j \d\e F \d\e Y \à\s H:i:s" }}</li>
+                        <li>Duração: 3 horas a partir do momento de início</li>
+                        <li>Você deve iniciar a prova até no máximo 15:00. A participação na CF-OBI é opcional e não impacta o resultado final das competidoras na OBI. Veja mais informações sobre esta prova em <a target="_blank" href="https://olimpiada.ic.unicamp.br/info/competicao_feminina">https://olimpiada.ic.unicamp.br/info/competicao_feminina</a></li>
+                        <li>Para acessar o Ambiente de Prova:
+                            <ul>
+                                <li>O(A) professor(a) Coordenador(a) Local da OBI na sua escola entregará a senha de acesso no momento da prova. A senha <b style="color: var(--bg-color4);">não é a mesma senha usada para o acesso à sua página pessoal</b>.</li>
+                                <li>O nome de usuário para acesso ao Ambiente de Prova é o seu número de inscrição (completo, como 01234-A).</li>
+                                <li>O(A) professor(a) Coordenador(a) Local da OBI na sua escola informará o endereço para acesso ao Ambiente de Prova.</li>
+                            </ul>
+                        </li>
+                    {% elif ex.exam_descriptor == 'provaf3' %}
+                        <li><span style="font-weight:600">A prova é presencial. </span> <a href="{% url 'compet:compet_sede_fase3' %}">Consulte o seu local de prova.</a></li>
+                        <li>Data da prova: {{ ex.exam_date_start|get_item:mod|date:"j \d\e F \d\e Y" }}</li>
+                        {% if ex.exam_duration_notice|get_item:level %}
+                            <li>{{ ex.exam_duration_notice|get_item:level|safe }}</li>
+                        {% endif %}
+                        <li>Duração: {{ ex.exam_duration|get_item:level|obi_format_exam_duration }}</li>
+			<li>Levar um documento de identidade com foto (RG ou carteirinha da escola se não tiver RG)
+                    {% endif %}    
+                </ul>
+            {% endfor %}
+        {% else %}
+            <p>Não há provas agendadas.</p>
+        {% endif %}
+    </blockquote>
+
+    <h2>Provas realizadas</h2>
+    <blockquote>
+
+    {% if past_exams %}
+        {% for ex in past_exams %}
+
+            <h4>{{ex.exam_title}}</h4>
+            <ul>
+            {##############}
+            {# resultados #}
+            {##############}
+
+            {% if mod == 'i' %}
+                {% if ex.exam_show_results|get_item:'i' %}
+
+                    {% if ex.exam_descriptor == 'provaf1' %}
+                        {% if compet.compet_points_fase1 >= 0 %}
+	                    <li><a href="{% url 'fase1:mostra_resultado_compet_ini' %}">Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+		    {% endif %}
+                    {% if ex.exam_descriptor == 'provaf2' %}
+                        {% if compet.compet_points_fase2 >= 0 %}
+	                    <li><a href="{% url 'fase2:mostra_resultado_compet_ini' %}">Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+		    {% endif %}
+                    {% if ex.exam_descriptor == 'provaf3' %}
+                        {% if compet.compet_points_fase3 >= 0 %}
+	                    <li><a href="{% url 'fase3:mostra_resultado_compet_ini' %}">Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+		    {% endif %}
+                {% else %}
+			    <li>Não disponível, aguarde</li>
+		{% endif %}
+	    {% endif %}
+
+            {% if mod == 'p' or ex.exam_descriptor == 'cfobif1'%} 
+                {% if ex.exam_show_results|get_item:'p' %}
+                    {% if ex.exam_descriptor == 'provaf1' %}
+                        {% if compet.compet_points_fase1 >= 0 %}
+                            <li><a href={% url 'exams:show_results_prog' ex.exam_descriptor %}>Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+
+                    {% elif ex.exam_descriptor == 'provaf2' %}
+                        {% if compet.compet_points_fase2 >= 0 %}
+                            <li><a href={% url 'exams:show_results_prog' ex.exam_descriptor %}>Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+                    {% elif ex.exam_descriptor == 'provaf2b' %}
+                        {% if compet.compet_points_fase2b >= 0 %}
+                            <li><a href={% url 'exams:show_results_prog' ex.exam_descriptor %}>Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+
+                    {% elif ex.exam_descriptor == 'cfobif1' %}
+                        {% if compet_cfobi.compet_points >= 0 %}
+                            <li><a href={% url 'exams:show_results_prog' ex.exam_descriptor %}>Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+
+
+                    {% elif ex.exam_descriptor == 'provaf3' %}
+                        {% if compet.compet_points_fase3 >= 0 %}
+                            <li><a href={% url 'exams:show_results_prog' ex.exam_descriptor %}>Resultado</a></li>
+                        {% else %}
+                            <li>Você não fez a prova.</li>
+                        {% endif %}
+
+                    {% elif ex.exam_descriptor == 'testef1' %}
+                            <li><a href={% url 'exams:show_results_prog' ex.exam_descriptor %}>Resultado</a> (se quiser refazer a {{ ex.exam_title }}, <a href={% url 'exams:restart_exam' ex.exam_descriptor %}>clique aqui</a>)</li>
+                    {% endif %}
+                {% else %}
+                            <li>O resultado ainda não está disponível.</li>
+                {% endif %}
+            {% endif %}
+            </ul>
+        {% endfor %}
+    {% else %}
+            <p>Não há provas realizadas.</p>
+    {% endif %}
+    </blockquote>
+
+    
+{% endblock content %}
+
+{% block content-related %}
+
+            <table class="simple small" width="100%">
+                <tr>
+                    <th colspan=2 style="text-align: center">{{ compet.compet_name }}</th>
+                </tr>
+                <tr>
+                    <th>Número de inscrição</th>
+                    <td>{{ compet.compet_id_full }}</td>
+                </tr>
+                <tr>
+                    <th>Modalidade</th>
+                    <td>{{ compet.compet_type|obi_format_compet_type_full }}</td>
+                </tr>
+
+{% comment %}
+                <tr>
+                    <th>Classificado para Fase 2: </th>
+                    <td>{% if compet.compet_classif_fase1 %}<font color="green">Sim</font>{% else %}<font color="red">Não</font>{% endif %}</td>
+                </tr>
+		{% if compet.compet_classif_fase1 %}
+                <tr>
+                    <th>Classificado para Fase 3: </th>
+                    <td>{% if compet.compet_classif_fase2 %}<font color="green">Sim</font>{% else %}<font color="red">Não</font>{% endif %}</td>
+                </tr>
+		{% endif %}
+{% endcomment %}
+		
+                <tr>
+                    <th>Escola</th>
+                    <td>{{ compet.compet_school }}</td>
+                </tr>
+                <tr>
+                    <th>Coordenador Local</th>
+                    <td>Prof(a). {{ compet.compet_school.school_deleg_name }}</td>
+                </tr>
+            </table>
+
+            <h4 class="mt-3">Instruções</h4>
+	    <div class="small">
+                <ul>
+                    <li>Esta é a sua página  pessoal na {{ 'OBI'|obi_date_year }}. Aqui serão disponibilizados
+                    os resultados de suas provas, bem como outras informações.</li>
+                    <li>Para retornar a esta página, a qualquer momento,
+                      clique no ícone <img src="/static/assets/img/icon-home-black.svg" width="24px" align="top">
+		      no topo da página à direita.
+                </ul>
+	    </div>
+
+	    
+	{% comment %}
+	    <h2>Oportunidades e Benefícios</h2>
+		<p>Veja <a href="{% url 'beneficios' %}">oportunidades e benefícios</a> que parceiros oferecem a competidores da OBI2025.</p>
+	{% endcomment %}
+
+{% endblock content-related %}

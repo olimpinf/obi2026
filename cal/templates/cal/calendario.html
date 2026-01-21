@@ -1,0 +1,57 @@
+{% extends "base_two_columns.html" %}
+{% load static %}
+{% load obi_extras %}
+
+{% block title %}Calendário {{ year }}{% endblock %}
+{% block head_extra %}
+{% endblock %}
+
+{% block header %}Calendário {{ year }}{% endblock %}
+{% block pagetitle %}Calendário {{ year }}{% endblock %}
+
+{% block content %}
+
+<div id="div_list" style="display:none">
+  {% for e in the_list %}
+  {% ifchanged e.sort_date.month %}
+  <hr>
+  <h4 class="mt-3">{{ e.sort_date|date:'F' }}</h4>
+  {% endifchanged %}
+  {% with e.start.day as 'start_day'%} 
+  {% ifchanged e.start.day %}
+  {% if e.emph %}<div class="emph">{% endif %}
+  <h5 class="calendar-list">Dia {% if e.start %}{{ e.start.day }}{% else %}{{ e.finish.day }}{% endif %}</h5>
+  {% endifchanged %}
+  {% if e.start.day == e.finish.day %}
+  <ul><li>{{ e.name|safe }}{% if e.competition|lower != 'geral' %}, {{e.competition}} {% endif %} {% if e.comment and e.comment != '#' %} <br/> <em class="small">{{ e.comment|safe }}</em>{% endif %}</li></ul>
+  {% else %}
+  {% if e.start.day %}
+  <ul><li>Início do período de {{ e.name|safe }}{% if e.competition|lower != 'geral' %}, {{e.competition}} {% endif %} {% if e.comment and e.comment != '#' %} <br/> <em class="small">{{ e.comment|safe }}</em>{% endif %}</li></ul>
+  {% else %}
+  <ul><li>Último dia do período de {{ e.name|safe }}{% if e.competition|lower != 'geral' %}, {{e.competition}} {% endif %} {% if e.comment and e.comment != '#' %} <br/> <em class="small">{{ e.comment|safe }}</em>{% endif %}</li></ul>
+  {% endif %}
+  {% endif %}
+  {% if e.emph %}</div>{% endif %}
+  {% endwith %}
+  {% endfor %}
+
+</div>
+
+{{ the_calendar|safe }}
+
+
+<!-- The Modal-->
+<div id="calendarModal" class="calendar-popup-main">
+</div>
+
+
+{% endblock %}
+
+{% block content-related %}
+
+{% include "cal/includes/see_also_calendar.html" %}
+
+{% include "cal/includes/visualize.html" %}
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Sede Fase Nacional{% endblock %}
+
+{% block header %}<h1>Consulta Sede Fase Nacional</h1>{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h4>Informação</h4>
+<p class="small">Idealmente procuramos atender dois objetivos ao
+  definir sedes para a Fase Nacional (Fase 3): evitar viagens e
+  aplicar a prova em escolas de nível superior. O objetivo de evitar
+  viagens é devido à pouca idade da grande maioria dos competidores. O
+  objetivo de aplicar a prova em escolas de nível superior é para que
+  os competidores tenham uma experiência diferente na Fase
+  Nacional, marcando a conquista de terem sido selecionados. Quando não
+  conseguimos uma escola de nível superior, procuramos uma escola da
+  cidade ou região que possa aplicar a prova para todos os
+  classificados da cidade/região.
+<p class="small">
+  No entanto, dependemos de disponibilidade de espaço e professores, o
+  que nem sempre é possível. Nesses casos, solicitamos colaboração das
+  escolas para aplicarem a prova da Fase 3 para seus próprios alunos.
+</p>
+<p class="small">
+  Se sua sede ainda está indefinida, por favor consulte o professor coordenador
+  da OBI na sua escola. Ele tem acesso a um formulário em que pode oferecer
+  a sua escola para a aplicação da prova da Fase 3.
+</p>
+{% endblock %}

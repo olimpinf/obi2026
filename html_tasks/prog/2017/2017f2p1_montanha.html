@@ -1,0 +1,90 @@
+title:Montanha
+template:tasks/tarefa_programacao.html
+
+<p>
+Um sistema de informações geográficas computadorizado está
+representando o perfil de uma montanha através de uma sequência de
+números inteiros, na qual não há dois números consecutivos iguais,
+como ilustrado na figura abaixo para três montanhas. Os números
+representam a altura da montanha ao longo de uma certa direção.
+
+
+<div class="center">
+<img src="/static/img/task_images/2017f2pj_montanha.png" />
+</div>
+
+<p>
+O gerente do sistema de informações geográficas pesquisou e encontrou
+uma maneira de identificar se uma sequência de números inteiros
+representa uma montanha com mais de um pico, ou com apenas um
+pico. Ele observou que, como não há números consecutivos iguais, se
+houver três números consecutivos na sequência, tal que o número do
+meio é menor do que os outros dois números, então a montanha tem mais
+de um pico. Caso contrário, a montanha tem apenas um pico. De forma
+mais rigorosa, se a sequência é
+A=[A<sub>1</sub>, A<sub>2</sub>, A<sub>3</sub>, &hellip;, A_N-2, A_N-1, A<sub>N</sub>], ele quer saber se há uma
+posição i, para 2 &leq;  i &leq;  N-1, tal que A<sub>i-1</sub> > A<sub>i</sub> e
+A<sub>i</sub> < A<sub>i+1</sub>.
+
+<p>
+Para ajudar o gerente, seu programa deve determinar, dada a sequência de
+números inteiros representando a montanha, se ela tem mais de um pico,
+ou se tem um pico apenas.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, representando o
+tamanho da sequência. A segunda linha contém N inteiros A<sub>i</sub>,
+1 &leq;  i &leq;  N, representando a sequência de alturas da montanha.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo o caractere &quot;<span class="ttt">S</span>&quot;
+se há mais de um pico, ou o caractere &quot;<span class="ttt">N</span>&quot; se há apenas um
+pico.
+
+<h3>Restrições</h3>
+<ul>
+<li> 3 &leq;  N &leq;  1000
+<li> 1 &leq;  A<sub>i</sub> &leq;  1000, para 1 &leq;  i &leq;  N
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+2 3 5 6 7 5 4 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+2 3 6 5 4 6 3 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,26 @@
+{% load obi_extras %}
+
+{{ greetings }}
+
+     {{ compet.compet_name }}
+
+você está recebendo esta mensagem porque foi convidado para participar da Semana Olímpica da OBI{{ year }}.
+
+A Semana Olímpica é oferecida para os melhores classificados da OBI. Veja informações sobre a Semana Olímpica
+no link https://olimpiada.ic.unicamp.br/semana/
+
+Por favor entre em sua página pessoal da OBI{{ year }} para confirmar a presença ou informar que não será possível comparecer, até o dia 14 de novembro.
+
+Para acessar sua página pessoal na OBI{{ year }} clique em ACESSO COMPETIDORES na página da OBI2023, ou utilize o seguinte link
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se
+
+usuário: {{ compet.compet_id_full }}
+senha: {{ compet.compet_conf }}
+
+
+Esperamos você na Semana Olímpica!
+
+{% include 'includes/signature.html' %}

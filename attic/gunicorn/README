@@ -1,0 +1,47 @@
+Copy to file /etc/systemd/system/gunicorn.service:
+
+sudo cat > /etc/systemd/system/gunicorn.service
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+PIDFile=/run/gunicorn/pid
+User=olimpinf
+Group=www-data
+RuntimeDirectory=gunicorn
+WorkingDirectory=/home/olimpinf/django5.1/obi2025
+ExecStart=/home/olimpinf/django5.1/bin/gunicorn --pid /run/gunicorn/pid   \
+          -w 3 \
+          --timeout 72000 \
+          --bind unix:/run/gunicorn.sock obi2025.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+-----
+
+sudo cat> /etc/systemd/system/gunicorn.socket 
+[sudo] password for olimpinf: 
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+-----
+
+
+Execute:
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn
+
+To check:
+sudo journalctl -u gunicorn
+
+

@@ -1,0 +1,11 @@
+
+<div class="exam_countdown" id="countdown_div" name="countdown_div">
+  <div>Tempo restante</div>
+  <span id="countdown" style="font-size:300%;"></span>
+</div>
+
+{% if f.exam.time_start %}
+<center>
+  <h5>Você iniciou a prova {{ f.exam.time_start }}</h5>
+</center>
+{% endif %}

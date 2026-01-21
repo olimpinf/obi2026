@@ -1,0 +1,59 @@
+<h2>Entrada de dados</h2>
+
+<p>
+Programas de computador interagem com o "mundo exterior"
+para adquirir dados para serem processados. Hoje em dia essa interação
+ocorre de inúmeras formas: comandos de voz ("ligue para Joana"),
+mouse (em jogos, por exemplo, para determinar para onde o jogador
+quer mover-se), arquivos (uma lista de notas de provas, por exemplo),
+teclado... Chamamos de <em>entrada</em> para o programa toda informação
+adquirida do mundo exterior.
+
+<p>No ambiente de programação Saci
+a <em>entrada</em> é mostrada no Painel de Entrada, mostrado na figura abaixo:
+  <center>
+    <img src="/static/saci/blockly_images/saci_tab_program_input.png" width="60%"/>.
+  </center>
+</p>
+
+<p>Para ler um número da entrada com Blockly usamos o <em>bloco leia número</em>:
+  <img align="middle" src="/static/saci/blockly_images/block_input_num.png" height="40px"/>,
+
+  disponível no menu <em>E/S</em> da barra de ferramentas. Deve haver
+  um único número em cada linha da entrada.  Se a entrada é composta
+  por mais de uma linha, cada vez que o bloco <em>bloco leia número</em>
+  é executado, ele lê a próxima linha da entrada, com o próximo
+  número. Ou seja, a primeira execução desse bloco
+  lê o número que está na primeira linha da entrada, a
+  segunda execução lê o número que está na segunda linha da entrada e
+  assim por diante.
+</p>
+<p>O bloco <em>leia número</em> é normalmente
+  usado para atribuir o valor lido a uma variável:
+  <center>
+    <img align="middle" src="/static/saci/blockly_images/group_one_var_input.png" height="40px"/>.
+  </center>
+
+<p>Como exemplo, o programa
+  <center>
+    <img align="middle" src="/static/saci/blockly_images/group_two_vars_input.png" height="100px"/> 
+  </center>
+lê dois números inteiros da entrada (cada número em uma linha) e
+escreve na saída uma linha com a soma dos dois números lidos.
+Se a entrada é composta por duas linhas contendo os números
+    <div style="width:50%;margin:10px auto 10px auto;">
+    <pre style="border:1px solid black;padding:8px">
+8
+10      
+</pre>
+    </div>
+o programa produz na saída uma linha contendo o número 18.
+  
+  
+<p>Veja esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+nota1 = int(input())
+nota2 = int(input())
+print(nota1 + nota 2)
+</pre>
+

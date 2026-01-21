@@ -1,0 +1,43 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+{% if pagetitle %}
+<h1>{{ pagetitle }}</h1>
+{% endif %}
+
+{% if task.statement %}
+{{ task.statement }}
+{% else %}
+<p>Escolha as tarefas no menu ao lado.
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h1>Total de Pontos: {{ f.total_points }}</h1>
+  {% if f.next_phase %}
+  Classificado para {{f.next_phase}}: {{f.classif_next_phase}}
+  {% endif %}
+<hr>
+
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_review_tasks.html" %}
+  {% if f.mod == 'p' %}
+  <br>
+  <a class="myButton action" href="{% url 'exams:show_results_prog' f.exam_descriptor %}">Ver correção</a>
+  {% endif %}
+
+  <h2>Instruções</h2>
+  {% include "exams/includes/instructions_review_prog.html" %}
+
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock content-related%}

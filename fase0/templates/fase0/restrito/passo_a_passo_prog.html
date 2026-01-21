@@ -1,0 +1,115 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Passo a passo: aplicação da Prova Teste - Modalidade Programação</h1>
+
+<p>A Prova Teste serve apenas para que os competidores se habituem ao Ambiente de Prova. Não vale
+  pontos, não é classificatória, mas é importante que os competidores que não tenham participado
+  de OBIs de anos anteriores tenham alguma experiência com o Ambiente de Prova antes
+  da prova da Fase 1.
+
+<p>O ideal é que a prova seja feita na escola, no ambiente que os competidores utilizarão,
+  mas se isso não for possível os competidores podem fazer a Prova Teste em casa (<b>NÃO poderão
+    fazer a prova da Fase 1 em casa!</b>).
+  
+<h2>Antes da prova</h2>
+<ol>
+  <li>Imprima as senhas de acesso ao Ambiente de Prova.
+    <ol>
+      <li>Na página de coordenação, Seção "Fase 0", linha "Modalidade Programação",
+      clique em "Senhas Prova Teste". Um arquivo PDF no formato de "cartões"
+      é gerado, cada cartão com as informações de um competidor (nome, usuário, senha).
+    </ol>
+    <ul>
+      <li><font color="green">Para facilitar, a senha da Prova Teste será a mesma senha utilizada para acesso à página pessoal
+	  do competidor (não vai ser assim na prova real!). Assim, se a Prova Teste for realizada em casa, não é
+	necessário passar a senha para os competidores (mas é necessário passar o endereço da Prova Teste, indicado abaixo). </font>
+    </ul>
+  <li>Imprima as Listas de Presença
+    <ol>
+      <li>As listas de presença não são obrigatórias, mas é recomendável que os competidores
+	assinem. Guarde as listas assinadas para comprovar a participação dos competidores em caso
+	de problemas com a prova ou a correção.
+      <li>Para imprimir as listas de presença, na página de coordenação, Seção "Fase 0", linha "Modalidade Programação",
+      clique em "Aplicação da Prova", e procure a seção Listas de Presença.
+    </ol>
+</ol>
+<h2>Preparação dos laboratórios</h2>
+<ol>    
+  <li>Para desenvolver suas soluções, cada competidor deve ter à sua
+    disposição um computador com editores de texto e pelo menos um
+    compilador entre C, C++, Java ou o interpretador
+    Python. Normalmente os competidores usam o que já está instalado nos
+    laboratórios da escola. Se a escola não tem
+    compiladores ou ambientes de desenvolvimento já instalados, veja
+    em {% url 'aplicativos' %} alguns aplicativos algumas sugestões de
+    aplicativos que podem ser instalados.
+
+   <li>Os competidores acessam o Ambiente de Prova usando um navegador internet (como Firefox, Chrome, Safari, etc.).
+
+    <li>O competidor não deve acessar a Internet a não ser através do
+      Ambiente de Prova da {{ 'OBI'|obi_date_year }}. Se possível,
+      o ideal é permitir o acesso apenas aos endereços do Ambiente de Prova da OBI (veja abaixo).
+      Se isso não é possível, os professores devem supervisionar os competidores
+      de forma a que não acessem outros endereços da Internet.
+
+    <li>Os competidores devem fazer as provas individualmente, sem consulta a qualquer
+      material impresso (como livros ou apostilas) ou digital (como programas feitos anteriormente).
+</ol>
+<h2>Endereços do Ambiente de provas</h2>
+<ul>
+  <li>São utilizados quatro endereços diferentes para o Ambiente de Prova, um para
+    cada nível da modalidade Programação:
+    <ul>
+      <li>Nível Júnior: <a href="https://pj.provas.ic.unicamp.br"><span class="ttt">https://pj.provas.ic.unicamp.br</span></a>
+      <li>Nível 1: <a href="https://p1.provas.ic.unicamp.br"><span class="ttt">https://p1.provas.ic.unicamp.br</span></a>
+      <li>Nível 2: <a href="https://p2.provas.ic.unicamp.br"><span class="ttt">https://p2.provas.ic.unicamp.br</span></a>
+      <li>Nível Sênior: <a href="https://ps.provas.ic.unicamp.br"><span class="ttt">https://ps.provas.ic.unicamp.br</span></a>
+    </ul>
+</ul>
+
+
+<h2>No dia da prova</h2>
+<ol>    
+  <li>Distribua as senhas para os competidores.
+    <ul>
+      <li>Os cartões estão no formato de etiquetas auto-colantes, mas podem ser
+	recortados manualmente para serem entregues para os competidores.
+    </ul>
+  <li>O nome de usuário é o número de inscrição (completo, por exemplo 01234-B).
+  <li>Informe os endereços do Ambiente de Provas para os competidores (veja os endereços acima)
+  <li>Supervisione os competidores, para garantir que façam a prova individualmente e sem uso de
+    qualquer material externo (livros, internet, anotações, arquivos de problemas já feitos, etc)
+  <li>O tempo de prova é controlado pelo Ambiente de Prova.
+</ol>
+
+{% comment %}
+<h2>Resultados da Prova Teste</h2>
+<ol>
+  <li>Os competidores podem ver o resultado da Prova Teste nas suas páginas pessoais da OBI2023.
+    O resultado pode demorar um pouco para ser disponibilizado, mas em geral é disponibilizado no mesmo dia.
+  <li>Os competidores podem realizar mais de uma vez a prova. Para isso, devem "reinicializar" a prova, no link
+    disponível em suas páginas pessoais ("Quero realizar a prova novamente").
+  <li>Os coordenadores também poderão ver os resultados de seus competidores, na página de coordenação (link a ser divulgado).
+</ol>
+{% endcomment %}
+
+{% endblock %}
+
+{% block content-related %}
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

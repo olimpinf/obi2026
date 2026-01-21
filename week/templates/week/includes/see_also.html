@@ -1,0 +1,53 @@
+{% load flatpages %}
+<h4>Veja também</h4>
+<small>
+  <ul>
+    <li>Semana Olímpica
+      <ul>
+        <li><a href="{% url 'week:partic' %}">Participantes</a></li>
+        <br />
+        <li><a href="{% url 'week:agenda' %}">Agenda</a></li>
+        {% comment %}
+        <li><a href="{% url 'week:cerimonia' %}">Cerimônia de Entrega de Medalhas</a></li>
+        {% endcomment %}
+        <li><a href="{% url 'week:index' %}">Informações</a></li>
+
+        <br />
+        <li><a href="{% url 'week:arrivals' %}">Chegadas</a></li>
+        <li><a href="{% url 'week:departures' %}">Partidas</a></li>
+        {% comment %}
+        {% endcomment %}
+	
+
+        <br />
+        <li><a href="{% url 'week:monitors' %}">Monitores</a></li>
+        <li><a href="{% url 'week:instructors' %}">Professores</a></li>
+
+
+        {% comment %}
+        <br />
+        <li><a href="{% url 'week:palestras' %}">Atividades para Acompanhantes</a></li>
+        {% endcomment %}
+
+        <br />
+
+        <li><a href="{% url 'week:documentos' %}">Formulários e Documentos</a></li>
+	
+        <br />
+        <li>Aulas e exercícios
+          <ul>
+            <li><a href="{% url 'week:ini1' %}">Iniciação 1 e 2</a></li>
+          </ul>
+
+        {% comment %}
+        <li>Iniciação Níveis 1 e 2
+          <ul>
+            <li><a href="{% url 'week:progj' %}">Programação Júnior</a></li>
+          </ul>
+ 
+         {% endcomment %}
+
+      </ul>
+    </li>
+  </ul>
+</small>

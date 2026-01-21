@@ -1,0 +1,109 @@
+title:Gomoku
+template:tasks/tarefa_programacao.html
+
+<p>
+Gomoku é um jogo japonês milenar, jogado em um tabuleiro de 15x15
+células e pedras pretas e brancas. Um jogador joga com as pedras
+brancas, o outro joga com as pedras pretas. O objetivo do jogo, como o
+nome sugere -- go-moku em japonês quer dizer cinco pedras -- é colocar
+cinco pedras da mesma cor consecutivamente ou numa mesma linha, ou numa
+mesma coluna, ou numa diagonal do tabuleiro.
+
+<p>As figuras abaixo ilustram algumas configurações do jogo (apenas uma
+parte do tabuleiro é mostrada):
+
+
+<div class="center">
+<img src="/static/img/task_images/2017f3pj_gomoku.png" />
+</div>
+
+
+<h3>Entrada</h3>
+A entrada é composta por quinze linhas, cada uma contendo
+quinze inteiros. Cada inteiro representa o conteúdo
+de uma célula do tabuleiro. O número 1 indica uma pedra preta,
+o número 2 indica uma pedra branca e o número 0
+indica que não há pedra na célula.
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo o inteiro 1 se o
+jogador com as pedras pretas venceu, o inteiro 2 se o jogador com as
+pedras brancas venceu, ou o número 0 se ainda não há vencedor
+na configuração da entrada.
+
+<h3>Restrições</h3>
+<ul>
+<li> Cada célula tem o valor 0, 1 ou 2.
+<li> Em todos os testes, há apenas um vencedor, ou não há vencedor.
+</ul>
+
+
+
+
+<h3>Exemplo</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 1 2 0 0 2 2 2 1 0 0 0 0 0 0
+0 0 1 2 0 0 0 0 1 0 0 0 0 0 0
+0 0 0 1 2 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 1 2 2 0 0 0 0 0 0 0 0
+0 0 1 1 0 1 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 2 1 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 0 0 0 0 0 0 0 2 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 2 0 1 0 0 0
+0 0 0 0 0 2 1 1 1 2 0 2 2 1 0
+0 0 0 0 0 0 0 0 0 2 0 1 0 0 0
+0 0 0 0 0 0 2 0 2 2 1 1 0 0 0
+0 0 0 0 0 2 1 1 1 1 2 2 1 0 0
+0 0 0 0 0 0 1 0 1 0 0 1 0 2 0
+0 0 0 0 0 0 0 2 1 0 2 0 0 0 0
+0 0 0 0 0 0 0 0 2 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

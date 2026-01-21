@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 11 - Algumas técnicas de programação e três desafios</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 11 - Algumas técnicas de programação e três desafios</div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 11 - Algumas técnicas de programação e três desafios</div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/10/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/12/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+<li style="margin-left: 10px;">Exercício 3</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Algumas técnicas e três desafios</h2>
+
+Nesta aula vamos ver três técnicas básicas de programação: troca
+de variáveis, ordenação de três variáveis e como determinar
+se um valor é par ou ímpar. Como exercícios, temos três
+<em>desafios</em>: exercícios que exigem mais raciocínio do
+que os que vimos até agora, e foram usados
+em competições para alunos muito mais experientes. Mesmo
+que você não consiga resolvê-los, sugiro que estude as
+soluções apresentadas.
+
+<h3>Trocando os valores de duas variáveis</h3>
+
+<p>Considere duas variáveis A e B, e suponha que queiramos trocar os
+valores das duas variáveis. Ou seja, o valor que era de A deve se
+tornar o valor de B, e o valor que era de B deve se tornar o valor de
+A. Por exemplo, se A tem o valor 10 e B tem valor 5, queremos que A
+tenha o valor 5 e B tenha o valor 10.
+
+<p>A razão mais frequente para a troca é quando
+queremos <em>ordenar</em> as variáveis, ou seja, colocar em A o menor
+valor e em B o maior valor, para facilitar a resolução de um problema.
+
+<p>Suponha que os valores de A e B sejam respectivamente 10 e
+5. Note que não podemos efetuar a troca com o trecho abaixo:
+
+<pre class="code">
+A = B;   // A recebe o valor de B
+B = A;   // B recebe o valor de A
+</pre>
+
+<p>pois, pela forma como o comando de atribuição funciona, ao final do
+trecho ambas as variáveis têm o valor 5.
+
+<p>Para efetuar a troca é necessário usar uma terceira variável, da seguinte forma:
+<pre class="code">
+temp = A;   // inicialmente temp recebe o valor de A
+A = B;      // A recebe o valor de B
+B = temp;   // finalmente B recebe o valor de A (armazenado em temp)
+</pre>
+
+<h3>Ordenação de três variáveis</h3> 
+<p>Suponha agora que queiramos ordenar três variáveis de forma
+crescente. Ou seja, se A contém 20, B contém 10 e C contém 5, queremos
+trocar os valores das variáveis de forma que A contenha 5, B contenha
+10 e C contenha 20.
+
+<p>Uma forma de realizar a ordenação é:
+
+<ul>
+<li>Passo 1: compara A e B e troca se necessário
+<li>Passo 2: compara B e C e troca se necessário
+<li>Passo 3: compara A e B e troca se necessário
+</ul>
+
+<p>
+Note que ao final do passo 2, o maior dos três valores está certamente em C (pois se o maior valor estava em A ou B
+ele foi colocado em B no passo 1, e a troca no passo 2 garante que agora está em C). E ao final
+do passo 3 o menor dos três valores está certamente em A (pois se o menor valor estava em B ou C ele foi colocado
+em B no passo 2, e a troca do passo 3 garante que ele agora está em A).
+
+<h3>Expressão é par ou ímpar?</h3>
+
+<p>Já apresentamos, logo no início das aulas, o operador aritmético '%'. A expressão 
+<div class="center">
+<em>op1 % op2</em> 
+</div>
+<p>resulta no resto da divisão de <em>op1</em> por <em>op2</em>. 
+
+<p>Assim, para verificar se uma
+expressão é par podemos testar se o resto da divisão por 2 é igual a zero:
+
+<pre class="code">
+scanf(“%d”, “val”);
+
+if (val % 2 === 0)
+    printf(“par\n”);
+else
+    printf(“impar\n”);
+</pre>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Copa do mundo</h2>
+</center>
+<p>
+Uma Copa do Mundo de futebol de botões está sendo realizada com times
+de todo o mundo. A classificação é baseada no número de pontos ganhos
+pelos times, e a distribuição de pontos é feita da forma usual. Ou
+seja, quando um time ganha um jogo, ele recebe 3 pontos e o perdedor
+não recebe nenhum ponto; se o jogo termina empatado, ambos os times
+recebem 1 ponto.
+
+<p>
+Dados o número de times participantes na Copa do Mundo, as pontuações
+atuais dos times e o número de partidas jogadas, sua tarefa é 
+determinar quantos jogos terminaram empatados até o momento.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém dois inteiros T
+e N, indicando respectivamente o número de times participantes
+e o número de partidas jogadas.  Cada uma das T linhas seguintes contém o nome de
+um time (uma cadeia de máximo 10 letras e dígitos, iniciando com uma letra), seguido de
+um espaço em branco, seguido do número de pontos P que o time obteve
+até o momento.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir uma única linha, contendo um único inteiro,
+a quantidade de jogos que terminaram empatados até o momento.
+
+<h3>Restrições</h3>
+<ul>
+<li>2 &le; T &le; 200
+<li>0 &le; N &le; 10000
+<li>0 &le; P &le; 30000
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 3
+Brasil 3
+Australia 3
+Croacia 3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+0
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 3
+Brasil 5
+Japao 1
+Australia 1
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+2
+</pre>
+</td></tr></table>
+<p>
+<font size="1">Tarefa da Maratona de Programação da SBC 2006, Fase Local</font>
+<p> 
+&nbsp;
+</p>
+
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Janela</h2>
+</center>
+<p>
+A sala de aulas utilizada para os cursos da OBI tem uma grande janela,
+composta de três folhas de vidro.  A janela tem um metro de altura por
+seis  metros de  comprimento. Cada  folha da  janela tem  um metro  de
+altura e dois metros de comprimento. As folhas deslizam sobre trilhos,
+ao longo do comprimento da janela, de forma que é possível controlar a
+abertura da janela, para circulação de ar.
+
+<p>
+Dadas as posições das três folhas da janela, deseja-se determinar qual
+a área da janela que está aberta, em centímetros quadrados.
+
+<p>
+A figura abaixo ilustra duas configurações das folhas da janela. Na
+figura, os cantos inferiores esquerdos de cada folha são indicados por
+F1, F2 e F3. Na configuração (a) a janela está totalmente fechada, e
+portanto o total da área aberta é igual a zero.  Na configuração (b)
+há duas aberturas, e o total de área aberta é igual a (100 x 100)
++ (50 x 100) = 15.000 cm<sup>2</sup>.
+
+<div class="center">
+  <img src="/static/saci-images/2013f2p2_janela.png" width="590px" height="290px">
+</div>
+
+Dadas as posições  das três folhas da janela, escreva  um programa que
+calcule a área da janela que está aberta, em centímetros quadrados.
+
+<h3>Entrada</h3>
+<p>
+A primeira e única linha da entrada contém três inteiros F<sub>1</sub>,
+F<sub>2</sub> e F<sub>3</sub>, indicando as posições das três folhas.
+A posição de cada folha é dada pela distância, em centímetros, da
+extremidade esquerda da janela até a extremidade esquerda da folha.
+
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir uma única linha, contendo um único inteiro,
+a área aberta da janela em centímetros quadrados.
+
+<h3>Restrições</h3>
+<ul>
+<li>0 &le; F<sub>1</sub> &le; 400
+<li>0 &le; F<sub>2</sub> &le; 400
+<li>0 &le; F<sub>3</sub> &le; 400
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+0 200 400
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+0
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+0 50 350
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+15000
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+344 344 344
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+40000
+</pre>
+</td></tr></table>
+<p>
+<font size="1">Tarefa da OBI2013, Nível Programação 2, Fase 2</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 3 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Par ou ímpar</h2>
+</center>
+
+<p>
+Há várias versões de Par ou Ímpar, um jogo para decidir assuntos
+aleatórios (como "quem vai comprar a pipoca?"). Na versão mais
+conhecida, para dois jogadores, o jogo inicia com cada jogador
+escolhendo ou par ou ímpar. Então eles contam até três.  No três,
+ambos jogadores estendem uma de suas mãos, mostrando alguns dedos (de
+zero a cinco). Se a soma dos dedos mostrados pelos dois jogadores é um
+número par, o jogador que escolheu par ganha; se a soma dos dedos é
+ímpar, o jogador que escolheu ímpar ganha.
+
+<p>
+João e Maria jogaram Par ou Ímpar várias vezes, e em todos os
+jogos João escolheu ímpar (e consequentemente Maria escolheu par).
+Durante os jogos cada um escreveu, em pequenos cartões, quantos
+dedos ele/ela mostraram &mdash; Maria usou cartões azuis, João usou
+cartões vermelhos. O objetivo era poder verificar os resultados posteriormente,
+consultando os cartões para cada jogo. No entanto, ao final do
+dia João deixou cair os conjuntos de cartões, e embora João e Maria
+possam separar os cartões pelas cores, eles estão fora de ordem.
+
+<p>
+Dados os conjuntos de números escritos nos cartões azuis
+e vermelhos, você deve escrever um programa que determine
+o mínimo de vezes que Maria certamente ganhou o jogo.
+
+<h3>Entrada</h3>
+<p>
+A entrada é composta por três linhas. A primeira linha contém 
+um inteiro N indicando o número de jogos jogados.
+A segunda linha contém N inteiros M<sub>i</sub>, indicando
+o número de dedos mostrados por Maria em cada um dos jogos.
+A terceira linha contém N inteiros J<sub>i</sub>, indicando
+o número de dedos mostrados por João em cada um dos jogos.
+
+<h3>Sa&iacute;da</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único inteiro:
+o número mínimo de jogos que Maria certamente ganhou.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; N  &le; 100
+<li> 0 &le; M<sub>i</sub> &le; 5, para 1 &le; i &le; N
+<li> 0 &le; J<sub>i</sub> &le; 5, para 1 &le; i &le; N
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+1 0 4
+3 1 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+0
+      </pre>
+    </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+9
+0 2 2 4 2 1 2 0 4
+1 2 3 4 5 0 1 2 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+3
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+1
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+1
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da Maratona de Programação da SBC 2005, Final Brasileira</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 3 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars4" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg4" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+<p>Note que no caso de empate, como cada time ganha um ponto, o total
+de pontos "distribuídos" considerando os dois times é dois (um ponto
+para cada time). No caso de vitória, o total de pontos distribuídos é
+três (para o vencedor), e esse é o número máximo de pontos
+"distribuídos" em uma partida.
+
+<p>Assim, para cada empate que ocorre, a diferença entre o máximo de pontos 
+possível e o total de pontos realmente distribuídos aos times cresce de um.
+
+<p>Portanto, o número de empates pode ser determinado pela diferença do
+máximo de pontos possíveis (que é três vezes o número de partidas realizadas)
+e o total de pontos distribuídos aos times.
+
+<p>O programa abaixo implementa essa solução.
+<pre class="code">
+// Solução para o exercício 1, aula 11
+// Copa do mundo
+
+var t, n;
+var pontos, soma, time;
+
+// lê número de times e número de partidas
+scanf("%d%d","t","n");
+
+soma = 0; // vamos acumular a soma dos pontos de todos os times
+i = 1;
+while (i<=t) {
+    scanf("%s%d", "time", "pontos");
+    soma = soma + pontos;
+    i = i + 1;
+}
+
+// calcula e imprime o resultado
+// como cada empate vale 1 ponto, o número
+// de empates é a diferença entre o máximo número
+// de pontos possíveis e a soma dos pontos dos times
+printf("%d\n", 3*n - soma);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<p>A primeira observação é que a solução fica muito mais simples
+se ordenarmos as folhas, de forma que F1 é a folha mais à
+esquerda, F2 é a próxima folha mais à esquerda e finalmente
+F3 é a última folha (ou seja, as posições 
+das folhas F1, F2 e F3 devem ser ordenadas crescentemente).
+
+<p>Já vimos como ordenar três variáveis F1, F2 e F3 de forma
+crescente (consulte o Resumo). Com as folhas ordenadas de forma crescente, podemos analisar
+os possíveis casos, que são:
+
+<ul>
+<li>Caso 1: F1 e F3 têm interseção não nula. Nesse caso pode haver um
+espaço antes de F1 e um espaço após F3. A quantidade de espaço
+aberto é (F1 + 400 - F3).
+<li>Caso 2: F1 e F2 têm interseção não nula, e F2 e F3 têm interseção não nula. Também nesse caso pode haver um
+espaço antes de F1 e um espaço após F3. A quantidade de espaço aberto
+é (F1 + 400 - F3).
+<li>Caso 3: F1 e F2 têm interseção não nula, mas F2 e F3 têm interseção nula. Nesse caso pode haver um
+espaço antes de F1, um espaço entre F2 e F3 e um espaço após F3. A quantidade
+de espaço aberto é (F1 + 400 - F2 - comprimentoF3) = (F1 + 400 - F2 - 200) = (F1 + 200 - F2)
+<li>Caso 4: F1 não F2 têm interseção nula, mas F2 e F3 têm interseção não nula. Nesse caso pode haver um
+espaço antes de F1, um espaço após F1 e um espaço após F3 (simétrico ao caso 3). A quantidade
+de espaço aberto é (F2 - comprimentoF1 + 400 - F3) = (F2 - 200 + 400 - F3) = (F2 + 200 - F3)
+<li>Caso 5: Nenhuma folha intersecta outra. Nesse caso, não há espaço aberto.
+</ul>
+
+<p>A figura abaixo ilustra os casos acima:
+<div class="center">
+  <img src="/static/saci-images/2013f2p2_janela_solution.png" width="512px" height="566px">
+</div>
+
+<p>O programa abaixo implementa a solução descrita.
+<pre class="code">
+// Solução para o exercício 2, Aula 11
+// Janela
+
+var f1, f2, f3, tmp;
+	
+// lê a entrada
+scanf("%d%d%d", "f1", "f2", "f3");
+
+// vamos inicialmente ordenar as folhas de forma que as variáveis
+// f1, f2 e f3 contenham valores crescentes
+if (f2 < f1) {
+    tmp = f1; 
+    f1 = f2; 
+    f2 = tmp;
+}
+if (f3 < f2) {
+    tmp = f2; 
+    f2 = f3; 
+    f3 = tmp; 
+}
+if (f2 < f1) {
+    tmp = f1; 
+    f1 = f2; 
+    f2 = tmp;
+}
+
+// podemos agora analisar as posições das folhas e imprimir o resultado
+if (f3 - f1 <= 200) {
+    // caso 1
+    // f3 intersecta f1 (e portanto também f2)
+    // um espaço aberto após f3, outro possívelmente antes de f1
+    printf("%d\n", 100 * (f1 + 400 - f3));
+} else if (f2 - f1 <= 200 && f3 - f2 <= 200) {
+    // caso 2
+    // f2 intersecta f1, f3 intersecta f2
+    // um espaço aberto após f3, outro possívelmente antes de f1
+    printf("%d\n", 100 * (f1 + 400 - f3));
+} else if (f2 - f1 <= 200 && f3 - f2 > 200) {
+    // caso 3
+    // um espaço aberto entre f2 e f3, outro possívelmente antes de f1, 
+    // outro possívelmente após f3
+    printf("%d\n", 100 * (f1 + 200 - f2));
+} else if (f2 - f1 > 200 && f3 - f2 <= 200) {
+    // caso 4
+    // um espaço aberto entre f1 e f2, outro possívelmente antes de f1, 
+    // outro possívelmente após f3
+    printf("%d\n", 100 * (f2 + 200 - f3));
+} else {
+    // caso 5
+    // nenhuma interseção, portanto nenhuma abertura
+    printf("0\n");
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div class="seeMoreContent">
+<p>Uma boa técnica para raciocinar sobre um problema é iniciar
+analisando alguns cenários mais simples. Vamo analisar por exemplo 
+alguns cenários que podem ocorrer com três jogos.
+
+<ul>
+<li>Suponha que nos três jogos Maria sempre mostre um número par de
+dedos, e João sempre mostre um número par de dedos. Nesse caso, Maria
+ganha todas as partidas, pois a soma de par com par é sempre um número
+par.
+<li>Suponha que nos três jogos Maria sempre mostre um número ímpar de
+dedos, e João sempre mostre um número ímpar de dedos. Também nesse caso Maria
+ganha todas as partidas, pois a soma de ímpar com ímpar é sempre um número
+par.
+<li>Suponha que nos três jogos Maria sempre mostre um número par de
+dedos, e João mostre sempre um número ímpar de dedos. Nesse caso,
+Maria perde todos os jogos, pois a soma de par com ímpar é sempre
+ímpar.
+<li>Maria também perde todos os três jogos se ela sempre mostra um
+número ímpar de dedos, e João mostra sempre um número par de dedos.
+</ul>
+
+<p>
+Esses são cenários simples, mas que ajudam a iniciar a entender a relação
+que existe entre as escolhas de João e Maria.
+
+<p>
+Suponha agora que nos três jogos Maria sempre mostre um número par de
+dedos, mas João mostre um número ímpar de dedos em um jogo, e números
+pares de dedos nos outros dois jogos. Nós não sabemos a ordem em que
+podem ter acontecido os pareamentos de dedos, mas ainda assim podemos
+determinar que Maria certamente perdeu um jogo (o que João mostrou o
+número ímpar) e ganhou os outros dois jogos.
+
+<p>Vamos analisar agora um caso um pouco mais geral: suponha que
+Maria mostrou um número ímpar em um jogo e números pares nos outros
+dois jogos, e que João mostrou um número par em um jogo e números
+ímpares nos outros dois jogos. O que podemos inferir? O pior caso
+de pareamento de dedos,
+para Maria, é o seguinte:
+
+<ul>
+<li> jogo x: Maria ímpar, João par (João ganha)
+<li> jogo y: Maria par, João ímpar (João ganha)
+<li> jogo z: Maria par, João par (Maria ganha)
+</ul>
+
+Ou seja, o número de jogos que Maria garantidamente ganha é um
+(note que no melhor caso de pareamento Maria ganharia os três jogos.)
+
+<p>Vamos analisar um último cenário: suponha que
+Maria mostrou dois números ímpares em um jogo e um número par no outro
+jogo, e que João mostrou um número ímpar em um jogo e números
+pares nos outros dois jogos. O que podemos inferir? O pior caso
+de pareamento de dedos,
+para Maria, é o seguinte:
+
+<ul>
+<li> jogo x: Maria ímpar, João par (João ganha)
+<li> jogo y: Maria ímpar, João par (João ganha)
+<li> jogo z: Maria par, João ímpar (João ganha)
+</ul>
+
+Ou seja, o número mínimo de jogos que Maria garantidamente ganha é zero
+(note que no melhor caso de pareamento Maria ganharia dois jogos.)
+
+<p>
+Então, resumindo,  Maria pode ter perdido um jogo em que escolheu um número par
+somente se houver um jogo em que João escolheu um número ímpar, e pode
+ter perdido um jogo em que escolheu um número ímpar somente se houver um jogo
+em que João escolheu um número par. Ou seja, cada mão ímpar de João
+"anula" uma mão par de Maria; e cada mão par de João "anula" uma mão ímpar
+de Maria. 
+
+<p>Considere as seguintes variáveis:
+<ul>
+<li><span class="tt">m_par</span>: número de jogos em que Maria mostrou números pares
+<li><span class="tt">m_impar</span>: número de jogos em que Maria mostrou números ímpares
+<li><span class="tt">j_par</span>: número de jogos em que João mostrou números pares
+<li><span class="tt">j_impar</span>: número de jogos em que João mostrou números ímpares
+</ul>
+
+<p>
+Se <span class="tt">m_par = j_impar</span>, Maria pode ter perdido todos os jogos,
+pois para cada vez que ela mostrou par João pode ter mostrado ímpar.
+Portanto, a resposta nesse caso é que Maria garantidamente ganha zero
+jogos (embora possa ter ganho todos!). 
+<!-- span>Note ainda que nesse
+caso <span class="tt">m_impar = j_par</span>, pois
+<span class="tt">m_par+m_impar=j_par+j_impar</span>.</span-->
+
+<p>
+Se <span class="tt">m_par > j_impar</span>, há <span class="tt">m_par-j_impar</span> jogos em
+que Maria mostrou par e João Mostrou par, de forma que Maria
+garantidamente ganha esses jogos (e somente esses jogos,
+garantidamente). Portanto, a resposta é <span class="tt">m_par-j_impar</span>.
+<!--span> Note ainda que nesse
+caso <span class="tt">m_impar < j_par</span>, pois
+<span class="tt">m_par+m_impar=j_par+j_impar</span>.</span-->
+
+<p>
+No caso inverso, ou seja, se <span class="tt">m_impar > j_par</span>, há <span class="tt">m_impar-j_par</span> jogos em que Maria
+mostrou ímpar e João Mostrou ímpar, de forma que Maria garantidamente
+ganha esses jogos (e somente esses jogos, garantidamente). Portanto, a resposta nesse
+caso é que Maria ganha garantidamente <span class="tt">m_ímpar-j_par</span> jogos.
+Note que a resposta pode também ser escrita como <span class="tt">j_impar-m_par</span>,
+o que simplifica a codificação, pois precisamos manter apenas as
+variáveis j_impar e m_par.
+
+<p>Segue uma implementação para essa solução:
+<pre class="code">
+// Solução para o exercício 3 da aula 11
+// Par ou ímpar
+
+var n, i, x, m_par, j_impar;
+
+scanf("%d", "n");
+m_par = 0;      // m_par armazena o número de mãos pares de Maria
+j_impar = 0;    // j_impar armazena o número de mãos ímpares de João
+i=1;
+while (i<=n) {
+    scanf("%d", "x");
+    if ((x % 2)===0)   // mão par?
+        m_par=m_par+1;
+    i = i+1;
+}
+i=1;
+while (i<=n) {
+    scanf("%d", "x");
+    if ((x % 2)!==0)   // mão ímpar?
+        j_impar=j_impar+1;  
+    i = i+1;
+}
+
+if (m_par>j_impar)
+    printf("%d\n", m_par-j_impar);
+else
+    printf("%d\n", j_impar-m_par);
+</pre>
+
+<p>Uma implementação alternativa:
+<pre class="code">
+// Solução para o exercício 3 da aula 11
+// Par ou ímpar
+
+var n, i, x, m_impar, m_par;
+
+scanf("%d", "n");
+m_impar = 0;  // m_impar armazena o número de mãos ímpares de Maria
+m_par = 0;    // m_par armazena o número de mãos pares de Maria
+i=1;
+while (i<=n) {
+    scanf("%d", "x");
+    if ((x % 2)===0)   // mão par?
+        m_par=m_par+1;  
+    else 
+        m_impar=m_impar+1;
+    i = i+1;
+}
+i=1;
+// Agora vamos descontar:
+//    de m_par o número de mãos ímpares de João
+//    de m_impar o número de mãos pares de João
+while (i<=n) {
+    scanf("%d", "x");
+    if ((x % 2)!==0) {
+        if (m_par>0) // desconta apenas se maior que zero
+            m_par=m_par-1;
+    }
+    else {
+        if (m_impar>0) // desconta apenas se maior que zero
+            m_impar=m_impar-1;
+    }
+    i = i+1;
+}
+
+// O resultado é a soma dos números de mãos que sobraram.
+// Note que ou m_par ou m_impar é zero
+printf("%d\n", m_par+m_impar);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEsIGF1bGEgMTENCi8vIENvcGEgZG8gbXVuZG8NCg0KdmFyIHQsIG47DQp2YXIgcG9udG9zLCBzb21hLCB0aW1lOw0KDQovLyBsw6ogbsO6bWVybyBkZSB0aW1lcyBlIG7Dum1lcm8gZGUgcGFydGlkYXMNCnNjYW5mKCIlZCVkIiwidCIsIm4iKTsNCg0Kc29tYSA9IDA7IC8vIHZhbW9zIGFjdW11bGFyIGEgc29tYSBkb3MgcG9udG9zIGRlIHRvZG9zIG9zIHRpbWVzDQppID0gMTsNCndoaWxlIChpPD10KSB7DQogICAgc2NhbmYoIiVzJWQiLCAidGltZSIsICJwb250b3MiKTsNCiAgICBzb21hID0gc29tYSArIHBvbnRvczsNCiAgICBpID0gaSArIDE7DQp9DQoNCi8vIGNhbGN1bGEgZSBpbXByaW1lIG8gcmVzdWx0YWRvDQovLyBjb21vIGNhZGEgZW1wYXRlIHZhbGUgMSBwb250bywgbyBuw7ptZXJvDQovLyBkZSBlbXBhdGVzIMOpIGEgZGlmZXJlbsOnYSBlbnRyZSBvIG3DoXhpbW8gbsO6bWVybw0KLy8gZGUgcG9udG9zIHBvc3PDrXZlaXMgZSBhIHNvbWEgZG9zIHBvbnRvcyBkb3MgdGltZXMNCnByaW50ZigiJWRcbiIsIDMqbiAtIHNvbWEpOw0KXi8vIFNvbHXDp8OjbyBwYXJhIG8gZXhlcmPDrWNpbyAyLCBBdWxhIDExCi8vIEphbmVsYQoKdmFyIGYxLCBmMiwgZjMsIHRtcDsKCQovLyBsw6ogYSBlbnRyYWRhCnNjYW5mKCIlZCVkJWQiLCAiZjEiLCAiZjIiLCAiZjMiKTsKCi8vIHZhbW9zIGluaWNpYWxtZW50ZSBvcmRlbmFyIGFzIGZvbGhhcyBkZSBmb3JtYSBxdWUgYXMgdmFyacOhdmVpcwovLyBmMSwgZjIgZSBmMyBjb250ZW5oYW0gdmFsb3JlcyBjcmVzY2VudGVzCmlmIChmMiA8IGYxKSB7CiAgICB0bXAgPSBmMTsgCiAgICBmMSA9IGYyOyAKICAgIGYyID0gdG1wOwp9CmlmIChmMyA8IGYyKSB7CiAgICB0bXAgPSBmMjsgCiAgICBmMiA9IGYzOyAKICAgIGYzID0gdG1wOyAKfQppZiAoZjIgPCBmMSkgewogICAgdG1wID0gZjE7IAogICAgZjEgPSBmMjsgCiAgICBmMiA9IHRtcDsKfQoKLy8gcG9kZW1vcyBhZ29yYSBhbmFsaXNhciBhcyBwb3Npw6fDtWVzIGRhcyBmb2xoYXMgZSBpbXByaW1pciBvIHJlc3VsdGFkbwppZiAoZjMgLSBmMSA8PSAyMDApIHsKICAgIC8vIGNhc28gMQogICAgLy8gZjMgaW50ZXJzZWN0YSBmMSAoZSBwb3J0YW50byB0YW1iw6ltIGYyKQogICAgLy8gdW0gZXNwYcOnbyBhYmVydG8gYXDDs3MgZjMsIG91dHJvIHBvc3PDrXZlbG1lbnRlIGFudGVzIGRlIGYxCiAgICBwcmludGYoIiVkXG4iLCAxMDAgKiAoZjEgKyA0MDAgLSBmMykpOwp9IGVsc2UgaWYgKGYyIC0gZjEgPD0gMjAwICYmIGYzIC0gZjIgPD0gMjAwKSB7CiAgICAvLyBjYXNvIDIKICAgIC8vIGYyIGludGVyc2VjdGEgZjEsIGYzIGludGVyc2VjdGEgZjIKICAgIC8vIHVtIGVzcGHDp28gYWJlcnRvIGFww7NzIGYzLCBvdXRybyBwb3Nzw612ZWxtZW50ZSBhbnRlcyBkZSBmMQogICAgcHJpbnRmKCIlZFxuIiwgMTAwICogKGYxICsgNDAwIC0gZjMpKTsKfSBlbHNlIGlmIChmMiAtIGYxIDw9IDIwMCAmJiBmMyAtIGYyID4gMjAwKSB7CiAgICAvLyBjYXNvIDMKICAgIC8vIHVtIGVzcGHDp28gYWJlcnRvIGVudHJlIGYyIGUgZjMsIG91dHJvIHBvc3PDrXZlbG1lbnRlIGFudGVzIGRlIGYxLCAKICAgIC8vIG91dHJvIHBvc3PDrXZlbG1lbnRlIGFww7NzIGYzCiAgICBwcmludGYoIiVkXG4iLCAxMDAgKiAoZjEgKyAyMDAgLSBmMikpOwp9IGVsc2UgaWYgKGYyIC0gZjEgPiAyMDAgJiYgZjMgLSBmMiA8PSAyMDApIHsKICAgIC8vIGNhc28gNAogICAgLy8gdW0gZXNwYcOnbyBhYmVydG8gZW50cmUgZjEgZSBmMiwgb3V0cm8gcG9zc8OtdmVsbWVudGUgYW50ZXMgZGUgZjEsIAogICAgLy8gb3V0cm8gcG9zc8OtdmVsbWVudGUgYXDDs3MgZjMKICAgIHByaW50ZigiJWRcbiIsIDEwMCAqIChmMiArIDIwMCAtIGYzKSk7Cn0gZWxzZSB7CiAgICAvLyBjYXNvIDUKICAgIC8vIG5lbmh1bWEgaW50ZXJzZcOnw6NvLCBwb3J0YW50byBuZW5odW1hIGFiZXJ0dXJhCiAgICBwcmludGYoIjBcbiIpOwp9Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMyBkYSBhdWxhIDExCi8vIFBhciBvdSDDrW1wYXIKCnZhciBuLCBpLCB4LCBtX3Bhciwgal9pbXBhcjsKCnNjYW5mKCIlZCIsICJuIik7Cm1fcGFyID0gMDsgICAgICAvLyBtX3BhciBhcm1hemVuYSBvIG7Dum1lcm8gZGUgbcOjb3MgcGFyZXMgZGUgTWFyaWEKal9pbXBhciA9IDA7ICAgIC8vIGpfaW1wYXIgYXJtYXplbmEgbyBuw7ptZXJvIGRlIG3Do29zIMOtbXBhcmVzIGRlIEpvw6NvCmk9MTsKd2hpbGUgKGk8PW4pIHsKICAgIHNjYW5mKCIlZCIsICJ4Iik7CiAgICBpZiAoKHggJSAyKT09PTApICAgLy8gbcOjbyBwYXI/CgltX3Bhcj1tX3BhcisxOwogICAgaSA9IGkrMTsKfQppPTE7CndoaWxlIChpPD1uKSB7CiAgICBzY2FuZigiJWQiLCAieCIpOwogICAgaWYgKCh4ICUgMikhPT0wKSAgIC8vIG3Do28gw61tcGFyPwoJal9pbXBhcj1qX2ltcGFyKzE7ICAKICAgIGkgPSBpKzE7Cn0KCmlmIChtX3Bhcj5qX2ltcGFyKQogICAgcHJpbnRmKCIlZFxuIiwgbV9wYXItal9pbXBhcik7CmVsc2UKICAgIHByaW50ZigiJWRcbiIsIGpfaW1wYXItbV9wYXIpOwo=">
+  <input type="hidden" id="hiddentests" value="MyA0CkJyYXNpbCA2CkF1c3RyYWxpYSAyCkphcGFvIDIKOzIgMQpCcmFzaWwgMQpBcmdlbnRpbmEgMQo7MiAyCkJyYXNpbCAyCkFyZ2VudGluYSAyCjsyIDIKQnJhc2lsIDYKQXJnZW50aW5hIDAKOzMgMwpTYW50YSAzClNwb3J0IDMKTmF1dGljbyAzCjszIDMKU2FudGEgNQpTcG9ydCAxCk5hdXRpY28gMQo7NiAxMAp0MSAxMAp0MiA2CnQzIDUKdDQgMQp0NSAxCnQ2IDEKOzUgMApUaW1lMSAwClRpbWUyIDAKVGltZTMgMApUaW1lNCAwClRpbWU1IDAKOzIgMTAKVGltZTAgOQpUaW1lMSAxMgo7NSA1MApUaW1lMCAyMApUaW1lMSAyMQpUaW1lMiAzNwpUaW1lMyAyNQpUaW1lNCAzMgo7MTAgNTAKVGltZTAgMTUKVGltZTEgOApUaW1lMiAxNgpUaW1lMyAxMwpUaW1lNCA2ClRpbWU1IDEyClRpbWU2IDgKVGltZTcgMTAKVGltZTggNwpUaW1lOSAxNAo7MTAwIDQ5OQpUaW1lMCAxOQpUaW1lMSA4ClRpbWUyIDE0ClRpbWUzIDEyClRpbWU0IDMzClRpbWU1IDEwClRpbWU2IDEyClRpbWU3IDE5ClRpbWU4IDEzClRpbWU5IDEwClRpbWUxMCAxNQpUaW1lMTEgMTMKVGltZTEyIDE5ClRpbWUxMyA4ClRpbWUxNCAxMwpUaW1lMTUgMTIKVGltZTE2IDExClRpbWUxNyA3ClRpbWUxOCAxNApUaW1lMTkgNQpUaW1lMjAgMjEKVGltZTIxIDEwClRpbWUyMiAxMwpUaW1lMjMgMTQKVGltZTI0IDEzClRpbWUyNSAxNQpUaW1lMjYgNwpUaW1lMjcgNgpUaW1lMjggMjYKVGltZTI5IDE3ClRpbWUzMCA5ClRpbWUzMSAxNQpUaW1lMzIgMTQKVGltZTMzIDE0ClRpbWUzNCA5ClRpbWUzNSAxNwpUaW1lMzYgOQpUaW1lMzcgNwpUaW1lMzggMTYKVGltZTM5IDE2ClRpbWU0MCAxMQpUaW1lNDEgMjUKVGltZTQyIDE2ClRpbWU0MyAxMApUaW1lNDQgMjIKVGltZTQ1IDE4ClRpbWU0NiAxNApUaW1lNDcgMjAKVGltZTQ4IDEwClRpbWU0OSAxNApUaW1lNTAgMwpUaW1lNTEgMjAKVGltZTUyIDE5ClRpbWU1MyAxMQpUaW1lNTQgOQpUaW1lNTUgMTMKVGltZTU2IDYKVGltZTU3IDUKVGltZTU4IDE3ClRpbWU1OSAxMApUaW1lNjAgOApUaW1lNjEgMTIKVGltZTYyIDI2ClRpbWU2MyAyMQpUaW1lNjQgNgpUaW1lNjUgMTcKVGltZTY2IDE0ClRpbWU2NyAyMApUaW1lNjggMTMKVGltZTY5IDE3ClRpbWU3MCAyMQpUaW1lNzEgOQpUaW1lNzIgMTEKVGltZTczIDE3ClRpbWU3NCAxNQpUaW1lNzUgMTYKVGltZTc2IDE4ClRpbWU3NyAxMApUaW1lNzggMjEKVGltZTc5IDE2ClRpbWU4MCAxMwpUaW1lODEgOQpUaW1lODIgOQpUaW1lODMgNgpUaW1lODQgNgpUaW1lODUgMTAKVGltZTg2IDcKVGltZTg3IDE1ClRpbWU4OCAxMgpUaW1lODkgNwpUaW1lOTAgMTMKVGltZTkxIDE0ClRpbWU5MiA3ClRpbWU5MyAxNwpUaW1lOTQgMTIKVGltZTk1IDE0ClRpbWU5NiA0ClRpbWU5NyAxMwpUaW1lOTggOApUaW1lOTkgNgo7MjAwIDEwMDAKVGltZURDWjAgMjEKVGltZUJNQzEgMTUKVGltZUFDUjIgMTIKVGltZUhUVTMgMTUKVGltZURNUjQgMzYKVGltZU5DVTUgMTIKVGltZVpEUjYgMjEKVGltZVRQTjcgMjQKVGltZVRaQTggMzMKVGltZUNNWjkgOQpUaW1lTUhCMTAgOQpUaW1lQkFSMTEgOQpUaW1lQlVUMTIgOQpUaW1lUkhEMTMgMTUKVGltZUhFVTE0IDYKVGltZVJUQjE1IDI0ClRpbWVEQ0ExNiAxMgpUaW1lVU1BMTcgMTIKVGltZUhaUDE4IDEyClRpbWVSQk0xOSA2ClRpbWVNQUIyMCAzClRpbWVQRVQyMSAxMgpUaW1lTVBCMjIgMjEKVGltZU1QUjIzIDEyClRpbWVDRUgyNCAxNQpUaW1lSFpEMjUgMTIKVGltZVRaRDI2IDEyClRpbWVQRU0yNyAxOApUaW1lUk1OMjggMTIKVGltZVJUQzI5IDkKVGltZUNNSDMwIDE4ClRpbWVUTVIzMSAyMQpUaW1lVE1SMzIgMTIKVGltZU1FVTMzIDE4ClRpbWVITkEzNCAxMgpUaW1lUlVIMzUgMTIKVGltZUFDQjM2IDYKVGltZURSQTM3IDEyClRpbWVVWkMzOCAxMgpUaW1lQ1VEMzkgMTIKVGltZVRBWjQwIDEyClRpbWVBTlQ0MSAxNQpUaW1lVERSNDIgNgpUaW1lSFpENDMgOQpUaW1lRU1QNDQgNgpUaW1lUlpBNDUgMzAKVGltZU1FQzQ2IDE1ClRpbWVVQ1o0NyAxOApUaW1lQ05NNDggMTUKVGltZU1OVDQ5IDE1ClRpbWVVVEE1MCAyMQpUaW1lVUFONTEgNgpUaW1lWk1FNTIgMTgKVGltZUVUVTUzIDIxClRpbWVQWkQ1NCA5ClRpbWVCVU41NSA5ClRpbWVEVU01NiAxNQpUaW1lRVRBNTcgNgpUaW1lVEJVNTggMTIKVGltZURQTTU5IDYKVGltZUhCVDYwIDMKVGltZVJQVTYxIDEyClRpbWVUQlA2MiAyMQpUaW1lVFBINjMgMTIKVGltZVBCWjY0IDYKVGltZURSTTY1IDEyClRpbWVNWkE2NiAyNApUaW1lQVpQNjcgMTgKVGltZUJaRTY4IDMzClRpbWVaVEQ2OSAyNApUaW1lVEJFNzAgMTIKVGltZU5VQTcxIDMwClRpbWVIVUE3MiA5ClRpbWVORU03MyAzClRpbWVSRVo3NCAxMgpUaW1lWlVBNzUgMTUKVGltZVRaQjc2IDM2ClRpbWVaQkM3NyAyMQpUaW1lWlJNNzggMjEKVGltZURaRTc5IDkKVGltZUFOWjgwIDIxClRpbWVUQVU4MSAxOApUaW1lRFJVODIgMjEKVGltZU1VQjgzIDEyClRpbWVFUEQ4NCA5ClRpbWVCTUE4NSAxNQpUaW1lRURVODYgMTgKVGltZU1aQTg3IDIxClRpbWVFWlU4OCA5ClRpbWVNSEE4OSAxOApUaW1lQ05SOTAgOQpUaW1lTUJBOTEgMTgKVGltZUNFTTkyIDkKVGltZVBNVTkzIDEyClRpbWVFTlU5NCAyMQpUaW1lSFJQOTUgMTUKVGltZVVIRDk2IDE4ClRpbWVUQUU5NyAxNQpUaW1lWkVIOTggMTIKVGltZURBQjk5IDE4ClRpbWVITk0xMDAgMTUKVGltZU1CQTEwMSAxNQpUaW1lRVVCMTAyIDI0ClRpbWVESFQxMDMgOQpUaW1lWkFOMTA0IDE4ClRpbWVETlAxMDUgMTIKVGltZVVQUjEwNiA5ClRpbWVUQkExMDcgOQpUaW1lUk1UMTA4IDE4ClRpbWVDRUQxMDkgOQpUaW1lVUhUMTEwIDIxClRpbWVSVU0xMTEgMjcKVGltZVpDRTExMiAyNwpUaW1lTlVNMTEzIDkKVGltZVVOSDExNCAxNQpUaW1lSEVEMTE1IDMKVGltZUNVSDExNiAxOApUaW1lVVRaMTE3IDE4ClRpbWVERU0xMTggOQpUaW1lRUJQMTE5IDE4ClRpbWVOTVoxMjAgMTIKVGltZUJVSDEyMSAxMgpUaW1lUE5NMTIyIDIxClRpbWVSQkgxMjMgMTIKVGltZUNFSDEyNCA5ClRpbWVFWlAxMjUgMjEKVGltZUFVTTEyNiAxOApUaW1lQ01BMTI3IDMKVGltZU1QRTEyOCAyMQpUaW1lRVBUMTI5IDE1ClRpbWVVRVIxMzAgOQpUaW1lQkFUMTMxIDE4ClRpbWVSTk0xMzIgMTgKVGltZUVUUjEzMyAwClRpbWVNQ04xMzQgMTgKVGltZVJVUDEzNSAxMgpUaW1lQlVSMTM2IDMwClRpbWVORFAxMzcgMTUKVGltZU5CTTEzOCAxMgpUaW1lQVJVMTM5IDkKVGltZVJCTTE0MCAxNQpUaW1lSEJSMTQxIDE1ClRpbWVaVUgxNDIgMjQKVGltZVVDRDE0MyA2ClRpbWVVTkMxNDQgMTIKVGltZUJDSDE0NSAxMgpUaW1lRFBDMTQ2IDE1ClRpbWVCVE4xNDcgMTIKVGltZVpDUjE0OCAxNQpUaW1lQU1IMTQ5IDE1ClRpbWVCUkMxNTAgMTgKVGltZVVQUjE1MSAxOApUaW1lVVJQMTUyIDE1ClRpbWVBQkMxNTMgMjEKVGltZU5BQjE1NCA2ClRpbWVNQUQxNTUgMjQKVGltZUNaRDE1NiA5ClRpbWVVQ04xNTcgMTIKVGltZVJQQzE1OCAxMgpUaW1lRURIMTU5IDkKVGltZVpDTTE2MCAxOApUaW1lQUVUMTYxIDIxClRpbWVVQlIxNjIgMTIKVGltZVJVSDE2MyAxOApUaW1lSFRaMTY0IDI3ClRpbWVSQ0ExNjUgMTgKVGltZUhEWjE2NiA5ClRpbWVFVFAxNjcgMTUKVGltZUVCTjE2OCA5ClRpbWVOQkExNjkgMTUKVGltZVBNVTE3MCAxNQpUaW1lSFpFMTcxIDYKVGltZUJNWjE3MiAyNwpUaW1lUFpCMTczIDYKVGltZUNaTTE3NCAxOApUaW1lSFRNMTc1IDE1ClRpbWVNQ0ExNzYgMTUKVGltZVpCVTE3NyAyMQpUaW1lQ01OMTc4IDE4ClRpbWVIRU4xNzkgMTIKVGltZURSTjE4MCAxNQpUaW1lTkFEMTgxIDYKVGltZVJDTjE4MiA5ClRpbWVaSFUxODMgOQpUaW1lQ0FaMTg0IDI3ClRpbWVNTlIxODUgMjQKVGltZURaTjE4NiAxNQpUaW1lUFpSMTg3IDE1ClRpbWVCWkgxODggOQpUaW1lTlpDMTg5IDM2ClRpbWVCVUMxOTAgMTIKVGltZUFESDE5MSAxMgpUaW1lUFpCMTkyIDI0ClRpbWVNRE4xOTMgMTUKVGltZUVSQzE5NCAxMgpUaW1lWk1FMTk1IDE4ClRpbWVSRUExOTYgMTgKVGltZUhETjE5NyAxMgpUaW1lTVJIMTk4IDE1ClRpbWVDQk0xOTkgMzAKOzIwMCAxMDAwClRpbWVNTkEwIDEyClRpbWVBQkUxIDE1ClRpbWVOUFoyIDEyClRpbWVCVEUzIDE1ClRpbWVUQ0U0IDIxClRpbWVQTkg1IDE1ClRpbWVaUk02IDIxClRpbWVQRUg3IDIxClRpbWVQVEM4IDkKVGltZUhDVTkgOQpUaW1lQUJQMTAgMTIKVGltZUVEQjExIDIxClRpbWVORUExMiAxMgpUaW1lRVJQMTMgMjEKVGltZVpUSDE0IDYKVGltZVRSRTE1IDkKVGltZUhNRTE2IDEyClRpbWVQUlQxNyAxOApUaW1lUE1DMTggMTUKVGltZUhDUDE5IDMzClRpbWVOQlUyMCAxNQpUaW1lQUJNMjEgMTUKVGltZVBNWjIyIDkKVGltZU5EUDIzIDIxClRpbWVFQUMyNCA5ClRpbWVITlAyNSAxMgpUaW1lVVJQMjYgMTgKVGltZU5DWjI3IDI0ClRpbWVSREUyOCAyNApUaW1lRFVOMjkgNgpUaW1lRUNEMzAgMTgKVGltZURSQzMxIDkKVGltZUVNQzMyIDIxClRpbWVDVVIzMyAxMgpUaW1lQU1aMzQgMTUKVGltZUhCUDM1IDEyClRpbWVDREEzNiA5ClRpbWVaTUUzNyAxNQpUaW1lTkNQMzggMTIKVGltZURUUDM5IDEyClRpbWVESFo0MCAzClRpbWVaVEg0MSAzClRpbWVQQVo0MiAxNgpUaW1lRURVNDMgOQpUaW1lVUJUNDQgMwpUaW1lTU5INDUgOQpUaW1lQVJFNDYgNgpUaW1lTVJENDcgOQpUaW1lQkFONDggMTIKVGltZUFOWjQ5IDE1ClRpbWVCRUQ1MCAxNQpUaW1lQlVUNTEgMTgKVGltZVpVVDUyIDEwClRpbWVORVA1MyAxNQpUaW1lTUNQNTQgMTUKVGltZUNOVDU1IDYKVGltZU1CRDU2IDI3ClRpbWVNSEI1NyA5ClRpbWVOVFU1OCAxMgpUaW1lQ05BNTkgMTUKVGltZUJNVTYwIDEyClRpbWVEUFI2MSAxMgpUaW1lWkJONjIgOQpUaW1lTVBUNjMgMjEKVGltZURUQTY0IDE1ClRpbWVBVUM2NSAxNQpUaW1lUkNNNjYgMjQKVGltZUVQVTY3IDE1ClRpbWVVUkU2OCA5ClRpbWVCUEU2OSAxMgpUaW1lUlVENzAgMTIKVGltZUhFRDcxIDE4ClRpbWVERVo3MiA5ClRpbWVFVVo3MyAyNwpUaW1lQVVNNzQgMTUKVGltZUVSQTc1IDE1ClRpbWVVQkE3NiAxNQpUaW1lQlRBNzcgMwpUaW1lVURDNzggMTUKVGltZVBDTTc5IDYKVGltZVJQRDgwIDIxClRpbWVQTkE4MSA2ClRpbWVITkU4MiAyNwpUaW1lQ1RBODMgMTIKVGltZVVDVDg0IDI3ClRpbWVVQlA4NSA5ClRpbWVQVEg4NiAxOApUaW1lRVJQODcgMTIKVGltZU1VUDg4IDM2ClRpbWVNVUg4OSAxNQpUaW1lVEFCOTAgMTIKVGltZUNaQjkxIDMKVGltZUFNVTkyIDE1ClRpbWVSTkU5MyAyNApUaW1lSEFNOTQgMjQKVGltZVBOVDk1IDIxClRpbWVSQ005NiAxMgpUaW1lTlBNOTcgMTIKVGltZVJITTk4IDE4ClRpbWVaRE45OSAxMgpUaW1lUlpNMTAwIDEyClRpbWVaVUgxMDEgMwpUaW1lSEJNMTAyIDEyClRpbWVFUE4xMDMgMjEKVGltZVVQWjEwNCAxMgpUaW1lVFVEMTA1IDkKVGltZU5NVTEwNiAxMgpUaW1lUFVBMTA3IDE4ClRpbWVFSFUxMDggMApUaW1lVUhDMTA5IDMwClRpbWVVTVAxMTAgNgpUaW1lRFVFMTExIDE1ClRpbWVIWkQxMTIgMjcKVGltZVJNVTExMyAxNQpUaW1lTkRVMTE0IDEyClRpbWVCRUMxMTUgMwpUaW1lRU5VMTE2IDEyClRpbWVSQ1UxMTcgMjcKVGltZVpIVTExOCAxMgpUaW1lQlBaMTE5IDkKVGltZUFEVDEyMCAxNQpUaW1lRUFOMTIxIDIxClRpbWVDREgxMjIgNgpUaW1lTkRUMTIzIDkKVGltZVJOQTEyNCAyNApUaW1lVFJQMTI1IDIxClRpbWVUQ1IxMjYgMTUKVGltZURaQTEyNyAyNwpUaW1lQ0VaMTI4IDIxClRpbWVVQUUxMjkgMjQKVGltZUVUUjEzMCAxOApUaW1lRVBIMTMxIDI3ClRpbWVEUEgxMzIgMTIKVGltZVJQTTEzMyA5ClRpbWVEQkExMzQgOQpUaW1lSE5SMTM1IDIxClRpbWVEQUgxMzYgNgpUaW1lRVpBMTM3IDMKVGltZU1ITjEzOCAxNQpUaW1lUEVBMTM5IDYKVGltZVpDUDE0MCAyNwpUaW1lTkFQMTQxIDE1ClRpbWVaQk4xNDIgMjEKVGltZU5NRTE0MyAxNQpUaW1lSENEMTQ0IDI0ClRpbWVQVFoxNDUgMTIKVGltZVBDQTE0NiAxMgpUaW1lVVJUMTQ3IDMzClRpbWVCVUQxNDggMTgKVGltZU5BUDE0OSAxMgpUaW1lWlVCMTUwIDEyClRpbWVCTUUxNTEgOQpUaW1lQURQMTUyIDIxClRpbWVSQ1QxNTMgMTUKVGltZUVSRDE1NCAxNQpUaW1lWlBFMTU1IDI0ClRpbWVBQ1QxNTYgNgpUaW1lTlJDMTU3IDYKVGltZU1OVDE1OCAyNApUaW1lTVVEMTU5IDIxClRpbWVOWkIxNjAgNgpUaW1lQ0RaMTYxIDE4ClRpbWVDSEIxNjIgMzAKVGltZUJUWjE2MyAyMQpUaW1lSEFQMTY0IDIxClRpbWVETlIxNjUgMTgKVGltZUhDQjE2NiAxMgpUaW1lSE5VMTY3IDEyClRpbWVOQ0ExNjggMTIKVGltZUJIVDE2OSAxMgpUaW1lTlVSMTcwIDEyClRpbWVaRE4xNzEgOQpUaW1lSFRNMTcyIDE4ClRpbWVIVVIxNzMgMjEKVGltZU1IRTE3NCAzMApUaW1lSERCMTc1IDEyClRpbWVUQk0xNzYgMTIKVGltZUNUWjE3NyAxOApUaW1lQkFSMTc4IDI0ClRpbWVURFIxNzkgMTUKVGltZU1DWjE4MCAyNwpUaW1lQVBDMTgxIDE4ClRpbWVFVE0xODIgOQpUaW1lWkNBMTgzIDEyClRpbWVVTkIxODQgMTUKVGltZURVTTE4NSAxOApUaW1lTlJVMTg2IDI0ClRpbWVIUlUxODcgMTUKVGltZVpIUjE4OCAxOApUaW1lVEhOMTg5IDEyClRpbWVCUEUxOTAgMjQKVGltZVRFUDE5MSA5ClRpbWVESEUxOTIgMwpUaW1lWkNSMTkzIDE4ClRpbWVUVU4xOTQgMTUKVGltZU1VQTE5NSAxMgpUaW1lVVBDMTk2IDMKVGltZURUQjE5NyAxOApUaW1lREJDMTk4IDIxClRpbWVCRVIxOTkgMTgKOzIwMCAxMDAwClRpbWVIUEEwIDgKVGltZVBVTTEgMTIKVGltZURNRTIgMTMKVGltZURIQzMgNwpUaW1lTUNBNCA3ClRpbWVBSEQ1IDkKVGltZUFSQjYgMTQKVGltZUVSUDcgNgpUaW1lSFJDOCAxMwpUaW1lSFJEOSAxMwpUaW1lVEhOMTAgMTAKVGltZUNIQjExIDEzClRpbWVOQlQxMiA5ClRpbWVVRFoxMyAxMApUaW1lQVVNMTQgOQpUaW1lRVVDMTUgOQpUaW1lUEhCMTYgOApUaW1lRFBDMTcgOApUaW1lRUNBMTggMTMKVGltZUFDQjE5IDE1ClRpbWVQVEgyMCAxMQpUaW1lRE1OMjEgMTAKVGltZVBCWjIyIDkKVGltZVVNTjIzIDkKVGltZU5CRTI0IDQKVGltZVpBUDI1IDEwClRpbWVQTUgyNiA3ClRpbWVCTlQyNyAxMQpUaW1lTVROMjggNApUaW1lQ1JCMjkgOQpUaW1lWkJFMzAgMTQKVGltZVRFTTMxIDgKVGltZVBERTMyIDEyClRpbWVOTVQzMyA1ClRpbWVSQk4zNCAxMApUaW1lTk1EMzUgMTAKVGltZVRaRDM2IDcKVGltZU1QVTM3IDgKVGltZURNUjM4IDEzClRpbWVBUk4zOSA3ClRpbWVUWlA0MCA5ClRpbWVQQk00MSAxNgpUaW1lQUhaNDIgMTUKVGltZU5BUDQzIDkKVGltZVBCVTQ0IDEwClRpbWVUUFI0NSA4ClRpbWVFQ1Q0NiA4ClRpbWVNWkE0NyA5ClRpbWVUQ1o0OCA4ClRpbWVNQlo0OSA4ClRpbWVEQkg1MCA4ClRpbWVNUFI1MSAxMwpUaW1lQ1JFNTIgMTAKVGltZUJSRTUzIDcKVGltZU5BQzU0IDcKVGltZU5BQjU1IDE1ClRpbWVNQ041NiA3ClRpbWVVQkU1NyA2ClRpbWVBVU41OCAxMwpUaW1lQkNNNTkgMTQKVGltZURCUjYwIDE0ClRpbWVEUEU2MSAxNwpUaW1lRFRONjIgNgpUaW1lSE5CNjMgMTAKVGltZVpSVTY0IDYKVGltZUNURDY1IDYKVGltZUVQUjY2IDEzClRpbWVQRFI2NyAxMwpUaW1lQlVONjggMTEKVGltZU5DSDY5IDkKVGltZUhNUDcwIDExClRpbWVUSE03MSA2ClRpbWVUUE03MiA5ClRpbWVIQVI3MyA5ClRpbWVDTVo3NCAxMQpUaW1lQUVINzUgOQpUaW1lREFQNzYgMTIKVGltZU1BQjc3IDkKVGltZVJVVDc4IDE0ClRpbWVaSE43OSA2ClRpbWVCTlA4MCAxMgpUaW1lVUFFODEgMTAKVGltZURCQzgyIDE2ClRpbWVUTVU4MyAxMwpUaW1lQ1JIODQgMTQKVGltZVRIQTg1IDgKVGltZUNOQjg2IDkKVGltZU1ORTg3IDE0ClRpbWVBWlA4OCA5ClRpbWVNQkM4OSA4ClRpbWVFQU05MCAxNApUaW1lTVJIOTEgMTYKVGltZU5SVTkyIDgKVGltZUVCUjkzIDYKVGltZVRBVTk0IDcKVGltZVVFQTk1IDEyClRpbWVOVVQ5NiA3ClRpbWVEUEM5NyAxMQpUaW1lVE5QOTggMTEKVGltZVBSQjk5IDExClRpbWVEQ0IxMDAgOApUaW1lQ0JFMTAxIDExClRpbWVFQUMxMDIgNwpUaW1lUkFVMTAzIDUKVGltZVVUQTEwNCAxNApUaW1lREVNMTA1IDgKVGltZVBVQzEwNiAxNQpUaW1lSEVSMTA3IDEzClRpbWVDVE4xMDggMTAKVGltZU1QQzEwOSAxMApUaW1lQVREMTEwIDkKVGltZVVOTTExMSAxMQpUaW1lVURFMTEyIDgKVGltZVRaUDExMyAxMgpUaW1lVU1CMTE0IDYKVGltZVVURDExNSA0ClRpbWVQQVQxMTYgNwpUaW1lRU1OMTE3IDE0ClRpbWVUUEQxMTggMTEKVGltZVpDUDExOSA5ClRpbWVNREgxMjAgMTIKVGltZUVNQzEyMSAxMApUaW1lRENSMTIyIDExClRpbWVIVEUxMjMgMTIKVGltZUVOWjEyNCAxMApUaW1lVE5VMTI1IDEyClRpbWVaVEQxMjYgNApUaW1lSFRSMTI3IDE1ClRpbWVOTUExMjggMTIKVGltZUNCRDEyOSAxMwpUaW1lQU1aMTMwIDEzClRpbWVFQkMxMzEgMTIKVGltZVBEQTEzMiAxMApUaW1lVE1SMTMzIDEzClRpbWVEWkExMzQgOQpUaW1lTVRBMTM1IDE4ClRpbWVOQ1oxMzYgNgpUaW1lWkhSMTM3IDkKVGltZUhDRTEzOCAxMApUaW1lUFJOMTM5IDEyClRpbWVBUkIxNDAgMTEKVGltZUJDWjE0MSA2ClRpbWVDWkgxNDIgMTEKVGltZVVNTjE0MyA4ClRpbWVUVUQxNDQgMTAKVGltZVpDVTE0NSA3ClRpbWVUQVIxNDYgMTAKVGltZVVQTjE0NyA5ClRpbWVNQUQxNDggMTAKVGltZVJORDE0OSA3ClRpbWVDWkgxNTAgMTAKVGltZVJVUDE1MSA4ClRpbWVSTlQxNTIgNwpUaW1lTlJFMTUzIDUKVGltZUJFUDE1NCA5ClRpbWVNSEMxNTUgNwpUaW1lRVBaMTU2IDcKVGltZUNVVDE1NyAxMwpUaW1lVUhUMTU4IDkKVGltZUFOWjE1OSAxMApUaW1lRU1IMTYwIDEyClRpbWVIVVIxNjEgOApUaW1lVVJDMTYyIDEyClRpbWVQRVIxNjMgMTEKVGltZUVOUjE2NCA5ClRpbWVFQkQxNjUgOApUaW1lREVUMTY2IDE1ClRpbWVVTlIxNjcgNQpUaW1lTVVDMTY4IDEzClRpbWVVTUIxNjkgOQpUaW1lTURDMTcwIDcKVGltZVRDTTE3MSAxMQpUaW1lTk1DMTcyIDE3ClRpbWVSSE0xNzMgMTMKVGltZVpVTTE3NCA5ClRpbWVNVUExNzUgNgpUaW1lQ1BEMTc2IDE0ClRpbWVNTkUxNzcgMTIKVGltZU5EQjE3OCAxMgpUaW1lUEJVMTc5IDgKVGltZVVSQjE4MCAxMQpUaW1lUlpVMTgxIDMKVGltZVBNVTE4MiA2ClRpbWVFTVAxODMgOQpUaW1lSEJSMTg0IDE5ClRpbWVESE4xODUgMTMKVGltZVRORTE4NiAxMwpUaW1lQlVIMTg3IDkKVGltZUhSUDE4OCAxNQpUaW1lUlVaMTg5IDYKVGltZVBCUjE5MCA2ClRpbWVNTloxOTEgMTAKVGltZUNNSDE5MiA5ClRpbWVVWlQxOTMgMTEKVGltZU1EQjE5NCAxMApUaW1lQURaMTk1IDE0ClRpbWVSSFoxOTYgOQpUaW1lVEhVMTk3IDExClRpbWVNTkgxOTggNwpUaW1lWkRBMTk5IDkKXjAgMjAwIDQwMAo7MCA1MCAzNTAKOzIwMCA0MDAgMAo7ODcgMTg5IDI0OAo7Mzc1IDM4IDI0Mgo7NDQgMzAwIDE2OQo7MjAyIDE1MCAzNDkKOzI5MiAyMjggMTg5CjsyNjYgMSA5Mwo7MzY3IDMzNCA2MQo7MTAgMzUwIDUwCjsyNjUgOTUgMgo7MiAxMDIgMjAyCjszNDQgMzQ0IDM0NAo7NTAgMCAzNTAKXjEKNAo0CjsxCjMKMQo7MgozIDMKNSAzCjs0CjEgNCAzIDEKNSA1IDQgNQo7NQoyIDQgMCA0IDIKMCA0IDIgNCA0Cjs1CjEgMyA1IDEgMQo1IDEgMyAxIDUKOzUKNCAyIDAgMSAzCjUgMCAzIDQgMwo7MTAKNCAzIDUgMyAzIDIgMyAyIDMgMQoxIDEgMyAzIDIgMCA0IDUgNSA1CjsyMAo1IDUgMyAyIDQgMSA0IDUgNSAzIDUgMyAyIDMgNSA1IDQgMCAzIDIKMyA1IDEgNCAwIDEgNCAxIDQgMCAwIDQgMCAzIDUgMyA0IDAgMyAzCjszMwozIDIgMiA1IDAgMCA1IDEgMCAxIDQgNSAwIDIgMCAxIDEgMyAyIDEgMyAwIDAgNSAxIDIgNCA1IDUgMSA0IDUgMAo0IDUgMiAxIDMgMiAxIDIgMiAzIDMgMSAyIDUgMSAzIDAgNCAyIDAgMSAxIDUgMiAxIDIgNSAzIDMgNCAyIDIgMwo7MTAwCjMgMSAzIDUgMSAxIDEgMyAzIDEgMyAzIDUgMyAzIDMgMSAzIDMgMyAzIDUgNSA1IDMgMSAzIDMgMSAxIDEgNSA1IDEgNSAxIDUgMSAzIDUgMyA1IDUgMyAxIDMgMyAzIDUgMSAzIDUgMyAzIDUgMyA1IDEgNSAxIDMgMSAzIDEgMyA1IDEgNSAzIDEgMyAxIDMgMyAxIDUgNSA1IDMgMyAxIDEgMSAzIDUgMyA1IDUgNSAzIDEgNSA1IDMgNSA1IDMgMyAxIDUKNSA1IDUgMSA1IDUgMyA1IDMgNSA1IDUgNSAxIDEgMyA1IDUgMyA1IDMgMSAzIDUgMSA1IDMgMyA1IDEgNSA1IDMgMSAzIDMgMSAzIDUgNSAzIDUgMSA1IDUgMSA1IDUgNSAzIDMgMSA1IDMgMSAxIDMgNSAzIDUgNSAxIDMgMyAzIDMgMyAxIDUgMyAzIDMgMSAzIDEgNSA1IDEgMSAxIDMgNSAzIDEgMSAxIDEgNSAxIDUgNSAxIDMgMSA1IDMgNSAzIDUgNQo7MTAwCjAgMyA1IDUgNCA0IDEgNCAxIDAgMiAxIDEgMiA1IDIgMiA0IDMgMCA1IDIgNCAyIDQgMiAxIDEgNSAzIDAgMiAxIDAgMSAwIDMgMSAzIDMgNCAzIDEgNSAyIDIgMyAzIDUgNSA1IDUgMyAyIDQgMSAxIDAgMCAwIDMgMCA0IDQgNSAyIDUgMiAyIDAgNSA0IDEgMiAxIDAgMCAyIDEgMyAxIDEgNCA0IDEgNSAxIDIgNCAwIDUgMCAyIDQgMCA0IDUgMiAwIDAKMCA0IDIgNSAyIDAgMiA0IDQgMCAxIDIgMCA1IDUgMSAyIDMgMSAzIDEgMSAyIDMgMyAxIDEgMCA0IDAgNCAxIDEgNCAzIDQgMyA1IDAgMyAwIDQgMiA0IDQgMyAxIDQgMSAzIDQgMSAzIDEgMSA0IDMgMSAzIDAgMCAyIDUgMyAwIDQgNCA0IDMgNCAxIDQgNCA0IDIgMyAzIDUgMCA1IDMgMiAyIDAgMSAzIDMgMiA1IDIgMSA1IDEgMyA0IDQgNCAyIDAgMAo=">
+  <input type="hidden" id="hiddenresults" value="Mgo7MQo7Mgo7MAo7MAo7Mgo7Ngo7MAo7OQo7MTUKOzQxCjsxNzkKOzAKOzEKOzk5OQpeMAo7MTUwMDAKOzAKOzIzOTAwCjs2NzAwCjsxNDQwMAo7MjAxMDAKOzI5NzAwCjsxMzUwMAo7MTY3MDAKOzE2MDAwCjsxMzcwMAo7MjAwMDAKOzQwMDAwCjsxNTAwMApeMQo7MQo7Mgo7Mgo7NQo7NQo7MAo7NAo7Mwo7Mgo7MTAwCjs1Cg==">
+  <input type="hidden" id="hiddensamples" value="MyAzCkJyYXNpbCA1CkphcGFvIDEKQXVzdHJhbGlhIDEKXjAgNTAgMzUwCl4zCjEgMCA0CjMgMSAyCg==">
+  <input type="hidden" id="hiddenhints" value="Xl4=">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="WwFaLWXl5zk">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+{% load obi_extras %}
+
+{{ greetings }}
+
+     {{ compet.compet_name }}
+
+parabéns pelo seu desempenho na OBI{{year}}! Como resultado de seu desempenho, você foi convidado(a) para participar da Semana Olímpica da OBI{{ year }}.
+
+A Semana Olímpica é oferecida para os melhores classificados da OBI. Veja informações sobre a Semana Olímpica
+no link https://olimpiada.ic.unicamp.br/semana/
+
+Por favor entre em sua página pessoal da OBI{{ year }} para confirmar a presença ou informar que não será possível comparecer, até o dia 30 de outubro.
+
+Para acessar sua página pessoal na OBI{{ year }} clique em Entrar --> Competidores na página da OBI{{ year }}, ou utilize o seguinte link
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se
+
+usuário: {{ compet.compet_id_full }}
+senha: {{ compet.compet_conf }}
+
+
+Esperamos você na Semana Olímpica!
+
+{% include 'includes/signature_txt.html' %}

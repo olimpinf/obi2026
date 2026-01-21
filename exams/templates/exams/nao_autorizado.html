@@ -1,0 +1,24 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ exam_header }}</span>
+<h2>{{ pagetitle }}</h2>
+
+<p>{{ msg|safe }}
+<p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

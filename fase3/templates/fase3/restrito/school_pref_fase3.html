@@ -1,0 +1,51 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h2>{{ pagetitle }}</h2>
+<p>A preferência será dada para escolas que possam aplicar a prova para todos os alunos da cidade.
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+
+  {# first button is default, enter key will trigger it #}
+  <button type="submit" class="mt-4 btn btn-primary" name="save" value="save">Salvar</button>
+  <button type="submit" class="mt-4 btn btn-danger float-end" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}">Voltar</button>
+
+</form>
+<p>&nbsp</p>
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Informações</h4>
+
+  <p>Número de competidores classificados em sua cidade:
+    <ul>
+      <li>PJ: {{compets.0}}
+      <li>P1: {{compets.1}}
+      <li>P2: {{compets.2}}
+      <li>P3: {{compets.3}}
+    </ul>
+  
+{% endblock %}

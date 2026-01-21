@@ -1,0 +1,102 @@
+title:Estrada
+template:tasks/tarefa_programacao.html
+
+<p>
+Para melhorar a integração com os países vizinhos, o Rei da Nlogônia
+decidiu que uma nova estrada será construída cruzando o país, da
+fronteira oeste à fronteira leste. O formato da estrada é uma única
+reta, que passará pelo centro de algumas cidades.
+
+<p>O Rei também decidiu que a construção será paga pelo Tesouro Real, mas
+cada cidade pela qual a estrada passar será responsável pela manutenção
+do trecho da estrada que constitui a <i>vizinhança da estrada</i> para
+aquela cidade. A <i>vizinhança da estrada</i> de uma cidade A é
+definida como todos os pontos da estrada que são mais próximos do
+centro da cidade A do que do centro de qualquer outra cidade.
+
+<p>Dados o comprimento total da estrada, de fronteira a fronteira, e as
+distâncias da fronteira oeste até os centros de cada cidade ao longo
+da nova estrada, escreva um programa para determinar qual a menor
+vizinhança de estrada entre as cidades pelas quais a estrada vai
+passar.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro T,
+o comprimento total da estrada.  A segunda linha contém um inteiro
+N, o número de cidades pelas quais a estrada vai passar.  Cada uma
+das N linhas seguintes contém um inteiro X_i, indicando a
+distância da fronteira oeste até o centro da cidade
+i.  Não há cidades nas fronteiras e cada centro de cidade tem uma
+localização distinta.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo
+um número real com duas casas após o ponto decimal, a menor
+vizinhança de estrada entre as cidades pelas quais a estrada vai passar.
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  T  &leq;  10<sup>6</sup>
+<li> 2  &leq;  N  &leq;  10<sup>4</sup>
+<li> 0 < X_i < T, para 1  &leq;  i  &leq;  N
+<li> X_i  &neq;  X_j, para todo par 1  &leq;  i,j  &leq;  N.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, N = 2.
+<li> Para um conjunto de casos de testes valendo 90 pontos adicionais, nenhuma outra restrição.
+</ul>
+
+
+<h3>Exemplos</h3>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+2
+8
+5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3.50
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+3
+7
+6
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1.00
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

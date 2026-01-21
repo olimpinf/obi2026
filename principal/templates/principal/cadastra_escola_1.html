@@ -1,0 +1,59 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+
+{% block content %}
+<p>
+  Inicialmente informe o endereço de email que será utilizado para acesso como coordenador local.
+  Este endereço será utilizado para enviar informações importantes, como a senha de acesso ao
+  sistema, após os dados serem validados.
+</p>
+
+
+<form action="" method="post" role="form">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>
+      <ul>
+      {% for field in fieldset %}
+        <li>
+          <strong>{{ field.label_tag }}</strong>
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+      </ul>
+    </fieldset>
+    {% endif %}
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}
+
+  
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

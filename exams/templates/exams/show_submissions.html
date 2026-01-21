@@ -1,0 +1,53 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h2>{{ pagetitle }}</h2>
+{% if not submissions %}
+Não há submissões.
+{% else %}
+{% regroup submissions by problem_name_full as subm_list %}
+{% for problem_name_full in subm_list %}
+
+<h3>{{problem_name_full.grouper}}</h3>
+<table class='basic'>
+  <tr><th>Hora</th><th>Linguagem</th><th>Resultado</td><th>Programa</th><th>Relatório</th></tr>
+   {% for s in problem_name_full.list %}
+<tr>
+  <td>{{ s.sub_time|date:'d/m/Y H:i:s' }}</td>
+  <td>{{ s.sub_lang }}</td><td>{% if s.sub_id in f.id_results %}{% if f.res_results|get_item:s.sub_id %} aceita {% else %} rejeitada {% endif %}{% else %} julgando {% endif %}</td>
+  <td><a href="{% url 'exams:retrieve_submission' f.exam_descriptor s.sub_id %}" target="_blank">{{s.sub_file}}</a></td>
+  <td>{% if s.sub_id in f.id_results %}<a href="{% url 'exams:retrieve_res_log' f.exam_descriptor s.sub_id %}" target="_blank">Link</a>{% else %} julgando {% endif %}</td>
+</tr>
+   {% endfor %}
+</table>
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "exams/includes/countdown.html" %}
+
+  <div>Submissões restantes: {{ f.subm_remaining }}</div>
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_tasks.html" %}
+  
+  <h2>Instruções</h2>
+    {% if f.mod == 'i' %}
+    {% include "exams/includes/instructions_ini.html" %}
+    {% else %}
+    {% include "exams/includes/instructions_prog.html" %}
+    {% endif %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

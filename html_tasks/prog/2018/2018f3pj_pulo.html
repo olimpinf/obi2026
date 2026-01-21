@@ -1,0 +1,132 @@
+title:Pulo do Gato
+template:tasks/tarefa_programacao.html
+
+<p>
+O gato Obinho gosta de brincar no pátio do colégio, no qual há
+uma sequência de C lajotas, que podem
+ser brancas ou pretas. Obinho está na lajota inicial da sequência
+(a mais à esquerda), e quer ir pulando até a lajota
+final da sequência (a mais à direita). Mas ele só
+gosta de pular de uma lajota preta para outra lajota preta, nunca
+pisando numa lajota branca. Além disso, ele não consegue pular muito
+longe. A parte esquerda da figura mostra as lajotas que o Obinho pode
+alcançar com um pulo: uma distância máxima de duas lajotas.
+
+<div class="center">
+<img src="/static/img/task_images/2018f3pj_pulo.png" width="600px"/>
+</div>
+
+<p>Obinho quer chegar na lajota final com o número mínimo de pulos
+possível. Por exemplo, na parte direita da figura, para 
+C=14, o menor número de pulos possível é 8. Seu programa deve
+computar o número mínimo de pulos para o Obinho chegar na lajota
+final.
+
+ 
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro
+   C, representando o número de lajotas do pátio. A segunda
+   linha contém C inteiros indicando a cor das
+   lajotas, da inicial (mais à esquerda) à final (mais à direita):
+   o valor 1 indica uma lajota preta, o valor 0 indica uma lajota branca.
+
+
+<h3>Saída</h3>
+Imprima uma linha contendo o número mínimo de pulos que o
+  gato Obinho precisa dar para ir da lajota inicial até a lajota
+  final. Se não for possível pular até a lajota final, imprima -1.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 1 &leq;  C &leq;  10<sup>4</sup>;
+ <li> As lajotas inicial e final são sempre pretas.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+ <li> Para um conjunto de casos de teste valendo 10 pontos, todas as lajotas são pretas;
+ <li> Para um conjunto de casos de teste valendo 20 pontos, C &leq;  1000.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14
+1 1 0 1 1 1 0 1 1 0 1 0 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14
+1 0 0 1 1 1 0 0 1 0 1 1 0 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12
+1 1 1 1 1 1 1 1 1 1 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+9
+1 0 1 1 0 1 1 0 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

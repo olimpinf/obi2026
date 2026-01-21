@@ -1,0 +1,832 @@
+title: Quadro de Medalhas - CF-OBI2023 - Modalidade Programação Nível Júnior
+template:flatpages_result.html
+
+<!--<h1>Quadro de Medalhas <br/> Competição Feminina - Modalidade Programação Nível Júnior</h1> -->
+
+<p><center>
+<img src="/static/img/medalhinha_ouro.gif">=Medalha de Ouro,
+<img src="/static/img/medalhinha_prata.gif">=Medalha de Prata,<br>
+<img src="/static/img/medalhinha_bronze.gif">=Medalha de Bronze,
+HM=Honra ao Merito</p>
+
+<table class="simple">
+<tr class="row-header">
+<td align="center" colspan="2">Classif.</td>
+<td align="center">Nota<sup>1</sup}</td>
+<td>Nome</td>
+<td>Escola</td>
+<td>Cidade</td>
+<td>Estado</td>
+</tr>
+
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>373</td>
+<td>Gabriela Akemi Fujita</td>
+<td>Colégio Objetivo Paulista</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>356</td>
+<td>Luiza Hissae Araujo Miura</td>
+<td>Colégio Objetivo Paulista</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>342</td>
+<td>Melissa Alana Lazcano Fernandez</td>
+<td>Colégio Etapa</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>323</td>
+<td>Ana Júlia Quirino de Oliveira</td>
+<td>Colégio Pódion</td>
+<td>Brasília</td>
+<td>DF</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>323</td>
+<td>Julia Galdino Tiosso Lopez</td>
+<td>Colégio Etapa</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>316</td>
+<td>Laura de Freitas Damaceno</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>315</td>
+<td>Mayara Sampaio Martins</td>
+<td>Colégio Pódion</td>
+<td>Brasília</td>
+<td>DF</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>312</td>
+<td>Caroline Medeiros Jospin</td>
+<td>Colégio Objetivo Paz</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>312</td>
+<td>Júlia Capitâneo de Matos</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>312</td>
+<td>Maria Luíza da Costa Nóbrega</td>
+<td>Universidade Federal Rural do Semi-árido - Campus Pau dos Ferros</td>
+<td>Pau dos Ferros</td>
+<td>RN</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>312</td>
+<td>Vitória Sophia Brígido C. Neves</td>
+<td>Facom Ufu, IFTM e Uberhub Code Club</td>
+<td>Uberlândia</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>300</td>
+<td>Alice Jordão da Motta Armiliato de Carvalho</td>
+<td>Colégio Etapa</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>300</td>
+<td>Giovana Lima dos Santos</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>300</td>
+<td>Sofia Matos Gonçalves</td>
+<td>Colégio Objetivo Marquês</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>285</td>
+<td>Clarissa Soares Messa</td>
+<td>Colégio Santo Américo</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>284</td>
+<td>Sophia Li Ci Liu</td>
+<td>Colégio Etapa</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>273</td>
+<td>Giovana Mitie Kuroda</td>
+<td>Objetivo Centro Interescolar Unidade Ipiranga</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>273</td>
+<td>Luana Miranda Carvalho Batista</td>
+<td>Coesi - Colégio de Orientação e Estudos Integrados</td>
+<td>Aracaju</td>
+<td>SE</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>239</td>
+<td>Luísa Silva Motta dos Santos</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>219</td>
+<td>Aline Akemi Yamauti</td>
+<td>Colégio Objetivo Vergueiro</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>212</td>
+<td>Beatriz Gobbi Pires</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>205</td>
+<td>Franciely de Paula Pantaleão</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>187</td>
+<td>Sophia Lina Hioki</td>
+<td>Colégio Etapa Valinhos</td>
+<td>Valinhos</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>177</td>
+<td>Alice Hee Jin Woo</td>
+<td>Colégio Objetivo Vergueiro</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>173</td>
+<td>Juliana Sousa Pacheco Bastos</td>
+<td>Colégio Militar de Belo Horizonte</td>
+<td>Belo Horizonte</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>173</td>
+<td>Maria Barbara Costa Dias</td>
+<td>Colégio Nossa Senhora das Mercês</td>
+<td>São Raimundo Nonato</td>
+<td>PI</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>112</td>
+<td>Laís Issa Shinohara</td>
+<td>Colégio Objetivo Paulista</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>100</td>
+<td>Bruna Lima Sartori</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>100</td>
+<td>Cindy Eline de Barros Gonçalves</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>100</td>
+<td>Lumi Uesugui Ribeiro</td>
+<td>Colégio Objetivo Paulista</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>100</td>
+<td>Maria Eduarda Félix Ferreira</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>85</td>
+<td>Ana Vilela de Sales Piccinini</td>
+<td>Colégio Magnum Agostiniano</td>
+<td>Belo Horizonte</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>85</td>
+<td>Nina Pupo Martins</td>
+<td>Colégio Etapa Valinhos</td>
+<td>Valinhos</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>73</td>
+<td>Marina Nogueira Demidio</td>
+<td>Colégio Etapa</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Alícia Miya Hamada</td>
+<td>Colégio Objetivo Cantareira</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Ana Beatriz Capistrano Dias Pettengill</td>
+<td>Supergeeks Cuiaba</td>
+<td>Cuiabá</td>
+<td>MT</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Ana Carolina Almeida da Silva Machado</td>
+<td>Centro de Ensino Tecnico Ideal</td>
+<td>Belém</td>
+<td>PA</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Ana Clara Brito Fiedler</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Angelina Gal Silva</td>
+<td>Colégio Objetivo Teodoro</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Annia Hadassa Vieira Rodrigues</td>
+<td>Escola D. Pedro Ii</td>
+<td>Vargem Grande do Sul</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Beatriz Malvar Gomes Alexandre</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Bruna Souza Ferreira</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Bárbara de Oliveira Damasceno</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Carolina Côrtes de Lacerda Ribeiro</td>
+<td>Escola Eleva</td>
+<td>Rio de Janeiro</td>
+<td>RJ</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Cecília Câmara de Melo</td>
+<td>Ecol Colegio e Pre-vestibular Ltda</td>
+<td>Campinas</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Clarissi Souza Teixeira</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Ester Emille Soares</td>
+<td>Colégio Magnum Agostiniano</td>
+<td>Belo Horizonte</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Fernanda Diogo</td>
+<td>Escola Básica Municipal Bilíngue Professor Rodolfo Hollenweger</td>
+<td>Blumenau</td>
+<td>SC</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Gabriela Portilho Bernardes Martins</td>
+<td>Colégio Magnum Agostiniano</td>
+<td>Belo Horizonte</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Giovanna Giardini Silva</td>
+<td>Colégio Militar de Belo Horizonte</td>
+<td>Belo Horizonte</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Giovanna Orlando Vallone Cocco</td>
+<td>Colégio Oficina do Estudante - Unidade Taquaral</td>
+<td>Campinas</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Helena Andrade Elídio da Silva</td>
+<td>Escola D. Pedro Ii</td>
+<td>Vargem Grande do Sul</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Heloise Hemer de Oliveira</td>
+<td>Escola Básica Municipal Bilíngue Professor Rodolfo Hollenweger</td>
+<td>Blumenau</td>
+<td>SC</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Isabella Carvalho de Souza</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Isabella Lima Corrêa</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Isabelle Min Hisayasu</td>
+<td>Colégio Objetivo Cantareira</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Julia Tavares Antunes Davi</td>
+<td>Instituto Federal do Paraná - Campus Umuarama</td>
+<td>Umuarama</td>
+<td>PR</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Leticia Martins Delfim</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Letícia Reina Pitta</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Liane Thiemi Thinen Isoda</td>
+<td>Colégio Objetivo Vergueiro</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Luisa Venturelli Piucci</td>
+<td>Maple Bear Campinas Taquaral</td>
+<td>Campinas</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Luiza Lima de Souza</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Luíza de Andrade Bittar Brighenti</td>
+<td>Supergeeks - Unidade de São João Del Rei/mg</td>
+<td>São João del Rei</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Lívia Alves Morais</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Manuela Latrova</td>
+<td>Alpha Lumen Instituto</td>
+<td>São José dos Campos</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Antonia Sousa de Caux</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Eduarda Ferreira de Jesus</td>
+<td>Colégio Monforte</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Eduarda Nascimento Liquer</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Fernanda Barticiotti da Silva</td>
+<td>Escola D. Pedro Ii</td>
+<td>Vargem Grande do Sul</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Fernanda dos Santos Moreir</td>
+<td>Colégio Antares-fátima</td>
+<td>Fortaleza</td>
+<td>CE</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Laura Pereira Correa</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Luiza Carvalho Inácio</td>
+<td>Colégio Magnum Agostiniano</td>
+<td>Belo Horizonte</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Luiza Costa</td>
+<td>The British School, Rio de Janeiro</td>
+<td>Rio de Janeiro</td>
+<td>RJ</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Luiza Lacerda Dias</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Maria Pia Gonçalves Passeto</td>
+<td>Maple Bear Campinas Taquaral</td>
+<td>Campinas</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Melissa Bomfim Palmeira Tenório</td>
+<td>Colégio Marista São Luís</td>
+<td>Recife</td>
+<td>PE</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Natalia Antonella Pinto Moura</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Natália Angelucci Cotrin</td>
+<td>Maple Bear Campinas Taquaral</td>
+<td>Campinas</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Rafaela Menezes Tito</td>
+<td>Colégio Marista São Luís</td>
+<td>Recife</td>
+<td>PE</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Samara Vitória Reis Bezerra</td>
+<td>Colégio Marista São Luís</td>
+<td>Recife</td>
+<td>PE</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sarah Ruo Lan Huang</td>
+<td>Colégio Objetivo Vergueiro</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sofia de Paula Freitas</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sophia Junyent Raimundo Nascimento</td>
+<td>Colégio Monforte</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sophia Monteiro Mendes Campos</td>
+<td>Colégio Marista São Luís</td>
+<td>Recife</td>
+<td>PE</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sophia Pereira de Albuquerque</td>
+<td>Colégio Marista São Luís</td>
+<td>Recife</td>
+<td>PE</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sophia Valadares Nunes Pereira</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Sophia de Andrade Oliveira Silva</td>
+<td>Escola Educação Criativa</td>
+<td>Ipatinga</td>
+<td>MG</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Thayna Galastri da Costa Silva Rosa</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+<tr class="row-dark">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Walkyria Torres de Souza</td>
+<td>Instituto Federal do Rio Grande do Norte - Campus Natal Central</td>
+<td>Natal</td>
+<td>RN</td>
+</tr>
+<tr class="row-light">
+<td><img src="/static/img/medalhinha_ouro.gif"></td>
+<td>1</td>
+<td>0</td>
+<td>Yasmin Milhomens Sá</td>
+<td>Instituto Germinare - Escola de Negócios</td>
+<td>São Paulo</td>
+<td>SP</td>
+</tr>
+</table>

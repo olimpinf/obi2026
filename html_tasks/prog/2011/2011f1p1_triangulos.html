@@ -1,0 +1,147 @@
+title:Triângulos
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>Caio estava brincando de construir triângulos com palitos de diferentes tamanhos. Ele fazia isso juntando as
+pontas de três palitos sobre uma mesa. Ele notou que podia agrupar os triângulos formados em três grupos:</p>
+
+<ul>
+	<li>Triângulos <i>acutângulos</i>, que são aqueles em que todos os ângulos internos medem menos de 90°;</li>
+	<li>Triângulos <i>retângulos</i>, que são aqueles que possuem um ângulo interno que mede exatamente 90°;</li>
+	<li>Triângulos <i>obtusângulos</i>, que são aqueles que possuem um ângulo interno que mede mais de 90°.</li>
+</ul>
+
+<p>Ele também percebeu que nem sempre é possível formar um triângulo com três palitos.</p>
+
+
+<center>
+	<table border="1">
+		<tr>
+			<td width="150px" height="140"><center><img src="/static/img/task_images/2011f1p1_triangulo1.png" width="100" height="100"></center></td>
+			<td width="150px" height="140"><center><img src="/static/img/task_images/2011f1p1_triangulo2.png" width="100" height="100"></center></td>
+			<td width="150px" height="140"><center><img src="/static/img/task_images/2011f1p1_triangulo3.png" width="100" height="100"></center></td>
+		</tr>
+		<tr>
+			<td align="center">Um triângulo acutângulo</td>
+			<td align="center">Um triângulo retângulo</td>
+			<td align="center">Um triângulo obtusângulo</td>
+		</tr>
+	</table>
+</center>
+
+<p> Sua tarefa é, dados os comprimentos <i>A</i>, <i>B</i> e <i>C</i> de três palitos, dizer se é possível formar um triângulo com esses
+palitos e, em caso afirmativo, dizer a qual grupo o triângulo formado pertence.</p>
+
+
+<h2>Entrada</h2>
+
+<p>A entrada consiste de uma única linha, contendo três inteiros <i>A</i>, <i>B</i> e <i>C</i> separados por espaço.</p>
+
+
+<h2>Saída</h2>
+<p>
+Imprima uma linha contendo apenas uma letra minúscula:</p>
+
+<ul>
+	<li>"n" se não for possível formar um triângulo;</li>
+	<li>"a" se o triângulo formado for <i>acutângulo</i>;</li>
+	<li>"r" se o triângulo formado for <i>retângulo</i>;</li>
+	<li>"o" se o triângulo formado for <i>obtusângulo</i>.</li>
+</ul>
+
+<h2>Restrições</h2>
+
+	<ul>
+		<li>1 ≤ <i>A</i> ≤ 10<sup>4</sup></li>
+		<li>1 ≤ <i>B</i> ≤ 10<sup>4</sup></li>
+		<li>1 ≤ <i>C</i> ≤ 10<sup>4</sup></li>
+	</ul>
+
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+1 1 1
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+a
+			</pre>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+1 2 1
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+n
+			</pre>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+5 4 3
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+r
+			</pre>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+6 3 4
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+o
+			</pre>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+
+
+      

@@ -1,0 +1,25 @@
+name: "pratique"
+description: "Pratique"
+problems: "all"
+start: 1632567600
+stop: 1758823200
+per_user_time: 18000
+token_mode: "disabled"
+min_submission_interval: 60
+max_submission_number: 100
+password_method: "pbkdf2"
+tasks:
+  - "2020f1pj_camisetas"
+users:
+  - username: "00000-J"
+    password: "pbkdf2_sha256$180000$qTx8ex0AfT90$ZHinDOIh3YeRTWu5mvb0MMtc7X9skF2ApQUMwiKd+/0="
+    password_method: "pbkdf2"
+    ip: null
+    first_name: "Competidor Teste"
+    last_name: "1"
+  - username: "00001-C"
+    password: "pbkdf2_sha256$180000$qTx8ex0AfT90$ZHinDOIh3YeRTWu5mvb0MMtc7X9skF2ApQUMwiKd+/0="
+    password_method: "pbkdf2"
+    ip: null
+    first_name: "Competidor Teste"
+    last_name: "2"

@@ -1,0 +1,135 @@
+title:Ilhas
+template:tasks/tarefa_programacao.html
+
+<p>
+Os moradores das Ilhas Brasileiras Ocidentais (IBO) são assíduos jogadores do
+mais recente jogo <i>online</i>, <i>Magos e Guerreiros</i>. Tão competitivas
+se tornaram as partidas de Magos e Guerreiros na IBO, que a empresa criadora do
+jogo decidiu instalar em uma das ilhas um servidor dedicado apenas aos 
+jogadores da IBO.
+
+<p>
+Entretanto, a empresa sabe que, se os jogadores acharem que o novo servidor
+é <i>injusto</i>, eles irão parar de jogar Magos e Guerreiros, gerando
+incontáveis perdas. Para avaliar se o novo servidor é justo, 
+os jogadores vão comparar o desempenho do jogo na ilha que tem a conexão mais rápida 
+e o desempenho na ilha que tem a conexão mais lenta com o
+novo servidor. Se a diferença de desempenho for muito grande, os residentes da
+ilha mais distante se sentirão injustiçados e abandonarão o jogo.
+
+<p>
+A conexão de internet da IBO funciona através de um sistema de cabos de fibra 
+ótica. Pares de ilhas são conectados por cabos, e cada cabo toma um certo tempo
+(chamado de <i>ping</i>) para comunicar informação entre as duas partes.
+Quando duas ilhas se comunicam através de uma série de cabos (portanto,
+através de ilhas intermediárias), o <i>ping</i> entre elas é a soma dos
+<i>pings</i> de cada cabo no caminho. A rede da IBO foi implementada por
+ótimos programadores e, portanto, um par de ilhas sempre se comunica
+através do caminho com menor <i>ping</i> possível.
+
+<p>
+Dada a configuração da rede da IBO e a ilha em que a empresa deseja instalar
+o novo servidor, determine a diferença entre os <i>pings</i> da ilha com
+menor e maior <i>pings</i> até o servidor.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha contém N e M, o número de ilhas e o número de
+cabos de fibra ótica, respectivamente. 
+As ilhas são numeradas de 1 a N. Cada uma das M linhas seguintes
+contém três inteiros U<sub>i</sub>, V<sub>i</sub> e P<sub>i</sub> e descreve um cabo entre as ilhas U<sub>i</sub> e V<sub>i</sub>
+com <i>ping</i> P<sub>i</sub> (note que cabos transmitem informação em ambas as
+direções). Finalmente, a última linha contém um inteiro S, o número da ilha
+em que o servidor será instalado.
+
+<p>
+Cada par de ilhas é conectado por no máximo um cabo de fibra ótica, e
+nenhum cabo conecta uma ilha a si mesma.  É garantido que qualquer
+ilha consegue se comunicar com qualquer outra através de algum caminho
+de cabos de fibra ótica.
+
+
+<h3>Saída</h3> 
+<p>Seu programa deve produzir uma única linha, contento um
+inteiro,a diferença entre o <i>ping</i> da ilha com maior <i>ping</i>
+até o servidor, e o da ilha com menor <i>ping</i> até o servidor. Note
+que a ilha em que o servidor se encontra não é considerada no cálculo
+do menor </i>ping</i>.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  N  &leq;  1000
+<li> N-1  &leq;  M  &leq;  10<sup>5</sup>
+<li> 1  &leq;  U<sub>i</sub>  &leq;  N
+<li> 1  &leq;  V<sub>i</sub>  &leq;  N
+<li> 1  &leq;  S  &leq;  N
+<li> 1  &leq;  P<sub>i</sub>  &leq;  1000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 30 pontos,
+    2  &leq;  N  &leq;  100 e N-1  &leq;  M  &leq;  1000.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5
+2 1 5
+1 3 4
+2 3 6
+4 2 8
+3 4 12
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 11
+1 2 3
+6 1 9
+2 6 10
+2 3 8
+5 3 3
+4 3 2
+2 4 12
+6 4 1
+4 5 9
+1 5 16
+5 6 5
+5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+11
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

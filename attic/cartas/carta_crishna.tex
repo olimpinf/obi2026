@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+
+\newcommand\BackgroundPic{
+  \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{
+      \vfill
+      \centering
+      \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{letterhead.pdf}
+      \vfill
+    }
+  }
+}
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+
+
+\thispagestyle{plain}
+\pagenumbering{gobble}
+
+\vspace*{2cm}
+\noindent
+Prof. Thiago Leite\\
+Coordenador\\
+SENAI-SP\\
+
+\hfill Campinas, 14 de novembro de 2024
+
+\vspace*{1cm}
+
+\noindent
+Caro prof. Thiago,
+\vspace*{0.5cm}
+
+\noindent
+em nome da Olimpíada Brasileira de Informática -- OBI, venho por meio desta
+informar que a profa. Crishna Irion
+%
+%\vfill
+%\begin{center}
+%\emph{Crishna Irion}
+%\end{center}
+%\vfill
+%
+%\noindent
+foi convidada para participar como \emph{professora} da Semana Olímpica
+da OBI, que ocorrerá no Instituto de Computação da UNICAMP, com os
+melhores alunos classificados na OBI, entre os dias 1 e 7 de dezembro
+de 2024.
+
+A profa. Crishna tem vasta experiência em competições de programação,
+e já lecionou na Semana Olímpica no passado. Essa experiência é fundamental para o
+sucesso da Semana Olímpica. Os professores ficam alojados no mesmo
+hotel que os alunos e além das aulas também preparam as provas
+(diárias), de forma que a dedicação deles é em tempo integral durante
+a Semana Olímpica.
+
+Gostaríamos de solicitar a sua colaboração, se possível, para permitir
+que a profa. Crisha possa adiar (ou adiantar) a realização de suas atividades acadêmicas,
+de modo que possa participar da Semana Olímpica.
+
+A OBI é uma promoção da SBC -- Sociedade Brasileira de Computação, com
+coordenação do Instituto de Computação da Unicamp, e reúne anualmente
+mais de 100 mil competidores de todo o país. Para mais informações, por
+favor consulte\\
+ \texttt{http://olimpiada.ic.unicamp.br}.
+
+\vspace*{3mm}
+
+Atenciosamente,
+
+\vfill
+
+\begin{center}
+\includegraphics[width=5cm]{signature_blue.jpg}\\
+Prof. Dr. Ricardo Anido\\
+Instituto de Computação - UNICAMP\\
+Coordenador da OBI2024
+\end{center}
+
+\vfill
+
+\end{document}

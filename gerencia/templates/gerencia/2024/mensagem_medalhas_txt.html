@@ -1,0 +1,31 @@
+Caro(a) Prof(a). {{ coord_name}},
+
+Parabéns pela(s) medalha(s) conquistada(s) por alunos de sua escola na OBI2024.
+
+Informamos que apesar de o Regulamento especificar um valor para pagamento
+do envio das medalhas, elas serão enviadas SEM CUSTO por Sedex, juntamente com uma solicitação
+de CONTRIBUIÇÃO VOLUNTÁRIA pela escola, para ajudar nos custos de fabricação e envio.
+
+As medalhas serão enviadas para a escola, no endereço cadastrado na OBI2024. Por favor
+confira que o endereço cadastrado está correto. Para verificar/alterar o endereço
+cadastrado, entre na Página de Coordenação da OBI2024 (link ENTRAR --> ESCOLAS no
+site da OBI2024, com sua senha), e clique no link "Editar" na linha "Escola" da
+seção "Cadastro".
+
+{% if school.school_name %}
+O endereço cadastrado para a escola "{{ school.school_name }} " atualmente é:
+
+-----
+{{school.school_address}} {{school.school_address_number}}{% if school.school_address_complement %}
+{{school.school_address_complement}}{% endif %}
+{{school.school_zip}}  {{school.school_city}} {{school.school_state}}
+-----
+{% endif %}
+
+A previsão de envio das medalhas é final de novembro -- as medalhas estão sendo ainda confeccionadas.
+
+Agradecemos a colaboração com a OBI{{ year }}!
+
+Atenciosamente,
+
+{% include 'includes/signature_txt.html' %}

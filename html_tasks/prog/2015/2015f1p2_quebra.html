@@ -1,0 +1,93 @@
+title:Quebra-cabeça
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Jade precisa da sua ajuda para montar o quebra-cabeças que ela ganhou
+de presente da sua tia Zoraide! As peças são encaixadas lado a lado e
+contêm, cada uma, uma letra maiúscula. Quando o quebra-cabeças estiver
+montado, a sequência de letras revelará uma frase secreta.  Cada peça
+possui, além da letra, dois números: um na parte esquerda e outro na
+parte direita. Uma peça se encaixa depois de outra, na sequência,
+quando seu número esquerdo for igual ao número direito da outra
+peça. O número esquerdo da primeira peça é sempre o 0 (zero) e o
+número direito da última peça é sempre o 1 (um).  Cada número aparece
+no máximo uma vez na parte esquerda de alguma peça, e no máximo uma
+vez na parte direita. Sempre é possível encaixar todas as peças e em
+apenas uma única sequência! Veja um exemplo na figura, com quatro
+peças formando a palavra <b>" TEMA"</b>.
+
+<center>
+<img src="/static/img/task_images/2015f1p2_quebra.png" width="450px">
+</center></p>
+
+
+<h3>Entrada</h3>A primeira linha da entrada contém um número natural N, indicando o
+número de peças do quebra-cabeças. As N linhas seguintes contêm,
+cada uma, a descrição de uma peça na forma E C D, onde: E é o
+número esquerdo; C é a letra maiúscula; e D é o número direito.
+<h3>Saída</h3>Seu programa deve escrever uma única linha na saída, contendo a sequência de letras formada quando o
+quebra-cabeças está montado.
+<h3>Restrições</h3><ul>
+  <li> 3 ≤  N ≤  100000;  0 ≤  E  ≤  200000; e 0 ≤  D  ≤  200000</li>
+  <li> Há exatamente uma maneira de montar o quebra-cabeças utilizando todas as peças dadas.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+5 A 1
+0 T 7
+3 M 5
+7 E 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+TEMA
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+197452 I 1
+0 O 39999
+39999 B 197452
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+OBI
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

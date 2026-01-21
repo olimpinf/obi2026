@@ -1,0 +1,47 @@
+{% load tasks %}
+{% load obi_extras %}
+
+  <h5>Tarefas {{request.path|obi_level_name_full}}</h5>
+
+<div id="accordion" class="accordion">
+  <div class="container">
+    <div class="accordion-list">
+      <ul>
+	{% with request.path|obi_levelnum as level %}
+	{% get_task_menu level as menus %}
+	{% for menu in menus %}
+
+        <li id="level-0">
+          <h2><a href="" data-bs-toggle="collapse" data-bs-target="#level-1-{{ menu.year }}" class="collapsed">{{ menu.year }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a></h2>
+          <div id="level-1-{{ menu.year }}" class="collapse level-1-list-{{ menu.year }}  {% if request.path|obi_task_year == menu.year %}show{% endif %}" data-bs-parent=".accordion-list">
+	    <ul>
+	      {% for phase in menu.phases %}
+              <li>
+		<h3><a href="" data-bs-toggle="collapse" data-bs-target="#level-2-{{ menu.year }}-{{ phase }}" class="collapsed">
+		  {% if phase == 's' %}
+		  Seletiva IOI
+		  {% else %}
+		  Fase {{ phase }}
+		  {% endif %}
+		  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a></h3>
+		<div id="level-2-{{ menu.year }}-{{ phase }}" class="collapse {% if request.path|obi_task_phase == phase %}show{% endif %}" data-bs-parent=".level-1-list-{{ menu.year }}">
+		  <ul>
+		    {% get_tasks menu.year phase level as tasks %}
+   		    {% for task in tasks %}
+  		    <li class="atask"><a href="/pratique/{{task.url}}/">{{task.title}}</a></li>
+		    {% endfor %}
+		  </ul>
+		  {% endfor %}
+		</div>
+	      </li>
+            </ul>
+	  </div>
+	</li>
+      {% endfor %}
+      {% endwith %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+

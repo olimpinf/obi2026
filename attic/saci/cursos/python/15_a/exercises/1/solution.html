@@ -1,0 +1,34 @@
+<p>Vamos usar duas variáveis <span class="tt">L</span> e <span class="tt">C</span> para armazenar
+  a posição da estrela. Então usamos um laço com a variável linha de 1 a 5 e encaixado
+  nesse um outro laço com a variável coluna de 1 até 5. A cada passo da repetição,
+  verificamos se o valor de linha é igual a L e o valor de coluna é igual a C. Nesse
+  caso, usamos um bloco <em>imprima com final</em> para escrever um asterisco.
+  Senão, usamos um bloco <em>imprima com final</em> para escrever um ponto.
+  Note que temos que usar um bloco <em>imprima</em> para fazer o computador mudar de linha.
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/saci/blockly_images/sol_class_13_1.png"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio 1 da Aula 13
+
+L = int(input())
+C = int(input())
+for linha in range(1, 4):
+    for coluna in range(1, 6):
+        if linha == L and coluna == C:
+            print('*', end="")
+        else:
+            print('.', end="")
+    print()
+</pre>
+    </td>
+  </tr>
+</table>

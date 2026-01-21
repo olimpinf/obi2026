@@ -1,0 +1,68 @@
+title:Carrinho
+template:tasks/tarefa_programacao.html
+
+<p>
+Um carrinho elétrico, que usa apenas uma bateria com carga inicial de
+C coulombs, tem uma característica incrível: ele só pode ir à
+velocidade constante mas pode escolher qualquer velocidade constante,
+maior do que zero, de V metros por segundo. Só que quanto maior a
+velocidade, menor a autonomia. Quer dizer, de maneira mais rigorosa, a
+distância máxima d<sub>max</sub> metros que ele pode percorrer é
+diretamente proporcional à carga inicial da bateria e inversamente
+proporcional à velocidade: d<sub>max</sub> = C/V. É incrível mas veja
+que, mesmo que a carga seja muito pequena, o carrinho sempre pode
+percorrer qualquer distância, desde que vá a uma velocidade
+suficientemente pequena!
+
+<p>O carrinho está na posição zero de uma pista reta com comprimento
+D metros. Há N baterias, com diferentes cargas, colocadas em posições
+distintas ao longo da pista, uma delas na posição zero. Considere que
+nosso carrinho ideal consegue fazer um pit-stop instantâneo, trocando
+de bateria sem perder tempo algum. Ao passar por uma nova bateria ele
+pode decidir ou não fazer a troca; e ele pode alterar sua velocidade
+apenas num instante em que troca de bateria. Qual é o tempo mínimo
+possível para o carrinho chegar ao final da pista?
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N e um real D,
+respectivamente, o número de baterias e o comprimento da pista. As N
+linhas seguintes contêm, cada uma, dois reais P e C definindo,
+respectivamente, a posição e a carga das baterias. Sempre existe uma
+bateria na posição 0.0 e as baterias são dadas em ordem estritamente
+crescente de posição.
+
+<h3>Saída</h3>
+Imprima uma linha contendo um real, com exatamente três casas
+decimais, o tempo mínimo possível em segundos para o carrinho chegar
+ao final da pista.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  1000 e 1.0 &leq;  D &leq;  10000.0
+<li> 0.0 &leq;  P < D e 0.0 < C < 100.0
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 10.000
+0.000 1.000
+1.200 0.100
+3.000 10.000
+7.700 1.000
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+13.900
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

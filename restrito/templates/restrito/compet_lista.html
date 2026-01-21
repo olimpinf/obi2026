@@ -1,0 +1,133 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+{% block head_extra %}
+<script>
+  function _flip_all(e) {
+      var inputs, index;
+      inputs = document.getElementsByName('choices_set');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = e.checked;
+      }
+      inputs = document.getElementsByName('choices_unset');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = !e.checked;
+      }
+  }
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<h1>{{ pagetitle }}  </h1>
+<p class="object-tools">
+   {% comment %}
+    <a href="{% url 'restrito:compet_inscreve' %}" class="addlink">
+      Inscrever Competidor
+    </a>
+  {% endcomment %}
+</p>
+{% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} competidor(a) listado(a) com o filtro selecionado ({{ total }} competidor(es) inscrito(s) no total)</p>
+  {% else %}
+<p>{{ items.paginator.count }} competidores listados com o filtro selecionado ({{ total }} competidores inscritos no total)</p>
+  {% endif %}
+
+
+<form action="{% url 'restrito:compet_deleta_lote'%}" method="post">{% csrf_token %}
+  <table class='table table-sm'>
+    <tr>
+      <td colspan="3"></td>
+      <td style="text-align:center;width:5%">      
+	<input class="btn btn-sm btn-danger float-end" type="submit" value="Excluir Marcados" onclick="return confirm('Excluir competidores?')">
+      </td>
+    </tr>
+    <tr>
+      <th width="15%">Núm. Inscr.</th>
+      <th width="70%">Nome</th>
+      <th class="center">Modalidade</th>
+      {% comment %}
+      <th class="center">Email</th>
+      <th scope="col" style="float:right;margin-right:50px">
+      {% endcomment %}
+      <th style="text-align:center">
+	<div class="text"><span><input type="checkbox" id="action-toggle" onchange="_flip_all(this)"></span></div>
+	<div class="clear"></div>
+      </th>
+    </tr>
+    {% for c in items %}
+    <tr class="{% cycle 'odd' 'even' %}">
+      <td>{{ c.compet_id|obi_format_compet_id }}</td>
+      <td><a href="compet_edita/{{c.compet_id}}">{{ c.compet_name }}</a></td>
+      <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+      {% comment %}
+      <td class="center">{% if c.compet_email %}<img src="/static/admin/img/icon-yes.svg">{% else %}<img src="/static/admin/img/icon-no.svg">{% endif %}</td>
+      <td style="float:right;margin-right:50px">
+      {% endcomment %}
+      <td style="text-align:center">
+	<input type="checkbox" name="choices_set" value="{{c.compet_id}}" id="choice_{{c.compet_id}}" class="action-select"  onchange="document.getElementById('hidden_{{c.compet_id}}').checked=!this.checked;">
+	<input type="checkbox" name="choices_unset" value="{{c.compet_id}}" id="hidden_{{c.compet_id}}" class="action-select" style="display:none">
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% else %}
+<p>Não há competidores inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_lista' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_lista' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+
+
+{% endblock %}
+
+{% block content-related %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+
+  
+  <h2>Instruções</h2>
+
+  <ul>
+    <li>Para editar as informações de um(a) competidor(a), clique no nome do(a)
+      competidor(a). Para excluir um(a) competidor(a), clique na caixa de seleção
+      correspondente e depois clique em &ldquo;Excluir Marcados&rdquo;.
+    <li>Utilize o formulário Filtros para restringir os competidores
+      visualizados.
+  </ul>
+
+
+{% endblock %}

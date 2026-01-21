@@ -1,0 +1,873 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: backup; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE public.backup (
+    backup_id integer NOT NULL,
+    backup_time double precision NOT NULL,
+    backup_exercise_id integer,
+    backup_class_name character varying(256),
+    backup_comment character varying(256),
+    backup_data text,
+    backup_user_id integer,
+    backup_type integer,
+    backup_course_name character varying(256)
+);
+
+
+ALTER TABLE public.backup OWNER TO postgres;
+
+--
+-- Name: backup_backup_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.backup_backup_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.backup_backup_id_seq OWNER TO postgres;
+
+--
+-- Name: backup_backup_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.backup_backup_id_seq OWNED BY public.backup.backup_id;
+
+
+--
+-- Name: classes; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.classes (
+    class_id integer NOT NULL,
+    class_course_id integer,
+    class_num_exercises integer,
+    class_is_public boolean,
+    class_name character varying(256),
+    class_index integer
+);
+
+
+ALTER TABLE public.classes OWNER TO obi;
+
+--
+-- Name: classes_class_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.classes_class_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.classes_class_id_seq OWNER TO obi;
+
+--
+-- Name: classes_class_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.classes_class_id_seq OWNED BY public.classes.class_id;
+
+
+--
+-- Name: courses; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.courses (
+    course_id integer NOT NULL,
+    course_name_full character varying(256),
+    course_name_short character(5),
+    course_teacher_id integer,
+    course_language character(2),
+    course_idiom character(2)
+);
+
+
+ALTER TABLE public.courses OWNER TO obi;
+
+--
+-- Name: courses_course_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.courses_course_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.courses_course_id_seq OWNER TO obi;
+
+--
+-- Name: courses_course_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.courses_course_id_seq OWNED BY public.courses.course_id;
+
+
+--
+-- Name: event_type; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.event_type (
+    event_id integer,
+    event_name character varying(32)
+);
+
+
+ALTER TABLE public.event_type OWNER TO obi;
+
+--
+-- Name: events; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.events (
+    id integer NOT NULL,
+    the_type integer,
+    the_time double precision,
+    user_id integer,
+    course_id integer,
+    class_index integer,
+    exercise_id integer,
+    code text,
+    total_tests integer,
+    correct_tests integer
+);
+
+
+ALTER TABLE public.events OWNER TO obi;
+
+--
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.events_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.events_id_seq OWNER TO obi;
+
+--
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.events_id_seq OWNED BY public.events.id;
+
+
+--
+-- Name: execute; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.execute (
+    id integer NOT NULL,
+    user_id integer,
+    execute_time double precision,
+    exercise_id integer,
+    code text,
+    class_id integer,
+    course_id integer,
+    "time" double precision
+);
+
+
+ALTER TABLE public.execute OWNER TO obi;
+
+--
+-- Name: exercises; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.exercises (
+    exercise_id integer NOT NULL,
+    exercise_class_id integer,
+    exercise_index integer,
+    exercise_total_tests integer
+);
+
+
+ALTER TABLE public.exercises OWNER TO obi;
+
+--
+-- Name: exercises_exercise_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.exercises_exercise_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.exercises_exercise_id_seq OWNER TO obi;
+
+--
+-- Name: exercises_exercise_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.exercises_exercise_id_seq OWNED BY public.exercises.exercise_id;
+
+
+--
+-- Name: hint; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE public.hint (
+    id integer NOT NULL,
+    user_id integer,
+    "time" double precision,
+    exercise_id integer,
+    code text,
+    class_id integer,
+    course_id integer
+);
+
+
+ALTER TABLE public.hint OWNER TO postgres;
+
+--
+-- Name: load; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE public.load (
+    id integer NOT NULL,
+    user_id integer,
+    "time" double precision,
+    class_id integer,
+    course_id integer
+);
+
+
+ALTER TABLE public.load OWNER TO postgres;
+
+--
+-- Name: load_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.load_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.load_id_seq OWNER TO postgres;
+
+--
+-- Name: load_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.load_id_seq OWNED BY public.load.id;
+
+
+--
+-- Name: saciexecute_execute_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.saciexecute_execute_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.saciexecute_execute_id_seq OWNER TO obi;
+
+--
+-- Name: saciexecute_execute_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.saciexecute_execute_id_seq OWNED BY public.execute.id;
+
+
+--
+-- Name: sacihint_hint_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.sacihint_hint_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sacihint_hint_id_seq OWNER TO postgres;
+
+--
+-- Name: sacihint_hint_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.sacihint_hint_id_seq OWNED BY public.hint.id;
+
+
+--
+-- Name: submit; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.submit (
+    id integer NOT NULL,
+    user_id integer,
+    "time" double precision,
+    exercise_id integer,
+    code text,
+    submit_answer text,
+    total_tests integer,
+    correct_tests integer,
+    class_id integer,
+    course_id integer
+);
+
+
+ALTER TABLE public.submit OWNER TO obi;
+
+--
+-- Name: sacisubmit_submit_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.sacisubmit_submit_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sacisubmit_submit_id_seq OWNER TO obi;
+
+--
+-- Name: sacisubmit_submit_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.sacisubmit_submit_id_seq OWNED BY public.submit.id;
+
+
+--
+-- Name: saciuser; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE public.saciuser (
+    user_id integer NOT NULL,
+    user_name character varying(64),
+    user_year character varying(64),
+    user_email character varying(64),
+    user_sex character varying(1),
+    user_birth_year integer,
+    user_num_backups integer,
+    user_reg_date timestamp without time zone DEFAULT now(),
+    user_block_email boolean DEFAULT false
+);
+
+
+ALTER TABLE public.saciuser OWNER TO postgres;
+
+--
+-- Name: saciuser_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.saciuser_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.saciuser_user_id_seq OWNER TO postgres;
+
+--
+-- Name: saciuser_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.saciuser_user_id_seq OWNED BY public.saciuser.user_id;
+
+
+--
+-- Name: teachers; Type: TABLE; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE TABLE public.teachers (
+    teacher_id integer NOT NULL,
+    teacher_name character varying(256),
+    teacher_email character varying(256),
+    teacher_affiliation character varying(256)
+);
+
+
+ALTER TABLE public.teachers OWNER TO obi;
+
+--
+-- Name: teachers_teacher_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.teachers_teacher_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.teachers_teacher_id_seq OWNER TO obi;
+
+--
+-- Name: teachers_teacher_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.teachers_teacher_id_seq OWNED BY public.teachers.teacher_id;
+
+
+--
+-- Name: backup_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.backup ALTER COLUMN backup_id SET DEFAULT nextval('public.backup_backup_id_seq'::regclass);
+
+
+--
+-- Name: class_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.classes ALTER COLUMN class_id SET DEFAULT nextval('public.classes_class_id_seq'::regclass);
+
+
+--
+-- Name: course_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.courses ALTER COLUMN course_id SET DEFAULT nextval('public.courses_course_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.events ALTER COLUMN id SET DEFAULT nextval('public.events_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.execute ALTER COLUMN id SET DEFAULT nextval('public.saciexecute_execute_id_seq'::regclass);
+
+
+--
+-- Name: exercise_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.exercises ALTER COLUMN exercise_id SET DEFAULT nextval('public.exercises_exercise_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.hint ALTER COLUMN id SET DEFAULT nextval('public.sacihint_hint_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.load ALTER COLUMN id SET DEFAULT nextval('public.load_id_seq'::regclass);
+
+
+--
+-- Name: user_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.saciuser ALTER COLUMN user_id SET DEFAULT nextval('public.saciuser_user_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.submit ALTER COLUMN id SET DEFAULT nextval('public.sacisubmit_submit_id_seq'::regclass);
+
+
+--
+-- Name: teacher_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.teachers ALTER COLUMN teacher_id SET DEFAULT nextval('public.teachers_teacher_id_seq'::regclass);
+
+
+--
+-- Name: backup_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY public.backup
+    ADD CONSTRAINT backup_pkey PRIMARY KEY (backup_id);
+
+
+--
+-- Name: classes_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.classes
+    ADD CONSTRAINT classes_pkey PRIMARY KEY (class_id);
+
+
+--
+-- Name: courses_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.courses
+    ADD CONSTRAINT courses_pkey PRIMARY KEY (course_id);
+
+
+--
+-- Name: events_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.events
+    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: exercises_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.exercises
+    ADD CONSTRAINT exercises_pkey PRIMARY KEY (exercise_id);
+
+
+--
+-- Name: load_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY public.load
+    ADD CONSTRAINT load_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: saciexecute_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.execute
+    ADD CONSTRAINT saciexecute_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sacihint_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY public.hint
+    ADD CONSTRAINT sacihint_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sacisubmit_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.submit
+    ADD CONSTRAINT sacisubmit_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: saciuser_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY public.saciuser
+    ADD CONSTRAINT saciuser_pkey PRIMARY KEY (user_id);
+
+
+--
+-- Name: saciuser_user_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY public.saciuser
+    ADD CONSTRAINT saciuser_user_email_key UNIQUE (user_email);
+
+
+--
+-- Name: teachers_pkey; Type: CONSTRAINT; Schema: public; Owner: obi; Tablespace: 
+--
+
+ALTER TABLE ONLY public.teachers
+    ADD CONSTRAINT teachers_pkey PRIMARY KEY (teacher_id);
+
+
+--
+-- Name: classes_class_course_id_idx; Type: INDEX; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE INDEX classes_class_course_id_idx ON public.classes USING btree (class_course_id);
+
+
+--
+-- Name: courses_course_name_short_idx; Type: INDEX; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE INDEX courses_course_name_short_idx ON public.courses USING btree (course_name_short);
+
+
+--
+-- Name: exercises_exercise_class_id_idx; Type: INDEX; Schema: public; Owner: obi; Tablespace: 
+--
+
+CREATE INDEX exercises_exercise_class_id_idx ON public.exercises USING btree (exercise_class_id);
+
+
+--
+-- Name: classes_class_course_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.classes
+    ADD CONSTRAINT classes_class_course_id_fkey FOREIGN KEY (class_course_id) REFERENCES public.courses(course_id) ON DELETE CASCADE;
+
+
+--
+-- Name: exercises_exercise_class_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.exercises
+    ADD CONSTRAINT exercises_exercise_class_id_fkey FOREIGN KEY (exercise_class_id) REFERENCES public.classes(class_id) ON DELETE CASCADE;
+
+
+--
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- Name: TABLE backup; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE public.backup FROM PUBLIC;
+REVOKE ALL ON TABLE public.backup FROM postgres;
+GRANT ALL ON TABLE public.backup TO postgres;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.backup TO anonymous;
+GRANT ALL ON TABLE public.backup TO obi;
+
+
+--
+-- Name: SEQUENCE backup_backup_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON SEQUENCE public.backup_backup_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.backup_backup_id_seq FROM postgres;
+GRANT ALL ON SEQUENCE public.backup_backup_id_seq TO postgres;
+GRANT UPDATE ON SEQUENCE public.backup_backup_id_seq TO anonymous;
+GRANT ALL ON SEQUENCE public.backup_backup_id_seq TO obi;
+
+
+--
+-- Name: TABLE classes; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.classes FROM PUBLIC;
+REVOKE ALL ON TABLE public.classes FROM obi;
+GRANT ALL ON TABLE public.classes TO obi;
+GRANT SELECT ON TABLE public.classes TO anonymous;
+
+
+--
+-- Name: TABLE courses; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.courses FROM PUBLIC;
+REVOKE ALL ON TABLE public.courses FROM obi;
+GRANT ALL ON TABLE public.courses TO obi;
+GRANT SELECT ON TABLE public.courses TO anonymous;
+
+
+--
+-- Name: TABLE event_type; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.event_type FROM PUBLIC;
+REVOKE ALL ON TABLE public.event_type FROM obi;
+GRANT ALL ON TABLE public.event_type TO obi;
+GRANT SELECT ON TABLE public.event_type TO anonymous;
+
+
+--
+-- Name: TABLE events; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.events FROM PUBLIC;
+REVOKE ALL ON TABLE public.events FROM obi;
+GRANT ALL ON TABLE public.events TO obi;
+GRANT SELECT,INSERT ON TABLE public.events TO anonymous;
+
+
+--
+-- Name: SEQUENCE events_id_seq; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON SEQUENCE public.events_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.events_id_seq FROM obi;
+GRANT ALL ON SEQUENCE public.events_id_seq TO obi;
+GRANT UPDATE ON SEQUENCE public.events_id_seq TO anonymous;
+
+
+--
+-- Name: TABLE execute; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.execute FROM PUBLIC;
+REVOKE ALL ON TABLE public.execute FROM obi;
+GRANT ALL ON TABLE public.execute TO obi;
+GRANT SELECT,INSERT ON TABLE public.execute TO anonymous;
+
+
+--
+-- Name: TABLE hint; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE public.hint FROM PUBLIC;
+REVOKE ALL ON TABLE public.hint FROM postgres;
+GRANT ALL ON TABLE public.hint TO postgres;
+GRANT SELECT,INSERT,UPDATE ON TABLE public.hint TO obi;
+GRANT SELECT,INSERT,UPDATE ON TABLE public.hint TO anonymous;
+
+
+--
+-- Name: TABLE load; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE public.load FROM PUBLIC;
+REVOKE ALL ON TABLE public.load FROM postgres;
+GRANT ALL ON TABLE public.load TO postgres;
+GRANT SELECT,INSERT,UPDATE ON TABLE public.load TO anonymous;
+GRANT SELECT,INSERT,UPDATE ON TABLE public.load TO obi;
+
+
+--
+-- Name: SEQUENCE load_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON SEQUENCE public.load_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.load_id_seq FROM postgres;
+GRANT ALL ON SEQUENCE public.load_id_seq TO postgres;
+GRANT ALL ON SEQUENCE public.load_id_seq TO obi;
+GRANT UPDATE ON SEQUENCE public.load_id_seq TO anonymous;
+
+
+--
+-- Name: SEQUENCE saciexecute_execute_id_seq; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON SEQUENCE public.saciexecute_execute_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.saciexecute_execute_id_seq FROM obi;
+GRANT ALL ON SEQUENCE public.saciexecute_execute_id_seq TO obi;
+GRANT UPDATE ON SEQUENCE public.saciexecute_execute_id_seq TO anonymous;
+
+
+--
+-- Name: SEQUENCE sacihint_hint_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON SEQUENCE public.sacihint_hint_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.sacihint_hint_id_seq FROM postgres;
+GRANT ALL ON SEQUENCE public.sacihint_hint_id_seq TO postgres;
+GRANT UPDATE ON SEQUENCE public.sacihint_hint_id_seq TO anonymous;
+GRANT ALL ON SEQUENCE public.sacihint_hint_id_seq TO obi;
+
+
+--
+-- Name: TABLE submit; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.submit FROM PUBLIC;
+REVOKE ALL ON TABLE public.submit FROM obi;
+GRANT ALL ON TABLE public.submit TO obi;
+GRANT SELECT,INSERT ON TABLE public.submit TO anonymous;
+
+
+--
+-- Name: SEQUENCE sacisubmit_submit_id_seq; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON SEQUENCE public.sacisubmit_submit_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.sacisubmit_submit_id_seq FROM obi;
+GRANT ALL ON SEQUENCE public.sacisubmit_submit_id_seq TO obi;
+GRANT UPDATE ON SEQUENCE public.sacisubmit_submit_id_seq TO anonymous;
+
+
+--
+-- Name: TABLE saciuser; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE public.saciuser FROM PUBLIC;
+REVOKE ALL ON TABLE public.saciuser FROM postgres;
+GRANT ALL ON TABLE public.saciuser TO postgres;
+GRANT SELECT,INSERT,UPDATE ON TABLE public.saciuser TO anonymous;
+GRANT ALL ON TABLE public.saciuser TO obi;
+
+
+--
+-- Name: SEQUENCE saciuser_user_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON SEQUENCE public.saciuser_user_id_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE public.saciuser_user_id_seq FROM postgres;
+GRANT ALL ON SEQUENCE public.saciuser_user_id_seq TO postgres;
+GRANT UPDATE ON SEQUENCE public.saciuser_user_id_seq TO anonymous;
+GRANT ALL ON SEQUENCE public.saciuser_user_id_seq TO obi;
+
+
+--
+-- Name: TABLE teachers; Type: ACL; Schema: public; Owner: obi
+--
+
+REVOKE ALL ON TABLE public.teachers FROM PUBLIC;
+REVOKE ALL ON TABLE public.teachers FROM obi;
+GRANT ALL ON TABLE public.teachers TO obi;
+GRANT SELECT ON TABLE public.teachers TO anonymous;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

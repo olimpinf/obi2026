@@ -1,0 +1,26 @@
+<html><head><meta charset='utf-8'><title>State Rankings</title></head><body>
+<h1>Rankings for compet_type=2</h1>
+<ul>
+<li><a href='AL_i2.html'>AL</a></li>
+<li><a href='AM_i2.html'>AM</a></li>
+<li><a href='BA_i2.html'>BA</a></li>
+<li><a href='CE_i2.html'>CE</a></li>
+<li><a href='DF_i2.html'>DF</a></li>
+<li><a href='ES_i2.html'>ES</a></li>
+<li><a href='GO_i2.html'>GO</a></li>
+<li><a href='MA_i2.html'>MA</a></li>
+<li><a href='MG_i2.html'>MG</a></li>
+<li><a href='MS_i2.html'>MS</a></li>
+<li><a href='PA_i2.html'>PA</a></li>
+<li><a href='PB_i2.html'>PB</a></li>
+<li><a href='PE_i2.html'>PE</a></li>
+<li><a href='PI_i2.html'>PI</a></li>
+<li><a href='PR_i2.html'>PR</a></li>
+<li><a href='RJ_i2.html'>RJ</a></li>
+<li><a href='RN_i2.html'>RN</a></li>
+<li><a href='RO_i2.html'>RO</a></li>
+<li><a href='RS_i2.html'>RS</a></li>
+<li><a href='SC_i2.html'>SC</a></li>
+<li><a href='SE_i2.html'>SE</a></li>
+<li><a href='SP_i2.html'>SP</a></li>
+</ul></body></html>

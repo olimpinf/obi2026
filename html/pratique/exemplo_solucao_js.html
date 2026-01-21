@@ -1,0 +1,206 @@
+title:Submissões em Javascript
+template:flatpages_pratique.html
+
+<p>Para submeter suas soluções em Javascript, você deve seguir as
+seguintes instruções:
+
+<ul>
+  <li>A entrada de dados deve ser feita utilizando o
+    comando <span class="ttt">scanf</span>, a saída deve ser feita
+    utilizando o comando <span class="ttt">printf</span>. Esses
+    comandos foram desenvolvidos para o <a href="/saci">ambiente
+    Saci</a> e são muito parecidos com os comandos de mesmo nome na
+    linguagem C.
+</ul>
+
+<p>Você pode utilizar o <u><a href="/saci/cursos/prova/2022/">Editor Saci</a></u>
+  para desenvolver sua solução, ou pode usar os comandos  <span class="ttt">scanf</span>
+  e  <span class="ttt">printf</span> localmente instalando
+  a biblioteca (veja abaixo, uso avançado).
+
+<h3>O comando de escrita <span class="ttt">printf</span></h3> 
+<p>
+O comando <span class="ttt">printf</span> é exatamente
+igual ao comando de mesmo nome da linguagem C. O formato geral é
+
+<p><center><em> 
+printf("cadeia_formatadora", lista_de_expressoes);
+</em>
+</center>
+
+<p>onde <em>cadeia formatadora</em> é uma cadeia que será impressa,
+podendo conter especificadores de formato que serão usados para
+escrever as expressões da <em>lista_de_expressoes</em>. Os mesmos
+especificadores de formato da linguagem C são
+aceitos: <span class="ttt">%d</span> para
+inteiros, <span class="ttt">%s</span> para cadeias de
+caracteres, <span class="ttt">%f</span> para números reais,...
+
+<h3>O comando de entrada scanf</h3>
+
+<p>O comando scanf também é similar ao comando homônimo da linguagem
+C, mas com duas diferenças: na lista de variáveis do comando, os nomes
+das variáveis devem ser colocadas entre aspas. E há uma restrição: as
+variáveis utilizadas no comando scanf devem ter escopo global.
+
+<p>O formato geral é
+
+<p><center><em>
+scanf("cadeia_formatadora", lista_de_variáveis);
+</em>
+</center>
+
+<p>onde <em>cadeia formatadora</em> é uma cadeia que deve conter
+especificadores de formato que serão usados para ler os valores da
+entrada para as variáveis da
+<em>lista_de_variáveis</em>. Os mesmos especificadores de formato da
+linguagem C são aceitos: <span class="ttt">%d</span> para
+inteiros, <span class="ttt">%s</span> para cadeias de
+caracteres, <span class="ttt">%f</span> para números reais,...
+</p>
+
+<h3>Um pequeno exemplo</h3>
+<p>O exemplo abaixo lê dois valores inteiros e imprime o maior valor.
+
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+// exemplo de solução
+  
+// declara duas variáveis
+var val1, val2;
+
+// lê dois valores inteiros
+scanf("%d%d", "val1", "val2");
+
+// escreve o resultado
+if (val1 > val2)
+    printf("%d\n", val1);
+else
+    printf("%d\n", val2);
+</pre>
+
+<h2>Usando o Editor Saci</h2>
+
+<p>A forma mais fácil de desenvolver as soluções em Javascript,
+  especialmente para iniciantes, é utilizar o
+  <u><a href="/saci/cursos/prova/2022/">Editor Saci</a></u>.
+
+<p>Você pode também baixar um arquivo compactado com o Editor Saci para Javascript. Para
+  isso, siga os passos:
+<ul>
+<li> Faça o download
+do Editor Saci no link abaixo (arquivo .zip)
+<li> Copie o arquivo .zip para o computador onde o aluno vai fazer a
+prova (por exemplo, saci.zip).
+<li> Descompacte o arquivo. Vai ser criada uma pasta (de nome saci)
+<li> Dentro da pasta criada, clique duas vezes no arquivo de nome "index.html";
+o navegador padrão (Firefox, Chrome, Opera...) do sistema deve abrir e mostrar a prova.
+<li> Se não funcionar, abra uma janela de um navegador (Firefox, Chrome...)
+e abra o arquivo "index.html" pelo navegador. O ambiente de desenvolvimento deve aparecer como uma
+página do navegador.
+
+<ul>
+<li><a href="/static/extras/misc/saci.zip">Editor Saci Javascript</a>
+</ul>
+</ul>
+  
+
+<p>
+
+<h2>Avançado: usando javascript localmente</h2>
+
+<p>Você
+  pode também utilizar um editor de arquivos de sua preferência para
+  desenvolver suas soluções e executar as soluções diretamente em seu
+  computador local.
+<p>
+  Para usar javascript localmente, é necessário inicialmente
+  instalar nodejs, o interpretador da linguagem javascript.
+
+ <ul>
+   <li><u><a href="https://nodejs.org/pt-br/download/">Instale o Nodejs</a></u>
+ </ul>
+
+<p>Após, é necessário instalar a biblioteca <span class="ttt">scanf-printf-obi</span>,
+  desenvolvida para tarefas da OBI. Para isso, em uma janela de
+  terminal, digite o comando
+</p>
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+  npm install scanf-printf-obi
+</pre>
+
+<p>Finalmente, é necessário incluir um cabeçalho no seu arquivo de solução,
+  para importar a biblioteca:
+
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+// cabeçalho para incluir printf, scanf e fgets
+// em programas javascript
+
+var scanf_stub = require(''scanf-printf-obi'').scanf,
+    printf_stub = require(''scanf-printf-obi'').sprintf,
+    fgets_stub = require(''scanf-printf-obi\'').fgets
+
+function scanf(format) {
+    var res = scanf_stub.apply(this, Array.prototype.slice.call(arguments, 0));
+    eval(res);
+}
+
+function printf(args){
+    var res = printf_stub.apply(this, Array.prototype.slice.call(arguments, 0));
+    process.stdout.write(res);
+}
+
+function fgets(args){
+    var res = fgets_stub.apply(this, Array.prototype.slice.call(arguments, 0));
+    eval(res);
+}
+// final de cabeçalho
+</pre>
+
+<p>O exemplo de solução mostrado acima, para uso local, fica assim:
+
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+// cabeçalho para incluir printf, scanf e fgets
+// em programas javascript
+
+var scanf_stub = require(''scanf-printf-obi'').scanf,
+    printf_stub = require(''scanf-printf-obi'').sprintf,
+    fgets_stub = require(''scanf-printf-obi'').fgets
+
+function scanf(format) {
+    var res = scanf_stub.apply(this, Array.prototype.slice.call(arguments, 0));
+    eval(res);
+}
+
+function printf(args){
+    var res = printf_stub.apply(this, Array.prototype.slice.call(arguments, 0));
+    process.stdout.write(res);
+}
+
+function fgets(args){
+    var res = fgets_stub.apply(this, Array.prototype.slice.call(arguments, 0));
+    eval(res);
+}
+// final de cabeçalho
+
+  
+// exemplo de solução
+  
+// declara duas variáveis
+var val1, val2;
+
+// lê dois valores inteiros
+scanf("%d%d", "val1", "val2");
+
+// escreve o resultado
+if (val1 > val2)
+    printf("%d\n", val1);
+else
+    printf("%d\n", val2);
+</pre>
+
+<p>Supondo que o código acima esteja armazenado em um arquivo de nome  <span class="ttt">tarefa.js</span>,
+  então, para executar seu programa com um caso de teste armazenado no arquivo de nome <span class="ttt">entrada.txt</span>,
+  digite o seguinte comando em uma janela de terminal:
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+nodejs tarefa.js < entrada.txt
+</pre>

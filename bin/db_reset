@@ -1,0 +1,32 @@
+#!/bin/sh                                                                                                    
+
+# set environment
+django3
+
+# run as postgres user
+#psql postgres -c "DROP DATABASE obi2020"
+#psql postgres -c "CREATE DATABASE obi2020 OWNER obi ENCODING 'UTF8'"
+
+#psql postgres -c "DROP DATABASE corretor"
+#psql postgres -c "DROP DATABASE sisca"
+#psql postgres -c "DROP USER obi"
+#psql postgres -c "CREATE USER obi WITH PASSWORD 'guga.LC'"
+#psql postgres -c "CREATE DATABASE obi2019 OWNER obi ENCODING 'UTF8'"
+#psql postgres -c "CREATE DATABASE obi2018 OWNER obi ENCODING 'UTF8'"
+#psql postgres -c "CREATE DATABASE corretor OWNER obi ENCODING 'UTF8'"
+#psql postgres -c "CREATE DATABASE sisca OWNER obi ENCODING 'UTF8'"
+
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "*/migrations/*.pyc"  -delete
+find . -path "*/migrations/__pycache__/*.pyc"  -delete
+#rm -rf */migrations
+./manage.py makemigrations
+./manage.py migrate
+
+# now prepare for new data
+psql postgres -c "DROP DATABASE obi2020"
+psql postgres -c "CREATE DATABASE obi2020 OWNER obi ENCODING 'UTF8'"
+#git checkout */migrations/**
+
+echo ""
+echo "now import a database dump"

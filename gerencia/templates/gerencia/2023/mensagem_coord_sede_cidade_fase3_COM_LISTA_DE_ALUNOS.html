@@ -1,0 +1,23 @@
+{{ greetings }} {{ coord_name}},
+
+gostaríamos de convidar a escola {{ school.school_name }} para ser a sede da Fase 3 (Fase Nacional) da OBI2022 na cidade de {{ school.school_city }}/{{ school.school_state }} para a modalidade {{ mod_name }}, que ocorrerá em {{ mod_date }}.
+
+A sede da sua cidade receberá {{ compets_info|length }} alunos(as), listados(as) no final desta mensagem.
+
+1) Caso aceite o convite, o(a) Sr(a). receberá acesso às provas e deve se responsabilizar por {% if mod == 'ini' %}aplicar a prova e digitalizar as Folhas de Respostas para enviar para correção{% else %}disponibilizar computadores e aplicar a prova{% endif %}. Se concorda com esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/{% if mod == 'ini' %}1{% else %}2{% endif %}/{{ school.school_hash }}
+
+2) Caso não aceite o convite, uma outra escola, Universidade ou Instituto Federal próximo, a confirmar, será escolhido para sediar a prova. Se prefere esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/{% if mod == 'ini' %}0{% else %}3{% endif %}/{{ school.school_hash }}
+
+Solicitamos que a escolha seja feita o mais breve possível, para podermos divulgar os locais de prova no site da OBI2022.
+
+Alunos(as) que farão a prova na sede de {{ school.school_city }}/{{ school.school_state }}:
+{% for compet in compets_info %}- {{ compet.3 }}: {{ compet.0 }}		{{ compet.1 }} ({{ compet.2 }})
+{% endfor %}
+
+Atenciosamente,
+
+{% include 'includes/signature.html' %}

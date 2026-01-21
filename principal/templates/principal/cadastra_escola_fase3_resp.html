@@ -1,0 +1,41 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+<p>Obrigado por cadastrar a escola
+
+<p><b>
+{{ school.school_name }}
+</b></p>
+
+
+<p>como candidata a sede da Fase Nacional na Olimpíada Brasileira de Informática.</p>
+
+<p>
+As informações do cadastro serão verificadas pela secretaria da OBI antes de o acesso ao portal de coordenação da OBI
+ser liberado. O processo de verificação pode demorar até dois dias.
+</p>
+
+<p>Quando o cadastro tiver sido validado e o acesso ao sistema liberado você receberá uma mensagem, no endereço de correio eletrônico informado no cadastro, contendo a senha para acesso ao portal de coordenação da OBI.
+</p>
+<p>Se sua escola for designada como sede da Fase Nacional você terá acesso à lista de alunos da sede no portal de coordenação da OBI.
+
+
+{% endblock %}
+
+{% block content-related %}
+<h4>Veja também</h4>
+<div class="small">
+  <ul>
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+  </ul>
+</div>
+{% endblock %}

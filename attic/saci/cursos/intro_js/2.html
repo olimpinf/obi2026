@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 2 - O primeiro programa, com o comando de escrita printf</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 2 - O primeiro programa, com o comando de escrita <span class="tt">printf</span></div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 2 - O primeiro programa, com o comando de escrita <span class="tt">printf</span></div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/1/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/3/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Comando de escrita: <span class="tt">printf</span></h2>
+
+<p>O comando <span class="tt">printf</span> é usado para escrever os resultados do programa.
+Na sua forma mais simples, o comando <span class="tt">printf</span> escreve uma cadeia 
+de caracteres passada como <em>argumento</em> entre aspas duplas. O comando
+deve sempre terminar com um ponto e vírgula.
+
+<h3>Exemplo</h3>
+<pre class="code">
+printf("Meu primeiro programa\n");
+</pre>
+
+<p>Os caracteres <span class="tt">\n</span> (barra invertida seguida da letra 'n'
+minúscula) na cadeia de caracteres passada como argumento fazem com
+que uma quebra de linha seja escrita na saída.
+
+<h3>Outros Exemplos</h3>
+<table>
+<tr>
+<td bgcolor="#CCCCCC"><span class="tt">printf("Estava à toa na vida\n");</span></td><td>uma linha é escrita, com uma quebra de linha após 'vida' </td>
+</tr><tr>
+<td bgcolor="#CCCCCC"><span class="tt">printf("O meu amor me chamou\n");</span></td><td>uma linha é escrita, com uma quebra de linha após 'chamou' </td>
+</tr><tr>
+<td bgcolor="#CCCCCC"><span class="tt">printf("Prá ver\n a banda passar\n");</span></td><td>duas linhas são escritas, com quebras de linha após 'ver' e 'passar'</td>
+</tr><tr>
+<td bgcolor="#CCCCCC"><span class="tt">printf("O tempo e o vento\n\n\n");</span></td><td>três linhas são escritas, com quebras de linha seguidas após 'vento'</td>
+</tr><tr>
+<td bgcolor="#CCCCCC"><span class="tt">printf("2 mais dois é igual a 4\n");</span></td><td>uma linha linha é escrita, com quebra de linha após '4'</td>
+</tr>
+</table>
+
+<h2>Comentários</h2>
+<p>Comentários são usados para <em>documentar</em> o programa. Eles são
+colocados no programa para passar informações para quem vier a ler o
+programa (como colaboradores, ou o próprio autor). São usados por exemplo 
+para explicar o algoritmo utilizado, ou informar o autor do programa, ou qualquer
+outra informação interessante. Eles são desconsiderados na execução do programa. </p>
+
+<p>Em Javascript, comentários são iniciados com duas barras (<span class="tt">//</span>),
+e se estendem até o final da linha.</p>
+
+<h3>Exemplos</h3>
+<pre class="code">
+// Autor: Ricardo Anido
+
+// Este trecho de programa calcula o resultado final
+
+// printf("OK\n"); note que este comando não é executado, é um comentário!
+</pre>
+
+<p></p>
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Primeiro programa usando o ambiente Saci</h2>
+</center>
+
+<p>Escreva um programa que produza uma única linha, contendo as palavras <span class="tt">Meu primeiro programa</span>.
+Use o comando 
+<span class="tt">printf</span> (note que como o enunciado indica que deve ser
+escrita <em>uma linha</em>, seu programa deve escrever também o
+caractere final-de-linha com "<span class="tt">\n</span>").
+
+<h3>Saída esperada</h3>
+<pre class="code">
+Meu primeiro programa
+</pre>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Praticando o comando <span class="tt">printf</span></h2>
+</center>
+
+<p>Escreva um programa que produza a saída mostrada na seção <em>Saída esperada</em>, abaixo. Note que você pode escrever
+o programa de muitas maneiras! Escreva duas versões: 
+
+<ul>
+<li>uma que utiliza dois comandos <span class="tt">printf</span>, cada comando produzindo uma linha (não se
+esqueça que cada linha deve ser terminada com o caractere final de linha "<span class="tt">\n</span>");
+<li>uma que utiliza apenas um comando
+<span class="tt">printf</span> (especificando os finais de linha com "<span class="tt">\n</span>" na cadeia formatadora).
+</ul>
+
+<p>Note ainda que, exceto pelos caracteres final-de-linha ao final de
+cada linha, não há espaços em branco na saída mostrada
+abaixo. Portanto seu programa não deve produzir espaços em branco adicionais. A
+saída deve ser <em>exatamente</em> como mostrado abaixo.
+
+
+<h3>Saída esperada</h3>
+<pre class="code">
+Oi!
+2+2=4
+</pre>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução do Exercício 1, Aula 2
+
+printf("Meu primeiro programa\n");
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<h4>Solução usando três comandos printf</h4>
+
+<pre class="code">
+// Solução do Exercício 2, Aula 2
+// usando três comandos printf
+
+printf("Oi!\n");
+printf("2+2=4\n");
+</pre>
+
+
+<h4>Solução usando um comando printf</h4>
+
+<pre class="code">
+// Solução do Exercício 2, Aula 2
+// usando um comando printf
+
+printf("Oi\n2+2=4\n");
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIGRvIEV4ZXJjw61jaW8gMSwgQXVsYSAxCgpwcmludGYoIk1ldSBwcmltZWlybyBwcm9ncmFtYVxuIik7Cl4vLyBTb2x1w6fDo28gZG8gRXhlcmPDrWNpbyAyLCBBdWxhIDEKLy8gdXNhbmRvIHRyw6pzIGNvbWFuZG9zIHByaW50ZgoKcHJpbnRmKCJPaSFcbiIpOwpwcmludGYoIjIrMj00XG4iKTsK">
+  <input type="hidden" id="hiddentests" value="CgoKXiAK">
+  <input type="hidden" id="hiddenresults" value="TWV1IHByaW1laXJvIHByb2dyYW1hCl5PaSEKMisyPTQK">
+  <input type="hidden" id="hiddensamples" value="Cl4K">
+  <input type="hidden" id="hiddenhints" value="cHJpbnRmXChcIi4qXCJcKQpNdWl0byBiZW0sIHZvY+ogZXN04SBubyBjYW1pbmhvIGNlcnRvLCBq4SBlc2NyZXZldSBvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0PiJwcmludGY8L3NwYW4+IGNvbSBwYXLqbnRlc2VzIGUgYXNwYXMgZGUgZm9ybWEgY29ycmV0YS4gTWFzIGEgY2FkZWlhIGRlIGNhcmFjdGVyZXMgbuNvIGVzdOEgY29ycmV0YS4gTGVpYSBub3ZhbWVudGUgbyBlbnVuY2lhZG8gZSB2ZWphIHF1YWwgZGV2ZSBzZXIgYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcy4KQHByaW50ZgpPSywgdm9j6iBlc3ThIG5vIGNhbWluaG8gY2VydG8sIGrhIHRlbnRvdSBlc2NyZXZlciBvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+LiBNYXMgbyBjb21hbmRvIG7jbyBlc3ThIGNvcnJldG8uIE8gZm9ybWF0byBkbyBjb21hbmRvIOkgPHA+PGRpdiBjbGFzcz0iY2VudGVyIj48c3BhbiBjbGFzcz0idHQiPnByaW50Zig8L3NwYW4+IjxlbT5jYWRlaWE8L2VtPiIpOzwvc3Bhbj48L2Rpdj48cD4gZW0gcXVlIDxlbT5jYWRlaWE8L2VtPiDpIHVtYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcy4gPHA+TGVpYSBub3ZhbWVudGUgbyBlbnVuY2lhZG8gZSB2ZWphIHF1YWwgZGV2ZSBzZXIgYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcyBwYXJhIGVzdGUgZXhlcmPtY2lvLiBO428gc2UgZXNxdWXnYSBkZSBpbmNsdWlyIGFzIGFzcGFzIGUgbyBjYXJhY3RlcmUgZmluYWwgZGUgbGluaGEgXG4uIEUgbuNvIHNlIGVzcXVl52EgdGFtYultIGRvIGNhcmFjdGVyZSBwb250by1lLXbtcmd1bGEgYW8gZmluYWwgZG8gY29tYW5kby4KQGVtcHR5ClZhbW9zIGzhOiBlc2NyZXZhIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+IG5vIEVkaXRvci4gTyBmb3JtYXRvIGRvIGNvbWFuZG8g6SA8ZGl2IGNsYXNzPSJjZW50ZXIiPjxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmKDwvc3Bhbj4iPGVtPmNhZGVpYTwvZW0+Iik7PC9zcGFuPjwvZGl2PjxwPiBlbSBxdWUgPGVtPmNhZGVpYTwvZW0+IOkgdW1hIGNhZGVpYSBkZSBjYXJhY3RlcmVzLiA8cD5MZWlhIG5vdmFtZW50ZSBvIGVudW5jaWFkbyBlIHZlamEgcXVhbCBkZXZlIHNlciBhIGNhZGVpYSBkZSBjYXJhY3RlcmVzIHBhcmEgZXN0ZSBleGVyY+1jaW8uIE7jbyBzZSBlc3F1ZedhIGRlIGluY2x1aXIgYXMgYXNwYXMgZSBvIGNhcmFjdGVyZSBmaW5hbCBkZSBsaW5oYSBcbi4gRSBu428gc2UgZXNxdWXnYSB0YW1i6W0gZG8gY2FyYWN0ZXJlIHBvbnRvLWUtdu1yZ3VsYSBhbyBmaW5hbCBkbyBjb21hbmRvLl5cYnByaW50ZlwoXCIuKlwiXClccyo7XHMqcHJpbnRmXChcIi4qXCJcKVxzKjsKRXN0b3UgdmVuZG8gcXVlIHZvY+ogcXVlciBlc2NyZXZlciBhIHZlcnPjbyBjb20gZG9pcyBjb21hbmRvcyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4uIEVzdOEgcXVhc2UgbOEsIG9zIGNvbWFuZG9zIGVzdONvIGVzY3JpdG9zIG5vIGZvcm1hdG8gY29ycmV0bywgY29tIGFzcGFzIGUgcGFy6m50ZXNlcy4uLiBtYXMgYXMgY2FkZWlhcyBkZSBjYXJhY3RlcmVzIHBhcmVjZW0gaW5jb3JyZXRhcy4gTGVpYSBub3ZhbWVudGUgbyBlbnVuY2lhZG8gZSB2ZWphIHF1YWwgZGV2ZSBzZXIgYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcyBkZSBjYWRhIHVtIGRvcyBjb21hbmRvcy4gRSBu428gc2UgZXNxdWXnYSBkbyBwb250by1lLXbtcmd1bGEgYW8gZmluYWwgZGUgY2FkYSBjb21hbmRvLgpAXGJwcmludGYuKlxzKnByaW50ZgpQZWxvIGplaXRvIHZvY+ogcXVlciBlc2NyZXZlciBhIHZlcnPjbyBjb20gZG9pcyBjb21hbmRvcyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4uIE1hcyBvcyBjb21hbmRvcyBlc3TjbyBlc2NyaXRvcyBkZSBmb3JtYSBlcnJhZGEuIE8gZm9ybWF0byBkbyBjb21hbmRvIOkgPGRpdiBjbGFzcz0iY2VudGVyIj48c3BhbiBjbGFzcz0idHQiPnByaW50Zig8L3NwYW4+IjxlbT5jYWRlaWE8L2VtPiIpOzwvc3Bhbj48L2Rpdj48cD4gZW0gcXVlIDxlbT5jYWRlaWE8L2VtPiDpIHVtYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcy48cD5MZWlhIG5vdmFtZW50ZSBvIGVudW5jaWFkbyBlIHZlamEgcXVhbCBkZXZlIHNlciBhIGNhZGVpYSBkZSBjYXJhY3RlcmVzIGVtIGNhZGEgdW0gZG9zIGNvbWFuZG9zLiBO428gc2UgZXNxdWXnYSBkZSBpbmNsdWlyIGFzIGFzcGFzIGUgbyBjYXJhY3RlcmUgZmluYWwgZGUgbGluaGEgXG4uIEUgbuNvIHNlIGVzcXVl52EgZG8gcG9udG8tZS127XJndWxhIGFvIGZpbmFsIGRlIGNhZGEgY29tYW5kby4KQFxicHJpbnRmXChcIi4qXCJcKQpPSywgdm9j6iBlc3ThIG5vIGNhbWluaG8gY2VydG8sIGrhIGVzY3JldmV1IG8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4gY29tIHBhcupudGVzZXMgZSBhc3BhcyBkZSBmb3JtYSBjb3JyZXRhLiBNYXMgYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcyBu428gZXN04SBjb3JyZXRhLiBMZWlhIG5vdmFtZW50ZSBvIGVudW5jaWFkbyBlIHZlamEgcXVhbCBkZXZlIHNlciBhIGNhZGVpYSBkZSBjYXJhY3RlcmVzLgpAcHJpbnRmCk9LLCB2b2PqIGVzdOEgbm8gY2FtaW5obyBjZXJ0bywgauEgdGVudG91IGVzY3JldmVyIG8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4uIE1hcyBvIGNvbWFuZG8gbuNvIGVzdOEgY29ycmV0by4gTyBmb3JtYXRvIGRvIGNvbWFuZG8g6SA8ZGl2IGNsYXNzPSJjZW50ZXIiPjxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmKDwvc3Bhbj4iPGVtPmNhZGVpYTwvZW0+Iik7PC9zcGFuPjwvZGl2PjxwPiBlbSBxdWUgPGVtPmNhZGVpYTwvZW0+IOkgdW1hIGNhZGVpYSBkZSBjYXJhY3RlcmVzLjxwPkxlaWEgbm92YW1lbnRlIG8gZW51bmNpYWRvIGUgdmVqYSBxdWFsIGRldmUgc2VyIGEgY2FkZWlhIGRlIGNhcmFjdGVyZXMgcGFyYSBlc3RlIGV4ZXJj7WNpby4gTuNvIHNlIGVzcXVl52EgZGUgaW5jbHVpciBhcyBhc3BhcyBlIG8gY2FyYWN0ZXJlIGZpbmFsIGRlIGxpbmhhIFxuLiBFIG7jbyBzZSBlc3F1ZedhIHRhbWLpbSBkbyBjYXJhY3RlcmUgcG9udG8tZS127XJndWxhIGFvIGZpbmFsIGRvIGNvbWFuZG8uCkBlbXB0eQpWYW1vcyBs4TogZXNjcmV2YSB1bSBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiBubyBFZGl0b3IuIE8gZm9ybWF0byBkbyBjb21hbmRvIOkgPGRpdiBjbGFzcz0iY2VudGVyIj48c3BhbiBjbGFzcz0idHQiPnByaW50Zig8L3NwYW4+IjxlbT5jYWRlaWE8L2VtPiIpOzwvc3Bhbj48L2Rpdj48cD4gZW0gcXVlIDxlbT5jYWRlaWE8L2VtPiDpIHVtYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcy4gPHA+TGVpYSBub3ZhbWVudGUgbyBlbnVuY2lhZG8gZSB2ZWphIHF1YWwgZGV2ZSBzZXIgYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcyBwYXJhIGVzdGUgZXhlcmPtY2lvLiBO428gc2UgZXNxdWXnYSBkZSBpbmNsdWlyIGFzIGFzcGFzIGUgbyBjYXJhY3RlcmUgZmluYWwgZGUgbGluaGEgXG4uIEUgbuNvIHNlIGVzcXVl52EgdGFtYultIGRvIGNhcmFjdGVyZSBwb250by1lLXbtcmd1bGEgYW8gZmluYWwgZG8gY29tYW5kby4=">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="EHsmvo9GBN8">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

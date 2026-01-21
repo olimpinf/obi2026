@@ -1,0 +1,17 @@
+{% extends "base_one_column.html" %}
+{% load obi_extras %}
+
+{% block title %} {{ pagetitle }} {% endblock %}
+
+{% block header %}
+  <h1>{{ pagetitle }}</h1>
+{% endblock %}
+
+  {% block content %}
+  <p>{{ msg|safe }}</p>
+  <p>&nbsp;</p>
+  {% endblock %}
+
+{% block content-related %}
+{% endblock %}
+

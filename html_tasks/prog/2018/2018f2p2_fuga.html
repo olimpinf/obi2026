@@ -1,0 +1,136 @@
+title:Fuga
+template:tasks/tarefa_programacao.html
+
+<p>
+Os irmãos Violet e Klaus estão fugindo pelas suas vidas do Conde Olaf,
+que corre atrás deles dentro de um prédio abandonado.  Violet e Klaus
+acabam de entrar em uma sala retangular de largura N e comprimento M,
+dividida em N \cdot M células (i, j) de área 1 (1 &leq; i &leq; N e 1
+&leq; j &leq; M). Em algumas células dessa sala, existem armários.
+Toda célula (i, j) onde i e j são pares contém um armário. A sala tem
+uma entrada na célula (X<sub>e</sub>, Y<sub>e</sub>) e uma saída na
+célula (X<sub>s</sub>, Y<sub>s</sub>), que ficam em posições
+diferentes \textbfnas bordas da sala. A entrada e a saída nunca são
+adjacentes a um armário.
+
+<p>A figura a seguir mostra a uma possível configuração da sala, onde
+N = M = 7, a entrada fica na posição (3,7) (marcada com uma estrela) e
+a saída fica na posição (5,1) (marcada com um círculo).  Os armários
+estão indicados em quadrados cinzas.
+
+
+
+<div class="center">
+<img src="/static/img/task_images/2018f2p2_fuga/fuga1.png" width="220px"/>
+</div>
+
+
+<p>
+Para atrasar Conde Olaf, que os está perseguindo e entrará na sala em
+alguns momentos, os irmãos decidiram derrubar armários da sala, de
+forma a aumentar o tamanho do percurso necessário para ir da entrada
+até a saída. As células ocupadas por armários caídos ou em pé não
+podem ser percorridas. Um armário pode ser derrubado em qualquer uma
+das direções paralelas aos lados da sala e ocupa duas células após
+cair. Ou seja, um armário na posição (i, j) da sala, ao cair irá
+ocupar uma das seguintes opções:
+
+<ul>
+<li> As células (i, j) e (i, j + 1); 
+<li> As células (i, j) e (i, j - 1); 
+<li> As células (i, j) e (i + 1, j); ou 
+<li> As células (i, j) e (i - 1, j). 
+</ul>
+
+<p>
+Dadas as dimensões da sala e as posições de entrada e de saída, você deve encontrar uma forma de derrubar os armários tal que
+a distância entre a entrada e a saída da sala seja a maior possível dentre todas as formas de derrubar os armários.
+
+<p>
+Para o exemplo acima, a figura abaixo é uma solução possível. Os
+retângulos cinzas representam os armários derrubados e a linha
+representa o caminho entre a entrada e a saída (que passa por 29
+células). Nesse caso, não é possível derrubar os armários de forma que
+a distância entre a entrada e a saída seja maior que 29.
+
+
+<div class="center">
+<img src="/static/img/task_images/2018f2p2_fuga/fuga2.png" width="220px"/>
+</div>
+
+
+<h3>Entrada</h3>
+<p>A primeira linha contém dois inteiros N e M, a largura e o
+comprimento da sala, respectivamente.  A segunda linha contém dois
+inteiros X<sub>e</sub> e Y<sub>e</sub>, identificando a célula de
+entrada da sala (X<sub>e</sub>, Y<sub>e</sub>).  A terceira linha
+contém dois inteiros X<sub>s</sub> e Y<sub>s</sub>, identificando a
+célula de saída da sala (X<sub>s</sub>, Y<sub>s</sub>).
+
+
+
+<h3>Saída</h3> 
+<p>Seu programa deve produzir uma única linha, contendo um
+inteiro, o tamanho do menor caminho (em número de células) da entrada
+até a saída da sala após derrubar os armários de forma ótima.
+
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  N, M  &leq;  11
+<li> 3  &leq;  X<sub>e</sub>, X<sub>s</sub>  &leq;  N
+<li> 3  &leq;  Y<sub>e</sub>, Y<sub>s</sub>  &leq;  M
+<li> N, M, X<sub>e</sub>, X<sub>s</sub>, Y<sub>e</sub>, Y<sub>s</sub> são ímpares.
+</ul>
+
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+
+<li> Para um conjunto de casos de testes valendo 40 pontos, 1  &leq;  N, M  &leq;  7.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 7
+3 7
+5 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+29
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+11 11
+11 1
+1 11
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+69
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,178 @@
+title:Câmara de Compensação
+template:tasks/tarefa_programacao.html
+
+<p><i>(Esta tarefa necessita de um corretor especial, que não
+    está disponível na seção Pratique no momento. A correção será
+    feita apenas para a Tarefa B, valendo 100 pontos.)</i>
+<p>
+Em  uma   cidade,  muitas  pessoas  emprestam   dinheiro  para  outras
+pessoas. A coisa  chegou a um tal  ponto que tem gente que  é ao mesmo
+tempo  devedor  e credor.   As  pessoas  resolveram então  pagar  suas
+dívidas e cada  uma emitiu  os cheques para  pagar suas  dívidas.  Por
+exemplo,  na figura,  item~(a), a  pessoa C  emitiu um  cheque de  5
+dinheiros para  a pessoa  A, e a  pessoa D emitiu  um cheque  de 3
+dinheiros para a pessoa C.  Ou  seja, a pessoa C recebeu da pessoa
+D e pagou a pessoa~A.  Pior ainda, existe um ciclo vicioso, em que
+a pessoa  D emitiu um cheque  de 3 dinheiros para  a pessoa~C, que
+por sua vez emitiu um cheque de 2 dinheiros para a pessoa B, que por
+sua vez emitiu um cheque de 1  dinheiro para a pessoa D.  A situação
+mostrada no item (a) da Figura abaixo  é  descrita através  de  uma  <it>lista  de
+  cheques</it>, com  quatro triplas da  forma (X,V,Y), para  indicar que
+X emitiu um  cheque de V dinheiros para Y.   Na mesma Figura, no
+item  (b),  a  situação  é  descrita com  uma  lista  de  apenas  três
+cheques.
+
+
+<div class="center">
+<img src="/static/img/task_images/2018f1p2_compensacao.png" width="500px" />
+</div>
+
+<p>
+Entretanto, as duas listas são equivalentes: o saldo na conta bancária
+de uma pessoa  é o mesmo em  ambas as listas de cheques.   Em ambos os
+casos,  completada a  compensação de  todos  os cheques,  a pessoa  A
+terminará com 5 dinheiros a mais  na sua conta, a pessoa B terminará
+com 1  dinheiro a  mais na sua  conta, a pessoa  C terminará  com 4
+dinheiros  a  menos na  sua  conta  e a  pessoa  D  terminará com  2
+dinheiros a menos na sua conta.
+<p>
+Vamos então definir  equivalência de listas de  cheques emitidos: duas
+listas de cheques são <i>equivalentes</i>  se, ao final do processo de
+compensação de todos os cheques, o seguinte vale para cada pessoa: seu
+saldo bancário ao  final da compensação de  uma lista é o  mesmo que o
+saldo bancário da pessoa ao final da compensação da outra lista.
+
+<p>
+O total  de valores  compensados no item  (a) da figura  é igual  a 11
+dinheiros ao passo que no item (b) o total é de apenas 6 dinheiros!
+
+<p>Este problema tem duas subtarefas:
+<ul>
+<li> <i>Subtarefa A</i>: determinar, dada  uma lista de cheques, se é
+  possível ou não  diminuir o total de  valores compensados utilizando
+  uma outra lista de cheques equivalente.
+<li>  <i>Subtarefa  B</i>:  determinar  o  total  mínimo  de  valores
+  compensados em uma lista de cheques equivalente.
+</ul>
+
+<p>Você deve escrever um programa que resolva apenas a Subtarefa A ou que
+resolva as duas subtarefas.
+
+
+<h3>Entrada</h3>
+A primeira linha contém dois  inteiros, M e N, onde M
+  é o  número de cheques  emitidos e N é  o número de  habitantes da
+  cidade. Os habitantes são identificados  por números inteiros de 1 a
+  N. Cada uma das M linhas seguintes descreve um cheque da lista e
+  contém três  inteiros X,  V e  Y, que indica  que X  emitiu um
+  cheque de V dinheiros a favor de  Y. É possível que haja mais de
+  um cheque de X a Y.  Também é possivel que haja cheques de X a
+  Y e de Y a X, mas não de X a X.
+
+
+<h3>Saída</h3>
+Seu  programa  deve  produzir  duas  linhas  na  saída.  A
+  primeira linha descreve a resposta para  a Subtarefa A e deve conter
+  um único  caractere.  O caractere  deve ser <span class="ttt">S</span>  para indicar
+  que  é possível  diminuir o  total dos  cheques compensados  com uma
+  lista de cheques  equivalente, ou <span class="ttt">N</span> para indicar  que não é
+  possível diminuir o total de cheques compensados.
+
+<p>Se  o seu  programa  resolve também  a Subtarefa  B,  a segunda  linha
+descreve  a resposta  para  essa  subtarefa e  deve  conter um  número
+inteiro, o valor mínimo do total  de cheques compensados, em uma lista
+equivalente. Se  o seu programa não  resolve a Subtarefa B,  você pode
+deixar a linha em branco ou colocar um valor inteiro arbitrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  M  &leq;  10<sup>6</sup>
+<li> 2  &leq;  N  &leq;  10<sup>3</sup>
+<li> 1  &leq;  X  &leq;  N, 1  &leq;  Y  &leq;  N, X  &ne;  Y
+<li> 1  &leq;  V  &leq;  10<sup>2</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Subtarefa A: 20 pontos.
+<li> Subtarefa B: em um conjunto de casos de testes que vale 20 pontos 1  &leq;  N  &leq;  10.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 4
+2 1 4
+3 5 1
+3 2 2
+4 3 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4
+4 50 3
+2 25 1
+3 10 2
+2 100 1
+4 50 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+215
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 4
+3 10 1
+2 40 1
+2 30 4
+2 20 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+100
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

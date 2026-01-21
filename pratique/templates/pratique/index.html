@@ -1,0 +1,47 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+{% block title %}Pratique{% endblock %}
+
+{% block header %}Pratique{% endblock %}
+{% block head_extra %}
+{% include "tasks/includes/head_tasks.html" %}
+{% endblock %}
+
+{% block content %}
+<p>Quer praticar um pouco antes da prova? 
+Nesta área você pode submeter soluções para tarefas das provas da OBI de anos anteriores e verificar se sua 
+solução está correta. Estão disponíveis tarefas das modalidades Iniciação e Programação,
+de diferentes níveis de dificuldade.</p>
+
+<p>As tarefas estão separadas pelo nível da prova em que foram utilizadas originalmente, e dentro
+de cada nível pelo ano da OBI em que foram utilizadas.
+
+<p>Escolha inicialmente a modalidade e o nível da prova:
+
+<h3>Modalidade Iniciação</h3>
+<ul>
+<li><a href="/pratique/ij/">Nível Júnior</a></li>
+<li><a href="/pratique/i1/">Nível 1</a></li>
+<li><a href="/pratique/i2/">Nível 2</a></li>
+</ul>
+
+<h3>Modalidade Programação</h3>
+
+<ul>
+<li><a href="/pratique/pj/">Nível Júnior</a></li>
+<li><a href="/pratique/p1/">Nível 1</a></li>
+<li><a href="/pratique/p2/">Nível 2</a></li>
+<li><a href="/pratique/pu/">Nível Sênior (antigo Universitário)</a></li>
+<!--li><a href="/pratique/programacao/nivels/">Seletiva IOI</a></li-->
+</ul>
+
+
+{% endblock %}
+
+{% block content-related %}
+
+  {% include "includes/see_also_prepare.html" %}
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% load obi_extras exams %}
+
+<ul>
+<li>Os valores entre parênteses após o nome das tarefas no menu de
+    Tarefas indicam o número de questões que já têm resposta e o
+    número total de questões para a tarefa. Por exemplo, (<font color="red">0</font>/5) indica
+    que a tarefa tem cinco questões e nenhuma delas foi ainda
+    respondida; (<font color="red">3</font>/5) indica que três das cinco questões da tarefa já
+    têm respostas (e portanto duas ainda estão sem resposta); (5/5)
+  indica que todas as cinco questões já têm respostas. Os números são
+  atualizados a cada nova resposta marcada.
+<li>As respostas são salvas automaticamente assim que marcadas.
+<li>Você pode alterar suas respostas quantas vezes quiser.
+<li>Procure não deixar questões sem resposta. Você não perde pontos
+  por respostas erradas.
+<li>A correção das tarefas será realizada após o período de aplicação
+    da prova e o resultado será divulgado posteriormente.
+<li>A prova é individual e sem consulta a qualquer material. Você pode
+  usar caneta, lápis, papel em branco, borracha e régua.
+<li>Não divulgue ou comente as tarefas da prova com outros competidores até o
+término do período de aplicação da prova.
+</ul>
+<hr>
+{% if f.status == 'running' %}
+  <p><a class="myButton action" href="{% url 'exams:finish_review_exam' f.exam_descriptor %}">Revisar Respostas</a>
+  <p>Antes de encerrar a prova, revise as respostas que você marcou. Ao terminar de marcar e revisar todas as
+    questões, você pode fechar a janela da prova. Nenhuma ação é necessária para encerrar a prova, ela será
+    encerrada automaticamente quando o tempo de prova estiver esgotado.
+    <hr>
+  {% comment %}
+  <p><a class="myButton action" href="{% url 'exams:finish_exam' f.exam_descriptor %}" onclick="return confirm('Encerrar a prova? Encerrando a prova não será mais possível alterar as respostas.')">Encerrar a Prova</a>
+  <p>Atenção: ao clicar no botão <em>Encerrar a Prova</em> não será mais possível alterar suas respostas.
+  {% endcomment %}
+{% else %}
+  <p><a class="myButton action" href=""  onclick="alert('Prova não iniciada.')">Revisar Respostas</a>
+  <p>Antes de encerrar a prova, revise as respostas que você marcou.
+    <hr>
+  {% comment %}
+  <p><a class="myButton action" href="" onclick="alert('Prova não iniciada.')">Encerrar a Prova</a>
+  <p>Atenção: ao clicar no botão <em>Encerrar a Prova</em> não será mais possível alterar suas respostas.
+  {% endcomment %}
+{% endif %}    

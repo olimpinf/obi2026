@@ -1,0 +1,91 @@
+{% extends "base_restricted_sbc.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}<h1>{{ pagetitle }}</h1>{% endblock %}
+
+{% block content %}
+
+<h4>Comprovante de pagamento</h4>
+
+<div class="center">
+  <a href="{{p.receipt_file}}" ><img width="100%" src="{{p.receipt_file}}"></a>
+</div>
+
+<h4>Valor: R$ {{p.value|format_currency}}</h4>
+
+<h4>Participantes incluídos no pagamento</h4>
+<pre>
+{{p.data}}
+</pre>
+
+<h4>Dados para Recibo/Nota Fiscal</h4>
+<ul>
+  <li><b>Nome</b>: {{p.doc_name}}
+  <li><b>{% if p.doc_number|length == 14 %}CPF{% else %}CNPJ{% endif %}</b>: {{p.doc_number}} 
+  <li><b>Email</b>: {{p.doc_email}}
+  <li><b>Endereço postal</b>:
+    <div><pre>{{p.doc_address}}</pre>
+</ul>
+<p>
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}    
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+    <fieldset class="border p-2">
+      <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+      <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+      </ul>
+    </fieldset>
+    {% endif %}
+    {% endfor %}
+  <p>
+    {% if not p.ignored and not p.confirmed %}
+    <button type="submit" name="submit" class="button">Confirmar</button>
+    <button type="ignore" name="ignore" class="button">Descartar</button>
+    {% endif %}
+    <button type="cancel" name="confirm" class="button" onclick="{% go_to_url '/semana/sbc_lista_pagamento' %}">Cancelar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

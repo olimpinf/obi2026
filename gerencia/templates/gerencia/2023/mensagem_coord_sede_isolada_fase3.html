@@ -1,0 +1,18 @@
+{{ greetings }} {{ coord_name }},
+
+a escola {{ school.school_name }} é a única escola em {{ school.school_city }}/{{ school.school_state }} com alunos classificados para a Fase 3 (Fase Nacional) da OBI2022 na modalidade {{ mod_name }}, que ocorrerá em {{ mod_date }}. Por isso, temos as seguintes opções disponíveis, por favor escolha uma delas:
+
+1) Os alunos de sua escola realizarem a prova na sua própria escola. O(A) Sr(a). receberá acesso às provas e deve se responsabilizar por {% if mod == 'ini' %}aplicar a prova e digitalizar as Folhas de Respostas para enviar para correção{% else %}disponibilizar computadores e aplicar a prova{% endif %}. Se concorda com esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/{% if mod == 'ini' %}1{% else %}2{% endif %}/{{ school.school_hash }}
+
+2) Os alunos se deslocarem até uma outra escola, Universidade ou Instituto Federal, a confirmar, para realizar a prova. Se prefere esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/{% if mod == 'ini' %}0{% else %}3{% endif %}/{{ school.school_hash }}
+
+Solicitamos que a escolha seja feita o mais breve possível, para podermos divulgar os locais de prova no site da OBI2022.
+
+Atenciosamente,
+
+{% include 'includes/signature.html' %}
+

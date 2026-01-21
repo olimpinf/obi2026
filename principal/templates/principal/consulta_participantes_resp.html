@@ -1,0 +1,80 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Certificados{% endblock %}
+
+{% block header %}<h1>Certificados</h1>{% endblock %}
+
+{% block content %}
+
+{% if items.paginator.count == 0 %}
+  <p>Nenhum participante satisfaz os dados da consulta.</p>
+{% elif items.paginator.count == 1 %}
+  <p>Um(a) participante satisfaz os dados da consulta.</p>
+{% else %}
+  <p>{{ items.paginator.count }} participantes satisfazem os dados de consulta.</p>
+{% endif %}
+
+{% if items.paginator.count > 0 %}
+<table class="table">
+  {% if partic_type == 'compet'  %}
+  <tr><th width="30%">Nome</th><th width="10%">Mod.</th><th width="20%">Escola</th><th width="20%">Cidade/Estado</th></tr>
+  {% else %}
+  <tr><th width="40%">Nome</th><th width="25%">Escola</th><th width="20%">Cidade/Estado</th></tr>
+  {% endif %}
+
+{% for item in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  {% if partic_type == 'compet' %}
+    {% if competition == 'obi' %}
+  <td><a href="{% url 'principal:emite_certificado' partic_year competition partic_type item.compet_id %}">{{ item.compet_name }}</a></td>
+  <td>{{ item.compet_type|obi_format_compet_type_short }}</td>
+  <td>{{ item.compet_school.school_name }}</td>
+  <td>{{ item.compet_school.school_city }}/{{item.compet_school.school_state }}</td>
+    {% else %}
+  <td><a href="{% url 'principal:emite_certificado' partic_year competition partic_type item.compet_id %}">{{ item.compet.compet_name }}</a></td>
+  <td>{{ item.compet_type|obi_format_compet_type_short }}</td>
+  <td>{{ item.compet.compet_school.school_name }}</td>
+  <td>{{ item.compet.compet_school.school_city }}/{{item.compet.compet_school.school_state }}</td>
+    {% endif %}
+  </tr>
+  {% elif partic_type == 'deleg' %}
+  <td><a href="{% url 'principal:emite_certificado' partic_year competition partic_type item.school_id %}">{{ item.school_deleg_name }}</a></td>
+  <td>{{ item.school_name }}</td>
+  <td>{{ item.school_city }}/{{item.school_state }}</td>
+  {% elif partic_type == 'colab' %}
+  <td><a href="{% url 'principal:emite_certificado' partic_year competition partic_type item.colab_id %}">{{ item.colab_name }}</a></td>
+  <td>{{ item.colab_school.school_name }}</td>
+  <td>{{ item.colab_school.school_city }}/{{item.colab_school.school_state }}</td>
+  {% endif %}
+  </tr>
+{% endfor %}
+{% endif %}
+</table>
+
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'principal:consulta_participantes_resp' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'principal:consulta_participantes_resp' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+
+  <a href="{% url 'principal:certificados' %}" class="btn btn-small btn-primary mb-3" role="button">Nova consulta</a>
+
+    <h4>Instruções</h4>
+    <ul>
+    <li>Clique no nome do participante para emitir o certificado.</li>
+    </ul>
+
+{% endblock %}

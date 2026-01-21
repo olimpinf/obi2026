@@ -1,0 +1,112 @@
+title:Caixeiro Viajante
+template:exams/tarefa_programacao.html
+order:3
+<p>
+Paulo é um <i>caixeiro viajante</i>, que visita clientes nas cidades
+do reino da Nlogônia para demonstrar novos produtos da empresa para a
+qual trabalha.
+
+<p>
+Paulo está organizando uma viagem para visitar cada uma das N
+cidades do reino. A Nlogônia é imensa, as cidades são distantes, de
+forma que Paulo vai sempre usar transporte aéreo para ir de uma cidade
+a outra. Paulo conhece o tempo de vôo entre cada par de cidades, mas
+não gosta de viajar de avião e quer minimizar o tempo de vôo total
+para a viagem. No entanto, Paulo tem uma demanda peculiar quanto à
+ordem das cidades que vai visitar.
+
+<p>
+Na Nlogônia os &quot;nomes&quot; das cidades são números inteiros de 1 a
+N.  Paulo deseja que a ordem das cidades que vai visitar obedeçam à
+seguinte regra: quando Paulo visitar a cidade K, ou todas as cidades de
+nomes menores do que K já foram visitadas ou todas serão visitadas após
+K.
+
+<p>
+Por exemplo, se N é igual a três, Paulo pode visitar as cidades nas
+ordens 1,2,3 ou na ordem 3,2,1 ou na ordem 2,1,3, mas não pode
+visitá-las na ordem 1,3,2, pois quando visita a cidade 3, como 1
+já foi visitada, 2 também deveria ter sido visitada.
+
+<p>
+Escreva um programa para determinar o tempo mínimo total de vôo para a
+viagem de Paulo, iniciando em qualquer cidade, terminando em qualquer
+cidade, mas visitando cada cidade uma única vez.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém um inteiro N, o número
+de cidades. Cada uma das N &times; (N-1)/2 linhas contém três inteiros A, B
+e T, indicando que o tempo de vôo da cidade A para a cidade B
+é T (o tempo de vôo da cidade B para a cidade A também é T).
+
+
+<h3>Saída</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único número
+inteiro, o tempo mínimo total de vôo para a viagem de Paulo.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  N  &leq;  1500
+<li> 1  &leq;  A < B  &leq;  N
+<li> 1  &leq;  T  &leq;  1000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 25 pontos, 1  &leq;  N  &leq;  10.
+<li> Para um conjunto adicional de casos de testes valendo 50 pontos, 1  &leq;  N  &leq;  20.
+<li> Para um conjunto adicional de casos de testes valendo 25 pontos, nenhuma restrição adicional.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+1 2 5
+1 3 2
+2 3 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+1 2 15
+1 3 7
+1 4 8
+2 3 16
+2 4 9
+3 4 12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+31
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

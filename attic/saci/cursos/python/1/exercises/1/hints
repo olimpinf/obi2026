@@ -1,0 +1,36 @@
+saci_text_print,text
+
+Muito bem, você está no caminho certo, está usando
+os blocos   <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/> e
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px" />.
+  Mas a frase no bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px" />
+  não está correta. Verifique novamente o enunciado do desafio e corrija
+  a frase.
+<br>
+
+@saci_text_print
+
+Muito bem, você está no caminho certo, está usando
+o bloco   <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Agora precisa encaixar nele o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/> e preencher
+  esse bloco com as palavras corretas.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>
+clique no menu <b>Texto</b> da Barra de Ferramentas e arraste
+o bloco para a área de trabalho, encaixando um bloco no outro. Depois é só
+preencher o bloco de texto com as palavras especificadas no enunciado.
+<br>
+
+@empty
+
+Vamos lá: você precisa usar
+os blocos   <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/> e
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px" />.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+clique no menu <b>E/S</b> (entrada e saída) da Barra de Ferramentas e arraste
+o bloco para a área de trabalho.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>
+clique no menu <b>Texto</b> da Barra de Ferramentas e arraste
+o bloco para a área de trabalho, encaixando um bloco no outro. Depois é só
+preencher o bloco Texto com as palavras especificadas no enunciado.
+<br>

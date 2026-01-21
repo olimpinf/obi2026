@@ -1,0 +1,16 @@
+{% load flatpages obi_extras %}
+<h4>Veja também</h4>
+
+
+<div class="smaller-ul">
+  <ul>
+        {% get_flatpages '/prepare/' as flatpages_prepare %}
+        {% for page in flatpages_prepare %}
+           {% if page.url|count_slashes <= 3 %}
+              <li {% if page.url|first_2tokens == flatpage.url|first_2tokens %}style="color:#ff0000"{% endif %}><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+  <li {% if request.path|first_token == '/pratique/' %}style="color:#ff0000"{% endif %}><a href="{% url 'pratique:index' %}">Pratique</a></li>
+  <li {% if request.path|first_token == '/saci/' %}style="color:#ff0000"{% endif %}><a href="/saci">Saci</a></li>
+  </ul>
+<div>

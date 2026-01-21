@@ -1,0 +1,154 @@
+title:Senha da Vó Zinha
+template:tasks/tarefa_programacao.html
+
+<p>
+Vó Zinha foi sempre muito cuidadosa com as senhas que usa para
+suas atividades na Internet, como compras, redes sociais e
+correio eletrônico, e é especialmente cuidadosa com a
+senha do banco.
+
+<p>No entanto, como está ficando um pouco esquecida das coisas, ela
+resolveu deixar sua senha do banco escrita, para o caso de
+necessidade.  Obviamente, ela não escreveu simplesmente a senha num
+papel! Ela inventou uma forma de proteger a senha, mesmo estando
+escrita, e contou somente para você como fazer para recuperar a senha.
+
+<p>Com um pedaço de papel que Vó Zinha guardou na gaveta onde guarda
+também suas meias ela fez o seguinte:
+
+<ul>
+<li> inicialmente escreveu
+a senha do banco no papel;
+<li> então borrou algumas das letras da senha que tinha escrito
+  de forma que não possam ser lidas;
+<li> para cada uma das letras borradas, ela escreveu no papel
+uma palavra com K letras;
+<li> por fim, ela escreveu no papel um número inteiro P.
+</ul>
+
+<p>Vó Zinha então contou para você como recuperar a senha:
+
+<ul>
+<li> utilizando as listas de palavras no papel, substitua cada letra borrada da senha
+por uma das letras da respectiva lista, obtendo assim possíveis senhas;
+<li> crie uma lista contendo todas as possíveis senhas obtidas no passo anterior;
+<li> ordene a lista de possíveis senhas em ordem lexicograficamente crescente;
+<li> a senha correta é a P-<i>ésima</i> possível senha na lista ordenada.
+</ul>
+
+<p>Por exemplo, considere que no papel esteja escrito (&bull; representa uma letra borrada): 
+<p><span class="ttt">
+x&bull;yy&bull;z<br>
+ab<br>
+cd<br>
+3<br>
+</span>
+
+Fazendo as substituições, a lista das possíveis senhas é
+<em>
+xayycz,
+xbyycz,
+xayydz,
+xbyydz
+</em>.
+
+<p>Ordenando as possíveis senha obtemos
+<em>
+xayycz,
+xayydz,
+<u>xbyycz</u>,
+xbyydz</em>, e portanto a senha correta é <em>xbyycz</em> (a terceira da lista ordenada).
+
+<p>Hoje Vó Zinha precisa pagar uma conta pela internet e não se recorda da senha do banco. Ela
+pediu que você pegue o pedaço de papel guardado na gaveta e a ajude
+a recuperar a senha.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém três números inteiros
+  N, M e K, respectivamente o número de caracteres da
+  senha, o número de letras borradas da senha e o comprimento de
+  cada palavra.  A segunda linha contem uma cadeia de caracteres
+  de comprimento N, a senha escrita no papel, com o caractere `<span class="ttt">#</span>'
+  (cerquilho) representando as letras borradas. Cada uma das M
+  linhas seguintes contém uma palavra S<sub>i</sub>, sendo que
+  a S<sub>i</sub>-ésima palavra contém as letras para substituir a
+  i-ésima letra borrada da senha. A última linha contém um número inteiro
+  P, o número de ordem da senha correta na lista ordenada de
+  possíveis senhas.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo
+uma única cadeia de caracteres, a senha correta.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  500
+<li> 1  &leq;  M  &leq;  N
+<li> 1  &leq;  K  &leq;  26
+<li> comprimento de S<sub>i</sub> = K, para 1  &leq;  i  &leq;  M
+<li> 1  &leq;  P  &leq;  10<sup>9</sup>
+<li> Na senha com as letras &quot;borradas&quot;, cada caractere é uma letra minúscula
+  não acentuada ou o caractere <span class="ttt">#</span>.
+<li> Nas palavras com as letras que podem substituir as letras
+  borradas da senha, cada caractere é uma letra minúscula não acentuada.
+<li> P  &leq;  número total de possíveis senhas 
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 30 pontos, M=1.
+<li> Para um conjunto de casos de testes valendo outros 30 pontos, M  &leq;  8 e K  &leq;  6.
+<li> Para um conjunto de casos de testes valendo outros 40 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 2 2
+x#yy#z
+ab
+cd
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+xbyycz
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 1 3
+#gof
+abc
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+bgof
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

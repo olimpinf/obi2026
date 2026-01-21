@@ -1,0 +1,119 @@
+{% load i18n %}
+{% load static %}<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="keywords" content="olimpíada, programação de computadores, informática" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="{% static "img/icon-tile.png" %}">
+
+    <title>{% block title %}Olimpíada Brasileira de Informática{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/obi2023.css" %}" >
+    <script src="{% static 'js/lib/webfontloader/webfontloader.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    {# Require JS #}
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("{% static 'js/jquery-3.6.0.min.js' %}"),
+            "jquery.inview": extless("{% static 'js/lib/jquery.inview/jquery.inview.js' %}"),
+            "mod/list-collapsing": extless("{% static 'js/mod/list-collapsing.js' %}"),
+            "mod/list-feature": extless("{% static 'js/mod/list-feature.js' %}"),
+            "mod/mobile-menu": extless("{% static 'js/mod/mobile-menu.js' %}")
+        }
+    };
+    </script>
+    <script data-main="{% static 'js/main.js' %}" src="{% static 'js/lib/require.js' %}"></script>
+
+
+    <script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="{% static "js/lib/modernizr.js" %}"></script>
+    {% block head_extra %}{% endblock head_extra %}
+  </head>
+
+  <body id="{% block sectionid %}generic{% endblock %}"  onload="{% block body_onload %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+
+    {% include "includes/header.html" %}
+
+    <div class="copy-banner">
+      <div class="container">
+        {% block header %}{% endblock %}
+      </div>
+    </div>
+    <div id="billboard">{% block billboard %}{% endblock %}</div>
+
+    <div class="container {% block layout_class %}{% endblock %}">
+      <div role="main">
+
+        {% block messages %}
+          {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                  {{ message }}
+                  <i class="close icon icon-remove" title="close"></i>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+        <a href="#top" class="backtotop"><i class="icon icon-chevron-up"></i> Volta ao início </a>
+      </div>
+
+      {% block content-related %}{% endblock %}
+      {% block content-extra %}{% endblock %}
+
+    </div>
+
+    {% block secondary %}{% endblock %} {# Used only with one column pages #}
+    {% block tertiary %}{% endblock %} {# Used only with one column pages #}
+
+    {# Used to display urgent news, events, and alerts #}
+    {% block alert %}
+    {% endblock %}
+
+    {% block footer %}
+      {% include "includes/footer.html" %}
+    {% endblock %}
+
+    <script src="{% static 'js/local.js' %}"></script>
+    <script src="{% static 'js/sedes.js' %}"></script>
+
+   {% block body_extra %}{% endblock body_extra %}
+
+
+  </body>
+</html>

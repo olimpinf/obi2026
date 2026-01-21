@@ -1,0 +1,147 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+{% block head_extra %}
+<script>
+  function _flip_all(e) {
+      var inputs, index;
+      inputs = document.getElementsByName('choices_set');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = e.checked;
+      }
+      inputs = document.getElementsByName('choices_unset');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = !e.checked;
+      }
+  }
+
+  function getSelectedLevel() {
+    let val = '';
+    let selector = document.querySelector("input[name=level_cfobi]:checked");
+
+    if (selector != null) {
+        val = selector.value;
+    }
+
+    return val;
+  }
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<h1>{{ pagetitle }}  </h1>
+{% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} competidora listada com o filtro selecionado ({{ total }} competidor(as) inscrita(s) no total)</p>
+  {% else %}
+<p>{{ items.paginator.count }} competidoras listadas com o filtro selecionado ({{ total }} competidoras inscritas no total)</p>
+  {% endif %}
+
+<form action="{% url 'restrito:compet_feminina_inscreve_selecionadas_ini'%}" method="post">{% csrf_token %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">Escolha o nível para inscrição na CF-OBI</legend>
+    <small>
+    <input style="margin-left:30px;" type="radio" name="level_cfobi" value="PJ" id="level_cfobi_pj" class="action-select" checked />
+    <label class="emph" for="level_cfobi_pj">Programação Nível Júnior (PJ)</label>
+    <input style="margin-left:30px;" type="radio" name="level_cfobi" value="P1" id="level_cfobi_p1" class="action-select" /> <label for="level_cfobi_p1">Programação Nível 1 (P1)</label>
+    <input style="margin-left:30px;" type="radio" name="level_cfobi" value="P2" id="level_cfobi_p2" class="action-select" /> <label for="level_cfobi_p2">Programação Nível 2 (P2)</label>
+    </small>
+  </fieldset>
+
+  <p class="emph">
+    Informações sobre as ementas de cada nível podem ser encontradas <a target="_blank" href="/prepare/ementas/ementa_prog/">aqui</a>.
+  <table class='admin' width="100%">
+    <tr>
+      <td colspan="3"></td>
+      <td style="text-align:center;width:5%">      
+	<input class="btn btn-primary btn-sm" style="float:right;" type="submit" value="Inscrever Marcadas" onclick="return confirm('Increver competidora(s) na ' + getSelectedLevel() + ' da CF-OBI?')">
+      </td>
+    </tr>
+    <tr>
+      <th width="15%">Núm. Inscr.</th>
+      <th width="70%">Nome</th>
+      <th class="center">Modalidade</th>
+      {% comment %}
+      <th class="center">Email</th>
+      <th scope="col" style="float:right;margin-right:50px">
+      {% endcomment %}
+      <th style="text-align:center">
+	<div class="text"><span><input type="checkbox" id="action-toggle" onchange="_flip_all(this)"></span></div>
+	<div class="clear"></div>
+      </th>
+    </tr>
+    {% for c in items %}
+    <tr class="{% cycle 'odd' 'even' %}">
+      <td>{{ c.compet_id|obi_format_compet_id }}</td>
+      <td>{{ c.compet_name }}</td>
+      <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+      {% comment %}
+      <td class="center">{% if c.compet_email %}<img src="/static/admin/img/icon-yes.svg">{% else %}<img src="/static/admin/img/icon-no.svg">{% endif %}</td>
+      <td style="float:right;margin-right:50px">
+      {% endcomment %}
+      <td style="text-align:center">
+	<input type="checkbox" name="choices_set" value="{{c.compet_id}}" id="choice_{{c.compet_id}}" class="action-select"  onchange="document.getElementById('hidden_{{c.compet_id}}').checked=!this.checked;">
+	<input type="checkbox" name="choices_unset" value="{{c.compet_id}}" id="hidden_{{c.compet_id}}" class="action-select" style="display:none">
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% else %}
+<p>Não há competidoras inscritas com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_feminina_inscreve_prog' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_feminina_inscreve_prog' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+
+{% endblock %}
+
+{% block content-related %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+<small>
+      <h2 class="mt-3">Instruções</h2>
+      <ul>
+        <li>Nesta página estão listadas apenas competidoras que estão inscritas na OBI e não estão inscritas na Competição Feminina da OBI (CF-OBI).</li>
+        <li>Você pode verificar quais competidoras estão inscritas na CF-OBI na sua escola acessando <a href="{% url 'restrito:compet_feminina_lista' %}" target="_blank">esta página</a>.</li>
+        <li>Para selecionar uma competidora, clique na caixa de seleção da linha correspondente.</li>
+        <li>Para selecionar todas as competidoras listadas, clique na caixa de seleção que está no cabeçalho da tabela.</li>
+        <li>Para inscrever competidoras na CF-OBI que já estejam inscritas na Modalidade Iniciação da OBI,
+            primeiro selecione-as, selecione no topo da página o nível da CF-OBI na qual deseja inscrevê-las e depois clique em <em>Inscrever Marcadas</em>.</li>
+        <li>Utilize o formulário Filtros para restringir as competidoras visualizadas.</li>
+      </ul>
+
+</small>
+{% endblock %}

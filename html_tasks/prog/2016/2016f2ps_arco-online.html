@@ -1,0 +1,134 @@
+title:Arco e flecha
+template:tasks/tarefa_programacao.html
+<p>
+
+O comitê olímpico está testando uma nova forma de pontuar as
+competições de arco e flecha, baseada em penalidades. O atleta vai atirar N flechas no alvo,
+em sequência. A penalidade P<sub>K</sub> da K-ésima flecha atirada é computada
+imediatamente após ela atingir o alvo, antes do próximo lançamento, e
+é igual ao número de flechas que estão no alvo naquele momento cuja
+distância  ao centro do alvo é menor ou igual à
+distância da K-ésima flecha  ao centro, excluindo a própria
+K-ésima flecha. Quer dizer, a penalidade é o número das K-1 flechas lançadas antes
+da K-ésima flecha que estão mais próximas ou à mesma distância do centro
+do alvo, comparadas com a K-ésima flecha.
+  
+
+<div class="center">
+<img src="/static/img/task_images/2016f2p1_arco.png" width="300px"/>
+</div>
+
+Neste problema, o centro do alvo está na origem (0,0). Dada a
+sequência de coordenadas dos pontos em que as sucessivas flechas
+atingiram o alvo, seu programa deve computar a penalidade de cada flecha.
+
+Porém, para dificultar um pouco, você deverá computar a penalidade de cada
+flecha antes de saber as coordenadas dos pontos posteriores. Para descobrir
+as coordenadas reais da K-ésima flecha (X<sup>R</sup> e Y<sup>R</sup>), você deverá somar a penalidade conquistada
+pela flecha anterior às coordenadas X e Y fornecidas na entrada. Ou seja,
+X<sub>K</sub><sup>R</sup> = X<sub>K</sub> + P_K-1 e Y<sub>K</sub><sup>R</sup> = Y<sub>K</sub> + P_K-1. Para a primeira flecha,
+X<sub>1</sub><sup>R</sup> = X<sub>1</sub> e Y<sub>1</sub><sup>R</sup> = Y<sub>1</sub>.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, representando a
+quantidade de flechas lançadas. Cada uma das N linhas seguintes
+contém dois inteiros, X<sub>K</sub> e Y<sub>K</sub>, indicando as coordenadas que 
+devem ser usadas para calcular o ponto em que cada flecha atingiu 
+o alvo, definindo a sequência de lançamentos.
+
+<h3>Saída</h3>
+Você deve imprimir N linhas. Para 1  &leq;  K  &leq;  N, a K-ésima linha 
+deve conter um inteiro P<sub>K</sub> representando a penalidade que o atleta
+rebeceu pela K-ésima flecha.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup>
+<li> -10<sup>6</sup> &leq;  X<sup>R</sup>,Y<sup>R</sup> &leq;  10<sup>6</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+  <li> Em um conjunto de testes somando 20 pontos, N &leq;  10<sup>4</sup>
+  <li> Em um conjunto de testes somando 60 pontos, N &leq;  5 \times 10<sup>4</sup>
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+1 3
+5 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+-100 85
+-25 -60
+18 33
+0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+0
+0
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+1 1
+2 2
+2 2
+3 3
+1 1
+3 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+1
+2
+3
+3
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

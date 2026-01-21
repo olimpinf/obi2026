@@ -1,0 +1,181 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras exams  static %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{% static 'assets/css/cws_style.css' %}" >
+{% endblock %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h2>Detalhes da Correção</h2>
+
+<a class="btn btn-primary mb-3" role="button" href="javascript: history.go(-1)">Voltar</a>
+
+<div class="score_details">
+{% for st in sr.public_score_details %}
+
+    {% if "score_fraction" in st %}
+        {% if st.score_fraction >= 1.0 %}
+<div class="subtask correct">
+        {% elif st.score_fraction <= 0.0 %}
+<div class="subtask notcorrect">
+        {% else %}
+<div class="subtask partiallycorrect">
+        {% endif %}
+    {% else %}
+<div class="subtask undefined">
+    {% endif %}
+    <div class="subtask-head">
+      {# <span class="title"> #}
+        <span style="font-family:sans-serif;font-weight:bold">
+            Subtarefa {{ st.idx }}
+        </span>
+    <span class="ms-3">(pontos obtidos: 
+    {% if "score_fraction" in st and "max_score" in st %}
+        {# {% with score = st.score_fraction * st.max_score %} #}
+	{% multiply st.score_fraction st.max_score  as score %}
+        <span class="score">
+	  {% do_round score 0 as formatted_score %}
+	  {% do_round st.max_score 0 as formatted_max_score %}
+	  {{ formatted_score }} / {{ formatted_max_score}}
+        </span>
+    {% else %}
+        <span class="score">
+            N/D
+        </span>
+    {% endif %}
+    )</span>
+    </div>
+
+    <div class="subtask-body">
+        <table class="testcase-list table table-striped">
+            <thead>
+                <tr>
+                    <th class="idx">
+                        #
+                    </th>
+                    <th class="outcome">
+                        {{ "Outcome"|translate }}
+                    </th>
+                    <th class="details">
+                        {{ "Detalhes"|translate }}
+                    </th>
+    {% if feedback_level == FEEDBACK_LEVEL_FULL %}
+                    <th class="execution-time">
+                        {{ "Execution time"|translate }}
+                    </th>
+                    <th class="memory-used">
+                        {{ "Memory used"|translate }}
+                    </th>
+    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+
+    {% for tc in st.testcases %}{% with loop_index=forloop.counter %}
+        {% if "outcome" in tc  %}
+            {% if feedback_level == FEEDBACK_LEVEL_FULL or tc.show_in_restricted_feedback %}
+                {% if tc.outcome == "Correct" %}
+                    <tr class="correct">
+                {% elif tc.outcome == "Not correct" %}
+                    <tr class="notcorrect">
+                {% else %}
+                    <tr class="partiallycorrect">
+                {% endif %}
+                        <td class="idx">{{ loop_index }}</td>
+                        <td class="outcome" style="text-align:center">{{ tc.outcome|translate }}</td>
+                        <td class="details">
+                          {{ tc.text.0|translate }}
+                        </td>
+                {% if feedback_level == FEEDBACK_LEVEL_FULL %}
+                        <td class="execution-time">
+                    {% if "time" in tc and tc.time is not none %}
+		       {{ tc.time }} seg
+                    {% else %}
+                            N/D
+                    {% endif %}
+                        </td>
+                        <td class="memory-used">
+                    {% if "memory" in tc and tc.memory is not none %}
+                        {{ tc.memory|format_size }}
+                    {% else %}
+                            N/D
+                    {% endif %}
+                        </td>
+                {% endif %}
+            {% endif %}
+                </tr>
+        {% else %}
+                <tr class="undefined">
+                    <td class="idx">{{ loop.index }}</td>
+            {% if feedback_level == FEEDBACK_LEVEL_FULL %}
+                    <td colspan="4">
+            {% else %}
+                    <td colspan="2">
+            {% endif %}
+                        N/D
+                    </td>
+                </tr>
+        {% endif %}
+    {% endwith%}
+    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endfor %}
+
+
+{#{% if sr and sr.compiled() %}#}
+{% if sr %}	
+<h4 class="mt-4">{{ "Compilation output"|translate }}</h4>{# TODO: trim long outputs and add facility to see raw #}
+<table class="table table-striped" style="table-layout: fixed;" width="100%">
+    <tbody>
+	<tr>
+            <th>{{ "Compilation outcome"|translate }}</th>
+            <td>{{ sr.compilation_text|format_status_text|translate }}</td>
+	</tr>
+{% comment %}
+	<tr>
+            <th>{{ "Compilation time"|translate }}</th>
+            <td>
+{% if sr.compilation_time is none %}
+    N/D
+{% else %}
+    {{ sr.compilation_time }} segs }} {# |format_duration %}
+{% endif %}
+            </td>
+	</tr>
+            <th>{{ "Memory used"|translate }}:</th>
+            <td>
+{% if sr.compilation_memory is none %}
+    N/D
+{% else %}
+    {{ sr.compilation_memory|format_size }}
+{% endif %}
+            </td>
+{% endcomment %}
+	</tr>
+    </tbody>
+</table>
+{% if sr.compilation_stdout is not None %}
+<h5>{{ "Standard output"|translate }}</h5>
+<pre class="codedump" style="border:0.5pt solid black;padding:10px">
+  {{ sr.compilation_stdout }}
+</pre>
+{% endif %}
+{% if sr.compilation_stderr is not none %}
+<h5>{{ "Standard error"|translate }}</h5>
+<pre class="codedump" style="border:0.5pt solid black;padding:10px">
+  {{ sr.compilation_stderr }}
+</pre>
+{% endif %}
+{% endif %}
+
+</div>
+<a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+
+{% endblock %}
+{% block content-related %}
+{% endblock %}
+B

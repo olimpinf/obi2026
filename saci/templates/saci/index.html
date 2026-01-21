@@ -1,0 +1,61 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block header %}
+Saci
+{% endblock %}
+{% block content %}
+<p>
+  Saci é um ambiente de aprendizagem desenvolvido para o ensino de
+  programação. Ele agrega, num modelo de <i>página única</i> de navegador Web, recursos
+  de vídeo, texto e editor para desenvolvimento e teste de programas.
+  Não é necessário realizar nenhuma instalação em seu computador ou tablet.
+</p>
+<p>O ambiente Saci foi desenvolvido com apoio da Fundação de Amparo à
+  Pesquisa do Estado de São Paulo (FAPESP), processo 2014/26560-5.
+</p>
+
+<h2>Cursos Disponíveis</h2>
+<h3><a href="{% url 'saci:show_course' 'python' %}">Programação para Iniciantes (Blockly+Python)</a></h3>
+<p>Este curso é dirigido a iniciantes de todas as idades. Ele introduz
+  programação de computadores utilizando <em>programação por
+  blocos</em>, com um editor gráfico que permite conectar blocos que
+  representam comandos para o computador, de maneira a construir um
+  programa de computador. Os blocos representam conceitos de
+  programação como variáveis, expressões aritméticas e lógicas,
+  repetições, entrada e saída de dados, listas e outros, facilitando o
+  aprendizado por eliminar erros de sintaxe e por ser potencialmente
+  menos inibidor, para iniciantes, do que escrever um programa em uma
+  linguagem de programação textual.
+<p>O curso foi desenvolvido com <em>Blockly</em>, uma biblioteca do
+  Google, e Python, uma das linguagens de programação mais utilizadas
+  hoje em dia. O usuário pode intercambiar a visualização do programa
+  na forma de blocos ou na forma de programa Python, facilitando a
+  passagem do aluno para um estágio mais avançado, em que ele
+  poderá escrever programas diretamente na linguagem Python.
+  
+<p>Não é necessário instalar nenhum tipo de aplicativo para seguir
+  o curso, basta um navegador internet.
+
+<h3><a href="{% url 'saci:show_course' 'intro_js' %}">Introdução à Programação de Computadores (Javascript)</a></h3>
+<p>Este curso apresenta conceitos básicos de programação,
+  como variáveis, expressões aritméticas e lógicas,
+  repetições, entrada e saída de dados, vetores e outros,
+  utilizando Javascript como linguagem de programação.
+  Diferentemente do curso de Programação para Iniciantes (Blockly + Python),
+  neste curso o aluno escreve seus programas diretamente em uma
+  linguagem de programação, utilizando um editor de textos integrado
+  a um ambiente de desenvolvimento de programas.
+
+<p>Não é necessário instalar nenhum tipo de aplicativo para seguir
+  o curso, basta um navegador internet.
+
+{% endblock %}
+
+{% block content-related %}
+
+  {% include "saci/includes/course_menu.html" %}
+  {% include "includes/see_also_prepare.html" %}
+
+  
+{% endblock %}

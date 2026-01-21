@@ -1,0 +1,27 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+
+<p>Se o Coordenador Local da OBI na sua escola não é o mesmo do ano passado, por favor cadastre novamente sua escola, informando o novo Coordenador Local da OBI.
+  
+<p>
+  Você deve preencher o
+  <a href="{% url 'principal:cadastra_escola' %}">Formulário de Cadastro de Escola</a>.
+</p>
+<p>As informações das participações da escola em edições passadas da OBI serão recuperadas com base no número INEP e/ou nome da escola.
+</p>  
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

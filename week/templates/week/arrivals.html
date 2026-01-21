@@ -1,0 +1,227 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Chegadas{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+<h2>Chegadas</h2>
+
+<p>O dia de chegada é 30 de novembro de 2025, domingo. Haverá monitores esperando os participantes
+no aeroporto e na rodoviária.</p>
+
+<p>Por favor confira seu horário de chegada na tabela abaixo. Se o seu nome não consta da
+  tabela não será possível organizar sua recepção e transporte!
+  Preencha o formulário com o seu <b>nome completo e correto</b>, como aparece na página
+  <a href="{% url 'week:partic' %}">Participantes</a>.
+
+<center>
+<a href="https://forms.gle/hyFPvc8dnUtzKhyx7" target="_blank">Formulário de Chegadas/Partidas</a>
+</center>
+
+<p>
+O formulário pode ser preenchido mais de uma vez se for
+preciso alterar a informação. Note que informação não é atualizada
+automaticamente, pode demorar um tempo entre o envio do formulário e a
+atualização desta página.
+
+<p style="font-size:80%"><em>Obs.: os horários dos translados são ainda provisórios, precisamos que
+  todos respondam ao formulário para finalizarmos a programação.</em></p>
+{% for i in airport %}
+<table class="table table-hover">
+  <thead>
+  <tr class='table-primary'>
+    <th>Chegando no Aeroporto</th><th class="center">Nível</th><th class="center">De</th><th class="center">Vôo</th><th class="center">Horário<br>chegada</th></th><th class="center">Horário<br>Translado<br>para o hotel</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for c in i.participants %}
+{% comment %}
+  <tr bgcolor={% ifchanged c.van_arrival_time %} {% cycle "#ddffee" "#ffeedd" "eeddff" as rowcolors %} {% else %} "{{rowcolors}}" {% endifchanged %}>
+{% endcomment %}
+  <tr class={% ifchanged c.van_arrival_time %} {% cycle "table-warning" "table-success" as rowcolors %} {% else %} "{{rowcolors}}" {% endifchanged %}>
+    {# name #}
+    <td> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }}
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }}
+      {% elif c.compet %}
+      {{ c.compet.compet_name|obi_capitalize_name }}
+      {% endif %}
+      {% with "33972, 92239, 78222, 30596" as minors_list %}
+      {% if c.compet and c.compet_id|inlist:minors_list %}
+      <br><span style="font-size: 80%;color:#8e062d">menor desacompanhado</font>
+      {% endif %}
+      {% endwith %}
+      {% with "64314" as the_list %}
+      {% if c.compet and c.compet_id|inlist:the_list %}
+      <br><span style="font-size: 80%;color:#076d13">chegada 2/12</font>
+      {% endif %}
+      {% endwith %}
+      {% with "120, 122" as the_list %}
+      {% if c.week_id|inlist:the_list %}
+      <br><span style="font-size: 80%;color:#076d13">chegada 4/12</font>
+      {% endif %}
+      {% endwith %}
+    </td>
+    {# type #}
+    <td class="center">
+      {% if c.colab %}
+      Acomp.
+      {% elif c.chaperone %}
+      Acomp.
+      {% elif c.compet %}
+      {{ c.partic_level|obi_format_compet_type_short }}
+      {% endif %}
+    </td>
+    {# From #}
+    <td class="center">{{ c.arrival_from|default_if_none:"" }}</td>
+    {# Info #}
+    <td class="center">{{ c.arrival_info|default_if_none:"" }}</td>
+    {# Horário #}
+    <td class="center">{{ c.arrival_time|time:"H:i"|default_if_none:"?" }}</td>
+    {# Van #}
+    {% if c.van_arrival_time %}
+    <td class="center">{{ c.van_arrival_time|time:"H:i" }}</td>
+    {% else %}
+    <td class="center">a definir</td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+{% endfor %} {# i in airport #}
+<p>
+{% for i in bus_station %}
+  <table class="table table-hover">
+  <thead>
+  <tr class='table-primary'>
+    <th>Chegando na Rodoviária</th><th class="center">Nível</th><th class="center">De</th><th class="center">Empresa</th><th class="center">Horário<br>chegada</th></th><th class="center">Horário<br>Translado<br>para o hotel</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  {% for c in i.participants %}
+  <tr class={% ifchanged c.van_arrival_time %} {% cycle "table-warning" "table-success" as rowcolors %} {% else %} "{{rowcolors}}" {% endifchanged %}>
+    {# name #}
+    <td> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }}
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }}
+      {% elif c.compet %}
+      {{ c.compet.compet_name|obi_capitalize_name }}
+      {% endif %}
+    </td>
+    {# type #}
+    <td class="center">
+      {% if c.colab %}
+      Acomp.
+      {% elif c.chaperone %}
+      Acomp.
+      {% elif c.compet %}
+      {{ c.partic_level|obi_format_compet_type_short }}
+      {% endif %}
+    </td>
+    {# From #}
+    <td class="center">{{ c.arrival_from|default_if_none:"" }}</td>
+    {# Info #}
+    <td class="center">{{ c.arrival_info|default_if_none:"" }}</td>
+    {# Horário #}
+    <td class="center">{{ c.arrival_time|time:"H:i"|default_if_none:"?" }}</td>
+    {# Van #}
+    {% if c.van_arrival_time %}
+    <td class="center">{{ c.van_arrival_time|time:"H:i" }}</td>
+    {% else %}
+    <td class="center">a definir</td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+{% endfor %} {# i in airport #}
+
+<p>
+{% for i in hotel %}
+  <table class="table table-hover">
+  <thead>
+  <tr class='table-primary'>
+    <th>Chegando no Hotel</th><th class="center">Nível</th><th class="center">Horário<br>chegada</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for c in i.participants %}
+  <tr>
+    {# name #}
+    <td> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }}
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }}
+      {% elif c.compet %}
+      {{ c.compet.compet_name|obi_capitalize_name }}
+      {% endif %}
+    </td>
+    {# type #}
+    <td class="center">
+      {% if c.colab %}
+      Acomp.
+      {% elif c.chaperone %}
+      Acomp.
+      {% elif c.compet %}
+      {{ c.partic_level|obi_format_compet_type_short }}
+      {% endif %}
+    </td>
+    {# Horário #}
+    <td class="center">{{ c.arrival_time|time:"H:i"|default_if_none:"?" }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+{% endfor %} {# i in hotel #}
+
+<p>
+{% for i in no_info %}
+  <table class="table table-striped table-hover">
+  <thead>
+  <tr class='table-primary'>
+    <th>Sem Informação<br>de Chegada</th><th class="center">Nível</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for c in i.participants %}
+  <tr>
+    {# name #}
+    <td> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }}
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }}
+      {% elif c.compet %}
+      {{ c.compet.compet_name|obi_capitalize_name }}
+      {% endif %}
+    </td>
+    {# type #}
+    <td class="center">
+      {% if c.colab %}
+      Acomp.
+      {% elif c.chaperone %}
+      Acomp.
+      {% elif c.compet %}
+      {{ c.partic_level|obi_format_compet_type_short }}
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+{% endfor %} {# i in no_info #}
+
+{% endblock %}  
+
+
+{% block content-related %}
+  {% include "week/includes/see_also.html" %}
+{% endblock %}

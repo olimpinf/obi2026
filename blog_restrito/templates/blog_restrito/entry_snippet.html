@@ -1,0 +1,6 @@
+
+<ul class="list-news">
+{% for e in entries %}
+    {% include 'blog_restrito/news_summary.html' with object=e %}
+{% endfor %}
+</ul>

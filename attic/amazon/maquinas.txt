@@ -1,0 +1,42 @@
+maquina seletiva: c6i.4xlarge
+maquina fase1: c6i.8xlarge
+
+maquinas fase1 2023:
+
+pj: c3.2xlarge
+p1: c3.2xlarge
+p2: c3.8xlarge
+ps: c3.2xlarge
+
+máquinas fase2 2023:
+
+pj: m4.2xlarge
+p1: m4.2xlarge
+p2: m4.4xlarge (depois c3.8xlarge) 
+ps: m4.4xlarge
+
+maquinas fase0 2025
+pj: c5a.xlarge
+p1: c5a.xlarge
+p2: c5a.xlarge
+ps: c5a.xlarge
+
+2025 Fase 2 - dia 1
+PJ 141 (de 463) competidores () submissões
+P1 328 (1442) competidores () submissões
+P2 557 (2174) competidores () submissões
+PS 218 (779) competidores () submissões
+
+2025 Fase 2 Máquinas
+PJ c5a.2xlarge (8 vCPU, 16 GB), 5 workers 
+P1 c5a.4xlarge (16 vCPU, 32 GB), 8 workers
+P2 c5a.4xlarge (16 vCPU, 32 GB), 12 workers
+PS c5a.4xlarge (16 vCPU, 32 GB), 7 workers
+
+2025 Fase 2 max simultaneos
+PJ 96
+P1 440
+P2 572
+PS 110
+
+

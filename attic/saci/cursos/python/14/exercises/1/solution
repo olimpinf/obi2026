@@ -1,0 +1,11 @@
+# Solução do Desafio da Aula 14
+
+N = int(input())
+lista_de_honra = []
+for count in range(int(N)):
+    nome = input()
+    num = int(input())
+    if num >= 80:
+        lista_de_honra.append(nome)
+        lista_de_honra.append(num)
+print(lista_de_honra)

@@ -1,0 +1,63 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Submissões Fase 3 - Programação{% endblock %}
+
+{% block header %}<h1>Consulta Submissões Fase 3 - Programação</h1>{% endblock %}
+
+{% block content %}
+
+<h2>{{ result.compet.compet_name }}</h2>
+
+<b>Num. Inscrição</b>: {{ result.compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ result.compet.compet_type|obi_format_compet_type_short }}<br>
+
+{% if result.problems %}
+  {% with result.problems|length as num_items %}
+    {% if num_items == 1 %}
+       <p>Foi encontrado um arquivo de solução aceito para correção:
+    {% else %}
+       <p>Foram encontrados  {{ result.problems|length }}  arquivos de solução aceitos para correção:
+    {% endif %}
+  {% endwith %}
+  <ul>
+  {% for p in result.problems %}
+    <li>{{ p }}
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>Não foram encontrados arquivo de solução aceitos para correção.
+{% endif %}
+
+<p>&nbsp;</p>
+<hr>
+<p>
+<p>Se você notar a falta de algum arquivo por favor contate o Coordenador Local 
+da OBI em sua escola. 
+<p>
+<a href="{% url 'recupera_subm_prog_fase3' %}">Recupera soluções</a>. 
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Consulta Resultado Fase 3 - Iniciação</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

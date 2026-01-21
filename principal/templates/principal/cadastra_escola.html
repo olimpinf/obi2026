@@ -1,0 +1,150 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block header %}<h1>{{ title }}</h1>{% endblock %}
+
+{% block head_extra %}
+<script>
+  function make_fields_readonly(state) {
+      var color='#ffffff';
+      if (state) color='#efefef';
+    $("#id_school_zip").prop('readonly', state).css('background-color', color);
+    $("#id_school_address").prop('readonly', state).css('background-color', color);
+    $("#id_school_address_number").prop('readonly', state).css('background-color', color);
+    $("#id_school_address_complement").prop('readonly', state).css('background-color', color);
+    $("#id_school_address_district").prop('readonly', state).css('background-color', color);
+    $("#id_school_city").prop('readonly', state).css('background-color', color);
+    $("#id_school_state").prop('readonly', state).css('background-color', color);
+    $("#id_school_name").prop('readonly', state).css('background-color', color);
+    $("#id_school_phone").prop('readonly', state).css('background-color', color);
+
+  }
+  $(document).ready(function() {
+    // Initially disable the all fields except school_type
+      make_fields_readonly(true);
+      $('#id_school_inep_code').prop('readonly', true).css('background-color', '#efefef');
+    
+    // Enable/disable INEP code field based on school type selection
+    $('#id_school_type').on('change', function() {
+        var schoolTypeValue = parseInt($(this).val());
+
+        if (schoolTypeValue) {
+            if (schoolTypeValue && schoolTypeValue <= 2) {
+		make_fields_readonly(true);
+		$('#id_school_inep_code').prop('readonly', false).css('background-color', '#ffffff');
+	    }
+	    else {
+		make_fields_readonly(false);
+		$('#id_school_inep_code').val(''); // Clear the field
+		$('#id_school_inep_code').prop('readonly', true).css('background-color', '#efefef');
+	    }
+	}
+	else {
+	    make_fields_readonly(true);
+            $('#id_school_inep_code').val(''); // Clear the field
+	    $('#id_school_inep_code').prop('readonly', true).css('background-color', '#efefef');
+	}
+    });
+    
+    // Handle focus on INEP code field
+    $('#id_school_inep_code').on('focus click', function(e) {
+        var schoolTypeValue = parseInt($('#id_school_type').val());
+        
+        if (!schoolTypeValue || schoolTypeValue > 2) {
+            e.preventDefault();
+            if (!schoolTypeValue) {
+                alert('Por favor, selecione primeiro o Tipo da Escola.');
+            //} else {
+            //    alert('O código INEP só é obrigatório para escolas do Ensino Básico.');
+            }
+            $(this).blur();
+            $('#id_school_type').focus();
+        }
+    });
+});
+</script>  
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" role="form">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>
+      <ul>
+      {% for field in fieldset %}
+        <li>
+          <strong>{{ field.label_tag }}</strong>
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+      </ul>
+    </fieldset>
+    {% endif %}
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+
+<h4>Instruções</h4>
+<div class="small">
+  <ul>
+    {% if school_is_known %}
+    <li>As informações foram recuperadas do cadastro do ano passado; confira se elas estão corretas.</li>
+    <li>Por favor informe o número do endereço (as outras informações sobre o endereço foram 
+      preenchidas com pesquisa automática através do CEP); se necessário, complete o campo Complemento.</li>
+    <li>Preencha também o campo <b>Confirme o email</b>.</li>
+    {% else %}
+    {% comment %}
+    <li>Se você cadastrou sua escola o ano passado e lembra do usuário
+      e senha, você pode
+      <div style="margin:20px;"><a href="{% url 'principal:recupera_cadastro'%}" class="myButton" style="">recuperar&nbsp;cadastro</a></div>
+      que recupera as informações do cadastro do ano anterior. Se não lembra do usuário e senha, por favor preencha novamente o
+      formulário de cadastro. Se a escola tem o mesmo nome e é na mesma cidade, ou tem o mesmo código INEP, as informações
+      do novo cadastro são consolidadas com o cadastro antigo, para fins de histórico na OBI, como número de medalhas.
+    {% endcomment %}
+    <li>Forneça as informações solicitadas no formulário e clique em <b>Enviar</b>.</li>
+    {% endif %}
+    <li>O endereço de email será o principal meio de comunicação, portanto assegure-se de que esteja correto.</li>
+    <li>As informações serão verificadas com a escola pela Secretaria da OBI, portanto é importante que o telefone de contato esteja correto.</li>
+    <li>Após a verificação, você receberá uma mensagem no endereço de email informado, contendo a senha para acessar a Área Reservada (o nome de usuário você escolhe no formulário ao lado).</li>
+    <li>Utilize o nome de usuário escolhido e a senha recebida para acessar a Área Reservada, clicando no menu <i>Acesso Escolas</i> no alto da página.
+  </ul>
+</div>
+
+<h4>Veja também</h4>
+<div class="small">
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+    {% get_flatpages '/info/' as flatpages_info %}
+    {% for page in flatpages_info %}
+    {% if not page.url == flatpage.url %}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+    {% endfor %}
+    {% endblock browse %}
+  </ul>
+</div>
+
+{% endblock %}
+
+

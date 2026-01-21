@@ -1,0 +1,115 @@
+  {% load flatpages %}
+  {% load obi_extras %}
+
+<h4>Veja também</h4>
+
+  <div class="smaller-ul">
+  <ul>
+  
+    <li>Quadros de Medalhas
+      <ul>
+        {% get_flatpages '/resultados/qmerito/' as flatpages_qmerito %}
+        {% for page in flatpages_qmerito %}
+	   {% if page.url != '/resultados/qmerito/' %}
+             <li><a href="{{ page.url }}">{{ page.title|cut:'Quadro de Medalhas - OBI2025 - ' }}</a></li>
+	   {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    <li>Quadros de Medalhas - Competição Feminina
+      <ul>
+        {% get_flatpages '/resultados/cfqmerito/' as flatpages_qmerito %}
+        {% for page in flatpages_qmerito %}
+	   {% if page.url != '/resultados/cfqmerito/' %}
+             <li><a href="{{ page.url }}">{{ page.title|cut:'Quadro de Medalhas - CF-OBI2025 - '  }}</a></li>
+	   {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>Semana Olímpica
+      <ul>
+        <li><a href='/resultados/semana/convidados' >Convidados Semana Olímpica</a></li>
+        <li><a href="{% url 'week:index'%}">Semana Olímpica</a></li>
+      </ul>
+    </li>
+
+    <hr>
+
+    <li><a href="/resultados/honra_estadual">Quadros de Honra ao Mérito Estadual</a>
+      <ul>
+        <li><a href="/resultados/honra_estadual/ij/">Modalidade Iniciação Júnior</a></li>
+        <li><a href="/resultados/honra_estadual/i1/">Modalidade Iniciação 1</a></li>
+        <li><a href="/resultados/honra_estadual/i2/">Modalidade Iniciação 2</a></li>
+      </ul>
+    </li>
+
+
+    
+    <li>Fase 1
+      <ul>
+	<li><a href="/resultados/fase1/iniciacao">Caderno de Tarefas e gabaritos, Modalidade Iniciação</a></li>
+	<li><a href="/resultados/fase1/programacao">Resultados, Modalidade Programação</a></li>
+      </ul>
+    </li>
+
+    <li>Fase 2
+      <ul>
+	<li><a href="/resultados/fase2/iniciacao">Resultados, Modalidade Iniciação</a></li>
+	<li><a href="/resultados/fase2/programacao">Resultados, Modalidade Programação</a></li>
+      </ul>
+    </li>
+
+{% comment %}    
+    <li>Fase 3
+      <ul>
+	<li><a href="/resultados/fase3/iniciacao">Resultados, Modalidade Iniciação</a></li>
+	<li><a href="/resultados/fase3/programacao">Resultados, Modalidade Programação</a></li>
+      </ul>
+    </li>
+    <li>CF-OBI
+      <ul>
+        <li><a href="/resultados/cfobi/programacao">Resultados, Modalidade Programação</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+    <li>Certificados
+      <ul>
+        <li><a href='/certificados' >Emite Certificado</a></li>
+      </ul>
+    <li>Semana Olímpica
+      <ul>
+        <li><a href="{% url 'week_invited' %}">Convidados Semana Olímpica</a></li>
+        <li><a href="{% url 'week_index' %}">Informações</a></li>
+      </ul>
+    <li>Fase 1
+      <ul>
+	<li><a href="{% url 'fase1:consulta_classif'%}">Consulta Classificados</a></li>
+	<li><a href="{% url 'fase1:consulta_res_ini'%}">Modalidade Iniciação, Consulta Pontuação</a></li>
+	<li><a href="{% url 'fase1:consulta_res_prog'%}">Modalidade Programação, Consulta Correção </a></li>
+      </ul>
+
+    <li>Fase 2
+      <ul>
+	<li><a href="{% url 'fase2:consulta_classif'%}">Consulta Classificados</a></li>
+	<li><a href="{% url 'fase2:consulta_res_ini'%}">Modalidade Iniciação, Consulta Pontuação</a></li>
+	<li><a href="{% url 'fase2:consulta_res_prog'%}">Modalidade Programação, Consulta Correção </a></li>
+      </ul>
+    <li>Fase 3
+      <ul>
+	<li><a href="{% url 'fase3:consulta_res_ini'%}">Modalidade Iniciação, Consulta Correção</a></li>
+	<li><a href="{% url 'fase3:consulta_res_prog'%}">Modalidade Programação, Consulta Correção </a></li>
+      </ul>
+
+      
+    <li>Páginas
+      <ul>
+        {% get_flatpages '/resultados/' as flatpages_info %}
+        {% for page in flatpages_info %}
+             <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+  </ul>
+{% endcomment %}

@@ -1,0 +1,104 @@
+title:Capitais
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+A Linearlândia construiu uma rede de ferrovias de alta velocidade,
+ligando certos pares de cidades, de modo que: é possível viajar entre
+
+qualquer par de cidades usando apenas ferrovias; e há apenas um caminho de ferrovias (sequência de
+ferrovias) entre qualquer par de cidades. Existe muita disputa entre
+as capitais dos estados da Linearlândia e, por isso, ficou decidido
+
+
+que cada capital seria ligada por ferrovia a apenas uma outra cidade, e que toda
+cidade que não é capital seria ligada a outras cidades por duas ou mais ferrovias.
+Dessa forma, nenhuma viagem entre um par de
+capitais usando apenas ferrovias passa por uma terceira capital.</p> 
+
+
+
+
+
+
+
+
+
+<p>
+
+<center>
+<img src="/static/img/task_images/2015f2p1_capitais.png" width="50%">
+</center></p>
+
+<p>Vamos definir como <em>distância-ferrovia </em> entre duas cidades o
+número de ferrovias que é necessário utilizar para viajar entre essas
+duas cidades. Dada apenas a informação sobre quais pares de cidades
+estão ligados por uma ferrovia, você deve escrever um programa para
+computar a menor distância-ferrovia entre todos os pares de capitais.
+Na figura acima, há nove capitais e a menor distância-ferrovia entre
+qualquer par de capitais é 3, entre as capitais 5 e 12.</p>
+<h3>Entrada</h3>A primeira linha da entrada contém um inteiro N, o número de
+cidades. 
+As cidades são identificadas por inteiros de 1 a N.
+As N-1 linhas seguintes contém, cada uma, dois inteiros U
+e V, representando um par de cidades ligadas por uma ferrovia.
+<h3>Saída</h3>Seu programa deve produzir uma única linha, contendo um único inteiro, 
+a menor distância-ferrovia entre todos os pares capitais.
+
+<h3>Restrições</h3><ul>
+<li> 2 ≤  N ≤  10<sup>5</sup></li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+<li> Em um conjunto de casos de teste cuja soma é 40 pontos, N ≤  10<sup>4</sup>;</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+1 2
+2 3
+3 4
+5 3
+6 5
+6 7
+8 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+1 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

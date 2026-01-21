@@ -1,0 +1,142 @@
+title:Relógios
+template:exams/tarefa_programacao.html
+order:3
+<p>
+É como se diz: mesmo um relógio parado está certo duas vezes por
+dia. Quer dizer, se um relógio está parado com seus ponteiros
+marcando, digamos, 7:32, e você olhar para ele exatamente às 7:32 da
+manhã ou da noite, o relógio vai lhe mostrar a hora certa! O coelho
+branco está atrasado, muito atrasado. Ele precisa chegar ao seu
+destino o mais rápido possível, mas não pode, de jeito nenhum, mas de
+jeito nenhum mesmo, passar por um relógio que não esteja lhe mostrando
+a hora certa.
+
+<div class="center">
+<img src="/static/img/task_images/2018f2p1_relogios.png" width="300px"/>
+</div>
+
+<p>O coelho branco está na sala do canto superior esquerdo de um palácio
+que é um quadriculado de salas iguais, cada uma delas contendo um
+relógio cujo marcador está dividido em K unidades de tempo, de 0 a
+K-1, e que possuem apenas um ponteiro. Alguns relógios estão
+parados, enquanto os demais funcionam perfeitamente sincronizados. O
+coelho precisa chegar na sala do canto inferior direito, pode se mover
+ortogonalmente apenas e leva exatamente uma unidade de tempo para ir
+de uma sala para outra. Ele pode ficar esperando parado, por uma
+quantidade inteira de unidades de tempo, numa sala cujo relógio esteja
+funcionando. Mas ele não pode entrar, nem ficar esperando parado, em
+uma sala cujo relógio lhe esteja mostrando a hora errada.
+
+<p>
+No exemplo da figura, K=6 e os relógios mostrados estão parados. Nas
+salas onde a figura não mostra o relógio, é porque ele está
+funcionando. Você consegue ver que, para esse exemplo, o tempo mínimo
+para o coelho branco chegar na sala inferior direita é 8 unidades de tempo?
+
+<p>
+Seu programa precisa computar a quantidade mínima de unidades de tempo
+para o coelho branco chegar ao destino, se for possível chegar ao destino.
+
+ 
+<h3>Entrada</h3>
+<p.>A primeira linha da entrada contém três inteiros L, C
+ e K, indicando, respectivamente, o número de linhas, o número de
+ colunas e a quantidade de unidades de tempo na qual o marcador dos
+ relógios está dividido. As L linhas seguintes contêm, cada uma, C
+ inteiros P, representando o estado dos relógios em cada sala:
+ P=-1, se o relógio estiver funcionando corretamente; e 0 &leq;  P &leq; 
+ K-1, se estiver parado com o ponteiro na posição P. O relógio na
+ sala inicial, primeira linha e primeira coluna, está sempre parado na
+ posição 0.
+
+ 
+<h3>Saída</h3>
+<p>Imprima uma única linha contendo um inteiro, representando a quantidade mínima de
+ unidades de tempo para o coelho branco chegar ao destino. Se não for
+ possível, imprima -1.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  L,C &leq;  100
+<li> 2 &leq;  K &leq;  10<sup>5</sup>
+<li> -1 &leq;  P &leq;  K-1
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+ <li> Para um conjunto de casos de teste valendo 25 pontos, L &leq; 
+   20, C &leq;  20 e K &leq;  10;
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 4 6
+0 -1 3 -1
+4 1 -1 1
+4 -1 2 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4 10
+0 -1 -1 -1
+-1 9 9 9
+4 9 -1 8
+-1 -1 9 7
+-1 7 9 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4 10
+0 -1 -1 -1
+-1 9 9 9
+4 9 -1 8
+-1 2 9 9
+-1 7 9 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+20
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

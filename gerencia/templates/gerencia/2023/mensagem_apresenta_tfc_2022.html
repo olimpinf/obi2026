@@ -1,0 +1,67 @@
+{% if compet.compet_name %}
+{{ greetings }} {{compet.compet_name}},
+{% elif coord_name %}
+{{ greetings }} {{coord_name}},
+{% elif coord_name %}
+{{ greetings }} {{colab_name}},
+{% endif %}
+Em 2022, ocorrerá novamente o Torneio Feminino de Computação (TFC), uma competição brasileira que visa incentivar a participação feminina em olimpíadas de Informática. Com o objetivo de que as competidoras se sintam mais incluídas e representadas na Computação, o TFC também contará com oportunidades para que elas conheçam e interajam com mulheres que atuam nessa área.
+
+A organização deste torneio é uma iniciativa formada pelo Movimento Meninas Olímpicas do Brasil, (ex-)competidoras de olimpíadas de Informática, Matemática, Física, Química, Biologia e Astronomia, professoras e (ex-)alunas da área de Computação de diversas instituições brasileiras de ensino superior, com apoio da Olimpíada Brasileira de Informática (OBI), da Maratona de Programação, da Sociedade Brasileira de Computação (SBC) e da Universidade Federal de Santa Maria (UFSM).
+
+A coordenação da OBI convida todas as inscritas nas modalidades Programação Júnior, Programação Nível 1 ou Programação Nível 2 da OBI2022 para participar do TFC2022. Não é necessário fazer uma nova inscrição nem ter feito a prova da OBI.
+
+**************
+Participantes:
+**************
+Todas as competidoras inscritas na modalidade Programação Nível Júnior, Programação Nível 1 ou Programação Nível 2 da OBI2022 estão habilitadas a participar do torneio.
+
+*****
+Data:
+*****
+18 de setembro de 2022 (domingo)
+
+********
+Horário:
+********
+Início à escolha entre 13:00 e 20:00 (GMT-03:00, horário de Brasília). O Ambiente de Prova fecha às 23:00 (GMT-03:00, horário de Brasília).
+
+******
+Prova:
+******
+O torneio será totalmente online, realizado por meio do Ambiente de Prova da OBI2022 (acesso com a senha da OBI). As competidoras deverão dispor de computador e acesso à Internet para entrar no sistema e fazer a prova. As competidoras terão 3 horas no intervalo de tempo indicado para resolver 4 problemas de programação. As linguagens de programação permitidas seguem o regulamento da OBI.
+{% if compet.compet_name %}
+Para acessar a Prova do TFC entre na sua página pessoal na OBI2022, através link "ACESSO COMPETIDORES" da página da OBI2022:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se:
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+{% endif %}
+
+*************
+Certificados:
+*************
+Todas as competidoras que fizerem a prova receberão certificados digitais de participação.
+
+**********
+Premiação:
+**********
+As premiadas receberão camisetas do TFC, medalhas e serão convidadas para participar da Fase 3 da OBI2022, a ser realizada no dia 01 de outubro de 2022.
+
+
+
+
+Para mais informações, a organização do evento oferece diversos canais:
+E-mail: tfcbr@inf.ufsm.br
+Site: https://tfcbr.inf.ufsm.br
+Instagram: https://www.instagram.com/tfc.br
+Facebook: https://www.facebook.com/tfcbr.inf
+YouTube: https://www.youtube.com/c/tfcbr
+
+Solicitamos que mensagens sobre o TFC sejam enviadas diretamente à organização do TFC em um dos canais acima. Mensagens enviadas à OBI poderão não ser respondidas.
+
+
+{% include 'includes/signature.html' %}

@@ -1,0 +1,15 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block header %}
+Saci
+{% endblock %}
+{% block content %}
+{{ page|safe }}
+{% endblock %}
+
+{% block content-related %}
+
+{% include "saci/includes/course_menu.html" %}
+
+{% endblock %}

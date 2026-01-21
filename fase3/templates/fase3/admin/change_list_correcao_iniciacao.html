@@ -1,0 +1,68 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_urls static admin_list %}
+
+{% block content_title %}<h1>Modalidade Iniciação - Correção</h1>{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    <div class="module filtered" id="changelist">
+      {% block search %}{% search_form cl %}{% endblock %}
+      {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
+
+      {% block filters %}
+      {% endblock %}
+
+
+<p>Na Fase Nacional, a correção das provas da Modalidade Iniciação 
+é realizada pela Coordenação da OBI, através do sistema
+de Correção Automatizada.
+
+<p>Siga as instruções abaixo e utilize
+o formulário <a href="/restrito/fase3/corretorfolhasrespostas/add/">Correção Automatizada</a>
+para submeter as Folhas de Respostas para a correção automatizada.
+
+
+<!--p><font color="red">O sistema de submissão está desativado, está
+encerrado o prazo para envio de soluções.</font-->
+
+<!--p><font color="red">O sistema de submissão está desativado. Ele será ativado 
+ao término da prova.</font-->
+
+<!--p><font color="red">O sistema de submissão está desativado, por favor aguarde.
+    Uma mensagem será enviada quando o corretor estiver disponível.</font-->
+
+<p><b>Solicitamos que os arquivos com submissões dos alunos sejam
+submetidos no sistema até o dia 11/10, sexta-feira.</b></p>
+
+<h3>Passo-a-passo para Correção Automatizada</h3>
+
+<ol>
+<li>Certifique-se de que o número de inscrição está corretamente
+preenchido no caso de Folhas de Respostas avulsas (nas Folhas de Respostas
+pré-prenchidas o número de inscrição já vem corretamente preenchido!).
+<li>Não submeta Folhas de Respostas em branco, de competidores que não compareceram.
+<li>Separe as Folhas de Respostas dos competidores em lotes, separados pelo nível (Júnior, 1 e 2).
+<li>Para cada lote (contendo Folhas de Respostas de um único nível),
+digitalize (escaneie) as Folhas de Respostas, e salve em um arquivo de
+formato PDF. Muitos aplicativos permitem salvar várias páginas
+digitalizadas em um único arquivo, geralmente de tipo PDF. Ou seja, o
+aplicativo gera um único arquivo no formato PDF contendo as imagens
+  digitalizadas.
+<li>Se possível, configure a digitalização para tons de cinza, densidade 150 dpi.
+<li>Sugerimos que cada lote contenha não mais do que 50 Folhas de Respostas, para que os arquivos não sejam excessivamente grandes.
+<li>Para cada arquivo de Folhas de Respostas digitalizadas, utilize o
+formulário <a href="/restrito/fase3/corretorfolhasrespostas/add/">Correção Automatizada</a>
+para submeter para a correção automatizada.
+<li>O resultado da correção será enviado para o endereço de correio eletrônico do Coordenador da Sede.
+<li>A pontuação não será divulgada neste momento, mas ela será inserida automaticamente no sistema (por favor notem que para todos os   participantes a pontuação mostrada será 0 pontos!).
+<li>Solicitamos que os Coordenadores verifiquem nos arquivos recebidos por
+email se está tudo correto, se as Folhas de Respostas foram corretamente
+corrigidas. Os arquivos indicam condições de erro como Número de Inscrição
+incorreto ou mal preenchido, dificuldade de processar o arquivo
+  submetido, etc.)
+</ol>
+
+
+    </div>
+  </div>
+{% endblock %}

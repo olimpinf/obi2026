@@ -1,0 +1,6 @@
+pdftotext CENSO-ESCOLAR-Relacao-de-Escolas-Estaduais-com-Diretores-e-Adjuntos.-Atualizada-em-10.02.2023.pdf
+# eliminar centros depois, melhor não incluir
+egrep 'DIRETOR:|EE |CENTRO DE|CENTRO ESTADUAL|@' CENSO-ESCOLAR-Relacao-de-Escolas-Estaduais-com-Diretores-e-Adjuntos.-Atualizada-em-10.02.2023.txt > tmp.txt
+# ***** -->> edit tmp.txt to put an additional line at the end
+./extract_to_csv.py tmp.txt > escolas_ms.csv
+

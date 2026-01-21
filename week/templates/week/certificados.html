@@ -1,0 +1,109 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Professores{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Certificados</h2>
+
+<h3>Professores</h3>
+
+<ul>
+<li><b>André Amaral de Sousa</b> [<a href="{% url 'week:emite_certificado' 'professor' 2 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 1 %}">carta escola</a>]</li>
+
+<li><b>Arthur Ferreira do Nascimento</b> [<a href="{% url 'week:emite_certificado' 'professor' 2 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 2 %}">carta escola</a>]</li>
+
+<li><b>Eduardo Quirino de Oliveira</b> [<a href="{% url 'week:emite_certificado' 'professor' 3 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 3 %}">carta escola</a>]</li>
+
+<li><b>Emanuel Juliano Morais Silva</b> [<a href="{% url 'week:emite_certificado' 'professor' 4 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 4 %}">carta escola</a>]</li>
+
+<li><b>Frederico Bulhões de Sousa Ribeiro</b> [<a href="{% url 'week:emite_certificado' 'professor' 5 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 5 %}">carta escola</a>]</li>
+
+<li><b>Gabriel Lucas Costa Martins</b> [<a href="{% url 'week:emite_certificado' 'professor' 6 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 6 %}">carta escola</a>]</li>
+
+<li><b>Heitor Gonçalves Leite</b> [<a href="{% url 'week:emite_certificado' 'professor' 7 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 7 %}">carta escola</a>]</li>
+
+<li><b>Leonardo Valente Nascimento</b> [<a href="{% url 'week:emite_certificado' 'professor' 8 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 8 %}">carta escola</a>]</li>
+
+<li><b>Letícia Freire Carvalho de Sousa</b> [<a href="{% url 'week:emite_certificado' 'professor' 9 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 9 %}">carta escola</a>]</li>
+
+<li><b>Luca Dantas de Britto Monte Araújo</b> [<a href="{% url 'week:emite_certificado' 'professor' 10 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 10 %}">carta escola</a>]</li>
+
+<li><b>Mateus Bezrutchka</b> [<a href="{% url 'week:emite_certificado' 'professor' 11 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 11 %}">carta escola</a>]</li>
+
+<li><b>Naim Shaikhzadeh Santos</b> [<a href="{% url 'week:emite_certificado' 'professor' 12 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 12 %}">carta escola</a>]</li>
+
+<li><b>Rafael Nascimento Soares</b> [<a href="{% url 'week:emite_certificado' 'professor' 13 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 13 %}">carta escola</a>]</li>
+
+<li><b>Santiago Valdés Ravelo</b> [<a href="{% url 'week:emite_certificado' 'professor' 14 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 14 %}">carta escola</a>]</li>
+
+<li><b>Thiago Mota Martins</b> [<a href="{% url 'week:emite_certificado' 'professor' 15 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 15 %}">carta escola</a>]</li>
+
+<li><b>Yan Matheus Tavares e Silva</b> [<a href="{% url 'week:emite_certificado' 'professor' 16 %}">certificado</a>] [<a href="{% url 'week:emite_carta_professor' 16 %}">carta escola</a>]</li>
+</ul>
+
+<h2>Monitores</h2>
+<ul>
+  <li><b>Luã Marcelo Muriana</b> [<a href="{% url 'week:emite_certificado' 'monitor' 1 %}">certificado</a>]</li>
+
+<li><b>Aline Hesley Silva Sousa</b> [<a href="{% url 'week:emite_certificado' 'monitor' 2 %}">certificado</a>]</li>
+
+<li><b>Jovanio José Galvão Júnior</b> [<a href="{% url 'week:emite_certificado' 'monitor' 3 %}">certificado</a>]</li>
+
+<li><b>Letícia Berto</b> [<a href="{% url 'week:emite_certificado' 'monitor' 4 %}">certificado</a>]</li>
+
+<li><b>Letícia da Silva Bomfim</b> [<a href="{% url 'week:emite_certificado' 'monitor' 5 %}">certificado</a>]</li>
+
+<li><b>Maria Clara da Costa Oliveira</b> [<a href="{% url 'week:emite_certificado' 'monitor' 6 %}">certificado</a>]</li>
+
+<li><b>Nicolas dos Santos França</b> [<a href="{% url 'week:emite_certificado' 'monitor' 7 %}">certificado</a>]</li>
+
+<li><b>Paulo Bassani</b> [<a href="{% url 'week:emite_certificado' 'monitor' 8 %}">certificado</a>]</li>
+
+<li><b>Pedro Machado Leão</b> [<a href="{% url 'week:emite_certificado' 'monitor' 9 %}">certificado</a>]</li>
+
+<li><b>Rafael Queiroz</b> [<a href="{% url 'week:emite_certificado' 'monitor' 10 %}">certificado</a>]</li>
+
+<li><b>Vinicius Leme Soares</b> [<a href="{% url 'week:emite_certificado' 'monitor' 11 %}">certificado</a>]</li>
+
+<li><b>Vítor Gomes Chagas</b> [<a href="{% url 'week:emite_certificado' 'monitor' 12 %}">certificado</a>]</li>
+</ul>
+
+<h3 id="monitores-laboratorio">Monitores de Laboratório</h3>
+
+<ul>
+<li><b>Felipe de Carvalho Pereira</b> [<a href="{% url 'week:emite_certificado' 'monitor_lab' 1 %}">certificado</a>]</li>
+<li><b>Gustavo Sacramento Santos</b> [<a href="{% url 'week:emite_certificado' 'monitor_lab' 2 %}">certificado</a>]</li>
+<li><b>Leonardo Rezende Costa</b> [<a href="{% url 'week:emite_certificado' 'monitor_lab' 3 %}">certificado</a>]</li>
+<li><b>Luana Amorim</b> [<a href="{% url 'week:emite_certificado' 'monitor_lab' 4 %}">certificado</a>]</li>
+<li><b>Lucas Francisco Silva Paiva</b> [<a href="{% url 'week:emite_certificado' 'monitor_lab' 5 %}">certificado</a>]</li>
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><b><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

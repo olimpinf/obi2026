@@ -1,0 +1,127 @@
+title:Cálculo
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Os computadores  armazenam todas as informações  usando representações
+binárias, ou seja,  representações que utilizam apenas zeros ('0')  e uns ('1').  Há
+vários padrões  para a representação  de informação na  forma binária,
+como  por exemplo  <em> "complemento-de-dois" </em>(usado  para números
+inteiros),  <em> "ascii" </em> (usado  para  caracteres  e  letras  sem
+acentos), ou <em>"ieee-754" </em> (usado para números reais).</p>
+
+<p>Neste  problema vamos  usar a  representação <em> "obi-2015" </em> para
+certos valores positivos e menores  do que 1.  Na <em> "obi-2015"</em>,
+o número é representado por uma  sequência de 0"s e 1"s de comprimento
+arbitrário.   Lendo a  representação  da esquerda  para  a direita,  o
+primeiro  dígito  binário  representa  o  valor  2<sup>-1</sup>,  o  segundo
+representa  2<sup>-2</sup>, o  terceiro  2<sup>-3</sup>, e  assim  por diante.   A
+representação utiliza  sempre o menor  número de dígitos  possível (ou
+seja, desta forma o dígito mais à direita é sempre 1).</p>
+
+<p>Por exemplo, a sequência de dígitos binários 0 1 representa o seguinte
+valor:</p>
+
+<p><center> <b>
+0*2<sup>-1</sup> + 1*2<sup>-2</sup> = 0.25</b> </center></p>
+
+
+<p>Já a sequência de  dígitos binários 1 0 1 0 1  1 representa o seguinte
+valor:</p>
+
+<p><center> <b>
+1*2<sup>-1</sup> + 0*2<sup>-2</sup> + 1*2<sup>-3</sup> + 0*2<sup>-4</sup> + 1*2<sup>-5</sup> + 1*2<sup>-6</sup> = 0.671875
+</b> </center></p>
+
+<p>Sua tarefa é,  dados dois números X e Y,  representados no padrão
+<em> obi-2015</em>, determinar  a representação da soma  X+Y, também no
+padrão <em> obi-2015</em>.</p>
+<h3>Entrada</h3>
+A  primeira  linha  contém  os   inteiros  M  e  N,  representando
+respectivamente  o número  de dígitos  binários de  X e  de Y.   A
+segunda linha  contém M números  X_i, representando X  no padrão
+<em> obi-2015</em>.   A   terceira  linha   contém  N   números  Y_j,
+representando Y no padrão <em> obi-2015</em>.
+<h3>Saída</h3>
+Seu programa deve  produzir uma única linha,  contendo a representação
+do valor X + Y no padrão <em> obi-2015</em>.
+<h3>Restrições</h3>
+<ul>
+  <li> 1  ≤  M, N  ≤  10<sup>3</sup></li>
+  <li> 0 < X , Y < 1</li>
+  <li> X_i ∈ {0, 1}, para 0  ≤  i  ≤  M</li>
+  <li> Y_j ∈ {0, 1}, para 0  ≤  j  ≤  N</li>
+  <li> X+Y < 1</li>
+</ul>
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li> Em um conjunto de casos de teste somando 20 pontos, N  ≤  5 e M  ≤  5.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 3
+0 1
+0 0 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0 1 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4
+1 0 1 1 1
+0 0 0 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 1 0 0 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5
+0 1 1 1
+0 0 1 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 0 1 0 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

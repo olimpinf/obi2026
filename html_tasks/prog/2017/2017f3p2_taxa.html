@@ -1,0 +1,122 @@
+title:Taxa
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma empresa está construindo um condomínio de casas ao redor de um
+lago. As casas serão construídas em lotes de terra de diferentes
+tamanhos, mas todos os lotes serão às margens do lago. Além disso,
+cada lote de terra terá exatamente dois vizinhos no condomínio, um
+vizinho à direita e um vizinho à esquerda.
+
+
+
+<div class="center">
+<img src="/static/img/task_images/2017f3p2_taxa.png" />
+</div>
+ 
+
+<p>A empresa é dona de todo o terreno do condomínio e necessita dividir o
+terreno em lotes, de acordo com o projeto do condomínio. No entanto, a
+Prefeitura tem uma lei curiosa de imposto sobre divisão de terra,
+criada para inibir a criação de lotes de terra muito pequenos:
+
+<ol>
+<li> um terreno pode ser dividido apenas usando uma sequência de
+  <it>divisões de terreno</it>;
+<li> uma divisão de terreno é uma operação que divide um terreno em
+  duas partes; e
+<li> para cada divisão de terreno deve ser pago um imposto.
+</ol>
+
+Chamando de A a área da maior parte de terreno resultante da
+divisão, o valor do imposto sobre a divisão de terra é A x F,
+onde F é o <it>fator de divisão</it>, definido anualmente pela
+Prefeitura. Note que devido a (2), para dividir um terreno em N
+lotes, são necessárias N-1 divisões de terra, e portanto N-1
+pagamentos devem ser feitos à Prefeitura.
+
+<p>Por exemplo, considerando a figura acima, se o fator de divisão é 2.5
+e a primeira divisão de terreno separa o lote com 500 unidades de área
+dos outros lotes, o imposto a ser pago nesta primeira divisão é 2.5
+x (300+200+100+100+100).  Se a próxima divisão de terreno separa
+dos lotes restantes o lote de 300 unidades junto com seu lote vizinho
+de 100 unidades, um imposto adicional de 2.5 x (300+100) deve
+ser pago; e assim por diante.  Note também que algumas divisões de
+terra não são possíveis, devido a (2). Por exemplo, após a primeira
+divisão de terreno mencionada anteriormente não é possível fazer uma
+divisão para separar a área formada pelo lote de 300 unidades e o lote de 200
+unidades da área formada pelos três lotes restantes, porque mais do que duas partes
+resultariam dessa operação.
+
+<p>Dadas as áreas de todos os lotes ao redor do lago e o valor corrente
+do fator de divisão, escreva um programa para determinar o menor valor
+de imposto total que deve ser pago para dividir a terra de acordo com
+o projeto de condomínio.
+
+<h3>Entrada</h3>
+A primeira linha contém um número inteiro N e um número real F,
+indicando respectivamente o número de lotes no condomínio e o fator de
+divisão (com precisão de dois dígitos).  A segunda linha contém N
+números inteiros X<sub>i</sub>, representando as áreas de lotes vizinhos no
+projeto do condomínio, para 1  &leq;  i  &leq;  N, sendo que X<sub>k</sub> é
+vizinho de X<sub>k+1</sub> para 1  &leq;  k  &leq;  N-1, e X<sub>N</sub> é vizinho de
+X<sub>1</sub>.
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha na saída, contendo o valor
+mínimo do imposto a ser pago, como um número real com precisão de dois
+dígitos decimais.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  200
+<li> 0  &leq;  F  &leq;  5.00
+<li> 0 < X<sub>i</sub>  &leq;  500, para 1  &leq;  i  &leq;  N
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+  <li> Em um conjunto de casos de teste somando 20 pontos, N &leq;  8
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 1.50
+2 1 4 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+13.50
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 2.50
+300 100 500 100 100 200
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4500.00
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

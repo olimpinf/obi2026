@@ -1,0 +1,98 @@
+title:Setas
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Gabriel é um garoto que gosta muito de um jogo onde há várias letras
+em um tabuleiro e o jogador precisa rapidamente pisar nas letras
+corretas, de acordo com as instruções na tela, seguindo uma
+música. Cansado de vencer, Gabriel inventou um novo jogo: agora temos
+um tabuleiro quadrado, com N células de cada lado, em que cada
+célula possui uma <em> </em>seta que aponta para uma das quatro posições
+vizinhas. O jogador primeiro escolhe uma célula inicial para se
+posicionar e, quando a música começa, ele deve caminhar na direção
+para onde a seta em que ele está aponta. Ganha o jogo quem pisar em mais
+setas corretas durante um período de tempo.</p>
+
+<p>O problema é que Gabriel joga tão rápido que quando a seta atual manda
+ele sair do tabuleiro, ele segue a orientação, muitas vezes quebrando
+alguns objetos próximos. Quando isso acontece, dizemos que a célula
+inicial deste jogo não é segura, pois leva a um caminho que termina
+fora do tabuleiro. A figura abaixo mostra dois tabuleiros.
+
+<center> 
+	<img src="/static/img/task_images/2014f1p1_setas.png" height="50%" width="50%">
+</center></p>
+
+<p>Ajude Gabriel: dada a configuração do tabuleiro, determine quantas
+células são seguras para ele iniciar o jogo.</p>
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, o tamanho do
+tabuleiro.  Cada uma das N linhas seguintes contém N caracteres,
+com as direções das setas. As direções válidas são:
+
+<ul>
+<li> "V" Aponta para a célula da linha abaixo, na mesma coluna</li>
+<li> "<" (sinal menor-que) aponta para a célula à esquerda, na mesma linha</li>
+<li> ">" (sinal maior-que) aponta para a célula à direita, na mesma linha</li>
+<li> "A" Aponta para a célula da linha acima, na mesma coluna</li>
+</ul>
+<h3>Saída</h3>
+Seu programa deve produzir um único inteiro, o número de células seguras.
+<h3>Restrições</h3><ul>
+  <li> 1  ≤  N  ≤  500</li>
+</ul>
+<h3>Informações sobre a pontuação</h3>
+<ul>
+  <li> Em um subconjunto dos casos totalizando 50 pontos, 1  ≤  N  ≤  50.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+>>V
+AV<
+A<>
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+>>V<
+A<<<
+AAA>
+>>>A
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+11
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

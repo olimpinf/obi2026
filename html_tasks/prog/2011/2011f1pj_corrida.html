@@ -1,0 +1,91 @@
+title:Corrida
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+A escola de Joãozinho tradicionalmente organiza uma corrida ao redor do prédio. Como todos os alunos são
+convidados a participar e eles estudam em períodos diferentes, é difícil que todos corram ao mesmo tempo.
+Para contornar esse problema, os professores cronometram o tempo que cada aluno demora para dar cada volta
+ao redor da escola, e depois comparam os tempos para descobrir a classicação final.</p>
+<p>
+Sua tarefa é, sabendo o número de competidores, o número de voltas de que consistiu a corrida e os tempos
+de cada aluno competidor, descobrir quem foi o aluno vencedor, para que ele possa receber uma medalha
+comemorativa.
+
+Saída
+A saída consiste de um único inteiro, que corresponde ao número do competidor que ganhou a corrida.</p>
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém dois inteiros N e M representando o número de competidores e o número
+de voltas da corrida, respectivamente.
+Cada uma das N linhas seguintes representa um competidor: a primeira linha representa o primeiro competidor, a segunda linha 
+representa o segundo competidor, e assim por diante. Cada linha contém M inteiros
+representando os tempos em cada volta da corrida: o primeiro inteiro é o tempo da primeira volta, o segundo
+inteiro é o tempo da segunda volta, e assim por diante.
+Garante-se que não houve dois competidores que gastaram o mesmo tempo para completar a corrida inteira.</p>
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir uma única linha, contendo
+um único inteiro, o número do competidor que ganhou a corrida.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 ≤ N ≤ 100</li>
+<li> 1 ≤ M ≤ 100</li>
+<li> 1 ≤ qualquer número da entrada que represente o tempo de uma volta ≤ 10<sup>6</sup></li>
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+2 1
+5
+7
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+1
+</pre>
+</td></tr></table>
+
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 3
+3 5 6
+1 2 3
+1 1 1
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+3
+</pre>
+</td></tr></table>
+
+<p>
+Neste último exemplo existem três competidores numa corrida de três voltas. Os tempos de cada competidor em cada volta foram como na tabela a seguir.</p>
+
+<table align="center" border="1">
+<tr><th></th><th>Volta1</th><th>Volta 2</th><th>Volta 3</th><th>Tempo total</th></tr>
+<tr align="center"><td>Competidor 1</td><td>3</td><td>5</td><td>6</td><td>14</td></tr>
+<tr align="center"><td>Competidor 2</td><td>1</td><td>2</td><td>3</td><td>6</td></tr>
+<tr align="center"><td>Competidor 3</td><td>1</td><td>1</td><td>1</td><td>3</td></tr>
+</table>
+<p>
+Sendo assim, o vencedor foi o competidor 3 (com um tempo total de 3).</p>
+
+
+      

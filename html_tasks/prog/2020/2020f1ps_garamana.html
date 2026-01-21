@@ -1,0 +1,106 @@
+title:Garamana
+template:tasks/tarefa_programacao.html
+
+<p>
+Um <i>anagrama</i> de uma palavra é um rearranjo das letras da palavra. Por exemplo,
+
+<ol>
+<li> &quot;rota&quot; é um anagrama de &quot;ator&quot;;
+<li> &quot;amor&quot; é um anagrama de &quot;roma&quot;; e
+<li> os anagramas de &quot;aab&quot; são &quot;aab&quot;, &quot;aba&quot; e &quot;baa&quot;.
+</ol>
+
+<p>Um <i>anagrama curinga</i> de uma palavra é um anagrama em que algumas
+das letras podem ter sido substituídas pelo caractere &quot;*&quot;
+(asterisco). Por exemplo, três possíveis anagramas curingas de
+&quot;amor&quot; são &quot;*mor&quot;,  &quot;a**r&quot; e  &quot;r**a&quot;.
+
+<p>Dadas duas palavras, escreva um programa para determinar se a segunda
+palavra é um anagrama curinga da primeira palavra.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém P, a primeira palavra.
+A segunda linha contém A, a segunda palavra.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único
+caractere, que deve ser &quot;<span class="ttt">S</span>&quot; se A é um anagrama curinga de
+P, ou <span class="ttt">N</span>&quot; caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;   comprimento de P  &leq;  100
+<li> comprimento de A =  comprimento de P
+<li> P é composta por letras minúsculas não acentuadas
+<li> A é composta por letras minúsculas não acentuadas e o caractere &quot;*&quot; (asterisco)
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 50 pontos, A
+contém apenas letras minúsculas não acentuadas.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+roma
+ator
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+olimpiada
+poliamida
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+microfone
+*conform*
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

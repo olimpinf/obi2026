@@ -1,0 +1,1 @@
+rsync -av olimpinf@olimpiada.ic.unicamp.br:/ext/static/{admin,assets,css,js,img,saci,saci-images,extras} static

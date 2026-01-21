@@ -1,0 +1,11 @@
+1,1,40,Diogo Andrade Acioli,COLÉGIO MILITAR DO RECIFE,Recife,PE
+1,1,40,Gabriel Mourão da Silva,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+1,1,40,Júlia Aleixo Melo,COLÉGIO MILITAR DO RECIFE,Recife,PE
+1,1,40,Lucas Tavares Fonseca,COLÉGIO CHRISTUS,Fortaleza,CE
+1,1,40,Lucas da Motta Yamaguchi,Colégio Etapa,São Paulo,SP
+1,1,40,Luiz Efraim Cavalcante Basílio,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+1,1,40,Mariana Moscibroski Nomura,Colégio Etapa Valinhos,Valinhos,SP
+1,1,40,Miguel Jesus Francisco Nogueira,colégio master sul,Fortaleza,CE
+1,1,40,Olivia Alperstedt Nassar,Móbile Colégio,São Paulo,SP
+1,1,40,Sávio Costa Ferreira de Melo,Escola de Aplicação do Recife,Recife,PE
+1,1,40,Valentina Pigatto Dorini,PARQUE ECOLÓGICO EDUCAÇÃO LTDA,Indaiatuba,SP

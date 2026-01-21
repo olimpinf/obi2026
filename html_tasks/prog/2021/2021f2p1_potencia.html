@@ -1,0 +1,132 @@
+title:Potência
+template:tasks/tarefa_programacao.html
+
+<p>
+A profa. Vilma preparou uma tarefa de programação sobre
+a <i>operação de potenciação</i>.  Para lembrar, seja um número real
+n e um número inteiro p igual ou maior do que zero, então a
+operação de potenciação n<sup>p</sup> tem o valor de n multiplicado por ele
+mesmo p vezes (se p = 0 o resultado da operação de potenciação é
+1).  Por exemplo, 2<sup>3</sup> = 2 x 2 x 2 = 8 e 102<sup>0</sup> = 1.
+
+<p>A tarefa preparada pela profa. Vilma foi a seguinte: <em>Escreva um
+programa para calcular o valor das seguintes expressões contendo
+operações de potenciação:</em>
+
+<p><div class="center">
+2<sup>4</sup> + 12<sup>3</sup> +
+300<sup>3</sup> + 15<sup>2</sup> + 4<sup>2</sup>
+</div>
+
+<p>Veja que cada termo das expressões tem a forma n<sup>p</sup> onde n e p
+são números inteiros e p tem apenas um dígito decimal.
+
+<p>No entanto, quando a profa. Vilma colocou o enunciado da tarefa na
+Internet, a formatação do enunciado foi corrompida, fazendo com que
+as expressões  aparecessem assim para os alunos:
+
+<p><div class="center">
+24 + 123 +
+3003 + 152 + 42
+</div>
+
+<p>Note que por exemplo 2<sup>4</sup> virou 24, 12<sup>3</sup> virou 123, 300<sup>3</sup> virou
+3003 e assim por diante, ou seja, as operações de potenciação
+desapareceram!
+
+<p>Nesta tarefa, você deve escrever um programa para calcular o valor
+das expressões da tarefa original da profa. Vilma, sabendo que a
+formatação do enunciado foi corrompida conforme explicado acima.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um número inteiro N,
+o número de termos da expressão. Cada uma das N
+linhas seguintes contém um inteiro T<sub>i</sub>, indicando um termo da expressão
+com formatação corrompida.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma linha, contendo um único
+número inteiro, o valor da soma dos termos da expressão, sabendo
+que a formatação dos termos foi corrompida como explicado acima.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  10
+<li> 10  &leq;  T<sub>i</sub>  &leq;  9999 para 1  &leq;  i  &leq;  N
+<li> O resultado é menor do que 10<sup>9</sup>.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+24
+123
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1744
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+303
+152
+42
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+27241
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+12
+13
+24
+20
+31
+43
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+86
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

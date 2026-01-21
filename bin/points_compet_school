@@ -1,0 +1,16 @@
+#! /usr/bin/env sh
+
+SCHOOL=$1
+
+echo '-----------'
+echo 'Iniciação'
+echo '-----------'
+echo
+psql -d obi2025 -U obi -c "select compet_id_full,compet_type,compet_points_fase1,compet_points_fase2,compet_classif_fase2 from compet where compet_points_fase2 is not null and compet_type in (1,2,7) and compet_school_id=${SCHOOL} order by compet_id;"
+
+
+echo '-----------'
+echo 'Programação'
+echo '-----------'
+echo
+psql -d obi2025 -U obi -c "select compet_id_full,compet_type,compet_points_fase1,compet_points_fase2,compet_classif_fase2 from compet where compet_points_fase2 is not null and compet_type in (3,4,5,6) and compet_school_id=${SCHOOL} order by compet_id;"

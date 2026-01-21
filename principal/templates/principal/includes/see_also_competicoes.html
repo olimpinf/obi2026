@@ -1,0 +1,13 @@
+{% load flatpages obi_extras %}
+  <h4>Veja também</h4>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/competicoes/' as flatpages_info %}
+        {% for page in flatpages_info %}
+           {% if page.url|count_slashes <= 3 %}
+              <li {% if page.url|first_2tokens == flatpage.url|first_2tokens %}style="color:#ff0000"{% endif %}><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+    {% endblock browse %}
+  </ul>

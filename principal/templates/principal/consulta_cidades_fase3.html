@@ -1,0 +1,63 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cidades Fase Nacional{% endblock %}
+
+{% block header %}<h1>Cidades com Competidores Classificados para Fase Nacional</h1>{% endblock %}
+
+{% block content %}
+
+<ul>
+  {% for city, counts in city_counts %}
+  {% ifchanged city.1 %}</ul><h5>{{ city.1 }}</h5><ul> {% endifchanged %}
+    <li>
+      <strong>{{ city.0 }}</strong>:
+      {% if counts.ini %}
+        <span {% if city not in site_assigned_cities %}style="color:red;"{% else %}style="color:darkgreen;"{% endif %}>
+          Iniciação = {{ counts.ini }}
+        </span>
+        {% if counts.prog %},{% endif %}
+      {% endif %}
+      {% if counts.prog %}
+        <span {% if city not in site_assigned_cities %}style="color:red;"{% else %}style="color:darkgreen;"{% endif %}>
+          Programação = {{ counts.prog }}
+        </span>
+      {% endif %}
+
+      {# ---- Future refinement (per-modality check) ---- #}
+      {% comment %}
+      {% if counts.ini %}
+        <span {% if city not in site_assigned_cities %}style="color:red;"{% else %}style="color:darkgreen;"{% endif %}>
+          Iniciação = {{ counts.ini }}
+        </span>
+        {% if counts.prog %},{% endif %}
+      {% endif %}
+      {% if counts.prog %}
+        <span {% if city not in site_assigned_cities %}style="color:red;"{% else %}style="color:darkgreen;"{% endif %}>
+          Programação = {{ counts.prog }}
+        </span>
+      {% endif %}
+      {% endcomment %}
+    </li>
+ {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Observações</h4>
+  <div class="small">
+    <p>Esta é uma página de trabalho.
+    <p>As sedes ainda estão sendo designadas.
+    <p>Sedes designadas não são ainda públicas.
+    <p>Em vermelho, competidores sem sede designada.
+    <p>Sedes são alocadas de acordo com os seguintes critérios:
+      <ul>
+	<li>Agrupar competidores de cidades próximas em uma única sede, mas evitar viagens superiores a uma hora, especialmente para a modalidade Iniciação e Nível Júnior da modalidade Programação.
+	<li>Preferência por escola de nível superior que possa sediar ambas as modalidades (se a cidade ou região tem competidores classificados de ambas as modalidades).
+      </ul>
+    <p>No momento temos várias ofertas de escolas para serem sede, mas poucas com oferta de sediar ambas as modalidades. Se não
+      tivermos sucesso em encontrar sedes para ambas as modalidades, alocaremos uma sede para cada modalidade. Se não for possível encontrar uma escola disponível na cidade, alocaremos para a sede existente mais próxima.
+  </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+variables_set,saci_input_int,variables_set,saci_input_int,variables_set,saci_input_int,controls_if,logic_operation,logic_compare,variables_get,math_number,logic_operation,logic_compare,variables_get,variables_get,logic_compare,variables_get,variables_get,saci_text_print,text,saci_text_print,text
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas seu programa não está produzindo o resultado correto.
+Confira a sua condição do comando condicional. Leia novamente o enunciado e corrija sua solução. Falta muito pouco!
+<br>
+
+@variables_set,saci_input_int,variables_set,saci_input_int,variables_set,saci_input_int
+
+Você está no caminho certo, já montou 
+os blocos corretos para ler da entrada as posições dos três jogadores. Agora
+você precisa usar um bloco de execução condicional
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>.
+A condição do bloco de execução condicional deve usar dois blocos de operação lógica
+<img align="middle" src="/static/saci/blockly_images/block_logic_operation.png" height="45px"/>,
+um encaixado no outro.
+A condição está descrita no enunciado: R>50 e L<R e R>D.
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar criando três variáveis para armazenar as posições dos 
+três jogadores; cada posição deve ser lida da entrada com um bloco 
+<img align="middle" src="/static/saci/blockly_images/block_input_num.png" height="40px"/>.
+<p>
+Para criar uma variável clique no menu <b>Variáveis</b> da Barra de Ferramentas,
+e então clique no botão "Crie variável..." e escolha um nome para a variável.
+<br>
+Depois você precisa usar um bloco de execução condicional
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para montar a condição descrita no enunciado.
+A condição do bloco de execução condicional deve usar dois blocos de operação lógica
+<img align="middle" src="/static/saci/blockly_images/block_logic_operation.png" height="45px"/>,
+um encaixado no outro.
+<br>

@@ -1,0 +1,126 @@
+title:Emoticons
+template:tasks/tarefa_programacao.html
+
+<p>
+Emoticons são símbolos usados para expressar o sentimento de quem
+escreve uma mensagem.  Scott Fahlman, um professor de uma universidade
+americana, foi o primeiro a propor o uso das sequências de
+caracteres <span class="ttt">:-)</span>
+e <span class="ttt">:-(</span>, que viraram respectivamente símbolos
+para &quot;divertido&quot; e &quot;chateado&quot;.
+
+<p>Vamos definir o <i>sentimento</i> expresso em uma  mensagem como sendo:
+
+<ul>
+<li> <span class="ttt">neutro</span>: se o número de símbolos &quot;divertido&quot; é igual ao número de símbolos &quot;chateado&quot;;
+<li> <span class="ttt">divertido</span>: se o número de símbolos &quot;divertido&quot; é maior do que número de símbolos &quot;chateado&quot;;
+<li> <span class="ttt">chateado</span>: se o número de símbolos &quot;chateado&quot; é maior do que número de símbolos &quot;divertido&quot;;
+</ul>
+
+<p>Dada uma mensagem composta por uma cadeia de caracteres, escreva um programa
+para determinar o sentimento expresso na mensagem.
+
+<h3>Entrada</h3>
+<p>A primeira e única linha da entrada contém a mensagem M como uma cadeia de caracteres.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo uma única palavra,
+o sentimento expresso na mensagem da  entrada.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  comprimento de M  &leq;  280
+<li> M é composta por letras não acentuadas, espaços em branco e os caracteres
+`<span class="ttt">(</span>' (abre parênteses),
+`<span class="ttt">)</span>' (fecha parênteses), 
+`<span class="ttt">:</span>' (dois-pontos), 
+`<span class="ttt">-</span>' (hífen), 
+`<span class="ttt">.</span>' (ponto) e 
+`<span class="ttt">,</span>' (vírgula). 
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 25 pontos, há no máximo um emoticon na mensagem.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+Espero que esteja tudo bem :-)
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+divertido
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+Achei o filme muito divertido.
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+neutro
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+:-):-(:-(:-)
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+neutro
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+Sonhei com a prova :-( (vou estudar).
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+chateado
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

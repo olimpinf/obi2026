@@ -1,0 +1,54 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle|safe }}  </h1>
+<p>Total de competidores participantes efetivos nesta modalidade: {{ total|format_number_thousands }}</p>
+
+<table class='admin' width="100%">
+  <tr>
+    <th width="15%">Núm. Inscr.</th>
+    <th width="70%">Nome</th>
+    <th class="center">Modalidade</th>
+    <th class="center">Classificação</th>
+  </tr>
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td>{{ c.compet_id|obi_format_compet_id }}</td>
+    <!--td><a href="/restrito/compet_edita/{{c.compet_id}}">{{ c.compet_name }}</a></td-->
+    {% if c.compet_name %}
+    <td>{{ c.compet_name }}</td>
+    {% else %}
+    <td>{{ c.compet.compet_name }}</td>
+    {% endif %}
+    <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+    {% if c.compet_rank_final %}
+    <td class="center">{{ c.compet_rank_final|format_number_thousands }}<sup><u>o</u></sup></td>
+    {% else %}
+    <td class="center">{{ c.compet_rank|format_number_thousands }}<sup><u>o</u></sup></td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_lista_classif_final' level %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_lista_classif_final' level %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+
+
+{% endblock %}
+
+{% block content-related %}
+
+{% endblock %}

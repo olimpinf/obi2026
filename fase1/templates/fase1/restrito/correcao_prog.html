@@ -1,0 +1,90 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h2>Correção - Fase 1 - Modalidade Programação</h2>
+
+
+<p>Na Modalidade Programação, a correção das soluções dos competidores
+  é realizada online, usando o sistema CMS. Após a prova os coordenadores
+  podem visualizar as soluções enviadas e os resultados dos competidores de suas escolas.
+
+
+{% comment %}
+
+<p>Os coordenadores  pode acompanhar a realização das provas (se o competidor
+  iniciou/terminou a prova), bem como visualizar as soluções
+  submetidas pelos alunos acessando o link "Status" da Prova
+  da Fase 1 Online, na seção <em>Fase 1</em> da página
+  de Coordenação.
+
+<h3>Nível Júnior</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f1pj.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1pj_idade.zip">A idade de Camila</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1pj_plano.zip">Plano de Internet</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1pj_torneio.zip">Torneio de tênis</a></li>
+</ul>
+</ul>
+
+<h3>Nível 1</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f1p1.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1pj_torneio.zip">Torneio de tênis</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p1_tempo.zip">Tempo de resposta</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p1_zero.zip">Zero para cancelar</a></li>
+</ul>
+</ul>
+
+<h3>Nível 2</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f1p2.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1pj_idade.zip">A idade de Camila</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p1_zero.zip">Zero para cancelar</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p1_tempo.zip">Tempo de resposta</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p2_cifra.zip">Cifra da Nlogônia</a></li>
+</ul>
+</ul>
+
+<h3>Nível Sênior</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f1ps.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1pj_torneio.zip">Torneio de tênis</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p1_zero.zip">Zero para cancelar</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1p1_tempo.zip">Tempo de resposta</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f1ps_baralho.zip">Baralho</a></li>
+</ul>
+</ul>
+{% endcomment %}
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+ 
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+title:Penalidade mínima
+template:tasks/tarefa_programacao.html
+<p>A Sra. Bastos é uma elaboradora de passatempos matemáticos e pediu
+para que você criasse um programa que conseguisse jogar de forma
+eficiente a sua mais nova criação. O jogo consiste em um tabuleiro
+formado por casas dispostas em N linhas por N colunas. Cada casa
+contém um inteiro não-negativo. No começo do jogo, uma peça é
+colocada na casa localizada no canto superior esquerdo, ou seja, na
+posição (1,1). O objetivo do jogo é mover a peça até a casa
+localizada no canto inferior direito (posição (N,N)) somente movendo
+um único quadrado para baixo ou para a direita em cada passo. Além
+disso, a peça não pode ser colocada em nenhum quadrado que contenha o
+número zero.
+
+<p>
+O custo do caminho utilizado para percorrer o tabuleiro corresponde ao
+produto de todos os números das casas percorridos no caminho. A
+<em>penalidade</em> é definida utilizando a representação decimal do
+custo, sendo representada pelo número de dígitos zeros, contados da
+direita para a esquerda, antes do primeiro dígito diferente de zero.
+Por exemplo, um custo igual a 501000 tem penalidade 3, e um custo
+igual a 501 tem penalidade zero. O objetivo do jogo ó conseguir
+chegar à casa (N,N) através de um caminho “otimizado” . Dizemos que o
+caminho foi otimizado se a penalidade for mínima.
+
+<p>
+Escreva um programa que, dado um tabuleiro, determine a penalidade do
+custo otimizado.
+
+<h3>Entrada</h3> 
+<p>A entrada contém um único conjunto de testes que deve ser lido do dispositivo de entrada 
+padrão (normalmente o teclado). A primeira linha da entrada contém um inteiro N que 
+indica o número de linhas e colunas do tabuleiro. As N linhas 
+seguintes contém N inteiros I cada, que representam o valor da 
+casa do tabuleiro naquela posicão. Existe pelo menos uma solução possível para todos 
+os casos de teste.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir, na saída padrão, uma única linha, contendo a penalidade do custo 
+“otimizado” .
+
+<h3>Restrições</h3>
+<ul>
+  <li>1 &leq; N &leq; 1000
+  <li>1 &leq; I &leq; 1 000 000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+1 2 3
+4 5 6
+7 8 9
+</pre>
+    </td>
+    <td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+0
+</pre>
+    </td>
+  </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+3
+5 7 6
+4 0 1
+3 2 5
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+1
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+4
+1 3 0 0
+0 8 2 25
+6 5 0 3
+0 15 7 4
+</pre>
+ </td>
+ <td valign="top" width="50%">
+   <b>Saída</b>
+   <pre>
+2
+</pre>
+ </td>
+ </tr>
+</table>

@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 12 - Comandos de repetição encaixados</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 12 - Comandos de repetição encaixados</div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 12 - Comandos de repetição encaixados</div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/11/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/13/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+<li style="margin-left: 10px;">Exercício 3</li>
+<li style="margin-left: 10px;">Exercício 4</li>
+<li style="margin-left: 10px;">Exercício 5</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Comandos de repetição encaixados</h2>
+
+<p>Um comando de repetição pode conter outro comando de repetição,
+como no trecho de programa abaixo, que mostra um
+comando <span class="tt">while</span> que repete três vezes (para <span class="tt">i</span> variando de
+1 a 3, em vermelho), e que contém um outro comando <span class="tt">while</span>
+que repete duas vezes (para <span class="tt">j</span> variando de 1 a 2, em verde):
+
+<div style="background-color:#ffdddd;margin-top:1em;">
+<div class="code-red">i = 1;
+while (i<=3) {
+</div>
+<div class="code-green">j = 1;
+while (j <= 2) {
+    printf("i=%d j=%d\n", i, j);
+    j = j + 1;
+}
+</div>
+<div class="code-red">    i = i + 1;
+}
+</div>
+</div>
+
+<p>O trecho acima vai executar seis vezes o comando <span class="tt">printf</span>, e o trecho de programa escreve
+na saída a seguinte sequência:
+<pre>
+i=1, j=1
+i=1, j=2
+i=2, j=1
+i=2, j=2
+i=3, j=1
+i=3, j=2
+</pre>
+
+<p>Comandos de repetição encaixados permitem uma flexibilidade muito grande no controle do processamento. Por exemplo, podemos
+escrever na saída um retângulo de 3 linhas por 5 colunas de caracteres asteriscos, como mostrado abaixo
+
+<pre>
+*****
+*****
+*****
+</pre>
+
+com o seguinte programa que utiliza dois comandos <span class="tt">while</span> encaixados:
+
+<pre class="code">
+var i, j;
+
+i = 1;
+while (i<=3) {
+    // para cada linha
+    // escreve a linha com um outro comando while
+    j = 1;
+    while (j<=5) {
+        // para cada coluna escreve um asterisco
+	printf("*");
+        j = j + 1;
+    }  
+    // ao final da linha, escreve caractere final-de-linha
+    printf("\n"); 
+    i = i + 1;
+}
+</pre>
+
+<p>Uma pequena modificação na condição de parada do comando de
+repetição <span class="tt">while</span> mais interno permite que, ao invés de um retângulo, seja
+escrito na saída um triângulo de asteriscos. A modificação é fazer a
+repetição ocorrer enquanto <span class="tt">j<=i</span>. Dessa forma,
+quando está escrevendo a primeira linha o comando <span class="tt">printf</span> é executado 1
+vez (<span class="tt">i</span> é igual a 1), quando está escrevendo a segunda linha ele é
+executado duas vezes (<span class="tt">i</span> é igual a 2) e quando está escrevendo a
+terceira linha ele é executado três vezes (<span class="tt">i</span> é igual
+a 3).
+
+<pre class="code">
+var i, j;
+
+i = 1;
+while (i<=3) {
+    // para cada linha
+    // escreve a linha com um outro comando while
+    j = 1;
+    while (j<=i) {
+        // note que repete apenas enquanto j<=i
+        // para cada coluna escreve um asterisco
+	printf("*");
+        j = j + 1;
+    }  
+    // ao final da linha, escreve caractere final-de-linha
+    printf("\n"); 
+    i = i + 1;
+}
+</pre>
+
+<p>Assim, o programa acima escreve na saída o "triângulo" de asteriscos mostrado abaixo:
+<pre>
+*
+**
+***
+</pre>
+
+<h3>Comandos de repetição encaixados para leitura</h3>
+
+<p>Podemos também fazer uso de comandos encaixados na leitura de valores da entrada. Suponha que a entrada seja
+composta de três linhas, em que cada linha  contém cinco números inteiros, variando de 0 a 1000, como no exemplo abaixo.
+
+<pre>
+100 200 300 400 500
+301 123 456 321 21
+345 900 643 222 1
+</pre>
+
+<p> Podemos ler os valores da entrada
+e encontrar o maior valor com o trecho de programa abaixo.
+
+<pre class="code">
+var i, j,
+    x,    // x vai armazenar um valor lido
+    max;  // max vai armazenar o maior valor lido
+
+max = -1; // é informado que o menor valor possível de ser lido é zero
+          // inicializamos max com um valor menor do que zero
+i = 1;
+while (i<=3) {
+    // para cada linha na entrada
+    // lê a linha com um outro comando while
+    j = 1;
+    while (j<=5) {
+        // para cada coluna lê um valor e compara com o máximo
+	scanf("%d", "x");
+        if (x>max)
+            max = x; // encontramos novo máximo
+        j = j + 1;
+    }  
+    i = i + 1;
+}
+// escreve o maior valor encontrado
+printf("%d\n",max); 
+
+</pre>
+
+<p>Note que o uso de comandos encaixados não é estritamente
+necessário: neste último exemplo poderíamos ter utilizado simplesmente
+um comando de repetição com o contador variando de 1 a 15, com o mesmo
+efeito. No entanto, comandos de repetição encaixados na maioria das
+vezes tornam a programação mais fácil, e os programas melhor
+organizados (nos outros exemplos acima também é possível usar apenas
+um comando de repetição ao invés de comandos encaixdos, mas os programas
+ficariam mais complexos).
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Bandeira mutante</h2>
+</center>
+<p>
+A bandeira do reino da Nlogônia é um retângulo de 3 x 5 caracteres, ou
+seja, três linhas de cinco caracteres cada. Quatorze caracteres são pontos,
+representando os condados do reino, e um caractere é uma estrela,
+representando a capital, onde fica o castelo do Rei. 
+<p>O problema é que o Rei constantemente altera a posição da estrela na
+bandeira. Ora ele quer que a estrela esteja numa posição, ora em outra.
+A figura abaixo mostra três exemplos de bandeiras possíveis:
+
+<div class="center">
+  <img src="/static/saci-images/saci_bandeiras1.png">
+</div>
+
+<p>Na figura, a bandeira mais à esquerda tem a estrela na linha 1, coluna 1.
+A bandeira do meio tem a estrela na linha 3, coluna 5. E a bandeira
+mais à direita a estrela está na linha 2, coluna 3.
+<p>
+Dada a posição da estrela na bandeira, faça um programa para escrever
+na saída a bandeira correspondente.
+
+<h3>Entrada</h3>
+<p>
+A primeira e única linha da entrada contém dois inteiros L
+e C, indicando respectivamente o número da linha e o número da coluna da
+posição da estrela. As linhas são numeradas de 1 a L e as colunas são numeradas de 1 a C.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever na saída a bandeira correspondente à
+entrada, com três linhas, cada uma contendo cinco caracteres.
+Utilize os caracteres . (ponto) e * (asterisco) para desenhar a
+bandeira.
+
+<h3>Restrições</h3>
+<ul>
+<li>1 &le; L &le; 3
+<li>1 &le; C &le; 5
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 1
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+*....
+.....
+.....
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 2
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+.....
+.....
+.*...
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+2 5
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+.....
+....*
+.....
+</pre>
+</td></tr>
+</table>
+<p> 
+&nbsp;
+</p>
+
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Bandeira da estrela solitária</h2>
+</center>
+<p>
+O Partido Central é o maior partido político da Nlogônia. Como educação,
+saúde e segurança são excelentes no reino, a principal reinvindicação do
+Partido Central é que a bandeira oficial tenha o seu formato definido
+na Constituição. Segundo a proposta do Partido Central, a bandeira deverá
+ser um retângulo de 
+L x C caracteres, ou
+seja, L linhas de C caracteres cada. Todos os caracteres, exceto um,
+serão pontos, e um único caractere será uma estrela. O número de linhas
+e o número de colunas serão sempre ímpares, e a estrela deverá ocupar a posição
+central da bandeira.
+
+A figura abaixo mostra três exemplos de bandeiras possíveis segundo a proposta
+do Partido Central.
+
+<div class="center">
+  <img src="/static/saci-images/saci_bandeiras2.png">
+</div>
+
+<p>Na figura, a bandeira mais à esquerda tem três linhas e cinco colunas.
+A bandeira do meio tem uma linha e três colunas. E a bandeira
+mais à direita tem cinco linhas e três colunas.
+<p>
+Dados os números de linhas e de colunas da bandeira, faça um programa para escrever
+na saída a bandeira correspondente, segundo a proposta do Partido Central.
+
+<h3>Entrada</h3>
+<p>
+A primeira e única linha da entrada contém dois inteiros L
+e C, indicando respectivamente o número de linhas e o número de colunas da
+bandeira.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever na saída a bandeira correspondente à
+entrada, com L linhas, cada linha contendo C caracteres.
+Utilize os caracteres . (ponto) e * (asterisco) para desenhar a
+bandeira.
+
+<h3>Restrições</h3>
+<ul>
+<li>1 &le; L &le; 7, L ímpar
+<li>1 &le; C &le; 7, C ímpar
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+...
+.*.
+...
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+.*.
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+5 3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+...
+...
+.*.
+...
+...
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 1
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+*
+</pre>
+</td></tr>
+</table>
+<p> 
+&nbsp;
+</p>
+
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 3 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Bandeira radical</h2>
+</center>
+<p>
+O partido Radical da Nlogônia é pequeno mas muito ativo. Apesar do nome,
+o partido não quer alterar o sistema de governo, mas apenas garantir
+uma maior descentralização administrativa. 
+<p>
+O partido também propõe uma mudança na bandeira nacional, para refletir
+suas ideias avançadas. A bandeira deverá ter  
+L x C caracteres, ou 
+seja, L linhas de C caracteres cada. Os caracteres usados na bandeira são pontos
+e estrelas. Todos os caracteres de uma mesma
+linha são do mesmo tipo: todos os caracteres da primeira
+linha são pontos, todos os caracteres da segunda linha são estrelas, os caracteres
+da terceira linha são pontos, os da quarta linha são estrelas e assim por diante.
+A figura abaixo mostra dois exemplos de bandeiras possíveis:
+
+<div class="center">
+  <img src="/static/saci-images/saci_bandeiras3.png">
+</div>
+
+<p>Na figura, a bandeira à esquerda tem três linhas e cinco colunas, e a bandeira
+à direita tem seis linhas e três colunas.
+<p>
+Dados os números de linhas e de colunas da bandeira, faça um programa para escrever
+na saída a bandeira correspondente à proposta do Partido Radical.
+
+<h3>Entrada</h3>
+<p>
+A primeira e única linha da entrada contém dois inteiros L
+e C, indicando respectivamente o número de linhas e o número de colunas da
+bandeira.  As linhas são numeradas de 1 a L e as colunas são numeradas de 1 a C.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever na saída a bandeira correspondente à
+entrada, conforme descrito acima, com L linhas, cada uma contendo C caracteres.
+Utilize os caracteres . (ponto) e * (asterisco) para desenhar a
+bandeira.
+
+<h3>Restrições</h3>
+<ul>
+<li>1 &le; L &le; 7 
+<li>1 &le; C &le; 7 
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+...
+***
+...
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 6
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+......
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+6 3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+...
+***
+...
+***
+...
+***
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 1
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+.
+</pre>
+</td></tr>
+</table>
+<p> 
+&nbsp;
+</p>
+
+<p>&nbsp;</p></div> <!-- end exercise 3 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 4 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars4" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg4" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Flâmula</h2>
+</center>
+<p>
+O partido Radical da Nlogônia planeja uma manifestação de apoio
+a suas ideias de decentralização administrativa.
+E quer que todos os manifestantes levem flâmulas
+do partido.
+
+<p>
+As flâmulas são triangulares, compostas de N linhas e
+N colunas de caracteres. Todos os caracteres são asteriscos, representando
+estrelas da bandeira da Nlogônia. A primeira linha tem N caracteres asterisco,
+a segunda linha tem um caractere a menos do que a linha anterior, 
+a terceira linha tem um caractere a menos do que a linha anterior, e assim por diante,
+até a última linha, que tem apenas um caractere asterisco.
+
+A figura abaixo mostra três exemplos de flâmulas possíveis:
+
+<div class="center">
+  <img src="/static/saci-images/saci_bandeiras4.png">
+</div>
+
+<p>Na figura, a flâmula mais à esquerda tem N igual a três, a 
+flâmula do meio tem N igual a dois, e a flâmula da direita tem N igual a cinco.
+<p>
+Dado o valor de N, faça um programa para escrever
+na saída a flâmula correspondente. 
+
+<h3>Entrada</h3>
+<p>
+A primeira e única linha da entrada contém um inteiro N, indicando o
+número de linhas da flâmula.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever na saída a flâmula correspondente à
+entrada, com N linhas. Utilize o caractere * (asterisco)
+para desenhar a flâmula.
+
+
+<h3>Restrições</h3>
+<ul>
+<li>1 &le; N &le; 7 
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+***
+**
+*
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+5
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+*****
+****
+***
+**
+*
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+2
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+**
+*
+</pre>
+</td></tr>
+</table>
+
+<p> 
+&nbsp;
+</p>
+
+<p>&nbsp;</p></div> <!-- end exercise 4 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 5 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars5" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg5" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Tomates</h2>
+</center>
+<p>
+A Fazenda Fartura tem uma plantação de tomates de formato retangular,
+sub-dividida em N linhas e M colunas de canteiros quadrados. As linhas são numeradas
+de 1 a N, e as colunas são numeradas de 1 a M.
+
+<p>
+A produção de tomates de cada canteiro é registrada ao final de cada safra para que a
+adubação possa ser melhor distribuída na próxima safra. A figura abaixo mostra um exemplo.
+
+<div class="center">
+  <img src="/static/saci-images/saci_tomates.png">
+</table>
+</div>
+
+<p>Na figura, é mostrada uma plantação dividida em 3 linhas por 4
+colunas de canteiros, em que o canteiro na linha 2 e coluna 4 tem produção de 
+80 tomates, que é a menor produção da plantação.
+
+<p>Dadas a produção de cada canteiro, faça um programa para determinar a
+linha e a coluna do canteiro com a menor produção de tomates.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém dois inteiros N e M, indicando
+respectivamente o número de linhas e o número de colunas da
+plantação. Cada uma das N linhas seguintes contém M inteiros,
+indicando a produção de tomates de um canteiro. Considere que as
+produções são todas diferentes uma das outras (ou seja, não há empates
+na produção dos canteiros).
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever na saída uma única linha, contendo dois
+inteiros, o número da linha e o número da coluna do canteiro com a
+menor produção, separados por um espaço em branco.
+
+<h3>Restrições</h3>
+<ul>
+<li>1 &le; N &le; 10
+<li>1 &le; M &le; 10
+<li>0 &le; produção de um canteiro &le; 200
+<li>Cada canteiro tem uma produção diferente dos demais.
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+2 3
+40 50 10  
+0 20 30
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+2 1
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 5
+95 100 90 98 99
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+1 3
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 1
+0
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+1 1
+</pre>
+</td></tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+3 4
+100 110 122 103
+150 112 117 80
+108 102 120 115
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+2 4
+</pre>
+</td></tr>
+</table>
+
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 5 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars6" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg6" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 1, aula 12
+// Bandeira mutante
+
+var i, j,  // usados como contadores
+    N, M;  // linha e coluna da posição da estrela
+
+scanf("%d%d", "N", "M");
+i = 1;
+while (i<=3) {
+    // para cada linha
+    // escreve a linha com um outro comando while
+    j = 1;
+    while (j<=5) {
+        // para cada coluna
+	// verifica se é a posição da estrela
+        if (i===N && j==M)
+            printf("*");
+        else
+            printf(".");
+        j = j + 1;
+    }  
+    // ao final da linha, escreve caractere final-de-linha
+    printf("\n");
+    i = i + 1;
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 2, aula 12
+// Bandeira da estrela solitária
+
+var i, j,                // usados como contadores
+    N, M,                // número de linhas e de colunas
+    lin_meio, col_meio;  // linha e coluna da posição da estrela
+
+scanf("%d%d", "N", "M");
+lin_meio=Math.ceil(N/2);
+col_meio=Math.ceil(M/2);
+i = 1;
+while (i<=N) {
+    // para cada linha
+    // escreve a linha com um outro comando while
+    j = 1;
+    while (j<=M) {
+        // para cada coluna verifica se é a linha e coluna do meio
+        if (i===lin_meio && j==col_meio)
+            printf("*");
+        else
+            printf(".");
+        j = j + 1;
+    }  
+    // ao final da linha, escreve caractere final-de-linha
+    printf("\n");
+    i = i + 1;
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div class="seeMoreContent">
+Uma abordagem para resolver esse problema é usar uma variável para
+armazenar o caractere a ser escrito.  Inicialmente a variável tem o
+valor "." (a primeira linha deve usar o caractere ponto).  Então, a
+cada final de linha, o valor da variável é alterado.
+
+Uma implementação para essa abordagem é mostrada abaixo.
+<pre class="code">
+// Solução para o exercício 3, aula 12
+// Bandeira radical
+
+var i, j,                // usados como contadores
+    N, M,                // número de linhas e de colunas
+    carac_linha;         // caractere a ser impresso na linha
+
+scanf("%d%d", "N", "M");
+carac_linha = ".";       // primeira linha é de pontos
+i = 1;
+while (i<=N) {
+    // para cada linha
+    // imprima uma coluna
+    j = 1;
+    while (j<=M) {
+        // para cada coluna
+        // imprimimos um caractere, que pode ser ponto ou asterisco
+        printf("%s", carac_linha);
+        j = j + 1;
+    }
+    // ao final da linha, escreve caractere final-de-linha
+    // e troca o caractere para a próxima linha
+    printf("\n");
+    if (carac_linha===".")
+        carac_linha = '*';
+    else
+        carac_linha = '.';
+    i = i + 1;
+}
+</pre>
+<p>
+Uma outra abordagem para resolver o problema é, antes
+de escrever cada caractere, verificar se o número da linha é par
+ou impar. Se for impar, escreve um asterisco, caso contrário
+escreve um ponto. 
+
+<p>Essa abordagem, no entanto, é ligeiramente menos eficiente
+do que a primeira, pois exige uma comparação a cada caractere,
+enquanto a primeira abordagem exige uma comparação a cada linha.
+A primeira abordagem é, portanto, M vezes mais eficiente; no entanto,
+considerando que o valor de M é muito baixo, de acordo com as
+restrições do enunciado, isso não é importante
+neste caso. 
+
+<p>Uma implementação com essa abordagem é mostrada abaixo.
+<pre class="code">
+// Solução para o exercício 3, aula 12
+// Bandeira radical
+
+var i, j,                // usados como contadores
+    N, M;                // número de linhas e de colunas
+
+scanf("%d%d", "N", "M");
+i = 1;
+while (i<=N) {
+    // para cada linha
+    // escreve a linha com um outro comando while
+    j = 1;
+    while (j<=M) {
+        // para cada coluna
+        // verifica se a linha é par ou ímpar
+        // e escreve o caractere apropriado
+        if ((i % 2) === 0)
+            printf("*");
+        else
+            printf(".");
+        j = j + 1;
+    }  
+    printf("\n");
+    i = i + 1;
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex4-show" class="showLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div id="solution-ex4" class="seeMore">
+<a href="#" id="solution-ex4-hide" class="hideLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div class="seeMoreContent">
+<p>
+A maneira mais fácil de resolver esse problema é fazer o comando
+de repetição mais externo (para cada linha) iniciar com o valor
+de N e ser decrementado a cada passo. Dessa forma o valor do 
+contador do comando de repetição mais externo pode ser usado
+no comando de repetição mais interno como o número de
+asteriscos que deve ser impresso na linha corrente.
+
+<p>O programa abaixo implementa essa abordagem.
+<pre class="code">
+// Solução para o exercício 4, aula 12
+// Flâmula
+
+var i, j,                // usados como contadores
+    N;                   // número de linhas e de colunas
+
+scanf("%d", "N");
+i = N;
+while (i>=1) {
+    // para cada linha
+    // escreve a linha com um outro comando while
+    j = 1;
+    while (j<=i) {
+        // para cada coluna
+        // escreve um asterisco
+	printf("*");
+        j = j + 1;
+    }  
+    // ao final da linha, escreve caractere final-de-linha
+    printf("\n");
+    i = i - 1;          // note que decrementamos o contador
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex5-show" class="showLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div id="solution-ex5" class="seeMore">
+<a href="#" id="solution-ex5-hide" class="hideLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div class="seeMoreContent">
+<p>A solução envolve encontrar o menor valor entre todos os valores lidos, e
+tomar o cuidado de armazenar também a linha e a coluna onde o menor valor foi
+encontrado. Como sabemos que o maior valor possível para um canteiroa é 200, pelas restrições do
+enunciado, podemos inicializar a variável que vai armazenar o menor valor com
+201. Note que não precisamos inicializar os valores das variáveis que guardam
+a linha e coluna do menor valor.
+
+<p>O programa abaixo implementa essa abordagem.
+<pre class="code">
+// Solução para o exercício 5, aula 12
+// Tomates
+
+var i, j,                // usados como contadores
+    N, M,                // número de linhas e de colunas
+    min,                 // minimo valor encontrado
+    lmin, cmin,          // linha e coluna do valor mínimo
+    x;                   // armazena valor lido
+
+// lê dimensão do canteiro
+scanf("%d%d", "N", "M");
+min=201;                 // inicializa com um valor maior do que todos que podem ser lidos
+i=1;
+while (i<=N) {
+    // para cada linha
+    j = 1;
+    while (j <= M) {
+        // para cada coluna
+        // lê valor e verifica se encontrou menor do que conhece
+        scanf("%d","x");
+        if (x < min) { // encontrou novo mínimo
+            lmin = i;  // armazena linha e coluna correntes
+            cmin = j;
+            min = x;   // e valor do mínimo corrente
+        }
+        j = j + 1;
+    }
+    i = i + 1;
+}
+
+// escreve o resultado: linha e coluna do menor valor encontrado
+printf("%d %d\n", lmin, cmin);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEsIGF1bGEgMTINCi8vIEJhbmRlaXJhIG11dGFudGUNCg0KdmFyIGksIGosICAvLyB1c2Fkb3MgY29tbyBjb250YWRvcmVzDQogICAgTiwgTTsgIC8vIGxpbmhhIGUgY29sdW5hIGRhIHBvc2nDp8OjbyBkYSBlc3RyZWxhDQoNCnNjYW5mKCIlZCVkIiwgIk4iLCAiTSIpOw0KaSA9IDE7DQp3aGlsZSAoaTw9Mykgew0KICAgIC8vIHBhcmEgY2FkYSBsaW5oYQ0KICAgIC8vIGltcHJpbWEgdW1hIGNvbHVuYSANCiAgICBqID0gMTsNCiAgICB3aGlsZSAoajw9NSkgew0KICAgICAgICAvLyBwYXJhIGNhZGEgY29sdW5hDQogICAgICAgIGlmIChpPT09TiAmJiBqPT1NKQ0KICAgICAgICAgICAgcHJpbnRmKCIqIik7DQogICAgICAgIGVsc2UNCiAgICAgICAgICAgIHByaW50ZigiLiIpOw0KICAgICAgICBqID0gaiArIDE7DQogICAgfSAgDQogICAgcHJpbnRmKCJcbiIpOw0KICAgIGkgPSBpICsgMTsNCn0NCl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMiwgYXVsYSAxMg0KLy8gQmFuZGVpcmEgbXV0YW50ZQ0KDQp2YXIgaSwgaiwgICAgICAgICAgICAgICAgLy8gdXNhZG9zIGNvbW8gY29udGFkb3Jlcw0KICAgIE4sIE0sICAgICAgICAgICAgICAgIC8vIG7Dum1lcm8gZGUgbGluaGFzIGUgZGUgY29sdW5hcw0KICAgIGxpbl9tZWlvLCBjb2xfbWVpbzsgIC8vIGxpbmhhIGUgY29sdW5hIGRhIHBvc2nDp8OjbyBkYSBlc3RyZWxhDQoNCnNjYW5mKCIlZCVkIiwgIk4iLCAiTSIpOw0KbGluX21laW89TWF0aC5jZWlsKE4vMik7DQpjb2xfbWVpbz1NYXRoLmNlaWwoTS8yKTsNCmkgPSAxOw0Kd2hpbGUgKGk8PU4pIHsNCiAgICAvLyBwYXJhIGNhZGEgbGluaGENCiAgICAvLyBpbXByaW1hIHVtYSBjb2x1bmEgDQogICAgaiA9IDE7DQogICAgd2hpbGUgKGo8PU0pIHsNCiAgICAgICAgLy8gcGFyYSBjYWRhIGNvbHVuYQ0KICAgICAgICBpZiAoaT09PWxpbl9tZWlvICYmIGo9PWNvbF9tZWlvKQ0KICAgICAgICAgICAgcHJpbnRmKCIqIik7DQogICAgICAgIGVsc2UNCiAgICAgICAgICAgIHByaW50ZigiLiIpOw0KICAgICAgICBqID0gaiArIDE7DQogICAgfSAgDQogICAgcHJpbnRmKCJcbiIpOw0KICAgIGkgPSBpICsgMTsNCn0NCl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMywgYXVsYSAxMg0KLy8gQmFuZGVpcmEgcmFkaWNhbA0KDQp2YXIgaSwgaiwgICAgICAgICAgICAgICAgLy8gdXNhZG9zIGNvbW8gY29udGFkb3Jlcw0KICAgIE4sIE0sICAgICAgICAgICAgICAgIC8vIG7Dum1lcm8gZGUgbGluaGFzIGUgZGUgY29sdW5hcw0KICAgIGNhcmFjX2xpbmhhOyAgICAgICAgIC8vIGNhcmFjdGVyZSBhIHNlciBpbXByZXNzbyBuYSBsaW5oYQ0KDQpzY2FuZigiJWQlZCIsICJOIiwgIk0iKTsNCmNhcmFjX2xpbmhhID0gIi4iOyAgICAgICAvLyBwcmltZWlyYSBsaW5oYSDDqSBkZSBwb250b3MNCmkgPSAxOw0Kd2hpbGUgKGk8PU4pIHsNCiAgICAvLyBwYXJhIGNhZGEgbGluaGENCiAgICAvLyBpbXByaW1hIHVtYSBjb2x1bmEgDQogICAgaiA9IDE7DQogICAgd2hpbGUgKGo8PU0pIHsNCiAgICAgICAgLy8gcGFyYSBjYWRhIGNvbHVuYQ0KICAgICAgICAvLyBpbXByaW1pbW9zIHVtIGNhcmFjdGVyZSwgcXVlIHBvZGUgc2VyIHBvbnRvIG91IGFzdGVyaXNjbw0KICAgICAgICBwcmludGYoIiVzIiwgY2FyYWNfbGluaGEpOw0KICAgICAgICBqID0gaiArIDE7DQogICAgfSAgDQogICAgcHJpbnRmKCJcbiIpOw0KICAgIC8vIGFvIGZpbmFsIGRhIGxpbmhhLCB0cm9jYW1vcyBvIGNhcmFjdGVyZSBwYXJhIGEgcHLDs3hpbWEgbGluaGENCiAgICBpZiAoY2FyYWNfbGluaGE9PT0iLiIpDQogICAgICAgIGNhcmFjX2xpbmhhID0gJyonOw0KICAgIGVsc2UNCiAgICAgICAgY2FyYWNfbGluaGEgPSAnLic7DQogICAgaSA9IGkgKyAxOw0KfQ0KXi8vIFNvbHXDp8OjbyBwYXJhIG8gZXhlcmPDrWNpbyA0LCBhdWxhIDEyDQovLyBGbMOibXVsYQ0KDQp2YXIgaSwgaiwgICAgICAgICAgICAgICAgLy8gdXNhZG9zIGNvbW8gY29udGFkb3Jlcw0KICAgIE47ICAgICAgICAgICAgICAgICAgIC8vIG7Dum1lcm8gZGUgbGluaGFzIGUgZGUgY29sdW5hcw0KDQpzY2FuZigiJWQiLCAiTiIpOw0KaSA9IE47DQp3aGlsZSAoaT49MSkgew0KICAgIC8vIHBhcmEgY2FkYSBsaW5oYQ0KICAgIC8vIGltcHJpbWEgdW1hIGNvbHVuYSANCiAgICBqID0gMTsNCiAgICB3aGlsZSAoajw9aSkgew0KICAgICAgICAvLyBwYXJhIGNhZGEgY29sdW5hDQogICAgICAgIC8vIGVzY3JldmVtb3MgdW0gYXN0ZXJpc2NvDQoJcHJpbnRmKCIqIik7DQogICAgICAgIGogPSBqICsgMTsNCiAgICB9ICANCiAgICBwcmludGYoIlxuIik7DQogICAgaSA9IGkgLSAxOyAgICAgICAgICAvLyBub3RlIHF1ZSBkZWNyZW1lbnRhbW9zIG8gY29udGFkb3INCn0NCl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gNSwgYXVsYSAxMg0KLy8gVG9tYXRlcw0KDQp2YXIgaSwgaiwgICAgICAgICAgICAgICAgLy8gdXNhZG9zIGNvbW8gY29udGFkb3Jlcw0KICAgIE4sIE0sICAgICAgICAgICAgICAgIC8vIG7Dum1lcm8gZGUgbGluaGFzIGUgZGUgY29sdW5hcw0KICAgIG1pbiwgICAgICAgICAgICAgICAgIC8vIG1pbmltbyB2YWxvciBlbmNvbnRyYWRvDQogICAgbG1pbiwgY21pbiwgICAgICAgICAgLy8gbGluaGEgZSBjb2x1bmEgZG8gdmFsb3IgbcOtbmltbw0KICAgIHg7ICAgICAgICAgICAgICAgICAgIC8vIGFybWF6ZW5hIHZhbG9yIGxpZG8NCg0KLy8gbMOqIGRpbWVuc8OjbyBkbyBjYW50ZWlybw0Kc2NhbmYoIiVkJWQiLCAiTiIsICJNIik7DQptaW49MjAxOyAgICAgICAgICAgICAgICAgLy8gaW5pY2lhbGl6YSBjb20gdW0gdmFsb3IgbWFpb3IgZG8gcXVlIHRvZG9zIHF1ZSBwb2RlbSBzZXIgbGlkb3MNCmk9MTsNCndoaWxlIChpPD1OKSB7DQogICAgLy8gcGFyYSBjYWRhIGxpbmhhDQogICAgaiA9IDE7DQogICAgd2hpbGUgKGogPD0gTSkgew0KICAgICAgICAvLyBwYXJhIGNhZGEgY29sdW5hDQogICAgICAgIC8vIGzDqiB2YWxvciBlIHZlcmlmaWNhIHNlIGVuY29udHJvdSBtZW5vciBkbyBxdWUgY29uaGVjZQ0KCXNjYW5mKCIlZCIsIngiKTsNCglpZiAoeCA8IG1pbikgeyAvLyBlbmNvbnRyb3Ugbm92byBtw61uaW1vDQoJICAgIGxtaW4gPSBpOyAgLy8gYXJtYXplbmEgbGluaGEgZSBjb2x1bmEgY29ycmVudGVzDQoJICAgIGNtaW4gPSBqOw0KCSAgICBtaW4gPSB4OyAgIC8vIGUgdmFsb3IgZG8gbcOtbmltbyBjb3JyZW50ZQ0KCX0NCiAgICAgICAgaiA9IGogKyAxOw0KICAgIH0NCiAgICBpID0gaSArIDE7DQp9DQoNCi8vIGVzY3JldmUgbyByZXN1bHRhZG86IGxpbmhhIGUgY29sdW5hIGRvIG1lbm9yIHZhbG9yIGVuY29udHJhZG8NCnByaW50ZigiJWQgJWRcbiIsIGxtaW4sIGNtaW4pOw0KDQo=">
+  <input type="hidden" id="hiddentests" value="MSAxCjsxIDIKOzIgNAo7MyAyCjsyIDIKOzEgNQo7MiA1CjszIDMKOzMgNQo7MiAxCl4xIDEKOzUgMwo7MSA3CjszIDEKOzcgNwo7NSA3CjsxIDUKOzMgMwo7MyA1Cjs1IDUKXjEgMQo7NiAyCjsyIDQKOzMgMgo7MiAyCjs2IDUKOzIgNQo7MyAzCjs2IDYKOzcgNgpeMQo7Ngo7Mwo7NAo7NQo7Mgo7NwpeMiAzCjQwIDUwIDEwICAKMCAyMCAzMAo7MSA1Cjk1IDEwMCA5MCA5OCA5OQo7MSAxCjEKOzMgNAoxMDAgMTEwIDEyMiAxMDMKMTUwIDExMiAxMTcgODAKMTA4IDEwMiAxMjAgMTE1CjszIDQKMTY4IDE1MSA4NCA1MQoxMDIgODAgMTU2IDYwCjk1IDExNiAxODEgMTAwCjs1IDUKNTYgMTUwIDEyMiA0OSAxNzgKMTkxIDE1NyAxNzQgNTkgMTM5CjE3MCAxMjkgODggMTggODAKMTEzIDE2NyAxNzYgODYgMTU2CjQ2IDE0NCA5NyAyIDEyNgo7NSA3Cjc5IDE2NCAxMzIgMCA5NiAxNjkgNDcKNjIgMTY3IDM2IDEwNyA0NSAxODEgMTUwCjgzIDE0IDU4IDkyIDE5NCAxOSA5OQoxMjYgOTcgMTQ0IDk1IDE2OCAxMDQgMTAxCjc2IDE3MiA2NSAxNzcgNDggMzEgMzAKOzYgNwoxMjIgMTMwIDk0IDE3IDE0OCAxNzAgMTc5CjE2MiAxNzIgMTc2IDEwMiA3MyAxMzIgNTEKMTUwIDE1NyAxNjQgMTA3IDE5MSAxMDQgODEKMTE4IDE3NyAxOTIgMTM5IDE0IDEwNiA4NAoxMDggMTQ0IDQxIDEyMyAxOSAzNiAxMzEKNTQgMTMzIDE2IDIzIDExMiA3IDkxCjs3IDYKMTgyIDEwNiAxMzQgNSAxMjQgMTE4CjExMSA3NSA3MSAxODcgNiA0CjE4MCAzNCAyMyAzOCAxNDcgMTcxCjE4OCA3NyAxOCA0NiAzOSAxMTQKNjEgMzEgODcgMTg5IDE3IDE2OAozMyA2MCAxMjIgMTQwIDE1MiAyNwoxMTAgMTU3IDkgMTA4IDEzNSA1NAo7NyA3CjUwIDExOCA4NyAzNCA5MiA3OSAxMTAKOTggNTkgNjggMTU5IDQ3IDEwNSAyCjEzNyA2MiA4IDUxIDQzIDE3MiA2MwoxODIgMTc5IDE2NyAxMTEgMTA4IDEyNCA2Nwo3MSAxNzUgMCAzMiA1NiAzOSAxODcKMTg0IDE0MyAxOTUgMTgwIDY0IDExMiA2NgoxMDQgNyA2OSA0MCAyNCA4MCA3NAo7MTAgMTAKMTEyIDE1MCAxNzUgOTcgNjEgOTEgMTU2IDE2OCAxNTUgMzUKMTg5IDExOSAxNSAxMzUgMTgzIDc0IDEyNCA1NyAzOCAxMjkKMCAxNDcgOTQgMTcgMjAgMTEzIDE1MiA0OCAxOTIgMTc2CjE0NSA2NyAxMyA0NSA3NSAxMzAgMTQxIDIxIDg0IDEwNAo1NSAxMzggNDMgMiA2IDEwNSA4NSAxNDQgMTQyIDEzNwoxOTEgMTExIDEwMyA5NiAxNjAgMTY0IDkyIDUzIDc2IDI5CjgyIDEgMTk3IDE2NiAxMDcgMTQ2IDEzNiAxMzkgNSAxNjIKMTI3IDM3IDUwIDY5IDM2IDU5IDE0MCAxMzEgMTczIDYzCjggNDcgMTgxIDE3MiAxMSAxNjkgNTQgOTUgMTA5IDExNwo1MiAxNjMgNDYgMzIgNzcgOTMgMTk5IDY0IDExMCA5OAo7MTAgMTAKMTI3IDEzIDE2IDE0NyAxMSAxIDc2IDEwMCA4NiA5MwoxMTEgMTI4IDc5IDY4IDE4MyA0OCAxNDIgNzggNjUgMTk1CjE1NSAxMjUgMTYwIDE4NyAxMTkgMjAgNjkgMzUgNyAxNjIKMzYgMjQgMzMgNjMgOTAgMTY4IDE3MCAxNzcgMTY0IDE4MQoxMDggMTM5IDE4MiAxNDMgNTAgNzcgMTkzIDEwMiAzMCA5MgozMiAxNzkgMTg1IDEzMiAxNzUgNSAyMSAxNjkgMTg5IDExOAo4MSA5OSAxNDEgOSAxODAgMTE3IDE0NCAyOSAxMzMgMgoxMDkgNDIgMTc0IDE4IDgyIDEyMSA2MiAxMTAgNjEgMTczCjE1OCA5NSA4OSAxMTUgMTkxIDEwNCAyMyA2MCA2NyA5MQo1MyAxMTYgNDEgMTIzIDE2NSA4MyAxODYgMCAxMjYgNTEK">
+  <input type="hidden" id="hiddenresults" value="Ki4uLi4KLi4uLi4KLi4uLi4KOy4qLi4uCi4uLi4uCi4uLi4uCjsuLi4uLgouLi4qLgouLi4uLgo7Li4uLi4KLi4uLi4KLiouLi4KOy4uLi4uCi4qLi4uCi4uLi4uCjsuLi4uKgouLi4uLgouLi4uLgo7Li4uLi4KLi4uLioKLi4uLi4KOy4uLi4uCi4uLi4uCi4uKi4uCjsuLi4uLgouLi4uLgouLi4uKgo7Li4uLi4KKi4uLi4KLi4uLi4KXioKOy4uLgouLi4KLiouCi4uLgouLi4KOy4uLiouLi4KOy4KKgouCjsuLi4uLi4uCi4uLi4uLi4KLi4uLi4uLgouLi4qLi4uCi4uLi4uLi4KLi4uLi4uLgouLi4uLi4uCjsuLi4uLi4uCi4uLi4uLi4KLi4uKi4uLgouLi4uLi4uCi4uLi4uLi4KOy4uKi4uCjsuLi4KLiouCi4uLgo7Li4uLi4KLi4qLi4KLi4uLi4KOy4uLi4uCi4uLi4uCi4uKi4uCi4uLi4uCi4uLi4uCl4uCjsuLgoqKgouLgoqKgouLgoqKgo7Li4uLgoqKioqCjsuLgoqKgouLgo7Li4KKioKOy4uLi4uCioqKioqCi4uLi4uCioqKioqCi4uLi4uCioqKioqCjsuLi4uLgoqKioqKgo7Li4uCioqKgouLi4KOy4uLi4uLgoqKioqKioKLi4uLi4uCioqKioqKgouLi4uLi4KKioqKioqCjsuLi4uLi4KKioqKioqCi4uLi4uLgoqKioqKioKLi4uLi4uCioqKioqKgouLi4uLi4KXioKOyoqKioqKgoqKioqKgoqKioqCioqKgoqKgoqCjsqKioKKioKKgo7KioqKgoqKioKKioKKgo7KioqKioKKioqKgoqKioKKioKKgo7KioKKgo7KioqKioqKgoqKioqKioKKioqKioKKioqKgoqKioKKioKKgpeMiAxCjsxIDMKOzEgMQo7MiA0CjsxIDQKOzUgNAo7MSA0Cjs2IDYKOzIgNgo7NSAzCjszIDEKOzEwIDgK">
+  <input type="hidden" id="hiddensamples" value="MSAxCl4zIDMKXjMgMwpeMwpeMiAzCjQwIDUwIDEwICAKMCAyMCAzMAoK">
+  <input type="hidden" id="hiddenhints" value="LioKQXNzaXN0YSBub3ZhbWVudGUg4CBhdWxhLCBlc3RlIGV4ZXJj7WNpbyDpIHJlc29sdmlkbyBubyB27WRlbyEKSW5pY2lhbG1lbnRlLCBsZWlhIG9zIHZhbG9yZXMgZGEgbGluaGEgZSBkYSBjb2x1bmEgb25kZSBkZXZlIHNlciBpbXByZXNzbyBvIGFzdGVyaXNjby4gU2V1IHByb2dyYW1hIGRldmUgdGVyIGRvaXMgY29tYW5kb3MgPHNwYW4gY2xhc3M9J3R0Jz53aGlsZTwvc3Bhbj4gZW5jYWl4YWRvczogdW0gcGFyYSBwZXJjb3JyZXIgYXMgbGluaGFzLCBlIG91dHJvIHBhcmEgcGVyY29ycmVyIGFzIGNvbHVuYXMuCkFudGVzIGRlIGVzY3JldmVyIGNhZGEgY2FyYWN0ZXJlLCB2ZXJpZmlxdWUgb3MgdmFsb3JlcyBjb3JyZW50ZXMgZGEgbGluaGEgZSBkYSBjb2x1bmEsIGUgZXNjcmV2YSBvIGNhcmFjdGVyZSBhZGVxdWFkbyAob3UgcG9udG8gb3UgYXN0ZXJpc2NvKS5eLioKQXDzcyBsZXIgb3MgbvptZXJvcyBkZSBsaW5oYXMgZSBjb2x1bmFzLCBjYWxjdWxlIGEgcG9zaefjbyBkYSBlc3RyZWxhIChu+m1lcm8gZGEgbGluaGEgZGEgZXN0cmVsYSwgbvptZXJvIGRhIGNvbHVuYSBkYSBlc3RyZWxhKSBlIGFybWF6ZW5lIGVtIGR1YXMgdmFyaeF2ZWlzLiBWb2PqIHBvZGUgZW50428gdXNhciBlc3NhcyB2YXJp4XZlaXMgcGFyYSB0ZXN0YXIgc2UgZGV2ZSBpbXByaW1pciBwb250byBvdSBhc3RlcmlzY28uIFVzZSBkb2lzIGNvbWFuZG9zIGRlIHJlcGV0aefjbyBlbmNhaXhhZG9zIHBhcmEgZXNjcmV2ZXIgYSBiYW5kZWlyYS4KTm90ZSBxdWUgYSBwb3Np5+NvIGRhIGVzdHJlbGEg6SBkYWRhIHBvciBkb2lzIG76bWVyb3MgaW50ZWlyb3MuIFZvY+ogZGV2ZSBwb3J0YW50byB1c2FyIDxlbT5NYXRoLmNlaWw8L2VtPiBvdSA8ZW0+TWF0aC5mbG9vcjwvZW0+IG5vIGPhbGN1bG8gZG8gbvptZXJvIGRhIGxpbmhhIGUgZG8gbvptZXJvIGRhIGNvbHVuYSBkYSBlc3RyZWxhLl4uKgpWb2PqIHBvZGUgcG9yIGV4ZW1wbG8gYXJtYXplbmFyIGVtIHVtYSB2YXJp4XZlbCBvIGNhcmFjdGVyZSBhIHNlciBpbXByZXNzby4gSW5pY2lhbG1lbnRlIGEgdmFyaeF2ZWwgdGVtIG8gdmFsb3IgIi4iIChhIHByaW1laXJhIGxpbmhhIGRldmUgdXNhciBvIGNhcmFjdGVyZSBwb250byksIGUgdm9j6iBkZXZlIGVudONvIGFsdGVyYXIgbyB2YWxvciBkYSB2YXJp4XZlbCBhbyBmaW5hbCBkZSBjYWRhIGxpbmhhLgpVbWEgb3V0cmEgZm9ybWEg6SB2ZXJpZmljYXIsIGEgY2FkYSBjYXJhY3RlcmUsIHNlIG8gbvptZXJvIGRhIGxpbmhhIOkgcGFyIG91IO1tcGFyLCBlIGltcHJpbWlyIG8gY2FyYWN0ZXJlIGFwcm9wcmlhZG8gKHBvbnRvIHBhcmEgbGluaGFzIO1tcGFyZXMsIGFzdGVyaXNjbyBwYXJhIGxpbmhhcyBwYXJlcykuXi4qClZvY+ogcG9kZSBwb3IgZXhlbXBsbyBhcm1hemVuYXIgZW0gdW1hIHZhcmnhdmVsIG8gY2FyYWN0ZXJlIGEgc2VyIGltcHJlc3NvLCBJbmljaWFsbWVudGUgYSB2YXJp4XZlbCB0ZW0gbyB2YWxvciAiLiIgKGEgcHJpbWVpcmEgbGluaGEgZGV2ZSB1c2FyIG8gY2FyYWN0ZXJlIHBvbnRvKSwgZSB2b2PqIGRldmUgZW50428gYWx0ZXJhciBvIHZhbG9yIGRhIHZhcmnhdmVsIGFvIGZpbmFsIGRlIGNhZGEgbGluaGEuClVtYSBvdXRyYSBmb3JtYSDpIHZlcmlmaWNhciwgYSBjYWRhIGNhcmFjdGVyZSwgc2UgbyBu+m1lcm8gZGEgbGluaGEg6SBwYXIgb3Ug7W1wYXIsIGUgaW1wcmltaXIgbyBjYXJhY3RlcmUgYXByb3ByaWFkbyAocG9udG8gcGFyYSBsaW5oYXMg7W1wYXJlcywgYXN0ZXJpc2NvIHBhcmEgbGluaGFzIHBhcmVzKS5eLioKTWFudGVuaGEgdW1hIHZhcmnhdmVsIHBhcmEgYXJtYXplbmFyIG8gbWVub3IgdmFsb3IgZGUgcHJvZHXn428gY29uaGVjaWRvIGF06SBvIG1vbWVudG8sIGUgZHVhcyB2YXJp4XZlaXMgcGFyYSBhcm1hemVuYXIgYSBsaW5oYSBlIGEgY29sdW5hIG9uZGUgZXN04SBvIG1lbm9yIHZhbG9yIGxpZG8uIEFvIGxlciBjYWRhIHVtIGRvcyB2YWxvcmVzIGRlIHByb2R15+NvIGRhIGVudHJhZGEsIGNvbXBhcmUgY29tIG8gbWVub3IgdmFsb3IgY29uaGVjaWRvIGUgYXR1YWxpemUgYXMgdmFyaeF2ZWlzIHNlIG5lY2Vzc+FyaW8uCkN1aWRhZG8gY29tIGEgaW5pY2lhbGl6YefjbyBkYSB2YXJp4XZlbCBxdWUgYXJtYXplbmEgbyBtZW5vciB2YWxvciBjb25oZWNpZG8uIE8gZW51bmNpYWRvIGluZGljYSBvIGxpbWl0ZSBzdXBlcmlvciBwYXJhIG8gdmFsb3IgZGEgcHJvZHXn428gZGUgdW0gY2FudGVpcm8uIFZvY+ogZGV2ZSBpbmljaWFsaXphciBhIHZhcmnhdmVsIGNvbSB1bSB2YWxvciBzdXBlcmlvciBhIGVzc2UgbGltaXRlIChlIG5vdGUgcXVlIG7jbyDpIHByZWNpc28gaW5pY2lhbGl6YXIgYXMgdmFyaeF2ZWlzIHF1ZSBhcm1hemVuYW0gYSBsaW5oYSBlIGEgY29sdW5hIGRvIG1lbm9yIHZhbG9yISkuClZvY+ogcG9kZSB0YW1i6W0gaW5pY2lhbGl6YXIgYSB2YXJp4XZlbCBxdWUgYXJtYXplbmEgbyBtZW5vciB2YWxvciBjb25oZWNpZG8gY29tIG8gdmFsb3IgZGEgcHJvZHXn428gZGEgbGluaGEgMSBlIGNvbHVuYSAxLiBFIG5lc3NlIGNhc28gYXMgdmFyaeF2ZWlzIHF1ZSBhcm1hemVuYW0gYSBsaW5oYSBlIGEgY29sdW5hIGRldmVtIHNlciBpbmljaWFsaXphZGFzIGNvbSAxLiBNYXMgcGFyYSBlc3RlIHByb2JsZW1hIGVzc2EgYWJvcmRhZ2VtIGZheiBvIGPzZGlnbyBmaWNhciBtYWlzIGNvbXBsaWNhZG8sIG8gbWVsaG9yIOkgaW5pY2lhbGl6YXIgY29tbyBpbmRpY2FkbyBuYSBkaWNhIGFudGVyaW9yLg==">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="_cv8IC0WF8I">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

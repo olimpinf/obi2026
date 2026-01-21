@@ -1,0 +1,156 @@
+title:Cinco
+template:tasks/tarefa_programacao.html
+
+<p>
+  Considere um número decimal não divisível por 5. Queremos fazer
+  exatamente uma operação de troca entre os dígitos de duas posições
+  distintas para obter um número que seja divisível por 5. Quer
+  dizer, precisamos escolher duas posições distintas e trocar os
+  dígitos dessas duas posições. Mas queremos que o número resultante
+  após a troca seja o maior número divisível por 5 possível.
+
+<div class="center">
+<img src="/static/img/task_images/2018f3p2_cinco.png" width="300px"/>
+</div>
+
+<p>Veja o exemplo da figura, 730105697542, que não é divisível por
+5. Podemos fazer a primeira troca ilustrada e obter 730102697545,
+que é divisível por 5. Mas, se fizermos a segunda troca ilustrada na
+figura, vamos obter um número divisível por 5 ainda maior,
+732105697540.
+
+<p>Dados os dígitos decimais de um número na entrada, não divisível por
+5, seu programa deve imprimir os dígitos decimais do maior número
+divisível por 5 que pode ser obtido com exatamente uma troca de
+dígitos entre duas posições distintas.  Caso não seja possível obter
+um número divisível por 5, imprima apenas -1.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N,
+  indicando quantos dígitos decimais tem o número não divisível por
+  5. A segunda linha contém N inteiros D<sub>i</sub>, 1 &leq;  i  &leq;  N,
+  representando os dígitos decimais do número em questão.
+
+
+<h3>Saída</h3>
+<p>Imprima uma linha contendo N inteiros representando os
+  dígitos decimais do maior número divisível por 5 que pode ser
+  obtido com exatamente uma troca de dígitos entre duas posições
+  distintas. Caso não seja possível obter um número divisível por 5,
+  imprima apenas -1.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  N &leq;  1000
+<li> D<sub>i</sub> é um inteiro entre 0 e 9, inclusive.
+</ul>
+
+
+
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12
+7 3 0 1 0 5 6 9 7 5 4 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7 3 2 1 0 5 6 9 7 5 4 0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+7 4 1 2 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+0 0 7 8 4 5 3 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 0 7 8 4 5 3 0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+6 5 0 5 0 4 5 3 4 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6 5 4 5 0 4 5 3 4 0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7
+9 7 4 5 3 5 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9 7 4 5 3 2 5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,18 @@
+1,1,344,Pedro Henrique Assunção,Colégio Etapa Valinhos,Valinhos,SP
+1,2,318,Camila Maeda Shida,Escola de Ensino Fundamental Seletivo,Tupã,SP
+2,3,313,Sofia Torres de Paula Cintra,Escola Americana de Belo Horizonte,Belo Horizonte,MG
+2,3,313,Luca Gregorio Gobi,Colégio Etapa Valinhos,Valinhos,SP
+3,3,313,João Lucas Soares Barbosa Silva,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+3,3,313,Lucas Batista Mesquita,Colégio Militar de Brasília,Brasília,DF
+4,8,283,Gabriela Barbieri Stroeh,Colégio Etapa Valinhos,Valinhos,SP
+4,9,257,Eric Costa Lopes,Colégio Etapa Valinhos,Valinhos,SP
+5,9,257,Danilo Kazuo Moraes Shimahara,Colégio Objetivo Paz,São Paulo,SP
+5,11,255,Lucas Maeda Kataoka,Colégio Etapa,São Paulo,SP
+6,12,241,Guilherme Kiyotoshi Kavakami,SuperGeeks Vila Mariana,São Paulo,SP
+6,13,234,Mateus Scheffer Mendes Maziviero Dolce,Colegio Integrado Objetivo,São Paulo,SP
+7,14,232,David Icheng Wang Chou,Colegio Integrado Objetivo,São Paulo,SP
+7,15,226,Erick Jun Ito,Colégio Objetivo Integrado de Mogi das Cruzes,Mogi das Cruzes,SP
+8,15,226,Vinícius Henrique de Souza Pinheiro,Instituto Federal do Rio Grande do Norte - Campus Natal Central,Natal,RN
+8,15,226,Pedro Malavasi Betti,Instituto Federal de São Paulo Campus Campinas,Campinas,SP
+9,20,213,Gustavo Nogueira Mendes,Colégio Bernoulli,Belo Horizonte,MG
+9,79,113,Isabela Cunha Silva,Facom UFU e UberHub Code Club,Uberlândia,MG

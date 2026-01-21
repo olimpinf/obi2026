@@ -1,0 +1,89 @@
+title:Fila
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Na cerimônia de encerramento da IOI, os competidores formam uma fila à
+medida que vão chegando ao  local.  Os competidores são desorganizados
+e entram na fila perto de  seus novos amigos, ou seja, cada competidor
+escolhe uma posição  arbitrária da fila para entrar.   Logo na entrada
+do local há um telão que  mostra fotografias e vídeos dos competidores
+durante a  competição.  Há uma  grande diferença entre as  alturas dos
+competidores, inclusive  pelas diferenças de  idade, e para  que todos
+possam ver o telão, deve-se evitar  que um competidor muito alto fique
+na frente de um competidor muito  baixo, a não ser que esse competidor
+mais alto esteja longe, mais à frente na fila.</p>
+
+<p>A organização da IOI está monitorando a  fila e pediu que você faça um
+programa que inicialmente  receba a descrição da  fila inicial (número
+N de pessoas  e suas alturas A<sub>1</sub>, A<sub>2</sub>, ... ,  A<sub>N</sub>, pela ordem na
+fila, onde  A<sub>1</sub> é  a altura  do primeiro da  fila). Em  seguida, seu
+programa deve processar dois tipos de operações:</p>
+<ul>
+  <li> na  operação tipo 0, seu  programa recebe a informação  que um
+    novo  competidor,  de  altura  H,  acabou  de  entrar  na  fila,
+    exatamente atrás do  I-ésimo competidor na fila (para I  = 0 o
+    novo competidor entrou no começo da fila)</li>
+  <li> na operação  tipo 1, seu programa recebe dois  inteiros, I e
+    D, e deve responder a uma consulta: considere a I-ésima pessoa
+    na fila,  digamos, P, e  determine a  posição na fila  da pessoa
+    mais próxima de P que está à frente de P e cuja altura é maior
+    do que H<sub>I</sub> + D (onde H<sub>I</sub> é a altura de P).</li>
+</ul>
+<h3>Entrada</h3>A  primeira linha  da  entrada  contém um  único  número inteiro  N,
+indicando o  número de pessoas  na fila  inicial.  A segunda  linha da
+entrada contém  os N  números inteiros A<sub>1</sub>,  A<sub>2</sub>, ... ,  A<sub>N</sub>, as
+alturas  de cada  pessoa da  fila.  A  terceira linha  contém um  único
+inteiro Q indicando o número de  operações.  Cada uma das Q linhas
+seguintes  contém  três  números  inteiros números  T,  I  e  X,
+descrevendo  uma  operação:  T  indica   o  tipo  da  operação,  I
+representa uma posição na fila e X é a altura H do novo competidor
+(na operação tipo 0) ou o parâmetro D (na operação do tipo 1).
+<h3>Saída</h3>
+Para cada operação de consulta (tipo 1), seu programa deve produzir uma única linha, contendo um único número inteiro, a resposta à consulta (posição da pessoa na fila), 
+ou 0 caso não haja uma pessoa alta o suficiente.
+<h3>Restrições</h3><ul>
+<li> 0  ≤  N  ≤  6 x 10<sup>5</sup></li>
+<li> 1  ≤  Q  ≤  6 x 10<sup>5</sup></li>
+<li> 1  ≤  A_i  ≤  10<sup>9</sup> para todo i, 1  ≤  i  ≤  N</li> 
+<li> 1  ≤  X  ≤  10<sup>9</sup></li>
+</ul><h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de testes somando 40 pontos, N  ≤  2 x 10<sup>5</sup>, Q  ≤  2 x 10<sup>5</sup> e todas as operações são do tipo 1;</li>
+<li> Em um conjunto de casos de testes somando 80 pontos, N  ≤  2 x 10<sup>5</sup> e Q  ≤  2 x 10<sup>5</sup>.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+10 5 7 8 2
+6
+1 5 6
+0 1 11
+1 6 6
+0 0 13
+1 6 4
+1 6 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+2
+1
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

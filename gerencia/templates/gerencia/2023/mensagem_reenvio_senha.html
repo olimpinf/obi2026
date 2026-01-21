@@ -1,0 +1,36 @@
+{% load obi_extras %}
+
+{{greeting}}
+
+você está recebendo esta mensagem porque seu professor informou esse endereço de
+email ao {{reason}} na OBI{{ year }} (Olimpíada Brasileira de Informática),
+com os seguinte dados
+
+Nome: {{c.compet_name}}
+Modalidade: {{c.compet_type|format_level_full}}
+Escola: {{s.school_name}}
+Cidade: {{s.school_city}}
+Estado: {{s.school_state}}
+
+Por favor verifique que as informações acima estejam corretas, em particular
+seu nome, pois este será usado no certificado de participação; em caso
+de necessidade de alteração, entre em contato com o prof. Coordenador
+da OBI{{ year }} na sua escola:
+
+Prof(a). {{s.school_deleg_name}}
+
+pois ele poderá realizar as mudanças necessárias.
+
+Seu número de inscrição na OBI{{ year }} é {{c.compet_id_full}}.
+
+Para acessar sua página pessoal na OBI, onde serão disponibilizadas as
+provas online e os resultados das provas, utilize o link "ACESSO COMPETIDORES"
+no menu da página da OBI{{ year }} com as seguintes credenciais (o link direto é 
+"https://olimpiada.ic.unicamp.br/compet"):
+
+usuário: {{c.compet_id_full}}
+senha: {{c.compet_conf}}
+
+Boa OBI{{ year }}!
+
+{% include 'includes/signature.html' %}

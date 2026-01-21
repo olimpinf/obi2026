@@ -1,0 +1,170 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Correção - Fase 2 - Modalidade Iniciação</h1>
+
+<center>
+  <table>
+    <tr><th colspan=2>Links Rápidos</th></tr>
+    <tr>
+      <td><ul class="list-tools">
+	    {% comment %}
+	  <li> <a href="#tarefas">Cadernos de Tarefas</a>
+	  <li> <a href="#gabaritos">Gabaritos</a>
+	    {% endcomment %}
+	</ul>      
+      </td>
+      <td><ul class="list-tools">
+	  <li> <a href="{% url 'fase2:corretorfolhasrespostas' %}">Correção Automatizada</a>
+	    {% comment %}
+	  <li><a href="{% url 'fase2:resultado_ini' %}">Resultado</a>
+	    {% endcomment %}
+      </ul>
+      </td>
+    </tr>
+  </table>
+</center>
+
+<p>Na Fase 2 (Fase Estadual) a correção é feita pela Coordenação. As Folhas de Respostas dos alunos
+devem ser digitalizadas e enviadas para Correção Automatizada, conforme descrito a seguir.
+
+{% comment %}
+<a name="gabaritos"></a>
+<h3>Gabaritos</h3>
+<p>(ainda não disponíveis, serão disponibilizados após a realização das provas)</p>
+<!--p>Os gabaritos no momento estão disponibilizados apenas para os professores Coordenadores
+Locais da OBI2024:</p-->
+
+<ul>
+<li><a href = "pdf/GabaritoOBI2024_f2ij.pdf">Nível Júnior</a> (formato .PDF)
+<li><a href = "pdf/GabaritoOBI2024_f2i1.pdf">Nível 1</a> (formato .PDF)
+<li><a href = "pdf/GabaritoOBI2024_f2i2.pdf">Nível 2</a> (formato .PDF)
+</ul>
+{% endcomment %}
+
+<a name="tarefas"></a>
+<h3>Cadernos de Tarefas</h3>
+<p>(ainda não estão disponíveis)</p>
+<ul>
+</li>
+<li><a href="pdf/ProvaOBI2024_f2ij.pdf">Nível Júnior</a> 
+</li>
+<li><a href="pdf/ProvaOBI2024_f2i1.pdf">Nível 1</a>
+</li>
+<li><a href="pdf/ProvaOBI2024_f2i2.pdf">Nível 2</a>
+</ul>
+
+
+<h2>Correção Automatizada</h2>
+
+<!--font color="red"> Ainda não disponível, por favor aguarde um pouco, estamos
+realizando testes adicionais no sistema.</font-->
+
+<h3>Passo-a-passo para Correção Automatizada</h3>
+<p>O formulário para envio das Folhas de Respostas para correção estará disponível
+clicando em <a href="{% url 'fase2:corretorfolhasrespostas' %}">Correção Automatizada</a> após a prova.
+Antes de utilizar, por favor leia as instruções abaixo.
+
+
+<ol>
+<li>Certifique-se de que o número de inscrição está corretamente
+preenchido no caso de Folhas de Respostas avulsas (nas Folhas de Respostas
+pré-prenchidas o número de inscrição já vem corretamente preenchido!).
+<li>Não submeta Folhas de Respostas em branco, de competidores que não compareceram.
+<li>Separe as Folhas de Respostas dos competidores em lotes, separados pelo nível (Júnior, 1 e 2).
+<li>Para cada lote (contendo Folhas de Respostas de um único nível),
+digitalize (escaneie) as Folhas de Respostas, e salve em um arquivo de
+formato PDF. Muitos aplicativos permitem salvar várias páginas
+digitalizadas em um único arquivo, geralmente de tipo PDF. Ou seja, o
+aplicativo gera um único arquivo no formato PDF contendo as imagens
+digitalizadas.
+<li>Para cada arquivo de Folhas de Respostas digitalizadas, utilize o
+formulário <a href="{% url 'fase2:corretorfolhasrespostas' %}">Correção Automatizada</a>
+para submeter para a correção automatizada.
+<li>O resultado da correção será enviado para o endereço de correio eletrônico do Coordenador Local da OBI.
+<li>A pontuação dos competidores será inserida automaticamente, mas
+solicitamos que os Coordenadores verifiquem nos arquivos recebidos por
+email se está tudo correto, se as Folhas de Resposta foram corretamente
+corrigidas. Os arquivos indicam condições de erro como Número de Inscrição
+incorreto ou mal preenchido, dificuldade de processar o arquivo
+  submetido, etc.)
+  {% comment %}
+<li>Verifique a pontuação inserida automaticamente, utilizando o
+formulário <a href="{% url 'fase1:inserepontosini'%}">
+Insere/Modifica Pontuação</a> para consultar as pontuações dos
+competidores.
+<li>Em caso de erros na correção automatizada de um competidor, siga
+o procedimento para correção manual para esse competidor.
+  {% endcomment %}
+</ol>
+
+{% comment %}
+<h2>Classificação para a Fase Estadual (Fase 2)</h2>
+<p>Conforme o <a href="/info/regulamento/">Regulamento da OBI2024</a> os competidores
+classificados para
+a próxima fase são definidos por dois critérios:
+
+<ol>
+<li>os 15% melhores classificados em cada Escola, desde que tenham
+acertado ao menos 1/3 das questões da Fase 1 
+<li>os melhores 5% classificados nacionalmente.
+</ol>
+
+<p>Os classificados pelo critério (1) são re-calculados automaticamente cada vez que
+você atualiza a pontuação dos competidores de sua escola. Você pode ver a lista dos classificados
+na página 
+<a href="{% url 'fase1:inserepontosini' %}">
+Insere/Modifica Pontuação</a>
+durante a inserção de pontos, ou pelo link
+<a href = "{% url 'fase1:compet_lista_classif' %}">Lista Classificados</a>.
+
+<p>Os classificados pelo critério (2) serão calculados pela Coordenação após
+todas as pontuações terem sido inseridas pelas escolas. 
+</p-->
+{% endcomment %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  {% comment %}
+  <!--p>O envio das Folhas de Respostas (se optar pela a correção
+    automatizada) ou a inserção das pontuações dos competidores (se optar
+    pela correção manual) devem ser realizados até 
+{{ "ini-fase1-envio-folhas-de-respostas"|obi_date|date:'d/m' }}.
+
+<p>
+Solicitamos que mantenham as Folhas de Respostas dos alunos, para o caso de algum competidor reclamar da correção.
+</p-->
+  {% endcomment %}
+
+<h3>Veja também</h3>
+<ul>
+<li><a href="{% url 'fase2:correcao_ini' %}">Correção Modalidade Iniciação</a>
+<li><a href="{% url 'fase2:correcao_prog' %}">Correção Modalidade Programação</a>
+</ul>
+ 
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+    {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+    {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+title:Serviços
+template:flatpages_info.html
+
+<p>A OBI disponibiliza gratuitamente, para escolas em geral, a
+  ferramenta de correção automatizada de testes de múltipla escolha
+  desenvolvida pela OBI e utilizada na correção das provas da
+  Modalidade Iniciação. A ferramenta, denominada <b>Sisca</b> 
+  (<i><b>Sis</b>tema de <b>C</b>orreção <b>A</b>utomatizada</i>), está
+  disponível para uso, sem custo, por escolas públicas ou privadas.
+</p>
+
+<h2>O sistema Sisca</h2>
+<p>
+  O sistema Sisca gera folhas de respostas personalizadas (por exemplo
+  com o nome da escola, disciplina e data da prova). As folhas devem ser
+  então impressas em papel e distribuídas aos alunos para preenchimento durante
+  a prova.
+</p>
+<p>
+  O sistema também disponibiliza a correção automatizada das folhas de
+  respostas preenchidas. Para isso, as folhas de respostas preenchidas
+  pelos participantes devem ser digitalizadas (escaneadas) e enviadas
+  pela internet para correção, juntamente com um arquivo de gabarito
+  que descreve as respostas esperadas. O resultado da correção é enviado em
+  uma mensagem de correio eletrônico, contendo dois arquivos: um
+  relatório de correção (formato texto), e uma planilha (formato csv).
+</p>
+<!--p>O sistema Sisca foi recentemente atualizado para permitir
+um número maior de questões (o sistema permite até 100 questões na
+folha de respostas), um número maior de dígitos do número identificador
+do participante (até 40 dígitos), além de melhor confiabilidade.
+A versão anterior do sistema Sisca vai continuar disponível até 31 de ezembro de 2018.
+</p-->
+<ul>
+<li><a href="/sisca">Clique aqui para
+  acessar o Sisca</a>.
+<!--li><a href="http://olimpiada.ic.unicamp.br/sisca1">Clique aqui para
+  acessar a versão anterior do Sisca</a-->

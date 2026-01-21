@@ -1,0 +1,224 @@
+{% load weblog calendar %}
+{% load static %}<!DOCTYPE html>
+<html lang="pt">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %}Olimpíada Brasileira de Informática{% endblock %}</title>
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <!--link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet"-->
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/weblog.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/accordion.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/calendar.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">  
+
+  <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+  
+  {% block head_extra %}{% endblock head_extra %}
+</head>
+
+<body id="{% block sectionid %}{% endblock %}"  onload="{% block body_onload %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+    
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top {% block header_class %}{% endblock %}">
+    <div class="container d-flex align-items-center">
+
+      <a href="/" class="me-auto"><img src="{% static 'assets/img/logo-obi2025.svg' %}" height="40px" alt="logo obi2025"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+	  {% comment %}
+          <li><a class="nav-link scrollto active" href="/"><img src="{% static 'assets/img/icon-home.svg' %}" height="30px"></a></li>
+	  {% endcomment %}
+          <li><a class="nav-link" href="/">Início</a></li>
+          <li class="dropdown"><a href="#"><span>Sobre a OBI</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'apresenta' %}">Apresentação</a></li>
+              <li><a href="{% url 'comite' %}">Comissão Nacional</a></li>
+              <li><a href="{% url 'cal:datas_importantes' %}">Datas Importantes</a></li>
+              <li><a href="{% url 'regulamento' %}">Regulamento</a></li>
+              <li class="dropdown"><a href="#"><span>Consultas</span> <i class="bi bi-chevron-right"></i></a>
+		<ul>
+		  <li><a href="{% url 'principal:consulta_escolas' %}">Escolas Cadastradas</a></li>
+		  <li><a href="{% url 'principal:consulta_competidores' %}">Competidores Inscritos</a></li>
+		</ul>
+	      </li>
+              <li class="dropdown"><a href="#"><span>Como Participar</span> <i class="bi bi-chevron-right"></i></a>
+		<ul>
+		  <li><a href="{% url 'como_participar_aluno' %}">Alunos</a></li>
+		  <li><a href="{% url 'como_participar_escola' %}">Escolas</a></li>
+		</ul>
+	      </li>
+              <li><a href="{% url 'competicao_feminina' %}">Competição Feminina</a></li>
+              <li><a href="{% url 'principal:certificados' %}">Certificados</a></li>
+              <li><a href="{% url 'passadas' %}">Anos Anteriores</a></li>
+              <li><a href="{% url 'apoios' %}">Apoios</a></li>
+              <li><a href="{% url 'competicoes' %}">Compet. Internacionais</a></li>
+              <li><a href="{% url 'cartaz' %}">Cartaz, Arte e Logotipo</a></li>
+              <li><a href="{% url 'privacidade' %}">Privacidade</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Prepare-se</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'pratique:index' %}">Pratique</a></li>
+              <li><a href="{% url 'estude' %}">Estude</a></li>
+              <li><a href="{% url 'ementas' %}">Ementas</a></li>
+              <li><a href="{% url 'aplicativos' %}">Aplicativos</a></li>
+              <li><a href="/saci">Saci</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="{% url 'cal:index' %}">Calendário</a></li>
+          <li><a class="nav-link" href="{% url 'resultados' %}">Resultados</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'weblog:index' %}">Notícias</a></li>
+	  {% if not user.is_authenticated %}
+          <li class="dropdown" ><a href="#"><font color="#ffc438"><b>Entrar</b></font> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'compet:index' %}">Competidores</a></li>
+              <li><a href="{% url 'restrito:index' %}">Escolas</a></li>
+	    </ul>
+	  </li>
+	  {% else %}
+          <li class="ms-4"><a class="nav-link" style="padding-left:4px; padding-right:4px" href="#" onClick="document.getElementById('logoutform').submit()"><b><font color="#ffc438">Sair</font></b></a></li>
+	  <form id="logoutform" method="POST" action="{% url 'logout' %}">
+	    {% csrf_token %}
+	    <input type="hidden">
+	  </form>
+	   {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  
+  {% block hero %}{% endblock %}
+  
+  <main id="main">
+    
+  {% block authenticated %}{% endblock %}
+  {% block breadcrumbs %}{% endblock %}
+
+  {% if user.is_authenticated %}<div class="restricted">{% endif %}
+  {% block main %}
+  {% endblock %}
+  {% if user.is_authenticated %}</div>{% endif %}
+    
+  </main><!-- End #main -->
+
+  {% block body_extra %}{% endblock body_extra %}
+
+  {% block footer_extra %}{% endblock %}  
+
+  <div style="height: 10px; background-color: gray;"></div>
+
+  {% include "includes/sponsors.html" %}
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>OBI</h3>
+            <p>
+              Olimpíada Brasileira de Informática <br>
+              Instituto de Computação<br>
+              Unicamp <br><br>
+              <strong>Email:</strong> olimpinf@ic.unicamp.br<br>
+              <strong>Whatsapp:</strong> (19) 3199-7399<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Links Úteis</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Início</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'regulamento' %}">Regulamento</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'cal:index' %}">Calendário</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pratique:index' %}">Pratique</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+	    {% comment %}
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+	  {% endcomment %}
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Redes Sociais</h4>
+            <!--p>Siga-nos</p-->
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/olimpinf" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/olimpinf/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://whatsapp.com/channel/0029VaXpOUt3bbV8CC3RRL00" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Projeto gráfico <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <!--script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script-->
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <!--script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script-->
+  <!--script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script-->
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/calendar.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/local.js' %}"></script>
+
+  {% block end_body_scripts %}{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+title:Regulamento
+template:flatpages_info.html
+<div align="justify">
+  <ol>
+    <li class="bold">Objetivos
+      <ol>
+	<li class="normal"> A Olimpíada Brasileira de Informática (OBI) é uma
+	  iniciativa da Sociedade Brasileira de Computação que tem
+	  por objetivos:
+	  <ol>
+	    <li  class="normal"> Estimular o interesse pela Computação e
+	      por Ciências em geral.
+	    <li class="normal"> Promover a introdução de disciplinas de
+	      raciocínio computacional e técnicas de programação de computadores nas
+	      escolas de ensino médio e fundamental.
+	    <li class="normal"> Proporcionar novos desafios aos estudantes.
+	    <li class="normal"> Identificar talentos e vocações em
+	      Ciência da Computação de forma a melhor
+	      instruí-los e incentivá-los a seguir carreiras nas áreas de
+	      ciência e tecnologia.
+	  </ol>
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Modalidades
+      <ol>
+	<li class="normal"> A OBI será realizada em duas modalidades:
+	  <i>Modalidade Iniciação</i> e
+	  <i>Modalidade Programação</i>. Cada uma dessas modalidades é
+	  sub-dividida em <i>Níveis</i>, de acordo com a escolaridade e dificuldade das
+	  tarefas apresentadas.
+	  <ol>
+	    <li class="normal"> Na Modalidade <i>Iniciação</i>, as
+	      tarefas das provas versarão sobre problemas de lógica e
+	      problemas de computação (sobre lógica de programação,
+	      mas sem o uso de computador).
+	    </li>
+	    <li class="normal"> Na Modalidade <i>Programação</i>, as
+	      tarefas da prova versarão sobre problemas de
+	      programação, e devem ser resolvidas com o uso de
+	      computador, exigindo conhecimento de estruturas de dados
+	      e técnicas de programação.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal"> Cada participante pode ser inscrito em
+	  apenas uma modalidade e nível.
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Fases
+      <ol>
+	<li class="normal"> A OBI será realizada em três fases: Local, Estadual e Nacional.
+	</li>
+	<li class="normal"> As provas da Fase Local e da Fase Estadual serão realizadas na escola
+	  onde o aluno realizou a inscrição. As provas da Fase Nacional serão realizadas
+	  em sedes designadas pela organização da OBI,
+	  preferencialmente universidades localizadas nas capitais dos estados ou em cidades com grande concentração de competidores classificados.
+	</li>
+	<li class="normal"> Em cada fase, os melhores
+	  classificados serão convocados a participar da fase seguinte, conforme
+	  descrito a seguir.
+	</li>
+	<li class="normal"> Em cada fase, somente serão convocados para a fase
+seguinte os candidatos que tiverem obtido ao menos 1/3 dos pontos da prova na fase corrente.
+	</li>
+	<li class="normal"> Serão convocados para a Fase Estadual,
+	  para cada modalidade e nível:
+	  <ol>
+	    <li class="normal"> os melhores classificados na Fase
+	      Local em cada Escola, até o limite de 15% dos
+	      participantes efetivos da Escola na respectiva
+	      modalidade e nível;
+	    </li>
+	    <li class="normal"> os melhores classificados
+	      nacionalmente na Fase Local, até o limite de 5% dos
+	      participantes efetivos na respectiva modalidade e nível.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal"> Serão convocados para a Fase Nacional,
+	  para cada modalidade e nível:
+	  <ol>
+	    <li class="normal"> os melhores classificados na Fase
+	      Estadual em cada Estado, até o limite de 15% dos
+	      participantes efetivos do Estado na Fase Estadual, na
+	      respectiva modalidade e nível;
+	    </li>
+	    <li class="normal"> os melhores classificados
+	      nacionalmente na Fase Estadual, até o limite de 5% dos
+	      participantes efetivos do Estado da Fase Estadual na
+	      respectiva modalidade e nível.
+	    </li>
+	  </ol>
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Eligibilidade
+      <ol>
+	<li class="normal">Escolas regulares de Ensino Básico e Ensino
+	  Superior podem se cadastrar e inscrever seus
+	  alunos. Excepcionalmente, entidades que não são escolas
+	  regulares de Ensino Básico ou Ensino Superior (como por
+	  exemplo entidades públicas ou privadas que oferecem cursos
+	  avulsos de programação de computadores) podem também ser
+	  habilitadas para participar da OBI; no entanto, competidores
+	  inscritos por esse tipo de entidade somente poderão
+	  participar da Modalidade Programação.
+	  
+
+	<li class="normal">Nas modalidades Iniciação e Programação é permitida a participação de alunos com no máximo
+	  20 anos completos até primeiro dia de julho do ano de sua participação, e que obedeçam aos requisitos específicos das
+	  modalidades, descritos a seguir. Na modalidade Programação Nível Sênior não há limite de idade para participação.
+
+	<li class="normal">Modalidade Iniciação - Nível Júnior
+	  <ol>
+	    <li class="normal"> É permitida a participação de alunos
+	      que estejam cursando o quarto ou o quinto ano do Ensino Fundamental.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal">Modalidade Iniciação - Nível 1
+	  <ol>
+	    <li class="normal"> É permitida a participação de alunos
+	      que estejam cursando o sexto ou o sétimo ano do Ensino Fundamental.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal">Modalidade Iniciação - Nível 2
+	  <ol>
+	    <li class="normal"> É permitida a participação de alunos
+	      que estejam cursando o oitavo ou o nono ano do Ensino Fundamental.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal">Modalidade Programação - Nível Júnior
+	  <ol>
+	    <li class="normal">É permitida a participação de alunos de qualquer ano
+	      do Ensino Fundamental.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal">Modalidade Programação - Nível 1
+	  <ol>
+	    <li class="normal">É permitida a participação de alunos
+	      do Ensino Fundamental e de alunos do primeiro ano do Ensino Médio.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal">Modalidade Programação - Nível 2
+	  <ol>
+	    <li class="normal">É permitida a participação de alunos
+	      do Ensino Fundamental e de alunos até o terceiro ano do Ensino Médio.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal">Modalidade Programação - Nível Sênior
+	  <ol>
+	    <li class="normal">É permitida a participação de alunos
+	      que estejam cursando o quarto ano de escolas do Ensino
+	      Técnico ou que estejam cursando, pela primeira vez, o
+	      primeiro ano de um curso de graduação, no momento da
+	      prova da Fase Local da OBI.
+	    </li>
+	  </ol>
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Inscrições
+      <ol>
+	<li class="normal">As inscrições deverão ser feitas em Escolas
+	  habilitadas pela organização da OBI. Na modalidade Iniciação
+	  não é necessário o uso de computadores. Na modalidade
+	  Programação a escola deve disponibilizar um computador por
+	  aluno no dia da prova, além de software de ambiente de
+	  programação para ao menos uma entre linguagens Pascal, C,
+	  C++, Java, Javascript e Python.
+	</li>
+	<li class="normal">Cada Escola deve credenciar um professor
+	  responsável (Coordenador Local da OBI), através da página da
+	  OBI.
+	</li>
+	<li class="normal"> O Coordenador Local da OBI é responsável
+	  por (a) inscrever os alunos que irão fazer a prova em sua
+	  escola, responsabilizando-se pela veracidade de informações;
+	  (b) realizar a competição em sua escola, no dia marcado,
+	  garantindo o sigilo das provas; (c) enviar as soluções dos
+	  competidores das modalidades Programação para a organização
+	  da OBI, para correção; (d) corrigir as provas dos
+	  competidores da modalidade Iniciação das Fases Local e
+	  Estadual, a partir de gabaritos fornecidos, e registrar a
+	  pontuação de cada aluno no sistema da OBI;
+	</li>
+	<li class="normal"> As inscrições deverão ser registradas pelos Coordenadores
+	  Locais no sistema da OBI até a data limite divulgada.
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Provas
+      <ol>
+	<li class="normal"> As escolas devem obedecer rigorosamente as
+	  datas e horários estabelecidos pela organização da OBI para
+	  as provas, sob pena de desclassificação dos competidores e da escola.
+	</li>
+	<li class="normal">Os participantes devem ser instruídos a não
+	  comentar o conteúdo da prova com outras pessoas durante o
+	  dia de aplicação da prova, pessoalmente ou através de
+	  qualquer outro meio, sob pena de desclassificação dos competidores e da escola.
+	</li>
+	<li class="normal"> As tarefas das provas serão estabelecidas
+	  pelo Comitê Científico (CC), nomeado
+	  pela <a href="/info/comite">Comissão Nacional da OBI</a>.
+	</li>
+	<li class="normal"> As datas de realização das provas da OBI serão divulgadas
+	  antecipadamente através da página oficial da OBI.
+	</li>
+	<li class="normal"> No dia da prova será permitido o uso
+	  somente de lápis, caneta ou lapiseira, borracha, régua e
+	  papel para rascunho (não é permitido o uso de calculadoras).
+	</li>
+	<li class="normal"> É obrigatória a apresentação, no dia da
+	  prova, de documento de identificação com foto recente,
+	  expedido por órgão oficial (Secretaria da Educação,
+	  Segurança Pública, Forças Armadas, UNE, UMES ou Ministério
+	  do Trabalho).
+	</li>
+	</li>
+	<li class="normal">Modalidade Iniciação - Níveis 1 e 2
+	  <ol>
+	    <li class="normal"> As provas serão compostas de questões
+	      de múltipla escolha, cada uma com cinco alternativas e
+	      somente uma alternativa correta.
+	    </li>
+	  </ol>
+
+	<li class="normal">Modalidade Programação - Níveis Júnior, 1,
+	2 e Sênior
+	  <ol>
+	    <li class="normal"> As provas serão compostas de tarefas
+	      de programação cuja solução envolve a implementação de
+	      um programa de computador em uma das linguagens de
+	      programação permitidas na OBI.
+	    </li>
+	    <li class="normal"> Durante a prova, cada participante
+	      deverá ter acesso individual a um computador pessoal,
+	      com capacidade adequada de processamento, sem acesso à
+	      Internet, com um ambiente de programação (no mínimo um
+	      editor de texto) e compiladores para as linguagens de
+	      programação permitidas pela OBI (ao menos uma
+	      linguagem).
+	    </li>
+	  </ol>
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Linguagens de Programação
+      <ol>
+	<li class="normal"> Na Modalidade Programação, nas Fases
+	  Local, Estadual e Nacional, os competidores podem submeter
+	  soluções nas seguintes linguagens de programação:
+	  <ul>
+	    <li class="normal">Pascal</li>
+	    <li class="normal">C</li>
+	    <li class="normal">C++</li>
+	    <li class="normal">Python</li>
+	    <li class="normal">Java</li>
+	    <li class="normal">Javascript</li>
+	  </ul>
+	</li>
+	<li class="normal">Na Seletiva para a Olimpíada Internacional,
+	  para os melhores classificados da Modalidade Programação
+	  Nível 2, os competidores podem submeter soluções nas
+	  seguintes linguagens de programação:
+	  <ul>
+	    <li class="normal">C</li>
+	    <li class="normal">C++</li>
+	    <li class="normal">Java</li>
+	  </ul>
+	</li>
+	<li class="normal">Os programas submetidos pelos competidores
+	  serão compilados em ambiente Linux, utilizando os seguintes
+	  compiladores e linhas de comando:
+	  <ul>
+	    <li class="normal">C: Compilador GCC versão 9.3 ou superior - Linha de comando: gcc -lm -O2 -static -o executavel fonte.c</li>
+	    <li class="normal">C++: Compilador G++ versão 9.3 ou superior - Linha de comando: g++ -std=C++11 -lm -O2 -static -o executavel fonte.cpp</li>
+	    <li class="normal">Pascal: Compilador FreePascal versão 3.0.4 ou superior - Linha de comando: fpc -O2 -o executavel fonte.pas</li>
+	    <li class="normal">Python2: Interpretador versão 2.7.18 ou superior </li>
+	    <li class="normal">Python3: Interpretador versão 3.7.7 ou superior </li>
+	    <li class="normal">Java: JDK 14 ou superior - Linha de comando para execução: java -Xmx1024m -Xms1024m fonte.class</li>
+	    <li class="normal">Javascript: Node.js, versão 12.16.3 ou superior</li>
+	  </ul>
+	</li>
+	<li class="normal"> Todos os esforços serão feitos para compilar corretamente
+	  os programas submetidos, com os compiladores acima e eventualmente
+	  ainda outros. No entanto, programas que após todas as tentativas ainda
+	  apresentarem erros de compilação devido ao uso de compiladores ou de
+	  linhas de comando diferentes das indicadas serão considerados
+	  incorretos.
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Resultados
+      <ol>
+	<li class="normal"> Os resultados oficiais serão divulgados, juntamente com o
+	  gabarito das provas, na página oficial da OBI na Internet
+	  (http://obi.sbc.org.br).
+	</li>
+	<li class="normal"> A ordem de classificação em cada Fase
+	  é determinada pela Pontuação obtida pelo competidor na respectiva
+	  Fase.
+	  <ol>
+	    <li>Na Modalidade Iniciação, cada questão de múltipla
+	      escolha corretamente respondida corresponde a um ponto.
+	    </li>
+	    <li>Na Modalidade Programação, o competidor pode receber
+	      entre zero e 100 pontos em cada tarefa, dependendo do
+	      número de testes para o qual a sua solução para a
+	      respectiva tarefa produz a resposta correta.
+	    </li>
+	  </ol>
+	</li>
+	<li class="normal"> A classificação dos competidores na Fase Local, em cada
+	  modalidade e nível, é determinada pela Pontuação da Fase Local; a
+	  classificação dos competidores na Fase Estadual, em cada modalidade e
+	  nível, é determinada pela Pontuação da Fase Estadual;
+	</li>
+	<li class="normal"> A Classificação Final dos competidores na OBI, em cada modalidade e nível, é
+	  determinada pela Pontuação da Fase Nacional. Em caso de empate, a Pontuação da Fase Estadual será utilizada para desempate. Persistindo o empate, a Pontuação da Fase Local será utilizada para desempate.
+
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Certificados e Medalhas
+      <ol>
+	<li class="normal"> Todos os participantes, coordenadores e colaboradores terão
+	  direito a certificados. Os melhores classificados terão
+	  direito a medalhas nas categorias ouro, prata e bronze, em
+	  quantidades a serem determinadas plea Comissão Nacional,
+	  dependendo da quantidade de participantes e dos resultados.
+	</li>
+	<li class="normal"> Os certificados serão disponibilizados na Internet para impressão
+	  local.
+	</li>
+	<li class="normal"> Se alunos da escola fizerem juz a medalhas, elas serão enviadas
+	  mediante o pagamento de uma  Taxa de Correio, no valor de R$ 30,00 para escolas
+	  públicas e R$ 60,00 para escolas privadas.
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Semana Olímpica da OBI
+      <ol>
+	<li class="normal">A Semana Olímpica da OBI é destinada aos melhores
+	  classificados da OBI, EXCETO alunos
+	  que se enquadrem no item 10.4, e será realizada no Instituto
+	  de Computação da Unicamp. Durante a Semana Olímpica acontecem
+	  os <i>Cursos de Programação da OBI</i> e a <i>Seletiva para a
+	    IOI</i>.
+	</li>
+	<li class="normal"> Os alunos serão convidados para a Semana Olímpica da OBI
+	  em ordem decrescente de classificação de acordo com a disponibilidade
+	  de vagas.
+	</li>
+	<li class="normal"> Os seguintes Cursos serão oferecidos durante a Semana Olímpica da OBI:
+	  <ul>
+	    <li class="normal"><i>Curso de Introdução à Programação</i>, para os melhores classificados em cada nível
+	      da Modalidade Iniciação.
+	    <li class="normal"><i>Curso de Aperfeiçoamento em Programação</i>, para os melhores classificados
+	      da Modalidade Programação Nível Júnior.
+	    <li class="normal"><i>Curso de Programação Avançada</i>, para os melhores classificados
+	      da Modalidade Programação Nível 1.
+	  </ul>
+	</li>
+	<li class="normal"> Mesmo tendo uma boa classificação, um(a) aluno(a) será convidado(a) no
+	  máximo uma vez para cada Curso. O intuito é
+	  que os alunos, após participarem da Semana Olímpica, avancem para o próximo nível da
+	  competição e possam ser convidados para um Curso mais avançado.
+	<li class="normal">Seletiva para a IOI
+	  <ol>
+	    <li class="normal"> Os melhores classificados da OBI na modalidade
+	      Programação Nível 2 serão convidados a participar da Seletiva para a
+	      IOI (Olimpíada Internacional de Informática).
+	    </li>
+	    <li class="normal"> A Seletiva para a IOI consiste de uma série de aulas,
+	      treinamentos e provas classificatórias. Haverá quatro
+	      provas: três provas de duas horas de duração e que podem
+	      conter de uma a três questões, e de uma prova que pode
+	      conter de três a cinco questões. O Total de Pontos da
+	      seletiva será obtido somando-se a pontuação obtida em
+	      todas as provas.
+	    </li>
+	    <li class="normal"> Comporão a equipe brasileira na IOI os quatro alunos
+	      com maior Total de Pontos da seletiva. Em caso de empate,
+	      será utilizada a classificação na OBI para desempate.
+	      Persistindo o empate, a Comissão Nacional da OBI decidirá
+	      um critério de desempate.
+	    </li>
+	    <li class="normal"> Os alunos serão convidados para a Seletiva da IOI em
+	      ordem decrescente de classificação de acordo com a
+	      disponibilidade de vagas.  A critério da Comissão
+	      Nacional, poderão também ser convidados os melhores
+	      classificados na modalidade Programação Nível 2 que possam
+	      participar de mais de uma IOI (por exemplo, o melhor
+	      classificado cursando o primeiro ano do ensino médio, o
+	      melhor classificado cursando o nono ano do ensino
+	      fundamental, etc).
+	    </li>
+	    <li class="normal"> Será solicitado, pela Organização da OBI, auxílio para
+	      custear a vinda dos participantes para a Semana Olímpica
+	      da OBI. Se este auxílio não for possível, as despesas de
+	      transporte, estadia e alimentação correrão por conta dos
+	      participantes.
+	    </li>
+	    <li class="normal"> Todo aluno que for convidado para a Semana Olímpica da
+	      OBI deve participar de todas as atividades agendadas e
+	      seguir as regras estabelecidas. A agenda das atividades e
+	      as regras serão divulgadas futuramente para os alunos
+	      convidados.
+	    </li>
+	  </ol>
+	</li>
+      </ol>
+    </li>
+    <li class="bold">Disposições Gerais
+      <ol>
+	<li class="normal"> As escolas e os participantes, ao inscreverem-se na
+	  competição, concordam implicitamente com as regras
+	  estabelecidas.
+	</li>
+	<li class="normal"> As eventuais despesas com transporte, alimentação e
+	  hospedagem para participação das provas deverão correr por
+	  conta dos participantes.
+	</li>
+	<li class="normal"> A <a href="/info/comite">Comissão Nacional da OBI</a> terá a
+	  última palavra sobre a interpretação deste regulamento.
+	</li>
+      </ol>
+    </li>
+  </ol>
+</div>

@@ -1,0 +1,144 @@
+{% extends "base_week.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Monitores{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+<h2>Monitores</h2>
+<table border="0" cellpadding="4" cellspacing="0" width="100%"> 
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/francisco_nardi.jpg" width=200>
+</td>
+<td><b>Francisco Nardi</b><br>
+<i>Monitor-Chefe</i><br>
+Doutorado em Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/andre_regino.jpg" width=200>
+</td>
+<td><b>André Gomes Regino</b><br>
+Ciência da Computação<br><br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/andressa_santos.jpg" width=200>
+</td>
+<td><b>Andressa Cristina Santos</b><br>
+Mestrado em Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/andreza_santos.jpg" width=200>
+</td>
+<td><b>Andreza Aparecida dos Santos</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/daniela_velasco.jpg" width=200>
+</td>
+<td><b>Daniela Maria Casas Velasco</b><br>
+Engenharia de Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/gustavo_borges.jpg" width=200>
+</td>
+<td><b>Gustavo Caetano Borges</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/lethycia_souza.jpg" width=200>
+</td>
+<td><b>Lethycia Maia de Souza</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/lua_muriana.png" width=200>
+</td>
+<td><b>Luã Marcelo Muriana</b><br>
+Engenharia de Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/lucas_agustini.jpg" width=200>
+</td>
+<td><b>Lucas Cunha Agustini</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/marcela_ferreira.jpg" width=200>
+</td>
+<td><b>Marcela Medicina Ferreira</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/rafael_imamura.png" width=200>
+</td>
+<td><b>Rafael Eiki Matheus Imamura</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/thamiris_coelho.png" width=200>
+</td>
+<td><b>Thamiris Florindo Coelho<br></b>
+  <br>Ciência da Computação <br>
+</td>
+</tr>
+</table>
+<p>&nbsp</p>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

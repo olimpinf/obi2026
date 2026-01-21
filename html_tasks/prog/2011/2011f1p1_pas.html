@@ -1,0 +1,133 @@
+title:Progressões Aritméticas
+template:tasks/tarefa_programacao.html
+ 
+      
+	  
+<p>Bob é um aluno do ensino médio que gosta muito de matemática. Na última aula ele aprendeu o que são
+<i>Progressões Aritméticas</i> (<i>PAs</i>) e ficou fascinado por elas. Pelo que Bob entendeu, Progressões Aritméticas são
+sequências de números nas quais a diferença entre dois elementos consecutivos é sempre igual a uma constante <i>r</i>,
+chamada de razão da PA.</p>
+<p>Um exemplo de Progressão Aritmética de razão 2 é -1, 1, 3, 5. Além disso, toda sequência com um ou dois
+elementos é sempre uma Progressão Aritmética. Por outro lado, 5, 6, 8, 9, 10 não é uma PA porque a diferença
+entre elementos consecutivos não é constante: a diferença entre os dois primeiros elementos é 6 - 5 = 1, enquanto
+a diferença entre o terceiro e o segundo elementos é 8 - 6 = 2.</p>
+<p>Bob percebeu que qualquer sequência, mesmo que a mesma não seja uma Progressão Aritmética, pode ser
+quebrada em sequências menores que são PAs. Por exemplo, vimos que a sequência 5, 6, 8, 9, 10 não é uma PA,
+mas podemos quebrar ela entre o 6 e o 8 para obtermos as sequências 5, 6 e 8, 9, 10, que são PAs. Note que não
+existe como quebrar a sequência em menos partes se quisermos ter apenas PAs no fim do procedimento.</p>
+<p>Bob é fascinado por programação mas ainda não sabe programar muito bem, e por isso pediu sua ajuda: ele
+não está conseguindo descobrir como quebrar sequências muito grandes de um jeito eficiente; por isso, pediu
+que você escrevesse um programa para, dada uma sequência qualquer, imprimir o número mínimo de partes em
+que precisamos quebrar a sequência para termos apenas Progressões Aritméticas no término do processo. Caso
+a sequência original já seja uma PA, podemos terminar o processo com uma única parte, e portanto a resposta
+para esse caso é 1.</p>
+
+
+<h3>Entrada</h3>
+
+<p>A primeira linha da entrada é composta por um inteiro <i>N</i> , o número de elementos da sequência. Na segunda
+linha existem <i>N</i> inteiros <i>a<sub>i</sub></i>, os elementos da sequência.</p>
+
+<h3>Saída</h3>
+<p>
+A saída deve conter uma única linha, indicando o número mínimo de partes em que Bob precisa quebrar a
+sequência original para que ele termine apenas com PAs.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+	<li>1 ≤ <i>N</i> ≤ 10<sup>5</sup></li>
+	<li>-10<sup>5</sup> ≤ <i>a<sub>i</sub></i> ≤ 10<sup>5</sup></li>
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+5
+1 2 3 4 5
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+1
+			</pre>
+		</td>
+	</tr>
+	
+</table>
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+7
+-2 0 2 3 3 4 6
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+3 
+			</pre>
+		</td>
+	</tr>
+</table>
+
+<p>É fácil verificar que a sequência -2, 0, 2, 3, 3, 4, 6 (do exemplo acima) não é uma PA, pois 2 - 0  ≠ 3 - 2.
+Verificando manualmente, você pode constatar que não é poss&?vel particionar a sequência em duas de
+tal forma que ambas as partes sejam PAs. Entretanto, existe uma maneira de particionar a sequência
+em 3 PAs: </p>
+<table border="1"><tr><td width="60" align="center">-2, 0, 2</td> <td width="60" align="center">3, 3</td> <td width="60" align="center">4, 6</td></tr></table>  
+<p>Portanto, temos que a resposta para este exemplo é 3.</p>
+
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+4
+-2 0 3 6
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+2
+			</pre>
+		</td>
+	</tr>
+</table>
+<p>A sequência -2, 0, 3, 6 (do exemplo acima) pode ser particionada de várias formas. As únicas 
+maneiras que resultam em PAs são as seguintes:</p>
+<ul>
+<li>Com 4 partes temos 1 possibilidade:</li>
+	<table border="1">
+		<tr><td width="40" align="center">-2</td><td width="40" align="center">0</td><td width="40" align="center">3</td><td width="40" align="center">6</td></tr>
+	</table>
+<li>Com 3 partes temos 3 possibilidades:</li>
+	<table border="1">
+		<tr><td width="40" align="center">-2,0</td><td width="40" align="center">3</td><td width="40" align="center">6</td></tr>
+		<tr><td width="40" align="center">-2</td><td width="40" align="center">0,3</td><td width="40" align="center">6</td></tr>
+		<tr><td width="40" align="center">-2</td><td width="40" align="center">0</td><td width="40" align="center">3,6</td></tr>
+	</table>
+<li>Com 2 partes temos 2 possibilidades:</li>
+	<table border="1">
+		<tr><td width="40" align="center">-2,0</td><td width="40" align="center">3,6</td></tr>
+		<tr><td width="40" align="center">-2</td><td width="40" align="center">0,3,6</td></tr>
+	</table>
+</ul>
+<br>
+
+
+
+      

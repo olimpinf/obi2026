@@ -1,0 +1,67 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+  <form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>      
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endif %}
+  {% endfor %}
+  <br>
+  <input type="hidden" name="compet_id" value="{{ form.compet_id.value }}">
+  {# first button is default, enter key will trigger it #}
+  <button type="submit" class="btn btn-primary" name="save" value="save">Salvar</button>
+  <button type="submit" class="btn btn-warning float-end" name="cancel" value="cancel" onclick="{% go_to_url '/restrito/compet_lista' %}"
+>Cancelar</button>
+  <button type="submit" class="btn btn-danger float-end me-3" name="delete" value="delete" onclick="return confirm('Excluir {{form.compet_name.value}}?')">Excluir</button>
+</form>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Instruções</h2>
+    {% block browse %}
+    <p>Preencha todos os campos</p>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

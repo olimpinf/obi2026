@@ -1,0 +1,66 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block head_extra %}
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+    update_time_remaining("{{ f.time_remaining }}",
+			  {% if f.status == 'running' %} true {% else %} false {% endif %});
+});
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h1>{{ f.exam_title }}</h1>
+
+<p>Revise suas respostas. Na lista abaixo, para cada questão é mostrada a alternativa que você escolheu como resposta. Se desejar
+  manter um registro das alternativas marcadas, imprima esta página.</p>
+
+{% get_tasks_objects f.exam_descriptor f.compet.compet_type as tasks %}
+    {% for task in tasks %}
+    <hr>
+    <h3>{{task.title}}</a></h3>
+    {% get_question_objects task as questions %}
+
+    {% for q in questions %}{% with qnum=forloop.counter %}
+    <p><b>Questão {{ q.num }}.</b> {{ q.text|safe }}
+      {% get_alternative_objects q as alternatives %}
+      {% reflect alternatives f.shuffle_pattern as reflected_alternatives %}
+          <br /><em>Sua resposta: &nbsp;</em>
+          {% for a in reflected_alternatives %}{% with anum=forloop.counter %}
+          {% reflected anum f.shuffle_pattern as anum_refl %}
+	  {% get_answers_task f.answers task.descriptor as answers_task%}
+	  {% if q.num in answers_task and answers_task|get_item:q.num == anum_refl %}
+          <input type="radio" checked  id="{{q.num}}_{% reflected anum f.shuffle_pattern %}" name="{{ q.num }}" value="{% reflected anum f.shuffle_pattern %}"/> {{ a.text|safe }}
+	  {% endif %}
+          {% endwith %}{% endfor %}
+      {% endwith %}{% endfor %}
+    {% endfor %}
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}  
+  {% include "exams/includes/countdown.html" %}
+
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_tasks.html" %}
+  
+  <h2>Instruções</h2>
+    {% if f.mod == 'i' %}
+  {% include "exams/includes/instructions_ini.html" %}
+    {% else %}
+  {% include "exams/includes/instructions_prog.html" %}
+    {% endif %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

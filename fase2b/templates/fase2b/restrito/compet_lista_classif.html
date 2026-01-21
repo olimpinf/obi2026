@@ -1,0 +1,114 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle|safe }}  </h1>
+  {% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} competidor selecionado, total de {{ total }} competidores classificados na Modalidade
+  {% if mod == 'ini' %}Iniciação{% else %}Programação{%endif%}</p>
+  {% else %}
+<p>{{ items.paginator.count }} competidores selecionados,  total de {{ total }} competidores classificados na Modalidade
+  {% if mod == 'ini' %}Iniciação{% else %}Programação{%endif%}</p>
+{% endif %}
+
+<table class='admin' width="100%">
+  <tr>
+    <th width="center">Núm. Inscr.</th>
+    <th width="center">Nome</th>
+    <th class="center">Modalidade</th>
+    <th class="15%">
+    {% if mod == 'prog'  %}
+    Pontos (A/B)
+    {% else %}
+    Pontos
+   {% endif %}
+  </th>						  
+  </tr>
+  
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td>{{ c.compet_id|obi_format_compet_id }}</td>
+    <td>
+      {% if c.compet_type == 1 or c.compet_type == 2 or c.compet_type == 7 %} 
+      <a href="{% url 'fase2:mostra_resultado_coord_ini' c.compet_id %}" target="_blank">{{ c.compet_name }}</a>
+      {% else %}
+      {{c.compet_name}}
+      {% endif %}</td>
+    <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+    {# Turnos A e B #}
+      {% if c.compet_type == 3 or c.compet_type == 4 or c.compet_type == 5 or c.compet_type == 6 %} 
+    <td class="center">{{c.compet_points_fase2|default_if_none:'-'}} / {{c.compet_points_fase2b|default_if_none:'-'}}</td>
+
+    {% else %}
+    <td class="center">{{c.compet_points_fase2|default_if_none:'-'}}</td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Não há competidores inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'fase2:resultado_ini' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'fase2:resultado_ini' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+
+  
+  <h2>Instruções</h2>
+
+  <ul>
+    <li>Utilize o formulário Filtros para restringir os competidores
+      visualizados.
+    <li>Para a modalidade Programação, consulte o link <a href="{% url 'fase2:resultado_prog' %}">Resultados</a> para ver a pontuação dos Turnos A e B.
+  </ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

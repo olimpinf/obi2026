@@ -1,0 +1,113 @@
+title:Jogo dos Pinos
+template:tasks/tarefa_programacao.html
+
+<p>
+O Jogo dos Pinos é um quebra-cabeças que utiliza pinos e um tabuleiro
+com furos em forma de cruz.  Inicialmente há apenas um furo vago, no
+centro do tabuleiro, e todos os outros furos contém um pino como
+mostra figura abaixo.
+
+<div class="center">
+  <img src="/static/img/task_images/provaf2pj_pinos.png" width="250px" />
+</div>
+
+<p>O objetivo do jogo é remover os pinos do tabuleiro de forma que reste
+apenas um pino. Para remover um pino é necessário fazer um
+<i>movimento válido</i>, que é definido da seguinte maneira. O jogador
+deve escolher um pino, chamado <i>pivô</i>, e uma das quatro direções
+(acima, abaixo, esquerda, direita) de tal forma que o pivô tenha um
+outro pino, chamado <i>alvo</i>, como vizinho imediato na direção
+escolhida e que o pino alvo seja seguido, também na direção escolhida,
+por um furo vago (chamado de <i>destino)</i>. A figura abaixo mostra
+os quatro possíveis pivôs da configuração inicial do jogo.
+
+
+<div class="center">
+  <img src="/static/img/task_images/provaf2pj_pinos_2.png" width="250px" />
+</div>
+
+<p>O jogador pode então fazer o pino pivô pular sobre o pino alvo e
+ocupar o furo destino, removendo o pino alvo do tabuleiro.  A figura
+abaixo mostra um exemplo (a) antes,
+(b) durante  e (c) depois de um movimento válido.
+
+<div class="center">
+  <img src="/static/img/task_images/provaf2pj_pinos_3.png" width="600px" />
+</div>
+
+<p>Dada uma configuração de pinos em um tabuleiro, escreva um programa
+para determinar o número de movimentos válidos possíveis na
+configuração dada.
+
+<h3>Entrada</h3>
+<p>A entrada é composta por sete linhas, cada linha com exatamente sete caracteres.
+A linhas são identificadas por números de 1 a 7.
+Os dois primeiros caracteres e os dois últimos caracteres das linhas 1, 2, 6 e 7 são
+'-' (hífen). Todos os outros caracteres são ou '<span class="ttt">o</span>' (letra o minúscula) representando um pino,
+ou '<span class="ttt">.</span>' (ponto) representando um furo.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um
+  único inteiro, o número de movimentos válidos na configuração da
+  entrada.
+
+<h3>Restrições</h3>
+<ul>
+<li> A seção Entrada descreve as restrições.
+</ul>
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+--ooo--
+--ooo--
+ooooooo
+ooo.ooo
+ooooooo
+--ooo--
+--ooo--
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+--.o.--
+--o.o--
+....o..
+....o..
+o.o.o..
+--o.o--
+--o.o--
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

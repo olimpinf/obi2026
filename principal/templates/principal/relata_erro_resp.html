@@ -1,0 +1,36 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Relato de Erro{% endblock %}
+
+{% block header %}<h1>Relato de Erro</h1>{% endblock %}
+
+{% block content %}
+<p>
+Uma mensagem foi enviada para o administrador do site. Obrigado por seu relato de erro!
+</p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informações sobre a OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  <h2>Informações sobre a OBI</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+    {% endblock browse %}
+  </ul>
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

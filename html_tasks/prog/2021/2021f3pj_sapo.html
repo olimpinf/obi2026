@@ -1,0 +1,141 @@
+title:Sr. Sapo
+template:tasks/tarefa_programacao.html
+
+<p>
+O Sr. Sapo mora num lago de formato retangular dividido em um reticulado
+de células quadradas de um metro de lado. Algumas das células são
+pedras que estão acima do nível da água. 
+
+O Sr. Sapo é muito atlético e pode saltar a distâncias de até três
+metros, mas curiosamente ele só pode saltar nas direções paralelas aos
+lados do lago.
+
+A figura (a) abaixo  mostra um lago, e a figura (b)
+uma sequência de pulos do Sr. Sapo.
+<div class="center">
+<div class="center"><img src="/static/img/task_images/2021f3pj_sapo.png" width="450px" /></div>
+</div>
+
+O Sr. Sapo está em uma pedra e quer ir visitar sua namorada que está
+em outra pedra. Ele está com pressa e não quer se molhar, portanto
+quer chegar ao seu destino pulando de pedra em pedra, sem cair na
+água.
+
+Dados o mapa do lago, a pedra em que o Sr. Sapo está e a pedra
+em que a sua namorada está, determine se é possível ele chegar
+ao seu destino sem se molhar.
+
+
+
+
+
+<h3>Entrada</h3>
+A primeira contém dois inteiros N, M, respectivamente
+a largura e o comprimento do lago em metros (ou seja, o lago é
+composto por N colunas e M linhas de células quadradas de 1m de
+lado). As colunas são numeradas de 1 a N e as linhas são numeradas
+de 1 a M. A segunda linha contém um inteiro P, o número de células
+que são pedras.  Cada uma das P linhas seguintes contém dois
+inteiros C_{i e L_{i}, respectivamente o número da coluna e o
+número da linha de uma célula que é pedra. A linha seguinte descreve a célula em
+que o Sr. Sapo está e contém dois inteiros S_{C} e S_{L},
+respectivamente a coluna e a linha da célula.  A linha seguinte
+descreve a célula em que está a namorada do Sr. Sapo e contém dois
+inteiros R_{C} e R_{L}, respectivamente a coluna e a linha da
+célula.}
+
+
+
+
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha na saída,
+  contendo um único caractere, que deve ser `<span class="ttt">S'
+  se for possível o Sr. Sapo chegar ao destino sem se molhar, ou `\texttt{N</span>' caso contrário.}
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  N  &leq;  100
+<li> 1  &leq;  M  &leq;  100
+<li> 2  &leq;  P  &leq;  N\times M
+<li> 1  &leq;  C_i  &leq;  M e 1  &leq;  L_i  &leq;  M para 1  &leq;  i  &leq;  P
+<li> 1  &leq;  S_{C}  &leq;  N e 1  &leq;  S_{L}  &leq;  M
+<li> 1  &leq;  R_{C}  &leq;  N e 1  &leq;  R_{L}  &leq;  M
+<li> As posições do Sr. Sapo e da sua namorada são distintas e ambas são posições de
+  pedras especificadas na entrada.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 14 pontos, M = 1
+<li> Para um conjunto de casos de testes valendo outros 16 pontos,
+  para a pedra em que o Sr. Sapo está inicialmente, há no máximo uma outra pedra 
+para a qual ele pode saltar, e para todas as outras pedras, há no máximo duas
+ para a qual ele pode saltar
+ (ou seja, se o Sr. Sapo consegue chegar ao destino, há um único caminho de pedras
+ que podem ser usadas, e esse caminho não tem "bifurcações").
+<li> Para um conjunto de casos de testes valendo outros 70 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5
+6
+1 1
+2 2
+1 4
+3 4
+3 5
+4 5
+1 1
+4 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5
+6
+2 1
+2 5
+3 4
+4 1
+4 3
+4 5
+3 4
+2 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

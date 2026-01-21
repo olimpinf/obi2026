@@ -1,0 +1,67 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Resultado Fase 3{% endblock %}
+
+{% block header %}<h1>Consulta Resultado Fase 3</h1>{% endblock %}
+
+{% block content %}
+
+<h2>{{ compet.compet_name }}</h2>
+
+<b>Num. Inscrição</b>: {{ compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ compet.compet_type|obi_format_compet_type_full }}<br>
+{% if compet.compet_points_fase3 != None%}
+<b>Pontuação</b>: {{ compet.compet_points_fase3 }} pontos<br>
+{% else %}
+<b>Pontuação</b>: não encontrada <br>
+{% endif %}
+
+{% if compet.compet_sex == "F" %}
+<b>Classificação Final</b>: 
+{% else %}
+<b>Classificação Final</b>: 
+{% endif %}
+{% if show_classif %}
+{% if compet.compet_rank_final %}
+{{compet.compet_rank_final}} <sup><u>o</u></sup> lugar
+{% endif %}
+{% else %}
+? (Ainda não computada, aguarde. A classificação será divulgada em <a href="https://olimpiada.ic.unicamp.br/calendario/obi_completo">{{ "geral-resultado-final"|obi_date|date:'d/m'}}</a>, após todos os eventuais pedidos de recorreção terem sido julgados.)
+{% endif %}
+<br>
+
+{% if log %}
+<h3 class="mt-3">Relatório de correção</h3>
+<pre>
+{{ log }}
+</pre>
+{% endif %}
+
+{% if folha_resp %}
+<p> Clique <a href="{% url 'fase3:serve_folha_resp' compet.compet_id %}">aqui para ver a imagem da Folha de Respostas</a></p>
+{% endif %}
+<hr>
+<p><small>A pontuação necessária para medalhas ainda não foi
+    computada. O quadro de medalhas será divulgado após todas as
+    eventuais solicitações de recorreção tenham sido processadas.  A
+    data prevista no calendário para divulgação do
+    Quadro de Medalhas é {{ "geral-resultado-final"|obi_date|date:'d/m' }}.
+</small></p>
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Veja também</h4>
+  <ul>
+    <li><a href="/static/extras/obi2025/provas/ProvaOBI2025_f3{{compet.compet_type|obi_format_compet_type_short|lower}}.pdf">Caderno de Tarefas (pdf)</a>
+    <li><a href="/static/extras/obi2025/gabaritos/GabaritoOBI2025_f3{{compet.compet_type|obi_format_compet_type_short|lower}}.pdf">Gabarito (pdf)</a>
+    <li><a href="/resultados/fase3/iniciacao">Resultados Modalidade Iniciação</a></li>
+    <li><a href="/resultados/fase3/programacao">Resultados Modalidade Programação</a></li>
+    {% comment %}
+    <li><a href="/fase3/consulta_res">Nova Consulta de Resultado</a></li>
+    {% endcomment %}
+  </ul>
+
+      
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+
+<h1>Resultado da Submissão</h1>
+
+<p>{{ msg|safe }}</p>
+
+{% if result %}
+<p>Confira abaixo se todos os arquivos foram inseridos no sistema. Em caso de problema
+corrija o erro e re-envie apenas os arquivos para os quais ocorreu erro.</p>
+<table class="admin">
+  <tr><th width="15%">Competidor</th><th width="20%">Nome do arquivo</th><th width="65%">Comentário</tr>
+  {% for r in result %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ r.compet }}</td>
+  <td>{{ r.program}}</td>
+  <td>
+    {% if 'OK' not in r.comment %}
+    <font color="red">
+    {% endif %}
+    {{ r.comment }}
+    {% if 'OK' in r.comment %}
+    </font color="red">
+    {% endif %}
+   </font>
+    
+    </td>
+  </tr>
+
+{% endfor %}
+</table>
+{% endif %}
+
+
+<H2>&nbsp;</H2>
+<form>
+<button type="submit" class="button cancel" name="Cancelar" value="Cancelar" onclick="{% go_to_url '/restrito' %}">Cancelar</button>
+<button type="submit" class="button right" name="OK" value="OK" onclick="{% go_to_url '/restrito' %}">OK</button>
+<button type="submit" class="button right" name="Outro" value="Outro" onclick="history.go(-1)">Submeter outro arquivo</button>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+<h2>Veja também</h2>
+<ul>
+<li><a href="/restrito/fase1/submsolucoes/consulta_subm_aceitas">Consulta as
+soluções aceitas</a>
+<li>
+<a href="/restrito/fase1/submsolucoes/recupera_subm_aceitas">
+Recupera soluções aceitas</a>
+</ul>
+ 
+<li>A submissão dos programas dos alunos deve ser realizada até 
+  {{ "prog-fase1-envio-solucoes"|obi_date|date:'d/m' }}.
+</ul>
+
+<p>
+Solicitamos que mantenham os arquivos de soluções dos alunos, para o caso de algum competidor reclamar da correção.
+<p>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+    {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+    {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

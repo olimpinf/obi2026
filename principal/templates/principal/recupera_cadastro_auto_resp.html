@@ -1,0 +1,26 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+<p>Obrigado por recadastrar a escola
+
+<p><b>
+{{ school.school_name }}
+</b></p>
+
+<p>na Olimpíada Brasileira de Informática.</p>
+
+
+<p>O processo de cadastramento foi finalizado. Uma mensagem de correio eletrônico foi enviada para o endereço de email
+  cadastrado, com a senha para acesso ao sistema da OBI.
+</p>
+
+{% endblock %}
+
+{% block content-related %}
+  {% include "includes/see_also_info.html" %}
+{% endblock %}

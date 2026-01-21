@@ -1,0 +1,15 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+
+<p>
+  {{ msg }}
+</p>
+<a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+{% endblock %}
+
+{% block content-related %}
+
+{% endblock %}

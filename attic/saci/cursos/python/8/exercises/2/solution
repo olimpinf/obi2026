@@ -1,0 +1,11 @@
+# Solução do Desafio 2 da Aula 8
+
+cartaA = int(input())
+cartaB = int(input())
+cartaC = int(input())
+if cartaA == cartaB:
+  print(cartaC)
+elif cartaA == cartaC:
+  print(cartaB)
+else:
+  print(cartaA)

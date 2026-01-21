@@ -1,0 +1,57 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consultas{% endblock %}
+
+{% block header %}<h1>Consultas</h1>{% endblock %}
+
+{% block content %}
+<h2>Escolas</h2>
+        <a href="{% url 'principal:consulta_escolas' %}" class="btn btn-primary" role="button">Consulta Escolas Cadastradas</a>
+
+<h2 class="mt-4">Competidores</h2>
+        <a href="{% url 'principal:consulta_competidores' %}" class="btn btn-primary" role="button">Consulta Competidores Inscritos</a>
+
+{% comment %}
+<h2>Sedes da Fase Nacional</h2>
+    <a href="{% url 'fase3:consulta_sua_sede' %}">Consulte sua Sede da Fase Nacional</a>
+{% endcomment %}
+    {% comment %}
+    <a href="{% url 'fase3:consulta_sedes' %}">Lista Sedes da Fase Nacional</a>
+   {% endcomment %}
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Veja também</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+           {% if not page.url == flatpage.url %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+    {% endblock browse %}
+  </ul>
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Consultas</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

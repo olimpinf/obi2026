@@ -1,0 +1,256 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h2>Correção - Fase 1 - Modalidade Programação</h2>
+
+<h3>Formulário para envio de soluções</h3>
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          <strong>{{ field.label_tag }}</strong>
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="button cancel" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}"
+>Cancelar</button>
+  <button type="submit" class="button right" name="save" value="save">Enviar</button>
+</form>
+
+<p style="clear:both">&nbsp</p>
+
+
+<p>Na Modalidade Programação, a correção das soluções dos competidores
+é realizada pela Coordenação da OBI.
+Siga as instruções abaixo e utilize o formulário acima para submeter as soluções
+de seus competidores.
+
+<!--p><font color="red">O sistema de submissão está desativado, está
+encerrado o prazo para envio de soluções.</font-->
+
+<!--p class="emph">O sistema de submissão está desativado. Ele será ativado 
+ao término da prova.-->
+
+<!--p><b>Solicitamos que os arquivos com submissões dos alunos sejam
+submetidos no sistema até o dia 07/06, sexta-feira.</b></p-->
+
+<h3>Envio de soluções</h3>
+ 
+<p>
+Para possibilitar a correção automática, é necessário organizar as
+ soluções dos competidores em um arquivo compactado de acordo com o
+ esquema descrito a seguir. 
+<p>
+Cada modalidade deve ser submetida em um arquivo (ou seja, não submeta
+ soluções de competidores de modalidades distintas em um mesmo
+ arquivo).
+
+<h3>O Esquema de diretórios</h3>
+
+<p>
+No arquivo compactado a ser submetido, deve existir um diretório para cada competidor, sendo que o 
+nome do diretório correspondente de um determinado  competidor deve ser
+o seu número de inscrição.
+Os diretórios dos competidores devem conter, para cada problema para o qual
+foi tentada uma solução, o programa com o mesmo nome do problema (conforme indicado no Caderno de Tarefas)
+seguido da extensão da linguagem utilizada, que pode ser:
+</p>
+<ul>
+<li> para C++: <b>.cc</b>, <b>.cpp</b> ou <b>.c++</b> 
+<li> para C:  <b>.c</b> 
+<li> para Python3: <b>.py3 </b>
+<li> para Java: <b>.java</b>
+<li> para Javascript: <b>.js</b>
+</ul>
+
+<p>No nome dos programas, o uso de letras maiúsculas ou minúsculas é irrelevante.
+</p>
+
+<p>
+Por exemplo, suponha uma escola com os competidores 01234-H, 02345-A e 03456-D, na Modalidade
+Programação Nível 1 ,que submeteram
+soluções para duas tarefas "Genoma Complicado" e "Corrida de Fórmula 1", respectivamente
+com os nomes de programas "genoma" e "formula1" (os nomes dos programas são especificados
+no enunciado do problema). 
+
+<p>Inicie criando uma pasta para armazenar as soluções dos alunos acima. Denomine essa pasta por
+exemplo <tt>prog_n1</tt>:
+
+<p>
+<center>
+<img src="/static/img/img_diretorios1.png">
+</center>
+
+<p>Dentro dessa pasta, para cada competidor, crie uma pasta com nome igual ao número
+de inscrição do competidor:
+
+<p>
+<center>
+<img src="/static/img/img_diretorios2.png">
+</center>
+
+Dentro de cada pasta de competidor, copie as soluções do competidor. Copie apenas
+os arquivos-fonte das soluções, ou seja, os que têm extensão <tt>.c</tt>,
+<tt>.cpp</tt>, <tt>.java</tt>, <tt>.py3</tt> ou <tt>.js</tt>.
+NÃO coloque arquivos executáveis (no Windows, esses arquivos em geral têm a extensão <tt>.exe</tt>):
+
+<p>
+<center>
+<img src="/static/img/img_diretorios3.png">
+</center>
+
+<p>
+Neste exemplo o competidor 01234-H submeteu suas duas soluções
+em <i>C++</i>, o competidor 02345-A submeteu apenas uma solução para a
+tarefa "genoma" em <i>Java</i> e o competidor 03456-D submeteu uma
+solução em <i>C</i> e outra em <i>Python 2</i>.
+
+<p>
+Uma vez criada a estrutura de arquivos será necessário empacotá-la e compactá-la num só
+arquivo.
+</p>
+
+<h3>Escolhendo o formato do arquivo compactado</h3>
+
+<p>
+Os formatos aceitos são <b>zip</b> e <b>tar.gz</b>.
+</p>
+<p>
+O formato <b>zip</b> é utilizado pelos programas <i>PkZip</i>,
+<i>WinZip</i>, <i>zip</i> e outros. O formato <b>tar.gz</b> é 
+gerado pelo utilitário linux <i>tar</i>.
+</p>
+<p>
+
+<p>
+No <i>Windows</i>, programas como <i>WinZip</i> podem ser usados para
+gerar o arquivo compactado no formato <i>zip</i> sendo necessário pressionar a tecla Control (Ctrl) e,
+ao mesmo tempo, clicar com o botão esquerdo nos diretórios dos competidores para selecionar os diretórios a serem
+incluídos. Depois, basta clicar com o botão direito em qualquer um dos diretórios selecionados e escolher
+a opção do menu <i>"add to zip"</i>.
+</p>
+
+No <i>Linux</i>, numa janela do aplicativo Terminal,
+ para se criar um arquivo <i>zip</i>, vá para o diretório que contém 
+a pasta <tt>prog_n1</tt> e digite
+</p>
+<p><pre>
+$ zip -r prog_n1.zip prog_n1 
+</pre>
+Esse comando cria o arquivo <tt>prog_n1.zip</tt>, que deve ser então submetido
+utilizando o formulário acima.
+
+<p>
+Para o formato <b>tar.gz</b>, digite o comando:
+</p>
+<p><pre>
+$ tar czf prog_n1.tgz prog_n1
+</pre>
+Esse comando cria o arquivo <tt>prog_n1.tgz</tt>, que deve ser então submetido
+utilizando o formulário acima.
+
+<p>
+Note que em seu sistema os utilitários podem não estar instalados, ou ainda, 
+terem uma versão diferente. Verifique as páginas de manual ou converse com
+seu administrador de sistema.
+</p>
+
+<p>
+Após a submissão do arquivo, a página seguinte irá informar sobre
+possíveis incompatibilidades, erros ou inconsistências com o esquema
+de diretórios especificado que tenham ocorrido durante a descompressão
+do arquivo enviado. Caso haja algum problema, corrija os problemas
+indicados, crie um novo arquivo e submeta-o novamente.
+</p>
+
+<h3>Re-submetendo em caso de erros</h3>
+<p>
+Você pode submeter quantos arquivos de soluções quiser. Assim, você
+pode por exemplo dividir a sua submissão em lotes menores.  Quando
+ocorrer um erro em programas de apenas um competidor (nome do programa
+errado, ou número de inscrição do competidor errado), você pode
+submeter um arquivo compactado contendo a pasta apenas desse
+competidor, não sendo necessário re-submeter as soluções dos
+competidores que o sistema já tenha validado.
+
+<p>Se a solução de um aluno que já havia sido inserida no sistema
+for submetida novamente, a solução anteriormente inserida é sobrescrita
+pela solução mais recente.
+
+
+<h3>Recuperação de soluções</h3>
+
+<p>Após o envio das soluções, você pode
+<ul>
+<li><a href="{% url 'fase1:consulta_subm_aceitas' %}">Consultar as
+soluções de competidores de sua escola aceitas para correção</a>, ou
+<li>
+<a href="{% url 'fase1:recupera_subm_aceitas' %}">
+Recuperar as
+soluções dos competidores de sua escola aceitas para correção </a>
+</ul>
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  <p>Este formulário de submissão é apenas para escolas que realizaram
+    a prova presencial. Competidores que realizaram a Prova Online
+    já enviaram as suas soluções durante a prova.
+    
+<p>A submissão dos programas dos competidores deve ser realizada até 
+{{ "prog-fase1-envio-solucoes"|obi_date|date:'d/m' }}.
+
+<p>
+Solicitamos que mantenham os arquivos de soluções dos alunos, para o caso de algum competidor reclamar da correção.
+
+<h3>Veja também</h3>
+<ul>
+<li><a href="{% url 'fase1:consulta_subm_aceitas' %}">Consulta
+soluções aceitas</a>
+<li><a href="{% url 'fase1:recupera_subm_aceitas' %}">
+Recupera soluções aceitas</a>
+</ul>
+ 
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+    {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+    {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

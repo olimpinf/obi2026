@@ -1,0 +1,72 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Pré-inscrição de Competidor{% endblock %}
+
+{% block header %}<h1>Pré-inscrição de Competidor</h1>{% endblock %}
+
+{% block content %}
+<p>Preencha os dados do formulário de pré-inscrição e clique no botão
+"Enviar". Quando o Coordenador Local da sua escola validar os seus
+dados você receberá uma mensagem no endereço de email informado.
+
+<h3>Escola Selecionada: {{ school.school_name }}</h3>
+<ul>
+  <li>Cidade: {{ school.school_city}}  
+  <li>Estado: {{ school.school_state}}  
+  <li>Coordenador Local: {{ school.school_deleg_name}}  
+<p>
+  <form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>      
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endif %}
+  {% endfor %}
+<br>
+  <button type="submit" class="button right" name="save" value="save">Enviar</button>
+  <button type="submit" class="button cancel" name="cancel" value="cancel" onclick="{% go_to_url '/consulta_escolas_pre_inscricao' %}"
+>Cancelar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Instruções</h2>
+  {% block browse %}
+  <ul>
+    <li>Para pré-inscrever um novo competidor, preencha as informações do formulário e clique em <em>Enviar</em>.
+  </ul>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

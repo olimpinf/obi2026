@@ -1,0 +1,105 @@
+title:Arranha-céu
+template:tasks/tarefa_programacao.html
+
+<p>
+Um arranha-céu residencial possui N andares, numerados de 1 a
+N. O síndico do arranha-céu está tendo muito trabalho com uma nova
+regra do corpo de bombeiros. Ele não sabe o porquê, mas os bombeiros
+apontam um andar k e exigem que o síndico informe o total de pessoas
+que moram no arranha-céu do andar 1 até o andar k,
+inclusive. Talvez seja alguma medida de segurança dos bombeiros! O
+problema é que o prédio tem muitos andares e toda hora tem gente se
+mudando, passando a morar no arranha-céu, ou indo embora. O síndico
+precisa cuidar de dois eventos:
+
+<ul>
+<li> <i> Mudança</i>: alterar o número de pessoas que moram num determinado andar;
+<li> <i> Bombeiro</i>: informar o total de pessoas que moram do andar
+  1 até um determinado andar, inclusive.
+</ul>
+
+<p>Dados o número de pessoas que moram em cada andar do arranha-céu
+inicialmente, e uma sequência de eventos (do tipo <i> Mudança</i> ou
+<i> Bombeiro</i>), seu programa deve imprimir, para cada evento do tipo
+<i> Bombeiro</i>, o total de pessoas exigido, no momento do evento!
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém dois inteiros N e Q,
+representando, respectivamente, o número de andares e o número de
+eventos. A segunda linha contém N inteiros A<sub>i</sub>, 1 &leq;  i &leq;  N,
+indicando o número de pessoas que moram no i-ésimo andar
+inicialmente.  Cada uma das Q linhas seguintes representa um evento
+e tem uma de duas formas:
+<ul>
+<li> &quot;<span class="ttt">0</span> K P&quot;, <i> Mudança</i>, alterar o número de pessoas
+  que moram no K-ésimo andar para P pessoas;
+<li> &quot;<span class="ttt">1</span> K&quot;, <i> Bombeiro</i>, informar o total de pessoas que moram do andar 1
+ até o andar K, inclusive.
+</ul>
+
+<h3>Saída</h3>
+Para cada evento do tipo <i> Bombeiro</i>, seu programa deve imprimir
+uma linha contendo um inteiro representando o total de pessoas
+correspondente aquele evento.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup> e 1 &leq;  Q &leq;  N
+<li> Há pelo menos um evento do tipo <i> Bombeiro</i>.
+<li> 1 &leq;  K &leq;  N
+<li> 0 &leq;  A<sub>i</sub> &leq;  1000 e 0 &leq;  P &leq;  1000 
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 20 pontos, N &leq;  20000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8 4
+30 2 0 42 10 11 11 9
+1 5
+0 4 12
+1 5
+1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+84
+54
+30
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 1
+0
+1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

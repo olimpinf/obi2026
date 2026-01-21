@@ -1,0 +1,26 @@
+{% load flatpages %}
+{% load obi_extras %}
+  {% with flatpage.url|obi_only_year as year %}
+  {% with flatpage.url|obi_phase as phase %}
+  {% with flatpage.url|obi_modality as modality %}
+  {% with '2021 2022 2023' as years %}
+  {% if modality == 'programacao' and year in years %}
+
+<div class="smaller-ul">
+  <ul>
+    <li>Resoluções comentadas dos problemas das provas da {{ phase|title }} disponibilizadas pelo <a href="https://noic.com.br">Núcleo Olímpico de Incentivo ao Conhecimento</a> - NOIC:
+      <ul>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-pj/">Programação Júnior</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-p2/">Programação 1</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-p2/">Programação 2</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-ps/">Programação Sênior</a></li>
+      </ul>
+  </ul>
+
+</div>
+  {% endif %}
+
+  {% endwith %}
+  {% endwith %}
+  {% endwith %}
+  {% endwith %}

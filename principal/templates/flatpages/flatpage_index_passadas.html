@@ -1,0 +1,31 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+{% block title %} {{ flatpage.title }} {% endblock %}
+
+{% block header %}
+  {{ flatpage.title }}
+{% endblock %}
+
+{% block content %}
+  {{ flatpage.content }}
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Conteúdo</h4>
+  <ul>
+    {% block browse %}
+    {% with '/passadas/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+            {% if page.url|obi_is_index_passadas %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li> 
+            {% endif %}
+         {% endfor %}
+    {% endwith %}
+    {% endblock browse %}
+  </ul>
+
+{% endblock %}

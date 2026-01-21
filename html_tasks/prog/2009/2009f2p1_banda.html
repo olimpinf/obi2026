@@ -1,0 +1,100 @@
+title:Banda
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>Jimmy é um garoto muito esperto que adora música. No último mês ele ganhou um campeonato de um jogo
+cujo objetivo é tocar guitarra. Empolgado, Jimmy decidiu montar uma banda. Para Jimmy a banda perfeita
+tem quatro integrantes, ele e mais três: um baterista, um baixista e um cantor.</p>
+<p>Agora Jimmy precisa encontrar os outros integrantes da banda. Para isto ele reuniu todos os álbums que
+encontrou na internet e, após escutá-los diversas vezes, compilou o que ele chama de <i>lista de entrosamento entre
+músicos</i>. Nessa lista ele atribui, para cada par de músicos que já tocaram juntos, uma nota inteira de 1 a 100,
+que é uma medida de quão bem os músicos tocam juntos (o <i>nível de entrosamento</i> entre eles). Se dois músicos
+nunca tocaram juntos o nível de entrosamento é zero. Jimmy nunca tocou com nenhum músico da lista.</p>
+<p>Jimmy pretende formar a sua banda a partir da lista de entrosamento entre músicos, da seguinte maneira:
+ele quer escolher os outros três músicos de tal forma que a soma dos níveis de entrosamento dos integrantes
+da banda seja a maior possível (ou seja, a soma dos níveis de entrosamento dos três pares possíveis de serem
+formados entre os três novos integrantes seja a maior possível).</p>
+<p>Mas a lista de entrosamento entre músicos ficou muito grande e Jimmy não está conseguindo escolher os
+integrantes. Por isso, Jimmy está pedindo sua ajuda.</p>
+
+<h3>Tarefa</h3>
+<p>Você deve ajudar Jimmy a montar a melhor banda possível fazendo um programa que receba uma lista contendo
+o nível de entrosamento para cada par de músicos que já tocaram junto, e determine os músicos que formariam
+a melhor banda.</p>
+
+<h3>Entrada</h3>
+<p>A entrada contém um único conjunto de testes, que deve ser lido do <i>dispositivo de entrada padrão</i> (normalmente
+o teclado).</p>
+<p>A primeira linha da entrada é formada por dois inteiros <i>N</i> e <i>M</i> , informando respectivamente o número de
+músicos (3 ≤ <i>N</i> ≤ 100) e o número de pares de músicos que já tocaram juntos (0 ≤ <i>M</i> ≤ 10<sup>4</sup>). Os músicos são
+identificados por números inteiros de 1 a <i>N</i> . Cada uma das <i>M</i> linhas seguintes contém três inteiros <i>X</i>, <i>Y</i> e <i>Z</i>,
+em que <i>X</i> e <i>Y</i> representa um par de músicos (1 ≤ <i>X</i> ≤ <i>N</i> , 1 ≤ <i>Y</i> ≤ <i>N</i> e <i>X</i> ≠ <i>Y</i> ) e <i>Z</i> representa o seu nível de
+entrosamento (1 ≤ <i>Z</i> ≤ 100). Cada par de músicos que já tocou junto aparece uma única vez na entrada.</p>
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir, na <i>saída padrão</i>, uma única linha, contendo três números inteiros separados por
+espaço em branco, identificando os três outros músicos que devem compor a banda (em qualquer ordem). Se
+existir mais de uma melhor banda, Jimmy contenta-se com qualquer uma.</p>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li>Em um conjunto de casos de teste que totaliza 30 pontos, <i>N</i> ≤ 10 e <i>M</i> ≤ 100.</li>
+	<li>Em um conjunto de casos de teste que totaliza 80 pontos, <i>N</i> ≤ 50 e <i>M</i> ≤ 2450.</li>	
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+3 3
+1 2 50
+2 3 27
+3 1 1	
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+1 2 3
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+5 8
+1 2 50
+1 3 50
+1 4 50
+2 3 50
+2 5 10
+3 4 50
+3 5 25
+4 5 20
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+1 3 4
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+
+      

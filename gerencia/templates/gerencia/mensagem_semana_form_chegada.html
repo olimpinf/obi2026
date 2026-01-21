@@ -1,0 +1,37 @@
+{% load obi_extras %}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Verdana", sans-serif};
+    </style>
+  </head>
+  
+<body>
+
+<p>{{ greetings }}
+
+<p style="margin-left:auto;margin-right:auto">{{ compet.compet_name }}</p>
+
+<p>Obrigado por confirmar sua participação na Semana Olimpica da OBI{{ year }}. 
+
+<p>Por favor preencha o formulário de Chegadas e Partidas, para que possamos organizar o translado entre aeroporto (ou rodoviária) de Campinas e o Hotel Vitória Express.
+
+<p>O formulário está disponível na página 
+<a href="https://olimpiada.ic.unicamp.br/semana/chegadas">Chegadas</a>, no portal da OBI2025.
+
+<p><em>Obs.: Preencha o formulário mesmo se você vai chegar diretamente no hotel.</em><p>
+
+<p>Esperamos você no IC-Unicamp para a Semana Olímpica!
+
+<hr>
+
+</div>
+<p>&nbsp;
+      
+{% include 'includes/signature_htm.html' %}
+</body>
+</html>

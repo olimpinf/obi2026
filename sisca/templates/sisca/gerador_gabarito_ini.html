@@ -1,0 +1,72 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Gerador de Folhas de Respostas{% endblock %}
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Gerador de Gabarito</h2>
+
+<p><font color="#aa0000"><em>O sistema Sisca será desativado permanentemente em 31/07/2023.</em></font>
+
+<p><font color="#aa0000"><em>Um sistema com funcionalidade similar, mas tecnologia de processamento de imagens
+      mais avançada, está disponível para testes no link a seguir.</em></font>
+
+<p><font color="#aa0000"><em><a href="https://web.scangrader.com/pt">https://web.scangrader.com/pt</a></em></font>
+
+<p><font color="#aa0000"><em><b>Note que folhas de respostas geradas pelo
+      Sisca, apesar de similares em formato, NÃO poderão ser
+      processadas nesse novo sistema. Você deve usar as folhas de
+      respostas geradas pelo novo sistema.</b></em></font>
+
+<form action="" method="post" >
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include 'sisca/includes/see_also_sisca.html' %}
+
+  <h2>Instruções</h2>
+  <ul>
+    <li>Para gerar um arquivo de gabarito, inicie fornecendo o número de questões e um comentário (que será
+      incluído no arquivo gerado).
+  </ul>
+<hr>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

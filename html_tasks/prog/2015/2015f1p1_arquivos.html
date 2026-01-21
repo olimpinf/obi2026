@@ -1,0 +1,80 @@
+title:Arquivos
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Aldo tem N arquivos em seu computador, cada um com um tamanho em bytes. 
+Ele quer dividir estes arquivos em pastas, porém o sistema do computador é velho e só aceita pastas com as duas seguintes limitações:</p>
+
+<ul>
+	<li> Uma pasta pode ter no máximo <b>dois</b> arquivos</li>
+	<li> A soma dos tamanhos dos arquivos na pasta não pode exceder B bytes</li>
+</ul>
+
+<p>Como ele tem muitos arquivos ele prefere não criar muitas pastas. 
+Dado o tamanho dos arquivos, calcule o número mínimo possível de pastas.</p>
+
+<p>Vamos supor um exemplo que temos os arquivos de tamanho 1, 2 e 3, e que o limite de bytes seja 3. 
+A solução é colocar os dois primeiros arquivos juntos, totalizando apenas 2 pastas.</p>
+<h3>Entrada</h3>
+A entrada consiste de duas linhas. A primeira linha contém os números inteiros N e B.
+A segunda linha contém N inteiros indicando o tamanho de cada arquivo.
+<h3>Saída</h3>
+Seu programa deve escrever uma única linha na saída, contendo um único número inteiro, 
+a quantidade mínima possível de pastas.
+<h3>Restrições</h3>
+<ul>
+	<li> 1 ≤  N ≤  10<sup>5</sup></li>
+	<li> 1 ≤  B ≤  10<sup>9</sup></li>
+	<li> Os arquivos terão tamanho entre 1 e B, inclusive</li>
+</ul>
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li> Em um conjunto de casos de teste somando 20 pontos, N ≤  10</li>
+	<li> Em um conjunto de casos de teste somando 50 pontos, N ≤  1000</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+1 2 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4
+4 3 1 2 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

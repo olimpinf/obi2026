@@ -1,0 +1,124 @@
+title:Quase primo
+template:tasks/tarefa_programacao.html
+<p>
+O jovem César está aprendendo sobre  números primos: um número X > 1
+é <it>primo</it> se for divisível apenas por 1 e por X.
+
+A primeira  tarefa de  casa de  César consiste em  dizer, para  um dado
+número N, quantos números menores ou iguais a N são primos.  Acontece que
+os números  são muito grandes e  César tem preguiça. Ele  suspeita que
+seu professor é tão preguiçoso quanto  ele, e acha que, seu professor,
+para testar se um número é primo, vai testar só uma pequena quantidade
+de divisores primos. Com isso em  mente, ele compilou uma lista de K
+números primos que acha que o professor vai usar.
+
+Mesmo assim,  César ainda está com  preguiça. Dados N e  a lista com
+K números  primos, diga  quantos números inteiros  positivos menores
+ou iguais a N não são divisíveis por nenhum número primo na lista.
+
+<h3>Entrada</h3>
+
+A primeira linha da entrada contém  dois inteiros, N e K.  A linha
+seguinte contém K primos distintos k<sub>i</sub>, (1  &leq;  i  &leq;  K), que são
+os primos que César acha que o professor irá considerar.
+
+<h3>Saída</h3>
+
+Imprima um único  inteiro, a quantidade de  números inteiros positivos
+menores ou iguais a N que não são divisíveis por nenhum número na lista.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  10^9
+<li> 1  &leq;  K  &leq;  40
+<li> k<sub>i</sub> é primo e 2  &leq;  k<sub>i</sub>  &leq;  N
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de testes valendo 20 pontos, N  &leq;  10<sup>5</sup> e K = 1
+<li> Em um conjunto de testes valendo 40 pontos, N  &leq;  10<sup>5</sup> e K  &leq;  20
+<li> Em um conjunto de testes valendo 80 pontos, N  &leq;  10<sup>9</sup> e K  &leq;  20
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 1
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 2
+2 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+20 3
+2 5 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+29 3
+2 5 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+10
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

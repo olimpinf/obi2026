@@ -1,0 +1,25 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+
+<p>Você se recorda da senha utilizada para acessar o sistema da OBI como Coordenador Local no ano passado:
+</p>
+  <a href="{% url 'principal:cadastra_escola_5' %}" class="btn btn-small btn-primary mb-3 me-5" role="button">Sim</a>
+  <a href="{% url 'principal:cadastra_escola_4' %}" class="btn btn-small btn-primary mb-3" role="button">Não</a>
+
+
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

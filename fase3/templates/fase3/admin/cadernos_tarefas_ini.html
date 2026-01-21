@@ -1,0 +1,132 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:index' %}">Fase 3</a>
+&rsaquo; <a href="../">Cadernos de Tarefas</a>
+&rsaquo; Modalidade Iniciação
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+  <div id="content-main">
+<h1>Cadernos de Tarefas - Fase 3 - Modalidade Iniciação</h1>
+
+<p>Para cada competidor, é necessário imprimir uma cópia do Caderno de
+Tarefas e uma Folha de Respostas (onde o competidor deve marcar suas
+respostas). 
+
+<p>Nesta fase a correção é feita pela Coordenação da OBI. O Coordenador da
+Sede deve digitalizar e enviar as Folhas
+de Respostas para correção, utilizando o Sistema de Correção Automatizada.
+
+<p>Veja a seguir um passo-a-passo detalhado sobre o procedimento de
+aplicação das provas da Modalidade Iniciação.
+
+
+<h2>Passo-a-passo</h2>
+<ul>
+<li>Pegue o arquivo do Caderno de Tarefas (prova) nos links abaixo.
+<li>Faça uma cópia do Caderno de Tarefas do respectivo nível (Júnior,
+1 ou 2) para cada competidor.
+<li>Imprima uma Folha de Respostas para cada aluno (veja abaixo), e distribua junto com a prova; também está disponível um "Caderno de folhas de respostas" (veja abaixo) com 
+os dados dos alunos já pré-impressos, para facilitar o trabalho (esse caderno é gerado automaticamente, portanto insira primeiro todos os alunos antes de gerar o caderno no link abaixo).
+<li>No dia da prova, distribua o Caderno de Tarefas e uma Folha de Respostas para cada aluno. Certifique-se de que
+os competidores recebam o Caderno de Tarefas do nível em que estão inscritos (Júnior, 1 ou 2).
+<li>Os competidores podem usar apenas lápis, borracha e caneta para fazer a prova.
+<li>Recolha a Folha de Respostas dos alunos; certifique-se de que
+estejam corretamente preenchidos os campos <i>Nome</i> e <i>Número de
+Inscrição</i>. 
+<li>Nesta fase a correção é feita pela Coordenação da OBI. É necessário digitalizar (escanear) as
+Folhas de Respostas e enviá-las para correção, usando o Sistema Automatizado de correção (ainda não
+disponível).</li>
+<!--li>Corrija as provas, usando o gabarito 
+ou o Sistema Automatizado de correção
+disponível); nesse último caso será necessário digitalizar (escanear)
+as folhas de respostas dos alunos). 
+</li>
+<li>Indique o número de acertos de cada participante, até o dia 29/6, utilizando
+o formulário a ser disponibilizado.</li-->
+
+</ul>
+
+<p>
+Solicitamos que mantenham as Folhas de Respostas dos alunos, para o caso de algum aluno reclamar da correção.
+<p>
+
+<h2>Cadernos de Tarefas, Modalidade Iniciação</h2>
+<p>Para pegar os Cadernos de Tarefas, clique nos links abaixo. Os cadernos
+estão no formato PDF. Se você não conseguir abri-los corretamente, pode
+ser necessário instalar o aplicativo (gratuito) <a href="http://www.adobe.com/br/products/acrobat/readstep2.html">
+Adobe Acrobat Reader</a>.</p>
+
+<p><i>Certifique-se de que o número de versão da prova (encontrado no
+rodapé da página de rosto do Caderno de Tarefas) é igual ao indicado
+abaixo.</i>
+<!--p><font color="red"> Os Cadernos de Tarefas ainda NÃO estão disponíveis, serão
+disponibilizados 12:00 (meio-dia) do dia 02/10, quarta-feira).</font-->
+<ul>
+<li><a href="FolhaTeste.pdf">Folha de Teste</a> 
+<font color="green">(já disponível, apenas para todos verificarem que
+conseguem baixar e visualizar corretamente um arquivo no formato
+PDF)</font>
+</li>
+<li><a href="ProvaOBI2019_f3ij.pdf">Nível Júnior</a>
+</li>
+<li><a href="ProvaOBI2019_f3i1.pdf">Nível 1</a>
+</li>
+<li><a href="ProvaOBI2019_f3i2.pdf">Nível 2</a>
+
+</ul>
+
+<h2>Folhas de Respostas</h2>
+<p>Para acessar as Folhas de Respostas, clique nos links abaixo. </p>
+<ul>
+<li>Folhas de Respostas Pré-preenchidas.  Estes arquivos contêm as Folhas de Respostas já
+preenchidas com o nome da escola, nome e número de inscrição dos
+alunos dos alunos classificados.
+</li>
+<ul>
+<li><a href="folhas/IJ">Nível Júnior</a>
+</li>
+<li><a href="folhas/I1">Nível 1</a>
+</li>
+<li><a href="folhas/I2">Nível 2</a>
+</li>
+</ul>
+<li><a href="folha/IJ">Folha de Respostas Avulsa para o nível Júnior</a>. A Folha
+de Respostas Avulsa NÃO é mesma para os três níveis (diferentes números de questões); imprima algumas
+cópias para o caso de necessidade, devido a erros de preenchimento ou rasura
+por parte dos alunos. Note que é necessário preeencher
+manualmente o número de inscrição dos competidor.
+<li><a href="folha/I1">Folha de Respostas Avulsa para os níveis 1 e 2</a>. A Folha
+de Respostas Avulsa NÃO é mesma para os três níveis (diferentes números de questões); imprima algumas
+cópias para o caso de necessidade, devido a erros de preenchimento ou rasura
+por parte dos alunos. Note que é necessário preeencher
+manualmente o número de inscrição do competidor.
+</li>
+
+</ul>
+
+<h2>Listas de Presença, Modalidade Iniciação</h2>
+<p>As listas de presença são fornecidas apenas para auxiliar a gestão, para saber quem
+  realmente compareceu e quem não compareceu. Elas não são obrigatórias, mas sugerimos o seu uso
+  para o caso de haver disputas, no futuro, sobre a presença ou não do(a) competidor(a) na prova.
+<ul>
+<li><a href="/restrito/fase3/cadernostarefas/ini/lista_presenca/IJ">Nível Júnior</a>
+<li><a href="/restrito/fase3/cadernostarefas/ini/lista_presenca/I1">Nível 1</a>
+<li><a href="/restrito/fase3/cadernostarefas/ini/lista_presenca/I2">Nível 2</a>
+</li>
+</ul>
+
+<hr>
+  </div>
+{% endblock %}

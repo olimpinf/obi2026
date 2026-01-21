@@ -1,0 +1,128 @@
+title:Sobrinhos
+template:exams/tarefa_programacao.html
+order:4
+<p>
+O Natal está chegando, e todo mundo sabe que criança adora ganhar presente! Por conta disso, uma loja de balas abriu uma promoção, para conseguir vender o maior número possível de balas, aproveitando a época de Natal. Na véspera, a loja teve uma fila com <samp>N</samp> pessoas, cada uma comprando balas para dar de presente para seus sobrinhos. 
+</p>
+
+<p>
+Cada pessoa <samp>i</samp> comprou uma quantidade <samp>X<sub>i</sub></samp> de balas, e possui uma quantidade <samp>Y<sub>i</sub></samp> de sobrinhos. Elas devem dividir igualmente suas balas entre os seus sobrinhos, então pode ser que sobrem balas no final da distribuição, que chamaremos de resto. Por exemplo, se a primeira pessoa da fila comprou 20 balas e possui 8 sobrinhos, cada sobrinho vai ganhar 2 balas e o resto será de 4 balas.
+</p>
+
+<p>
+O que queremos saber é o seguinte: se colocássemos as pessoas da fila em ordem, <b>do menor pro maior resto</b>, qual seria o resto da pessoa que estaria na <samp>K</samp>-ésima posição da fila ordenada, dado um <samp>K</samp> menor ou igual a <samp>N</samp>?
+</p>
+
+<h3>Entrada</h3>
+<p>
+A primeira linha de entrada contém dois inteiros <samp>N</samp> e <samp>K</samp>.
+</p>
+
+<p>
+As próximas <samp>N</samp> linhas representam as pessoas da fila, da primeira até a última pessoa. Cada uma dessas linhas contém dois inteiros, <samp>X<sub>i</sub></samp> e <samp>Y<sub>i</sub></samp>, o número de balas que a pessoa <samp>i</samp> comprou, e o número de sobrinhos que ela tem.
+</p>
+
+<p>
+Lembrando que a fila dada na entrada é a fila original, ela não está necessariamente ordenada pelo resto.
+</p>
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir um único inteiro, o resto de balas da pessoa que estaria na <samp>K</samp>-ésima posição da fila, se a fila estivesse ordenada pelo resto.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  ≤  <samp>N</samp>  ≤  10<sup>5</sup>
+</li><li> 1  ≤  <samp>K</samp>  ≤  <samp>N</samp>
+</li><li> 1  ≤  <samp>X<sub>i</sub></samp>, <samp>Y<sub>i</sub></samp>  ≤  10<sup>9</sup>
+</li>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 10 pontos, 1  ≤  <samp>N</samp>  ≤  3.
+</li>
+<li> Em um conjunto de casos de teste somando 20 pontos, <samp>K</samp> = 1.</li>
+<li> Em um conjunto de casos de teste somando 30 pontos, 1  ≤  <samp>N</samp>  ≤  1000.</li>
+<li> Em um conjunto de casos de teste somando 40 pontos, nenhuma restrição adicional.</li>
+</ul>
+
+
+<h3>Exemplos</h3>
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 1</b>
+<pre>
+3 2
+7 9
+3 8
+5 1
+</pre>
+      </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 1</b>
+<pre>
+3
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 2</b>
+<pre>
+3 1
+57 806
+244 349
+608 849
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 2</b>
+<pre>
+57
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 3</b>
+<pre>
+10 1
+5 8
+3 8
+4 4
+1 9
+8 2
+2 3
+9 5
+3 2
+7 1
+4 8
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 3</b>
+<pre>
+0
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>

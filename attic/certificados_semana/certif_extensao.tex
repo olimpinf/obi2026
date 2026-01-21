@@ -1,0 +1,48 @@
+\documentclass[landscape,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[landscape]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\pagestyle{empty}
+
+\setlength{\textwidth}{8in}           
+\setlength{\topmargin}{0.4in}         
+\setlength{\leftmargin}{0.0in}        
+\setlength{\parskip}{1.2ex}
+\setlength{\parindent}{0mm}
+
+\newcommand\BackgroundPic{
+  \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{
+      \vfill
+      \centering
+      \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{/Users/ranido/OBI/obi2025/attic/certifs/FundoCertif2025.pdf}
+      \vfill
+    }
+  }
+}
+
+
+\newcommand{\esimo}{\mbox{\raisebox{1ex}{\rm\b{\small o}}}}
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+
+\vspace*{3mm}
+\hspace*{14mm}\begin{minipage}[t]{1\textwidth}
+\Large
+Certificamos que
+
+\begin{center}
+{\LARGE \bf \emph{Igor Luis Aureliano}}
+\end{center}
+\vspace{1cm}
+trabalhou como MONITOR durante a aplicação das provas da Fase Nacional da OBI2025,
+completando um total de 7 horas de atividades, nos dias 20/09/2025 e
+27/09/2025.
+
+\end{minipage}
+\newpage
+
+\end{document}

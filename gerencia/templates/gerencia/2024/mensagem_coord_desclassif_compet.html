@@ -1,0 +1,27 @@
+{{ greetings }} {{ coord_name}},
+
+lamentamos informar que detectamos atividade fraudulenta de competidores da OBI{{year}} de sua escola. Mais especificamente,
+detectamos um ou mais dos seguintes problemas nas submissões de seus alunos:
+
+* a solução submetida pelo competidor é cópia de solução de outro competidor (da mesma ou de outra escola)
+
+* a solução submetida foi produzida por uma ferramenta de Inteligência Artificial
+
+Infelizmente o número total de desclassificados é grande demais para um relatório individual, mas todas as submissões foram analisadas individualmente por professores do Comitê Científico da OBI2024, que comprovaram a fraude. Na página de coordenação é possível consultar as soluções submetidas pelos competidores de sua escola.
+
+{% if compets|length == 1 %}O competidor envolvido na sua escola é:
+{% else %}Os competidores envolvidos na sua escola são:
+{% endif %}
+{% for c in compets %}
+* {{c.0}} -- {{c.1}},  tarefa: {{c.2}} ({{c.3}})
+{% endfor %}
+
+{% if compets|length == 1 %}O aluno envolvido foi desclassificado da OBI{{ year }}. Solicitamos que a escola informe o aluno.
+{% else %} Os alunos envolvidos foram desclassificados da OBI{{ year }}. Solicitamos que a escola informe os alunos.
+{% endif %}
+
+A Comissão Científica da OBI{{ year }} resolveu não desclassificar a escola "{{ school_name }}" neste momento,
+
+mas sugere que a escola revise os seus procedimentos. A partir do próximo ano em casos como esses a escola será desclassificada, acarretando na desclassificação de todos os alunos inscritos, em todos os níveis. Além disso, a escola será suspensa da OBI por dois anos.
+
+{% include 'includes/signature_txt.html' %}

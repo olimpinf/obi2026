@@ -1,0 +1,123 @@
+title:Dona Minhoca
+template:tasks/tarefa_programacao.html
+
+<p>
+Dona Minhoca construiu uma bela casa, composta de N salas conectadas
+por N-1 túneis. Cada túnel conecta exatamente duas salas distintas,
+e pode ser percorrido em qualquer direção.  A casa de dona Minhoca foi
+construída de modo que, percorrendo os túneis, é possível partir de
+qualquer sala e chegar a qualquer outra sala da casa.
+
+<p>Dona Minhoca quer se exercitar, e para isso planeja construir
+um túnel adicional, de modo a criar um &quot;ciclo&quot; de salas
+e túneis. Vamos chamar de <i>comprimento</i> do ciclo o número
+de salas do ciclo.
+
+<p>A figura (a) abaixo mostra um exemplo de casa. É possível
+obter um ciclo de comprimento três construindo um túnel entre
+as salas 2 e 5, ou um ciclo de comprimento quatro construindo um túnel
+entre as salas 1 e 3.
+
+<div class="center">
+<div class="center"><img src="/static/img/task_images/2021f3p2_minhoca.png" width="500px" /></div>
+</div>
+
+<p>Dada a descrição da casa de dona Minhoca, escreva um programa
+para determinar o número de salas do ciclo de maior comprimento
+que é possível construir, e de quantas maneiras é possível
+construir um ciclo com esse comprimento.
+
+
+
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N,
+o número de salas da casa de dona Minhoca. As salas são identificadas
+por números de 1 a N. Cada uma das N-1 linhas seguintes contém
+dois inteiros X e Y, indicando que há um túnel entre a sala X e
+a sala Y.
+
+
+
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir duas linhas. A primeira linha
+deve conter somente um inteiro, o número de salas do ciclo de maior
+comprimento que é possível construir. A segunda linha deve conter
+somente um inteiro, o número de ciclos distintos que é possível
+contruir com esse comprimento.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  N  &leq;  50 000
+<li> 1  &leq;  X  &leq;  N; 1  &leq;  Y  &leq;  N;  X  &ne;  Y 
+<li> nos testes, o número de possíveis ciclos distintos é menor do que 100 000 000 
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+
+
+<li> Para um conjunto de casos de testes valendo 40 pontos, N  &leq;  5 000
+<li> Para um conjunto de casos de testes valendo outros 60 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+1 2
+2 4
+4 5
+4 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+1 2
+2 3
+3 4
+3 6
+5 3
+1 8
+1 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

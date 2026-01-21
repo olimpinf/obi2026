@@ -1,0 +1,48 @@
+{% load i18n %}
+
+<div id="content-main">
+{% if app_list %}
+    {% for app in app_list %}
+        <div class="app-{{ app.app_label }} module">
+        <table>
+        <caption>
+            <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
+        </caption>
+        {% for model in app.models %}
+            <tr class="model-{{ model.object_name|lower }}">
+            <th scope="row">{{ model.name }}</th>
+                {% if model.add_url %}
+                <td><a href="{{ model.add_url }}" class="addlink">{% trans 'Add' %}</a></td>
+		{% else %}
+                <td>&nbsp;</td>
+		{% endif %}
+
+                {% if model.admin_url %}
+	          {% if model.name == 'Cadernos de Tarefas' %}
+                     <td><a href="{{ model.admin_url }}" class="accesslink">Acessar</a></td>
+	          {% elif model.name == 'Competidores da Sede' %}
+                     <td><a href="{{ model.admin_url }}" class="accesslink">Acessar</a></td>
+	          {% elif model.name == 'Gera Certificados' %}
+                     <td><a href="{{ model.admin_url }}" class="accesslink">Acessar</a></td>
+	          {% elif model.name == 'Modalidade Iniciação - Correção' %}
+                     <td><a href="{{ model.admin_url }}" class="accesslink">Acessar</a></td>
+	          {% elif model.name == 'Modalidade Programação - Correção' %}
+                     <td><a href="{{ model.admin_url }}" class="accesslink">Acessar</a></td>
+	          {% elif model.name == 'Mostra Correção' %}
+                     <td><a href="{{ model.admin_url }}" class="accesslink">Acessar</a></td>
+                  {% else %}
+                     <td><a href="{{ model.admin_url }}" class="changelink">{% trans 'Change' %}</a></td>
+ 		  {% endif %}
+		{% else %}
+                <td>&nbsp;</td>
+		{% endif %}
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>{% trans "You don't have permission to edit anything." %}</p>
+{% endif %}
+
+</div>

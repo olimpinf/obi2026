@@ -1,0 +1,9 @@
+  <h4>Cursos disponíveis</h4>
+  {% block browse %}
+  <ul>
+    <li><a href="{% url 'saci:show_course' 'python' %}">Programação para Iniciantes (Blockly+Python)</a>
+    </li>
+    <li><a href="{% url 'saci:show_course' 'intro_js' %}">Introdução à Programação de Computadores (Javascript)</a>
+    </li>
+  </ul>
+    {% endblock browse %}

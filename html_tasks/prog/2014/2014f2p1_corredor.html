@@ -1,0 +1,89 @@
+title:Corredor
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Bruninho está programando um personagem virtual para o próximo desafio
+de um jogo de aventura em que, numa das fases, o personagem tem que
+entrar em um corredor, percorrer algumas salas e depois sair do
+corredor. Ele pode entrar apenas uma vez, e passar por cada sala
+apenas uma vez. Todas as salas possuem uma porta de entrada e uma de
+saída, como ilustra a parte (a) da figura abaixo. Ao passar por uma
+sala o jogador ganha um certo número de vidas (que pode ser
+negativo!). O objetivo é passar pelo corredor coletando a maior
+quantidade possível de vidas! Por sorte, sempre existe ao menos uma
+sala onde se ganha um número positivo de vidas.
+
+<center>
+<img src="/static/img/task_images/2014f2p1_corredor.png" height="70%" width="70%">
+</center></p>
+
+
+<p>
+No exemplo acima, o personagem de Bruninho pode ganhar, no máximo,
+12 vidas, por exemplo, entrando pela sala 2 e saindo pela sala
+4, como mostrado na parte (b) da figura. Nesta tarefa, você deve
+escrever um programa que, dados os números de vidas correspondentes a
+cada sala do corredor, calcule a quantidade máxima de vidas que será
+possível ganhar.</p>
+<h3>Entrada</h3>
+A entrada é composta por duas linhas. A primeira linha contém um
+inteiro N, o número de salas no corredor. A segunda linha contém N
+números inteiros, positivos ou negativos, indicando a quantidade de
+vidas que se ganha em cada sala.
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha, com o número máximo de vidas que
+é possível ganhar.
+<h3>Restrições</h3><ul>
+<li> 1 ≤  N ≤  50000; e o número de vidas nas salas está entre
+  -100 e 100</li>
+</ul>
+<h3>Informações sobre a Pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste totalizando 30 pontos, N ≤  1000</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7
+-2 5 -1 8 -11 7 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+12
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+50 42 -35 2 -60 5 30 -1 40 31
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+105
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

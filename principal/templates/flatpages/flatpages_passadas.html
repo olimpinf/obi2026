@@ -1,0 +1,151 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+{% block title %} {{ request.path| obi_year }} - {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  {{ request.path | obi_year }}
+{% endblock %}
+
+  {% block content %}
+  {% if flatpage.title|title_start != 'OBI' %}
+  <h1>{{ flatpage.title|split_title|get_list_item:0 }}</h1>
+  <h2 class="mb-4">{{ flatpage.title|split_title|get_list_item:1 }}</h2>
+  {% endif %}
+
+  {{ flatpage.content }}
+  {% endblock %}
+
+{% block content-related %}
+  
+<h3>Veja também</h3>
+
+<ul>
+  <li>Quadros de Medalhas {{ request.path | obi_year }}
+    
+    <div class="smaller-ul">
+      <ul>
+	{% with request.path|obi_start_path_year|add:'/qmerito/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas|sort_flatpages %}
+        <li><a href="{{ page.url }}">{{ page.title|split_title|get_list_item:1 }}</a></li>
+        {% endfor %}
+	{% endwith %}
+      </ul>
+    </div>
+  </li>
+  
+  <li>Provas e Gabaritos {{ request.path | obi_year }}
+    <div class="smaller-ul">
+      <ul>
+	{% with request.path|obi_start_path_year|add:'/iniciacao/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+	{% with request.path|obi_start_path_year|add:'/programacao/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+	{% with request.path|obi_start_path_year|add:'/fase1/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+	{% with request.path|obi_start_path_year|add:'/fase2/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+	{% with request.path|obi_start_path_year|add:'/fase2b/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+	{% with request.path|obi_start_path_year|add:'/fase3/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+{% comment %}	  
+	{% with request.path|obi_start_path_year|add:'/seletivaIOI/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|cut:'Provas e Gabaritos - ' }}</a></li>
+        {% endfor %}
+	{% endwith %}
+{% endcomment %}
+    </ul>
+    </div>
+  </li>
+
+  {% if flatpage.url|obi_only_year|has_cfobi %}
+  
+<hr>
+  <li>Competição Feminina - Quadro de Medalhas {{ request.path | obi_year }}
+    
+    <div class="smaller-ul">
+      <ul>
+	{% with request.path|obi_start_path_year|add:'/cfqmerito/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas|sort_flatpages %}
+        <li><a href="{{ page.url }}">{{ page.title|split_title|get_list_item:2 }}</a></li>
+        {% endfor %}
+	{% endwith %}
+      </ul>
+    </div>
+  </li>
+
+  <li>Competição Feminina - Provas e Gabaritos {{ request.path | obi_year }}
+    
+    <div class="smaller-ul">
+      <ul>
+	{% with request.path|obi_start_path_year|add:'/cfobi/' as start %}
+        {% get_flatpages start as flatpages_passadas %}
+        {% for page in flatpages_passadas %}
+        <li><a href="{{ page.url }}">{{ page.title|split_title|get_list_item:2 }}</a></li>
+        {% endfor %}
+	{% endwith %}
+      </ul>
+    </div>
+  </li>
+  {% endif %}
+  
+<hr>
+  <li><a href="{% url 'principal:certificados' %}">Emissão de Certificados</a>  {{ request.path | obi_year }}</li>
+  
+</ul>
+
+
+{% with flatpage.url|obi_only_year as year %}
+  {% with flatpage.url|obi_phase as phase %}
+  {% with flatpage.url|obi_modality as modality %}
+  {% with '2021 2022 2023 2024' as years %}
+  {% if modality == 'programacao' and year in years %}
+  <p>Resoluções comentadas dos problemas das provas da {{ phase|title }} disponibilizadas pelo <a href="https://noic.com.br">Núcleo Olímpico de Incentivo ao Conhecimento</a> - NOIC:
+      <div class="smaller-ul">
+      <ul class="smaller-ul">
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-pj/">Programação Júnior</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-p2/">Programação 1</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-{{year}}/{{phase}}-p2/">Programação 2</a></li>
+      </ul>
+      </dif>
+
+  {% endif %}
+
+  {% endwith %}
+  {% endwith %}
+  {% endwith %}
+  {% endwith %}
+
+</div>
+{% endblock %}
+

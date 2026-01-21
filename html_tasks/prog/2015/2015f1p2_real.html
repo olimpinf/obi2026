@@ -1,0 +1,85 @@
+title:Família real
+template:tasks/tarefa_programacao.html
+<p>
+O rei de um reino muito muito distante deu uma grande festa para
+reunir todas as gerações dos seus descendentes: filhos e filhas, netos
+e netas, bisnetos e bisnetas, e assim por diante. Ele, que gosta muito
+de estatísticas, agora quer saber, para cada geração, qual a
+porcentagem de descendentes daquela geração que compareceu à
+festa. Você foi contratado para escrever um programa de computador que
+calcule as porcentagens de todas as gerações!
+
+<p>O rei tem N descendentes, identificados com os números de 1 a N.
+O próprio rei será identificado com o número 0. Será dada apenas a
+informação, para cada descendente, de quem é o seu pai ou sua mãe, na
+linha de descendência que começa no rei. Além disso, claro, será dada
+a lista de todos que compareceram à festa.
+
+<h3>Entrada</h3>
+
+<p>A primeira linha da entrada contém dois inteiros N e M,
+respectivamente, o número de descendentes e o número de participantes
+da festa. A segunda linha contém N números, representando os pais ou
+mães dos N descendentes, em ordem crescente:  o primeiro
+número indica o pai ou a mãe do descendente de número 1, o segundo
+número indica o pai ou a mãe do descendente de número 2, e assim por
+diante. A terceira linha contém M números, identificando todos os
+descendentes que compareceram à festa.
+
+<h3>Saída</h3>
+
+<p>Seu programa deve imprimir uma linha com uma lista de números reais,
+com precisão de duas casas decimais, indicando a porcentagem, para
+cada geração, dos descendentes daquela geração que compareceram à
+festa. O primeiro número deve ser a porcentagem dos filhos e filhas, o
+segundo dos netos e netas, e assim por diante.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  M &leq;  N &leq;  10000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+9 5
+7 3 0 9 0 3 5 6 7
+3 2 8 1 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+50.00 33.33 100.00 0.00
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+16 11
+15 9 2 8 6 11 0 3 0 8 12 0 9 6 16 12
+5 14 9 12 6 2 4 10 3 11 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+100.00 50.00 66.67 50.00 100.00
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+

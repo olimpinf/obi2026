@@ -1,0 +1,47 @@
+variables_set,saci_input_int,variables_set,saci_input_int,saci_text_print,saci_math_arithmetic,variables_get,variables_get
+
+Muito bem, você está no caminho certo, está usando os blocos corretos,
+mas o resultado não está correto. Verifique se selecionou a operação
+correta no bloco
+<img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/>.
+Verifique também que o primeiro valor lido da entrada refere-se
+à pressão desejada, e o segundo valor lido refere-se à pressão medida.
+<br>
+
+@variables_set,saci_input_int,variables_set,saci_input_int
+
+OK, você está no caminho certo, está usando
+os blocos corretos para ler os valores da entrada.
+Agora precisa usar um bloco
+<img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+e um bloco
+<img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/>
+para escrever na saída o resultado da expressão "pressão desejada - pressão medida".
+<br>
+
+@variables_set,saci_input_int
+
+Você está no caminho certo, já montou 
+os blocos corretos para ler da entrada o valor da pressão medida. Agora precisa montar
+os blocos para ler da entrada o valor da pressão desejada.
+Depois precisa usar um bloco
+<img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+e um bloco
+<img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/>
+para escrever na saída o resultado da expressão "pressão desejada - pressão medida".
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar criando duas variáveis, uma para armazenar a pressão
+desejada, outra para armazenar a pressão medida pela bomba.
+<br>
+Para criar uma variável clique no menu <b>Variáveis</b> da Barra de Ferramentas,
+depois clique no botão "Crie variável..." e escolha um nome para a variável.
+<br>
+Depois precisa usar um bloco
+<img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+e um bloco
+<img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/>
+para escrever na saída o resultado da expressão "pressão desejada - pressão medida".
+<br>

@@ -1,0 +1,56 @@
+Depois de prova, preparação de resultados para competidores e coordenadores
+
+
+* criar os competidores na tabela de exame local. Essa tabela guarda
+  a participação do competidor. Para modalidade iniciação online,
+  guarda respostas e hora de início/fim, para modalidade programação
+  apenas início/fim da prova do competidor. Os nomes das tabelas
+  estão definidos em exams/settings.py, nos descritores (Exam_fase1,
+  Exam_fase2..). Os nomes são infelizes, por razões históricas.
+  
+* subir as máquinas das provas (pode ser máquinas pequenas)
+
+* conferir cms/utils.py, função cms_sync_submissions. Inicialmente,
+  alterar o código para rodar para apenas um nível (tem um for
+  (PJ,P1,P2,PS), alterar para for (PJ,)
+
+* conferir cms/management/commands/cms_sync_submissions.py
+
+* executar
+  ./manage.py cms_sync_submissions exam_descriptor
+
+  exam_descriptor está definido em exams/settings.py (provaf1, provaf2,...)
+
+  esse comando copia as submissoes nas máquinas da prova para as tabelas
+  local_submissions, local_submission_results, participation
+  e para a tabela de exame local (apenas tempo de início e fim). Mais
+  fácil de achar o dado, se preciso, do que na tabela participation.
+  
+  se tudo OK, alterar novamente cms/utils.py para rodar para
+  todos os níveis: for (PJ,P1,P2,PS)
+
+* revisar faseX/management/commands/compute_points_phaseX_prog.py
+
+* executar
+  ./manage.py compute_points_phase3_prog pj 0 0
+
+  os argumentos são nivel (pj,p1,p2,ps) school_id compet_id
+  se school_id e compet_id são diferentes de zero, computa apenas para esse compet
+  se school_id é diferente de zero e compet_id é zero, computa para todos os alunos da escola
+
+* alterar a página do coordenador restrito/templates/restrito/index e incluir
+  o link correspondente ao resultado, por exemplo
+
+  <td align="right"><a href="{% url 'fase3:resultado_prog' %}">Resultado Preliminar</a></td>
+
+* alterar exams/settings.py
+
+   'exam_show_results': {'i': False, 'p': True}, # permite ao competidor ver o resultado
+   'exam_show_results_coord':  {'i': False, 'p': True}, # permite ao coordenador ver o resultado
+
+* testar com site na porta 8000
+
+* se tudo ok, restartar gunicorn
+
+
+   

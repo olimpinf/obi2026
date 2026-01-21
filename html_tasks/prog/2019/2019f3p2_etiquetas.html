@@ -1,0 +1,89 @@
+title:Etiquetas
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma fita esticada horizontalmente é composta de N quadrados de
+dimensão 1 x 1, cada um deles contendo um número inteiro
+anotado. Temos também K etiquetas retangulares idênticas, de dimensão
+1 x C, onde C é um inteiro.  Nosso objetivo é colar todas as
+etiquetas sobre a fita de modo que a soma dos inteiros que não
+estiverem cobertos por nenhuma etiqueta ao final seja a máxima
+possível.  Cada etiqueta deve ser colada na horizontal, ao longo da
+fita. Duas etiquetas não podem estar sobrepostas e cada quadrado da
+fita deve estar ou totalmente coberto por uma etiqueta, ou totalmente
+descoberto.
+
+
+<h3>Entrada</h3> 
+<p>A primeira linha da entrada contém três inteiros N, K
+e C, representando, respectivamente, o comprimento da fita, o número
+de etiquetas e o comprimento das etiquetas.  A segunda linha da
+entrada contém N inteiros A indicando a sequência de números anotados
+nos quadrados da fita.
+
+
+<h3>Saída</h3> 
+<p>Seu programa deve imprimir uma linha contendo um
+inteiro indicando a soma máxima possível de inteiros descobertos na
+fita depois que todas as etiquetas sejam coladas seguindo as condições
+do enunciado.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10000
+<li> -10000 &leq;  A &leq;  10000
+<li> 1 &leq;  K &leq;  10000
+<li> 1 &leq;  C &leq;  10000
+<li> K\times C &leq;  N
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, os números no vetor estão ordenados crescentemente.
+<li> Para um conjunto de casos de testes valendo outros 10 pontos, C=1.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, K=1.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, K,N &leq;  100.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12 2 3
+1 22 4 -8 9 2 10 -1 5 5 32 -11
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+58
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 1 1
+10000
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

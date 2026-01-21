@@ -1,0 +1,194 @@
+<h2>Listas</h2>
+
+<p>Usamos listas cotidianamente: listas de compras, listas de tarefas
+  a cumprir, listas de ingredientes de uma receita, lista dos vídeos mais vistos na Internet,
+  lista das músicas mais tocadas, etc.
+
+<p>Listas são muito importantes também em Python e em linguagens de programação em geral.
+
+<p>Em Python uma lista é uma <em>coleção de valores organizados em uma sequência</em>. Em Python, podemos ter uma lista de números
+  <center>
+    <table border="0" cellpadding="20px">
+      <tr><td>10</td><td>11</td><td>34</td><td>7</td><td>18</td><td>21</td></tr>
+    </table>
+  </center>
+<p>ou uma lista de cadeias de caracteres
+  <center>
+    <table border="0" cellpadding="20px">
+      <tr><td>Sílvio Sousa</td><td>Beatriz Silva</td><td>Francisco Buarque</td></tr>
+    </table>
+  </center>
+<p>ou uma lista com números e cadeias de caracteres misturados:
+  <center>
+    <table border="0" cellpadding="20px">
+      <tr><td>Zé da Venda</td><td>235</td><td>Maria Rosa</td><td>230</td></tr>
+    </table>
+  </center>
+
+
+<p>Duas propriedades de listas são importantes em Python. Uma propriedade é que os itens de uma lista são organizados em uma sequência, e nos referimos ao primeiro item da lista, segundo item da lista e assim por diante:
+  
+  <center>
+  <img src="/static/saci/blockly_images/list_item_figure.png"/>
+  </center>
+
+<p>Outra propriedade é que podemos atribuir uma lista a uma variável. Assim, podemos armazenar em uma única variável uma "coleção de valores", como nomes e respectivos números de telefones, ou nomes de times e dados referentes a um campeonato, como partidas jogadas, pontos ganhos, gols marcados, etc.
+
+<p>A Barra de Ferramentas inclui um menu Listas com blocos para manipulação de listas em Python. Inicialmente vamos ver dois blocos, para criar uma lista e adicionar itens a uma lista.
+<center>
+  <img src="/static/saci/blockly_images/menu_lists_create_append.png" />
+</center>
+
+
+<h3>O bloco <em>crie lista vazia</em></h3>
+
+<p>O bloco <em>crie lista vazia</em> como o nome indica, cria uma lista
+vazia, ou seja, uma lista que não tem nenhum item:
+<center>
+  <img src="/static/saci/blockly_images/block_lists_create.png" />
+</center>
+<p>Esse bloco é usado para inicializar uma variável que vai conter uma lista, como no exemplo abaxo, em que uma variável de nome "jogadores" é inicializada com uma lista vazia:
+<center>
+  <img src="/static/saci/blockly_images/group_variable_lists_create.png" />
+</center>
+
+<h3>O bloco <em>acrescente na lista</em></h3>
+<p>
+  O bloco <em>acrescente na lista</em> é usado para incluir um novo item em uma lista. 
+<center>
+  <img src="/static/saci/blockly_images/block_lists_append_figure.png" />
+</center>
+
+<p>Esse bloco tem dois espaços vazios: o primeiro é para indicarmos em qual lista queremos acrescentar o item, o segundo espaço vazio é para indicarmos o valor do item a ser acrescentado.
+</pre>    
+
+<p>Considere o programa abaixo, que cria uma lista usando uma variável
+de nome <span class="tt">lista</span>
+  <center>
+  <img src="/static/saci/blockly_images/group_list_example_ab12.png"/>
+  </center>
+  
+<p>Quando executado, esse trecho de programa produz:
+  <div style="width:50%;margin:10px auto 10px auto;">
+    <pre style="border:1px solid black;padding:8px">
+['A', 'B', 12]
+</pre>
+  </div>
+
+<p>Note como o computador escreve a lista na saída: os itens da lista
+dentro de um par de colchetes, as cadeias de caracteres dentro de um
+par de aspas simples, e os itens separados por vírgulas.
+
+<p> Veja agora o programa acima na linguagem Python (não precisa entender o
+programa em Python, o exemplo é apenas para você ter uma ideia da
+linguagem Python; mais adiante no curso vamos ver os comandos em
+  Python em detalhes):
+<pre style="background-color:#eeeeee;width:400px;padding:4px">
+lista = []
+lista.append('A')
+lista.append('B')
+lista.append(12)
+print(lista)
+</pre>
+
+<p>Na próxima aula vamos aprender como consultar e alterar os itens de uma lista individualmente.
+
+<h2>O bloco <em>Leia Linha</em></h2>
+<p> O bloco <em>Leia linha</em> está disponível no menu Entrada e Saída da Barra de Ferramentas:
+
+<center>
+  <img src="/static/saci/blockly_images/menu_e_s_read_line.png" />
+</center>
+  
+<p>Como o nome indica, ele é usado para ler uma linha inteira da entrada. Ele tem como resultado uma cadeia de caracteres e pode ser usado por exemplo  para ler um nome, como Maria Clara, ou
+um número de telefone, como (11) 5432-1234.
+
+<p>Para ilustrar, vamos usar o bloco <em>Leia linha</em> com uma variável de nome
+  <span class="tt">linha</span>
+  e vamos imprimir o valor da variável
+  <span class="tt">linha</span> linha para duas entradas diferentes.
+
+  <center>
+    <table border="0">
+      <tr>
+	<td colspan="2">
+          <img src="/static/saci/blockly_images/group_example_read_line.png" align="center">
+	       </td></tr>
+      <tr>
+	<td>Entrada</td>
+	<td>Saída</td>
+      </tr>
+      <tr>
+	<td><pre style="border:1px solid black;padding:8px">Maria Clara</pre></td>
+	<td><pre style="border:1px solid black;padding:8px">Maria Clara</pre></td>
+      </tr>
+    </table>
+  </center>
+<p>Note que a variável 
+  <span class="tt">linha</span> nesse caso tem como valor a cadeia de caracteres "Maria Clara".
+  Observe agora o mesmo programa para esta outra entrada:
+  <center>
+    <table border="0">
+      <tr>
+	<td colspan="2">
+          <img src="/static/saci/blockly_images/group_example_read_line.png" align="center">
+	       </td></tr>
+      <tr>
+	<td>Entrada</td>
+	<td>Saída</td>
+      </tr>
+      <tr>
+	<td><pre style="border:1px solid black;padding:8px">1234</pre></td>
+	<td><pre style="border:1px solid black;padding:8px">1234</pre></td>
+      </tr>
+    </table>
+  </center>
+<p>A variável <span class="tt">linha</span> nesse caso tem como valor
+a cadeia de caracteres "1234", e não o número mil duzentos e trinta e
+quatro!
+
+<p>Para ficar mais claro, vamos tentar usar um bloco aritmético com a variável linha:
+
+  <center>
+    <table border="0">
+      <tr>
+	<td colspan="2">
+          <img src="/static/saci/blockly_images/group_example_read_line_wrong.png" align="center">
+	       </td></tr>
+      <tr>
+	<td>Entrada</td>
+	<td>Saída</td>
+      </tr>
+      <tr>
+	<td><pre style="border:1px solid black;padding:8px">1234</pre></td>
+	<td><pre style="border:1px solid black;padding:8px">Erro!</pre></td>
+      </tr>
+    </table>
+  </center>
+<p>Ocorre um erro! Isto porque a
+variável <span class="tt">linha</span> contém uma cadeia de caracteres
+e não um número, e o computador não consegue adicionar um valor
+inteiro a uma cadeia de caracteres. Internamente, números e cadeias de
+caracteres são armazenados de forma diferente pelo computador.
+
+<p>Ou seja, se quisermos ler um número da entrada, devemos utilizar o bloco <em>Leia número</em>:
+  <center>
+    <table border="0">
+      <tr>
+	<td colspan="2">
+          <img src="/static/saci/blockly_images/group_example_read_num_and_one.png" align="center">
+	       </td></tr>
+      <tr>
+	<td>Entrada</td>
+	<td>Saída</td>
+      </tr>
+      <tr>
+	<td><pre style="border:1px solid black;padding:8px">1234</pre></td>
+	<td><pre style="border:1px solid black;padding:8px">1235</pre></td>
+      </tr>
+    </table>
+  </center>
+
+<p>Recorde que o bloco <em>Leia número</em> exige que a linha da entrada contenha somente um número; mais adiante no curso veremos como ler uma linha que contém mais de um número.
+<p>&nbsp;</p>
+

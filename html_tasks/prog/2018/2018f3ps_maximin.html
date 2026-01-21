@@ -1,0 +1,126 @@
+title:Maximin
+template:tasks/tarefa_programacao.html
+
+<p>
+Maximin é uma pessoa muito pessimista. Sempre que ele avalia um conjunto
+de possibilidades, assume que o pior cenário é aquele que irá se concretizar.
+E assim, se ele deve tomar alguma decisão, certamente escolhe a alternativa
+que tem o melhor dos piores resultados.
+
+<p>Maximin e seus amigos inventaram um jogo que funciona da seguinte maneira:
+<ul>
+<li> No começo de cada rodada, cada um dos participantes ganha um pedaço de papel
+e deve escrever um número inteiro no mesmo;
+<li> Assim que todos terminam de escrever em seu papel, os números de cada participante são ditos em voz alta, de modo que todos
+sabem quais números foram escritos, e os papéis são colocados em uma caixa;
+<li> Os jogadores discutem e definem um limite inferior L e um limite superior R;
+<li> Cada participante deve então escolher um número maior ou igual a L e menor
+ou igual a R;
+<li> Por fim, um dos papéis colocados na caixa é sorteado e a pontuação de cada
+jogador na rodada é a diferença entre o número escrito no papel sorteado e o número
+escolhido pelo jogador.
+</ul>
+
+<p>Como é de se esperar, por ser pessimista Maximin assume que independente de sua escolha o número
+sorteado será aquele com a menor diferença em relação ao número escolhido por ele. Sua estratégia então
+é escolher o número que tem a maior das menores diferenças.
+
+<p>Por exemplo, considere que há três participantes (incluindo Maximin), que numa rodada
+escreveram os números 10, 28 e 17 nos papéis, e os limites foram
+definidos como L=7 e R=37. Então Maximin escolhe o número 37, 
+prevendo, pessimisticamente, que o papel que será sorteado terá o número 28. Assim, se sua previsão
+se concretizar, sua pontuação seria 9 nessa rodada (e se ela não se concretizar,
+sua pontuação será maior do que 9!). Note que qualquer outro número
+que Maximim escolhesse, e sua previsão pessimista se concretizasse, sua pontuação
+seria menor do que 9.
+
+<p>
+Quando a quantidade de participantes aumenta ou
+os limites escolhidos são muito distantes um do outro fica bem difícil avaliar
+todas as possibilidades e por isso Maximin precisa de sua ajuda.
+
+<p>
+Neste problema, seu programa deve computar qual a pontuação esperada de Maximin. 
+
+
+
+<h3>Entrada</h3>
+<p>A primeira linha contém três inteiros N, L e R representando
+respectivamente, a quantidade de participantes (incluindo Maximin), o menor e o
+maior número que pode ser escolhido na rodada. A linha seguinte contém N
+inteiros a<sub>i</sub> representando os números escritos nos papéis.
+
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um inteiro, a pontuação esperada por Maximin.
+
+
+<h3>Restrições</h3>
+
+<ul>
+<li> 2  &leq;  N  &leq;  10<sup>5</sup>
+<li> -10<sup>9</sup>  &leq;  L  &leq;  R  &leq;  10<sup>9</sup>
+<li> -10<sup>9</sup>  &leq;  a<sub>i</sub>  &leq;  10<sup>9</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+
+<li> Para um conjunto de casos de testes valendo 20 pontos:
+<ul>
+<li>2  &leq;  N  &leq;  10<sup>2</sup>
+<li> -1000  &leq;  L  &leq;  R  &leq;  1000
+<li> -1000  &leq;  a<sub>i</sub>  &leq;  1000
+</ul>
+<li> Para um conjunto de casos de testes valendo 30 pontos:
+<ul>
+<li>2  &leq;  N  &leq;  10<sup>4</sup>
+<li> -10<sup>5</sup>  &leq;  L  &leq;  R  &leq;  10<sup>5</sup>
+<li>-10<sup>5</sup>  &leq;  a<sub>i</sub>  &leq;  10<sup>5</sup>
+</ul>
+</ul>
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 7 37
+10 17 28
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 -6 6
+8 -4 -3 6 12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

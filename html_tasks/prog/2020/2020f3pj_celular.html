@@ -1,0 +1,136 @@
+title:Cobertura para Celular
+template:tasks/tarefa_programacao.html
+
+<p>
+Para atrair mais turistas, o governo decidiu permitir a instalação de
+uma rede de telefonia celular no paradisíaco arquipélago de Logarium.
+O arquipélago tem muitas ilhas no formato circular, todas com no
+máximo 1 km de diâmetro.
+
+<p>
+Exatamente uma torre de celular será instalada no centro de cada uma
+das ilhas.  Todas as torres serão idênticas e terão o mesmo
+alcance; o <i>alcance</i> é a distância máxima da torre que um
+equipamento (telefone ou outra torre) pode estar de forma que a
+comunição seja possível.
+
+<p>
+O governo deseja que a rede de telefonia celular garanta
+a <i>cobertura total</i> do arquipélago, ou seja, deve ser possível a
+um usuário comunicar-se com qualquer outro usuário no arquipélago,
+mesmo que a comunicação tenha que passar por mais de uma torre.
+
+<p>
+Há vários tipos de torres disponíveis no mercado, cada tipo com um
+alcance. O governo recebeu uma proposta atrativa de uma empresa e
+deseja saber se o alcance da torre ofertada permitirá a cobertura
+total do arquipélago.
+
+<p>
+Dadas a localização das torres e o alcance da torre ofertada, escreva
+um programa para determinar se a torre ofertada permite a cobertura
+total do arquipélago.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém um inteiro N indicando o número
+de ilhas do arquipélago.  Cada uma das N linhas seguintes contém
+dois inteiros X<sub>i</sub> e Y<sub>i</sub>, as coordenadas da i-ésima torre. Não
+existem duas torres com as mesmas coordenadas.  A última linha da
+entrada contém um inteiro A indicando o alcance da torre.
+
+
+
+<h3>Saída</h3>
+<p>
+Seu programa deve produzir uma única linha na saída, contendo um único caractere,
+que deve ser
+<span class="ttt">S</span> se a torre permite a cobertura total ou 
+<span class="ttt">N</span> caso contrário.
+
+
+<h3>Restrições</h3>
+<ul>
+  <li> 2  &leq;  N  &leq;  10000
+  <li> 0  &leq;  X<sub>i</sub>, Y<sub>i</sub>  &leq;  1000, para 1  &leq;  i  &leq;  N
+  <li> 1  &leq;  A  &leq;  10000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, Y<sub>i</sub> = 0 para 1  &leq;  i  &leq;  N.
+<li> Para um conjunto de casos de testes valendo 80 pontos adicionais, nenhuma outra restrição.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+200 200
+400 400
+600 600
+200
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+10 10
+10 30
+30 10
+30 30
+20 20
+20
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+0 0
+40 0
+0 30
+49
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

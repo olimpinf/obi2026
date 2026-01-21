@@ -1,0 +1,72 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+
+<h1>Resultado da Consulta</h1>
+
+<p>{{ msg|safe }}</p>
+
+{% if result %}
+<p>Confira abaixo se todas as soluções dos competidores foram inseridas no sistema.</p>
+  {% for item in result %}
+  {% ifchanged item.level %}
+      <h2>{{ item.level }}</h2>
+   {% endifchanged %}
+  {% ifchanged item.compet %}
+      <h4>{{ item.compet }}</h4>
+   {% endifchanged %}
+      {{ item.program }} &nbsp; &nbsp;
+  {% endfor %}
+{% endif %}
+
+
+<p>&nbsp;</p>
+<form>
+<button type="submit" class="button" name="OK" value="OK" onclick="{% go_to_url '/restrito' %}">OK</button>
+</form>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+<h2>Veja também</h2>
+<ul>
+<li><a href="/restrito/fase1/submsolucoes/consulta_subm_aceitas">Consulta as
+soluções aceitas</a>
+<li>
+<a href="/restrito/fase1/submsolucoes/recupera_subm_aceitas">
+Recupera soluções aceitas</a>
+</ul>
+ 
+<li>A submissão dos programas dos alunos deve ser realizada até 
+{{ ""|obi_date_prova_f1p_coord_submete_solucoes }}.
+</ul>
+
+<p>
+Solicitamos que mantenham os arquivos de soluções dos alunos, para o caso de algum competidor reclamar da correção.
+<p>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+    {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+    {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

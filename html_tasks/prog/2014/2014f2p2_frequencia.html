@@ -1,0 +1,131 @@
+title:Frequência
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Byteland é uma cidade bastante conhecida por propor variados desafios
+aos seus habitantes.  Recentemente, o prefeito de Byteland, Joãozinho,
+decidiu propor um desafio que ele gosta de chamar de Tabuleiro da
+Frequência.</p>
+
+<p>A brincadeira ocorre da seguinte forma. Inicialmente, um tabuleiro com
+dimensões Nx N é dado contendo apenas 0"s. Depois disso, Q
+operações são propostas, podendo ser de 4 tipos:</p>
+
+<ul>
+<li> 1 X R: Atribuir o valor R a todos os números da linha X;</li>
+<li> 2 X R: Atribuir o valor R a todos os números da coluna X;</li>
+<li> 3 X: Imprimir o valor mais frequente na linha X;</li>
+<li> 4 X: Imprimir o valor mais frequente da coluna X.</li>
+</ul>
+
+<p>Joãozinho é muito bom com computadores, mas também é bastante
+preguiçoso. Sabendo que você é um dos melhores programadores do mundo,
+ele decidiu pedir sua ajuda para resolver este problema.</p>
+<h3>Entrada</h3>A primeira linha da entrada é composta por dois inteiros N e Q,
+representando, respectivamente, o tamanho do tabuleiro e a quantidade
+de operações. As próximas Q linhas da entrada vão conter as
+Q operações.  O primeiro inteiro de cada linha vai indicar o tipo da
+operação. Caso seja 1 ou 2, será seguido por mais dois inteiros
+X e R. Caso seja 3 ou 4, será seguido por apenas mais um
+inteiro X.
+<h3>Saída</h3>Para cada operação do tipo 3 ou 4, seu programa deve produzir uma linha,
+contendo o valor da resposta correspondente. Se uma linha ou coluna tiver
+dois ou mais valores que se repetem o mesmo número de vezes, você deve imprimir
+o maior deles. Por exemplo, se uma linha tem os valores [5,7,7,2,5,2,1,3], tanto
+o 2, 5 e 7 se repetem duas vezes, então a resposta será 7, pois é o maior deles.
+
+<h3>Restrições</h3><ul>
+<li> 1  ≤  N, Q  ≤  10<sup>5</sup></li>
+<li> 1  ≤  X  ≤  N</li>
+<li> 0  ≤  R  ≤  50</li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+<li> Em um conjunto de casos de teste equivalente a 30 pontos, N  ≤  10<sup>3</sup>.</li>
+<li> Em um conjunto de casos de teste equivalente a 20 pontos, apenas as operações 2 e 3 serão usadas.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 9
+3 1
+1 1 2
+1 3 4
+1 4 4
+4 2
+2 2 5
+2 3 5
+2 4 5
+3 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+4
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 4
+1 1 1
+2 2 2
+3 1
+3 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 6
+1 1 2
+1 2 3
+1 3 4
+4 3
+1 3 0
+4 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

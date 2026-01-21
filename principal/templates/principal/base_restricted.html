@@ -1,0 +1,12 @@
+{% extends "base_two_columns.html" %}
+{% load static obi_extras %}
+
+{% block head_extra %}
+  <link href="{% static 'assets/css/restrito.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+Coordenação <span style="font-size:80%"> - {% if request.user.deleg %}{{ request.user.deleg.deleg_school }}{% else %}{{ request.user.colab.colab_school }}{% endif %}</span>
+</a>
+{% endblock %}
+

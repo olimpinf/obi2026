@@ -1,0 +1,179 @@
+title:Robô
+template:tasks/tarefa_programacao.html
+
+<p>
+Um fazendeiro comprou um robô-espantalho para espantar os pássaros de
+sua plantação de milho. O robô se move ao longo de um caminho que
+circunda a plantação. No caminho há N estações numeradas sequencialmente,
+a partir de 1, no sentido horário. A figura abaixo
+mostra um exemplo com oito estações.
+
+<div class="center"><img src="/static/img/task_images/2021f2pj_robo.png" width="300px" /></div>
+
+
+<p>O robô inicia cada dia na estação número 1, e então obedece a uma
+sequência de comandos.  Os comandos são gerados por um algoritmo de
+aprendizagem de máquina que coleta informações através de sensores
+espalhados na plantação, para garantir uma cobertura de vigia
+máxima. Cada comando faz com que o robô se mova para outra estação,
+vizinha à estação em que ele se encontra, ou no sentido horário ou no
+sentido anti-horário. O robô permanece nessa nova estação até receber
+um novo comando.
+
+<p>Apesar da promessa de que o robô protegeria a plantação, ao final de
+um determinado dia o fazendeiro notou que parte de sua plantação
+estava devastada por pássaros. O fazendeiro agora quer entender melhor
+o que aconteceu.
+
+<p>Dados o número da estação mais próxima à área devastada e a sequência
+de comandos que o robô obedeceu naquele dia, escreva um programa para
+determinar quantas vezes o robô permaneceu na estação mais próxima à
+àrea devastada.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha contém três inteiros N, C e S, representando
+  respectivamente o número de estações, o número de comandos e o
+  número da estação mais próxima à área devastada.  A segunda linha
+  contém C inteiros X<sub>1</sub>, X<sub>2</sub>, &mldr;, X<sub>C</sub>, representando a
+  sequência de comandos recebidos pelo robô.  Para i = 1, 2, &mldr;,
+  C, se X<sub>i</sub> é 1 então o i-ésimo comando significa &quot;mova-se
+  para a próxima estação no sentido horário&quot;, enquanto se X<sub>i</sub> é
+  -1 então o i-ésimo comando significa &quot;mova-se para a próxima
+  estação no sentido anti-horário&quot;.  O robô sempre inicia na estação
+  número 1.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um
+  único inteiro, o número de vezes que o robô permaneceu na estação
+  número S durante o dia.
+
+<h3>Restrições</h3>
+<ul>
+  <li> 2  &leq;  N  &leq;  100
+  <li> 1  &leq;  C  &leq;  1000
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8 8 3
+1 -1 1 1 1 -1 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4 1
+1 1 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 1 1
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 1 2
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 2 1
+-1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 2 1
+-1 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

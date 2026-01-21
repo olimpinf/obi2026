@@ -1,0 +1,101 @@
+{% extends "base_week.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Professores{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Professores</h2>
+<table border="0" cellpadding="4" cellspacing="0" width="100%"> 
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/flavia_pisani.png" width=200>
+</td>
+<td><b>Flávia Pisani</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/GiovannaConrado.jpeg" width=200>
+</td>
+<td><b>Giovanna Kobus Conrado</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/AndreSousa.jpeg" width=200>
+</td>
+<td><b>André Amaral de Sousa</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/andreza_santos.jpeg" width=200>
+</td>
+<td><b>Arthur Nascimento</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/fabio_mallaco.png" width=200>
+</td>
+<td><b>Fábio Mallaco</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/FredericoBulhoes.jpeg" width=200>
+</td>
+<td><b>Frederico Bulhões de Souza Ribeiro</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/TiagoSousa.jpeg" width=200>
+</td>
+<td><b>Tiago Domingos Almeida Souza</b>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_professores/YanVictor.jpeg" width=200>
+</td>
+<td><b>Yan Victor Souza Guimarães</b>
+</td>
+</tr>
+
+</table>
+<p>&nbsp</p>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

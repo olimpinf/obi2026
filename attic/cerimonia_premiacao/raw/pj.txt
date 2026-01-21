@@ -1,0 +1,22 @@
+1,1,400,Lucas da Motta Yamaguchi,Colégio Etapa - Vila Mariana,São Paulo,SP
+2,2,326,Rafael Castro Maia da Cunha,Centro de Excelência Master,Aracaju,SE
+2,2,313,Enzo Ricardo Abe,Colégio Etapa - Vila Mariana,São Paulo,SP
+2,2,313,Guto Mandarino Slapelis,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+3,7,302,Kevin Neves Ramos Badaró,Centro Educacional Leonardo da Vinci,Vitória,ES
+3,3,293,Rafael Marcos Hachimoto,Colégio Militar de Curitiba,Curitiba,PR
+3,3,281,Pedro Dortas Rocha,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+4,10,275,Bruno Magalhães Mendes,Escola Educação Criativa,Ipatinga,MG
+4,12,263,Ana Laura Kogeyama de Faria,Instituto Educacional de Ensino Fundamental e Médio,São Carlos,SP
+4,13,262,Augusto Lepage Comello,Colégio Etapa - Vila Mariana,São Paulo,SP
+5,13,262,Francisco Battistella Prado,Colégio Etapa - Vila Mariana,São Paulo,SP
+5,13,262,Irina Zhou Ye,Colégio Etapa - Vila Mariana,São Paulo,SP
+5,16,255,Matheus Daniel Maeda Perin,Colégio Etapa - Vila Mascote,São Paulo,SP
+6,17,242,Daniel Nasser Kahn,Colégio Santa Cruz,São Paulo,SP
+6,17,242,Miguel Villaverde Prieto,"The British School, Rio de Janeiro",Rio de Janeiro,RJ
+6,17,242,Rafaela Vieira de Melo Coutinho,COLÉGIO MOTIVA LTDA,Campina Grande,PB
+7,17,242,Vinícius Knop Gomes,Colégio Militar de Juiz de Fora,Juiz de Fora,MG
+7,21,241,Júlia Aleixo Melo,COLÉGIO MILITAR DO RECIFE,Recife,PE
+7,22,232,Caetano Allain,St Paul's School,São Paulo,SP
+8,22,232,Miguel Asafe de Oliveira Estacio,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+8,37,189,Manuela Farias dos Santos,COLÉGIO ODILON BRAVEZA,Fortaleza,CE
+8,40,161,Amanda Sarmento da Silva,E.M.E.F Dr Julio Casado,Sapucaia do Sul,RS

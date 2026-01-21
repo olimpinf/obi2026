@@ -1,0 +1,114 @@
+title:Frete
+template:tasks/tarefa_programacao.html
+
+<p>
+O senhor Satoshi passou anos reclamando da empresa de correios do seu
+país, porque ela sempre transportava suas encomendas usando um caminho
+que passava pelo número mínimo de cidades entre a cidade onde o senhor
+Satoshi mora e a cidade destino da encomenda. A empresa alegava que
+essa estratégia levava ao menor tempo para a entrega final da
+encomenda. O problema é que ele notou que essa estratégia da empresa
+nem sempre levava ao menor preço para o frete total. Se ele pudesse
+escolher o caminho por onde a encomenda deveria passar para ir da sua
+cidade para a cidade destino, ele poderia economizar bastante com o
+frete, já que não havia muita urgência para a maioria de suas
+encomendas.
+
+<p>
+  Depois de muita reclamação, a empresa finalmente está dando aos
+clientes a opção de determinar o caminho por onde a encomenda deve
+passar. O senhor Satoshi, feliz da vida, agora quer a sua ajuda para
+implementar um programa que, dado o custo de transporte de uma
+encomenda entre vários pares de cidades pelo país, para os quais a
+empresa realiza entregas diretas, determine qual é o preço total
+mínimo para o frete entre a cidade onde ele mora e a cidade destino da
+encomenda.
+
+
+
+<div class="center">
+<img src="/static/img/task_images/2017f2p2_frete.png" />
+</div>
+ 
+
+<p>O país tem N cidades, identificadas pelos números de 1 a N. O
+senhor Satoshi mora na cidade 1 e o destino da encomenda será sempre
+a cidade N. É garantido que sempre haverá um caminho de 1 até
+N. No exemplo da figura, para N=5, o custo mínimo será 7, para o
+caminho 1 &rarr;  2 &rarr;  4 &rarr;  5.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém dois números inteiros N e M,
+representando o número de cidades e quantos pares de cidades possuem
+entrega direta de encomenda pela empresa. As M linhas seguintes
+contêm, cada uma, três inteiros A, B e C, indicando que a
+empresa realiza a entrega de uma encomenda diretamente entre as
+cidades A e B, cobrando o preço C.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo um inteiro representando
+o preço mínimo total para o frete entre a cidade onde o senhor Satoshi
+mora, a cidade 1, e a cidade destino da encomenda, a cidade N.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  N &leq;  100 e 1 &leq;  M &leq;  1000
+<li> 1 &leq;  A,B &leq;  N e A &ne;  B
+<li> 1 &leq;  C &leq;  1000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 6
+1 2 4
+1 3 3
+4 3 6
+4 5 2
+2 4 1
+3 5 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 10
+1 2 5
+3 1 32
+1 4 3
+2 3 4
+2 6 20
+6 3 1
+6 4 9
+6 5 6
+3 7 18
+5 7 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+18
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

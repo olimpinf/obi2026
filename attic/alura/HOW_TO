@@ -1,0 +1,30 @@
+\copy (select school_deleg_email, school_deleg_name from school where school_ok and school_deleg_email ilike '%@%') to 'emails_profs1.csv' csv header;
+
+\copy (select colab_email, colab_name from colab where colab_email ilike '%@%') to 'emails_profs2.csv' csv header;
+
+\copy (select level_short_name, compet_id_full, compet_email, compet_name from compet, level where compet_type = level_id and compet_email ilike '%@%' order by level_short_name) to 'emails_compet.csv' csv header;
+
+cat emails_profs1.csv emails_profs2.csv > emails_profs.csv
+
+# first
+./filter_unusable_email.py  emails_compet.csv
+
+# then
+./filter_email_profs.py emails_profs.csv emails_compet_unique.csv
+
+
+# if first time
+mv emails_compet_no_prof.csv emails_compet_alura.csv
+
+
+# if first time
+./filter_email_profs.py emails_profs.csv emails_compet_not_unique_usable.csv
+mv emails_compet_no_prof.csv emails_compet_alura_not_unique.csv
+
+
+cat sent/emails_profs*.csv |sort|uniq > all_sent_profs.csv
+cat sent/emails_compet_*csv  |sort|uniq > all_sent_compets.csv
+
+./filter_sent_email_prof.csv all_sent_profs.csv emails_profs.csv
+./filter_sent_email_compet.py all_sent_compets.csv emails_compet_no_prof.csv
+

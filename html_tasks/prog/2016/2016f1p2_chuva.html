@@ -1,0 +1,132 @@
+title:Chuva
+template:tasks/tarefa_programacao.html
+<p>
+É período  de chuva no Reino  Quadrado. Nos últimos anos,  o Rei Maior
+Quadrado  (RMQ)  ordenou  a  construção de  uma  enorme  piscina  para
+refrescar seus  súditos. A piscina  é composta por diversas  seções de
+mesma largura e comprimento, mas podem ter alturas diferentes. A
+altura de cada seção é um número inteiro em metros.
+
+Durante o período de chuvas fortes, o Rei nem precisa gastar água para
+encher a  piscina -  basta deixar  que a chuva  faça esse  trabalho. A
+chuva cai uniformemente em todas as  seções da piscina, enchendo - até
+que não haja mais capacidade para acumular água.
+
+O Rei  o contratou para  calcular quantas seções estarão  cobertas com
+água,  durante a  estação  de chuva.  Uma seção  da  piscina pode  ser
+considerada coberta com água se ela  possuír água com pelo menos 1m de
+profundidade.
+
+O caso do exemplo 3 pode ser  visto na figura abaixo, que apresenta um
+corte lateral da piscina. As seções 2  a 10 e 13 a 15 ficarão cobertas
+de água.
+
+<div class="center">
+<img src="/static/img/task_images/2016f1p2_chuva.png" />
+</div>
+
+<h3>Entrada</h3>
+A  primeira linha  contém  um  inteiro, N,  o  número  de seções  da
+piscina. Seguem N linhas, cada uma com um inteiro H<sub>i</sub>, a altura da
+i-ésima seção, em metros.
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo um único inteiro,
+o número de seções da piscina cobertos por água.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  10<sup>5</sup>, 1  &leq;  H<sub>i</sub>  &leq;  10<sup>9</sup> \; \; (1  &leq;  i  &leq;  N)
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um  conjunto de casos de teste equivalente  a 20 pontos, N
+     &leq;  10<sup>3</sup>.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+2 
+1 
+1 
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+5 
+2 
+6 
+1 
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+17
+4
+3
+2
+1
+1
+1
+1
+1
+2
+3
+5
+5
+3
+3
+2
+4
+4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+12
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

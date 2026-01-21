@@ -1,0 +1,135 @@
+title:Robô
+template:exams/tarefa_programacao.html
+order:3
+<p>
+Scrappy é um robô que foi construído pela pequena engenheira Jessie para caminhar em um tabuleiro de <samp>N</samp> linhas e <samp>M</samp> colunas. Para dificultar a vida de Scrappy, esse tabuleiro possui algumas de suas células ocupadas por obstáculos.
+</p>
+
+<p>
+Como Scrappy é muito esquecido, Jessie o deu apenas uma instrução: sempre que ela apertar um botão, Scrappy deve andar em frente até bater em um obstáculo ou chegar na borda do tabuleiro e depois virar 90 graus em sentido horário. A figura a seguir mostra um tabuleiro com 4 linhas e 6 colunas correspondente ao &ldquo;Exemplo de entrada 2&rdquo; que pode ser encontrado abaixo em &ldquo;Exemplos&rdquo;.
+</p>
+
+<div class="center">
+  <img src="/static/img/task_images/tfcf1pj_robo.jpg" width="300px">
+</div>
+
+<p>
+Jessie estava tão focada em apertar o botão o número correto de vezes que parou de prestar atenção no tabuleiro e agora não sabe onde Scrappy foi parar! Ajude Jessie a encontrá-lo.
+</p>
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém dois inteiros: <samp>N</samp> e <samp>M</samp>, que representam o número de linhas e o número de colunas do tabuleiro, respectivamente.
+</p>
+
+<p>
+A segunda linha da entrada contém dois inteiros <samp>X<sub>i</sub></samp> e <samp>Y<sub>i</sub></samp> (1  ≤  <samp>X<sub>i</sub></samp>  ≤  <samp>N</samp> e 1  ≤  <samp>Y<sub>i</sub></samp>  ≤  <samp>M</samp>), que representam a linha e a coluna da posição inicial de Scrappy, respectivamente. Scrappy sempre começa virado para a direita.
+</p>
+
+<p>
+A terceira linha da entrada contém dois inteiros: <samp>K</samp> e <samp>L</samp>, que representam o número de obstáculos e o número de vezes que Jessie apertou o botão.
+</p>
+
+<p>
+As próximas <samp>K</samp> linhas representam as coordenadas de cada um dos obstáculos. Cada uma dessas linhas contém dois inteiros <samp>X</samp> e <samp>Y</samp> (1  ≤  <samp>X</samp>  ≤  <samp>N</samp> e 1  ≤  <samp>Y</samp>  ≤  <samp>M</samp>), que são a linha e a coluna da coordenada de cada obstáculo, respectivamente.
+</p>
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir dois inteiros <samp>X<sub>f</sub></samp> e <samp>Y<sub>f</sub></samp>, representando, respectivamente, a linha e a coluna da posição de Scrappy após Jessie apertar o botão <samp>L</samp> vezes.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  ≤  <samp>N</samp>, <samp>M</samp>  ≤  10<sup>5</sup></li>
+<li> 0  ≤  <samp>K</samp>  ≤  10<sup>5</sup></li>
+<li> 0  ≤  <samp>L</samp>  ≤  10<sup>5</sup></li>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 10 pontos, 1  ≤  <samp>N</samp>,<samp>M</samp>  ≤  100, <samp>K</samp> = 0 e 0  ≤  <samp>L</samp>  ≤  100.
+</li>
+<li> Em um conjunto de casos de teste somando 15 pontos, 1  ≤  <samp>N</samp>  ≤  100, <samp>M</samp> = 1, 0  ≤  <samp>K</samp>  ≤  100 e 0  ≤  <samp>L</samp>  ≤  100.
+</li>
+<li> Em um conjunto de casos de teste somando 20 pontos, 1  ≤  <samp>N</samp>,<samp>M</samp>  ≤  100, 0  ≤  <samp>K</samp>  ≤  10<sup>4</sup> e 0  ≤  <samp>L</samp>  ≤  100.
+</li>
+<li> Em um conjunto de casos de teste somando 25 pontos, 1  ≤  <samp>N</samp>,<samp>M</samp>  ≤  10<sup>5</sup>, 0  ≤  <samp>K</samp>  ≤  10<sup>3</sup> e 0  ≤  <samp>L</samp>  ≤  10<sup>3</sup>.
+</li>
+<li> Em um conjunto de casos de teste somando 30 pontos, 1  ≤  <samp>N</samp>,<samp>M</samp>  ≤  10<sup>5</sup>, 0  ≤  <samp>K</samp>  ≤  10<sup>5</sup> e 0  ≤  <samp>L</samp>  ≤  10<sup>5</sup>.
+</li>
+</ul>
+
+<h3>Exemplos</h3>
+<table cellspace="2" width="100%" border="1">
+  <tbody><tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 1</b>
+<pre>
+5 5
+4 2
+0 1
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 1</b>
+<pre>
+4 5
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody><tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 2</b>
+<pre>
+4 6
+1 2
+4 5
+1 5
+2 2
+4 1
+3 6
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 2</b>
+<pre>
+3 5
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody><tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 3</b>
+<pre>
+50 1
+19 1
+5 0
+4 1
+6 1
+3 1
+7 1
+50 1
+</pre>
+      </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 3</b>
+<pre>
+19 1
+</pre>
+    </td>
+    </tr>
+  </tbody>
+</table>

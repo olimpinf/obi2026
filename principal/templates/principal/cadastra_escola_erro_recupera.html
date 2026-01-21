@@ -1,0 +1,53 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Recuperação de Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Recuperação de Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+<p>Houve um erro ao recuperar o cadastro da escola
+
+{% if school.school_name %}
+<p><b>
+{{ school.school_name }}
+</b></p>
+<p>
+{% endif %}
+
+na Olimpíada Brasileira de Informática.</p>
+
+<p><i>{{ erro }}</i>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  <h2>Veja também</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+    {% endblock browse %}
+  </ul>
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Cadastro de Escola</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

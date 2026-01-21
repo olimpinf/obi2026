@@ -1,0 +1,120 @@
+title:Gincana
+template:tasks/tarefa_programacao.html
+<p>
+As duas turmas do terceiro ano de sua escola realizam anualmente uma gincana.
+Nessa gincana, a delegação de cada turma é dividida em grupos de K pessoas,
+de forma que K seja o maior número possível que divida as duas delegações
+sem que sobre alguém. Depois, os grupos competem uns com os outros, ganhando 
+pontos para determinar a turma vencedora. Sua turma pode levar qualquer número X
+de pessoas entre 1 e M, a quantidade de alunos na turma, e você sabe que 
+a turma rival levará exatamente N pessoas para a gincana. Os integrantes da 
+sua turma são muito bons em competições individuais, mas não trabalham bem 
+em equipe. Portanto, é sua tarefa encontrar a maior delegação possível que 
+sua turma pode levar à competição para que a gincana aconteça com grupos de 
+K = 1 pessoa.
+
+Por exemplo, se N = 9 e M = 6 a sua turma deve levar uma delegação de
+X = 5 pessoas, já que, para esse valor, a única divisão possível é em grupos 
+de K = 1 pessoa e, para X = 6, os grupos seriam de 3 pessoas.
+
+<h3>Entrada</h3>
+
+A primeira e única linha contém dois inteiros N e M, representando
+respectivamente o tamanho da delegação rival e o tamanho da sua turma.
+
+<h3>Saída</h3>
+
+Seu programa deve produzir uma única linha, contendo um inteiro X, o maior tamanho
+possível da delegação da sua turma para o qual a gincana aconteça com grupos de uma pessoa.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N, M  &leq;  10^18.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um conjunto de casos de teste equivalente a 40 pontos, N, M  &leq;  10<sup>3</sup>.
+  <li> Em um conjunto de casos de teste equivalente a 60 pontos, N, M  &leq;  10<sup>5</sup>.
+  <li> Em um conjunto de casos de teste equivalente a 80 pontos, N, M  &leq;  10<sup>7</sup>.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+9 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2310 126
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+113
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

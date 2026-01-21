@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 10 - Comandos de repetição</title>
+    <link rel="stylesheet" href="/static/css/saci_blockly.min.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+    <xml id="toolbox" style="display: none">
+  <category name="E/S" colour="#bb6622">
+    <block type="saci_text_print"></block>
+    <block type="saci_input_int"></block>
+  </category>
+  <category name="Matemática" colour="%{BKY_MATH_HUE}">
+    <block type="math_number"></block>
+    <block type="saci_math_arithmetic"></block>
+  </category>
+  <category name="Texto" colour="%{BKY_TEXTS_HUE}">
+    <block type="text"></block>
+  </category>
+  <category name="Lógica" colour="%{BKY_LOGIC_HUE}">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+  </category>
+  <category name="Laços" colour="%{BKY_LOOPS_HUE}">
+    <block type="saci_controls_repeat_ext"></block>
+  </category>
+  <sep></sep>
+  <category name="Variáveis" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
+  </category>
+</xml>
+
+    <script src="/static/js/brython.js"></script>
+    <script src="/static/js/brython_modules.js"></script>
+    <script type="text/javascript">
+      var _tmp_input;
+      var _prog_language='py';
+      var _page_language='pt';
+      var _use_blockly=true;
+    </script>
+    <script type="text/python">
+      from browser import window
+      from saci_run import saci_run
+      window.saci_run = saci_run
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+
+<body class='default'>
+  
+<div id="headerdiv" style="padding: 0px 10px 5px 10px">
+  <div>
+    <div id="headerLeft" class="footer">Projeto Programando o Futuro &#8211; <a href="http://olimpiada.ic.unicamp.br/saci/cursos_u/blockly">
+        Curso de Introdução à Programação de Computadores</a></div>
+    <div id="headerRight" class="footer"><div id="headerUser">naoregistrado@saci</div></div>
+    <div style="clear:both"></div>
+  </div>
+  
+  <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 10 - Comandos de repetição</div>
+  <div id="headerPrevNext" class="footer">
+    <a href="class?c=blockly_9" class="prevClass">aula anterior</a> &nbsp; &bull; &nbsp; 
+    <a href="class?c=blockly_11" class="nextClass">próxima aula</a>
+  </div>
+</div>
+
+<div id="mainTabsContainer">
+  <ul>
+    <li style="margin-left: 10px;">Aula</li>
+
+    <li style="margin-left: 10px;">Revisão</li>
+
+    <li style="margin-left: 10px;">Desafio 1</li>
+<li style="margin-left: 10px;">Desafio 2</li>
+
+    <li style="margin-left: 10px;">Programa</li>
+  </ul>
+  
+  
+  <div> <!-- video panel  start -->
+    <div style="margin:auto"><!--video-->
+      <div style="margin:auto">
+        <div id="player" style="margin:auto"></div>
+      </div>
+    </div><!-- end video-->
+  </div> <!-- video panel end -->
+
+  <div style="padding:10px;position:relative"> <!-- revisao -->  
+  <div style="width:130px;position:relative;right:0px;top:10px;float:right">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<p>Suponha que você tenha que ler as 50 notas dos alunos da classe
+  para encontrar a maior entre elas. Usar 50 grupos 
+
+  <img src="/static/blockly_images/block_logic_operation.png" height="40px" align="middle"/>.
+
+  vai funcionar, mas vai faltar espaço na tela do seu computador
+  para tantos blocos. Será que não há uma maneira melhor?
+
+<h3>Comandos de repetição</h3>
+
+<p>O bloco de repetição
+
+  <img src="/static/blockly_images/block_control_while.png" height="40px" align="middle"/>.
+
+que uma comparação, e as comparações são independentes entre si.
+
+<p>Por exemplo, considere que na disciplina da Profa. Vilma a
+  avaliação seja feita com duas provas, P1 e P2, e para
+  um aluno ser aprovado as duas seguintes condições devem ser
+  satisfeitas:
+
+  <ul>
+    <li>as notas de P1 e P2 são ambas maiores ou iguais do que 50; e 
+    <li>a soma das notas P1 e P2 é maior ou igual do que 140.
+  </ul>
+
+<p>Um outro exemplo de condição que envolve mais de uma comparação é
+se quisermos escrever palavra “Parabéns” quando ao menos uma das
+duas condições abaixo for satisfeita:
+  <ul>
+    <li>nota da P1 é igual a 100; ou
+    <li>nota da P2 é igual a 100.
+  </ul>
+
+<p>Quando a condição envolve mais do que uma comparação vamos
+  usar o <em>bloco operação lógica</em> 
+
+  <img src="/static/blockly_images/block_logic_operation.png" height="40px" align="middle"/>.
+
+  Esse bloco tem dois espaços em branco para serem preenchidos,
+  que são os dois <em>operandos</em> da operação lógica. 
+  Clicando no seletor do bloco (<img src="/static/css/images/down.png"/>) podemos
+  selecionar entre duas operações lógicas:
+  <ul>
+    <li><em>e-lógico</em> ("e")
+    <li><em>ou-lógico</em> ("ou")
+  </ul>
+
+<p>A operação <em>e-lógico</em> tem resultado Verdadeiro quando seus
+  dois operandos forem verdadeiros; caso contrário o resultado é
+  Falso.
+
+<p>A operação <em>ou-lógico</em> tem resultado Verdadeiro quando pelo
+  menos um dos dois operandos for Verdadeiro; caso contrário o
+  resultado é Falso.
+
+<p>Quando executado, o <em>bloco de operação lógica</em> tem como
+resultado a operação lógica indicada. Ou seja, o <em>bloco de operação
+lógica</em> tem como resultado Verdadeiro ou Falso, dependente dos
+operandos e da operação lógica indicada.
+
+<p>Podemos usar como operando do <em>bloco operação lógica</em>
+  qualquer bloco que tenha como resultado Verdadeiro ou Falso. Assim,
+  podemos usar como operando do <em>bloco de operação lógica</em> um
+  outro <em>bloco de operação lógica</em>. Também podemos usar como
+  operando do <em>bloco de operação lógica</em> um <em>bloco de
+    comparação</em>
+
+  <img src="/static/blockly_images/block_logic_compare.png" height="40px" align="middle"/>
+
+  (recorde que um <em>bloco de comparação</em> tem como resultado
+  Verdadeiro ou Falso). Note também que o <em>bloco de operação
+  lógica</em> é muito similar ao bloco de <em>bloco de
+  comparação</em>, é importante não confundir os dois:
+
+  <center>
+    <img src="/static/blockly_images/block_logic_operation.png" height="40px"/>&nbsp;&nbsp;
+    <img src="/static/blockly_images/block_logic_compare.png" height="40px"/>
+  </center>
+
+  Veja como fica o <em>bloco de operação lógica</em> com
+  dois <em>blocos de comparação</em> usados como operandos:
+ 
+  <center>
+    <img src="/static/blockly_images/group_logic_operation_compare.png" height="55"/>
+  </center>
+
+<p>Um exemplo de uso do <em>bloco operação lógica</em> é:
+
+  <center>
+    <img src="/static/blockly_images/group_logic_operation_example1.png" height="60"/>
+  </center>
+
+<p>Um exemplo mais completo, que implementa o critério de aprovação da Profa. Vilma descrito acima é:
+
+  <center>
+    <img src="/static/blockly_images/group_logic_operation_example2.png" height="135"/>
+  </center>
+  
+<p>&nbsp;</p>
+
+<p>&nbsp;</p></div> <!-- end revisao -->
+  <!-- exercícios -->
+  <div style="padding:10px; position:relative"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:relative;right:0px;top:10px;float:right">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este desafio
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Campeã de streaming</h2>
+</center>
+
+<div width="100%">
+<p>
+Lucas conseguiu na Internet a lista das N músicas mais escutadas em
+aplicativos de streaming, com o número de vezes que cada música foi
+escutada. Lucas ficou curioso: quantas vezes foi escutada a música mais
+escutada? Em outras palavras, qual o maior número de vezes
+que uma música foi escutada?
+
+<p>Mas a lista não está ordenada e o número de músicas é muito
+grande. Você pode ajudá-lo?
+
+
+<p>
+Dados os pesos das três bolas, seu programa deve
+decidir se o móbile está ou não completamente equilibrado.</p>
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um número inteiro N,
+  o número de músicas na lista. Cada uma das N linhas seguintes
+  contém um número inteiro X<sub>i</sub>, o maior número de vezes que uma música
+  foi escutada.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever uma única linha na saída, contendo
+  um único número inteiro, o maior número de vezes que uma música
+  foi escutada.
+
+<h3>Restrições</h3><ul>
+  <li> 1 ≤  N ≤ 100</li>
+  <li> 1 ≤ X<sub>i</sub>  ≤ 100000, para  1 ≤ i ≤ N</li>
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+4000
+5000
+4500
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5000
+	</pre>
+      </td>
+    </tr>
+</table>
+<p>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+345
+3000
+1234
+3000
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3000
+	</pre>
+      </td>
+    </tr>
+</table>
+
+</div>
+<p>&nbsp;</p><h3><span class="graycolor">Solução</span></h3><p class="graycolor">Aqui você encontra um exemplo de solução para o desafio. Mas antes de ver a solução tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+<span class="graycolor">Solução do Desafio</span>
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+<font color="#888">Solução do Desafio</font>
+</a>
+<div class="seeMoreContent">
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/blockly_images/sol_class_10.png" height="230px"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio da Aula 10
+
+maisTocada = 0
+N = int(input())
+for count in range(N):
+  num = int(input())
+  if num > maisTocada:
+    maisTocada = num
+print(maisTocada)
+
+      </pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:relative"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:relative;right:0px;top:10px;float:right">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este desafio
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Impedido!</h2>
+</center>
+
+<div width="100%">
+
+<p>
+A regra do impedimento no futebol funciona dadas
+as posições de três jogadores: L o jogador atacante que lança a
+bola; R o jogador atacante que recebe a bola; e D o último jogador
+defensor. 
+
+<p>Neste problema o campo tem 100 metros de
+comprimento. Dadas as posições desses três jogadores, no momento exato
+do lançamento, haverá impedimento se e somente se a seguinte condição
+for verdadeira: 
+<center>
+  <em>(R>50)  e 
+ (L< R) e
+  (R >D)</em>.
+</center>
+
+<p>O seu programa deve determinar, dadas as três
+posições L,R e D, se há ou não impedimento, implementando
+exatamente a condição acima. A figura abaixo mostra um exemplo onde
+<b>não</b> há impedimento:</p>
+
+<p>
+
+<center>
+<img src="/static/blockly_images/2015f2p1_impedimento.png" width="350px">
+</center></p>
+
+<h3>Entrada</h3>A entrada é composta de três linhas, contendo os três inteiros
+L, R e D, nessa ordem.
+
+
+<h3>Saída</h3>Seu programa deve produzir uma única linha, contendo um único caractere, que deve ser
+"<span class="tt">S</span>" caso haja impedimento, ou "<span class="tt">N</span>" caso contrário.
+
+<h3>Restrições</h3><ul>
+<li> 0 ≤  L ≤  100</li>
+<li> 0 ≤  R ≤  100</li>
+<li> 0 ≤  D ≤  100</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+35
+60
+75
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+55
+68
+67
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+  <table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+66
+80
+80
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+</div>
+<p>&nbsp;</p><h3><span class="graycolor">Solução</span></h3><p class="graycolor">Aqui você encontra um exemplo de solução para o desafio. Mas antes de ver a solução tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+<span class="graycolor">Solução do Desafio</span>
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+<font color="#888">Solução do Desafio</font>
+</a>
+<div class="seeMoreContent">
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="static/blockly_images/sol_class_10_2.png" height="230px"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio 2 da Aula 9
+
+L = int(input())
+R = int(input())
+D = int(input())
+if R > 50 and L < R and R > D:
+  print('S')
+else:
+  print('N')
+</pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+
+  <!-- end exercícios -->
+  <div id="splitContainer" style="border:0">
+    <div> <!-- start top splitContainer -->
+      <div id="tab2container" style="background-color:#ffffff;padding:6px"><!-- area de trabalho -->
+	<!--div width="100%" style="margin:auto"-->
+	<div id='select_exercise' style="display:inline-block;padding: 0px; float:left">
+        </div>
+
+	  <div width="100%" style="text-align:center;padding: 6px; float:right;" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras." data-position="left" data-index="11" >
+            <button id="smallersizeBTN">A</button>
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div style="margin-left:auto;margin-right:auto;display:table">
+	    <span data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="bottom" data-index="4">
+	      <button style="display:inline-block" id="codeexecuteBTN"></button>
+	    </span>
+	    <span data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="bottom" data-index="5">
+	      <button style="display:inline-block" id="codesubmitBTN"></button>
+	    </span>
+	    <span data-intro="Com este botão você pode salvar o seu programa para uso posterior." data-position="bottom" data-index="6">
+	      <button style="display:inline-block" id="codesaveBTN" class="leftspace" ></button>
+	    </span>
+	    <span data-intro="Com este botão você recupera um programa salvo anteriormente." data-position="bottom" data-index="7">
+	      <button style="display:inline-block" id="coderetrieveBTN"></button>
+	    </span>
+	    <span data-intro="Use este botão para remover o conteúdo do editor." data-position="bottom" data-index="8">
+	      <button style="display:inline-block" id="codeclearBTN"></button>
+	    </span>
+	    <span data-intro="Use este botão para trocar entre a progração por blocos ou texto." data-position="bottom" data-index="9">
+	      <button style="display:inline-block" id="codeblocklyBTN" class="leftspace"></button>
+	    </span>
+	    <span id="codehintBTNdiv" style="display:none">
+	      <span data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Desafio</em>)." data-position="bottom" data-index="10">
+	      <button style="display:inline-block;" id="codehintBTN"></button>
+	      </span>
+            </span>
+	  </div>
+	<!--/div-->
+	<div>
+	  <!--div style="border: 0px solid #aaaaaa; background-color:#ffffff; padding:0px 3px;"-->
+            <div>
+	      <div id="blocklyArea"><textarea id="textareaCode" name="textareaCode"></textarea></div>
+            </div>
+	  <!--/div-->
+	</div>
+      </div>
+    </div>  <!-- end top splitContainer -->
+    <div> <!-- start bottom splitContainer -->
+      <div id="splitter1">
+	<div style="background-color:#ffffff"> <!-- start left side splitter1 -->
+	  <div id="inputPanel" style="margin:6px" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="3">
+	    <textarea id="textareaInput"></textarea>
+	    <div class="sacibold" style="display:inline-block">Entrada</div>
+	    <div style="display:inline-block;vertical-align:text-top;float:right">
+	      <span data-intro="Com este botão você pode salvar a entrada para uso posterior." data-position="top" data-index="14">
+		<button id="inputsaveBTN" style="display:inline-block"></button>
+	      </span>
+	      <span data-intro="Use este botão você pode recuperar uma entrada salva." data-position="top" data-index="15">
+		<button id="inputretrieveBTN" style="display:inline-block"></button>
+	      </span>
+	      <span data-intro="Use este botão para limpar o painel de Entrada." data-position="top" data-index="16">
+		<button id="inputclearBTN" style="display:inline-block"></button>
+	      </span>
+	    </div>
+	  </div>
+	</div> <!-- end left side splitter1 -->
+	<div style="background-color:#ffffff"> <!-- start right side splitter1 -->
+	  <div id="outputPanel" style="margin:6px" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="2">
+	    <textarea id="textareaOutput"></textarea>
+	    <div class="sacibold" style="display:inline-block">Saída</div>
+	    <div style="display:inline-block;vertical-align:text-top;float:right">
+	      <span id='outputexpectedBTNspan' data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="left" data-index="12">
+		<button id="outputexpectedBTN" style="display:inline-block"></button>
+	      </span>
+	      <span data-intro="Use este botão para limpar o painel de Saída." data-position="left" data-index="13">
+		<button id="outputclearBTN" style="display:inline-block"></button>
+	      </span>
+            </div>
+          </div>
+	</div> <!-- end right side splitter1 -->
+      </div>  <!-- end splitter1 -->
+    </div> <!-- end bottom splitContainer -->
+  </div> <!-- end splitContainer -->
+</div> <!-- end mainTabsContainer -->
+
+
+<div id="footerdiv" style="padding: 3px 5px 5px 5px;">
+  <div class="footer floatLeft">
+    <a href="http://olimpiada.ic.unicamp.br/saci"><img src="/static/css/images/LogoSaci60x21.png" alt="Logo Saci" align="bottom"/></a>&nbsp;
+    <span style="display:inline-block">
+      <a href="http://olimpiada.ic.unicamp.br">Olimpíada Brasileira de Informática</a><br>
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a>
+    </span>
+  </div>
+  <div class="footer floatRight" style="display:inline">
+    <a id="mycourseLNK" href="#" onclick="_show_history();return false;">Meu curso</a> | 
+    <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;">Relate um problema</a> |
+    <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+  </div>
+</div>
+
+  <!-- blockly -->
+  <div id="blocklyDiv" style="position: absolute" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="bottom" data-index="1"></div>
+  
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader">Salva X</div>
+      <div>
+        <br><span style="font-weight:normal">Digite uma frase para facilitar a busca quando for recuperar:</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none;width:80%" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2">Recupera X</div>
+      <div>
+        <div id="jqxgrid">
+        </div>
+	<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader">Salva X</div>
+      <div>
+        <img src="/static/css/images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/css/images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications -->
+  <div style="display:none ;" id="notification">
+      <span id="notificationMessage">
+	Mensagem.
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext">
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="IyBTb2x1w6fDo28gZG8gRGVzYWZpbyBkYSBBdWxhIDgKCkEgPSBpbnQoaW5wdXQoKSkKQiA9IGludChpbnB1dCgpKQpDID0gaW50KGlucHV0KCkpCmlmIEEgPT0gQiArIEMgYW5kIEIgPT0gQzoKICBwcmludCgnUycpCmVsc2U6CiAgcHJpbnQoJ04nKQpeIyBTb2x1w6fDo28gZG8gRGVzYWZpbyBkYSBBdWxhIDgKCkEgPSBpbnQoaW5wdXQoKSkKQiA9IGludChpbnB1dCgpKQpDID0gaW50KGlucHV0KCkpCmlmIEEgPT0gQiArIEMgYW5kIEIgPT0gQzoKICBwcmludCgnUycpCmVsc2U6CiAgcHJpbnQoJ04nKQo=">
+  <input type="hidden" id="hiddentests" value="MgoxCjEKOzMKMgoxCjsxMDAwCjEwMDAKMTAwMAo7MjAwMAoxMDAwCjEwMDAKOzEwMDAKMTAwMAoyMDAwCl4zNQo2MAo3NQo7NTUKNjgKNjcKOzYxCjYyCjYwCjs0OQo1MQo0OQo7NTAKNDkKNTAKOzUwCjUwCjUwCjsxMDAKNTAKMTAwCjs4MAo3MAo3MAo7NzAKODAKNzUKOzEwMAowCjAK">
+  <input type="hidden" id="hiddenresults" value="Uwo7Tgo7Tgo7Uwo7TgpeTgo7Uwo7Uwo7Uwo7Tgo7Tgo7Tgo7Tgo7Uwo7Tgo=">
+  <input type="hidden" id="hiddensamples" value="MTIKNgo2Cl4zNQo2MAo3NQo=">
+  <input type="hidden" id="hiddenhints" value="dGV4dF9wcmludCxzYWNpX21hdGhfYXJpdGhtZXRpYyxtYXRoX251bWJlcixzYWNpX21hdGhfYXJpdGhtZXRpYyxtYXRoX251bWJlcixtYXRoX251bWJlcgpNdWl0byBiZW0sIHZvY+ogZXN04SBubyBjYW1pbmhvIGNlcnRvLCBlc3ThIHVzYW5kbyBvcyBibG9jb3MgY29ycmV0b3MsIG1hcyBvcyB2YWxvcmVzIG7jbyBlc3TjbyBjb3JyZXRvcy4gVmVyaWZpcXVlIG5vdmFtZW50ZSBvIGVudW5jaWFkbyBlIGNvcnJpamEgc3VhIHNvbHXn428sIGFsdGVyYW5kbyBvIGNvbnRl+mRvIGRvcyBibG9jb3MgIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfbWF0aF9hcml0aG1ldGljLnBuZyIgaGVpZ2h0PSI0NXB4Ii8+IGUgIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfbWF0aF9udW1iZXIucG5nIiBoZWlnaHQ9IjQwcHgiLz4uIDxicj4KQHRleHRfcHJpbnQsc2FjaV9tYXRoX2FyaXRobWV0aWMsc2FjaV9tYXRoX2FyaXRobWV0aWMsbWF0aF9udW1iZXIsbWF0aF9udW1iZXIsbWF0aF9udW1iZXIKTXVpdG8gYmVtLCB2b2PqIGVzdOEgbm8gY2FtaW5obyBjZXJ0bywgZXN04SB1c2FuZG8gb3MgYmxvY29zIGNvcnJldG9zLCBtYXMgb3MgdmFsb3JlcyBu428gZXN0428gY29ycmV0b3MuIFZlcmlmaXF1ZSBub3ZhbWVudGUgbyBlbnVuY2lhZG8gZSBjb3JyaWphIHN1YSBzb2x15+NvLCBhbHRlcmFuZG8gY29tbyBuZWNlc3PhcmlvIG9zIHZhbG9yZXMgZG9zIGJsb2NvcyAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja19tYXRoX251bWJlci5wbmciIGhlaWdodD0iNDBweCIvPiBlICBhcyBvcGVyYef1ZXMgZG8gYmxvY28gIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfbWF0aF9hcml0aG1ldGljLnBuZyIgaGVpZ2h0PSI0NXB4Ii8+IGUgPGJyPgpAdGV4dF9wcmludCxzYWNpX21hdGhfYXJpdGhtZXRpYyxtYXRoX251bWJlcixtYXRoX251bWJlcgpNdWl0byBib20sIHZvY+ogZXN04SBubyBjYW1pbmhvIGNlcnRvLCBq4SBtb250b3UgYWxndW5zIGJsb2Nvcy4gTWFzIG5hIHN1YSBleHByZXNz428gdm9j6iBwcmVjaXNhIHVzYXIgbWFpcyB1bSA8ZW0+YmxvY28gZGUgYXJpdG3pdGljYTwvZW0+ICA8aW1nIGFsaWduPSJtaWRkbGUiIHNyYz0iL2Jsb2NrbHlfaW1hZ2VzL2Jsb2NrX21hdGhfYXJpdGhtZXRpYy5wbmciIGhlaWdodD0iNDVweCIvPiBlICBtYWlzIHVtIDxlbT5ibG9jbyBkZSBu+m1lcm88L2VtPiAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja19tYXRoX251bWJlci5wbmciIGhlaWdodD0iNDBweCIvPi4gIE8gbm92byA8ZW0+YmxvY28gZGUgYXJpdG3pdGljYTwvZW0+IGRldmUgc2VyIGVuY2FpeGFkbyBjb21vIHVtIGRvcyB2YWxvcmVzICBkbyA8ZW0+YmxvY28gZGUgYXJpdG3pdGljYTwvZW0+IHF1ZSB2b2PqIGrhIG1vbnRvdS4gIDxwPiAgUmV2aXNlIG8gZW51bmNpYWRvIGRvIGRlc2FmaW8gZSBjb3JyaWphIHN1YSBleHByZXNz428uIDxicj4KQHRleHRfcHJpbnQKTXVpdG8gYmVtLCB2b2PqIGVzdOEgbm8gY2FtaW5obyBjZXJ0bywgZXN04SB1c2FuZG8gbyBibG9jbyAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja19wcmludC5wbmciIGhlaWdodD0iNDBweCIvPi4gQWdvcmEgcHJlY2lzYSBlbmNhaXhhciBuZWxlIG8gYmxvY28gIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfdGV4dC5wbmciIGhlaWdodD0iNDBweCIvPiBlIHByZWVuY2hlciAgZXNzZSBibG9jbyBjb20gYXMgcGFsYXZyYXMgY29ycmV0YXMuIFBhcmEgdXNhciBvIGJsb2NvIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfdGV4dC5wbmciIGhlaWdodD0iNDBweCIvPiBjbGlxdWUgZW0gPGI+VGV4dG88L2I+IG5hIEJhcnJhIGRlIEZlcnJhbWVudGFzIGUgYXJyYXN0ZSBvIGJsb2NvIHBhcmEgYSDhcmVhIGRlIFByb2dyYW1hLCBlbmNhaXhhbmRvIHVtIGJsb2NvIG5vIG91dHJvLiBEZXBvaXMg6SBz8yBwcmVlbmNoZXIgbyBibG9jbyBkZSB0ZXh0byBjb20gYSBmcmFzZSBlc3BlY2lmaWNhZGEgbm8gZW51bmNpYWRvIGNvbW8gYSBwcmltZWlyYSBsaW5oYSBkYSBzYe1kYS4gPGJyPgpAZW1wdHkKVmFtb3MgbOE6IHZvY+ogcHJlY2lzYSBpbmljaWFyIHVzYW5kbyB1bSBibG9jbyA8aW1nIGFsaWduPSJtaWRkbGUiIHNyYz0iL2Jsb2NrbHlfaW1hZ2VzL2Jsb2NrX3ByaW50LnBuZyIgaGVpZ2h0PSI0MHB4Ii8+IGNvbSB1bSBibG9jbyAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja190ZXh0LnBuZyIgaGVpZ2h0PSI0MHB4IiAvPiBlbmNhaXhhZG8uIFBhcmEgdXNhciBvIGJsb2NvIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfcHJpbnQucG5nIiBoZWlnaHQ9IjQwcHgiLz4gY2xpcXVlIGVtIEUvUyAoZW50cmFkYSBlIHNh7WRhKSBuYSBCYXJyYSBkZSBGZXJyYW1lbnRhcyBlIGFycmFzdGUgbyBibG9jbyBwYXJhIGEg4XJlYSBkZSBQcm9ncmFtYS4gUGFyYSB1c2FyIG8gYmxvY28gPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja190ZXh0LnBuZyIgaGVpZ2h0PSI0MHB4Ii8+IGNsaXF1ZSBlbSA8Yj5UZXh0bzwvYj4gbmEgQmFycmEgZGUgRmVycmFtZW50YXMgZSBhcnJhc3RlIG8gYmxvY28gcGFyYSBhIOFyZWEgZGUgUHJvZ3JhbWEsIGVuY2FpeGFuZG8gdW0gYmxvY28gbm8gb3V0cm8uIERlcG9pcyDpIHPzIHByZWVuY2hlciBvIGJsb2NvIGRlIHRleHRvIGNvbSBhIGZyYXNlIGVzcGVjaWZpY2FkYSBubyBlbnVuY2lhZG8uIDxicj5edGV4dF9wcmludCxzYWNpX21hdGhfYXJpdGhtZXRpYyxtYXRoX251bWJlcixzYWNpX21hdGhfYXJpdGhtZXRpYyxtYXRoX251bWJlcixtYXRoX251bWJlcgpNdWl0byBiZW0sIHZvY+ogZXN04SBubyBjYW1pbmhvIGNlcnRvLCBlc3ThIHVzYW5kbyBvcyBibG9jb3MgY29ycmV0b3MsIG1hcyBvcyB2YWxvcmVzIG7jbyBlc3TjbyBjb3JyZXRvcy4gVmVyaWZpcXVlIG5vdmFtZW50ZSBvIGVudW5jaWFkbyBlIGNvcnJpamEgc3VhIHNvbHXn428sIGFsdGVyYW5kbyBvIGNvbnRl+mRvIGRvcyBibG9jb3MgIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfbWF0aF9hcml0aG1ldGljLnBuZyIgaGVpZ2h0PSI0NXB4Ii8+IGUgIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfbWF0aF9udW1iZXIucG5nIiBoZWlnaHQ9IjQwcHgiLz4uIDxicj4KQHRleHRfcHJpbnQsc2FjaV9tYXRoX2FyaXRobWV0aWMsc2FjaV9tYXRoX2FyaXRobWV0aWMsbWF0aF9udW1iZXIsbWF0aF9udW1iZXIsbWF0aF9udW1iZXIKTXVpdG8gYmVtLCB2b2PqIGVzdOEgbm8gY2FtaW5obyBjZXJ0bywgZXN04SB1c2FuZG8gb3MgYmxvY29zIGNvcnJldG9zLCBtYXMgb3MgdmFsb3JlcyBu428gZXN0428gY29ycmV0b3MuIFZlcmlmaXF1ZSBub3ZhbWVudGUgbyBlbnVuY2lhZG8gZSBjb3JyaWphIHN1YSBzb2x15+NvLCBhbHRlcmFuZG8gY29tbyBuZWNlc3PhcmlvIG9zIHZhbG9yZXMgZG9zIGJsb2NvcyAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja19tYXRoX251bWJlci5wbmciIGhlaWdodD0iNDBweCIvPiBlICBhcyBvcGVyYef1ZXMgZG8gYmxvY28gIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfbWF0aF9hcml0aG1ldGljLnBuZyIgaGVpZ2h0PSI0NXB4Ii8+IGUgPGJyPgpAdGV4dF9wcmludCxzYWNpX21hdGhfYXJpdGhtZXRpYyxtYXRoX251bWJlcixtYXRoX251bWJlcgpNdWl0byBib20sIHZvY+ogZXN04SBubyBjYW1pbmhvIGNlcnRvLCBq4SBtb250b3UgYWxndW5zIGJsb2Nvcy4gTWFzIG5hIHN1YSBleHByZXNz428gdm9j6iBwcmVjaXNhIHVzYXIgbWFpcyB1bSA8ZW0+YmxvY28gZGUgYXJpdG3pdGljYTwvZW0+ICA8aW1nIGFsaWduPSJtaWRkbGUiIHNyYz0iL2Jsb2NrbHlfaW1hZ2VzL2Jsb2NrX21hdGhfYXJpdGhtZXRpYy5wbmciIGhlaWdodD0iNDVweCIvPiBlICBtYWlzIHVtIDxlbT5ibG9jbyBkZSBu+m1lcm88L2VtPiAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja19tYXRoX251bWJlci5wbmciIGhlaWdodD0iNDBweCIvPi4gIE8gbm92byA8ZW0+YmxvY28gZGUgYXJpdG3pdGljYTwvZW0+IGRldmUgc2VyIGVuY2FpeGFkbyBjb21vIHVtIGRvcyB2YWxvcmVzICBkbyA8ZW0+YmxvY28gZGUgYXJpdG3pdGljYTwvZW0+IHF1ZSB2b2PqIGrhIG1vbnRvdS4gIDxwPiAgUmV2aXNlIG8gZW51bmNpYWRvIGRvIGRlc2FmaW8gZSBjb3JyaWphIHN1YSBleHByZXNz428uIDxicj4KQHRleHRfcHJpbnQKTXVpdG8gYmVtLCB2b2PqIGVzdOEgbm8gY2FtaW5obyBjZXJ0bywgZXN04SB1c2FuZG8gbyBibG9jbyAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja19wcmludC5wbmciIGhlaWdodD0iNDBweCIvPi4gQWdvcmEgcHJlY2lzYSBlbmNhaXhhciBuZWxlIG8gYmxvY28gIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfdGV4dC5wbmciIGhlaWdodD0iNDBweCIvPiBlIHByZWVuY2hlciAgZXNzZSBibG9jbyBjb20gYXMgcGFsYXZyYXMgY29ycmV0YXMuIFBhcmEgdXNhciBvIGJsb2NvIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfdGV4dC5wbmciIGhlaWdodD0iNDBweCIvPiBjbGlxdWUgZW0gPGI+VGV4dG88L2I+IG5hIEJhcnJhIGRlIEZlcnJhbWVudGFzIGUgYXJyYXN0ZSBvIGJsb2NvIHBhcmEgYSDhcmVhIGRlIFByb2dyYW1hLCBlbmNhaXhhbmRvIHVtIGJsb2NvIG5vIG91dHJvLiBEZXBvaXMg6SBz8yBwcmVlbmNoZXIgbyBibG9jbyBkZSB0ZXh0byBjb20gYSBmcmFzZSBlc3BlY2lmaWNhZGEgbm8gZW51bmNpYWRvIGNvbW8gYSBwcmltZWlyYSBsaW5oYSBkYSBzYe1kYS4gPGJyPgpAZW1wdHkKVmFtb3MgbOE6IHZvY+ogcHJlY2lzYSBpbmljaWFyIHVzYW5kbyB1bSBibG9jbyA8aW1nIGFsaWduPSJtaWRkbGUiIHNyYz0iL2Jsb2NrbHlfaW1hZ2VzL2Jsb2NrX3ByaW50LnBuZyIgaGVpZ2h0PSI0MHB4Ii8+IGNvbSB1bSBibG9jbyAgPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja190ZXh0LnBuZyIgaGVpZ2h0PSI0MHB4IiAvPiBlbmNhaXhhZG8uIFBhcmEgdXNhciBvIGJsb2NvIDxpbWcgYWxpZ249Im1pZGRsZSIgc3JjPSIvYmxvY2tseV9pbWFnZXMvYmxvY2tfcHJpbnQucG5nIiBoZWlnaHQ9IjQwcHgiLz4gY2xpcXVlIGVtIEUvUyAoZW50cmFkYSBlIHNh7WRhKSBuYSBCYXJyYSBkZSBGZXJyYW1lbnRhcyBlIGFycmFzdGUgbyBibG9jbyBwYXJhIGEg4XJlYSBkZSBQcm9ncmFtYS4gUGFyYSB1c2FyIG8gYmxvY28gPGltZyBhbGlnbj0ibWlkZGxlIiBzcmM9Ii9ibG9ja2x5X2ltYWdlcy9ibG9ja190ZXh0LnBuZyIgaGVpZ2h0PSI0MHB4Ii8+IGNsaXF1ZSBlbSA8Yj5UZXh0bzwvYj4gbmEgQmFycmEgZGUgRmVycmFtZW50YXMgZSBhcnJhc3RlIG8gYmxvY28gcGFyYSBhIOFyZWEgZGUgUHJvZ3JhbWEsIGVuY2FpeGFuZG8gdW0gYmxvY28gbm8gb3V0cm8uIERlcG9pcyDpIHPzIHByZWVuY2hlciBvIGJsb2NvIGRlIHRleHRvIGNvbSBhIGZyYXNlIGVzcGVjaWZpY2FkYSBubyBlbnVuY2lhZG8uIDxicj4=">
+  <input type="hidden" id="hiddencourse" value="QkxPQ0tMWQ==">
+  <input type="hidden" id="hiddenvideo" value="viUZORaYKsw">
+  <input type="hidden" id="hiddenrevision_is_present" value="1">
+  <input type="hidden" id="hiddenvideo_is_present" value="1">
+  <script type="text/javascript" src="/static/js/saci_blockly.min.js" charset="utf-8"></script>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+title:Plano de Internet
+template:tasks/tarefa_programacao.html
+
+<p>
+João conseguiu contratar um ótimo plano de Internet para o
+seu telefone celular.
+
+O plano permite que João utilize uma quota de até X megabytes de
+dados por mês para navegar na Internet. Se João não usa toda a sua
+quota no mês, os megabytes que ele não usou são adicionados à quota do
+mês seguinte. Pelo contrato, João nunca pode usar mais megabytes
+do que a sua quota corrente.
+
+Por exemplo, se X=200 megabytes e João usou 150 no primeiro mês
+e 220 megabytes no segundo mês, então no terceiro mês João
+tem uma quota de 230 megabytes para usar (50 megabytes são transferidos
+do primeiro para o segundo mês, 30 megabytes são transferidos
+do segundo para o terceiro mês).
+
+Nesta tarefa são dados o valor da quota mensal X e quantos megabytes
+João usou em cada um dos primeiros N meses do plano. Você deve
+determinar quantos megabytes João tem para usar no mês N+1.
+
+
+
+
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um número inteiro X,
+o valor da quota mensal em megabytes. A segunda linha contém um
+ inteiro N, o número de meses. Cada uma das linhas seguintes
+contém um número inteiro M_i, indicando a quantidade de megabytes
+que João usou em cada mês, do mês 1 até o mês N.
+
+
+
+
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo
+um único número inteiro, a quantidade de megabytes que João tem
+para usar no mês N+1.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  X  &leq;  100
+<li> 1  &leq;  N  &leq;  100
+<li> 0  &leq;  M_i  &leq;  10000 para 1  &leq;  i  &leq;  N
+<li> M_i nunca é maior do que a quantidade de megabytes que João tem para usar no mês.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, 1  &leq;  N  &leq;  3.
+<li> Para um conjunto de casos de testes valendo 90 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100
+2
+50
+120
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+130
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+3
+4
+6
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+28
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100
+2
+100
+100
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+100
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,108 @@
+title:Palíndromo
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma cadeia de caracteres é chamada de palíndromo se a sequência
+de caracteres da esquerda para a direita é igual à sequência de
+caracteres da direita para a esquerda (uma outra definição é que o 
+primeiro caractere da cadeia deve ser igual ao último caractere da
+cadeia, o segundo caractere deve ser igual ao penúltimo caractere,
+o terceiro caractere deve ser igual ao antepenúltimo caractere,
+e assim por diante). 
+
+<p>
+Por exemplo, as cadeias de caracteres &lsquo;mim&rsquo;, &lsquo;axxa&rsquo; e &lsquo;ananaganana&rsquo;
+são exemplos de palíndromos. Se uma cadeia não é palíndroma, ela pode
+ser dividida em cadeias menores que são palíndromas.  Por exemplo, a
+cadeia &lsquo;aaxyx&rsquo; pode ser dividida de quatro maneiras distintas, todas
+elas contendo apenas cadeias palíndromas: \&lsquo;aa&rsquo;, &lsquo;xyx&rsquo;\, \&lsquo;aa&rsquo;, &lsquo;x&rsquo;,
+  &lsquo;y&rsquo;, &lsquo;x&rsquo;\, \&lsquo;a&rsquo;, &lsquo;a&rsquo;, &lsquo;xyx&rsquo;\ e \&lsquo;a&rsquo;, &lsquo;a&rsquo;, &lsquo;x&rsquo;, &lsquo;y&rsquo;, &lsquo;x&rsquo;\.
+
+<p>Dada uma cadeia de caracteres, escreva um programa que determine qual
+o menor número de partes em que a dada cadeia deve ser dividida de
+forma que todas as partes sejam palíndromos.
+
+<h3>Entrada</h3>
+A primeira linha contém um número inteiro N que 
+indica o número de caracteres da cadeia. A segunda
+linha contém a cadeia de caracteres, composta por letras minúsculas,
+de &lsquo;a&rsquo; a &lsquo;z&rsquo;, sem espaços em branco. 
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo um número
+inteiro, o menor número de partes em que a cadeia de entrada deve ser
+dividida de forma que todas as partes sejam palíndromes.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  2000
+<li> A cadeia de caracteres contém apenas letras minúsculas não acentuadas (&lsquo;a&rsquo; a &lsquo;z&rsquo;).
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 20 pontos, N &leq;  8
+<li> Em um conjunto de casos de teste somando 40 pontos, N &leq;  300
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+axa
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+xyzyyx
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+bbabcbbaab
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

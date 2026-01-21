@@ -1,0 +1,24 @@
+{{ greetings }}
+
+     {{ compet.compet_name}}
+
+você está recebendo esta mensagem porque seu professor efetuou sua inscrição na Olimpíada Brasileira de Informática (OBI2022).
+
+Esta mensagem é apenas um lembrete de que a prova da Fase 1 da Modalidade Programação ocorre entre os dias 13 e 15 de junho (segunda-feira a quarta-feira da semana que vem).
+
+A prova deve ser feita na escola, sob supervisão. Verifique com o Coordenador Local da OBI2022 em sua escola o dia e horário que ela será aplicada na sua escola.
+
+A prova deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, programas que você mesmo tenha feito anteriormente, arquivos de computador...). Além disso, você não deve comentar as tarefas da prova, por qualquer meio (conversa, rede social, etc)  com quem ainda não tenha feito a prova, até o término do período de aplicação. Confiamos no seu "espírito olímpico" para obedecer a essas regras!
+
+Se você ainda não fez a Prova Teste, por favor procure fazê-la antes da prova da Fase 1, é importante para se familiarizar com o Ambiente de Prova da OBI2022. Você pode refazer a Prova Teste quantas vezes quiser. Para acessar a Prova Teste (e a Prova da Fase 1) acesse sua página pessoal na OBI2022:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se
+
+usuário: {{ compet.compet_id_full }}
+senha: {{ compet.compet_conf }}
+
+Boa prova!
+
+{% include 'includes/signature.html' %}

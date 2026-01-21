@@ -1,0 +1,109 @@
+title:Times
+template:tasks/tarefa_programacao.html
+<p>
+Chegou a hora da caça ao tesouro na gincana escolar! Para jogar, sua turma
+de N pessoas deve se dividir em dois times. A divisão será feita com base
+no número de chamada de cada aluno, um número entre 1 e N. 
+Só que mais importante que fazer uma 
+divisão balanceada é evitar que pessoas que não se gostam fiquem no mesmo time.
+Você receberá o número N de alunos e, para cada pessoa, você receberá a 
+lista de pessoas que ela não gosta. Se a pessoa A não gosta da pessoa B
+então a pessoa B também não gosta da pessoa A. O aluno de número 1
+sempre ficará no primeiro time. Você deve dividir os outros alunos entre os 
+dois times de forma que dentro de cada time não haja duas pessoas que não se gostam.
+
+<h3>Entrada</h3>
+A primeira linha contém um inteiro N, representando o número de alunos na turma.
+As N linhas seguintes, para 1  &leq;  i  &leq;  N, contém um inteiro M<sub>i</sub>, indicando 
+de quantas pessoas o aluno i não gosta, e em seguida M<sub>i</sub> inteiros X<sub>j</sub>, 
+indicando que a pessoa i não gosta da pessoa X<sub>j</sub>.
+
+<h3>Saída</h3>
+Seu programa deve produzir duas linhas, a primeira contendo os números dos integrantes
+do primeiro time e a segunda contendo os números dos integrantes do segundo time, ambas em ordem crescente.
+Lembre-se que o aluno 1 sempre estará no primeiro time. Sempre há uma única solução.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  N  &leq;  10<sup>5</sup>.
+<li> 1  &leq;  M<sub>i</sub>  &leq;  N - 1.
+<li> 1  &leq;  X<sub>j</sub>  &leq;  N.
+<li> 1  &leq;  \displaystyle\sum_i=1^N M<sub>i</sub>  &leq;  6 \times 10<sup>5</sup>.
+<li> Ou seja, a soma de todos os M<sub>i</sub> descritos na entrada é no máximo 6 \times 10<sup>5</sup>.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um conjunto de casos de teste equivalente a 40 pontos, N  &leq;  15.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+13
+2 12 9
+1 10
+3 8 12 13
+5 8 10 13 6 5
+2 11 4
+1 4
+1 8
+3 4 3 7
+1 1
+2 2 4
+1 5
+2 3 1
+2 4 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 2 3 4 7 11
+5 6 8 9 10 12 13
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+15
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+1 13
+14 11 7 1 10 8 6 14 12 3 2 15 5 4 9
+1 13
+1 13
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 2 3 4 5 6 7 8 9 10 11 12 14 15
+13
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

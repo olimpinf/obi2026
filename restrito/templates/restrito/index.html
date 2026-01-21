@@ -1,0 +1,426 @@
+{% extends "base_restricted.html" %}
+{% load static blog_restrito obi_extras %}
+
+{% block content %}
+<div class="mb-4 pb-4">
+    <a href="/restrito/instrucoes" role="button" class="btn btn-info btn-sm float-end">
+      Instruções
+    </a>
+</div>
+
+
+{% if has_week %}
+<h2>Semana Olímpica OBI2025</h2>
+<div class="small">
+<table class="table table-sm mb-4" width="100%">
+  <tr>
+    <th>Convidados</th>
+    <td align="right"><a href="{% url 'restrito:partic_lista_status_semana' %}">Status</a></td>
+  </tr>
+</table>
+</div>
+{% endif %}
+
+<h2>Cadastro</h2>
+<div class="small">
+<table class="table table-sm">
+  <tr>
+    <th>
+    Competidores OBI{{ current_year }} ({{ num_compets }})</th>
+    <td align="right"><a href="{% url 'restrito:compet_lista' %}">Listar/Editar</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_inscreve' %}">Inscrever</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_inscreve_lote' %}">Inscrever por Lote</a></td>
+    <td align="right">
+      <a href="{% url 'restrito:compet_pre_inscricao_lista' %}" {% if num_pre_compets > 0  %}btn-warning{% else %}btn-primary{% endif%}>Validar Pré-Inscrições ({{ num_pre_compets }})</a> 
+    </td>
+    <td align="right"><a href="{% url 'restrito:compet_recupera_cadastro' %}">Baixar</a>
+    <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas' %}"></a>
+    </td>
+  </tr>
+  <tr>
+    <th>Competição Feminina ({{ num_compets_feminina }})</th>
+    <td align="right"><a href="{% url 'restrito:compet_feminina_lista' %}">Listar/Editar</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_feminina_inscreve' %}">Inscrever</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_feminina_inscreve_lote' %}">Inscrever por Lote</a></td>
+    <td align="right">
+      {% comment %}
+      <!-- TODO: Implementar pre-inscricao CF-OBI. -->
+      {% if num_pre_compets > 0 %}<img src='/static/admin/img/icon-alert.svg' style='vertical-align: middle;'></img> {% endif %}
+      <a href="{% url 'restrito:compet_feminina_pre_inscricao_lista' %}">Validar Pré-Inscrições</a> ({{ num_pre_compets }})
+      {% endcomment %}
+    </td>
+    <td align="right"><a href="{% url 'restrito:compet_feminina_recupera_cadastro' %}">Baixar</a>
+      {% comment %}
+    <td align="right"><a href="{% url 'restrito:compet_feminina_cartoes_senhas' %}">Senhas</a>
+      {% endcomment %}
+      <td>
+    </td>
+  </tr>
+  {% if user|obi_user_group == 'local_coord' %}
+  <tr>
+    <th>Colaboradores ({{ num_colabs }})</th>
+    <td align="right"><a href="{% url 'restrito:colab_lista' %}">Listar/Editar</a></td>
+    <td align="right"><a href="{% url 'restrito:colab_inscreve' %}">Inscrever</a></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+  </tr>
+  <tr>
+    <th>Coordenador</th>
+    <td align="right"><a href="{% url 'restrito:coord_edita' %}">Editar</a></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+  </tr>
+  <tr>
+    <th>Escola</th>
+    <td align="right"><a href="{% url 'restrito:escola_edita' %}">Editar</a></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+  </tr>
+  {% endif %}
+</table>
+</div>
+
+{% if has_desclassif %}
+
+<h2 class="mt-4 pt-4">Competidores Desclassificados</h2>
+<div class="small">
+  <p>Competidores podem ser desclassificados por envolvimento em vários tipos de fraudes detectadas
+    pela organização da OBI ou reportadas por Coordenadores Locais.
+    Exemplo de fraudes incluem uso de IA, acesso à prova fora da escola, prova em grupo, cópia
+    entre competidores e outras.
+
+  <p><a href="{% url 'restrito:compet_lista_desclassif' %}">Lista de competidores desclassificados</a>
+  <p><a href="{% url 'restrito:compet_relatorio_desclassif' %}">Relatório resumido</a>
+</div>
+{% endif %}
+
+
+{% comment %}
+<h2 class="mt-5">Fase 0 (Prova Teste)</h2>
+{% xcomment %}
+<p class="small"><em>O período da prova teste terminou, a prova não está mais disponível.</em></p>
+{% xendcomment %}
+<p class="small"><em>A Prova Teste, opcional, é apenas para a modalidade Programação. Ela tem o objetivo
+  de familiarizar os competidores com o Ambiente de Prova da OBI2025. A Prova Teste estará disponível do dia 5 ao dia 9 de junho.</em></p>
+<div class="small">
+<table class="table table-sm">
+
+{% xcomment %}
+  <tr>
+    <th>Modalidade Iniciação</th>
+    <td align="right"><a href="{% url 'fase0:cadernos_tarefas_ini' %}">Aplicação da Prova Teste</a></td>
+  </tr>
+{% xendcomment %}
+
+  <tr>
+    <th>Modalidade Programação</th>
+{% xcomment %}
+    <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas Prova</a></td>
+{% xendcomment %}
+    <td align="right"><a href="{% url 'fase0:cadernos_tarefas_prog' %}">Aplicação da Prova Teste</a></td>
+  </tr>
+
+</table>
+</div>
+
+{% endcomment %}
+
+<h2 class="mt-4 pt-4">Fase 1</h2>
+<div class="small">
+<table class="table table-sm">
+  <tr>
+    <th>Modalidade Iniciação</th>
+    <td align="right"></td>
+    <td align="right"><a href="{% url 'fase1:cadernos_tarefas_ini' %}">Aplicação da Prova</a></td>
+    <td align="right"><a href="{% url 'fase1:correcao_ini' %}">Correção da Prova</a></td>
+    <td align="right"><a href="{% url 'fase1:resultado_ini' %}">Resultado</a></td>
+  </tr>
+
+  <tr>
+    <th>Modalidade Programação</th>
+    <td align="right"></td>
+    {% comment %}
+    <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas Prova</a></td>
+    {% endcomment %}
+    <td align="right"><a href="{% url 'fase1:cadernos_tarefas_prog' %}">Aplicação da Prova</a></td>
+    <td align="right"><a href="{% url 'fase1:correcao_prog' %}">Correção da Prova</a></td>
+    <td align="right"><a href="{% url 'fase1:resultado_prog' %}">Resultado</a></td>
+  </tr>
+    {% comment %}
+    <th>Listas de Classificados</th>
+    <td></td>
+    <td align="right"><a href="{% url 'fase1:compet_lista_classif_ini' %}">Modalidade Iniciação</a></td>    
+    <td align="right"><a href="{% url 'fase1:compet_lista_classif_prog' %}">Modalidade Programação</a></td>    
+  </tr>
+    {% endcomment %}
+
+</table>
+</div>
+
+<h2 class="mt-4 pt-4">Fase 2</h2>
+
+
+{% comment %}
+<p><em>Ainda não disponível</em></p>
+{% endcomment %}
+
+<div class="small">
+<table class="table table-sm">
+  <tr>
+    <th>Modalidade Iniciação</th>
+    <td align="right"><a href="{% url 'fase2:cadernos_tarefas_ini' %}">Aplicação da Prova</a></td>
+    <td align="right"><a href="{% url 'fase2:correcao_ini' %}">Correção da Prova</a></td>
+    <td align="right"><a href="{% url 'fase2:verifica_ini' %}">Verificação</a></td>
+    <td align="right"><a href="{% url 'fase2:resultado_ini' %}">Resultado</a></td>
+  <tr>
+    <th>Modalidade Programação</th>
+    {% comment %}
+    <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas Prova</a></td>
+    {% endcomment %}
+    <td align="right"><a href="{% url 'fase2:cadernos_tarefas_prog' %}">Aplicação da Prova</a></td>
+    <td align="right"><a href="{% url 'fase2:correcao_prog' %}">Correção da Prova</a></td>
+    <td></td>
+    <td align="right"><a href="{% url 'fase2:resultado_prog' %}">Resultado</a></td>    
+  </tr>
+{% comment %}
+    <th>Listas de Classificados</th>
+    <td></td>
+    <td align="right"><a href="{% url 'fase2:compet_lista_classif_ini' %}">Modalidade<br> Iniciação</a></td>    
+    <td align="right"><a href="{% url 'fase2:compet_lista_classif_prog' %}">Modalidade<br> Programação</a></td>    
+  </tr>
+{% endcomment %}
+</table>
+</div>
+
+{% comment %}
+<h2 class="mt-4 pt-4">Fase 2, Turno B</h2>
+
+<p><em>Ainda não disponível</em></p>
+
+<div class="small">
+<table class="table table-sm">
+  <tr>
+    <th>Modalidade Programação (Nível 2)</th>
+    <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas Prova</a></td>
+    <td align="right"><a href="{% url 'fase2b:cadernos_tarefas_prog' %}">Aplicação da Prova</a></td>
+    <td align="right"><a href="{% url 'fase2b:correcao_prog' %}">Correção da Prova</a></td>
+    <td align="right"><a href="{% url 'fase2b:resultado_prog' %}">Resultado</a></td>    
+  </tr>
+    <th>Listas de Classificados</th>
+    <td></td>
+    <td></td>
+    <td align="right"><a href="{% url 'fase2b:compet_lista_classif_prog' %}">Modalidade<br> Programação</a></td>    
+</table>
+</div>
+{% endcomment %}
+
+
+<h2 class="mt-4 pt-4">Competição Feminina</h2>
+
+{% comment %}
+<p><em>Ainda não disponível</em></p>
+{% endcomment %}
+
+<div class="small">
+<table class="table table-sm">
+  <tr>
+    <th>Modalidade Programação</th>
+    <td align="right"><a href="{% url 'cfobi:cadernos_tarefas_prog' %}">Aplicação da Prova</a></td>
+    <td align="right"><a href="{% url 'cfobi:correcao_prog' %}">Correção da Prova</a></td>
+    <td align="right"><a href="{% url 'cfobi:resultado_prog' %}">Resultado</a></td>    
+  </tr>
+
+  {# junto com as outras fases #}
+  {% comment %}
+  {% if has_desclassif %}
+  <tr>
+    <th>Listas de Desclassificadas</th>
+    <td></td>
+    <td align="right"><a href="{% url 'cfobi:compet_lista_desclassif' %}">Lista</a></td>    
+  </tr>
+  {% endif %}
+  {% endcomment %}
+    
+{% comment %}   
+  <tr>
+    <th>Listas de Classificados</th>
+    <td></td>
+    <td align="right"><a href="{% url 'fase2:compet_lista_classif_prog' %}">Modalidade Programação</a></td>    
+  </tr>
+</table>
+</div>
+{% endcomment %}   
+</table>
+</div>
+
+<h2 class="mt-4 pt-4">Fase 3</h2>
+
+{% comment %}
+<p><em>Ainda não disponível</em></p>
+{% endcomment %}   
+
+
+<div class="small">
+<table class="table table-sm">
+  <tr>
+    <th>Modalidade Iniciação</th>
+    {% if school.school_site_phase3_ini == school.school_id %}
+    <td align="right"></td>
+    <td align="right"><a href="{% url 'fase3:cadernos_tarefas_ini' %}">Aplicação</a></td>
+    <td align="right"><a href="{% url 'fase3:correcao_ini' %}">Correção</a></td>
+    <td align="right"><a href="{% url 'fase3:verifica_ini' %}">Verificação</a></td>
+    <td align="right"><a href="{% url 'fase3:compet_lista' 'ini' %}">Competidores</a>
+      (<a href="{% url 'fase3:compet_recupera_cadastro' 'ini' %}">Baixar</a>)
+    </td>
+    {% else %}
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    {% endif %}
+    <td align="right"><a href="{% url 'fase3:resultado_ini' %}">Resultado</a></td>
+    <td align="right"><a href="{% url 'fase3:mostra_sede_fase3_coord' 'ini' %}">Sede</a></td>
+  </tr>
+  <tr>
+    <th>Modalidade Programação</th>
+    {% if school.school_site_phase3_prog == school.school_id %}
+    {% comment %}
+    <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas da Prova</a></td>
+    {% endcomment %}
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"><a href="{% url 'fase3:cadernos_tarefas_prog' %}">Aplicação</a></td>
+    <td align="right"><a href="{% url 'fase3:correcao_prog' %}">Correção</a></td>
+    <td align="right"><a href="{% url 'fase3:compet_lista' 'prog' %}">Competidores</a>
+      (<a href="{% url 'fase3:compet_recupera_cadastro' 'prog' %}">Baixar</a>)</td>
+    {% else %}
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    {% endif %}
+    <td align="right"><a href="{% url 'fase3:resultado_prog' %}">Resultado</a></td>
+    <td align="right"><a href="{% url 'fase3:mostra_sede_fase3_coord' 'prog' %}">Sede</a></td>
+
+  </tr>
+</table>
+</div>
+
+
+
+<h2 class="mt-4 pt-4">Certificados</h2>
+
+<div class="small">
+  <table class="table table-sm">
+    {% if num_compets_ini %}
+  <tr>
+    <th>Modalidade Iniciação</th>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'ij' %}">Nível Júnior</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'i1' %}">Nível 1</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'i2' %}">Nível 2</a></td>
+    <td align="right"></td>
+  </tr>
+    {% endif %}
+    {% if num_compets_prog %}
+  <tr>
+    <th>Modalidade Programação</th>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'pj' %}">Nível Júnior</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'p1' %}">Nível 1</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'p2' %}">Nível 2</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'ps' %}">Nível Sênior</a></td>
+  </tr>
+  <tr>
+    {% endif %}
+    {% comment %}
+    {% if num_compets_feminina %}
+    <th>Competicao Feminina</th>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola_cf' 'pj' %}">Nível Júnior</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola_cf' 'p1' %}">Nível 1</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola_cf' 'p2' %}">Nível 2</a></td>
+    <td align="right"></td>
+  </tr>
+    {% endif %}
+    {% endcomment %}
+  <tr>
+    <th>Coordenador e Colaboradores</th>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'deleg' %}">Coordenador</a></td>
+    <td align="right"><a href="{% url 'restrito:emite_certificados_escola' 'colabs' %}">Colaboradores</a></td>
+  </tr>
+</table>
+</div>
+
+<h2 class="mt-4 pt-4">Classificação Final</h2>
+<div class="small">
+<table class="table table-sm">
+    {% if num_compets_ini %}
+  <tr>
+    <th>Modalidade Iniciação</th>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'ij' %}">Nível Júnior</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'i1' %}">Nível 1</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'i2' %}">Nível 2</a></td>
+    <td></td>
+  </tr>
+    {% endif %}
+    {% if num_compets_prog %}
+  <tr>
+    <th>Modalidade Programação</th>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'pj' %}">Nível Júnior</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'p1' %}">Nível 1</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'p2' %}">Nível 2</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final' 'ps' %}">Nível Sênior</a></td>
+  </tr>
+    {% endif %}
+    {% if num_compets_feminina %}
+  <tr>
+    <th>Competição Feminina</th>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final_cf' 'pj' %}">Nível Júnior</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final_cf' 'p1' %}">Nível 1</a></td>
+    <td align="right"><a href="{% url 'restrito:compet_lista_classif_final_cf' 'p2' %}">Nível 2</a></td>
+    <td></td>
+  </tr>
+    {% endif %}
+</table>
+</div>
+{% comment %}
+{% endcomment %}
+
+
+{% endblock %}
+
+{% block content-related %}
+<h4>Notícias para Coordenadores</h4>
+      {% render_latest_blog_entries 1 hide_readmore=False summary_first=True header_tag='h4' %}
+      <a href="{% url 'blog_restrito:index' %}" class="link-readmore">Mais notícias</a>
+
+  <h4 class="mt-4">Instruções</h4>
+
+<ul>
+  <li>Esta é a página principal dos Coordenadores da OBI.
+  <li>Para retornar a esta página, a qualquer momento,
+    clique no ícone <img src="/static/assets/img/icon-home-black.svg" width="24px" align="top">
+    no topo da página
+    à direita.
+  <li>As ações de coordenação estão agrupadas em
+    <em>Cadastro</em>, <em>Fase 1</em>, <em>Fase 2</em> e <em>Fase
+    3</em>. <em>Cadastro</em> permite a inscrição e modificação de
+    competidores e colaboradores, bem como a atualização de dados do
+    Coordenador e da Escola. <em>Fase 1</em>, <em>Fase 2</em> e <em>Fase
+    3</em> permitem acesso às provas e resultados de cada Fase.
+  <li>Clique no nome da funcionalidade (por exemplo, <i>Listar/Editar</i>, <i>Inscrever</i>, etc.) para
+    executar a funcionalidade.
+</ul>
+
+
+{% endblock %}

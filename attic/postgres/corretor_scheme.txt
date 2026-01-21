@@ -1,0 +1,373 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)
+-- Dumped by pg_dump version 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: res_tmp; Type: TABLE; Schema: public; Owner: obi
+--
+
+CREATE TABLE public.res_tmp (
+    result_id integer NOT NULL,
+    result_time double precision DEFAULT 0,
+    result_log text,
+    team_id integer,
+    problem_id integer,
+    problem_name character varying(32),
+    log_id integer,
+    site_id integer,
+    judge_id integer,
+    judge_site integer,
+    sub_id integer,
+    sub_penalty integer,
+    sub_time character varying(64),
+    result_result character varying(64),
+    num_total_tests integer,
+    num_correct_tests integer,
+    compile_result integer,
+    sub_tries integer,
+    result_seen integer DEFAULT 0,
+    result_balloon integer DEFAULT 0
+);
+
+
+ALTER TABLE public.res_tmp OWNER TO obi;
+
+--
+-- Name: res_tmp_result_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.res_tmp_result_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.res_tmp_result_id_seq OWNER TO obi;
+
+--
+-- Name: res_tmp_result_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.res_tmp_result_id_seq OWNED BY public.res_tmp.result_id;
+
+
+--
+-- Name: res_www; Type: TABLE; Schema: public; Owner: obi
+--
+
+CREATE TABLE public.res_www (
+    result_id integer NOT NULL,
+    result_log text,
+    team_id integer,
+    problem_id integer,
+    problem_name character varying(32),
+    log_id integer,
+    site_id integer,
+    judge_id integer,
+    judge_site integer,
+    sub_id integer,
+    sub_penalty integer,
+    sub_time character varying(64),
+    result_result character varying(64),
+    num_total_tests integer,
+    num_correct_tests integer,
+    compile_result integer,
+    sub_tries integer,
+    result_seen integer DEFAULT 0,
+    result_balloon integer DEFAULT 0,
+    result_time date,
+    res_time timestamp with time zone
+);
+
+
+ALTER TABLE public.res_www OWNER TO obi;
+
+--
+-- Name: res_www_ini; Type: TABLE; Schema: public; Owner: obi
+--
+
+CREATE TABLE public.res_www_ini (
+    sub_id integer NOT NULL,
+    result_log text,
+    compet_id integer,
+    compet_level integer,
+    num_correct_tests integer,
+    num_total_tests integer
+);
+
+
+ALTER TABLE public.res_www_ini OWNER TO obi;
+
+--
+-- Name: res_www_result_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.res_www_result_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.res_www_result_id_seq OWNER TO obi;
+
+--
+-- Name: res_www_result_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.res_www_result_id_seq OWNED BY public.res_www.result_id;
+
+
+--
+-- Name: sub_tmp; Type: TABLE; Schema: public; Owner: obi
+--
+
+CREATE TABLE public.sub_tmp (
+    sub_id integer NOT NULL,
+    sub_time character varying(64),
+    sub_source text,
+    sub_lang character varying(16),
+    sub_lock integer DEFAULT 0,
+    sub_marked integer DEFAULT 0,
+    result_id integer,
+    log_id integer,
+    team_id integer,
+    problem_id integer DEFAULT 0,
+    site_id integer DEFAULT 0,
+    sub_stop_time double precision DEFAULT 0,
+    sub_penalty integer DEFAULT 0,
+    sub_tries integer DEFAULT 0,
+    problem_name character varying(32),
+    problem_name_full character varying(64),
+    team_type integer,
+    sub_input text,
+    sub_type integer
+);
+
+
+ALTER TABLE public.sub_tmp OWNER TO obi;
+
+--
+-- Name: sub_tmp_sub_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.sub_tmp_sub_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sub_tmp_sub_id_seq OWNER TO obi;
+
+--
+-- Name: sub_tmp_sub_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.sub_tmp_sub_id_seq OWNED BY public.sub_tmp.sub_id;
+
+
+--
+-- Name: sub_www; Type: TABLE; Schema: public; Owner: obi
+--
+
+CREATE TABLE public.sub_www (
+    sub_id integer NOT NULL,
+    sub_time character varying(64),
+    sub_source text,
+    sub_lang character varying(16),
+    sub_lock integer DEFAULT 0,
+    sub_marked integer DEFAULT 0,
+    result_id integer,
+    log_id integer,
+    team_id integer,
+    problem_id integer DEFAULT 0,
+    site_id integer DEFAULT 0,
+    sub_stop_time double precision DEFAULT 0,
+    sub_penalty integer DEFAULT 0,
+    sub_tries integer DEFAULT 0,
+    problem_name character varying(32),
+    problem_name_full character varying(64),
+    team_type integer,
+    sub_input text,
+    sub_type integer,
+    sub_file character varying(200)
+);
+
+
+ALTER TABLE public.sub_www OWNER TO obi;
+
+--
+-- Name: sub_www_ini; Type: TABLE; Schema: public; Owner: obi
+--
+
+CREATE TABLE public.sub_www_ini (
+    sub_id integer NOT NULL,
+    sub_source text,
+    sub_lock integer DEFAULT 0,
+    sub_marked integer DEFAULT 0,
+    num_total_tests integer,
+    sub_school_id integer
+);
+
+
+ALTER TABLE public.sub_www_ini OWNER TO obi;
+
+--
+-- Name: sub_www_ini_sub_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.sub_www_ini_sub_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sub_www_ini_sub_id_seq OWNER TO obi;
+
+--
+-- Name: sub_www_ini_sub_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.sub_www_ini_sub_id_seq OWNED BY public.sub_www_ini.sub_id;
+
+
+--
+-- Name: sub_www_sub_id_seq; Type: SEQUENCE; Schema: public; Owner: obi
+--
+
+CREATE SEQUENCE public.sub_www_sub_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sub_www_sub_id_seq OWNER TO obi;
+
+--
+-- Name: sub_www_sub_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: obi
+--
+
+ALTER SEQUENCE public.sub_www_sub_id_seq OWNED BY public.sub_www.sub_id;
+
+
+--
+-- Name: res_tmp result_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.res_tmp ALTER COLUMN result_id SET DEFAULT nextval('public.res_tmp_result_id_seq'::regclass);
+
+
+--
+-- Name: res_www result_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.res_www ALTER COLUMN result_id SET DEFAULT nextval('public.res_www_result_id_seq'::regclass);
+
+
+--
+-- Name: sub_tmp sub_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.sub_tmp ALTER COLUMN sub_id SET DEFAULT nextval('public.sub_tmp_sub_id_seq'::regclass);
+
+
+--
+-- Name: sub_www sub_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.sub_www ALTER COLUMN sub_id SET DEFAULT nextval('public.sub_www_sub_id_seq'::regclass);
+
+
+--
+-- Name: sub_www_ini sub_id; Type: DEFAULT; Schema: public; Owner: obi
+--
+
+ALTER TABLE ONLY public.sub_www_ini ALTER COLUMN sub_id SET DEFAULT nextval('public.sub_www_ini_sub_id_seq'::regclass);
+
+
+--
+-- Name: TABLE res_www; Type: ACL; Schema: public; Owner: obi
+--
+
+GRANT SELECT,INSERT,UPDATE ON TABLE public.res_www TO anonymous;
+
+
+--
+-- Name: TABLE res_www_ini; Type: ACL; Schema: public; Owner: obi
+--
+
+GRANT SELECT ON TABLE public.res_www_ini TO anonymous;
+
+
+--
+-- Name: TABLE sub_www; Type: ACL; Schema: public; Owner: obi
+--
+
+GRANT SELECT,INSERT,UPDATE ON TABLE public.sub_www TO anonymous;
+
+
+--
+-- Name: TABLE sub_www_ini; Type: ACL; Schema: public; Owner: obi
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.sub_www_ini TO anonymous;
+
+
+--
+-- Name: SEQUENCE sub_www_ini_sub_id_seq; Type: ACL; Schema: public; Owner: obi
+--
+
+GRANT SELECT,UPDATE ON SEQUENCE public.sub_www_ini_sub_id_seq TO anonymous;
+
+
+--
+-- Name: SEQUENCE sub_www_sub_id_seq; Type: ACL; Schema: public; Owner: obi
+--
+
+GRANT ALL ON SEQUENCE public.sub_www_sub_id_seq TO anonymous;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -1,0 +1,20 @@
+  <h2>Veja também</h2>
+  {% load flatpages %}
+  <ul>
+    <li>Semana Olímpica OBI2020/2021
+      <ul>
+        <li><a href="{% url 'week:index' %}">Informações</a></li>
+        <li><a href="{% url 'week:partic' %}">Participantes confirmados</a></li>
+      </ul>
+    <li>Seletiva para IOI2022
+      <ul>
+        <li><a href="{% url 'week:info_seletiva' %}">Informações</a></li>
+      </ul>
+    <li>Quadros de Medalhas
+      <ul>
+        {% get_flatpages '/resultados/qmerito' as flatpages_qmerito %}
+        {% for page in flatpages_qmerito %}
+             <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+  </ul>

@@ -1,0 +1,20 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+
+{% block title %} {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  {{ flatpage.title }}
+{% endblock %}
+
+  {% block content %}{{ flatpage.content }}{% endblock %}
+  
+{% block content-related %}
+
+  {% include "includes/see_also_result.html" %}
+
+{% endblock %}
+
+
+

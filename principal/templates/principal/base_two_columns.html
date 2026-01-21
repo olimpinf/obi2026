@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load obi_extras %}
+{% load static %}
+
+{% block header_class %}header-inner-pages{% endblock %}
+
+{% block authenticated %}
+<section id="authenticated" class="authenticated {% if user.is_authenticated %}black{% endif %}">
+  <div class="container align-items-center">
+	{% if user.is_authenticated %}
+	<div class="is-authenticated float-end align-bottom light-gray"> 
+	  Autenticado como {{ user.last_name }}
+	  <a href={% if request.user.compet %}"/compet"{% else %}"/restrito"{% endif %}>
+	    <img class="ms-2" src="{% static 'assets/img/icon-home-yellow.svg' %}" height="20px">
+	  </a> 
+	</div>
+	{% endif %}
+      <div class="not-authenticated">27<sup><u>a</u></sup> Olimpíada Brasileira de Informática</div>
+  </div>
+</section>
+{% endblock%}
+
+{% block breadcrumbs %}
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <div class="container-fluid p-0">
+	<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+	  </button>
+	  {{ message }}
+	</div>
+      </div>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    
+    <ol>
+      {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <li><a href="{{ p.0 }}">{{ p.1|safe }}</a></li>
+      {% endfor %}
+      {% comment %}
+      {% if flatpage.url == '/info/ementa/geral/' %}
+      <li>{{flatpage.title}}  Modalidade Programação</li>
+      {% else %}
+      {% endif %}
+      <li>{% block pagetitle %}{% endblock %} {{ flatpage.title }}</li>
+      {% endcomment %}
+      {% endwith %}
+    </ol>
+    
+    <h2>{% block header %}{% endblock %}</h2>
+    
+  </div>
+</section><!-- End Breadcrumbs -->
+{% endblock %}
+
+{% block main %}
+<section class="inner-page">
+  <div class="container">
+    <div class="row content">
+      <div class="col-xl-8 col-md-12 align-items-stretch"> {#  data-aos="zoom-in" data-aos-delay="100"> #}
+	{% block content %}{% endblock %}
+      </div>
+      <div class="col-xl-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+	  {% block content-related %}{% endblock %}
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+    
+{% block footer_extra %}
+{% endblock %}
+

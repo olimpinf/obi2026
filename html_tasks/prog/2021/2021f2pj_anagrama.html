@@ -1,0 +1,124 @@
+title:Anagrama
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma palavra A é um <i>anagrama</i> de outra palavra B se podemos
+transformar a palavra A na palavra B apenas trocando de posição as
+letras da palavra A. Por exemplo, &quot;iracema&quot; é um anagrama de
+&quot;america&quot;, e &quot;estudo&quot; é um anagrama de
+&quot;duetos&quot;.
+
+<p>Podemos estender o conceito de anagramas para frases, desconsiderando
+caracteres que não são letras e apenas separam as palavras da
+frase. Assim, por exemplo, &quot;porta coral&quot; é um anagrama de
+&quot;claro trapo&quot;.  Também não é necessário que a palavra exista
+em alguma língua: &quot;aca aaa bb b&quot; é um anagrama de
+&quot;ba.ba,aab ac&quot;.
+
+<p>Dadas duas frases, escreva um programa para determinar se elas são anagramas.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N,
+indicando o número de letras e espaços das frases.
+As duas linhas seguintes contêm respectivamente a frase A e
+a frase B, cada linha contendo exatamente N caracteres, entre
+letras, espaços em branco, vírgulas e pontos.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um único
+caractere, que deve ser <span class="ttt">S</span> se a frase for um
+anagrama ou <span class="ttt">N</span> caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  200
+<li> Os únicos caracteres em A e B são letras minúsculas, espaços em
+branco, vírgulas e pontos.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+11
+porta coral
+claro trapo
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+a
+b
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12
+aca aaa bb b
+ba.ba,aab ac
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+ a
+aa
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

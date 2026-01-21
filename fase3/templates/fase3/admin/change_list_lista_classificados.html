@@ -1,0 +1,47 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_urls static admin_list %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{{ cl.opts.app_config.verbose_name }}</a>
+&rsaquo; Lista Classificados
+</div>
+{% endblock %}
+
+{% block content_title %}<h1>Lista Classificados</h1>{% endblock %}
+
+      {% block filters %}
+        {% if cl.has_filters %}
+          <div id="changelist-filter">
+            <h2>{% trans 'Filter' %}</h2>
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+	    <h2>Instruções</h2>
+	    <ul>
+	    <!--li>A lista mostra os competidores classificados considerando as pontuações inseridas até o momento.
+	    <li>A lista será divulgada ao público no dia 23/5/2018; no momento ela está disponível apenas para os Coordenadores.</li-->
+	    <!--li>A classificação é por modalidade e por nível. Em cada escola, os 30% melhores colocados de cada modalidade e nível são classificados para a Fase Estadual.</li-->
+	    <li>Você pode restringir a lista de competidores
+utilizando o campo de pesquisa: digite parte de um nome de competidor
+no campo de pesquisa e clique no botão "Pesquisar".</li>
+	    <li>Você pode também restringir a lista de competidores selecionando
+um <b>Filtro</b> da lista de filtros acima (por exemplo para mostrar apenas
+competidores de um único nível), clicando em no nível desejado
+(<i>Iniciação Júnior</i>, <i>Programação 2</i>, etc. ou
+<i>Todos</i>).</li>
+	    <li>Para gerar a lista de emails dos competidores da sede
+	    (para enviar mensagens sobre o local de prova, por
+	    exemplo) selecione os competidores clicando no quadradinho
+	    de seleção (mais à esquerda da lista). Após selecionar os
+	    competidores, escolha a Ação (menu de seleção no alto da
+	    lista) e clique no botão "Aplicar". Note que nem todos os
+	    competidores tiveram o seu email cadastrado pela
+	    escola. Você pode também gerar a lista dos coordenadores
+	    das escolas dos competidores selecionados.
+	    </ul>
+
+
+          </div>
+        {% endif %}
+      {% endblock %}
+

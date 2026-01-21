@@ -1,0 +1,252 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Professores{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Professores</h2>
+
+<p>Os professores da Semana Olímpica da OBI2025 são craques!
+Totalizando as medalhas recebidas, os professores deste ano somam 11
+medalhas da IOI (Olimpíada Internacional de Informática), 2 medalhas
+da EGOI (Olimpíada Européia de Informática para Meninas), 21 medalhas
+na OII (Olimpíada Iberoamericana de Informática) e 42 medalhas na OBI.
+
+  
+<h4>Modalidade Iniciação</h4>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/arthur_lobo.jpg" width=200>
+    </td>
+    <td><b>Arthur Lobo Leite Lopes</b><br>
+      Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 1 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/juliana_borin.jpg" width=200>
+    </td>
+    <td><b>Juliana Borin</b><br>
+      Instituto de Computação - Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 2 %}">certificado</a>]
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<h4>Programação Nível Júnior</h4>
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/pedro_ferreira.jpg" width=200>
+    </td>
+    <td><b>Pedro César Mesquita Ferreira</b><br>
+      Instituto de Computação - Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 3 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/enzo_dantas.jpg" width=200>
+    </td>
+    <td><b>Enzo Dantas</b><br>
+      Instituto de Computação - Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 4 %}">certificado</a>]
+    </td>
+  </tr>
+
+</table>
+
+<p>&nbsp;</p>
+<h4>Programação Nível 1</h4>
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/daniel_hosomi.jpg" width=200>
+    </td>
+    <td><b>Daniel Yuji Hosomi</b><br>
+      Instituto de Computação - Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 5 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/fernando_graminholi.jpeg" width=200>
+    </td>
+    <td><b>Fernando Graminholi Gonçalves</b><br>
+      USP<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 6 %}">certificado</a>]
+    </td>
+  </tr>
+
+  
+</table>
+
+<p>&nbsp;</p>
+<h4>Programação Nível 2 e Seletiva</h4>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/andre.jpg" width=200>
+    </td>
+    <td><b>André Amaral de Sousa</b><br>
+      Colégio Etapa<br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 7 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/arthur_lobo.jpg" width=200>
+    </td>
+    <td><b>Arthur Lobo Leite Lopes</b><br>
+      Colégio Farias Brito - Fortaleza<br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 1 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/arthur_nascimento.jpg" width=200>
+    </td>
+    <td><b>Arthur Ferreira do Nascimento</b><br>
+      Matemática - IME/USP<br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 9 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/caique_paiva.jpg" width=200>
+    </td>
+    <td><b>Caique Paiva</b><br>
+      Engenharia da Computação - IC/UNICAMP<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 10 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/filipe_lalic.jpg" width=200>
+    </td>
+    <td><b>Filipe de Souza Lalic</b><br>
+      Ciência da Computação - IC/Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 11 %}">certificado</a>]
+    </td>
+  </tr>
+
+  
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/leonardo_nascimento.jpg" width=200>
+    </td>
+    <td><b>Leonardo Valente Nascimento</b><br>
+      Ciência da Computação - IC/Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 12 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/luana_amorim.jpg" width=200>
+    </td>
+    <td><b>Luana Amorim</b><br>
+      Ciência da Computação - IC/Unicamp<br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 13 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/mateus_bezrutchka.jpg" width=200>
+    </td>
+    <td><b>Mateus Bezrutchka</b><br><br>
+      [<a href="{% url 'week:emite_certificado' 'setter' 14 %}">certificado</a>]
+    MIT
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/naim.jpg" width=200>
+    </td>
+    <td><b>Naim Shaikhzadeh Santos</b><br>
+      Engenharia da Computação - IC/UNICAMP<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 15 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/pedro_assuncao.jpg" width=200>
+    </td>
+    <td><b>Pedro Henrique Assunção</b><br>
+      Engenharia da Computação - IC/UNICAMP<br>
+      [<a href="{% url 'week:emite_certificado' 'professor' 16 %}">certificado</a>]
+    </td>
+  </tr>
+
+</table>
+
+
+<p>&nbsp;</p>
+<h4>Participação Remota</h4>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+{% comment %}
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/emanuel.jpg" width=200>
+    </td>
+    <td><b>Emanuel Juliano Morais Silva</b><br>
+      Ciência da Computação - DCC/UFMG
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/heitor_leite.jpg" width=200>
+    </td>
+    <td><b>Heitor Gonçalves Leite</b><br>
+      Ciência da Computação - DCC/UFMG
+    </td>
+  </tr>
+
+{% endcomment %}
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_professores/rafael_nascimento.jpg" width=200>
+    </td>
+    <td><b>Rafael Nascimento Soares</b><br>
+      Carnegie Mellon University - EUA
+    </td>
+  </tr>
+
+
+</table>
+
+
+<p>&nbsp</p>
+
+
+{% endblock %}
+
+{% block content-related %}
+
+{% include "week/includes/see_also.html" %}
+
+{% endblock %}

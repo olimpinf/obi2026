@@ -1,0 +1,27 @@
+{{ greetings }}
+
+     {{ compet.compet_name}}
+
+você está recebendo esta mensagem porque está classificad{{ suffix }} para a Fase 2 (Fase Estadual) da Olimpíada Brasileira de Informática (OBI{{ year }}).
+
+Esta mensagem é apenas um lembrete de que a prova da Fase 2 da Modalidade Iniciação ocorre na próxima quarta-feira, dia 9 de agosto.
+
+A prova deve ser feita na escola, sob supervisão. Consulte o professor Coordenador da OBI{{ year }} na sua escola para saber o horário da prova na sua escola. O professor Coordenador da OBI{{ year }} na sua escola é:
+
+    Prof(a). {{compet.compet_school.school_deleg_name }}
+
+
+Lembramos que a prova deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, anotações pessoais...). 
+
+Os resultados serão divulgados na sua página pessoal na OBI2023. Para acessar sua página pessoal, utilize o link "ACESSO COMPETIDORES" no cabeçalho da página da OBI2023 (https://olimpiada.ic.unicamp.br/compet/) 
+
+usando para autenticar-se:
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+
+
+Boa prova!
+
+
+{% include 'includes/signature.html' %}

@@ -1,0 +1,95 @@
+title:Mesa redonda
+template:tasks/tarefa_programacao.html
+
+<p>
+Ana, Beatriz e Carolina sempre saem juntas para tomar café numa
+padaria onde as mesas são circulares e têm três cadeiras numeradas
+0, 1 e 2, no sentido anti-horário, como ilustrado na figura ao lado.
+
+<p>
+Elas gostam de decidir quem vai sentar em qual cadeira com uma
+brincadeira gerando números aleatórios nos seus
+celulares. Primeiro Ana sorteia um número inteiro A e, começando
+da cadeira 1, seguindo no sentido anti-horário, conta A cadeiras
+e senta na cadeira em que a contagem terminar. Depois Beatriz sorteia um
+número B e faz a mesma coisa: começando da cadeira 1, no sentido anti-horário,
+conta B cadeiras. Se a cadeira final estiver livre, Beatriz senta nela.
+Caso seja a cadeira onde Ana está sentada, então Beatriz senta na próxima cadeira
+no sentido anti-horário. Claro, ao final, Carolina senta na cadeira que
+estiver livre.
+
+<div class="center">
+<img src="/static/img/task_images/2019f3pu_mesa.png" />
+</div>
+
+<p>
+Por exemplo, se Ana sortear 8, ela vai contar [1,2,0,1,2,0,1,2] e
+sentar na cadeira 2. Depois, se Beatriz sortear 6, ela vai contar
+[1,2,0,1,2,0] e sentar na cadeira 0. Assim, Carolina senta na
+cadeira 1. Num outro exemplo, se Ana sortear 3, ela vai contar
+[1,2,0] e sentar na cadeira 0. Depois, se Beatriz sortear 9, ela
+vai contar [1,2,0,1,2,0,1,2,0] e, como Ana já está sentada na cadeira 0,
+Beatriz senta na cadeira 1. Dessa forma, Carolina senta na
+cadeira 2.
+
+<p>
+Neste problema, dados os números sorteados por Ana e Beatriz, seu programa
+deve imprimir o número da cadeira onde Carolina vai sentar.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro A representando o
+número sorteado por Ana. A segunda linha da entrada contém um inteiro
+B representando o número sorteado por Beatriz.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma linha contendo um número inteiro
+indicando a cadeira onde Carolina vai sentar.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  A &leq;  1000
+<li> 1 &leq;  B &leq;  1000
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

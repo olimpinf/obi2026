@@ -1,0 +1,42 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block header %}
+Saci
+{% endblock %}
+{% block content %}
+<h2>Curso de Introdução à Programação de Computadores</h2>
+<p>Este curso é destinado a iniciantes em programação de computadores. Completando
+  o curso, você será capaz de resolver os problemas da OBI da modalidade Programação
+  Nível Júnior (e também os problemas mais simples da modalidade Programação
+  Níveis 1 e 2).
+<ul>
+  <li><a href="1">Aula 1 - Introdução</a>
+  <li><a href="2">Aula 2 - O primeiro programa, com o comando de escrita printf</a>
+  <li><a href="3">Aula 3 - Mais sobre o comando de escrita printf</a>
+  <li><a href="4">Aula 4 - Declaração de variáveis e comando de atribuição</a>
+  <li><a href="5">Aula 5 - Comando de leitura scanf</a>
+  <li><a href="6">Aula 6 - O comando condicional if</a>
+  <li><a href="7">Aula 7 - Mais sobre o comando condicional if</a>
+  <li><a href="8">Aula 8 - O tipo cadeia de caracteres</a>
+  <li><a href="9">Aula 9 - Comando de repetição while</a>
+  <li><a href="10">Aula 10 - Valores inteiros e o tipo booleano</a>
+  <li><a href="11">Aula 11 - Algumas técnicas de programação e três desafios</a>
+  <li><a href="12">Aula 12 - Comandos de repetição encaixados</a>
+  <li><a href="13">Aula 13 - Comando de repetição for e comando break</a>
+  <li><a href="14">Aula 14 - O tipo vetor</a>
+</ul>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+  
+  {% block browse-wrapper %}
+  {% include "saci/includes/course_menu.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

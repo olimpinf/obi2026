@@ -1,0 +1,30 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:index' %}">Fase 2</a>
+&rsaquo; Cadernos de Tarefas
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+  <div id="content-main">
+
+<h1>Erro</h1>
+<p>
+{{ msg }}
+
+<p>&nbsp</p>
+<a class="button action" href="javascript: history.go(-1)">VOLTAR</a>
+<p>&nbsp</p>
+<hr>
+  </div>
+{% endblock %}

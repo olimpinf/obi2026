@@ -1,0 +1,12 @@
+name: "2020f1pj_camisetas"
+title: "Camisetas da Olimpíada"
+memory_limit: 1024
+time_limit: 0.1
+token_mode: disabled
+public_testcases: all
+primary_language: "pt"
+infile: ""
+outfile: ""
+public_testcases: "all"
+score_mode: "max_subtask"
+min_submission_interval: 60

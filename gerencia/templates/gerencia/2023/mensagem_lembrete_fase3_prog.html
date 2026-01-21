@@ -1,0 +1,60 @@
+{{ greetings }} {{ compet.compet_name }}
+
+você está recebendo esta mensagem porque está classificad{{ suffix }} para a Fase 3 (Fase Nacional) da Olimpíada Brasileira de Informática (OBI{{ year }}).
+
+Esta mensagem é apenas um lembrete de que as provas da Fase 3 da Modalidade Programação ocorrem no sábado, dia 01 de outubro de 2022.
+
+A prova deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, programas que você mesmo tenha feito anteriormente, arquivos de computador...), mas você pode consultar o manual da linguagem de programação que você estiver usando. Confiamos no seu "espírito olímpico" para obedecer a essas regras!
+
+Antes de se dirigir ao local de prova, consulte as informações sobre a sua sede em:
+
+https://olimpiada.ic.unicamp.br/fase3/consulta_sua_sede
+
+Pedimos especial atenção para caso a sua sede tenha preenchido o campo "Outras Informações". Por conta das eleições, alguns coordenadores de sede requisitaram alterações no horário de prova em caráter excepcional.
+
+A prova será feita utilizando o Ambiente de Prova da OBI (o mesmo que foi usado nas Fases 1 e 2). Para acessar a Prova da Fase 3 acesse sua página pessoal na OBI{{ year }}, através link "ACESSO COMPETIDORES" da página da OBI{{ year }}:
+
+https://olimpiada.ic.unicamp.br/compet
+
+usando para isso o login
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+
+O usuário do Ambiente de Prova é o mesmo, mas a senha será entregue pelo Coordenador da sede.
+
+Leia também as instruções ao final desta mensagem.
+
+Boa prova!
+
+**********
+INSTRUÇÕES
+**********
+
+* Para realizar a prova você deve ter acesso a um ambiente para
+  desenvolvimento de programas de computador, para a linguagem de
+  programação de sua preferência (entre C, C++, Python, Java ou
+  Javascript).
+
+* Compile e execute a sua solução no seu ambiente de desenvolvimento
+  antes de submetê-la, com testes criados por você mesmo (usando como
+  base os Exemplos de Entrada da tarefa); não use o Ambiente de
+  Prova como ambiente de testes.
+
+* Obedeça estritamente o formato de saída especificado no enunciado da
+  tarefa. Em particular, não escreva na saída antes de fazer a leitura
+  da entrada. Ou seja, não escreva frases como "Entre com o valor de N:",
+  pois isto viola o formato de saída especificado.
+
+* Veja exemplos de programas nas diferentes linguagens, com indicações
+   de como os comandos de entrada e saída devem ser usados em cada
+   linguagem no link https://olimpiada.ic.unicamp.br/pratique/pj/
+
+* A prova é individual e sem consulta a qualquer material. Você pode
+  usar caneta, lápis, papel em branco, borracha e régua. Você pode
+  consultar o manual da linguagem de programação que estiver usando.
+
+* Não divulgue ou comente as tarefas da prova com outros competidores
+  até o término do período de aplicação da prova.
+    
+{% include 'includes/signature.html' %}

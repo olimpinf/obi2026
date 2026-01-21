@@ -1,0 +1,43 @@
+variables_set,saci_input_int,variables_set,saci_input_int,controls_if,logic_compare,variables_get,math_number,variables_set,math_number,controls_if,logic_compare,variables_get,math_number,variables_set,math_number,saci_text_print,variables_get,saci_text_print,variables_get
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas seu programa não está produzindo o resultado correto.
+Verifique se selecionou corretamente as operações de comparação nos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_logic_compare.png" height="45px"/>.
+Verifique também que está escrevendo na saída primeiro a nota da Prova 1 e depois a nota da Prova 2.
+Leia novamente o enunciado e corrija sua solução. Falta muito pouco!
+<br>
+
+@variables_set,saci_input_int,variables_set,saci_input_int
+
+OK, você está no caminho certo, está usando os blocos corretos para
+ler os valores da entrada.  Agora precisa usar o bloco de execução
+condicional 
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para aumentar ou diminuir as notas lidas, conforme o
+enunciado.
+<br>
+
+@variables_set,saci_input_int
+
+Você está no caminho certo, já montou 
+os blocos corretos para ler da entrada o valor da nota da Prova 1. Agora precisa montar
+os blocos para ler da entrada o valor da nota da Prova 2.
+Depois precisa usar dois blocos
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para aumentar ou diminuir as notas das provas, conforme o enunciado.
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar criando duas variáveis, uma para armazenar a nota da Prova 1,
+outra para armazenar a nota da Prova 2.
+<p>
+Para criar uma variável clique no menu <b>Variáveis</b> da Barra de Ferramentas,
+depois clique no botão "Crie variável..." e escolha um nome para a variável.
+<br>
+Depois você precisa usar um bloco de execução condicional
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para aumentar a nota da Prova 1 se esta for maior do que ou igual a 85, e outro
+bloco de execução condicional para diminuir a nota da Prova 2 se esta for menor do que ou igual a 30.
+<br>

@@ -1,0 +1,132 @@
+title:Dona Formiga
+template:exams/tarefa_programacao.html
+order:1
+<p>
+Dona Formiga é uma ótima trabalhadora e todos os dias coleta muitas
+folhas para seu formigueiro. Mas no final de semana, quando todas as
+outras formigas estão descansando, ela gosta de se divertir
+escorregando pelos túneis do formigueiro.
+
+<p>O formigueiro de Dona Formiga tem muitos túneis e salões. Cada túnel
+conecta exatamente dois salões diferentes. Cada salão está em uma
+altura no formigueiro. Se existe um túnel ligando um salão I a
+um salão J e o salão I está a uma altura maior
+do que o salão J, então Dona Formiga pode escorregar do salão I
+para o salão J usando esse túnel.
+
+<p>Dados o mapa dos túneis do formigueiro, as alturas em que estão
+os salões e o salão de onde Dona Formiga quer partir,
+escreva um programa para determinar o maior número
+de salões que ela pode visitar (não contando o salão
+do qual ela parte), usando túneis exclusivamente
+para escorregar entre os salões.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém três inteiros
+S, T e P, respectivamente o número de salões, o número de túneis
+e o salão do formigueiro do qual Dona Formiga quer partir.
+Os salões são numerados de 1 a S. A segunda linha contém S números
+inteiros A<sub>i</sub>, a altura em que o salão i está no formigueiro. Cada
+uma das T linhas seguintes contém dois inteiros I e J, indicando
+que há um túnel entre o salão I e o salão J.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um
+único inteiro, o maior número de salões que Dona Formiga pode visitar
+(não contando o salão do qual ela parte), usando os túneis
+exclusivamente para escorregar entre os salões do formigueiro.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  S  &leq;  200
+<li> 1  &leq;  T  &leq;  S &times; (S-1)/2
+<li> 1  &leq;  P  &leq;  S
+<li> -1000  &leq;  A<sub>i</sub>  &leq;  1000 para 1  &leq;  i  &leq;  S
+<li> 1  &leq;  I < J  &leq;  S
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, 1  &leq;  S  &leq;  10.
+<li> Para um conjunto de casos de testes valendo 80 pontos adicionais, nenhuma restrição adicional.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 2
+100 150 -50 200
+1 2
+2 4
+1 4
+3 4
+1 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 3
+100 150 -50 200
+1 2
+2 4
+1 4
+3 4
+1 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 4
+100 150 -50 200
+1 2
+2 4
+1 4
+3 4
+1 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

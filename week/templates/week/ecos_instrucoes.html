@@ -1,0 +1,110 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica{% endblock %}
+
+{% block header %}<h1>Semana Olímpica - Instruções para uso do Sistema ECOS/SBC</h1>{% endblock %}
+
+{% block content %}
+<p>
+<h1>Instruções</h1>
+
+<ol>
+  <li>Acesse a página Central de Sistemas da SBC: <span class="ttt"><a href="https://centraldesistemas.sbc.org.br">https://centraldesistemas.sbc.org.br</a></span>
+  </li>
+  <li>Crie uma conta de usuário:
+    <ol>
+      <li>na página da Central de Sistemas, clique em "Contas":<br/>
+    <img src="/static/assets/img/semana/semana-criar-cadastro.png" width="90%"><br/> A conta de usuário deve ser criada pelo
+    responsável pelo pagamento da Taxa de Ressarcimento (pai, mãe,
+    professor ou responsável na escola). A conta pode ser aberta no
+    nome de uma <b>pessoa física</b> ou <b>pessoa jurídica</b>. Após a
+    criação da conta, o usuário poderá efetuar o pagamento de um ou
+    mais alunos(as) e/ou acompanhantes pagos, e poderá solicitar Nota
+    Fiscal (mesmo se o cadastro for feito como pessoa física, será
+    possível solicitar a Nota Fiscal em nome de pessoa jurídica).
+      <li>Preencha os dados solicitados. Note que nos campos CPF, CNPJ e RG são aceitos apenas números (sem hífen ou espaços em branco):<br/>
+	<img src="/static/assets/img/semana/semana-novo-cadastro.png" width="90%"><br/>
+	{% comment %}
+	<a href={% url "week:ecos_instituicoes" %}>Clique aqui para ver o nome de sua escola cadastrado que deve ser utilizado no campo Instituição/Universidade</a>.<br/> 
+	{% endcomment %}
+	Após preencher o formulário, clique no botão "Enviar".
+      <li>Se tudo estiver correto uma mensagem aparecerá no topo de página:<br/>
+	<img src="/static/assets/img/semana/semana-sucesso-cadastro.png" width="90%"><br/>
+    </ol>
+    <li>Após o cadastro, confira se está autenticado (deveria, mas se não estiver faça o login com os dados da conta que você acabou de criar, ou seja, usuário e senha informados no formulário): <br/>
+	<img src="/static/assets/img/semana/semana-topo-autenticado.png" width="90%"><br/>
+    <li>Clique no botão ECOS. <br/>
+	<img src="/static/assets/img/semana/semana-ecos.png" width="90%"><br/>
+    <li>Na lista de eventos com inscrições abertas, selecione "Semana Olímpica da OBI2024". Note que pode ser necessário
+      ir para a próxima página da lista de eventos, pois são muitos eventos: <br/>
+	<img src="/static/assets/img/semana/semana-obi.png" width="90%"><br/>
+    <li>Escolha a "Categoria" do "participante principal". Pode ser qualquer das duas categorias mostradas, pois será possível incluir outros participantes nesta mesma "inscrição":<br/>
+	<img src="/static/assets/img/semana/semana-categoria.png" width="90%"><br/>
+    <li>Se o pagamento é para mais de um participante, além do "participante principal" acima,
+      preencha também a seção "Extras", informando o número de
+      participantes EXTRAS, nas diferentes categorias, que estão inclusos
+      neste pagamento.  Ou seja, se é o pagamento de apenas um aluno
+      convidado (participante principal), o campo Extras deve informar "0" em todas as linhas;
+      se o pagamento é professor acompanhante em quarto single (participante principal) mais
+      dois alunos, o campo Extras deve informar "2" na linha "Aluno
+      convidado participante da Semana Olímpica" e "0" nas demais linhas.
+	<img src="/static/assets/img/semana/semana-extras.png" width="90%"><br/>
+    <li>Abaixo do campo Extras o sistema informa o total a ser pago (o exemplo abaixo mostra o cálculo para dois alunos e um professor em quarto single, com o professor como "participante principal"): <br/>
+	<img src="/static/assets/img/semana/semana-total.png" width="90%"><br/>
+
+    <li>Importante: na seção "Lista de Convidados" liste o nome completo de TODOS os participantes da Semana Olímpica que estão inclusos neste pagamento (alunos e acompanhantes). Para incluir um participante na lista, clique no sinal "+" no topo da Lista de Convidados e preencha o nome do participante.
+ <br/>
+	<img src="/static/assets/img/semana/semana-lista-convidados.png" width="90%"><br/>
+	<img src="/static/assets/img/semana/semana-lista-convidados2.png" width="90%"><br/>
+    <li>Escolha a forma de pagamento.
+    <li>Clique no botão "Salvar Inscrição":
+      <img src="/static/assets/img/semana/semana-salvar-inscricao.png" width="90%"><br/>
+    <li>Após salvar a inscrição será possível efetuar o pagamento:
+      <img src="/static/assets/img/semana/semana-pagamento.png" width="90%"><br/>
+      Siga as instruções, que dependem da forma de pagamento escolhida.
+    <li>Antes de efetuar o pagamento, é possível cancelar a inscrição a qualquer momento:
+      <img src="/static/assets/img/semana/semana-cancelamento.png" width="90%"><br/>
+    <li>Após efetuar o efetuar o pagamento também é possível cancelar a inscrição, mas note por favor a política de ressarcimento: <em>Até dia 18/11/2024 pode-se fazer uma devolução de 80% do valor pago pela inscrição. Após esta data não haverá devolução de qualquer valor pago, pelos compromissos assumidos com hospedagem, alimentação, transporte, etc. Para solicitar o cancelamento, enviar a solicitação para faturamento@sbc.org.br.</em>
+      
+</ol>
+
+{% comment %}
+<h3>Boleto para pagamento por pessoa jurídica (CNPJ)</h3>
+<p>
+  Para geração de boleto em nome de pessoa jurídica, é necessário escolher "Faturamento" como forma de pagamento, e então enviar uma mensagem para
+
+  <center>
+    faturamento@sbc.org.br
+  </center>
+
+  informando:
+  <ul>
+    <li>Evento (que deve ser "Semana Olímpica da OBI2024")
+    <li>Nome do(s) inscrito(s) no evento;
+    <li>Razão Social;
+    <li>CNPJ;
+    <li>Endereço;
+  </ul>
+{% endcomment %}
+  
+<h3>Nota Fiscal</h3>
+<p>
+  Solicitações de nota fiscal devem ser feitas para Samuel no e-mail faturamento@sbc.org.br, contendo as seguintes informações:
+  <ul>
+    <li>Nome do(s) inscrito(s) no evento;
+    <li>Nome da instituição;
+    <li>CNPJ (ou CPF);
+    <li>Endereço;
+    <li>Outras informações que forem necessárias para a confecção da sua NF.
+  </ul>
+
+{% endblock %}
+
+
+  
+{% block content-related %}
+
+  {% include "week/includes/see_also.html" %}
+
+{% endblock %}

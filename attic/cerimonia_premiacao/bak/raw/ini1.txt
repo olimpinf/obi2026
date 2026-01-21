@@ -1,0 +1,21 @@
+1	1	9154	Júlia Viana de Castro	Colégio Militar de Fortaleza	Fortaleza	CE
+2	2	9029	Davi Bruno Azevedo	Ari de Sá Cavalcante Aldeota	Fortaleza	CE
+2	3	9000	Joel Gontijo Mazoni	Colégio Magnum	Belo Horizonte	MG
+3	3	9000	Maria Elaine de Holanda Cavalcante	Colégio Farias Brito Central	Fortaleza	CE
+3	5	8554	Luis Miguel Nunes Matos	Colégio Santa Cecília	Fortaleza	CE
+4	6	8437	Luiz Carlos Machado Ferreira	Colégio Pedro Ii Campus Centro	Rio de Janeiro	RJ
+4	9	8091	Alan Mesquita Rios	Colégio Christus	Fortaleza	CE
+5	9	8091	Guilherme Tokio Kawahara	Colégio Bandeirantes	São Paulo	SP
+5	9	8091	João Victor Alves Camilo	Colegio Master	Fortaleza	CE
+6	12	8062	Gabriel Aragão Silva	Colégio Farias Brito Central	Fortaleza	CE
+6	14	7875	Fabrícia Cardoso Marques	Ari de Sá Cavalcante - Sede Washington Soares	Fortaleza	CE
+7	15	7870	Davi Castro Martins de Oliveira Teofilo	Ari de Sá Cavalcante Aldeota	Fortaleza	CE
+7	16	7837	Felipe Reges de Albuquerque	Ari de Sá Cavalcante - Sede Washington Soares	Fortaleza	CE
+8	18	7750	Bruno Nieri Nunes	Centro Educacional Edelweiss	Mogi Mirim	SP
+8	18	7750	Rodrigo Salgado Domingos Porto	Colegio Militar do Rio de Janeiro	Rio de Janeiro	RJ
+9	22	7687	Analissa Castelo Branco Dantas	Colégio Militar de Fortaleza	Fortaleza	CE
+9	24	7654	Rafael Bezerra Barroso	Colégio Santa Cecília	Fortaleza	CE
+
+10	28	7500	Ana Carolina Esteves Pereira	Organização Educacional Farias Brito Seis Bocas	Fortaleza	CE
+11	29	7495	Washington Renato Teles Silva	Colégio Farias Brito Central	Fortaleza	CE
+11	31	7466	João Arthur Marques Linhares	Colégio Christus	Fortaleza	CE

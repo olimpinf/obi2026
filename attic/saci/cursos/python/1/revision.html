@@ -1,0 +1,175 @@
+<h2>Introdução</h2>
+
+<h3>Objetivo do curso</h3>
+
+<p>O objetivo do curso aprender a resolver problemas utilizando o computador; mais especificamente,
+vamos aprender a escrever programas para resolver tarefas usando o computador. Para isso, vamos
+  usar uma linguagem de programação muito usada hoje em dia: Python.
+</p>
+<p>Inicialmente vamos usar <em>Blockly</em>, uma biblioteca do Google para construir
+  linguagens de programação amigáveis para iniciantes. Aos poucos, iremos fazendo a transição
+  de Blockly para Python, de modo que ao final do curso você poderá programar em Python.
+</p>
+
+<h3>Algoritmo e programa</h3>
+<p>Um <em>algoritmo</em> é um procedimento composto por uma sequência de instruções (descrições
+de ações) precisas, que a partir de uma <em>entrada</em> (conjunto de dados)  produz
+uma <em>saída</em> (outro conjunto de dados, que é o resultado da execução
+do algoritmo).</p>
+
+<p>Um <em>programa de computador</em> é um algoritmo
+escrito em uma linguagem que um computador entende (chamada de linguagem
+de programação).</p>
+
+<p>O mais importante na resolução de um problema é encontrar um algoritmo
+correto e eficiente. Depois de encontrado o algoritmo, a tradução para
+uma linguagem de programação é relativamente simples. O importante é o algoritmo
+(a solução); a linguagem de programação é apenas uma ferramenta.</p>
+
+<h3>Linguagens de programação</h3>
+
+<p>Uma linguagem de programação define <em>comandos</em> que podem ser
+usados para construir programas. Cada linguagem tem um conjunto
+específico de comandos e de regras de contrução, mas não é preciso
+conhecer todos os comandos e todas as regras para começar a
+programar. Ao longo do curso vamos aprender  comandos e regras de Python.</p>
+
+<h3>Ambiente de programação</h3>
+
+<p>Um <em>ambiente de programação</em> é um programa de computador que
+nos permite criar, editar e executar nossos próprios programas de computador.
+Neste curso vamos utilizar um ambiente de programação desenvolvido especialmente
+para a aprendizagem de programação, chamado Saci. Ele pode ser executado
+em qualquer computador ou tablet, usando um navegador internet (como Firefox,
+Explorer, Safari, Opera ou outros).
+
+<p>O ambiente Saci está disponível em
+
+<a href="https://olimpiada.ic.unicamp.br/saci">https://olimpiada.ic.unicamp.br/saci</a>
+
+<p>Cada aula é apresentada em uma página web com quatro abas:
+  <ul>
+    <li>a aba Aula apresenta o vídeo da aula
+    <li>a aba Revisão apresenta um resumo, em texto, do conteúdo da aula
+    <li>a aba Desafio descreve um problema a ser resolvido usando o conteúdo dessa
+      aula e de aulas anteriores
+    <li>a aba Editor é o ambiente de programação onde você deve
+      desenvolver o programa para resolver o desafio dessa aula.
+  </ul>
+
+<p>A figura abaixo mostra um programa sendo desenvolvido na aba <em>Editor</em>:
+  <center>
+    <img src="/static/saci/blockly_images/saci_tab_program.png" width="60%"/>
+  </center>
+  
+<h3>Blockly</h3>
+<p>Neste curso vamos também usar <em>Blockly</em>, uma biblioteca do
+Google para construir linguagens de programação amigáveis para
+iniciantes. Com <em>Blockly</em>, os programas são escritos usando uma
+interface gráfica com blocos que se encaixam com outros blocos, sem
+necessidade de escrever o programa como um texto. <em>Blockly</em>
+facilita o desenvolvimento de programas porque limita os erros na
+construção do programa (<em>erros de sintaxe</em>), permitindo que o
+usuário se concentre na solução do problema, e não na linguagem de
+programação.
+
+<p>Você pode alternar entre a programação em Blockly e a programação
+  em Python a qualquer momento, usando o botão Blockly/Python <img align="bottom" src="/static/saci/css/images/icon-blockly-white.png" height="25px" style="background:#000000">:
+
+  <center>
+    <img src="/static/saci/blockly_images/saci_tab_program_button_blockly.png" width="60%"/>
+  </center>
+
+<p>A figura abaixo mostra um exemplo de um programa em Blockly, e
+o programa correspondente em Python. 
+  <table style="width:50%; margin-left:25%; margin-right:25%">
+    <tr>
+      <td>
+	<img src="/static/saci/blockly_images/saci_blockly_example.png" width="90%"/>
+      </td>
+      <td>
+	<pre style="background-color:#eeeeee;padding:4px">
+nome = input()
+pontos = int(input())
+if pontos >= 1500:
+    pontos = pontos + 150
+print(nome)
+print(pontos)
+</pre></td>
+    </tr>
+    </table>
+
+<h3>Mostrando o resultado do programa com Blockly</h3>
+<p>Em programação é comum nos referirmos informalmente ao resultado do
+programa como sendo a <em>saída</em> do programa. Isso porque, para
+vermos o resultado do programa, o computador deve mostrá-lo em algum
+<em>dispositivo de saída</em>, como uma impressora, a tela de um computador, ou
+a tela de um relógio digital.  No ambiente de programação Saci
+a <em>saída</em> é mostrada no Painel de Saída, mostrado na figura abaixo:
+  <center>
+    <img src="/static/saci/blockly_images/saci_tab_program_output.png" width="60%"/>.
+  </center>
+</p>
+
+<p>Para escrever na saída com Blockly usamos o bloco
+
+  <img src="/static/saci/blockly_images/block_print.png"/ align="middle" height="40px">
+  
+  (que vamos chamar de <em>bloco imprima</em>), disponível no
+  menu <em>E/S</em> (abreviatura de Entrada/Saída) da Barra de
+  Ferramentas.
+  <center>
+  <img width="190px" src="/static/saci/blockly_images/menu_block_print.png"/>
+  </center>
+</p>
+<p>
+  Se esse bloco não tiver nenhum outro bloco encaixado, ele vai escrever uma linha
+  em branco na saída.
+
+</p>
+<p>Para escrever na saída uma linha com texto, você deve encaixar no <em>bloco imprima</em>
+  um bloco 
+
+  <img src="/static/saci/blockly_images/block_text.png" align="middle" height="40px"/>,
+
+  que vamos chamar de <em>bloco texto</em>. Ele está
+  
+ disponível no menu <em>Texto</em> da Barra de Ferramentas
+  <center>
+    <img  src="/static/saci/blockly_images/menu_block_text.png" width="180px"/>.
+  </center>
+  Você deve preencher o espaço em branco desse bloco com o texto que deseja escrever.
+</p>
+<p>
+  Por exemplo, o grupo de blocos
+  <center>
+  <img align="middle" src="/static/saci/blockly_images/group_print_text.png" height="40px"/>
+  </center>
+escreve a frase "Dez gatos e um cachorro" na saída.
+
+<p>Veja como fica esse mesmo programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+print("Dez gatos e um cachorro")
+</pre>
+
+<h3>Executando o programa no ambiente Saci</h3>
+<p>Para executar um programa no ambiente saci, use o botão Executa
+  <img align="bottom" src="/static/saci/css/images/icon-execute-white.png" height="25px" style="background:#56a255">. O resultado é mostrado no Painel de Saída.
+
+  <center>
+    <img src="/static/saci/blockly_images/saci_tab_program_button_execute.png" width="60%"/>
+  </center>
+
+  
+<h3>Verificando se o programa está correto</h3>
+
+<p>Para verificar se seu programa está correto, use o botão Submete <img align="bottom" src="/static/saci/css/images/icon-submit-white.png" height="25px" style="background:#3871a2">. A sua solução será verificada com vários casos de
+teste. Se ela produzir a resposta correta para todos os casos de
+teste, ela será considerada correta. O resultado é mostrado no Painel de Saída.
+
+  <center>
+    <img src="/static/saci/blockly_images/saci_tab_program_button_submit.png" width="60%"/>
+  </center>
+
+<p>&nbsp;</p>
+

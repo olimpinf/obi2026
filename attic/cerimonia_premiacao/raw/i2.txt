@@ -1,0 +1,15 @@
+1,2,48,Danilo Pacheco Couto dos Santos,Da Vinci Academy,Limeira,SP
+1,2,48,Lorenzo do Prado Oliveira,Colégio Ábaco,São Bernardo do Campo,SP
+2,4,47,Alice Alencar Spuri,COLÉGIO ODILON BRAVEZA,Fortaleza,CE
+2,4,47,André Henrique Almeida Gianetti de Souza,Colégio Marista Arquidiocesano,São Paulo,SP
+3,4,47,Guilherme Martins de Magalhães,ARI DE SÁ CAVALCANTE SEDE MAJOR FACUNDO,Fortaleza,CE
+3,4,47,Matheus Matias dos Santos,ESCOLA ESTADUAL CESÁRIO COIMBRA,Muzambinho,MG
+4,4,47,Max das Colinas Barbosa Martins,Escola Educação Criativa,Ipatinga,MG
+4,4,47,Nelson Morgado Merlo,Colégio Agostiniano Mendel,São Paulo,SP
+4,4,47,Mikael Ribeiro do Nascimento,ARI DE SÁ CAVALCANTE SEDE MAJOR FACUNDO,Fortaleza,CE
+5,12,46,Alexandre Akihiro Kuya,Colégio Etapa - Vila Mariana,São Paulo,SP
+5,12,46,Bruno Pordeus Barroso Jales,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+5,12,46,Gabriel Satoshi Albuquerque Trentini,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+6,12,46,Leonardo Corrêa Netto de Oliveira,Colégio Franciscano Pio XII,São Paulo,SP
+6,12,46,Rafael Costa de Morais,COLÉGIO GGE,Recife,PE
+6,12,46,Raphael Kara José Fernandes,Colégio Móbile,São Paulo,SP

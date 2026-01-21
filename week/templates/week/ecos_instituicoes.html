@@ -1,0 +1,84 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica{% endblock %}
+
+{% block header %}<h1>Semana Olímpica - Instruções para uso do Sistema ECOS/SBC</h1>{% endblock %}
+
+{% block content %}
+<p>
+<h1>Instituições da OBI2023 cadastradas no sistema ECOS/SBC</h1>
+
+<ul>
+<li>Centro de Atendimento Multidisciplinar Para Altas Habilidades/Superdotação
+<li>Centro de Educação Integrada S.A
+<li>Centro de Excelência Master
+<li>Codebuddy
+<li>Coesi - Colégio de Orientação e Estudos Integrados
+<li>Coltec UFMG
+<li>Colégio Ari de Sá
+<li>Colégio Bernoulli
+<li>Colégio Christus
+<li>Colégio Elite Tales de Mileto - Educação Infantil, Ensino Fundamental e Médio
+<li>Colégio Etapa Valinhos
+<li>Colégio Farias Brito
+<li>Colégio Farias Brito Sobralense
+<li>Colégio Farroupilha
+<li>Colégio GGE
+<li>Colégio Integrado Objetivo
+<li>Colégio Magnum Agostiniano
+<li>Colégio Master Sul
+<li>Colégio Militar de Belo Horizonte
+<li>Colégio Militar de Fortaleza
+<li>Colégio Militar do Recife
+<li>Colégio Militar do Rio de Janeiro
+<li>Colégio Motiva
+<li>Colégio Objetivo
+<li>Colégio Odilon Braveza
+<li>Colégio Poliedro
+<li>Colégio Preve Objetivo Marilia
+<li>Colégio Pódion
+<li>Colégio Saint Exupery Pequeno Príncipe
+<li>Colégio Santa Cecília
+<li>Colégio Santa Cruz
+<li>Colégio Teleyos
+<li>Colégio Villa Lobos
+<li>Ecol Colégio e Pré-Vestibular Ltda
+<li>Escola Educação Criativa
+<li>Escola de Aplicação do Recife
+<li>Facom UFU
+<li>Farias Brito Pré Vestibular Central
+<li>IFPI - São Raimundo Nonato
+<li>Instituto Alpha Lumen
+<li>Instituto Dom Barreto
+<li>Instituto Dom Fernando Gomes
+<li>Instituto Germinare - Escola de Negócios
+<li>Móbile Colégio
+<li>Parque Ecológico Educação Ltda
+<li>Supergeeks
+</ul>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

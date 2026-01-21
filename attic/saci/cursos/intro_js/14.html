@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 14 - O tipo vetor</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 14 - O tipo vetor</div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 14 - O tipo vetor</div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/13/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      próxima aula
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+<li style="margin-left: 10px;">Exercício 3</li>
+<li style="margin-left: 10px;">Exercício 4</li>
+<li style="margin-left: 10px;">Exercício 5</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>O tipo vetor</h2>
+
+<p>Considere o Exercício 2 da Aula 1 (quando ainda não tínhamos escrito 
+nem o primeiro programa!):
+
+<p><em>Dada uma lista com a nota de cada aluno da classe na prova de
+Geografia, determine o número de alunos cuja nota foi igual ou
+superior à média da turma</em>.
+
+<p>Sabemos fazer um programa para calcular a média das notas. Mas como verificar
+quantos alunos têm nota igual ou acima da média? Ao ler cada nota, ainda não
+sabemos o valor da média para comparar, e depois de calcular a média 
+não temos mais acesso às notas lidas para comparar! Poderíamos pensar em
+armazenar as notas em variáveis, mas se a lista tiver 1000 notas não vai ser
+prático declarar 1000 variáveis.
+
+<p>Ou seja: com os comandos que conhecemos até agora, não conseguimos resolver
+esse problema.
+
+<p>Seria necessário:
+<ol>
+<li>Ler novamente a entrada (o que não é possível); ou
+<li>Armazenar as notas lidas para serem consultadas depois de calcular a média 
+</ol>
+
+<p>
+E a opção (2) acima é o que o uso de <em>vetores</em> nos proporciona.
+
+<p>
+Um <em>vetor</em> é uma é uma coleção de valores que podem ser
+acessados individualmente, com um mesmo nome de variável.
+A figura abaixo mostra, esquematicamente, um vetor de nome <span class="tt">notas</span> com cinco elementos:
+<div class="center">
+  <img src="/static/saci-images/vetores.png">
+</div>
+
+<p>A cada elemento do vetor é associado um número: 
+o <em>índice</em> do elemento.
+A figura abaixo mostra, para o vetor <span class="tt">notas</span>, os elementos e os índices associados:
+<div class="center">
+  <img src="/static/saci-images/vetores2.png">
+</div>
+
+<p>O índice do primeiro elemento do vetor é sempre 0. No vetor <span class="tt">notas</span> mostrado na figura
+<ul>
+<li>o elemento de índice 0 tem valor 7
+<li>o elemento de índice 1 tem valor 8
+<li>o elemento de índice 2 tem valor 5
+<li>o elemento de índice 3 tem valor 8 e
+<li>o elemento de índice 4 tem valor 10.
+</ul>
+
+<h3>Uso de vetores</h3>
+<p>O acesso a um valor do vetor é feito usando o nome do vetor e,
+entre colchetes, o índice do elemento desejado. Por exemplo, para
+acessar o elemento de índice 2 do vetor <span class="tt">notas</span> (cujo valor é 5) usamos 
+
+<p class="center">
+<span class="tt">notas[2]</span>
+</p>
+
+<p>Podemos usar qualquer elemento do vetor como se fosse uma variável
+simples. Assim, para escrever na saída uma linha com o valor do
+elemento de índice 2 do vetor <span class="tt">notas</span>, usamos o comando
+
+<pre class="code">
+printf("%d\n", notas[2]);
+</pre>
+
+<p>Esse comando escreve o valor 5 na saída.
+
+<p>Elementos do vetor podem ser usados em expressões:
+<pre class="code">
+x = notas[0]+notas[2];
+</pre>
+
+<p>Após esse comando, a variável <span class="tt">x</span> armazena o valor 12 (7+5).
+
+<p>Podemos também atribuir um novo valor a um elemento do vetor com um 
+comando de atribuição:
+<pre class="code">
+notas[0] = 9;
+</pre>
+
+<p>E podemos ainda atribuir um novo valor a um elemento do vetor com um
+comando de leitura:
+<pre class="code">
+scanf("%d","notas[0]");
+</pre>
+
+<p>Após esse comando, o vetor <span class="tt">notas</span> armazena os elementos 9,8,5,8,10.
+
+<h3>Declaração de vetores</h3>
+
+<p>Para declarar uma variável de tipo vetor, inicializamos a variável
+com um "vetor vazio", indicado por um "abre colchete" e um "fecha
+colchete" consecutivos (<span class="tt">[]</span>). Ou seja, para
+declarar uma variável de nome <span class="tt">notas</span>, de
+tipo vetor, usamos:
+
+<pre class="code">
+var notas=[];
+</pre>
+
+<p>Essa declaração cria um vetor de nome <span class="tt">notas</span>
+vazio, ou seja, sem nenhum elemento.
+
+<h3>Adicionando elementos a um vetor</h3>
+
+<p>Para criar um novo elemento de um vetor, basta atribuir um valor
+a um elemento de índice ainda inexistente. Por exemplo,
+
+<pre class="code">
+var notas=[];            // declara e cria um vetor vazio
+
+notas[0] = 10;           // cria o elemento de índice 0, com valor 10
+notas[1] = 7;            // cria o elemento de índice 1, com valor 7
+
+scanf("%d", "notas[2]"); // lê um valor inteiro da entrada e 
+                         // cria o elemento de índice 2 com o valor lido
+</pre>
+
+<p>Por exemplo, podemos criar um vetor de dez elementos, lendo
+os valores da entrada:
+
+<pre class="code">
+var i,                   // um contador
+    notas=[];            // declara e cria um vetor vazio
+
+for (i=0; i<10; i++)
+    scanf("%d", "notas[i]"); // lê um valor para o vetor
+</pre>
+
+<h3>Elementos podem ser de qualquer tipo</h3>
+<p>Os elementos de um vetor podem ser de qualquer
+tipo, como número, cadeia de caracteres ou booleano.
+
+<p>Vejam um exemplo de vetor com elementos de diferentes tipos:
+
+<pre class="code">
+var misto=[];
+
+misto[0] = 123;
+misto[1] = “X”;
+misto[2] = “Saci Pererê”;
+misto[3] = misto[1]===“X”;
+
+printf(“%d\n”, misto[0]);
+printf(“%s\n”, misto[1]);
+printf(“%s\n”, misto[2]);
+printf(“%s\n”, misto[3]);
+</pre>
+
+<p>Na saída, serão escritas as linhas
+<pre class="code">
+123
+X
+Saci Pererê
+true
+</pre>
+
+<p>Note que para escrever um valor booleano usamos o especificador %s na cadeia formatadora do comando printf.
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Média ou melhor</h2>
+</center>
+
+<p>A professora de Geografia fez uma lista com a nota da prova de cada
+aluno da turma.  Ela precisa de um programa de computador para
+calcular a média das notas da turma e determinar quantos alunos tiveram nota
+igual ou superior à média.
+
+<h3>Entrada</h3>
+<p>A entrada consiste de duas linhas. A primeira linha contém um
+número inteiro N que indica o número de alunos da turma. A
+segunda linha descreve as notas dos alunos. Ela contém N
+números X<sub>i</sub>, indicando a nota de cada aluno.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever duas linhas na saída. A primeira linha
+deve conter apenas um número com precisão de uma casa decimal, a média
+da turma. A segunda linha deve conter apenas um inteiro, o número de
+alunos que tiveram nota igual ou superior à média.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; N &le; 1000
+<li> 0.0 &le; X<sub>i</sub> &le; 10.0
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+10.0 9.0 7.0 9.0 10.0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9.0
+4
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+5.6 5.6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5.6
+2
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+10.0 1.4 3.6 1.0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4.0
+1
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Sorteio de prêmios</h2>
+</center>
+
+<p>Na festa junina da escola foi organizado um sorteio de prêmios,
+usando o número do tíquete da entrada para a festa. Havia muitos
+prêmios, e a diretora foi sorteando os números dos tíquetes ganhadores
+de um em um, anotando os números sorteados em uma lista. Os prêmios de
+valor mais baixo foram sorteados primeiro, de forma que o último
+número sorteado ganhou o grande prêmio.
+
+<p>A diretora agora quer divulgar a lista dos números dos tíquetes dos
+ganhadores na página da escola na internet. Mas ela precisa inverter a
+lista, colocando o último sorteado em primeiro lugar, o penúltimo
+sorteado em segundo lugar, e assim por diante.
+
+<h3>Entrada</h3>
+<p>A entrada consiste de duas linhas. A primeira linha contém um
+número inteiro N que indica o número de tíquetes. A segunda linha
+descreve os tíquetes na ordem em que foram sorteados. Ela contém N
+números inteiros X<sub>i</sub>, indicando os números dos tíquetes
+sorteados.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever uma linha na saída, contendo a lista de
+números sorteados, na ordem inversa em que foram sorteados.  Os
+números devem ser separados por um único espaço em branco (<em>atenção
+e cuidado: não deve haver outros espaços em branco além dos que
+separam os números sorteados; em particular, não pode haver um espaço
+antes do primeiro número ou após o último número da lista</em>).
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; N &le; 1000
+<li> 1 &le; X<sub>i</sub> &le; 1000
+<li> X<sub>i</sub> distintos entre si
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+10 20 30 40 50
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+50 40 30 20 10
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+1000 99
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+99 1000
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 3 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Os últimos serão os primeiros</h2>
+</center>
+
+<p>A escola está realizando uma cerimônia de premiação para os
+melhores colocados da OBI. A Diretora copiou da página da OBI na
+Internet os melhores classificados da escola, que lista os
+competidores em ordem, do melhor classificado para o menos bem
+classificado. Mas a diretora decidiu que o melhor é chamar os
+competidores ao palco na ordem invertida da classificação dada na
+página. Ou seja, ela quer chamar ao palco inicialmente os menos bem
+classificados, e assim chamar por último o melhor classificado.
+
+<p>A cerimônia já está começando, e a diretora está aflita.
+Você pode ajudá-la?
+
+<h3>Entrada</h3>
+<p>A entrada consiste de duas linhas. A primeira linha contém um
+número inteiro N que indica o número de competidores. A segunda linha
+descreve os nomes dos competidores. Ela contém N
+nomes X<sub>i</sub>, indicando os nomes dos competidores, em ordem
+de classificação, do melhor classificado para o menos bem classificado.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever uma linha na saída, contendo a lista de
+competidores, na ordem inversa de classificação, do menos bem
+classificado para o melhor classificado.  Os nomes devem ser separados
+por um único espaço em branco (<em>atenção e cuidado: não deve haver
+outros espaços em branco além dos que separam os nomes; em particular,
+não pode haver um espaço antes do primeiro nome ou após o último nome
+da lista</em>).
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; N &le; 1000
+<li> X<sub>i</sub> são cadeias de caracteres, com no mínimo 1 e no máximo 10 letras maiúsculas ou minúsculas, sem acento
+<li> X<sub>i</sub> distintos entre si
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+Fatima Alberto Pedro Katia Eva
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+Eva Katia Alberto Fatima
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+Henrique Isabela
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+Isabela Henrique
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 3 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 4 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars4" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg4" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Sequência palíndrome</h2>
+</center>
+
+<p>Uma <em>sequência palíndrome</em> é uma sequência que é a mesma
+se lida do início para o final ou do final para o início.
+
+Por exemplo, as sequências <em>X, X</em> e <em>A, B, C, B, A</em> são palíndromes,
+mas as sequências <em>X, Y</em> e <em>A, B, B</em> não são.
+
+<p>Dada uma sequência de letras, você deve escrever um programa para
+determinar se a sequência é palíndrome.
+
+<h3>Entrada</h3>
+<p>A entrada consiste de duas linhas. A primeira linha contém um
+número inteiro N que indica o número de letras da sequência. A segunda linha
+descreve a sequência, e contém N letras L<sub>i</sub>, separadas entre si
+por um espaço em branco.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever uma linha na saída, contendo apenas o
+caractere S se a sequência dada é palíndrome, ou o caractere N
+caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; N &le; 1000
+<li> X<sub>i</sub> é uma letra maiúscula não acentuada
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+A B C B A
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+X Y
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+Z A A Z
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 4 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 5 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars5" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg5" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Número Palíndrome</h2>
+</center>
+
+<p>Um <em>número palíndrome</em> é um número inteiro positivo, sem zeros à
+esquerda, que é o mesmo se lido da esquerda para a direita ou da
+direita para a esquerda. Por exemplo, os números 11 e 65256 são
+palíndromes, mas os números 10 e 123 não são.
+
+<p>Dado um número inteiro, você deve escrever um programa para
+determinar se o número é um palíndrome.
+
+<h3>Entrada</h3>
+<p>A entrada consiste de uma única linha, que contém um único número
+inteiro N.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever uma linha na saída, contendo apenas o
+caractere S se o número dado é um palíndrome, ou o caractere N
+caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; N &le; 100000000
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1234321
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+11111112
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+99
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 5 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars6" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg6" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 1, Aula 14
+// Média ou Melhor
+// Autor: Ricardo Anido
+
+var N,          // número de alunos
+    i,          // contador para repetição
+    notas=[],   // as notas dos alunos
+    soma,       // soma das notas, para calcular a média
+    media,      // média da turma
+    acima;      // número de alunos acima da média
+
+scanf("%d", "N"); // comprimento da lista
+soma = 0;         // inicializa soma das notas
+
+for (i=0; i&lt;N; i++) {
+    scanf("%f", "notas[i]"); // lê uma nota
+    soma = soma + notas[i];  // acumula em soma
+}
+
+media = soma/N;              // calcula a média
+acima = 0;                   // inicializa número de alunos acima da média
+for (i=0; i&lt;N; i++) {        // percorre novamente as notas
+    if (notas[i] >= media)
+        acima++;             // mais uma nota maior ou igual à média
+}
+
+//escreve o resultado
+printf("%.1f\n%d\n", media, acima);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 2, Aula 14
+// Sorteio de prêmios
+// Autor: Ricardo Anido
+
+var N,            // número de alunos
+    i,            // contador para repetição
+    tiquete=[];   // números dos tíquetes
+
+scanf("%d", "N"); // comprimento da lista
+
+for (i=0; i&lt;N; i++) {
+    scanf("%d", "tiquete[i]"); // lê um número de tíquete
+}
+
+// escreve o resultado, tomando o cuidado de não
+// colocar um espaço em branco a mais na linha
+for (i=N-1; i>0; i--) {        // percorre o vetor, do último lido para o segundo lido
+    printf("%d ", tiquete[i]); // escreve número de tiquetes,
+                               // seguido de espaço em branco
+}
+// por último, escreve o primeiro sorteado, seguido de final-de-linha
+printf("%d\n", tiquete[0]);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 3, Aula 14
+// Os últimos serão os primeiros
+// Autor: Ricardo Anido
+
+var N,            // número de alunos
+    i,            // contador para repetição
+    nomes=[];     // nomes dos alunos
+
+scanf("%d", "N"); // comprimento da lista
+
+// vamos ler a lista e guardar no vetor nomes
+for (i=0; i&lt;N; i++) {
+    scanf("%s", "nomes[i]"); // lê um nome
+}
+
+// escreve o resultado, tomando o cuidado de não
+// colocar um espaço em branco a mais na última linha
+for (i=N-1; i&gt;0; i--)          // percorre o vetor, do último lido para o segundo lido
+    printf("%s ", nomes[i]);   // escreve nome, seguido de espaço em branco
+
+// escreve nome do último colocado, lido em primeiro lugar, seguido de final-de-linha
+printf("%s\n", nomes[0]);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex4-show" class="showLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div id="solution-ex4" class="seeMore">
+<a href="#" id="solution-ex4-hide" class="hideLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 4, Aula 14
+// Sequência palíndrome
+// Autor: Ricardo Anido
+
+var N,            // o número dado
+    i,            // contador para repetição
+    seq=[];       // letras da sequência
+
+scanf("%d", "N"); // lê o número de letras
+
+
+for (i=0; i&lt;N; i++)
+    scanf("%s", "seq[i]");         // lê a sequência
+
+j=0;
+i=N-1;
+// vamos percorrer o vetor comparando o elemento i com o elemento j
+while (j <= i) {
+    if (seq[i]!=seq[j])
+	break;
+    j++; i--;                 // avança j e retrocede i
+}
+
+// escreve o resultado
+// se é i menor ou igual a j, ocorreu um break, e a resposta é N
+// caso contrário, a sequência é palíndrome
+if (j<=i)
+    printf("N\n");
+else
+    printf("S\n");
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex5-show" class="showLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div id="solution-ex5" class="seeMore">
+<a href="#" id="solution-ex5-hide" class="hideLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 5, Aula 14
+// Número Palíndrome
+// Autor: Ricardo Anido
+
+var N,            // o número dado
+    i,            // contador para repetição
+    digitos=[];   // dígitos do número
+
+scanf("%d", "N"); // lê o número
+
+// vamos inicialmente construir um vetor com os dígitos do número N
+i=0;
+while (N > 0) {
+    digitos[i] = Math.floor(N % 10);     // um dígito do número
+    N = Math.floor(N/10);
+    i++;
+}
+// ao final do while, i tem o número de dígitos do número N
+i--;
+// i agora tem o índice do último elemento do vetor
+j=0; 
+// vamos percorrer o vetor comparando o elemento i com o elemento j
+while (j <= i) {
+    if (digitos[i]!=digitos[j])
+	break;
+    j++; i--;
+}
+
+// escreve o resultado
+// se é i menor ou igual a j, ocorreu um break, e a resposta é N
+// caso contrário, o número é palíndrome
+if (j <= i)
+    printf("N\n");
+else
+    printf("S\n");
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEsIEF1bGEgMTQKLy8gTcOpZGlhIG91IE1lbGhvcgovLyBBdXRvcjogUmljYXJkbyBBbmlkbwoKdmFyIE4sICAgICAgICAgIC8vIG7Dum1lcm8gZGUgYWx1bm9zCiAgICBpLCAgICAgICAgICAvLyBjb250YWRvciBwYXJhIHJlcGV0acOnw6NvCiAgICBub3Rhcz1bXSwgICAvLyBhcyBub3RhcyBkb3MgYWx1bm9zCiAgICBzb21hLCAgICAgICAvLyBzb21hIGRhcyBub3RhcywgcGFyYSBjYWxjdWxhciBhIG3DqWRpYQogICAgbWVkaWEsICAgICAgLy8gbcOpZGlhIGRhIHR1cm1hCiAgICBhY2ltYTsgICAgICAvLyBuw7ptZXJvIGRlIGFsdW5vcyBhY2ltYSBkYSBtw6lkaWEKCnNjYW5mKCIlZCIsICJOIik7IC8vIGNvbXByaW1lbnRvIGRhIGxpc3RhCnNvbWEgPSAwOyAgICAgICAgIC8vIGluaWNpYWxpemEgc29tYSBkYXMgbm90YXMKCmZvciAoaT0wOyBpPE47IGkrKykgewogICAgc2NhbmYoIiVmIiwgIm5vdGFzW2ldIik7IC8vIGzDqiB1bWEgbm90YQogICAgc29tYSA9IHNvbWEgKyBub3Rhc1tpXTsgIC8vIGFjdW11bGEgZW0gc29tYQp9CgptZWRpYSA9IHNvbWEvTjsgICAgICAgICAgICAgIC8vIGNhbGN1bGEgYSBtw6lkaWEKYWNpbWEgPSAwOyAgICAgICAgICAgICAgICAgICAvLyBpbmljaWFsaXphIG7Dum1lcm8gZGUgYWx1bm9zIGFjaW1hIGRhIG3DqWRpYQpmb3IgKGk9MDsgaTxOOyBpKyspIHsgICAgICAgIC8vIHBlcmNvcnJlIG5vdmFtZW50ZSBhcyBub3RhcwogICAgaWYgKG5vdGFzW2ldID49IG1lZGlhKQogICAgICAgIGFjaW1hKys7ICAgICAgICAgICAgIC8vIG1haXMgdW1hIG5vdGEgbWFpb3Igb3UgaWd1YWwgw6AgbcOpZGlhCn0KCi8vZXNjcmV2ZSBvIHJlc3VsdGFkbwpwcmludGYoIiUuMWZcbiVkXG4iLCBtZWRpYSwgYWNpbWEpOwpeLy8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDIsIEF1bGEgMTQKLy8gU29ydGVpbyBkZSBwcsOqbWlvcwovLyBBdXRvcjogUmljYXJkbyBBbmlkbwoKdmFyIE4sICAgICAgICAgICAgLy8gbsO6bWVybyBkZSBhbHVub3MKICAgIGksICAgICAgICAgICAgLy8gY29udGFkb3IgcGFyYSByZXBldGnDp8OjbwogICAgdGlxdWV0ZT1bXTsgICAvLyBuw7ptZXJvcyBkb3MgdMOtcXVldGVzCgpzY2FuZigiJWQiLCAiTiIpOyAvLyBjb21wcmltZW50byBkYSBsaXN0YQoKZm9yIChpPTA7IGk8TjsgaSsrKSB7CiAgICBzY2FuZigiJWQiLCAidGlxdWV0ZVtpXSIpOyAvLyBsw6ogdW0gbsO6bWVybyBkZSB0w61xdWV0ZQp9CgovLyBlc2NyZXZlIG8gcmVzdWx0YWRvLCB0b21hbmRvIG8gY3VpZGFkbyBkZSBuw6NvCi8vIGNvbG9jYXIgdW0gZXNwYcOnbyBlbSBicmFuY28gYSBtYWlzIG5hIGxpbmhhCmZvciAoaT1OLTE7IGk+MDsgaS0tKSB7ICAgICAgICAvLyBwZXJjb3JyZSBvIHZldG9yLCBkbyDDumx0aW1vIGxpZG8gcGFyYSBvIHNlZ3VuZG8gbGlkbwogICAgcHJpbnRmKCIlZCAiLCB0aXF1ZXRlW2ldKTsgLy8gZXNjcmV2ZSBuw7ptZXJvIGRlIHRpcXVldGVzLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLy8gc2VndWlkbyBkZSBlc3Bhw6dvIGVtIGJyYW5jbwp9Ci8vIHBvciDDumx0aW1vLCBlc2NyZXZlIG8gcHJpbWVpcm8gc29ydGVhZG8sIHNlZ3VpZG8gZGUgZmluYWwtZGUtbGluaGEKcHJpbnRmKCIlZFxuIiwgdGlxdWV0ZVswXSk7Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMywgQXVsYSAxNAovLyBPcyDDumx0aW1vcyBzZXLDo28gb3MgcHJpbWVpcm9zCi8vIEF1dG9yOiBSaWNhcmRvIEFuaWRvCgp2YXIgTiwgICAgICAgICAgICAvLyBuw7ptZXJvIGRlIGFsdW5vcwogICAgaSwgICAgICAgICAgICAvLyBjb250YWRvciBwYXJhIHJlcGV0acOnw6NvCiAgICBub21lcz1bXTsgICAgIC8vIG5vbWVzIGRvcyBhbHVub3MKCnNjYW5mKCIlZCIsICJOIik7IC8vIGNvbXByaW1lbnRvIGRhIGxpc3RhCgovLyB2YW1vcyBsZXIgYSBsaXN0YSBlIGd1YXJkYXIgbm8gdmV0b3Igbm9tZXMKZm9yIChpPTA7IGk8TjsgaSsrKSB7CiAgICBzY2FuZigiJXMiLCAibm9tZXNbaV0iKTsgLy8gbMOqIHVtIG5vbWUKfQoKLy8gZXNjcmV2ZSBvIHJlc3VsdGFkbywgdG9tYW5kbyBvIGN1aWRhZG8gZGUgbsOjbwovLyBjb2xvY2FyIHVtIGVzcGHDp28gZW0gYnJhbmNvIGEgbWFpcyBuYSDDumx0aW1hIGxpbmhhCmZvciAoaT1OLTE7IGk+MDsgaS0tKSAgICAgICAgICAvLyBwZXJjb3JyZSBvIHZldG9yLCBkbyDDumx0aW1vIGxpZG8gcGFyYSBvIHNlZ3VuZG8gbGlkbwogICAgcHJpbnRmKCIlcyAiLCBub21lc1tpXSk7ICAgLy8gZXNjcmV2ZSBub21lLCBzZWd1aWRvIGRlIGVzcGHDp28gZW0gYnJhbmNvCgovLyBlc2NyZXZlIG5vbWUgZG8gw7psdGltbyBjb2xvY2FkbywgbGlkbyBlbSBwcmltZWlybyBsdWdhcgovLyBzZWd1aWRvIGRlIGZpbmFsLWRlLWxpbmhhCnByaW50ZigiJXNcbiIsIG5vbWVzWzBdKTsKXi8vIFNvbHXDp8OjbyBwYXJhIG8gZXhlcmPDrWNpbyA0LCBBdWxhIDE0Ci8vIFNlcXXDqm5jaWEgcGFsw61uZHJvbWUKLy8gQXV0b3I6IFJpY2FyZG8gQW5pZG8KCnZhciBOLCAgICAgICAgICAgIC8vIG8gbsO6bWVybyBkYWRvCiAgICBpLCAgICAgICAgICAgIC8vIGNvbnRhZG9yIHBhcmEgcmVwZXRpw6fDo28KICAgIHNlcT1bXTsgICAgICAgLy8gbGV0cmFzIGRhIHNlcXXDqm5jaWEKCnNjYW5mKCIlZCIsICJOIik7IC8vIGzDqiBvIG7Dum1lcm8gZGUgbGV0cmFzCgoKZm9yIChpPTA7IGk8TjsgaSsrKQogICAgc2NhbmYoIiVzIiwgInNlcVtpXSIpOyAgICAgICAgIC8vIGzDqiBhIHNlcXXDqm5jaWEKCmo9MDsKaT1OLTE7Ci8vIHZhbW9zIHBlcmNvcnJlciBvIHZldG9yIGNvbXBhcmFuZG8gbyBlbGVtZW50byBpIGNvbSBvIGVsZW1lbnRvIGoKd2hpbGUgKGo8PWkpIHsKICAgIGlmIChzZXFbaV0hPXNlcVtqXSkKCWJyZWFrOwogICAgaisrOyBpLS07ICAgICAgICAgICAgICAgICAvLyBhdmFuw6dhIGogZSByZXRyb2NlZGUgaQp9CgovLyBlc2NyZXZlIG8gcmVzdWx0YWRvCi8vIHNlIMOpIGkgbWVub3Igb3UgaWd1YWwgYSBqLCBvY29ycmV1IHVtIGJyZWFrLCBlIGEgcmVzcG9zdGEgw6kgTgovLyBjYXNvIGNvbnRyw6FyaW8sIGEgc2VxdcOqbmNpYSDDqSBwYWzDrW5kcm9tZQppZiAoajw9aSkKICAgIHByaW50ZigiTlxuIik7CmVsc2UKICAgIHByaW50ZigiU1xuIik7Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gNSwgQXVsYSAxNAovLyBQYWzDrW5kcm9tZQovLyBBdXRvcjogUmljYXJkbyBBbmlkbwoKdmFyIE4sICAgICAgICAgICAgLy8gbyBuw7ptZXJvIGRhZG8KICAgIGksICAgICAgICAgICAgLy8gY29udGFkb3IgcGFyYSByZXBldGnDp8OjbwogICAgZGlnaXRvcz1bXTsgICAvLyBkw61naXRvcyBkbyBuw7ptZXJvCgpzY2FuZigiJWQiLCAiTiIpOyAvLyBsw6ogbyBuw7ptZXJvCgovLyB2YW1vcyBpbmljaWFsbWVudGUgY29uc3RydWlyIHVtIHZldG9yIGNvbSBvcyBkw61naXRvcyBkbyBuw7ptZXJvIE4KaT0wOwp3aGlsZSAoTiA+IDApIHsKICAgIGRpZ2l0b3NbaV0gPSBNYXRoLmZsb29yKE4gJSAxMCk7ICAgICAvLyB1bSBkw61naXRvIGRvIG7Dum1lcm8KICAgIE4gPSBNYXRoLmZsb29yKE4vMTApOwogICAgaSsrOwp9Ci8vIGFvIGZpbmFsIGRvIHdoaWxlLCBpIHRlbSBvIG7Dum1lcm8gZGUgZMOtZ2l0b3MgZG8gbsO6bWVybyBOCmktLTsKLy8gaSBhZ29yYSB0ZW0gbyDDrW5kaWNlIGRvIMO6bHRpbW8gZWxlbWVudG8gZG8gdmV0b3IKaj0wOyAKLy8gdmFtb3MgcGVyY29ycmVyIG8gdmV0b3IgY29tcGFyYW5kbyBvIGVsZW1lbnRvIGkgY29tIG8gZWxlbWVudG8gagp3aGlsZSAoajw9aSkgewogICAgaWYgKGRpZ2l0b3NbaV0hPWRpZ2l0b3Nbal0pCglicmVhazsKICAgIGorKzsgaS0tOwp9CgovLyBlc2NyZXZlIG8gcmVzdWx0YWRvCi8vIHNlIMOpIGkgbWVub3Igb3UgaWd1YWwgYSBqLCBvY29ycmV1IHVtIGJyZWFrLCBlIGEgcmVzcG9zdGEgw6kgTgovLyBjYXNvIGNvbnRyw6FyaW8sIG8gbsO6bWVybyDDqSBwYWzDrW5kcm9tZQppZiAoajw9aSkKICAgIHByaW50ZigiTlxuIik7CmVsc2UKICAgIHByaW50ZigiU1xuIik7Cg==">
+  <input type="hidden" id="hiddentests" value="MQoxMC4wCjs1CjEwLjAgOS4wIDcuMCA5LjAgMTAuMAo7Mwo1LjYgOS40IDQuOQo7NAo4LjcgNi42IDIuNCA5LjIKOzUKMS41IDIuOCA2LjQgNi41IDEuNwo7NgoxLjMgMS42IDcuNiA5LjEgMi43IDUuMQo7Nwo4LjUgNi45IDEuMiA5LjkgOC4wIDUuMCA4LjYKOzgKNy44IDQuNSA0LjEgNC4xIDkuNSA1LjcgMi42IDQuNgo7OQo5LjEgOC43IDAuNyA1LjggNC40IDcuMyA0LjUgNy4yIDkuNgo7MTAwMAo2LjggNC43IDMuOCAzLjQgMy4yIDUuOSAwLjMgOC40IDQuOSA3LjUgOS42IDguOCA0LjEgNS45IDQuOCA3LjUgMS4wIDAuNyAwLjEgMy44IDguNSAyLjMgNy4zIDEuNyA3LjkgMS42IDYuNyA1LjQgMS45IDEuNyA1LjQgMi44IDkuMiA5LjMgNC4wIDcuMyA4LjggOC42IDQuNiAyLjIgOC42IDkuOSA3LjUgMy40IDIuMiAxLjMgMi44IDUuMCAxLjcgNy4xIDQuNyAxLjkgMi44IDIuNyA3LjQgNi43IDMuMiA2LjcgMS44IDEuNSA4LjcgNC40IDEuNyAwLjIgMy4yIDYuMyAzLjIgNS40IDkuMCAxLjQgNy4yIDUuOSA4LjQgMi4wIDUuMCAwLjkgMC41IDIuNiAzLjYgNC4xIDAuMCA2LjUgMC43IDguNiA4LjcgOC41IDUuOSAxLjYgMS4wIDQuMSA1LjAgMS42IDguNSA2LjMgNy43IDEuMyA0LjAgNy42IDAuMiA1LjIgNS41IDIuOCAzLjMgMC4xIDEuMiA5LjggNS40IDEuOCA2LjcgNC42IDAuMCA5LjAgMi43IDQuMSA1LjUgMC45IDEwLjAgNC4wIDYuMCA5LjcgMC40IDYuNCA0LjMgOC4zIDMuNSAyLjEgOS44IDUuOCA1LjkgNi41IDYuMCA3LjIgMC44IDAuMyAyLjUgMC4wIDcuNiA4LjcgMi4zIDkuOCA3LjEgMS41IDcuMiA1LjIgNS41IDAuMiAzLjcgMS4zIDQuMSA4LjMgNS4xIDIuMSAwLjkgMy44IDQuNiA1LjEgMC44IDcuNyA5LjkgNS4xIDYuNyAyLjcgNC4wIDEuOSAzLjEgMS45IDQuMSA2LjcgNC4xIDkuMyAzLjYgMy44IDUuMiA2LjcgOC40IDguMSA3LjEgMy4wIDkuOCA2LjUgOC41IDAuMSAwLjggNC4zIDUuMSA3LjAgNS42IDEuOSA4LjAgMi4xIDMuMCAyLjIgOS4zIDAuMSA0LjQgNS40IDcuOCA3LjAgNS40IDAuNCA3LjUgOS45IDQuOSAxMC4wIDAuMSAzLjUgMy43IDcuNSA4LjMgMi4wIDcuMSA3LjQgMy45IDAuNCAwLjAgNS4zIDUuOCA4LjIgMC40IDQuMyAyLjcgMS44IDguMSAwLjQgMi4wIDUuNiA1LjMgOC41IDcuNSA1LjYgMTAuMCA1LjQgMi4yIDEuMSA2LjggNC4yIDkuNiA3LjEgMC40IDYuNSAwLjkgOS43IDEuNSAwLjEgMS44IDcuOSA1LjIgNy44IDUuNCAyLjEgMS44IDUuNiA0LjIgNi40IDcuMCAyLjMgMy41IDQuMyA4LjggOC40IDMuNSAxLjQgMS4wIDcuMSAyLjEgMC41IDIuNyA4LjcgNC4yIDMuNyA0LjUgNS40IDYuMSA5LjcgMC4wIDYuNyAzLjggNi4xIDkuOSAyLjEgMy4zIDMuNiAyLjEgMi45IDYuMyA5LjUgMTAuMCA2LjMgMy4yIDUuNSA1LjQgMi41IDEuNiA5LjQgNi44IDcuMCA1LjAgNS4yIDguNSA4LjYgMC4yIDUuMyAyLjMgMy41IDAuOSAyLjcgMy43IDQuNiAyLjUgNC44IDMuNyA4LjkgMS4xIDIuMyA5LjQgNS40IDAuMCA5LjEgMC43IDUuOSA0LjcgNy44IDEuNCAxLjggOC4yIDEuMyAyLjggMS42IDMuNyAyLjIgMS43IDUuNCA3LjkgNy42IDguOSAyLjAgMi4wIDAuOSAzLjEgNC4wIDguMyA0LjAgOS4wIDQuMiAxLjQgOC45IDEuOSA1LjggNi42IDAuNSAxMC4wIDMuMCA1LjkgMy4zIDMuNCAzLjMgNi42IDAuMiAwLjcgNC42IDEwLjAgNC41IDQuMSA5LjQgNC4zIDEuMCA4LjcgMC4xIDIuOSA2LjkgNC4wIDUuMCAxLjAgMC42IDMuOSAyLjYgMy44IDIuMiA5LjIgMy44IDEuMCA1LjMgNy44IDEuMSAyLjUgOC4yIDkuMCAzLjggMC43IDEwLjAgMy43IDUuMCA3LjggNy41IDAuOCAzLjkgMS4yIDIuMSA5LjYgNS43IDguOCAxLjUgNS43IDcuMyAxLjcgMy4wIDUuMyAwLjYgMS4wIDQuOSA1LjQgNC40IDkuMyA3LjQgOC40IDguOCAzLjYgMy44IDAuMyAwLjIgOS4yIDguOSAzLjYgNS45IDYuMyA0LjAgOS45IDIuOSA3LjMgMi45IDguMiAzLjkgNS4xIDEuOCAyLjMgMC45IDYuOSAzLjEgNy43IDYuNSA5LjQgMS40IDAuMSA3LjAgNS4yIDQuMiA5LjAgMC43IDguMyA3LjkgOC44IDMuMyAzLjggMS44IDIuNSAwLjkgNS40IDMuMiA2LjMgMS40IDEuMCAyLjkgNy43IDguNyAzLjQgOS4wIDUuMSA4LjAgNC4wIDYuOCA0LjAgNi42IDIuNyA4LjUgOS43IDkuNyA5LjQgMC4yIDguNyAxLjEgMi4xIDIuMyAwLjIgOS4xIDguMiA2LjIgMC43IDguNyA5LjYgNS40IDkuMyAzLjEgNC41IDcuMCA2LjIgMy4zIDcuMCA0LjQgNC43IDAuMiA3LjAgMi45IDEuNCAxLjcgMi4zIDYuMCAzLjUgOS45IDMuOCA3LjYgNi43IDEuMCAwLjkgNy44IDguMSAwLjEgNC45IDUuMCA1LjAgMC4xIDEuMCA3LjggMC40IDQuNSAxLjEgOC4wIDYuOSA4LjggNC41IDEuMyAxLjQgMy44IDEuNyAyLjQgNy42IDIuNyAxLjUgMC4zIDMuMCA4LjUgNS40IDEuMyA3LjYgNi40IDEuNiAxLjkgMy4yIDEuNiA4LjEgNS41IDcuNiA4LjIgNC44IDcuMSA2LjQgNi43IDkuMyA0LjkgMy4yIDAuNCAxLjUgMS42IDkuNCAzLjYgNS41IDYuNiAyLjQgOS45IDYuOCA0LjQgNS42IDAuNyAyLjggNi42IDUuMyA2LjAgMC45IDMuNiA0LjcgMy43IDQuNCAwLjcgMy42IDQuOCA4LjkgOS4wIDEuMCAxLjMgNi44IDEwLjAgNS45IDYuNiAyLjEgMi4xIDAuMCA5LjcgMi4yIDcuMSA5LjkgMi4zIDEuNyA3LjAgMS4zIDAuMiA5LjEgOC4yIDcuMyA1LjkgNy4yIDAuNiA4LjMgMy41IDYuNSAzLjMgMC42IDcuMCAyLjIgMS4wIDguNiA0LjMgNi42IDguMSAwLjEgNS4wIDMuNSA3LjkgOC4zIDEuMiA4LjEgMS4yIDQuNiAzLjAgOS44IDcuOSA2LjggNC4yIDMuOSA2LjQgMS44IDUuMyAwLjUgNS43IDAuMCA3LjYgOS4wIDcuOCA4LjEgNC40IDEuOSAyLjIgOS40IDcuMCA3LjUgMy4wIDUuNSAwLjAgMC40IDQuNyAyLjAgOS43IDMuNyAyLjUgMC45IDguNCAzLjUgNy43IDAuMSAzLjAgNC4xIDYuNSA2LjEgMi45IDYuMCAyLjAgNy45IDIuNiA0LjAgNi44IDUuNyAyLjAgOC4yIDIuMyAxLjQgNi45IDAuMyA1LjAgMi45IDQuMSAxLjkgNi43IDQuMCAzLjkgNi4yIDIuMiAxLjkgMC4wIDkuMCA3LjIgOC4zIDMuNyA1LjEgMy4xIDEuOSAxMC4wIDUuNiAxMC4wIDEuMiA3LjQgNy45IDkuMCA4LjMgNi4zIDcuNSAxLjIgNS4zIDUuNiA2LjggMS41IDkuMyA4LjcgNy41IDAuMSAwLjUgNS4yIDEuNiAxLjYgNC41IDEuNCA0LjIgMS44IDMuNiA1LjUgNC4wIDAuNSA1LjIgMy43IDQuMSA0LjggMi4yIDQuNyAzLjQgOC4yIDkuMiAzLjIgNS4wIDguMiA2LjEgMy41IDYuMSA4LjIgMi4zIDEuMCA1LjkgOC4wIDIuMSAyLjkgMC43IDAuOSA4LjMgNy42IDIuMCA2LjUgMS44IDUuOSAyLjUgNS40IDguNCAwLjQgNS44IDcuMyA0LjIgNy4wIDMuNSAzLjYgMi40IDQuMSA5LjUgOC44IDUuMSA2LjQgOS45IDQuOCA1LjAgMS42IDAuMSAyLjEgNC41IDQuMyA3LjcgOC45IDYuMiA0LjQgMS40IDguMSAzLjEgMi45IDguNiA3LjIgOS41IDQuMiA5LjUgMC43IDkuOCA1LjIgNC43IDQuNyA0LjYgMi42IDcuOSAzLjQgNi45IDMuNSAwLjQgNC45IDMuMSA3LjcgNy43IDEuNCAyLjYgNS45IDguMCAwLjEgNS42IDkuNiA5LjMgMTAuMCA4LjEgNS4wIDcuNiA3LjggNC40IDYuNSAzLjMgOC43IDEuMyA4LjMgNy4zIDEwLjAgMC4xIDMuNiA2LjcgNy44IDcuNCAyLjQgNy45IDcuMiA5LjAgMTAuMCA3LjQgNy40IDMuNyAyLjQgOC4zIDQuNiAxLjAgOS43IDIuMiAzLjAgOS4wIDMuNCA0LjkgMC4zIDAuMiAxMC4wIDkuNyA5LjMgMi43IDEuNCA2LjIgOC40IDUuMSA2LjIgNy4zIDcuMiAwLjQgMy45IDAuMyA3LjIgNS43IDIuOCAwLjggMS45IDIuOCAxLjggMi41IDEuNCA4LjEgOS44IDEuNSAwLjggNy4yIDcuNCAzLjggMC4yIDIuMCAzLjIgNC4wIDguOSA2LjEgMS40IDMuNyA1LjcgMi4xIDcuOSAwLjUgMi4wIDcuMSAwLjYgMy4zIDQuMyAxLjkgOC4yIDcuNSAzLjUgOS44IDUuOCA0LjggMi4zIDQuOSAyLjIgNC40IDUuMSAxLjEgNS4wIDAuNyAwLjQgMS4xIDMuNSA2LjMgNy41IDkuNCAwLjkgNy4zIDcuNCA1LjQgNS4yIDAuNSAxLjkgNy4zIDkuMiA3LjUgMS4yIDEuNSAxLjYgOC4yIDUuNCA5LjEgMy4zIDguNiAwLjMgOC43IDYuMCAzLjAgOC43IDYuOSA5LjggMC41IDYuMiA1LjMgOC44IDYuMCA4LjAgNS40IDUuNCAzLjkgMS4yIDAuNSAxLjUgNi4zIDcuNSA2LjUgNy40IDguMSA1LjggNy43IDUuMyAyLjMgMi4wIDguNCA2LjkgNS41IDIuNCAxLjEgNS4zIDUuMyA1LjYgNi42IDYuNCA1LjggMi4yIDUuNCA4LjMgNy4wIDYuOCAyLjYgMi4zIDUuMCA4LjIgNi4zIDUuMQpeMQoxOTAKOzIKMjIxIDQ0OAo7Mwo2ODggODMxIDU5MQo7NAozNTEgMzAwIDE1NCA1MjcKOzUKNzkwIDc0MSA5ODggNDY0IDEwMAo7Ngo5NiA1OTMgMzMzIDMzNiA2MjUgNzE0Cjs3Cjc2NyA0NjUgODUgNDM4IDM1MiA5OTAgNjMwCjs4CjI5NCAzMSA5NTAgNjgwIDY5MSA1MzUgNTE4IDg5Cjs5Cjg1OCA0NTEgMjMxIDg5MCA1OTcgMTYxIDc3NSA1MzUgODgyCjsxMAo0OTggMzQ3IDkxOCA3OTIgMTgwIDE0NSA0MiA0NzQgMTE4IDc3MQpeMQpMdWl6CjsyCkx1aXogSm9hbmEKOzMKRmF0aW1hIEx1aXogSW5hCjs0CkFsYmVydG8gQmVhdHJpeiBEaW5vIEluYQo7NQpGYXRpbWEgQWxiZXJ0byBJbmEgS2F0aWEgRXZhCjs2CkluYSBIZWxpbyBHdWlkbyBDbGFyYSBFdmEgQWxiZXJ0bwo7NwpKb2FuYSBFdmEgQ2xhcmEgSGVsaW8gRGlubyBHdWlkbyBBbGJlcnRvCjs4Ckd1aWRvIEpvYW5hIEhlbGlvIEV2YSBBbGJlcnRvIEluYSBCZWF0cml6IEZhdGltYQo7OQpMdWl6IEZhdGltYSBCZWF0cml6IERpbm8gRXZhIENsYXJhIEd1aWRvIEthdGlhIEFsYmVydG8KOzEwMDAKQWprIEFlaiBBemQgQW54IEFjYiBBaXQgQXpiIEF4eiBCaWkgQmxzIEFhbiBCbHYgQXB6IEJlayBBaHogQWVkIEFvdCBBc20gQXR2IEF0aiBBbGogQXRvIEFtdyBBaXAgQmlxIEFpcyBBaWYgQmZ0IEFyayBBdm8gQmFhIEJneCBBa2YgQmtyIEFtZSBCY2sgQXNvIEFoZSBBZGogQXhnIEF5dyBCa24gQXBnIEFobyBBdG0gQXlrIEFrdSBCY3YgQmZnIEF4YiBBb3IgQWVlIEFjaCBBdWEgQWFhIEJmdyBBcncgQW1kIEF2ZiBCZ3AgQW50IEFlbyBCa2cgQmh3IEFuZCBBc2EgQXN5IEJjaiBBeWwgQmtoIEFtdSBBeXggQmRtIEJlZSBCZHcgQXl2IEFybiBBb20gQXVqIEJnYyBBcWsgQXhoIEJkYyBBYWIgQmFzIEJqYSBBa3cgQWVjIEFhcyBBdWMgQWpmIEJndCBCbWkgQXlhIEFxdSBBaGcgQmhlIEFydCBCZHAgQWZwIEFkbCBCbHogQWZ5IEJrbSBBancgQXV2IEFjcCBBaHAgQmloIEF5byBCY2wgQXByIEFycSBBa2kgQXF3IEF3bCBBa3MgQXpjIEJlaCBBcHUgQXF5IEJldCBBeGEgQmdtIEF0YiBBYmwgQWlpIEJiZiBCaW0gQXh4IEJnbyBBYXcgQWR1IEF2bCBBb2sgQmtzIEJnZCBBdGEgQWJhIEJrcSBBbGsgQXNjIEFhcSBCZWIgQmt1IEF1ZyBBc2YgQmliIEF0eCBBeW0gQW9oIEJlYSBBZHAgQmN6IEJkZCBCamYgQWFmIEFybyBCYWkgQWhpIEJmayBBbXIgQWpwIEJoZCBBZW0gQml6IEFiaCBCYWMgQmZwIEF1aSBBaHUgQXp2IEF3eSBCYnMgQWd6IEJndyBBZGkgQW5hIEJmaiBBbmMgQWNvIEF3dSBBcmQgQWVhIEFmaCBBbXQgQm1lIEFvcCBBa3EgQXp4IEJjdyBBZGMgQWNnIEJoaCBBYWcgQXJyIEJrZCBCa3ggQWh2IEFhYyBCZnMgQXBpIEF1bSBCZXMgQWJmIEJjdCBBcHkgQWl2IEJjZCBBeHcgQWRnIEJjcSBBbnYgQW9pIEFxaCBBbGwgQmpnIEF2ciBBbmogQWt4IEF1cSBCZnogQmp5IEJlbyBCbWMgQmF2IEF3eCBBa2cgQmh6IEF0eSBCa3QgQmF1IEFiaiBBcG0gQmJyIEFvbyBBZmcgQmh2IEFzaSBBbXEgQWNsIEJhciBBaHkgQmFnIEJhaCBBZHogQXN6IEJmdiBBcHYgQmpvIEF3dyBCZ2wgQXFtIEFvZiBCbWwgQWhzIEJiaiBBbWEgQXF0IEFjciBBaWIgQWtuIEF5cCBBa2wgQXJ6IEJqdyBBZmMgQmVuIEFndiBBcmogQmFqIEFsaCBBbmYgQXp6IEJjeCBBYmIgQWx1IEFidSBCZmUgQmd6IEFvYiBBdWggQXJpIEJnYSBBamwgQW56IEFiciBBbHIgQmdxIEFzeCBBYXogQmRlIEF3ZyBBdnkgQWpiIEJkbyBBamQgQmZvIEJidCBBZHQgQWxuIEF5YyBCZ3kgQmxrIEJpdCBBY3MgQWZ4IEF6cCBBcWQgQmF6IEJqbSBBYWUgQW51IEFtbSBBcWogQmJwIEJkYSBBZ3UgQW5uIEFueSBBY3cgQXp5IEF5eiBBa2EgQmNlIEFlaCBBb2EgQmNmIEFycyBCZXggQW5tIEF0ZSBBc3IgQmh0IEJseSBBZGIgQmtpIEFnbCBBZ3MgQmRmIEFucSBBbHggQXJtIEFnZCBCanUgQWx3IEFyZSBCYmEgQXVwIEJqbCBCYXkgQWJ5IEFhdSBBamMgQWJtIEFkdiBBaHggQWVyIEJlcSBBaWwgQWphIEF6ayBBYXIgQmx3IEJnZSBCYnYgQXBhIEJreiBCanAgQWJ0IEF2cCBBaHIgQXpsIEF2bSBCbGkgQmdyIEJscSBCamsgQXphIEJpbCBCZXUgQm1iIEF0cSBCaWogQXpyIEJqYiBCa3YgQWdvIEJjYiBBdW4gQWNtIEFhcCBBd3QgQmR6IEF4diBBa3YgQmVwIEFpeCBBZGggQXdyIEJkdiBBa28gQWlnIEJobCBCZHEgQXF4IEFlbCBCbGIgQXZzIEFpayBBbWYgQmRiIEJhayBBZmsgQW9lIEJrbCBBY2QgQXNrIEFpeiBBYnMgQmx0IEJpYSBCY2EgQmFlIEJldyBBb2ogQXB3IEFxYSBBZmIgQXptIEF6biBBYm8gQmFxIEFheSBBeWYgQXR6IEJnayBBc2IgQWxnIEF6cyBCYmggQmJ6IEF0biBBcHAgQXFvIEF6ZiBBa2ogQXhmIEJsZSBCbG4gQW1vIEJobyBCZWwgQmplIEFwbiBCaXYgQXFxIEFrbSBCanYgQXRyIEFydiBBcXAgQmxjIEF3aiBBbHAgQmZ1IEJqYyBBd2IgQm1kIEJqcSBBYm4gQmluIEF5cyBBcXYgQXNoIEFzbCBCY3kgQWhuIEJrZiBBbmwgQWh3IEJlaSBBa3QgQmp0IEF4biBBYXggQXlxIEFlcyBBb3UgQWduIEFtaiBCbHIgQWhjIEFieCBBeW4gQmpzIEJocyBBYmMgQWhxIEF5aiBCZXogQXpqIEJibiBBeGwgQXVlIEJoYiBCaXggQmVjIEFhdiBBZG4gQmZuIEJhbCBCZWYgQWd0IEJjbiBCaGYgQWxpIEFhZCBBenEgQWd4IEJlZyBBa2sgQXlnIEF6byBBYXQgQWd3IEFsZiBBcGggQXNlIEFnbSBBcmIgQWtkIEFmdyBCZHggQWpxIEF3aSBCZHUgQXZ3IEFnZyBBdXMgQWZ0IEFlayBBb2MgQmFiIEFzcSBBdmMgQXN3IEFiayBBbXggQm1hIEFxZiBBcHggQXViIEFucCBBdGsgQWlkIEJnaiBBaXcgQWFoIEFvbCBBYWkgQmZ5IEFodCBCbWcgQWZ2IEFpdSBCbGogQXp1IEFnZSBBbXAgQW1jIEJrYyBBcWUgQWpoIEJmZiBBcnAgQWJlIEFidyBBY3YgQWN1IEFjayBBaWMgQXN0IEF5aCBBb3ogQmNoIEF6dyBBZnMgQmVkIEJiayBCa2sgQWZuIEF5dSBBd2EgQXZuIEFwZCBCaHIgQmZtIEFnZiBCaW8gQmVyIEFqciBBdHUgQWV3IEF3YyBBaG0gQmJ4IEFyZiBBbW4gQmNtIEJpdyBBaW0gQmlrIEF4aiBBa3AgQXZpIEJmYyBCa2EgQXZoIEFrZSBBbWsgQXRwIEF4ZCBBdnggQXZ0IEJpdSBBY3ogQXBsIEF5dCBCaG0gQXVyIEJleSBBdnEgQXFsIEJkdCBBb24gQWJ6IEFwcyBBZWIgQmpqIEJkcyBBeWUgQmRoIEFzbiBBbmUgQmFwIEJpYyBBeG0gQXV5IEFrciBBb3cgQXFzIEFjbiBBYWsgQWRtIEJjdSBBZXggQmRsIEFhaiBCZHkgQWxiIEFtcyBBc2QgQWp6IEJsZyBCZGkgQW9nIEJqciBCY3IgQWptIEJmaCBBbHogQXZ6IEFnYiBBZXYgQmhpIEJmcSBBam8gQW5rIEF1dCBCaGEgQXhrIEJicSBBdXUgQW9xIEFqdiBBY2UgQmlwIEFkayBBbHYgQXZhIEFoYiBCZG4gQmhqIEFqcyBCaHUgQXZkIEF0cyBCYmUgQmRrIEFpYSBCaWcgQWZxIEFobCBCa3AgQWV1IEFxciBBbG8gQWdwIEF3ZCBBeXIgQW92IEF3cyBBaGggQXdwIEFveCBBZXkgQmZiIEFqdCBBZGUgQmF0IEFrYiBBbGEgQWxkIEJsbyBCbWggQXd2IEJibyBBcGogQmhnIEJnaSBBcWkgQmx4IEJndiBBZWkgQXhyIEFmeiBBZXQgQWp4IEJldiBBdHQgQmp6IEJnZyBBdGcgQWlxIEJrbyBBeWkgQmpuIEJsYSBCZmkgQW1iIEFhbCBBbnIgQWtjIEFidiBBb2QgQXVrIEJqeCBBdXcgQW5nIEFwbyBBenQgQWZlIEJiYyBBZXogQWZ1IEFkZCBBeWIgQW1oIEJibCBCamggQWlqIEJscCBCbGggQWRxIEF1eCBCZ24gQWl5IEF0bCBCbGQgQW5oIEJtaiBCaXkgQXhjIEFseSBBbm8gQmtqIEFxeiBBd3EgQmppIEJpZiBCZnggQWZmIEFwcSBBeHAgQWFvIEJoYyBBaGogQmNpIEJjcyBBaWggQmJpIEF3ZiBBbHEgQXZqIEFwZiBCZGcgQXl5IEFlZiBBdWYgQWlvIEJmbCBBZXEgQXZ2IEFuaSBBc3UgQWRyIEFoayBBamUgQWZhIEFjeSBBcGsgQWRmIEF0YyBCaGsgQXVvIEFmaSBBcmEgQWd5IEFtbCBBeHkgQXNzIEFscyBBaXIgQWNmIEJmciBBYnAgQXJjIEF0dyBBZ2sgQWpuIEJreSBCa2IgQWNqIEFvcyBBY2MgQWRzIEJqZCBCYnUgQmFvIEJjbyBCYmIgQmVtIEF0aSBBa3kgQXJ4IEF6aSBBZmogQWZkIEJhZCBBbHQgQWN0IEF0ZCBCYmcgQWdqIEFoYSBBd2ggQmdmIEFreiBBZHggQXRmIEFxYiBBeHMgQWZyIEJsZiBBcHQgQXNqIEF4dCBBY2EgQXVsIEJsdSBCYm0gQXRoIEFoZiBCaWQgQXpoIEF3bSBBcW4gQWdpIEJocSBCYnkgQWVnIEFyaCBBZ3IgQmtlIEJidyBCYXcgQmt3IEJoeSBBZG8gQm1mIEFmbCBCZ2ggQWdhIEFnYyBBYW0gQWdxIEF5ZCBBemUgQmRqIEF3ZSBBeGkgQWVwIEFkdyBBdmUgQXVkIEFqeSBBdmcgQmF4IEFwZSBCaXMgQW1nIEFyZyBBcmwgQWVuIEFkeSBBamkgQmhwIEJobiBBaWUgQmxtIEFyeSBBYmcgQXduIEFuYiBBbnMgQWJkIEJoeCBBbXkgQXd6IEJmYSBBa2ggQXZ1IEF4byBBc3AgQmNjIEFjeCBBaGQgQXV6IEFtdiBBbG0gQXFnIEFnaCBBbncgQW16IEFmbSBCYW0gQmllIEFzdiBBeHEgQXh1IEFsYyBBZm8gQWpnIEJhZiBCZmQgQWRhIEJjZyBBdmsgQXhlIEJiZCBCaXIgQmdiIEFjaSBBbWkgQmd1IEFpbiBBc2cgQWp1IEJsbCBCYW4gQmNwIEFqaiBCZWogQXdvIEJkciBBcGIgQmdzIEFicSBBcWMgQXpnIEF3ayBBYmkgQWNxIEF2YiBBcGMgQXJ1IEFveSBCbWsgQWxlCl4xCk8KOzIKUSBRCjszCkEgUCBBCjs0ClMgTCBMIFMKOzUKRiBEIFMgRCBGCjs2ClkgUiBSIE8gUiBZCjs3CkggUiBVIFQgVSBSIEgKOzgKRiBGIEMgRSBFIEMgRiBGCjs5CkUgWSBGIEsgRyBLIEYgWSBFCjsxMDAwClAgUyBBIEsgUCBNIFcgQyBJIFkgTyBNIEsgRSBOIFIgTyBMIEggWiBSIEogTyBMIEkgSiBZIFMgUyBDIE4gSCBOIFMgSSBaIEMgUSBDIEYgSCBZIE0gVSBCIEYgWSBHIEkgWCBWIFEgVyBPIFQgRSBYIEEgRCBFIFMgTiBJIFUgWiBBIFYgTiBVIEIgUCBTIEMgQSBSIEwgWiBUIEggUyBRIE4gUSBJIEMgTyBTIFMgWiBTIFcgTiBUIFUgUCBCIEUgRyBFIEMgQSBPIEIgUiBZIEggRyBYIFkgQyBIIEMgSCBCIFQgVyBDIEIgTyBUIEggQyBUIFYgTCBNIEcgWSBaIEsgQiBVIE0gTyBEIFggUyBGIEsgQSBCIEIgQiBCIEEgTiBWIEIgWiBaIFIgQiBJIEggRiBRIFggSSBRIEcgQSBTIFggSCBXIFkgQSBQIFIgWSBVIFAgRiBCIEkgQSBKIFAgWiBGIEUgQiBOIFIgTSBXIEEgRyBZIEYgVCBUIFcgQSBIIEcgWSBZIFEgQSBZIFogVSBJIEMgWSBZIFIgRiBKIEcgQSBBIEsgRSBMIFEgUiBNIEogTSBCIEwgVCBSIEkgQyBQIFEgRyBTIFUgTCBCIEUgWCBSIFkgRSBPIFAgWCBLIFggWSBIIFggUCBKIFUgUCBLIEkgRSBYIEsgRSBVIFAgUyBBIEIgSyBHIE0gSyBIIEQgSyBPIEEgUiBDIEEgSyBQIFMgRiBBIEcgWSBFIEUgQSBMIEggUyBUIFAgViBEIEggSCBEIFQgTyBNIEwgUSBBIFMgVSBQIEQgUyBRIEIgSSBKIFggTyBXIFEgUCBDIE8gUCBRIE0gUyBHIFcgRCBFIEYgRSBZIFogSCBRIE4gWCBFIEwgUSBGIEEgUyBZIFggWiBNIEcgWSBLIEggQyBWIFcgTSBMIEMgWiBCIEMgUSBaIE0gSSBXIFcgTiBGIEwgUCBZIE8gSSBUIFggUiBTIEcgRyBCIEwgUSBPIEsgRCBSIEQgWiBKIEggQyBaIEogTCBTIE8gVyBTIFAgUiBBIFYgWCBHIEUgRCBOIEIgWCBEIE8gRiBUIFMgQiBGIFogSiBWIFYgQyBZIFIgRyBTIE4gQiBTIFAgWCBLIFAgQyBBIFEgVSBSIEQgQiBZIFkgUiBMIE8gUSBBIFUgSyBKIFQgUiBWIEcgSCBUIE0gWSBMIE4gRSBTIFYgRCBFIEkgVCBDIEggVCBGIFcgVCBGIE0gWiBUIFAgSCBPIEggUCBIIEEgSSBUIE4gTCBPIEsgUCBMIE4gSyBEIEIgRyBQIFkgWiBBIEggUCBTIFEgTiBOIFEgUyBQIEggQSBaIFkgUCBHIEIgRCBLIE4gTCBQIEsgTyBMIE4gVCBJIEEgSCBQIEggTyBIIFAgVCBaIE0gRiBUIFcgRiBUIEggQyBUIEkgRSBEIFYgUyBFIE4gTCBZIE0gVCBIIEcgViBSIFQgSiBLIFUgQSBRIE8gTCBSIFkgWSBCIEQgUiBVIFEgQSBDIFAgSyBYIFAgUyBCIE4gUyBHIFIgWSBDIFYgViBKIFogRiBCIFMgVCBGIE8gRCBYIEIgTiBEIEUgRyBYIFYgQSBSIFAgUyBXIE8gUyBMIEogWiBDIEggSiBaIEQgUiBEIEsgTyBRIEwgQiBHIEcgUyBSIFggVCBJIE8gWSBQIEwgRiBOIFcgVyBJIE0gWiBRIEMgQiBaIEMgTCBNIFcgViBDIEggSyBZIEcgTSBaIFggWSBTIEEgRiBRIEwgRSBYIE4gUSBIIFogWSBFIEYgRSBEIFcgRyBTIE0gUSBQIE8gQyBQIFEgVyBPIFggSiBJIEIgUSBTIEQgUCBVIFMgQSBRIEwgTSBPIFQgRCBIIEggRCBWIFAgVCBTIEggTCBBIEUgRSBZIEcgQSBGIFMgUCBLIEEgQyBSIEEgTyBLIEQgSCBLIE0gRyBLIEIgQSBTIFAgVSBFIEsgWCBFIEkgSyBQIFUgSiBQIFggSCBZIFggSyBYIFAgTyBFIFkgUiBYIEUgQiBMIFUgUyBHIFEgUCBDIEkgUiBUIEwgQiBNIEogTSBSIFEgTCBFIEsgQSBBIEcgSiBGIFIgWSBZIEMgSSBVIFogWSBBIFEgWSBZIEcgSCBBIFcgVCBUIEYgWSBHIEEgVyBNIFIgTiBCIEUgRiBaIFAgSiBBIEkgQiBGIFAgVSBZIFIgUCBBIFkgVyBIIFggUyBBIEcgUSBJIFggUSBGIEggSSBCIFIgWiBaIEIgViBOIEEgQiBCIEIgQiBBIEsgRiBTIFggRCBPIE0gVSBCIEsgWiBZIEcgTSBMIFYgVCBDIEggVCBPIEIgQyBXIFQgQiBIIEMgSCBDIFkgWCBHIEggWSBSIEIgTyBBIEMgRSBHIEUgQiBQIFUgVCBOIFcgUyBaIFMgUyBPIEMgSSBRIE4gUSBTIEggVCBaIEwgUiBBIEMgUyBQIEIgVSBOIFYgQSBaIFUgSSBOIFMgRSBEIEEgWCBFIFQgTyBXIFEgViBYIEkgRyBZIEYgQiBVIE0gWSBIIEYgQyBRIEMgWiBJIFMgTiBIIE4gQyBTIFMgWSBKIEkgTCBPIEogUiBaIEggTCBPIFIgTiBFIEsgTSBPIFkgSSBDIFcgTSBQIEsgQSBTIFAKOzIKTyBQCjszClggWCBRCjszCkEgUCBQCjs0ClMgTCBMIEwKOzUKQSBBIEEgQSBGCl4xCjsyMgo7MzMzCjsxMjEyCjsxMjM0MzIxCjsxMTAwMzAwMTIKOzk4NzA3ODkKOzEyMTMyMTIxCjs4OTk5OTk5OAo7OTk4NzA3ODk5Cg==">
+  <input type="hidden" id="hiddenresults" value="MTAuMAoxCjs5LjAKNAo7Ni42CjEKOzYuNwoyCjszLjgKMgo7NC42CjMKOzYuOQo1Cjs1LjQKMwo7Ni40CjUKOzQuOAo0OTYKXjE5MAo7NDQ4IDIyMQo7NTkxIDgzMSA2ODgKOzUyNyAxNTQgMzAwIDM1MQo7MTAwIDQ2NCA5ODggNzQxIDc5MAo7NzE0IDYyNSAzMzYgMzMzIDU5MyA5Ngo7NjMwIDk5MCAzNTIgNDM4IDg1IDQ2NSA3NjcKOzg5IDUxOCA1MzUgNjkxIDY4MCA5NTAgMzEgMjk0Cjs4ODIgNTM1IDc3NSAxNjEgNTk3IDg5MCAyMzEgNDUxIDg1OAo7NzcxIDExOCA0NzQgNDIgMTQ1IDE4MCA3OTIgOTE4IDM0NyA0OTgKXkx1aXoKO0pvYW5hIEx1aXoKO0luYSBMdWl6IEZhdGltYQo7SW5hIERpbm8gQmVhdHJpeiBBbGJlcnRvCjtFdmEgS2F0aWEgSW5hIEFsYmVydG8gRmF0aW1hCjtBbGJlcnRvIEV2YSBDbGFyYSBHdWlkbyBIZWxpbyBJbmEKO0FsYmVydG8gR3VpZG8gRGlubyBIZWxpbyBDbGFyYSBFdmEgSm9hbmEKO0ZhdGltYSBCZWF0cml6IEluYSBBbGJlcnRvIEV2YSBIZWxpbyBKb2FuYSBHdWlkbwo7QWxiZXJ0byBLYXRpYSBHdWlkbyBDbGFyYSBFdmEgRGlubyBCZWF0cml6IEZhdGltYSBMdWl6CjtBbGUgQm1rIEFveSBBcnUgQXBjIEF2YiBBY3EgQWJpIEF3ayBBemcgQXFjIEFicSBCZ3MgQXBiIEJkciBBd28gQmVqIEFqaiBCY3AgQmFuIEJsbCBBanUgQXNnIEFpbiBCZ3UgQW1pIEFjaSBCZ2IgQmlyIEJiZCBBeGUgQXZrIEJjZyBBZGEgQmZkIEJhZiBBamcgQWZvIEFsYyBBeHUgQXhxIEFzdiBCaWUgQmFtIEFmbSBBbXogQW53IEFnaCBBcWcgQWxtIEFtdiBBdXogQWhkIEFjeCBCY2MgQXNwIEF4byBBdnUgQWtoIEJmYSBBd3ogQW15IEJoeCBBYmQgQW5zIEFuYiBBd24gQWJnIEFyeSBCbG0gQWllIEJobiBCaHAgQWppIEFkeSBBZW4gQXJsIEFyZyBBbWcgQmlzIEFwZSBCYXggQXZnIEFqeSBBdWQgQXZlIEFkdyBBZXAgQXhpIEF3ZSBCZGogQXplIEF5ZCBBZ3EgQWFtIEFnYyBBZ2EgQmdoIEFmbCBCbWYgQWRvIEJoeSBCa3cgQmF3IEJidyBCa2UgQWdyIEFyaCBBZWcgQmJ5IEJocSBBZ2kgQXFuIEF3bSBBemggQmlkIEFoZiBBdGggQmJtIEJsdSBBdWwgQWNhIEF4dCBBc2ogQXB0IEJsZiBBZnIgQXhzIEFxYiBBdGYgQWR4IEFreiBCZ2YgQXdoIEFoYSBBZ2ogQmJnIEF0ZCBBY3QgQWx0IEJhZCBBZmQgQWZqIEF6aSBBcnggQWt5IEF0aSBCZW0gQmJiIEJjbyBCYW8gQmJ1IEJqZCBBZHMgQWNjIEFvcyBBY2ogQmtiIEJreSBBam4gQWdrIEF0dyBBcmMgQWJwIEJmciBBY2YgQWlyIEFscyBBc3MgQXh5IEFtbCBBZ3kgQXJhIEFmaSBBdW8gQmhrIEF0YyBBZGYgQXBrIEFjeSBBZmEgQWplIEFoayBBZHIgQXN1IEFuaSBBdnYgQWVxIEJmbCBBaW8gQXVmIEFlZiBBeXkgQmRnIEFwZiBBdmogQWxxIEF3ZiBCYmkgQWloIEJjcyBCY2kgQWhqIEJoYyBBYW8gQXhwIEFwcSBBZmYgQmZ4IEJpZiBCamkgQXdxIEFxeiBCa2ogQW5vIEFseSBBeGMgQml5IEJtaiBBbmggQmxkIEF0bCBBaXkgQmduIEF1eCBBZHEgQmxoIEJscCBBaWogQmpoIEJibCBBbWggQXliIEFkZCBBZnUgQWV6IEJiYyBBZmUgQXp0IEFwbyBBbmcgQXV3IEJqeCBBdWsgQW9kIEFidiBBa2MgQW5yIEFhbCBBbWIgQmZpIEJsYSBCam4gQXlpIEJrbyBBaXEgQXRnIEJnZyBCanogQXR0IEJldiBBanggQWV0IEFmeiBBeHIgQWVpIEJndiBCbHggQXFpIEJnaSBCaGcgQXBqIEJibyBBd3YgQm1oIEJsbyBBbGQgQWxhIEFrYiBCYXQgQWRlIEFqdCBCZmIgQWV5IEFveCBBd3AgQWhoIEF3cyBBb3YgQXlyIEF3ZCBBZ3AgQWxvIEFxciBBZXUgQmtwIEFobCBBZnEgQmlnIEFpYSBCZGsgQmJlIEF0cyBBdmQgQmh1IEFqcyBCaGogQmRuIEFoYiBBdmEgQWx2IEFkayBCaXAgQWNlIEFqdiBBb3EgQXV1IEJicSBBeGsgQmhhIEF1dCBBbmsgQWpvIEJmcSBCaGkgQWV2IEFnYiBBdnogQWx6IEJmaCBBam0gQmNyIEJqciBBb2cgQmRpIEJsZyBBanogQXNkIEFtcyBBbGIgQmR5IEFhaiBCZGwgQWV4IEJjdSBBZG0gQWFrIEFjbiBBcXMgQW93IEFrciBBdXkgQXhtIEJpYyBCYXAgQW5lIEFzbiBCZGggQXllIEJkcyBCamogQWViIEFwcyBBYnogQW9uIEJkdCBBcWwgQXZxIEJleSBBdXIgQmhtIEF5dCBBcGwgQWN6IEJpdSBBdnQgQXZ4IEF4ZCBBdHAgQW1rIEFrZSBBdmggQmthIEJmYyBBdmkgQWtwIEF4aiBCaWsgQWltIEJpdyBCY20gQW1uIEFyZiBCYnggQWhtIEF3YyBBZXcgQXR1IEFqciBCZXIgQmlvIEFnZiBCZm0gQmhyIEFwZCBBdm4gQXdhIEF5dSBBZm4gQmtrIEJiayBCZWQgQWZzIEF6dyBCY2ggQW96IEF5aCBBc3QgQWljIEFjayBBY3UgQWN2IEFidyBBYmUgQXJwIEJmZiBBamggQXFlIEJrYyBBbWMgQW1wIEFnZSBBenUgQmxqIEFpdSBBZnYgQm1nIEFodCBCZnkgQWFpIEFvbCBBYWggQWl3IEJnaiBBaWQgQXRrIEFucCBBdWIgQXB4IEFxZiBCbWEgQW14IEFiayBBc3cgQXZjIEFzcSBCYWIgQW9jIEFlayBBZnQgQXVzIEFnZyBBdncgQmR1IEF3aSBBanEgQmR4IEFmdyBBa2QgQXJiIEFnbSBBc2UgQXBoIEFsZiBBZ3cgQWF0IEF6byBBeWcgQWtrIEJlZyBBZ3ggQXpxIEFhZCBBbGkgQmhmIEJjbiBBZ3QgQmVmIEJhbCBCZm4gQWRuIEFhdiBCZWMgQml4IEJoYiBBdWUgQXhsIEJibiBBemogQmV6IEF5aiBBaHEgQWJjIEJocyBCanMgQXluIEFieCBBaGMgQmxyIEFtaiBBZ24gQW91IEFlcyBBeXEgQWF4IEF4biBCanQgQWt0IEJlaSBBaHcgQW5sIEJrZiBBaG4gQmN5IEFzbCBBc2ggQXF2IEF5cyBCaW4gQWJuIEJqcSBCbWQgQXdiIEJqYyBCZnUgQWxwIEF3aiBCbGMgQXFwIEFydiBBdHIgQmp2IEFrbSBBcXEgQml2IEFwbiBCamUgQmVsIEJobyBBbW8gQmxuIEJsZSBBeGYgQWtqIEF6ZiBBcW8gQXBwIEF0biBCYnogQmJoIEF6cyBBbGcgQXNiIEJnayBBdHogQXlmIEFheSBCYXEgQWJvIEF6biBBem0gQWZiIEFxYSBBcHcgQW9qIEJldyBCYWUgQmNhIEJpYSBCbHQgQWJzIEFpeiBBc2sgQWNkIEJrbCBBb2UgQWZrIEJhayBCZGIgQW1mIEFpayBBdnMgQmxiIEFlbCBBcXggQmRxIEJobCBBaWcgQWtvIEJkdiBBd3IgQWRoIEFpeCBCZXAgQWt2IEF4diBCZHogQXd0IEFhcCBBY20gQXVuIEJjYiBBZ28gQmt2IEJqYiBBenIgQmlqIEF0cSBCbWIgQmV1IEJpbCBBemEgQmprIEJscSBCZ3IgQmxpIEF2bSBBemwgQWhyIEF2cCBBYnQgQmpwIEJreiBBcGEgQmJ2IEJnZSBCbHcgQWFyIEF6ayBBamEgQWlsIEJlcSBBZXIgQWh4IEFkdiBBYm0gQWpjIEFhdSBBYnkgQmF5IEJqbCBBdXAgQmJhIEFyZSBBbHcgQmp1IEFnZCBBcm0gQWx4IEFucSBCZGYgQWdzIEFnbCBCa2kgQWRiIEJseSBCaHQgQXNyIEF0ZSBBbm0gQmV4IEFycyBCY2YgQW9hIEFlaCBCY2UgQWthIEF5eiBBenkgQWN3IEFueSBBbm4gQWd1IEJkYSBCYnAgQXFqIEFtbSBBbnUgQWFlIEJqbSBCYXogQXFkIEF6cCBBZnggQWNzIEJpdCBCbGsgQmd5IEF5YyBBbG4gQWR0IEJidCBCZm8gQWpkIEJkbyBBamIgQXZ5IEF3ZyBCZGUgQWF6IEFzeCBCZ3EgQWxyIEFiciBBbnogQWpsIEJnYSBBcmkgQXVoIEFvYiBCZ3ogQmZlIEFidSBBbHUgQWJiIEJjeCBBenogQW5mIEFsaCBCYWogQXJqIEFndiBCZW4gQWZjIEJqdyBBcnogQWtsIEF5cCBBa24gQWliIEFjciBBcXQgQW1hIEJiaiBBaHMgQm1sIEFvZiBBcW0gQmdsIEF3dyBCam8gQXB2IEJmdiBBc3ogQWR6IEJhaCBCYWcgQWh5IEJhciBBY2wgQW1xIEFzaSBCaHYgQWZnIEFvbyBCYnIgQXBtIEFiaiBCYXUgQmt0IEF0eSBCaHogQWtnIEF3eCBCYXYgQm1jIEJlbyBCankgQmZ6IEF1cSBBa3ggQW5qIEF2ciBCamcgQWxsIEFxaCBBb2kgQW52IEJjcSBBZGcgQXh3IEJjZCBBaXYgQXB5IEJjdCBBYmYgQmVzIEF1bSBBcGkgQmZzIEFhYyBBaHYgQmt4IEJrZCBBcnIgQWFnIEJoaCBBY2cgQWRjIEJjdyBBenggQWtxIEFvcCBCbWUgQW10IEFmaCBBZWEgQXJkIEF3dSBBY28gQW5jIEJmaiBBbmEgQWRpIEJndyBBZ3ogQmJzIEF3eSBBenYgQWh1IEF1aSBCZnAgQmFjIEFiaCBCaXogQWVtIEJoZCBBanAgQW1yIEJmayBBaGkgQmFpIEFybyBBYWYgQmpmIEJkZCBCY3ogQWRwIEJlYSBBb2ggQXltIEF0eCBCaWIgQXNmIEF1ZyBCa3UgQmViIEFhcSBBc2MgQWxrIEJrcSBBYmEgQXRhIEJnZCBCa3MgQW9rIEF2bCBBZHUgQWF3IEJnbyBBeHggQmltIEJiZiBBaWkgQWJsIEF0YiBCZ20gQXhhIEJldCBBcXkgQXB1IEJlaCBBemMgQWtzIEF3bCBBcXcgQWtpIEFycSBBcHIgQmNsIEF5byBCaWggQWhwIEFjcCBBdXYgQWp3IEJrbSBBZnkgQmx6IEFkbCBBZnAgQmRwIEFydCBCaGUgQWhnIEFxdSBBeWEgQm1pIEJndCBBamYgQXVjIEFhcyBBZWMgQWt3IEJqYSBCYXMgQWFiIEJkYyBBeGggQXFrIEJnYyBBdWogQW9tIEFybiBBeXYgQmR3IEJlZSBCZG0gQXl4IEFtdSBCa2ggQXlsIEJjaiBBc3kgQXNhIEFuZCBCaHcgQmtnIEFlbyBBbnQgQmdwIEF2ZiBBbWQgQXJ3IEJmdyBBYWEgQXVhIEFjaCBBZWUgQW9yIEF4YiBCZmcgQmN2IEFrdSBBeWsgQXRtIEFobyBBcGcgQmtuIEF5dyBBeGcgQWRqIEFoZSBBc28gQmNrIEFtZSBCa3IgQWtmIEJneCBCYWEgQXZvIEFyayBCZnQgQWlmIEFpcyBCaXEgQWlwIEFtdyBBdG8gQWxqIEF0aiBBdHYgQXNtIEFvdCBBZWQgQWh6IEJlayBBcHogQmx2IEFhbiBCbHMgQmlpIEF4eiBBemIgQWl0IEFjYiBBbnggQXpkIEFlaiBBamsKXlMKO1MKO1MKO1MKO1MKO04KO1MKO1MKO1MKO1MKO04KO04KO04KO04KO04KXlMKO1MKO1MKO04KO1MKO04KO1MKO04KO1MKO1MK">
+  <input type="hidden" id="hiddensamples" value="NQoxMC4wIDkuMCA3LjAgOS4wIDEwLjAKXjUKMTAgMjAgMzAgNDAgNTAKXjUKRmF0aW1hIEFsYmVydG8gUGVkcm8gS2F0aWEgRXZhCl41CkEgQiBDIEIgQQpeMTIzNDMyMQo=">
+  <input type="hidden" id="hiddenhints" value="Xl5eXg==">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="tNJfODXVsS8">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

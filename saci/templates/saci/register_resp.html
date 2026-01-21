@@ -1,0 +1,31 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block header %}
+<h1>Saci</h1>
+{% endblock %}
+{% block content %}
+<p>
+  Obrigado por registrar-se Ambiente Saci da Olimpíada Brasileira de Informática. Uma mensagem
+  com a senha para acesso foi enviada para o endereço de email informado.
+</p>
+</p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+  {% block browse-wrapper %}
+  <h2>Cursos disponíveis</h2>
+  {% block browse %}
+  <ul>
+    <li><a href="{% url 'saci:intro_js' %}">Curso de Introdução à Programação de Computadores (Javascript)</a>
+    </li>
+  </ul>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

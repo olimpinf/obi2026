@@ -1,0 +1,71 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica{% endblock %}
+
+{% block header %}<h1>Seletiva Competições Internacionais</h1>{% endblock %}
+
+{% block content %}
+
+<p>
+  A Seletiva selecionará as equipes brasileiras na IOI (International Olympiad in Informatics),
+  na EGOI (European Girls Olympiad in Informatics) e na OII (Olimpíada Iberoamericana de Informática).
+</p>
+
+<h3>Orientações sobre as provas</h3>
+<ul>
+<li>É permitido o uso de notebooks pessoais durante as aulas e atividades da semana,
+    porém todas as provas serão realizadas somente nos computadores dos laboratórios da Unicamp;</li>
+<li>Não é permitido consulta a livros, anotações, materiais impressos ou internet durante as provas;</li>
+<li>É permitido o uso de qualquer recurso do computador da prova (calculadora, ferramentas
+    gráficas, python, etc), caso o competidor considerar que estes o ajudem na resolução dos problemas;</li>
+<li>Os computadores podem ser usados tanto com o Linux quanto com o Windows, ficando a escolha do aluno
+    e já vêm com algumas IDEs (Codeblocks, Eclipse, Emacs, Geany, Kate, Kdevelop, Visual Studio) instaladas
+  (sugerimos o uso de Linux, porque é o usado na IOI e também no sistema de submissão utilizado nas provas).
+    Não é permitido o uso de compiladores online;</li>
+<li>Disponibilizado pela organização:
+    <ul>
+    <li>Computador;</li>
+    <li>Teclado e mouse;</li>
+    <li>Documentação C++;</li>
+    </ul>
+</li>
+<li>Caso o aluno queira ele pode trazer:
+    <ul>
+    <li>Equipamentos para escrever (e.g. lápis, caneta, papel em branco);</li>
+    <li>Teclado (com cabo, não programável. Caso a organização ache que o teclado faz muito
+        barulho pode ser pedido que este não seja utilizado);</li>
+    <li>Mouse (com cabo, não programável) e mousepads;</li>
+    <li>Comida;</li>
+    <li>Remédios;</li>
+    <li>Earplugs e earmuffs;</li>
+    <li>Fica à escolha dos organizadores barrarem qualquer item caso atrapalhe os demais participantes.</li>
+    </ul>
+</li>
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

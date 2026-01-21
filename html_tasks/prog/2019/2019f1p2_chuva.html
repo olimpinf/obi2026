@@ -1,0 +1,176 @@
+title:Chuva
+template:tasks/tarefa_programacao.html
+
+<p>
+Está chovendo tanto na Obilândia que começaram a aparecer goteiras
+dentro da casa do prefeito. Uma dessas goteiras está fazendo escorrer
+água verticalmente, a partir de um ponto no teto, numa parede onde há
+várias prateleiras horizontais. Quando a água bate em uma prateleira,
+ela começa a escorrer horizontalmente para os dois lados, direita e
+esquerda, até as extremidades da prateleira, quando volta a escorrer
+verticalmente.
+
+<p>
+Vamos representar a parede por uma matriz de N linhas e M colunas
+de caracteres, como mostrado abaixo. As prateleiras serão
+representadas por &quot;<span class="ttt">#</span>&quot; e a parede por &quot;<span class="ttt">.</span>&quot;. Só existem
+prateleiras nas linhas pares e elas nunca encostam na borda da parede.
+Há apenas um ponto de vazamento representado pelo caractere &quot;
+o&quot; na primeira linha.
+
+<pre>
+      .......o......
+      .###...####.#.
+      ..............
+      ..######......
+      ..............
+      .#.####....##.
+      ..............
+      .....####.....
+      ..............
+</pre>
+
+<p>
+Para deixar mais rigorosa a forma como a água vai escorrer, seja
+c(i,j) o caractere na linha i coluna j. Se c(i,j)= &quot;<span class="ttt">.</span>&quot;,
+então ele deve virar &quot;<span class="ttt">o</span>&quot; sempre que:
+
+<ul>
+<li> c(i-1,j)= &quot;<span class="ttt">o</span>&quot;; ou
+<li> c(i,j-1)= &quot;<span class="ttt">o</span>&quot; e c(i+1,j-1)= &quot;<span class="ttt">#</span>&quot;; ou
+<li> c(i,j+1)= &quot;<span class="ttt">o</span>&quot; e c(i+1,j+1)= &quot;<span class="ttt">#</span>&quot;.
+</ul>
+
+<pre>
+      ......oooooo..
+      .###..o####o#.
+      .oooooooo..o..
+      .o######o..o..
+      ooo.....o.oooo
+      o#o####.o.o##o
+      o.o.ooooooo..o
+      o.o.o####oo..o
+      o.o.o....oo..o
+</pre>
+
+<p>
+Neste problema, dada a matriz representando a parede no início do
+vazamento, seu programa deve imprimir na saída uma matriz
+representando a parede usando o caractere &quot;<span class="ttt">o</span>&quot; exatamente nas
+posições que serão molhadas pelo vazamento, como ilustrado acima.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém dois inteiros N e M,
+respectivamente o número de linhas e colunas da matriz. As N linhas
+seguintes da entrada contêm, cada uma, uma sequência de M caracteres
+entre três possíveis: &quot;<span class="ttt">.</span>&quot;, &quot;<span class="ttt">#</span>&quot; ou &quot;<span class="ttt">o</span>&quot;.
+
+<h3>Saída</h3>
+Seu programa deve imprimir N linhas, cada uma contendo uma sequência
+de M caracteres, representando a matriz da entrada usando o
+caractere &quot;<span class="ttt">o</span>&quot; exatamente nas posições que serão molhadas pelo
+vazamento.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 3  &leq;  N  &leq;  500 e 3  &leq;  M  &leq;  500;
+ <li> O número de linhas N é ímpar;
+ <li> Há exatamente um caractere &quot;<span class="ttt">o</span>&quot; na primeira linha;
+ <li> As linhas ímpares, a primeira coluna e a última coluna não
+possuem o caractere &quot;<span class="ttt">#</span>&quot;.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+9 14
+.......o......
+.###...####.#.
+..............
+..######......
+..............
+.#.####....##.
+..............
+.....####.....
+..............
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+......oooooo..
+.###..o####o#.
+.oooooooo..o..
+.o######o..o..
+ooo.....o.oooo
+o#o####.o.o##o
+o.o.ooooooo..o
+o.o.o####oo..o
+o.o.o....oo..o
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 5
+.o...
+.#...
+.....
+.....
+.....
+..#..
+.....
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+ooo..
+o#o..
+o.o..
+o.o..
+oooo.
+oo#o.
+oo.o.
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+..o
+.#.
+...
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+..o
+.#o
+..o
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

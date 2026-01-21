@@ -1,0 +1,128 @@
+<h3>Contando quantas vezes um laço foi executado</h3>
+
+<p>Na aula anterior vimos o seguinte problema, que resolvemos
+  com o bloco Repita:
+
+<center><em>
+  Dada uma lista com N números inteiros, escrever na saída
+  o primeiro número da lista que é par. Se não existe número par,
+  escreva -1 na saída.
+</em></center>
+
+<p>E se ao invés de escrever na saída o número encontrado,
+  quisermos escrever a posição do número encontrado na lista?
+
+<p>
+  Ou seja, para a lista
+  <center>
+  <table width="400px">
+    <tr><td></td><td>1</td><td>3</td><td>7</td><td>13</td><td>5</td><td>29</td><td>22</td><td>12</td><td>22</td><td>35</td></tr>
+    <tr><td></td><td>&uarr;</td><td>&uarr;</td><td>&uarr;</td><td>&uarr;</td><td>&uarr;</td><td>&uarr;</td><td>&uarr;</td><td></td><td></td><td></td></tr>
+    <tr><td><em>posição</em></td><td>1</td><td>2</td><td>3</td><td> 4</td><td>5</td><td> 6</td><td>7</td><td></td><td></td><td></td></tr>
+  </table>
+  </center>
+  
+<p>ao encontrarmos o número 22, devemos escrever 7 na saída,
+  significando que o primeiro par é o sétimo número da lista.
+
+<p>
+<p>Para contar quantas vezes o laço foi executado podemos usar uma
+  variável com valor inicial zero e somar um ao valor da variável no início de
+  cada passo da repetição.
+
+<p>Veja este pequeno exemplo em Blockly:
+  <center>
+  <img src="/static/saci/blockly_images/group_repeat_as_for.png" align="middle"/>
+  </center>
+
+<p>A variável i, utilizada como contador de repetições, é chamada de <em>variável de controle do laço</em>. Quando esse trecho de programa é executado, ele escreve quatro linhas na saída:
+
+<pre>
+1
+2
+3
+fim
+</pre>    
+
+<p>O uso de uma variável de controle de laço é tão frequente que existe um bloco específico para esse caso.
+
+<h3>O bloco de repetição controlada por variável</h3>
+
+<p>O bloco de repetição controlada por variável é encontrado no menu <em>Laços</em> da Barra de Ferramentas:
+  <center>
+  <img src="/static/saci/blockly_images/menu_loops_for.png" align="middle"/>
+  </center>
+  
+<p>O bloco de tem
+  <ul>
+    <li>uma variável de controle, que pode ser alterada,
+    <li>um espaço vago para inserirmos o valor inicial da variável de controle e
+    <li>um espaço vago para inserirmos o valor final da variável de controle
+  </ul>
+  <center>
+  <img src="/static/saci/blockly_images/description_block_loops_for.png" align="middle"/>
+  </center>
+
+<p>Suponha que a variável de controle seja i, como no bloco acima. O bloco é executado:
+  <ul>
+    <li>a primeira vez com i = <em>valor inicial</em>
+    <li>a segunda vez com i = <em>valor inicial</em> + 1
+    <li>a terceira vez com i = <em>valor inicial</em> + 2
+    <li>...
+    <li>a terceira vez com i = <em>valor final</em>
+  </ul>
+
+<p>Por exemplo, o trecho de programa
+  <center>
+  <img src="/static/saci/blockly_images/group_example_for.png" align="middle"/>
+  </center>
+
+Quando executado produz a saída
+<pre>
+1
+2
+3
+fim
+</pre>    
+
+Note que os dois trechos de programa abaixo produzem exatamente a mesma saída.
+O bloco de repetição controlada por variável é apenas uma forma mais compacta,
+que consegue o mesmo resultado usando um número menor de blocos.
+
+  <center>
+  <img src="/static/saci/blockly_images/group_example_for.png" align="middle"/>
+    &nbsp;&nbsp;&nbsp;
+  <img src="/static/saci/blockly_images/group_repeat_as_for.png" align="middle"/>
+  </center>
+
+
+<p>Veja esses dois trechos programa na linguagem Python (não precisa entender o
+programa em Python, o exemplo é apenas para você ter uma ideia da
+linguagem Python; mais adiante no curso vamos ver os comandos em
+  Python em detalhes):
+<center>
+  <table>
+    <tr><td>
+<pre style="background-color:#eeeeee;width:100%;padding:4px">
+for i in range(1,4):
+  print(i)
+print('fim')
+</pre>
+      </td>
+      <td>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;
+      </td>
+      <td>
+<pre style="background-color:#eeeeee;width:100%;padding:4px">
+i = 0
+for count in range(3):
+  i = i + 1
+  print(i)
+print('fim')
+</pre>
+      </td>
+    </tr>
+  </table>
+  </center>
+<p>&nbsp;</p>
+

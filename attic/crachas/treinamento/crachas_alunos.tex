@@ -1,0 +1,125 @@
+
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+\usepackage[landscape]{geometry}
+\usepackage{rotating}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+\pagestyle{empty}
+\geometry{
+  top=00mm,
+  %bindingoffset=25mm,
+  left=00mm,right=0mm
+}
+
+\makeatletter 
+\newcommand\HUGE{\@setfontsize\Huge{33}{37}}
+\makeatother
+
+%\setmainfont{Asana-Math}
+\setmainfont{Helvetica}
+
+\setlength\fboxrule{0.05pt}
+\newcommand{\cracha}[5] {
+  \fbox{
+    \begin{minipage}[c][165mm]{105mm}
+      \begin{center}
+
+        \vspace*{37mm}
+        {\HUGE \bf #1}\\[12pt]
+        
+        {\LARGE #1 #2} \\[10pt]
+        
+        \vspace{1mm}  
+        \includegraphics[width=20mm]{qrcodes/#3.pdf}
+        \vspace{1mm}  
+        
+        {\LARGE \textbf{Treinamento OII2024}\\[3pt]
+          \normalsize Sociedade Brasileira de Computação\\[3pt]
+                      {\bf Instituto de Computação -- UNICAMP}\\[8pt]}
+
+      \end{center}
+    \end{minipage}
+  }
+%
+  \fbox{
+    \begin{minipage}[c][165mm]{105mm}\setlength{\parindent}{5mm}
+     \Large      
+      {\bf Alergias}
+      
+      #4
+      
+      \vspace*{0.5cm}
+              {\bf Telefones em caso de emergência}
+              \begin{itemize}
+              \item Coordenador da OBI:\\
+                Prof. Ricardo Anido\\(19) 99915-5515 
+              \item Monitor-chefe:\\
+                Luan\\(65) 98146-5848 
+              \item Vigilância do Campus:\\
+                (19) 3521-6000
+              \end{itemize}
+    \end{minipage}
+  }
+
+}
+
+
+\newcommand\BackgroundPic{
+  \put(12,110){
+    \parbox[b][165mm]{105mm}{
+      \vfill
+      \centering
+      \includegraphics[width=109mm,keepaspectratio]{FundoCrachaVermelho.pdf}
+      \vfill
+    }
+  }
+}
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+
+
+\cracha{Arthur}{Leite Lobo Lopes}{101}{Nenhuma}
+
+
+\cracha{Caíque}{Paiva}{102}{Nenhuma}
+
+
+\cracha{Carlos}{Cabral de Menezes Filho}{103}{Nenhuma}
+
+
+\cracha{Enzo}{Dantas de Britto Monte Araújo}{104}{Nenhuma}
+
+
+\cracha{Estela}{Baron Nakamura}{105}{Penicilina}
+
+
+\cracha{Gabriela}{Barbieri Stroeh}{106}{Nenhuma}
+
+
+\cracha{Fernando}{Graminholi Gonçalves}{107}{Dipirona e feijão}
+
+
+\cracha{Filipe}{de Souza Lilac}{108}{Nenhuma}
+
+
+\cracha{Leandro}{Marques Checchio de Souza}{109}{Nenhuma}
+
+
+\cracha{Pedro}{Enrique Assunção}{110}{Nenhuma}
+
+
+\cracha{Pedro}{Suyama Leston Rey}{111}{Nenhuma}
+
+
+\cracha{Maria Clara}{Fontes Silva}{112}{Nenhuma}
+
+
+\cracha{Sofia}{Torres de Paula Cintra}{113}{Nenhuma}
+
+
+\end{document}
+

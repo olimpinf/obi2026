@@ -1,0 +1,25 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}PIX OBI{% endblock %}
+
+{% block header %}<h1>PIX OBI</h1>{% endblock %}
+
+{% block content %}
+<center style="padding-top:10px">
+  <img src="/static/extras/img/pix_qrcode.png" width="90%" />
+
+<p><a class="myButton action" href="javascript: history.go(-1)">Voltar</a>
+</center>
+{% endblock %}
+
+
+{% block content-related %}
+<h4>Informação para depósito</h4>
+Banco do Brasil<br>
+Agência: 1899-6<br>
+Conta: 23943-7<br>
+CNPJ: 29532264/0001-78<br>
+Titular: Sociedade OBI (esse é o nome da conta da OBI, cujo titular é a Sociedade Brasileira de Computação; o CNPJ acima é o da SBC)<br>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams static %}
+
+{% block content %}
+<span class="exam_header">{{ page_info.exam_header }}</span>
+<h1>{{ page_info.pagetitle }} - {{ page_info.level_name }}</h1>
+
+<i class="icon-chevron down"></i>
+
+<table id="submission_list" class="simple">
+    <thead>
+        <tr>
+            <th class="compet_id">ID</th>
+            <th class="compet_name">Nome</th>
+			{% for task_name in task_names %}
+            <th class="task_score" style="text-align:center">{{task_name}}</th>
+			{% endfor %}
+            <th class="total_score" style="text-align:center">Total</th>
+            <th class="school_city">Cidade</th>
+            <th class="school_state">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for f in f_list %}
+        <tr>
+        <td>{{ f.compet.compet_id_full }}</td>
+		<td>{{ f.compet.compet_name }}</td>
+		{% for task_name in task_names %}
+		<td style="text-align:center">{{f.task_points|get_item:task_name}}</td>
+		{% endfor %}
+		<td style="text-align:center;font-weight:bold">{{ f.total_points }}</td>
+		<td>{{ f.school.school_name }}</td>
+		<td>{{ f.school.school_city }}</td>
+		<td>{{ f.school.school_state }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

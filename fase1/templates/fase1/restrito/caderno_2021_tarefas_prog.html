@@ -1,0 +1,175 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Aplicação da Prova - Fase 1 - Modalidade Programação</h1>
+
+<p class="emph">A prova deve ser aplicada entre os dias
+  {{ "prog-fase-1-prova"|obi_date|date:'d/m' }}
+  ({{ "prog-fase-1-prova"|obi_date|date:'l'|lower }})
+  e
+  {{ "prog-fase-1-prova"|obi_date_finish|date:'d/m' }}
+  ({{ "prog-fase-1-prova"|obi_date_finish|date:'l'|lower }}).
+</p>
+
+<p>Devido à pandemia de Covid-19, para possibilitar a participação de
+  todos os interessados na OBI, as provas da Fase 1 poderão ser
+  realizadas presencialmente na escola ou, em caso de situação de
+  isolamento, na casa do competidor. Nos dois casos, a prova deverá
+  ser realizada utilizando o Ambiente de Prova da
+  {{ 'OBI'|obi_date_year }}.
+
+<p>No dia da prova, cada aluno deve ter à sua disposição um
+  computador com editores de texto e pelo menos um compilador entre C,
+  C++, Pascal, Java ou o interpretador Python.
+
+<p>O aluno deve acessar o Ambiente de Prova da {{ 'OBI'|obi_date_year }} utilizando um navegador
+  Internet (como Firefox, Chrome, Safari). O aluno não deve acessar a Internet a não ser através do
+  Ambiente de Prova da {{ 'OBI'|obi_date_year }}.
+
+<p>Para possibilitar a aplicação da prova utilizando o Ambiente
+  de Prova da {{ 'OBI'|obi_date_year }} o Coordenador Local
+  deverá informar o endereço de email do competidor ou pais ou responsáveis no momento da
+  inscrição. Os competidores receberão uma mensagem de email
+  informando a senha para acesso ao sistema, e poderão iniciar a
+  prova a qualquer momento no período de aplicação da prova da Fase 1.
+
+<p>Os alunos devem fazer as provas individualmente, sem consulta a
+  qualquer material impresso (como livros ou apostilas) ou digital
+  (como programas feitos anteriormente).  O tempo de prova será
+  controlado pelo Ambiente de Prova, e a correção será automática.
+
+<h2>1. Aplicação de prova on-line</h2>
+
+<p>As provas on-line serão realizadas utilizando o Ambiente de Prova da  {{ 'OBI'|obi_date_year }},
+  sem supervisão, confiando no
+  espírito olímpico de cada competidor. Os competidores não devem
+  acessar material não autorizado durante a realização da prova e não
+  devem se comunicar com outros competidores sobre o conteúdo da prova
+  durante o período de aplicação.
+
+<h2>2. Aplicação de prova nas escolas</h2>  
+<p>Mesmo que a prova seja feita presencialmente 
+  na escola, os competidores deverão utilizar o Ambiente de Prova da  {{ 'OBI'|obi_date_year }}.
+
+<p>Solicitamos que a escola supervisione a aplicação da prova para
+  garantir que os competidores não acessem material não autorizado durante
+  a realização da prova.
+
+  
+<h2>Cadernos de Tarefas - Fase 1 - Modalidade Programação</h2>
+
+<p>Os cadernos de tarefas não serão disponibilizados antes da prova.
+  A prova estará disponível somente no Ambiente de Prova da  {{ 'OBI'|obi_date_year }}
+  durante o período de aplicação. Os cadernos de tarefas serão
+  disponibilizados na página da   {{ 'OBI'|obi_date_year }} após o período
+  de aplicação (serão disponibilizados dia
+  {{ "prog-fase-1-prova-publica"|obi_date|date:'d/m' }}).
+  
+{% comment %}
+<p>Para cada competidor, é necessário imprimir uma cópia do Caderno de
+Tarefas. Ao final da prova, o Coordenador Local deve recolher as
+soluções dos alunos, preparar um arquivo com as soluções e
+enviar para correção, utilizando a página
+<a href="../../correcaoprogramacao">Modalidade Programação - Correção</a> (ainda não disponível,
+será disponibilizada logo após a prova). 
+
+<p>Veja na coluna à direita da página um passo-a-passo detalhado sobre o procedimento de aplicação
+e correção das provas da Modalidade Programação.
+ 
+<h3>Cadernos de Tarefas, Modalidade Programação</h3>
+<p><font color="red">Os Cadernos de Tarefas estão disponíveis APENAS PARA
+    ESCOLAS QUE IRÃO APLICAR A PROVA PRESENCIALMENTE</font>.
+
+<p>Para acessar os Cadernos de Tarefas para impressão, clique nos links abaixo. Os cadernos
+estão no formato PDF. Se você não conseguir abri-los corretamente, pode
+ser necessário instalar o aplicativo (gratuito) <a href="http://www.adobe.com/br/products/acrobat/readstep2.html">
+Adobe Acrobat Reader</a>.</p>
+
+<ul>
+<li><a href="pdf/FolhaTeste.pdf">Folha de Teste</a> (já disponível, apenas
+para todos verificarem que conseguem baixar e visualizar corretamente
+um arquivo no formato PDF)
+
+<li><a href="pdf/ProvaOBI2021_f1pj.pdf">Nível Júnior</a>
+
+<li><a href="pdf/ProvaOBI2021_f1p1.pdf">Nível 1</a>
+
+<li><a href="pdf/ProvaOBI2021_f1p2.pdf">Nível 2</a>
+
+<li><a href="pdf/ProvaOBI2021_f1pu.pdf">Nível Sênior</a>
+</ul>
+{% endcomment %}
+
+<h3>Listas de Presença, Modalidade Programação</h3>
+<p>As listas de presença são fornecidas apenas para auxiliar a gestão da sede, para saber quem
+  realmente compareceu e quem não compareceu. Elas não são obrigatórias, mas sugerimos o seu uso
+  para o caso de haver disputas, no futuro, sobre a presença ou não do(a) competidor(a) na prova.
+<ul>
+<li><a href="lista_presenca/PJ">Nível Júnior</a>
+<li><a href="lista_presenca/P1">Nível 1</a>
+<li><a href="lista_presenca/P2">Nível 2</a>
+<li><a href="lista_presenca/PS">Nível Sênior</a>
+</li>
+</ul>
+
+<h3>Caso Especial: Provas no ambiente Saci</h3>
+<p>Alguns (poucos) alunos estudaram programação pelo ambiente Saci,
+da OBI, que ensina a linguagem de programação Javascript. 
+Para esses alunos, preparamos uma versão especial do ambientge Saci para as provas da OBI, 
+para que os alunos tenham o mesmo ambiente e para que possam desenvolver e testar suas
+soluções em Javascript.
+
+<p>Se algum aluno de sua escola solicitar realizar a prova no ambiente Saci, siga os passos:
+<ul>
+<li> Faça o download
+do ambiente de Prova no link abaixo (o ambiente de prova é um arquivo .zip)
+<li> Copie o arquivo .zip para o computador onde o aluno vai fazer a
+prova (por exemplo, saci.zip).
+<li> Descompacte o arquivo. Vai ser criada uma pasta (de nome saci saci)
+<li> Dentro da pasta criada, clique duas vezes no arquivo de nome "index.html";
+o navegador padrão (Firefox, Chrome, Opera...) do sistema deve abrir e mostrar a prova.
+<li> Se não funcionar, abra uma janela de um navegador (Firefox, Chrome...)
+e abra o arquivo "index.html" pelo navegador. O ambiente de prova deve aparecer como uma
+página do navegador.
+
+<!--font color="red"> (ainda NÃO disponíveis, serão
+disponibilizadas 12:00 (meio-dia) do dia 28/05, terça-feira)</font-->
+
+<ul>
+<li><a href="zip/saci.zip">Ambiente de prova Saci</a>
+</ul>
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+<h3>Instruções</h3>
+  <ul>
+    <li>No dia da prova, cada aluno deve ter à sua disposição um
+    computador com editores de texto e pelo menos um compilador entre C,
+    C++, Pascal, Java ou o interpretador Python.
+    <li>O aluno deve acessar o Ambiente de Prova da {{ 'OBI'|obi_date_year }} utilizando um navegador
+      Internet (como Firefox, Chrome, Safari).
+    <li>O aluno não deve acessar a Internet a não ser através do
+      Ambiente de Prova da {{ 'OBI'|obi_date_year }}.
+    <li>Os alunos devem fazer as provas individualmente, sem consulta a qualquer
+      material impresso (como livros ou apostilas) ou digital (como programas feitos anteriormente).
+  </ul>
+<p>
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

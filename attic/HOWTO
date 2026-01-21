@@ -1,0 +1,14 @@
+#******
+# Provas programação
+#******
+
+# para subir os usuários
+# verificar e editar cms_sync_users para o contest_id correto para a fase
+./manage.py cms_sync_users <num_level> <contest_id>
+
+# para sincronizar as submissões
+./manage.py cms_sync_submissions provaf2
+
+
+
+

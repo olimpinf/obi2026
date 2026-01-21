@@ -1,0 +1,71 @@
+title:Pares de números
+template:tasks/tarefa_programacao.html
+
+<p>
+Temos um vetor de N inteiros distintos e dois inteiros I e
+F. Precisamos computar quantos pares desses inteiros do vetor somam
+pelo menos I e no máximo F.  Por exemplo, se o vetor for
+[45,12,11,7,83,29,5] e I=19 e F=52, temos exatamente 8 pares cuja soma
+está entre 19 e 52: {5,29}, {5,45}, {7,12}, {7,29}, {7,45}, {11,12},
+{11,29} e {12,29}.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém três inteiros N, I
+e F, indicando respectivamente o tamanho do vetor e o valor mínimo da
+soma e o valor máximo da soma.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma única linha contendo um inteiro indicando
+quantos pares de inteiros no vetor somam pelo menos I e no máximo F.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  N &leq;  1000
+<li> -2000 &leq;  I,F &leq;  2000
+<li> O valor de cada inteiro no vetor está entre -1000 e 1000
+<li> Os inteiros no vetor são distintos
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 19 52
+45 12 11 7 83 29 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 -2 2
+12 -16
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

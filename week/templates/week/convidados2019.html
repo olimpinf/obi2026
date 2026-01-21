@@ -1,0 +1,151 @@
+{% extends "base_week.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Convidados{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+<p>
+  A Semana Olímpica é oferecida para os melhores classificados nas
+  Modalidades Iniciação (níveis 1 e 2) e Programação (níveis júnior, 1
+  e 2).  Durante a Semana Olímpica os alunos convidados têm cursos
+  teóricos e práticos sobre algoritmos e técnicas de programação, de
+  vários níveis. Durante a Semana Olímpica acontece também a Seletiva
+  IOI (Olimpiada Internacional de Informática); a Seletiva IOI é
+  apenas para os convidados da modadlidade Programação Nível 2.
+
+  <p>
+  A Semana Olímpica acontecerá acontecerá no Instituto de Computação
+  da Unicamp, em Campinas, de 1 (domingo, data de chegada) a 7
+  (sábado, data de saída) de dezembro de 2019.
+
+  <p>
+  Todos os participantes são acompanhados durante todo o tempo por
+  monitores (alunos de doutorado, mestrado e graduação da Unicamp).
+  
+<p>
+Estão convidados para a Semana Olímpica da OBI2019:
+
+<ul>
+  <li>Iniciação Nível 1
+    <ul>
+      <li>Medalhistas de Ouro (22 competidores)
+    </ul>
+  <li>Iniciação Nível 2
+    <ul>
+      <li>Medalhistas de Ouro  (17 competidores)
+    </ul>
+  <li>Programação Nível Júnior
+    <ul>
+      <li>Medalhistas de Ouro e Prata (11 competidores)
+    </ul>
+  <li>Programação Nível 1
+    <ul>
+      <li>Medalhistas de Ouro, Prata e Bronze (20 competidores)
+    </ul>
+  <li>Programação Nível 2
+    <ul>
+      <li>Medalhistas de Ouro e Prata  (15 competidores)
+    </ul>
+</ul>    
+
+<p><font color="red"> Considerando desistências e aumento de
+    capacidade, estamos convidando adicionalmente mais alguns
+    competidores:
+<ul>
+      <li>Iniciação Nível 1
+    <ul>
+      <li>Medalhistas de Prata com Nota Final maior ou igual a 438.
+    </ul>
+  <li>Iniciação Nível 2
+    <ul>
+      <li>Medalhistas de Prata com Nota Final maior ou igual a 450.
+    </ul>
+  <li>Programação Nível Júnior
+    <ul>
+      <li>Medalhistas de Bronze com Nota Final maior ou igual a 375.
+    </ul>
+  <li>Programação Nível 1
+    <ul>
+      <li>Medalhistas de Honra ao Mérito com Nota Final maior ou igual a 263.
+    </ul>
+  <li>Programação Nível 2
+    <ul>
+      <li>Medalhistas de Bronze.
+    </ul>
+</ul>    
+</font>
+    
+    
+<!--p>Além desses, estão convidados também os três competidores medalhistas
+  de bronze mais bem colocados na modalidade Programação 2:
+  Eduardo Quirino de Oliveira (promoção por idade, pode ainda participar da OBI por
+  dois anos) e Beatriz Cunha Freire e Raquel Folz Cavalcante (promoção
+  para incentivar meninas a participarem da OBI).
+
+  <p>
+  Este ano, devido à escassez de recursos, os convidados para a Semana
+Olímpica deverão pagar uma Taxa de Ressarcimento pelos custos de
+hospedagem, alimentação e transporte durante a semana. As despesas de
+transporte até Campinas também são responsabilidade do
+  participante.
+
+  <!--p>Estamos tentando patrocínio para fazer novamente a
+promoção "Menina paga meia", mas não temos nada ainda confirmado (no
+passado o Instituto de Computação gentilmente apoiou essa iniciativa,
+mas a situação econômica atual da Unicamp não permite que isso ocorra
+novamente).</p-->
+  <p>
+  A Taxa de Ressarcimento, independente da modalidade, é R$
+  1.800,00. Esse valor inclui transporte entre aeroporto e hotel,
+  hotel e Unicamp, seis noites de hotel e todas as refeições.
+
+<p><font color="green">
+  Solicitamos que os convidados confirmem a participação na Semana
+  Olímpica preenchendo o <a href="https://forms.gle/YKwkDZYZohXZTMLJA">Formulário de Confirmação</a>
+  impreterivelmente até as 18:00 horas do dia 23 de novembro de 2019
+  (sábado).</font></p-->
+
+<p><i>Nota importante</i>: competidores da Modalidade Iniciação da OBI2019 que já
+  tenham participado da Semana Olímpica em anos anteriores, e
+  competidores da Modalidade Programação Júnior que já tenham
+  participado da Semana Olímpica na modalidade PJ em anos anteriores
+  NÃO poderão participar novamente dos cursos este ano, de acordo com
+  o Regulamento.
+
+
+  <!--p>
+  Solicitamos que os convidados confirmem a participação na Semana
+  Olímpica enviando um e-mail para a organização da olimpíada
+  (olimpinf<img src="/static/img/at.gif">ic.unicamp.br) manifestando o interesse, para
+  receber informações complementares sobre a participação,
+  impreterivelmente até as 18:00 horas do dia 19 de novembro de 2019
+  (terça-feira).</p-->
+
+<p><i>Devido à idade dos participantes da Modalidade Iniciação Nível Júnior, não há
+    previsão de participação desses competidores na Semana Olímpica.</i>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

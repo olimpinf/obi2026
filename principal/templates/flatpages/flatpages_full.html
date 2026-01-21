@@ -1,0 +1,15 @@
+{% extends "base_one_column.html" %}
+{% load obi_extras %}
+
+
+{% block title %} {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  <h1> {{ flatpage.title }} </h1>
+{% endblock %}
+
+  {% block content %}{{ flatpage.content }}{% endblock %}
+
+{% block content-related %}
+{% endblock %}
+

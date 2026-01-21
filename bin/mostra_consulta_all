@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+CITY=$1;
+STATE=$2;
+
+if [[ "$CITY" == "" ]]
+then
+    echo 'city empty'
+    CITY='%'
+fi
+
+if [[ "$STATE" == "" ]]
+then
+    echo 'state empty'
+    STATE='%'
+fi
+
+
+psql -d obi2025 -U obi -c "select distinct school_answer_consulta_fase3 as resp,school.school_id as sch_id,left(school_name,30),school_deleg_name,school_deleg_email,school_city,school_state as state,id from compet,school,school_extra where compet_school_id=school.school_id and compet_school_id=school_extra.school_id and school.school_id=school_extra.school_id and compet_classif_fase2 and school_city ilike '$CITY' and school_state ilike '${STATE}' order by school_answer_consulta_fase3,school_state,school_city,id;"

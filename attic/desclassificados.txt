@@ -1,0 +1,1182 @@
+# compet_id_full, school_id, reason, phase
+
+########
+# Fase 3
+########
+
+# leo, durante a prova:
+79837-D,238,uso de IA,3
+63533-D,2898,uso de IA,3
+# verificar, aluno sabatista???
+# 80159-B,4037,prova fora da escola,3
+45604-J,2751,uso de IA,3
+
+# análise planilha Fase 3
+12908-J,2477,uso de IA,3
+22966-I,3850,uso de IA,3
+30599-I,2707,uso de IA,3
+113415-J,1409,uso de IA,3
+30614-I,2707,uso de IA,3
+42290-F,1220,uso de IA,3
+110670-C,4354,uso de IA,3
+29806-J,234,uso de IA,3
+80014-H,2644,uso de IA,3
+100457-E,3008,uso de IA,3
+06102-I,3740,uso de IA,3
+15919-A,883,uso de IA,3
+15928-J,883,uso de IA,3
+28515-D,3811,uso de IA,3
+35290-I,935,uso de IA,3
+45604-J,2751,uso de IA,3
+46771-H,4114,uso de IA,3
+47977-J,2842,uso de IA,3
+49325-B,286,uso de IA,3
+49333-H,287,uso de IA,3
+62605-C,493,uso de IA,3
+63464-B,2563,uso de IA,3
+63533-D,2898,uso de IA,3
+79524-J,4066,uso de IA,3
+79837-D,238,uso de IA,3
+86120-A,2347,uso de IA,3
+95750-D,223,uso de IA,3
+108054-H,3008,uso de IA,3
+110241-F,4416,uso de IA,3
+110608-C,4382,uso de IA,3
+111105-A,4406,uso de IA,3
+113164-D,419,uso de IA,3
+113368-H,688,uso de IA,3
+113371-I,688,uso de IA,3
+113341-C,3319,uso de IA,3
+113461-H,1409,uso de IA,3
+113944-H,2563,uso de IA,3
+114765-E,677,uso de IA,3
+
+########
+# CF
+########
+# jplag
+118763-G,4524,uso de IA,5
+118785-G,4524,uso de IA,5
+118842-A,965,uso de IA,5
+118843-D,965,uso de IA,5
+118935-I,883,uso de IA,5
+118937-E,883,uso de IA,5
+118941-I,883,uso de IA,5
+118942-B,883,uso de IA,5
+118943-E,883,uso de IA,5
+15918-H,883,uso de IA,5
+
+# inspeção visual
+118746-B,4519,uso de IA,5
+13536-H,2477,uso de IA,5
+118945-A,4537,uso de IA,5
+#71291-F,2863,uso de IA,5
+92159-I,2775,uso de IA,5
+114161-G,622,uso de IA,5
+14061-F,3643,uso de IA,5
+96942-B,189,uso de IA,5
+100538-E,4016,uso de IA,5
+101359-B,412,uso de IA,5
+101878-H,403,uso de IA,5
+
+# planilha medalhas
+19521-C,1097,uso de IA,3
+32489-J,987,uso de IA,3
+16539-C,381,uso de IA,3
+76892-E,4202,uso de IA,3
+115097-B,3343,uso de IA,3
+
+# planilha medalhas CF
+12840-C,2477,uso de IA,5
+35216-A,2236,uso de IA,5
+13212-I,2477,uso de IA,5
+32489-J,987,uso de IA,5
+09796-A,1513,uso de IA,5
+16578-H,1521,uso de IA,5
+32563-I,1513,uso de IA,5
+34306-H,1513,uso de IA,5
+56706-B,3966,uso de IA,5
+63134-C,2969,uso de IA,5
+110544-H,286,uso de IA,5
+111948-F,1916,uso de IA,5
+117540-J,46,uso de IA,5
+
+# participou de I2 e PJ
+18432-E,303,participou de 2 modalidades,2
+18253-J,303,participou de 2 modalidades,2
+18456-A,303,participou de 2 modalidades,2
+18387-I,303,participou de 2 modalidades,2
+111056-C,303,participou de 2 modalidades,2
+18048-A,303,participou de 2 modalidades,2
+
+# revisões finais
+103369-H,2787,uso de IA,3
+106626-J,586,uso de IA,3
+110092-G,2066,uso de IA,3
+111094-E,372,uso de IA,3
+113417-F,4432,uso de IA,3
+113947-G,2563,uso de IA,3
+114883-D,3801,uso de IA,3
+18432-E,303,uso de IA,3
+32435-H,3959,uso de IA,3
+44829-I,4048,uso de IA,3
+56158-B,1148,uso de IA,3
+56231-H,2087,uso de IA,3
+56239-B,2087,uso de IA,3
+80159-B,4037,uso de IA,3
+89278-B,3321,uso de IA,3
+
+
+########
+# fase 2
+########
+
+# inspeção visual RAnido, submissões com muito pouco tempo ou sem nexo
+# troca apenas de nomes de variáveis entre submissões, etc
+16584-H,3709,uso de IA,2
+19588-F,1369,uso de IA,2
+19560-H,1369,uso de IA,2
+19728-F,1369,uso de IA,2
+79991-I,2644,uso de IA,2
+80001-G,2644,uso de IA,2
+79990-F,2644,uso de IA,2
+79963-I,2644,uso de IA,2
+79966-H,2644,uso de IA,2
+79981-G,2644,uso de IA,2
+80011-I,2644,uso de IA,2
+79987-E,2644,uso de IA,2
+33789-E,1672,uso de IA,2
+33792-F,1672,uso de IA,2
+33796-H,1672,uso de IA,2
+33794-B,1672,uso de IA,2
+111501-C,4440,uso de IA,2
+111538-J,4440,uso de IA,2
+111531-I,4440,uso de IA,2
+109718-A,3487,uso de IA,2
+10646-E,1316,uso de IA,2
+18672-E,3859,uso de IA,2
+18837-D,3852,uso de IA,2
+18831-F,3852,uso de IA,2
+33751-E,3950,uso de IA,2,mania
+56386-D,4158,uso de IA,2,comentários de IA
+72193-C,3799,uso de IA,2,distinto, alterações inúteis
+111776-D,3393,uso de IA,2,comentários de IA, completamente diferente da Fase 1
+117678-A,4469,uso de IA,2,comentários de IA, em inglês e português
+117386-D,621,uso de IA,2,comentários de IA, em inglês e português,  completamente diferente da Fase 1
+116463-J,4442,uso de IA,2,comentários de IA, mudança de estilo main
+79982-J,2644,uso de IA,2,mudança de estilo de leitura, muitas mudanças em poucos minutos, mudanças inúteis
+80012-B,2644,uso de IA,2,IA com certeza!
+47123-J,2601,uso de IA,2,IA com certeza!
+46976-E,2601,uso de IA,2,IA com certeza! Nem comentários "substitua por valores reais" tirou
+109879-G,2619,uso de IA,2,IA com certeza! print por sys.stdwrite? na fase 1, barras em 3 min
+34220-C,3917,uso de IA,2,IA com certeza! distinto mudou tudo em 2 min para 100 pt
+113374-H,688,uso de IA,2,E fase 1, estilos, linguagem diferente
+111127-A,4241,uso de IA,2,Certamente IA, apenas retirou comentário de duas soluções 100pts!
+62772-I,492,uso de IA,2,Certamente IA! Não sabe nem programar o básico
+41033-I,4017,uso de IA,2,Certamente IA!
+# Feira em 6 minutos, comentários IA, mudança brusca no nome das variáveis
+108855-I,4408,uso de IA,2,Certamente IA!
+# Não conseguia fazer arara, no final fez Feira em 3 minutos
+98644-I,1456,uso de IA,2,Certamente IA!
+# tudo MUITO rápido, comentários de IA
+103747-B,4345,uso de IA,2,Certamente IA!
+# comentários. Veja submissões a partir da décima. troca de heap_global por global_heap. Muitos indícios
+111965-A,4441,uso de IA,2,Certamente IA!
+# começa com nomes de variáveis em inglês, depois muda. Submissões iguais, inúteis. Troca de 6 por meia dúzia (em um for)
+
+# whatsapp de professor
+32732-B,1513,uso de IA,2
+41076-F,1513,uso de IA,2
+
+# misc
+18515-A,303,2,Violação de inscrição,
+117657-D,303,2,Violação de inscrição,
+
+111371-E,3096,Uso de IA,2,email de coordenadora
+41263-G,1456,Uso de IA,2,email de coordenador
+47987-B,1456,Uso de IA,2,email de coordenador
+
+# min_lines = 18, do_clean = False, same school
+04979-H,537,cópia,2
+04983-B,537,cópia,2
+05812-F,3696,cópia,2
+05820-B,3696,cópia,2
+108968-A,2265,cópia,2
+109011-C,2265,cópia,2
+111715-I,2543,cópia,2
+111717-E,2543,cópia,2
+112581-A,3593,cópia,2
+112591-C,3593,cópia,2
+113229-B,1772,cópia,2
+113439-F,1409,cópia,2
+113473-F,1409,cópia,2
+113646-A,4199,cópia,2
+113649-J,4199,cópia,2
+113651-H,4199,cópia,2
+113702-B,4199,cópia,2
+113703-E,4199,cópia,2
+113715-C,4199,cópia,2
+114469-D,2203,cópia,2
+114495-H,2203,cópia,2
+114818-E,4439,cópia,2
+114882-A,4439,cópia,2
+117087-D,1817,cópia,2
+117093-D,1817,cópia,2
+117361-E,2644,cópia,2
+117548-D,1772,cópia,2
+117810-G,2581,cópia,2
+19735-I,3805,cópia,2
+19745-A,3805,cópia,2
+26456-J,376,cópia,2
+26473-E,376,cópia,2
+27388-C,2882,cópia,2
+27389-F,2882,cópia,2
+33054-G,917,cópia,2
+33056-C,917,cópia,2
+33057-F,917,cópia,2
+33058-I,917,cópia,2
+33985-E,3884,cópia,2
+33990-B,3884,cópia,2
+34003-F,3884,cópia,2
+34004-I,3884,cópia,2
+34210-A,917,cópia,2
+38250-G,3911,cópia,2
+38253-F,3911,cópia,2
+49395-F,4103,cópia,2
+49398-E,4103,cópia,2
+49401-G,4103,cópia,2
+49402-J,4103,cópia,2
+49403-C,4103,cópia,2
+54314-J,3951,cópia,2
+54318-B,3951,cópia,2
+54332-H,3951,cópia,2
+54334-D,3951,cópia,2
+58393-A,1090,cópia,2
+58402-A,1090,cópia,2
+63078-B,2969,cópia,2
+63093-A,2969,cópia,2
+63390-E,3861,cópia,2
+63397-F,3861,cópia,2
+63536-C,3281,cópia,2
+63647-I,3281,cópia,2
+64581-J,2581,cópia,2
+64583-F,2581,cópia,2
+64593-H,2581,cópia,2
+64595-D,2581,cópia,2
+64600-B,2581,cópia,2
+64601-E,2581,cópia,2
+64602-H,2581,cópia,2
+66353-B,3692,cópia,2
+66358-G,3692,cópia,2
+73212-G,3792,cópia,2
+73541-C,3792,cópia,2
+78382-B,517,cópia,2
+78385-A,517,cópia,2
+79996-D,2644,cópia,2
+79997-G,2644,cópia,2
+80003-C,2644,cópia,2
+80709-H,4169,cópia,2
+80711-F,4169,cópia,2
+80712-I,4169,cópia,2
+80713-B,4169,cópia,2
+91442-G,3742,cópia,2
+91451-F,3742,cópia,2
+93622-I,3792,cópia,2
+93729-A,1383,cópia,2
+93754-B,1383,cópia,2
+93766-J,1383,cópia,2
+
+# min_lines = 18, do_clean = False, not same school
+45272-D,1513,cópia,2
+61095-C,3477,cópia,2
+
+# min_lines = 20, do_clean = True, same school
+107422-H,2360,cópia,2
+107423-A,2360,cópia,2
+107438-H,2360,cópia,2
+107444-H,2360,cópia,2
+107445-A,2360,cópia,2
+107455-C,2360,cópia,2
+110915-I,3072,cópia,2
+110917-E,3072,cópia,2
+111015-B,2223,cópia,2
+111886-G,325,cópia,2
+111892-G,325,cópia,2
+113270-E,4199,cópia,2
+113312-J,4199,cópia,2
+113587-A,4199,cópia,2
+113595-G,4199,cópia,2
+113707-G,4199,cópia,2
+113712-D,4199,cópia,2
+113713-G,4199,cópia,2
+113719-E,4199,cópia,2
+116360-J,2809,cópia,2
+116368-D,2809,cópia,2
+12640-A,2477,cópia,2
+12647-B,2477,cópia,2
+19623-J,1369,cópia,2
+19642-A,1369,cópia,2
+38252-C,3911,cópia,2
+38265-D,3911,cópia,2
+54523-A,2347,cópia,2
+56227-D,2087,cópia,2
+56246-E,2087,cópia,2
+56247-H,2087,cópia,2
+61096-F,3477,cópia,2
+61098-B,3477,cópia,2
+62824-F,3792,cópia,2
+66135-B,3245,cópia,2
+66143-H,3245,cópia,2
+66181-J,3245,cópia,2
+73192-B,3792,cópia,2
+79992-B,2644,cópia,2
+79995-A,2644,cópia,2
+79998-J,2644,cópia,2
+79999-C,2644,cópia,2
+80000-D,2644,cópia,2
+80002-J,2644,cópia,2
+80008-H,2644,cópia,2
+80013-E,2644,cópia,2
+80015-A,2644,cópia,2
+80733-F,4169,cópia,2
+80734-I,4169,cópia,2
+86116-G,2347,cópia,2
+86935-F,2223,cópia,2
+
+# min_lines = 20, do_clean = True, not same school
+113376-D,688,cópia,2
+113656-C,4199,cópia,2
+117300-J,4437,cópia,2
+19742-B,3805,cópia,2
+
+# min_lines = 15, do_clean = True, not same school
+19734-F,3805,cópia,2
+19737-E,3805,cópia,2
+19741-I,3805,cópia,2
+64576-C,2581,cópia,2
+64604-D,2581,cópia,2
+
+# min_lines = 8, jplag 99% similarity, not same school
+38256-E,3911,uso de IA,2
+56236-C,2087,uso de IA,2
+#57420-G,2507,uso de IA,2  erro planilha
+76500-H,1941,uso de IA,2
+93929-C,3683,uso de IA,2
+32811-F,1513,uso de IA,2
+32773-C,1513,uso de IA,2
+05821-E,3696,uso de IA,2
+13412-A,2477,uso de IA,2
+15846-G,883,uso de IA,2
+15848-C,883,uso de IA,2
+15850-A,883,uso de IA,2
+16168-B,3805,uso de IA,2
+18515-A,303,uso de IA,2
+19736-B,3805,uso de IA,2
+#22073-C,816,uso de IA,2 reclassificado por email de professor
+26346-G,2562,uso de IA,2
+32582-J,1513,uso de IA,2
+# 32752-F,1513,uso de IA,2 erro planilha
+32787-G,1513,uso de IA,2
+34013-H,3884,uso de IA,2
+34345-C,4024,uso de IA,2
+34349-E,4024,uso de IA,2
+34350-J,4024,uso de IA,2
+40065-I,3823,uso de IA,2
+40066-B,3823,uso de IA,2
+40073-E,3823,uso de IA,2
+40076-D,3823,uso de IA,2
+41547-H,4024,uso de IA,2
+51368-F,4089,uso de IA,2
+54759-G,3504,uso de IA,2
+61107-B,3477,uso de IA,2
+61112-I,3477,uso de IA,2
+62900-A,1815,uso de IA,2
+63122-E,2969,uso de IA,2
+63250-F,2969,uso de IA,2
+#66433-I,3692,uso de IA,2 erro planilha
+75001-D,4122,uso de IA,2
+75004-C,4122,uso de IA,2
+75015-H,4122,uso de IA,2
+75704-J,3823,uso de IA,2
+76121-A,3908,uso de IA,2
+78859-B,83,uso de IA,2
+78861-J,83,uso de IA,2
+79175-I,508,uso de IA,2
+79179-A,508,uso de IA,2
+79543-A,4066,uso de IA,2
+#80776-C,3933,uso de IA,2 erro planilha
+81106-E,4237,uso de IA,2
+97741-I,4147,uso de IA,2
+111802-I,3393,uso de IA,2
+111812-A,3393,uso de IA,2
+112590-J,3593,uso de IA,2
+116225-F,296,uso de IA,2
+116266-G,296,uso de IA,2
+#116285-H,296,uso de IA,2 erro planilha
+#116294-G,296,uso de IA,2 erro planilha
+117657-D,303,uso de IA,2
+117763-E,1107,uso de IA,2
+
+
+# min_lines = 8, jplag 95% similarity, not same school
+04755-J,537,uso de IA,2
+64590-I,2581,uso de IA,2
+04741-F,537,uso de IA,2
+19739-A,3805,uso de IA,2
+45619-G,2644,uso de IA,2
+45620-B,2644,uso de IA,2
+46740-I,2601,uso de IA,2
+50091-F,2601,uso de IA,2
+79984-F,2644,uso de IA,2
+79985-I,2644,uso de IA,2
+79986-B,2644,uso de IA,2
+79988-H,2644,uso de IA,2
+79994-H,2644,uso de IA,2
+80736-E,4169,uso de IA,2
+111472-I,4440,uso de IA,2
+111478-G,4440,uso de IA,2
+117816-E,3870,uso de IA,2
+
+
+########
+# fase 1
+########
+
+29494-H,234,Uso de IA,1,email auto-declaração
+63501-B,198,Uso de IA,1,email de coordenador
+63507-J,198,Uso de IA,1,email de coordenador
+
+# denuncia email de davigarrocho11@gmail.com, prova em grupo, cópia
+106618-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+106629-I,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+106641-I,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+106653-G,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+106674-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+106680-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+106860-B,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81026-H,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81113-H,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81118-C,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81123-J,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81133-B,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81137-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81291-I,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+81294-H,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+83249-G,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+83251-E,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+83254-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+83260-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+83263-C,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+83265-I,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+109638-D,4115,denuncia sendo investigada,1,email de davigarrocho11@gmail.com
+
+# cópia exata, min 10 linhas
+03091-G,2585,cópia,1
+03094-F,2585,cópia,1
+03099-A,2585,cópia,1
+03120-A,2585,cópia,1
+03129-H,2585,cópia,1
+03133-B,2585,cópia,1
+03144-G,2585,cópia,1
+03152-C,2585,cópia,1
+03153-F,2585,cópia,1
+06090-J,3740,cópia,1
+08445-C,2978,cópia,1
+08452-F,2978,cópia,1
+08456-H,2978,cópia,1
+08461-E,2978,cópia,1
+08464-D,2978,cópia,1
+09794-E,1513,cópia,1
+09802-B,1513,cópia,1
+104825-E,1152,cópia,1
+104828-D,1152,cópia,1
+105032-B,3850,cópia,1
+105036-D,3850,cópia,1
+105081-I,3850,cópia,1
+10623-B,1283,cópia,1
+10636-C,1283,cópia,1
+106629-I,4115,cópia,1
+106674-D,4115,cópia,1
+106680-D,4115,cópia,1
+106860-B,4115,cópia,1
+106872-J,3487,cópia,1
+106881-I,3487,cópia,1
+106882-B,3487,cópia,1
+106932-C,2610,cópia,1
+106943-H,2610,cópia,1
+106982-C,2610,cópia,1
+106989-D,2610,cópia,1
+107000-D,2610,cópia,1
+107437-E,2360,cópia,1
+107448-J,2360,cópia,1
+107450-H,2360,cópia,1
+107461-C,2360,cópia,1
+107526-A,2610,cópia,1
+107530-E,2610,cópia,1
+107788-A,4407,cópia,1
+108588-A,4315,cópia,1
+108589-D,4315,cópia,1
+108590-I,4315,cópia,1
+108664-F,3792,cópia,1
+108665-I,3792,cópia,1
+108676-D,3792,cópia,1
+108677-G,3792,cópia,1
+108680-H,3792,cópia,1
+108681-A,3792,cópia,1
+108682-D,3792,cópia,1
+108690-J,3792,cópia,1
+108691-C,3792,cópia,1
+108692-F,3792,cópia,1
+108694-B,3792,cópia,1
+108699-G,3792,cópia,1
+108702-I,3792,cópia,1
+108754-E,3792,cópia,1
+108755-H,3792,cópia,1
+108758-G,3792,cópia,1
+108761-H,3792,cópia,1
+108770-G,3792,cópia,1
+108960-G,1456,cópia,1
+108992-I,1456,cópia,1
+109024-D,1456,cópia,1
+109035-I,1456,cópia,1
+109045-A,1456,cópia,1
+109048-J,1456,cópia,1
+109638-D,4115,cópia,1
+11003-D,3804,cópia,1
+11004-G,3804,cópia,1
+11006-C,3804,cópia,1
+11009-B,3804,cópia,1
+11010-G,3804,cópia,1
+11013-F,3804,cópia,1
+11016-E,3804,cópia,1
+11017-H,3804,cópia,1
+11025-D,3804,cópia,1
+110350-F,4019,cópia,1
+110351-I,4019,cópia,1
+110357-G,4019,cópia,1
+11037-B,3804,cópia,1
+11041-F,3804,cópia,1
+11043-B,3804,cópia,1
+#110459-D,293,cópia,1
+11046-A,3804,cópia,1
+11048-G,3804,cópia,1
+110494-G,293,cópia,1
+11050-E,3804,cópia,1
+11051-H,3804,cópia,1
+11053-D,3804,cópia,1
+110545-A,3941,cópia,1
+110546-D,3941,cópia,1
+110555-C,758,cópia,1
+11056-C,3804,cópia,1
+110616-I,2370,cópia,1
+110660-A,2370,cópia,1
+110928-J,3072,cópia,1
+110929-C,3072,cópia,1
+110931-A,3072,cópia,1
+111057-F,3792,cópia,1
+111069-D,2576,cópia,1
+111104-H,4406,cópia,1
+111106-D,4406,cópia,1
+111121-C,2576,cópia,1
+111432-A,4440,cópia,1
+111436-C,4440,cópia,1
+111437-F,4440,cópia,1
+111440-G,4440,cópia,1
+111444-I,4440,cópia,1
+111448-A,4440,cópia,1
+111453-H,4440,cópia,1
+111454-A,4440,cópia,1
+111461-D,4440,cópia,1
+111462-G,4440,cópia,1
+111466-I,4440,cópia,1
+111468-E,4440,cópia,1
+111471-F,4440,cópia,1
+111479-J,4440,cópia,1
+111481-H,4440,cópia,1
+111482-A,4440,cópia,1
+111486-C,4440,cópia,1
+111492-C,4440,cópia,1
+111499-D,4440,cópia,1
+111502-F,4440,cópia,1
+111507-A,4440,cópia,1
+111528-H,4440,cópia,1
+111532-B,4440,cópia,1
+111774-H,3393,cópia,1
+111778-J,3393,cópia,1
+112179-I,3792,cópia,1
+112575-A,3593,cópia,1
+112577-G,3593,cópia,1
+112601-F,3593,cópia,1
+112770-H,3599,cópia,1
+112991-G,3599,cópia,1
+113235-B,4199,cópia,1
+113254-C,4199,cópia,1
+113263-B,4199,cópia,1
+113275-J,4199,cópia,1
+113283-F,4199,cópia,1
+113286-E,4199,cópia,1
+113292-E,4199,cópia,1
+113295-D,4199,cópia,1
+113303-A,4199,cópia,1
+113310-D,4199,cópia,1
+113321-I,4199,cópia,1
+113357-C,688,cópia,1
+113358-F,688,cópia,1
+113540-B,4199,cópia,1
+113543-A,4199,cópia,1
+113544-D,4199,cópia,1
+113551-G,4199,cópia,1
+113553-C,4199,cópia,1
+113554-F,4199,cópia,1
+113556-B,4199,cópia,1
+113560-F,4199,cópia,1
+113584-B,4199,cópia,1
+113589-G,4199,cópia,1
+113596-J,4199,cópia,1
+113597-C,4199,cópia,1
+113598-F,4199,cópia,1
+113600-E,4199,cópia,1
+113615-B,4199,cópia,1
+113622-E,4199,cópia,1
+113625-D,4199,cópia,1
+113631-D,4199,cópia,1
+113632-G,4199,cópia,1
+113633-J,4199,cópia,1
+113636-I,4199,cópia,1
+113637-B,4199,cópia,1
+113648-G,4199,cópia,1
+113692-I,4199,cópia,1
+113693-B,4199,cópia,1
+113694-E,4199,cópia,1
+113695-H,4199,cópia,1
+113696-A,4199,cópia,1
+113697-D,4199,cópia,1
+113698-G,4199,cópia,1
+113699-J,4199,cópia,1
+113700-F,4199,cópia,1
+113701-I,4199,cópia,1
+113704-H,4199,cópia,1
+113705-A,4199,cópia,1
+113706-D,4199,cópia,1
+113708-J,4199,cópia,1
+113709-C,4199,cópia,1
+113710-H,4199,cópia,1
+113711-A,4199,cópia,1
+113714-J,4199,cópia,1
+113718-B,4199,cópia,1
+113720-J,4199,cópia,1
+113721-C,4199,cópia,1
+113722-F,4199,cópia,1
+113723-I,4199,cópia,1
+113813-H,4287,cópia,1
+113818-C,4287,cópia,1
+113828-E,4287,cópia,1
+113830-C,4287,cópia,1
+113832-I,4287,cópia,1
+113833-B,4287,cópia,1
+113851-J,2026,cópia,1
+113856-E,2026,cópia,1
+113858-A,2026,cópia,1
+113860-I,2026,cópia,1
+113883-B,2026,cópia,1
+114896-E,2706,cópia,1
+114897-H,2706,cópia,1
+114899-D,2706,cópia,1
+114900-J,2706,cópia,1
+114902-F,2706,cópia,1
+114903-I,2706,cópia,1
+114906-H,2706,cópia,1
+114907-A,2706,cópia,1
+114909-G,2706,cópia,1
+114912-H,2706,cópia,1
+114914-D,2706,cópia,1
+114915-G,2706,cópia,1
+114916-J,2706,cópia,1
+114917-C,2706,cópia,1
+114918-F,2706,cópia,1
+114921-G,2706,cópia,1
+114923-C,2706,cópia,1
+114924-F,2706,cópia,1
+114925-I,2706,cópia,1
+114926-B,2706,cópia,1
+114927-E,2706,cópia,1
+114928-H,2706,cópia,1
+114930-F,2706,cópia,1
+114931-I,2706,cópia,1
+114932-B,2706,cópia,1
+114934-H,2706,cópia,1
+114936-D,2706,cópia,1
+114937-G,2706,cópia,1
+114938-J,2706,cópia,1
+114940-H,2706,cópia,1
+114944-J,2706,cópia,1
+114946-F,2706,cópia,1
+114947-I,2706,cópia,1
+114948-B,2706,cópia,1
+114949-E,2706,cópia,1
+114950-J,2706,cópia,1
+114957-A,2706,cópia,1
+114962-H,2706,cópia,1
+114964-D,2706,cópia,1
+114967-C,2706,cópia,1
+114971-G,2706,cópia,1
+114974-F,2706,cópia,1
+114975-I,2706,cópia,1
+115165-A,4407,cópia,1
+115387-C,2533,cópia,1
+115406-E,2533,cópia,1
+116344-H,2809,cópia,1
+116346-D,2809,cópia,1
+116347-G,2809,cópia,1
+116348-J,2809,cópia,1
+116349-C,2809,cópia,1
+116350-H,2809,cópia,1
+116354-J,2809,cópia,1
+116355-C,2809,cópia,1
+116358-B,2809,cópia,1
+116394-H,2809,cópia,1
+116395-A,2809,cópia,1
+116400-I,2809,cópia,1
+116404-A,2809,cópia,1
+116423-B,2809,cópia,1
+117204-A,4407,cópia,1
+117287-F,1450,cópia,1
+117292-C,1450,cópia,1
+117293-F,1450,cópia,1
+117295-B,1450,cópia,1
+117479-B,2809,cópia,1
+117481-J,2809,cópia,1
+117482-C,2809,cópia,1
+117483-F,2809,cópia,1
+117484-I,2809,cópia,1
+117549-G,1772,cópia,1
+117550-B,1772,cópia,1
+117569-A,2610,cópia,1
+117572-B,2610,cópia,1
+117820-I,4015,cópia,1
+117832-G,2877,cópia,1
+117833-J,2877,cópia,1
+13400-C,2477,cópia,1
+13411-H,2477,cópia,1
+14062-I,2733,cópia,1
+14066-A,2733,cópia,1
+15526-J,2733,cópia,1
+15537-E,2079,cópia,1
+15538-H,2079,cópia,1
+15556-F,2079,cópia,1
+15572-H,2079,cópia,1
+15575-G,2079,cópia,1
+15602-E,2079,cópia,1
+15844-A,2978,cópia,1
+16579-A,3740,cópia,1
+16589-C,2672,cópia,1
+16590-H,2672,cópia,1
+16591-A,2672,cópia,1
+16592-D,2672,cópia,1
+16593-G,2672,cópia,1
+16594-J,2672,cópia,1
+16595-C,2672,cópia,1
+16596-F,2672,cópia,1
+16597-I,2672,cópia,1
+16599-E,2672,cópia,1
+16601-D,2672,cópia,1
+16603-J,2672,cópia,1
+16604-C,2672,cópia,1
+16605-F,2672,cópia,1
+16606-I,2672,cópia,1
+16609-H,2672,cópia,1
+16610-C,2672,cópia,1
+16613-B,2672,cópia,1
+16614-E,2672,cópia,1
+16615-H,2672,cópia,1
+16617-D,2672,cópia,1
+16618-G,2672,cópia,1
+16632-C,2672,cópia,1
+18638-E,381,cópia,1
+18643-B,381,cópia,1
+19541-G,1369,cópia,1
+19618-C,1369,cópia,1
+19624-C,1369,cópia,1
+19625-F,1369,cópia,1
+19629-H,1369,cópia,1
+19631-F,1369,cópia,1
+19632-I,1369,cópia,1
+19635-H,1369,cópia,1
+19637-D,1369,cópia,1
+19640-E,1369,cópia,1
+19650-G,1369,cópia,1
+19652-C,1369,cópia,1
+19659-D,1369,cópia,1
+19683-B,1369,cópia,1
+19703-G,1369,cópia,1
+19715-E,1369,cópia,1
+19716-H,1369,cópia,1
+19723-A,1369,cópia,1
+#22483-I,325,cópia,1
+23504-I,2978,cópia,1
+25839-G,3604,cópia,1
+25844-D,3604,cópia,1
+25847-C,3604,cópia,1
+25861-I,385,cópia,1
+25865-A,385,cópia,1
+25866-D,385,cópia,1
+25867-G,385,cópia,1
+25868-J,385,cópia,1
+25874-J,385,cópia,1
+25875-C,385,cópia,1
+25889-G,385,cópia,1
+25890-B,385,cópia,1
+26403-A,3915,cópia,1
+26407-C,3915,cópia,1
+26417-E,3057,cópia,1
+26420-F,3057,cópia,1
+26426-D,3057,cópia,1
+26430-H,3057,cópia,1
+26432-D,3057,cópia,1
+26433-G,3057,cópia,1
+27349-H,2882,cópia,1
+27363-D,2882,cópia,1
+27370-G,2882,cópia,1
+27374-I,2882,cópia,1
+27376-E,2882,cópia,1
+27378-A,2882,cópia,1
+27379-D,2882,cópia,1
+27382-E,2882,cópia,1
+27384-A,2882,cópia,1
+27387-J,2882,cópia,1
+27391-D,2882,cópia,1
+27394-C,2882,cópia,1
+27398-E,2882,cópia,1
+27399-H,2882,cópia,1
+27400-D,2882,cópia,1
+27401-G,2882,cópia,1
+27402-J,2882,cópia,1
+27403-C,2882,cópia,1
+27404-F,2882,cópia,1
+27405-I,2882,cópia,1
+27406-B,2882,cópia,1
+27407-E,2882,cópia,1
+27408-H,2882,cópia,1
+27409-A,2882,cópia,1
+27410-F,2882,cópia,1
+27411-I,2882,cópia,1
+27412-B,2882,cópia,1
+27413-E,2882,cópia,1
+27414-H,2882,cópia,1
+27415-A,2882,cópia,1
+27416-D,2882,cópia,1
+27417-G,2882,cópia,1
+27418-J,2882,cópia,1
+27420-H,2882,cópia,1
+27421-A,2882,cópia,1
+27422-D,2882,cópia,1
+27423-G,2882,cópia,1
+27426-F,2882,cópia,1
+27427-I,2882,cópia,1
+27428-B,2882,cópia,1
+27430-J,2882,cópia,1
+27431-C,2882,cópia,1
+27433-I,2882,cópia,1
+27434-B,2882,cópia,1
+28767-B,3972,cópia,1
+32372-F,3915,cópia,1
+32373-I,3915,cópia,1
+32377-A,3982,cópia,1
+32397-E,3982,cópia,1
+32459-D,3982,cópia,1
+32470-A,3982,cópia,1
+32546-D,1435,cópia,1
+32550-H,1435,cópia,1
+33291-H,3915,cópia,1
+33405-D,4004,cópia,1
+33406-G,4004,cópia,1
+33698-C,3911,cópia,1
+33984-B,3884,cópia,1
+33995-G,3884,cópia,1
+34212-G,4015,cópia,1
+38262-E,3911,cópia,1
+38263-H,3911,cópia,1
+38465-F,3319,cópia,1
+38466-I,3319,cópia,1
+38509-G,3986,cópia,1
+38511-E,3986,cópia,1
+40068-H,3823,cópia,1
+40070-F,3823,cópia,1
+40890-H,824,cópia,1
+40892-D,824,cópia,1
+40896-F,824,cópia,1
+40901-D,824,cópia,1
+40904-C,824,cópia,1
+40905-F,824,cópia,1
+40906-I,824,cópia,1
+40907-B,824,cópia,1
+40908-E,824,cópia,1
+40913-B,824,cópia,1
+40915-H,824,cópia,1
+40916-A,824,cópia,1
+40918-G,824,cópia,1
+40919-J,824,cópia,1
+40922-A,824,cópia,1
+41330-C,3986,cópia,1
+41333-B,3986,cópia,1
+41337-D,3986,cópia,1
+41338-G,3986,cópia,1
+45571-D,2738,cópia,1
+45575-F,2738,cópia,1
+45585-H,2738,cópia,1
+45600-H,3972,cópia,1
+46387-D,758,cópia,1
+48596-I,2191,cópia,1
+48722-E,2191,cópia,1
+51384-H,4079,cópia,1
+51387-G,4079,cópia,1
+51422-A,4168,cópia,1
+51423-D,4168,cópia,1
+51424-G,4168,cópia,1
+51453-J,4168,cópia,1
+54343-C,3951,cópia,1
+54347-E,3951,cópia,1
+54358-J,3951,cópia,1
+54716-J,3504,cópia,1
+54724-F,3504,cópia,1
+54725-I,3504,cópia,1
+54757-A,3504,cópia,1
+56185-I,4461,cópia,1
+56209-F,4461,cópia,1
+56214-C,4461,cópia,1
+56217-B,4461,cópia,1
+56253-H,2087,cópia,1
+56254-A,2087,cópia,1
+56261-D,2087,cópia,1
+56264-C,2087,cópia,1
+56266-I,2087,cópia,1
+56267-B,2087,cópia,1
+56268-E,2087,cópia,1
+56271-F,2087,cópia,1
+56274-E,2087,cópia,1
+56277-D,2087,cópia,1
+56282-A,2087,cópia,1
+56283-D,2087,cópia,1
+56284-G,2087,cópia,1
+56361-E,2087,cópia,1
+56362-H,2087,cópia,1
+56363-A,2087,cópia,1
+56364-D,2087,cópia,1
+56372-J,2087,cópia,1
+56374-F,2087,cópia,1
+56477-F,2681,cópia,1
+56481-J,2681,cópia,1
+56482-C,2681,cópia,1
+56711-I,3966,cópia,1
+56714-H,3966,cópia,1
+57414-G,2507,cópia,1
+57439-F,2507,cópia,1
+60700-E,4167,cópia,1
+60701-H,4167,cópia,1
+60900-G,4180,cópia,1
+60902-C,4180,cópia,1
+61119-J,3477,cópia,1
+61122-A,3477,cópia,1
+61124-G,3477,cópia,1
+61125-J,3477,cópia,1
+61127-F,3477,cópia,1
+61130-G,3477,cópia,1
+61131-J,3477,cópia,1
+61132-C,3477,cópia,1
+61133-F,3477,cópia,1
+61135-B,3477,cópia,1
+61136-E,3477,cópia,1
+61137-H,3477,cópia,1
+61139-D,3477,cópia,1
+61140-I,3477,cópia,1
+62705-D,4167,cópia,1
+62928-I,3850,cópia,1
+62956-I,3850,cópia,1
+63020-H,3792,cópia,1
+63052-J,3792,cópia,1
+63055-I,3792,cópia,1
+63064-H,3792,cópia,1
+63068-J,3792,cópia,1
+63071-A,3792,cópia,1
+63074-J,3792,cópia,1
+63080-J,3792,cópia,1
+63085-E,3792,cópia,1
+63094-D,3792,cópia,1
+63099-I,3792,cópia,1
+63100-E,3792,cópia,1
+63102-A,3792,cópia,1
+63104-G,3792,cópia,1
+63105-J,3792,cópia,1
+66047-I,3245,cópia,1
+66049-E,3245,cópia,1
+66123-D,3245,cópia,1
+66130-G,3245,cópia,1
+66137-H,3245,cópia,1
+66150-A,3245,cópia,1
+66155-F,3245,cópia,1
+66165-H,3245,cópia,1
+66173-D,3245,cópia,1
+66180-G,3245,cópia,1
+66364-G,3692,cópia,1
+66368-I,3692,cópia,1
+72031-D,4192,cópia,1
+72035-F,4192,cópia,1
+72036-I,4192,cópia,1
+72044-E,4192,cópia,1
+72052-A,4192,cópia,1
+72053-D,4192,cópia,1
+72105-A,3792,cópia,1
+72108-J,3792,cópia,1
+72109-C,3792,cópia,1
+72115-C,3792,cópia,1
+72120-J,3792,cópia,1
+72129-G,3792,cópia,1
+72130-B,3792,cópia,1
+72134-D,3792,cópia,1
+72135-G,3792,cópia,1
+72139-I,3792,cópia,1
+72142-J,3792,cópia,1
+72146-B,3792,cópia,1
+72147-E,3792,cópia,1
+72158-J,3792,cópia,1
+72171-C,3792,cópia,1
+72179-G,3792,cópia,1
+72180-B,3792,cópia,1
+72181-E,3792,cópia,1
+72182-H,3792,cópia,1
+72184-D,3792,cópia,1
+72187-C,3792,cópia,1
+72189-I,3792,cópia,1
+72191-G,3792,cópia,1
+72969-C,3742,cópia,1
+72992-H,3742,cópia,1
+73009-D,3792,cópia,1
+73015-D,3792,cópia,1
+73018-C,3792,cópia,1
+73019-F,3792,cópia,1
+73020-A,3792,cópia,1
+73026-I,3792,cópia,1
+73041-H,3792,cópia,1
+73042-A,3792,cópia,1
+73043-D,3792,cópia,1
+73044-G,3792,cópia,1
+73045-J,3792,cópia,1
+73047-F,3792,cópia,1
+73065-D,3792,cópia,1
+73077-B,3792,cópia,1
+73078-E,3792,cópia,1
+73079-H,3792,cópia,1
+73084-E,3792,cópia,1
+73087-D,3792,cópia,1
+73092-A,3792,cópia,1
+73170-B,3100,cópia,1
+73177-C,3792,cópia,1
+73189-A,3792,cópia,1
+73243-F,3100,cópia,1
+75062-I,3792,cópia,1
+75068-G,3792,cópia,1
+75476-G,4262,cópia,1
+75487-B,4262,cópia,1
+75493-B,4262,cópia,1
+75498-G,4262,cópia,1
+75502-B,4262,cópia,1
+75507-G,4262,cópia,1
+75510-H,4262,cópia,1
+75517-I,4262,cópia,1
+75520-J,4262,cópia,1
+75524-B,4262,cópia,1
+75526-H,4262,cópia,1
+75530-B,4262,cópia,1
+76041-D,3738,cópia,1
+76043-J,3738,cópia,1
+76044-C,3738,cópia,1
+76045-F,3738,cópia,1
+76046-I,3738,cópia,1
+76047-B,3738,cópia,1
+76048-E,3738,cópia,1
+76050-C,3738,cópia,1
+76051-F,3738,cópia,1
+76052-I,3738,cópia,1
+76053-B,3738,cópia,1
+76054-E,3738,cópia,1
+76055-H,3738,cópia,1
+76056-A,3738,cópia,1
+76057-D,3738,cópia,1
+76058-G,3738,cópia,1
+76059-J,3738,cópia,1
+76060-E,3738,cópia,1
+76061-H,3738,cópia,1
+76062-A,3738,cópia,1
+76063-D,3738,cópia,1
+76064-G,3738,cópia,1
+76066-C,3738,cópia,1
+76067-F,3738,cópia,1
+78825-D,3998,cópia,1
+78838-E,3998,cópia,1
+79751-I,3774,cópia,1
+79776-H,758,cópia,1
+80156-C,3774,cópia,1
+80766-A,894,cópia,1
+80773-D,894,cópia,1
+81113-H,4115,cópia,1
+81118-C,4115,cópia,1
+81123-J,4115,cópia,1
+81133-B,4115,cópia,1
+81137-D,4115,cópia,1
+81234-F,894,cópia,1
+81291-I,4115,cópia,1
+81294-H,4115,cópia,1
+83140-I,4160,cópia,1
+83142-E,4160,cópia,1
+83175-J,4160,cópia,1
+83249-G,4115,cópia,1
+83254-D,4115,cópia,1
+83263-C,4115,cópia,1
+83265-I,4115,cópia,1
+83398-E,306,cópia,1
+83707-H,306,cópia,1
+#85359-D,2677,cópia,1
+85548-A,2677,cópia,1
+86132-I,1595,cópia,1
+86133-B,1595,cópia,1
+86134-E,1595,cópia,1
+86136-A,1595,cópia,1
+89216-D,2263,cópia,1
+89228-B,2263,cópia,1
+90732-F,1883,cópia,1
+90736-H,1883,cópia,1
+90750-D,1883,cópia,1
+91398-D,325,cópia,1
+91453-B,3742,cópia,1
+91462-A,3742,cópia,1
+93592-B,3792,cópia,1
+93604-A,3792,cópia,1
+93609-F,3792,cópia,1
+93610-A,3792,cópia,1
+93617-B,3792,cópia,1
+93623-B,3792,cópia,1
+93660-A,1883,cópia,1
+93662-G,1883,cópia,1
+93663-J,1883,cópia,1
+93667-B,1883,cópia,1
+93673-B,1883,cópia,1
+93678-G,1883,cópia,1
+93798-B,1383,cópia,1
+93817-D,1383,cópia,1
+95292-C,2576,cópia,1
+95926-H,208,cópia,1
+95927-A,208,cópia,1
+98257-F,3792,cópia,1
+98637-F,1456,cópia,1
+98641-J,1456,cópia,1
+98769-I,1456,cópia,1
+98835-B,1456,cópia,1
+99361-C,2473,cópia,1
+99367-A,2473,cópia,1
+99841-D,2610,cópia,1
+99843-J,2610,cópia,1
+
+# cópia exata, 15 linhas, escolas diferentes
+#110508-B,293,cópia,1
+#111403-H,4248,cópia,1
+

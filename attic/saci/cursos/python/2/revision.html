@@ -1,0 +1,82 @@
+<h2>Mais sobre mostrar o resultado</h2>
+
+<h3>Mais linhas na saída</h3>
+
+<p>Para escrever mais de uma linha, encaixamos outros blocos  <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/> embaixo do primeiro bloco. Por exemplo, o grupo de blocos
+  <center>
+    <img align="middle" src="/static/saci/blockly_images/group_print_poem.png" height="120px"/>
+  </center>
+
+escreve quatro linhas na saída:
+  <div style="width:50%;margin:10px auto 10px auto;">
+    <pre style="border:1px solid black;padding:8px">
+No meio do caminho tinha uma pedra
+tinha uma pedra no meio do caminho
+tinha uma pedra
+no meio do caminho tinha uma pedra.
+</pre>
+    </div>
+
+<p>Veja como fica esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:10px">
+print("No meio do caminho tinha uma pedra")
+print("tinha uma pedra no meio do caminho")
+print("tinha uma pedra")
+print("no meio do caminho tinha uma pedra.")
+</pre>
+
+
+<h3>Números</h3>
+
+A linguagem Python faz distinção entre números e cadeias de
+caracteres  porque eles são armazenados de forma diferente na memória do
+computador. Dizemos que números e cadeias de caracteres têm
+<em>tipos</em> diferentes.
+
+</p>
+<p>Em Blockly <em>bloco número</em> serve para representar um número inteiro:
+  <img align="middle"  src="/static/saci/blockly_images/block_math_number.png" height="40"/>.
+Você deve preencher o valor do <em>bloco número</em> com um número. Por exemplo,
+preenchendo o <em>bloco número</em> com o valor 987 ele fica assim:
+<img align="middle" src="/static/saci/blockly_images/block_math_number987.png" height="40"/>
+
+<p>Para escrever um número na saída usamos um <em>bloco número</em>
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40"/>
+  encaixado num bloco de impressão. Por exemplo, para escrever uma linha 
+  o valor 1234 na saída, usamos:
+
+  <center>
+    <img src="/static/saci/blockly_images/group_print_math_number1234.png" height="40"/>
+  </center>
+</p>
+
+<p>Veja como fica esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:10px">
+print(1234)
+</pre>
+
+<p>Note que visualmente, na saída, os comandos
+
+  <center>
+    <img src="/static/saci/blockly_images/group_print_number_text.png" width="190"/>
+  </center>
+
+  produzem exatamente o mesmo resultado:
+    <div style="width:50%;margin:10px auto 10px auto;">
+      <pre style="border:1px solid black;padding:8px">
+1234
+1234	
+</pre>
+    </div>
+
+<p>Mas a primeira linha é a representação na saída do <em>número</em> 1234 e a
+  segunda linha é a representação da <em>cadeia de caracteres</em> "1234". Embora internamente
+  as representações do número 1234 e da cadeia de caracteres "1234" sejam distintas,
+  o resultado na saída é o mesmo.
+
+<p>Veja esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+print(1234)
+print("1234")
+</pre>
+

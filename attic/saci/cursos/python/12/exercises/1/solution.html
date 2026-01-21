@@ -1,0 +1,33 @@
+<p>Vamos usar uma variável <span class="tt">soma</span> para armazenar
+  o número total de acessos e um bloco de repetição controlada por variável
+  para ler as os acessos de cada dia. A cada passo da repetição, adicionamos
+  o número de acessos daquele dia ao número total de acessos e verificamos
+  se o número total de acessos é igual a ou maior do que um milhão; se for,
+  interrompemos o laço. O resultado é o número de vezes que o laço foi
+  executado, ou seja, o valor da variável de controle <span class="tt">i</span>.
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/saci/blockly_images/sol_class_12.png"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio da Aula 12
+
+soma = 0
+N = int(input())
+for i in range(1,N+1):
+    x = int(input())
+    soma = soma + x
+    if soma >= 1000000:
+        break
+print(i)
+</pre>
+    </td>
+  </tr>
+</table>

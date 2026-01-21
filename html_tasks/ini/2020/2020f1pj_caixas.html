@@ -1,0 +1,148 @@
+title:Entrega de Caixas
+template:tasks/tarefa_programacao.html
+
+<p>
+Você precisa transportar três caixas vazias usando um drone que pode
+levantar uma caixa por vez apenas em cada viagem. Quer dizer, sempre
+dá para transportar as três caixas vazias fazendo três viagens do
+drone. Mas talvez dê para fazer menos do que três viagens, se for
+possível colocar uma caixa dentro de outra. As caixas têm formato de
+cubo e a única restrição para uma caixa ser colocada dentro de outra é
+o tamanho, não importando o peso.
+
+<p>Uma caixa de tamanho X pode ser colocada dentro de uma caixa de
+tamanho Y se X < Y. Note, portanto, que uma caixa não cabe dentro de
+outra do mesmo tamanho. Além disso, duas caixas de tamanhos X e Y
+podem ser colocadas, lado a lado, dentro de uma caixa de tamanho Z se
+(X+Y) < Z.
+
+<p>A figura ilustra as quatro configurações possíveis para o drone
+fazer uma viagem.
+
+<div class="center"><img src="/static/img/task_images/provaf1pj_caixas.png" width="450px" /></div>
+
+<p>Neste problema, os tamanhos das três caixas são dados em ordem
+crescente e seu programa deve computar o número mínimo de viagens que
+o drone pode fazer para transportar todas as três caixas.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro A. A segunda linha da
+entrada contém um inteiro B. A terceira linha da entrada contém um
+inteiro C. Os três inteiros representam os tamanhos das três caixas.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma linha contendo um inteiro,
+representando o número mínimo de viagens que o drone pode fazer para
+transportar todas as três caixas.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  A &leq;  B &leq;  C &leq;  1000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12
+45
+188
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+67
+67
+67
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+111
+463
+463
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+72
+72
+345
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+30
+30
+55
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,102 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Erro{% endblock %}
+
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block content %}
+
+{% if errors or error_msg|safe %}
+<h2>Erro</h2>
+  <p>{{ error_msg|safe }}</p>
+  {% if errors %}
+  <table class="basic">
+  <tr><th width="15%">Num. Linha</th><th width="65%">Erro</th><th width="20%">Conteúdo da linha</tr>
+  {% for error in errors %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ error.linenum }}</td>
+  <td>{{ error.msg }}</td>
+  <td>{{ error.line }}</td>
+  </tr>
+  {% endfor %}
+  {% endif %}
+  </table>
+
+{% else %}
+<h2>Resultado da Submissão</h2>
+
+<p>Os arquivos foram recebidos corretamente e estão sendo processados; o resultado da correção será enviado para o email informado.
+</p>
+{% endif %}
+<p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include 'sisca/includes/see_also_sisca.html' %}
+
+  <h2>Instruções para uso do Corretor</h2>
+<li>Clique apenas uma vez o botão <em>Enviar</em>. O envio do arquivo
+pela Internet pode demorar (até alguns minutos), principalmente para
+arquivos grandes, com muitas provas.
+<li>O resultado da correção será enviado para o endereço de email informado.
+<li>No campo <em>Referência</em> deve ser informado um identificador
+para o lote de provas, que será usado para rotular a mensagem de email.
+<li>O <em>Arquivo de Folhas de Respostas</em> deve ser um arquivo no formato pdf contendo as
+provas escaneadas (preferência tons de cinza, densidade 150 dpi).
+<li>O <em>Arquivo de gabarito</em> deve ser um arquivo texto contendo uma linha
+para cada questão da prova. A linha deve conter o número da questão,
+seguido por ponto, seguido por espaço, seguido por uma letra
+(correspondente à alternativa correta). Se a letra for substituída por
+um asterisco ('*'), qualquer resposta marcada é considerada
+correta. Se a letra for substituída por um sinal de menos ('-'),
+nenhuma resposta é considerada correta (significa que a questão foi
+anulada). Você pode ainda substituir a letra por duas letras separadas
+por uma vírgula, e nesse caso duas respostas são consideradas
+corretas. Uma linha iniciando com o caractere '#' é ignorada e pode
+ser usada para incluir um comentário no gabarito. Um exemplo de
+gabarito para um teste de 10 questões é mostrado abaixo:
+</ul>
+<hr>
+<pre>
+# Gabarito para a Prova Exemplo
+1. A
+2. B
+3. A
+4. D
+5. *
+6. C
+7. B
+8. -
+9. B,E
+10. A
+</pre>
+<hr>
+<p>No exemplo, a primeira linha é um comentário e é ignorada.
+Para a Questão 5 qualquer alternativa é considerada
+correta; para a Questão 8, nenhuma alternativa é considerada correta;
+e para a Questão 9, as alternativas B e E são consideradas corretas.
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li><a href="{% url 'sisca_index' %}">Sisca</a></li>
+      <ul><li>Corretor de Folhas de Respostas</li></ul></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+# Para rodar jplag:
+
+./manage.py do_jplag_submissions 2 static/plag-fase2
+
+# Gera os index.html:
+bin/index-html-generator/genindex.py -r static/plag-fase2
+
+Para desclassificar:
+
+1) O arquivo desclassif_contest_x.txt deve conter os compet_id_full dos competidores
+
+2) Executar
+
+./manage.py desclassif_compets attic/jplag/desclassif_contest_x.txt > attic/jplag/schools_desclassif_contest_x.csv
+
+(o arquivo school_desclassif_contest_x.csv contém o id da escola desclassificada e os ids dos competidores desclassificados
+
+3) Editar a mensagem de desclassificação, em
+
+gerencia/templates/gerencia/mensagem_desclassif.html
+
+4) Executar
+
+./manage.py send_messages_coord_desclassif_queue attic/jplag/schools_desclassif_contest_x.csv
+
+

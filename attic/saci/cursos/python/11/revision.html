@@ -1,0 +1,116 @@
+<h2>Bloco Resto da Divisão</h2>
+
+<p>
+  O bloco  <em>Resto da divisão</em>
+  <img src="/static/saci/blockly_images/block_math_mod.png" height="45px" align="middle"/>
+  é encontrado no menu "Matemática" da Barra de Ferramentas.
+Ele tem dois espaços vagos, um para colocarmos o dividendo da operação de divisão 
+e outro para colocar o divisor. O resultado do bloco, como o 
+nome indica, é o resto da divisão do dividendo pelo divisor.
+
+Exemplos:
+<ul>
+  <li>12 ÷ 3 é igual a 4 e o resto da divisão é 0; o resultado do bloco é portanto 0.
+  <li>13 ÷ 3 é igual a 4 e o resto da divisão é 1; o resultado do bloco é portanto 1.
+  <li>7 ÷ 5 é igual a 1 e o resto da divisão é 2; o resultado do bloco é portanto 2.
+</ul>
+
+<p>Um uso frequente do bloco é para verificar se o valor de uma
+variável é par.  Sabemos que um número é par se o resto da divisão
+desse número por 2 é zero. Então podemos usar um bloco <em>Resto da
+divisão</em> para verificar o resto da divisão da variável por 2:
+
+<center>
+  <img src="/static/saci/blockly_images/group_num_mod_2.png" height="45px" align="middle"/>
+</center>
+  
+<p>E usamos um bloco de comparação para comparar o resultado do bloco resto da divisão com zero:
+
+<center>
+  <img src="/static/saci/blockly_images/group_compare_num_mod_2.png" height="60px" align="middle"/>
+</center>
+    
+<p>Se a variável num tem resto zero quando dividida por 2, o valor de num é par. 
+Senão, o valor de num é ímpar. Podemos usar esse bloco como condição de um comando de execução condicional:
+  
+<center>
+  <img src="/static/saci/blockly_images/group_if_num_mod_2_is_0.png" height="145px" align="middle"/>
+</center>
+
+
+<h3>Interrompendo um laço</h3>
+<p>Na aula anterior vimos o bloco <em>Repita</em>, que é útil para
+realizar repetições quando sabemos de antemão quantas vezes precisamos
+repetir uma dada ação.
+
+<p>Mas em alguns casos precisamos interromper a repetição dos comandos
+antes que todas as repetições sejam executadas. Suponha por exemplo o
+  seguinte problema:
+
+<center><em>
+  dada uma lista de N números, verificar se a lista
+está em ordem crescente. Como resultado, o programa deve escrever na
+saída "S" se a lista estiver em ordem crescente e "N" caso contrário.
+</em></center>
+
+<p>Para resolver esse problema, basta ler cada número da lista com um
+bloco repita, verificando se o número lido é maior do que o número
+lido no passo anterior.
+
+<p>Note que se a lista estiver em ordem crescente, temos que verificar
+todos os números da lista antes de escrever o resultado. Afinal,
+somente podemos saber que a lista está em ordem crescente após
+verificar o último número da lista.
+
+<p>Por outro lado, se a lista NÃO está em ordem crescente, podemos
+parar a repetição e escrever o resultado. Considere a lista
+  <center>
+ 1  4  12  13  14  29  <font color="red">21</font> 22  34  41  43  46 47 
+  </center>
+  
+<p>Nesse exemplo, determinamos que a lista não está ordenada ao
+encontrar o número 21. Os demais números da lista não precisam ser
+verificados, podemos portanto interromper o laço de repetição.
+
+<p>Para interromper um laço usamos o bloco <em>Encerre o laço</em>,
+que é encontrado no menu "Laços" da Barra de Ferramentas:
+
+<center>
+  <img src="/static/saci/blockly_images/block_control_break.png" height="40px" align="middle"/>.
+</center>
+
+<p>Quando o Bloco Encerre o Laço é executado, o bloco de repetição é
+interrompido imediatamente.
+
+<p>Para ilustrar o uso dos bloco "Encerre o laço" e "Resto da Divisão"
+vamos resolver um pequeno problema:
+
+<center>
+<em>Dada uma lista com N números inteiros, escrever na saída o
+primeiro número da lista que é par. Se não existe número par, escreva
+-1 na saída</em>.
+</em>
+</center>
+
+<p>Aqui está uma solução em Blockly para o problema:
+  <center>
+  <img src="/static/saci/blockly_images/group_sol_primeiro_par.png" align="middle"/>
+  </center>
+
+<p>Veja esse programa na linguagem Python (não precisa entender o
+programa em Python, o exemplo é apenas para você ter uma ideia da
+linguagem Python; mais adiante no curso vamos ver os comandos em
+Python em detalhes):
+<pre style="background-color:#eeeeee;width:50%;padding:4px">
+resultado = -1
+N = int(input())
+for count in range(int(N)):
+    num = int(input())
+    if num % 2 == 0:
+        resultado = num
+        break
+print(resultado)
+</pre>
+
+<p>&nbsp;</p>
+

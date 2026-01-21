@@ -1,0 +1,22 @@
+#! /usr/bin/env sh
+
+CITY=$1
+STATE=$2
+
+echo '-----------'
+echo 'Iniciação'
+echo '-----------'
+echo
+psql -d obi2024 -U obi -c "select school_id,school_name,school_deleg_name from school where school_city='${CITY}' and school_state='${STATE}' and school_id=school_site_phase3_ini"
+
+psql -d obi2024 -U obi -c "select count(c),s.school_city from compet as c, school as s  where c.compet_school_id=school_id and compet_type in (1,2,7) and compet_classif_fase2 and s.school_site_phase3_ini=(select school_id from school where school_city='${CITY}' and school_state='${STATE}' and school_id=school_site_phase3_ini) group by school_city order by school_city"
+
+echo '-----------'
+echo 'Programação'
+echo '-----------'
+echo
+psql -d obi2024 -U obi -c "select school_id,school_name,school_deleg_name from school where school_city='${CITY}' and school_state='${STATE}' and school_id=school_site_phase3_prog"
+
+psql -d obi2024 -U obi -c "select count(c),s.school_city from compet as c, school as s  where c.compet_school_id=school_id and compet_type in (3,4,5,6) and compet_classif_fase2 and s.school_site_phase3_prog=(select school_id from school where school_city='${CITY}' and school_state='${STATE}' and school_id=school_site_phase3_prog) group by school_city order by school_city"
+
+

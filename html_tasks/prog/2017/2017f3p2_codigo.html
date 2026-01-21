@@ -1,0 +1,166 @@
+title:Código
+template:tasks/tarefa_programacao.html
+
+<p>
+A professora Maryam está tentando construir um código constituído de
+uma sequência de N cadeias de 10 letras minúsculas,
+S<sub>1</sub>,S<sub>2</sub>,S<sub>3</sub>,&hellip;,S<sub>N</sub>. Essas cadeias da sequência serão, no futuro,
+concatenadas de diversas maneiras para formar cadeias maiores. Mas,
+para que o código seja válido, a sequência de cadeias tem que
+satifazer uma propriedade bastante específica: nenhuma cadeia da
+sequência pode ser subcadeia de uma concatenação de duas cadeias
+anteriores na sequência. De forma mais rigorosa, o código será <i>
+  inválido</i> se existirem três inteiros a, b e k, tais que:
+
+<ul>
+<li> 1 &leq;  a < k &leq;  N, 1 &leq;  b < k &leq;  N (a pode ser igual a b); e
+<li> S<sub>k</sub> é subcadeia da concatenação S<sub>a</sub>S<sub>b</sub>.
+</ul>
+
+<p>Por exemplo, o código S={<span class="ttt">aaaaaaabbb</span>,<span class="ttt">yyuudiwwkl</span>,
+<span class="ttt">kkfidaaooa</span>} é válido. Mas se adicionarmos a cadeia 
+<span class="ttt">aooaaaaaaa</span> no final da sequência, o código resultante,
+S&lsquo;={<span class="ttt">aaaaaaabbb</span>,<span class="ttt">yyuudiwwkl</span>, <span class="ttt">kkfidaaooa</span>,
+<span class="ttt">aooaaaaaaa</span>}, será inválido, pois S&lsquo;<sub>4</sub> é subcadeia da
+concatenação S&lsquo;<sub>3</sub>S&lsquo;<sub>1</sub>.
+
+<p>Dada a sequência de cadeias, seu programa deve determinar se o código
+é válido, ou não.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, representando o
+número de cadeias na sequência. As N linhas seguintes contêm, cada
+uma, uma cadeia de 10 letras minúsculas, definindo a sequência de
+cadeias do código.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo a cadeia &quot;<span class="ttt">ok</span>&quot;
+caso o código seja válido, ou contendo a primeira cadeia na sequência
+que invalida o código. Quer dizer, contendo S<sub>k</sub> onde k é o menor
+possível tal que S<sub>k</sub> seja subcadeia de uma concatenação de duas
+cadeias anteriores na sequência.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 40 pontos, N &leq;  100
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+aaaaaaabbb
+yyuudiwwkl
+kkfidaaooa
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+ok
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+aaaaaaabbb
+yyuudiwwkl
+kkfidaaooa
+aooaaaaaaa
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+aooaaaaaaa
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+jfjshiddds
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+ok
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+abcdefghij
+abcdefghij
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+abcdefghij
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+xfwvijuydq
+hcprvezofg
+hwykagqawu
+givfzndqpy
+yvfiqgadfc
+wuhcprvezo
+qaswiksscl
+uchskpkcit
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+wuhcprvezo
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,41 @@
+{% load obi_extras %}
+
+<p>Prezado(a) competidor()a {{ compet.compet_name}},
+
+<p>Você está recebendo esta mensagem porque seu professor fez sua inscrição na
+  OBI2025 - Olimpíada Brasileira de Informática.
+
+<h2>Prova Teste</h2>
+<p>Para que os competidores se familiarizem com o ambiente de provas
+  da OBI2025 (chamado CMS), foi disponibilizada uma "Prova
+  Teste". Consulte o professor Coordenador Local da OBI2025 da sua
+  escola para saber se a Prova Teste vai ser aplicada presencialmente
+  na sua escola. Opcionalmente, a Prova Teste pode também ser
+  realizada fora da escola, inclusive em casa (note que a prova da
+  Fase 1, na semana que vem, deve ser <b>obrigatoriamente ser feita na
+  escola</b>, sob pena de desclassificação).
+
+<p>Essa Prova Teste, opcional e não classificatória,
+  pode pode ser acessada no endereço
+
+<p>https://{{compet.compet_type|obi_format_compet_type_short|lower}}.provas.ic.unicamp.br
+
+<p>utilizando para autenticação os seguintes dados:
+
+  <ul>
+    <li>usuário: {{ compet.compet_id_full}}
+    <li>senha: {{ compet.compet_conf }}
+
+<p>A Prova Teste tem apenas 30 minutos de duração; procurem explorar
+as funcionalidades do CMS (visualizar os enunciados, submeter
+soluções, enviar dúvidas, etc.).
+
+<p>As provas da OBI2025 devem ser realizadas de forma individual e sem
+  consulta. Também é proibido o uso de ferramentas de Inteligência
+  Artificial. O seu uso acarreta desclassificação.
+
+<p>Contamos com o seu <em>Espírito Olímpico<em> para construírmos juntos
+  uma competição justa.
+
+{% include 'includes/signature_txt.html' %}
+

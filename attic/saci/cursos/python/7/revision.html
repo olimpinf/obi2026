@@ -1,0 +1,56 @@
+<h2>Mais sobre execução condicional</h2>
+
+<p>A forma como usamos o <em>bloco se-então</em> até agora permite que
+  uma ação seja executada (se a condição associada ao bloco for
+  Verdadeira) ou não seja executada (se a condição for Falsa).
+  Mas muitas vezes precisamos executar duas ações diferentes dependendo
+  de condição ser verdadeira ou falsa. Ou seja, se a condição for
+  verdadeira devemos executar uma ação e se a condição for falsa
+  devemos executar uma outra ação. Por exemplo, um programa que mantém
+  a velocidade de um carro autônomo constante tem que medir a
+  velocidade atual do carro. Se a velocidade estiver acima do desejado o
+  carro tem que ser desacelerado; se a velocidade estiver abaixo do
+  desejado o carro tem que ser acelerarado.
+
+<p>O <em>bloco se-então</em> pode ser modificado para permitir a
+  execução de duas ações diferentes dependendo da condição. Para modificar
+  o <em>bloco se-então</em> clique no botão de configuração
+  <img src="/static/saci/blockly_images/button_option_block_control_if.png" height="16" align="bottom"/>
+  do bloco. Um novo painel aparece:
+
+  <center>
+    <img src="/static/saci/blockly_images/block_control_if_option.png" height="220"/>
+  </center>
+
+<p>Arraste o bloco <em>senão</em> e encaixe-o abaixo do bloco <em>se</em>. O
+  bloco <em>se-então</em> muda de aspecto e inclui uma nova abertura
+  para encaixar blocos, marcada com o rótulo "<em>senão</em>":
+
+  <center>
+    <img src="/static/saci/blockly_images/block_control_if_else_option.png" height="250"/>
+  </center>
+
+<p>Para fechar o painel, clique novamente no botão de configuração 
+  <img src="/static/saci/blockly_images/button_option_block_control_if.png" height="16" align="bottom"/>
+  do bloco.
+  
+<p>Como exemplo de uso do bloco de execução condicional no formato <em>se-então-senão</em> considere
+  o seguinte programa, que lê a nota do Exame e escreve na saída a palavra "Aprovado" se
+  a nota é maior ou igual do que 65, ou a palavra "Reprovado" se a nota é menor do que
+  65.
+
+  <center>
+    <img src="/static/saci/blockly_images/group_control_if_else_pass_fail.png" height="160"/>
+  </center>
+
+<p>Veja esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+exame = int(input())
+if exame >= 65:
+  print("Aprovado")
+else:
+  print("Reprovado")
+</pre>
+
+<p>&nbsp;</p>
+

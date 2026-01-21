@@ -1,0 +1,61 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+
+  <br />
+
+  {# first button is default, enter key will trigger it #}
+  <button type="submit" class="button right" name="save_and_continue" value="save_and_continue">Salvar e Inscrever Outra</button>
+  <button type="submit" class="button right" name="save" value="save">Salvar</button>
+  <button type="submit" class="button cancel" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}">Cancelar</button>
+</form>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+  {% block browse-wrapper %}
+    <h2>Instruções</h2>
+    {% block browse %}
+    <ul>
+      <li>Este formulário deve ser utilizado para inscrever uma competidora na Competição Feminina da OBI (CF-OBI) <b>apenas caso ela não esteja inscrita na OBI</b>.</li>
+      <li>Você pode verificar quais competidores estão inscritos na OBI na sua escola acessando <a href="{% url 'restrito:compet_lista' %}" target="_blank">esta página</a>.</li>
+      <li>Para inscrever a nova competidora, preencha as informações do formulário e clique em <em>Salvar</em> ou <em>Salvar e Inscrever Outra</em>.</li>
+      <li>O campo de <em>Email</em> não é obrigatório:
+        <ul>
+          <li>Se o email for fornecido, será utilizado para enviar a senha de acesso à página pessoal da competidora no site da OBI.</li>
+          <li>Não é necessário que seja único. Por exemplo, no caso de duas irmãs, pode ser o endereço de email do(a) responsável.</li>
+          <li><b>Note que as competidoras precisarão acessar suas páginas pessoais no site da OBI para realizar a prova da CF-OBI.</b></li>
+        </ul>
+      </li>
+    </ul>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

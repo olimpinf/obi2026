@@ -1,0 +1,104 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+  <p>Link para seus alunos realizarem a pré-inscrição na {{ 'OBI'|obi_date_year }} (copie e repasse
+    o link para seu alunos):
+<div class="center">
+    <p>
+    https://olimpiada.ic.unicamp.br/pre_inscricao_compet/{{school_id}}/
+    </p>
+</div>
+
+<h2 class="mt-4">{{ pagetitle }}</h2>
+
+{% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+    {% if total == 1 %}
+<p><em>{{ items.paginator.count }} competidor listado, total de {{ total }} competidor pré-inscrito.</em></p>
+    {% else %}
+<p><em>{{ items.paginator.count }} competidor listado, total de {{ total }} competidores pré-inscritos.</em></p>
+    {% endif %}
+  {% else %}
+<p><em>{{ items.paginator.count }} competidores listados, total de {{ total }} competidores pré-inscritos.</em></p>
+{% endif %}
+  Para validar, editar ou cancelar a pré-inscrição de um competidor clique no nome do competidor.
+</p>
+  <table class='table table-sm'>
+    <thead class="table-primary">
+  <tr>
+    <th >Nome</th>
+    <th class="center">Mod.</th>
+    <th class="center">Ano Escolar</th>
+    <th class="center">Nascimento</th>
+    <th class="center">Gênero</th>
+    <th class="center">Email</th>
+  </tr>
+  </thead>
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td><a href="compet_valida/{{c.id}}">{{ c.compet_name }}</a></td>
+    <td class="center">{{ c.compet_type|obi_format_compet_type_short }} </td>
+    <td class="center">{{ c.compet_year|obi_format_school_year_full }} </td>
+    <td class="center">{{ c.compet_birth_date|date:"d/m/Y" }} </td>
+    <td class="center">{{ c.compet_sex }} </td>
+    <td class="center">{{ c.compet_email }} </td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Não há competidores pré-inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_lista' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_lista' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+<p>&nbsp;</p>
+{% endblock %}
+
+{% block content-related %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+
+  
+  <h4 class="mt-4">Instruções</h4>
+
+
+  <ul>
+    <li>Para editar as informações de um competidor, ou remover o competidor, clique no nome do competidor.
+    <li>Utilize o formulário Filtros para restringir os competidores visualizados.
+  </ul>
+      
+
+{% endblock %}

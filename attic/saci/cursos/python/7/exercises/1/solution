@@ -1,0 +1,7 @@
+# Solução do Desafio da Aula 7
+
+temperatura = int(input())
+if temperatura >= 37:
+  print('febre')
+else:
+  print('normal')

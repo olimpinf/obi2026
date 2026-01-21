@@ -1,0 +1,48 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% block title %}Auto-inscrição Competidor{% endblock %}
+
+{% block header %}<h1>Auto-inscrição Competidor</h1>{% endblock %}
+
+{% block content %}
+<p>
+  {% if compet.compet_sex == 'F' %}  Prezada  {% else %}  Prezado  {% endif %}
+  <i>{{ compet.compet_name }}</i>,
+</p>
+<p>
+  agradecemos pela sua pré-inscrição na OBI{{ ""|obi_date_year }}.
+</p>
+<p>
+  Para que sua pré-inscrição seja efetivada, o Coordenador Local da sua
+  escola precisa confirmá-la.  Você receberá uma mensagem de email
+  informando o seu número de inscrição quando sua
+  inscrição for confirmada pelo Coordenador Local.
+</p>
+<p>
+Boa OBI{{ ""|obi_date_year }}!
+</p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% comment %}
+  <h2>Instruções</h2>
+  {% block browse %}  
+  <ul>
+    <li>Para inscrever um novo competidor, preencha as informações do formulário e clique em <em>Salvar</em></li>
+      ou <em>Salvar e Inscrever outro</em>.
+    <li>O campo de <em>Email</em> é opcional. Se fornecido, será utilizado para enviar
+    mensagens relativas à OBI (informações sobre as provas, lembretes de datas, etc.).</li>
+  </ul>
+    {% endblock browse %}
+  {% endcomment %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

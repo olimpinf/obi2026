@@ -1,0 +1,118 @@
+title:Xadrez
+template:tasks/tarefa_programacao.html
+
+<p>
+No tabuleiro de xadrez, a casa na linha 1, coluna 1 (canto superior
+esquerdo) é sempre branca e as cores das casas se alternam entre
+branca e preta, de acordo com o padrão conhecido como... xadrez! Dessa
+forma, como o tabuleiro tradicional tem oito linhas e oito colunas, a
+casa na linha 8, coluna 8 (canto inferior direito) será também
+branca. Neste problema, entretanto, queremos saber a cor da casa no
+canto inferior direito de um tabuleiro com dimensões quaisquer: L
+linhas e C colunas. No exemplo da figura, para L=6 e C=9, a casa
+no canto inferior direito será preta!
+
+<div class="center">
+<img src="/static/img/task_images/2018f1p1_xadrez.png" width="300px"/>
+</div>
+
+ 
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro L
+ indicando o número de linhas do tabuleiro. A segunda linha da entrada
+ contém um inteiro C representando o número de colunas.
+
+ 
+<h3>Saída</h3>
+Imprima uma linha na saída. A linha deve conter um
+ inteiro, representando a cor da casa no canto inferior direito do
+ tabuleiro: 1, se for branca; e 0, se for preta.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  L &leq;  1000
+<li> 1 &leq;  C &leq;  1000
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+91
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+401
+322
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "$1" == "prog" ]; 
+then 
+    level="3,4,5,6"
+    psql -d obi2019 -U obi -c "select distinct school_id,school_city,school_state from school, compet where compet_school_id=school_id and compet_classif_fase2 and school_site_phase3_prog=0 and compet_type in (${level}) order by school_state, school_city"
+
+else
+    level="1,2,7"
+    psql -d obi2019 -U obi -c "select distinct school_id, school_site_phase3_ini, school_city,school_state from school, compet where compet_school_id=school_id and compet_classif_fase2 and school_site_phase3_ini<>0 and school_site_phase3_ini not in (select school_id from school where school_site_phase3_type in (0,1)) and compet_type in (${level}) order by school_state, school_city"
+    
+fi
+echo ${level}
+
+

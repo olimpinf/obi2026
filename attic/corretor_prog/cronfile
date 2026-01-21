@@ -1,0 +1,2 @@
+@reboot /home/exec_corretor/www/start_obi_www.sh
+* * * * * /home/exec_corretor/www/check_obi_www.sh

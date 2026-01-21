@@ -1,0 +1,151 @@
+title:Exploração do Capitão Levi
+template:tasks/tarefa_programacao.html
+
+<p>
+O Capitão Levi está indo para mais uma expedição pela tropa de
+exploração e, como sempre, ele resolveu olhar o mapa do local que ele
+e sua equipe estavam a caminho para que pudessem criar a melhor
+estratégia possível. Como todos sabem, a tropa de exploração é
+responsável por enfrentar titãs e deixar os habitantes da cidade mais
+protegidos.
+
+<p>O mapa do local pode ser resumido a um plano cartesiano e os titãs
+podem ser representados como pontos nesse plano.  No entanto, seu
+dispositivo de manobra bidimensional(DMB) está defeituoso e agora Levi
+só consegue se locomover de um titã para outro titã durante o combate
+se eles estão em uma determinada direção, um em relação ao outro.
+
+<div class="center">
+<img src="/static/img/task_images/2019f3p2_exploracao.png" width="300px"/>
+</div>
+
+
+<p>Se existe um titã no ponto A = (X<sub>a</sub>, Y<sub>a</sub>) e um
+outro titã no ponto B = (X<sub>b</sub>, Y<sub>b</sub>) ele consegue ir
+de A pra B se o coeficiente angular da reta que passa pelos pontos A e
+B for maior ou igual a P/Q. Observe que os pontos A e B
+devem ser distintos e que não existem pontos com a mesma coordenada X.
+Levi quer contar quantos pares de pontos distintos A e B existem, tais
+que há um titã em A e em B e ele consegue ir de A para B, ou seja
+(Y<sub>a</sub> - Y<sub>b</sub>)/(X<sub>a</sub> - X<sub>b</sub>)
+&geq; P/Q.
+
+<p>No entanto, existem muitos titãs no mapa e por isso Levi pediu sua
+ajuda para contabilizar os pares, lembrando que o par (A,B) e (B,A)
+são o mesmo par, ou seja, a ordem dos pontos não faz diferença.
+
+
+<h3>Entrada</h3>
+
+<p>A primeira linha da entrada contém três números inteiros N, P e Q,
+indicando respectivamente a quantidade de titãs, e os dois inteiros
+descritos no enunciado. Cada uma das N linhas seguintes contém dois
+inteiros X e Y, indicando as coordenadas de um titã.
+
+<h3>Saída</h3>
+
+<p>A saída consiste em um único número inteiro, representando a
+quantidade de pares de titãs entre os quais Levi pode se locomover
+respeitando as condições do enunciado.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  N  &leq;  5*10<sup>5</sup>
+<li> -10<sup>9</sup>  &leq;  P, Q  &leq;  10<sup>9</sup>
+<li> P  &ne;  0 e Q  &ne;  0
+<li> 1 &leq;  X, Y  &leq;  10<sup>7</sup> 
+<li> Não existem dois titãs com a mesma coordenada X
+</ul>
+
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 15 pontos, 2  &leq;  N  &leq;  10<sup>3</sup>, P = 1 e Q = 1.
+<li> Para um conjunto de casos de testes valendo 20 pontos, 2  &leq;  N  &leq;  6*10<sup>4</sup>, P = 1 e Q = 1. 
+<li> Para um conjunto de casos de testes valendo 15 pontos, todos os titãs estão sobre uma mesma reta.
+<li> Para um conjunto de casos de testes valendo 20 pontos, P > 0 e Q > 0.
+<li> Para um conjunto de casos de testes valendo 30 pontos, não há restrições adicionais.
+</ul>
+
+<div class="center">
+<img src="/static/img/task_images/2019f3p2_exploracao.png" />
+</div>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 1 1
+1 1
+4 6
+2 5
+8 2
+7 1
+6 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 1 1
+7 7
+1 1
+2 2
+16 16
+11 11
+200 200
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+15
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8 418732 641936
+60693 28595
+15649 57089
+77335 92158
+57291 25242
+21420 56599
+62278 58106
+52009 12362
+41982 64916
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+11
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

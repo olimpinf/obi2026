@@ -1,0 +1,82 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Passo a passo: aplicação da Prova Fase 1 - Modalidade Iniciação</h1>
+
+<h2>Antes da prova</h2>
+<ol>
+  <li>Inscreva os competidores.
+    <ol>
+      <li>Na página de coordenação, Seção "Cadastro", linha "Competidores".
+      Podem ser inscritos um por um, ou usando um arquivo com os dados dos
+	competidores (inscrição em lote).
+    </ol>
+  <li>Imprima os Cadernos de Prova.
+    <ol>
+      <li>Na página de coordenação, Seção "Fase 1", linha "Modalidade Iniciação",
+	clique em "Aplicação da Prova" e então procure a seção "Cadernos de Prova"; escolha o
+	nível desejado. Um arquivo PDF
+      é baixado. Imprima um Caderno de Provas para cada competidor.
+    </ol>
+  <li>Imprima as Folhas de Respostas.
+    <ol>
+      <li>Na página de coordenação, Seção "Fase 1", linha "Modalidade Iniciação",
+	clique em "Aplicação da Prova" e então procure a seção "Folhas de Respostas"; escolha o
+	nível desejado. Um arquivo PDF é gerado com as Folhas de Respostas já preenchidas
+	com os dados dos competidores. Imprima todas as Folhas de Respostas.
+      <li>Imprima algumas Folhas de Respostas Avulsas (sem os nomes dos competidores pré-preenchidos)
+	para o caso de alunos rasurarem suas folhas de respostas.
+    </ol>
+  <li>Imprima as Listas de Presença
+    <ol>
+      <li>As listas de presença não são obrigatórias, mas é recomendável que os alunos
+	assinem. Guarde as listas assinadas para comprovar a participação dos alunos em caso
+	de problemas com a prova ou a correção.
+      <li>Para imprimir as listas de presença, na página de coordenação, Seção "Fase 1", linha "Modalidade Iniciação",
+      clique em "Aplicação da Prova", e procure a seção "Listas de Presença".
+    </ol>
+</ol>
+
+
+<h2>No dia da prova</h2>
+<ol>    
+  <li>Distribua um Caderno de Provas para cada competidor.
+    <ul>
+      <li> Certifique-se de entregar
+    o Caderno de Provas do nível do competidor, são provas de diferentes para cada nível.
+    </ul>
+  <li>Distribua as Folhas de Respostas para cada competidor.
+  <li>Supervisione os alunos, para garantir que façam a prova individualmente e sem uso de
+    qualquer material externo (livros, internet, anotações, etc.)
+  <li>O tempo de prova é uma hora.
+  <li>Ao final do tempo de prova, recolha os Cadernos de Prova e as Folhas de Respostas.
+</ol>
+
+<h2>Após a prova</h2>
+<ol>
+  <li>
+    Os gabaritos serão divulgados após o período de aplicação das provas.
+  <li>Veja detalhes da correção na página de coordenação, Seção "Fase 1", linha "Modalidade Iniciação",
+      clique em "Correção da Prova".
+</ol>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

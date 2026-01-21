@@ -1,0 +1,37 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+
+{% block title %} {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  {{ flatpage.title }}
+{% endblock %}
+
+  {% block content %}{{ flatpage.content }}{% endblock %}
+
+{% block content-related %}
+
+{{request.path}}
+{%comment%}
+  {% include "tasks/includes/contents_tasks.html" %}
+{%endcomment%}
+
+  <h4>Veja também</h4>
+  <ul>
+    {% load flatpages %}
+    {% comment %}
+        {% get_flatpages '/estude/' as flatpages_estude %}
+        {% for page in flatpages_estude %}
+           {% if not page.url == flatpage.url %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+    {% endcomment %}
+         <li><a href="{% url 'pratique' %}">Pratique</a></li>
+         <li><a href="{% url 'ementas' %}">Ementa</a></li>
+  </ul>
+
+
+{% endblock %}

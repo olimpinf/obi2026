@@ -1,0 +1,65 @@
+server {
+    if ($host = olimpiada.ic.unicamp.br) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    #if ($host = obi.ic.unicamp.br) {
+    #    return 301 https://$host$request_uri;
+    #} # managed by Certbot
+
+
+    #if ($host = os036.os.ic.unicamp.br) {
+    #    return 301 https://$host$request_uri;
+    #} # managed by Certbot
+
+
+    listen 80 ;
+    server_name olimpiada.ic.unicamp.br obi.ic.unicamp.br os036.os.ic.unicamp.br;
+    return 404; # managed by Certbot
+}
+
+#server {
+#    listen 80 deferred;
+#    client_max_body_size 4G;
+#    server_name 143.106.73.36;
+#
+#    location = /favicon.ico { access_log off; log_not_found off; }
+#    location /static/ {
+#        root /home/olimpinf/django/projectobi;
+#    }
+#
+#    location / {
+#        include proxy_params;
+#	proxy_pass http://unix:/run/gunicorn/socket;
+#	proxy_set_header X-Forwarded-Proto $scheme;
+#    }
+#}
+
+server {
+    # if no Host match, close the connection to prevent host spoofing
+    #return 444;
+
+    server_name olimpiada.ic.unicamp.br; # managed by Certbot
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/os036.os.ic.unicamp.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/os036.os.ic.unicamp.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/olimpinf/django/projectobi;
+    }
+
+    location / {
+        include proxy_params;
+	proxy_pass http://unix:/run/gunicorn/socket;
+	proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+
+}

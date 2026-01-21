@@ -1,0 +1,98 @@
+title:Jogo da memória
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Pedro e Paulo resolveram complicar um pouco o tradicional Jogo da
+Memória, em que os jogadores precisam virar duas cartas iguais. Eles
+colocam as cartas no chão, viradas para baixo, e fazem algumas linhas
+ligando pares de cartas, usando giz, de modo que para qualquer par de
+cartas (A,B) existe uma e apenas uma sequência de cartas distintas
+que leva de A até B através das linhas que eles desenharam. Com
+isso, ao virar duas cartas, o jogador ganha uma quantidade de pontos
+igual ao tamanho da sequência de linhas entre as duas cartas, se elas
+forem iguais. Se forem diferentes, o jogador perde aquela quantidade
+de pontos.</p>
+
+<p>Pedro e Paulo, agora, estão estudando qual é a melhor estratégia para
+esse jogo e precisam da sua ajuda para resolver uma tarefa específica:
+dadas as ligações entre as N cartas, calcular a soma dos tamanhos
+das sequências entre todos os N/2 pares de cartas iguais!</p>
+
+<p>O jogo possui N cartas, de índices 1 até N. Cada carta possui a
+figura de um número de 1 até N/2 desenhada. Exatamente duas
+cartas possuem a figura de cada número entre 1 e N/2.</p>
+<h3>Entrada</h3>
+A primeira linha da entrada contém o número de cartas N. A segunda
+linha da entrada contém N inteiros C_i, 1 ≤  i ≤  N, indicando
+qual número está anotado na carta de índice i. Cada uma das N-1
+linhas seguintes contém dois números A e B, indicando que existe
+uma linha desenhada entre as cartas de índices A e B.
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo um inteiro, a soma dos
+tamanhos das sequências entre todos os N/2 pares de cartas iguais.
+<h3>Restrições</h3><ul>
+<li> 2 ≤  N ≤  50000, N é par</li>
+<li> 1 ≤  C_i ≤  N/2</li>
+<li> 1 ≤  A ≤  N e 1 ≤  B ≤  N</li>
+</ul>
+<h3>Informações sobre a Pontuação</h3><ul>
+<li> Em um conjunto de casos de teste valendo 50 pontos, N ≤  1000</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+2 2 1 1 3 3
+1 2
+3 4
+6 5
+2 6
+3 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+1 2 3 3 2 4 1 4
+1 2
+2 3
+2 6
+5 6
+6 8
+7 8
+4 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+12
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

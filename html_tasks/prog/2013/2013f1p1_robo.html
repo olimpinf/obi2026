@@ -1,0 +1,85 @@
+title:Robô
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Um novo robô de limpeza para um grande salão retangular está sendo desenvolvido. O robô vai percorrer
+o caminho definido por uma linha marcada no chão, que é coberto com
+ladrilhos quadrados, brancos e pretos: ladrilhos pretos indicam o caminho que o
+robô deve percorrer. Ao movimentar-se, o robô pode andar apenas em linha
+reta, para a frente. Parado, o robô pode girar para as quatro direções
+(Norte, Sul, Leste e Oeste).</p>
+
+<p>Dados um mapa indicando a cor de cada ladrilho no chão e a posição
+inicial do robô, você deve escrever um programa que determine a
+posição final do robô.</p>
+<h3>Entrada</h3>A primeira linha contém dois inteiros L e C indicando as dimensões do salão
+(número de linhas e número de colunas), medidas em ladrilhos. A segunda linha
+contém dois inteiros A e B indicando respectivamente a linha e a coluna da
+posição inicial do robô (as linhas são numeradas de 1 a L, de cima para
+baixo; as colunas são numeradas de 1 a C, da esquerda para a direita).
+Cada uma das L linhas seguintes contém C inteiros, zeros ou uns. Nessa
+representação, o valor "1" indica que o ladrilho corresponte é preto.
+O ladrilho da linha A e coluna B sempre é preto. O caminho do robô é
+definido unicamente: em nenhum momento o robô necessita fazer uma escolha sobre
+em qual direção ir (em outras palavras, todo ladrilho preto tem no máximo dois
+vizinhos pretos e o ladrilho inicial tem um vizinho preto).
+<h3>Saída</h3>Seu programa deve imprimir apenas uma linha, contendo dois números
+inteiros, respectivamente a linha e a coluna da posição final do robô.
+<h3>Restrições</h3><ul>
+<li> 1  ≤  L, C  ≤  1000</li>
+<li> 1  ≤  A  ≤  L, 1  ≤  B  ≤  C</li>
+<li> A posição final é diferente da posição inicial.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 5
+1 1
+1 0 0 0 1
+1 0 0 1 1
+1 1 1 1 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 7
+3 4
+0 0 1 1 1 1 1
+1 1 1 0 0 0 1
+1 0 0 1 0 1 1
+1 1 0 1 1 1 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

@@ -1,0 +1,79 @@
+<h2>Parada Ordenada</h2>
+
+<div width="100%">
+<p>
+O sargento quer que os recrutas desfilem na parada em ordem de
+altura. Um recruta não pode desfilar depois de um recruta com altura
+maior do que a sua (pode desfilar se tem a mesma altura).
+
+<p>O sargento coletou as alturas dos recrutas e fez uma lista com a
+ordem dos recrutas para o desfile. Mas ele não é bom de matemática e
+ordenou que você confira se a lista está corretamente ordenada.
+
+<p>Dados o número de recrutas e uma lista com a ordem dos recrutas
+  preparada pelo sargento, escreva um programa para determinar se a
+  lista está ordenada por ordem de altura.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um número inteiro N,
+  o número de recrutas na. Cada uma das N linhas seguintes
+  contém um número inteiro X<sub>i</sub>, a altura de um recruta,
+  em milimetros, na ordem em que o sargento preparou.
+
+<h3>Saída</h3>
+<p>Seu programa deve escrever uma única linha na saída, contendo
+  o caractere 'S' se os recrutas estão em ordem não decrescente
+  ou o caractere 'N' caso contrário. A ordem é não decrescente se
+  a altura do próximo recruta a desfilar é maior ou igual à altura
+  do recruta anterior.
+
+<h3>Restrições</h3><ul>
+  <li> 1 ≤  N ≤ 100</li>
+  <li> 1500 ≤ X<sub>i</sub>  ≤ 2000, para  1 ≤ i ≤ N</li>
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+1600
+1700
+1700
+1701
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+<p>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+1800
+1801
+1802
+1801
+1803
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+</div>

@@ -1,0 +1,29 @@
+<xml id="toolbox" style="display: none">
+  <category name="E/S" colour="#bb6622">
+    <block type="saci_text_print"></block>
+    <block type="saci_input_int"></block>
+  </category>
+  <category name="Matemática" colour="%{BKY_MATH_HUE}">
+    <block type="math_number"></block>
+    <block type="saci_math_arithmetic"></block>
+    <block type="math_modulo"></block>
+  </category>
+  <category name="Texto" colour="%{BKY_TEXTS_HUE}">
+    <block type="text"></block>
+  </category>
+  <category name="Lógica" colour="%{BKY_LOGIC_HUE}">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+  </category>
+  <category name="Laços" colour="%{BKY_LOOPS_HUE}">
+    <block type="saci_controls_repeat_ext"></block>
+    <block type="saci_controls_for"></block>
+    <block type="saci_controls_flow_statements"></block>
+  </category>
+  <sep></sep>
+  <category name="Variáveis" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
+  </category>
+</xml>

@@ -1,0 +1,142 @@
+title:Palavras Cruzadas
+template:exams/tarefa_programacao.html
+order:2
+<p>
+Você já deve ter tentado completar um jogo de palavras cruzadas. Nesse
+jogo, o jogador deve descobrir um conjunto de palavras através de
+dicas fornecidas juntamente com um retângulo dividido em quadrados de
+mesmo tamanho, sendo a maoria quadrados em branco e alguns quadrados
+pretos. Cada linha e cada coluna formada pelos quadrados em branco
+deve ser preenchida por uma palavra, com uma letra em cada quadrado em
+branco. As palavras das linhas são chamadas de palavras horizontais,
+as palavras das colunas são chamadas palavras verticais.  As palavras
+horizontais <i>cruzam</i> com as palavras verticais em uma letra comum
+às duas palavras, vindo daí o nome do jogo.
+
+<p>Nesta tarefa, dadas uma palavra horizontal e uma palavra vertical,
+você deve encontrar a <i>melhor</i> letra de
+cruzamento entre elas, que é definida como a letra que produz
+
+<ol>
+<li> o cruzamento mais à direita possível na palavra horizontal;
+<li> se há mais de uma possibilidade de cruzamento com a regra (1), a melhor letra de cruzamento
+é definida como a que produz o cruzamento mais abaixo possível na palavra vertical.
+</ol>
+
+<p>A figura abaixo ilustra alguns exemplos. Entre parênteses estão os
+índices da melhor letra de cruzamento. O índice de uma letra é a posição que ela ocupa na
+palavra, iniciando com 1 (primeira letra).
+
+  <div class="center">
+    <img src="/static/img/task_images/provaf2pj_cruzadas.png" width="650px" />
+  </div>
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém a palavra horizontal.
+A segunda linha da entrada contém a palavra
+vertical.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo apenas dois inteiros
+descrevendo a melhor letra de cruzamento. O primeiro número deve ser o índice
+da letra de cruzamento na palavra horizontal, o segundo número deve ser o índice da letra
+de cruzamento na palavra vertical. Se não há letra de cruzamento possível,
+os dois inteiros devem ser iguais a -1.
+
+<h3>Restrições</h3>
+<ul>
+<li> As palavras são compostas por letras maiúsculas não acentuadas, com comprimento
+de pelo menos uma letra e de no máximo 1000 letras.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos há exatamente uma possibilidade
+de cruzamento possível.
+<li> Para um conjunto de casos de testes valendo 80 pontos adicionais não há
+restrições adicionais.
+</ul>
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+PATO
+PELE
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+ANJO
+MENTORA
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4 5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+MENTORA
+ANJO
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+URUBU
+POLIVALENTE
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1 -1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

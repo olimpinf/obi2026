@@ -1,0 +1,25 @@
+{% load obi_extras exams %}
+
+{% if f.mod == 'i' %}
+  <ul>
+    {% with f.compet.compet_type as level %}
+    {% get_tasks f.exam_descriptor level as tasks %}
+      {% for task in tasks %}
+    <li><a href="{% url 'exams:exam_task_review' f.exam_descriptor task.descriptor|obi_get_task_id %}">{{task.title}}</a>{% if f.mod == 'i' %} ({% get_num_answers_correct_exam task.descriptor f.answers %})&nbsp;&nbsp; – &nbsp;&nbsp; Pontos: {{f.num_correct_answers|get_item:task.descriptor|default_if_none:'0'}}{% else %}&nbsp;&nbsp; – &nbsp;&nbsp; Pontos: {{f.num_correct_tests|get_item:task.descriptor|default_if_none:'0'}}{% endif %}</li>
+    {% endfor %}
+    {% endwith %}
+  </ul>
+{% endif %}
+
+  {% comment %}
+  {% get_num_answers_exam_total f.exam_descriptor answers f.level as num_tasks %}
+{{num_tasks}}
+  {% if num_tasks.0 > 0 %}
+<p>Total de Tarefas: {{ num_tasks.0 }}
+  {% endif %}
+  {% if num_tasks.1 > 0 %}
+  <br>Total de Questões: ({{ num_tasks.1 }},{{ num_tasks.2 }})
+  {% endif %}
+  {% endcomment %}
+    
+  

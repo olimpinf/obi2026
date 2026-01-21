@@ -1,0 +1,5 @@
+# Solução do Desafio da Aula 5
+
+desejada = int(input())
+medida = int(input())
+print(desejada - medida)

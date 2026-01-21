@@ -1,0 +1,34 @@
+<p>Vamos inicialmente ler a quantidade de alunos  e criar uma lista vazia, que atribuiremos
+  a uma variável de nome <span class="tt">lista_de_honra</span>. Então usamos um laço de repetição.
+  A cada passo da repetição lemos duas linhas, a primeira com o nome e a segunda com a nota
+  de um aluno. Se a nota é maior ou igual a 80, adicionamos o nome e a nota na variável
+  <span class="tt">lista_de_honra</span>. Ao final, imprimimos o valor da variável
+  <span class="tt">lista_de_honra</span>.
+
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/saci/blockly_images/sol_class_14_1.png"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio da Aula 14
+
+N = int(input())
+lista_de_honra = []
+for count in range(int(N)):
+    nome = input()
+    num = int(input())
+    if num >= 80:
+        lista_de_honra.append(nome)
+        lista_de_honra.append(num)
+print(lista)
+</pre>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,135 @@
+{% extends "base_two_columns.html" %}
+{% load static obi_extras tasks%}
+
+
+{% block title %} Pratique - {{task.title}} {% endblock %}
+
+{% block head_extra %}
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script>
+  var LANGUAGES = {
+    'C++17 / g++': {
+        '.cpp': true,
+        '.cc': true,
+        '.cxx': true,
+        '.c++': true,
+        '.C': true,
+    },
+    'C17 / gcc': {
+        '.c': true,
+    },
+    'Javascript': {
+        '.js': true,
+    },
+    'Java / JDK': {
+        '.java': true,
+    },
+    'Python 3 / CPython': {
+        '.py': true,
+    },
+};
+
+filter_languages = function(options, inputs) {
+    var exts = [];
+    for (var i = 0; i < inputs.length; i++) {
+        exts.push('.' + inputs[i].value.match(/[^.]*$/)[0]);
+    }
+    // Find all languages that should be enabled.
+    var enabled = {};
+    var anyEnabled = false;
+    for (var lang in LANGUAGES) {
+        for (i = 0; i < exts.length; i++) {
+            if (LANGUAGES[lang][exts[i]]) {
+                enabled[lang] = true;
+                anyEnabled = true;
+                break;
+            }
+        }
+    }
+    // If no language matches the extension, enable all and let the user
+    // select.
+    if (!anyEnabled) {
+        options.removeAttr('disabled');
+        return;
+    }
+
+    // Otherwise, disable all languages that do not match the extension.
+    var isSelectedDisabled = false;
+    options.each(function(i, option) {
+        if (enabled[option.value]) {
+            $(option).removeAttr('disabled');
+        } else {
+            $(option).attr('disabled', 'disabled');
+            if (option.selected) {
+                isSelectedDisabled = true;
+            }
+        }
+    });
+    // Else, if the current selected is disabled, select one that is enabled.
+    if (isSelectedDisabled) {
+        for (i = 0; i < options.length; i++) {
+            if ($(options[i]).attr('disabled') != 'disabled') {
+                options[i].selected = true;
+                break;
+            }
+        }
+    }
+};
+</script>
+{% endblock %}
+
+{% block header %}
+  Pratique
+{% endblock %}
+
+  {% block content %}
+<form action="corrige/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">Submeta sua solução</legend>
+  <table class="table table-borderless">
+    <tr>
+      <td valign="top">
+	<label for="id_data"><b>Arquivo:</b></label>
+	<input class="form-control" type="file" name="data" id="id_data" required
+	       onchange="filter_languages($(this).parents('form').find('select[name=sub_lang] option'),
+                         $(this).parents('form').find('input[type=file]'))"/>
+      </td>
+      <td>
+	<label for="id_sub_lang"><b>Linguagem:</b></label>
+	<select name="sub_lang" required id="id_sub_lang" class="form-select">
+	  <option value="" selected>Selecione</option>
+          <option value="C++17 / g++">C++17 / g++</option>
+          <option value="C17 / gcc">C17 / gcc</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Java / JDK">Java / JDK</option>
+          <option value="Python 3 / CPython">Python 3 / CPython</option>
+      </select></td>
+      <td align="right" valign="bottom">
+	<button type="submit" class="btn btn-primary">Submete</button>
+      </td>
+    </tr>
+  </table>
+  </fieldset>
+  <input type="hidden" name="problem_request_path" value="{{ request.path }}">
+  <input type="hidden" name="problem_name" value="{{ task.descriptor }}">
+  <input type="hidden" name="problem_name_full" value="{{ task.title }}">
+<center>
+  <p class="small"><em>Nome do arquivo: <span class="ttt">{{ task.descriptor|get_task_short_name }}.x</span>,
+      onde <span class="ttt">x</span> deve ser <span class="ttt">c</span>, <span class="ttt">cpp</span>, <span class="ttt">java</span>,
+	    <span class="ttt">js</span> ou <span class="ttt">py</span> </em></p>
+</center>
+</form>
+
+<h1 class="center">{{ task.title }}</h1>
+
+{{ task.statement }}
+
+  {% endblock %}
+
+{% block content-related %}
+
+  {% include "tasks/includes/contents_tasks.html" %}
+
+{% endblock content-related %}
+

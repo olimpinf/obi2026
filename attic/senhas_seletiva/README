@@ -1,0 +1,23 @@
+O arquivo senhas_ic.csv deve ter duas colunas:
+usuário_ic,senha_ic
+
+exemplo:
+obi01,asqwerf
+
+
+O arquivo alunos.csv deve ter duas colunas:
+num_inscricao,nome
+
+exemplo:
+012345-A,João da Silva
+
+
+Então executar
+
+./make_passwords.py "Dia 1"
+
+dois arquivos serão gerados:
+
+senhas.pdf (para imprimir)
+senhas_cms.csv (para subir no CMS)
+

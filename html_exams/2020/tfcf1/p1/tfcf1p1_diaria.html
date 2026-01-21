@@ -1,0 +1,155 @@
+title:Diária
+template:exams/tarefa_programacao.html
+order:2
+<p>
+Samyra adora viajar e planeja fazer uma viagem em suas férias. No destino desejado, ela  pretende hospedar-se em um hotel específico. Porém, o valor da diária desse hotel não é fixo, e pode ou não mudar a cada dia. No site do hotel é possível verificar, a partir do primeiro dia de férias, quantos dias seguidos possuem a mesma diária e qual o seu valor. Samyra é muito econômica e quer saber quanto gastará se hospedando neste hotel do dia <samp>X</samp> ao <samp>Y</samp> (inclusive os mesmos).
+</p>
+
+<h3>Entrada</h3>
+<p>
+A primeira linha de entrada contém um inteiro <samp>N</samp>.
+</p>
+
+<p>
+Cada uma das próximas <samp>N</samp> linhas possuem dois inteiros <samp>K</samp> e <samp>P</samp> representando, respectivamente, a quantidade de dias seguidos que possuem a mesma diária e o valor de cada diária, ou seja, em cada um dos <samp>K</samp> dias seguintes a diária irá custar <samp>P</samp> reais. A figura a seguir mostra um calendário no qual o preço da diária dos dois primeiros dias de férias é R$13, seguidos por três dias com preço R$8, um dia com preço R$3 e quatro dias com preço R$15, correspondente ao &ldquo;Exemplo de entrada 1&rdquo; que pode ser encontrado abaixo em &ldquo;Exemplos&rdquo;.
+</p>
+
+<div class="center">
+  <img src="/static/img/task_images/tfcf1pj_diaria.png" width="500px">
+</div>
+
+<p>
+A linha seguinte contém um inteiro <samp>Q</samp>, o número de consultas.
+</p>
+
+<p>
+Cada uma das próximas <samp>Q</samp> linhas possui dois inteiros <samp>X</samp> e <samp>Y</samp> representando o primeiro e o último dia, respectivamente, de um intervalo de dias que Samyra quer consultar o preço da hospedagem. No &ldquo;Exemplo de entrada 1&rdquo; que pode ser encontrado abaixo em &ldquo;Exemplos&rdquo;, os intervalos que Samyra quer consultar são do dia 1 ao 5, do dia 2 ao 4 e do dia 4 ao 7.
+</p>
+
+<h3>Saída</h3>
+<p>
+Sua saída deve conter, para cada intervalo de <samp>X</samp> a <samp>Y</samp> (inclusive), um inteiro representando o valor que Samyra gastará hospedando-se neste hotel nesse intervalo de dias.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 ≤  <samp>N</samp>  ≤  10<sup>5</sup></li>
+<li> 1 ≤  Soma de todos os <samp>K</samp>  ≤  10<sup>5</sup></li>
+<li> 1 ≤  <samp>P</samp>  ≤  10<sup>9</sup></li>
+<li> 1 ≤  <samp>Q</samp>  ≤  10<sup>4</sup></li>
+<li> 1 ≤  <samp>X</samp>  ≤  <samp>Y</samp>  ≤  Soma de todos os <samp>K</samp></li>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li>Em um conjunto de casos de teste somando 15 pontos, <samp>Q</samp>  ≤  100 e <samp>P</samp>  ≤  10<sup>3</sup>.</li>
+<li>Em um conjunto de casos de teste somando 25 pontos, para todas as <samp>Q</samp> consultas <samp>X</samp> = 1 e 1  ≤  <samp>Y</samp>  ≤  Soma de todos os <samp>K</samp>.</li>
+<li> Em um conjunto de casos de teste somando 40 pontos, para todas as <samp>N</samp> linhas <samp>P</samp>  ≤  10<sup>3</sup>.</li>
+<li> Em um conjunto de casos de teste somando 20 pontos, nenhuma restrição adicional.</li>
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 1</b>
+<pre>
+4
+2 13
+3 8
+1 3
+4 15
+3
+1 5
+2 4
+4 7
+</pre>
+      </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 1</b>
+<pre>
+50
+29
+34
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 2</b>
+<pre>
+10
+1 9
+1 8
+1 1
+1 1
+1 6
+1 9
+1 6
+1 10
+1 9
+1 10
+2
+1 8
+1 6
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 2</b>
+<pre>
+50
+34
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 3</b>
+<pre>
+10
+3 6
+6 5
+10 8
+3 7
+1 3
+4 10
+6 4
+4 7
+3 9
+3 9
+4
+1 39
+1 5
+1 10
+1 10
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 3</b>
+<pre>
+262
+28
+56
+56
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>

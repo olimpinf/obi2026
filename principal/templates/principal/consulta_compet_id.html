@@ -1,0 +1,59 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+{% block head_extra %}
+<!--script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script-->
+{% endblock head_extra %}
+
+{% block header %}<h1>{{ pagetitle }}</h1>{% endblock %}
+
+{% block content %}
+{% if info_msg %}
+  <p>{{ info_msg|safe }}
+{% endif %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <!--div class="g-recaptcha" data-sitekey="6LfkSwgUAAAAADywTnf1DnbB59ajHJzjmWgsmfJy"></div-->
+  <button type="submit" class="btn btn-primary mt-4">Consulta</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+  {% include "includes/see_also_result.html" %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+title:Bits
+template:tasks/tarefa_programacao.html
+
+<p>
+Duas sequências de N bits são distintas se, para alguma posição i,
+1 &leq;  i &leq;  N, o bit na posição i de uma sequência é distinto do
+bit na posição i da outra sequência. As duas sequências de N=10
+bits abaixo são distintas pois, por exemplo, os bits na posição 7, da
+esquerda para a direita, são distintos:
+
+
+<center>
+  <span class="ttt">0 1 0 0 0 1 1 0 1 0</span><br/>
+<span class="ttt">1 0 0 1 0 1 0 0 1 0</span>
+</center>
+
+Mas veja que as duas sequências acima, apesar de distintas, têm uma
+característica em comum: não há três bits 1 consecutivos nelas. Neste
+problema, dado o número de bits N e um K, seu programa deve
+computar quantas sequências distintas de N bits existem, nas quais
+não há K bits 1 consecutivos.
+
+<h3>Entrada</h3>
+A entrada consiste de uma linha contendo os dois inteiros N e K.
+
+<h3>Saída</h3>
+Imprima uma linha contendo um inteiro, representando o número de
+sequências distintas de N bits, nas quais não há K bits 1
+consecutivos. Porque esse número pode ser muito grande, você deve
+imprimir o resto da divisão dele por 10<sup>9</sup>+7.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  1000
+<li> 1 &leq;  K &leq;  N+1
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 20 pontos, N &leq;  20
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+504
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

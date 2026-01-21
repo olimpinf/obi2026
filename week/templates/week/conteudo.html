@@ -1,0 +1,46 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Conteúdo{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Conteúdo</h2>
+
+<ul>
+<li><a target="_blank" href="https://drive.google.com/file/d/1SRL1MiBK91KTcIdGaikahzt_bnCaj28M/view">Problemas Aula 02/05 - Prof. Felipe</a></li>
+<li><a target="_blank" href="https://docs.google.com/document/d/1YawOubrtv6SNfJgLHVmmy2kHTCR-geSZ9X3b9ANZs7Q">Problemas Aula 03/05 - Prof. Emanuel</a></li>
+<li><a target="_blank" href="https://docs.google.com/document/d/19O2t9pj-R5AZHwbfWd3IvIYSkJbtRJYd7vJAlSqh25g">Problemas Aula 03/05 - Prof. Bruno</a></li>
+<li><a target="_blank" href="https://docs.google.com/document/d/13obCpLDpe2oei0XVk7ZbZkC3Mqp8ZTmFjZggx6JF1yw">Problemas Aula 04/05 - Prof. Bruno</a></li>
+<li><a target="_blank" href="https://docs.google.com/document/d/1_av0YDJmbULzzN7KfrEPht7z8SQQZBWvrcuoGm1Wa20">Problemas Aula 05/05 - Prof. Emanuel</a></li>
+<li><a target="_blank" href="https://oj.uz/problem/view/IZhO19_sortbooks">Problemas Aula 06/05 - Prof. Yan (Parte 1)</a></li>
+<li><a target="_blank" href="https://codeforces.com/problemset/problem/1028/G">Problemas Aula 06/05 - Prof. Yan (Parte 2)</a></li>
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

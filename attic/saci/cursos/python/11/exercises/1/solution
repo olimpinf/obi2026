@@ -1,0 +1,12 @@
+# Solução do Desafio 1 da Aula 11
+
+altura = 0
+resultado = 'S'
+N = int(input())
+for count in range(int(N)):
+    x = int(input())
+    if x < altura:
+        resultado = 'N'
+        break
+    altura = x
+print(resultado)

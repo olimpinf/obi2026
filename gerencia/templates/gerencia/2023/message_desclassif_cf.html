@@ -1,0 +1,23 @@
+{{ greetings }} {{ coord_name}},
+
+lamentamos informar que detectamos atividade fraudulenta de competidores de sua escola na Competição Feminina da OBI2023. Mais especificamente, detectamos um dos seguintes problemas:
+
+* a prova não foi realizada na escola
+* a solução submetida pela competidora é cópia de solução de outra competidora (da mesma ou de outra escola)
+* a solução submetida foi produzida por uma ferramenta de Inteligência Artificial acessada pela Internet
+
+{% if compets|length == 1 %}A competidora envolvida é:
+{% else %}As competidores envolvidas são:
+{% endif %}
+{% for c in compets %} {{c.compet_id_full}} -- {{c.compet_name}}
+{% endfor %}
+{% if compets|length == 1 %}A aluna envolvida foi desclassificada da OBI2023. Solicitamos que a escola informe a aluna.
+{% else %} As alunas envolvidas foram desclassificadas da OBI2023. Solicitamos que a escola informe as alunas.
+{% endif %}
+A Comissão Científica da OBI2023 resolveu não desclassificar a escola
+
+{{ school_name }}
+
+mas sugere que a escola revise os seus procedimentos. Em caso de reincidência, neste ano ou nos próximos, a escola será desclassificada, acarretando na desclassificação de todos os alunos inscritos, em todos os níveis.
+
+{% include 'includes/signature.html' %}

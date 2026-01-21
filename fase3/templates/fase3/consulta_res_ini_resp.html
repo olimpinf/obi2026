@@ -1,0 +1,58 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Correção Fase 3 - Iniciação{% endblock %}
+
+{% block header %}<h1>Consulta Correção Fase 3 - Iniciação</h1>{% endblock %}
+
+{% block content %}
+
+<h2>{{ result.compet.compet_name }}</h2>
+
+<b>Num. Inscrição</b>: {{ result.compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ result.compet.compet_type|obi_format_compet_type_short }}<br>
+{% if result.compet.compet_points_fase3 %}
+<b>Pontuação</b>: {{ result.compet.compet_points_fase3 }} pontos<br>
+<b><a href="{% url 'fase3:mostra_folha_respostas'%}">Folha de Respostas</a></b><br>
+<b>Respostas</b>:<br>
+<pre>
+{{ result.answers.log_fase3 }}
+</pre>
+{% else %}
+<b>Pontuação</b>: não encontrada <br>
+{% endif %}
+<hr>
+<p>
+<!--p>Os resultados são provisórios, podem ser alterados se houver necessidade
+de recorreção.
+<p>Se você fez a prova e sua pontuação não foi encontrada, siga as
+instruções disponíveis na página
+<a href="recursos">Submissão de Re-correção</a>.
+<p>As notas de corte para as medalhas serão definidas após o período de
+recursos.--> 
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include "includes/see_also_result.html" %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Consulta Resultado Fase 2 - Iniciação</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

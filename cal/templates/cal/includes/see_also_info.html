@@ -1,0 +1,12 @@
+  <h2>Veja também</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+           {% if page.url != flatpage.url and page.url != '/info/ementa/geral/' %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+    {% endblock browse %}
+  </ul>

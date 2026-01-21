@@ -1,0 +1,211 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Agenda de aulas{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+<h1>Agenda de Aulas</h1>
+
+<h2>Modalidade PJ</h2>
+
+<table class="basic center">
+  <tr>
+  <th>
+    Dia
+  </th>
+  <th align="center">
+    manhã (9:00-10:30)
+  </th>
+  <th align="center">
+    tarde (14:00-15:30)
+  </th>
+  </tr>
+
+  <tr>
+  <th>
+    segunda
+  </th>
+  <td align="center">
+<b>Introdução ao C++</b><br>
+Prof. Yan Silva
+  </td>
+  <td align="center">
+<b>Análise de Complexidade e Recursão</b><br>
+Prof. Bernardo Archegas
+  </td>
+  </tr>
+
+  <tr>
+  <th>
+    terça
+  </th>
+  <td align="center">
+<b>Estruturas da STL</b><br>
+Prof. Bernardo Archegas
+  </td>
+  <td align="center">
+<b>Busca Binária</b><br>
+Prof. Yan Silva
+  </td>
+  </tr>
+
+
+  <tr>
+  <th>
+    quarta
+  </th>
+  <td align="center">
+<b>Grafos - Parte 1</b><br>
+Prof. Bernardo Archegas
+  </td>
+  <td align="center">
+<b>Grafos - Parte 2</b><br>
+Prof. Yan Silva
+  <tr>
+  <th>
+    quinta
+  </th>
+  <td align="center">
+<b>Programação Dinâmica - Parte 1</b></br>
+Prof. Bernardo Archegas
+  </td>
+  <td align="center">
+<b>Programação Dinâmica - Parte 2</b></br>
+Prof. Yan Silva
+
+  </td>
+  </tr>
+
+  <tr>
+  <th>
+    sexta
+  </th>
+  <td align="center">
+<b>Números binários e tópicos especiais</b><br>
+Prof. Yan Silva
+  </td>
+  <td align="center">
+<b>Discussão de problemas</b><br>
+Prof. Bernardo Archegas
+  </td>
+  </tr>
+</table>
+
+<h2>Modalidade P1</h2>
+
+<table class="basic center">
+  <tr>
+  <th>
+    Dia
+  </th>
+  <th align="center">
+    manhã (9:00-10:30)
+  </th>
+  <th align="center">
+    tarde (14:00-15:30)
+  </th>
+  </tr>
+
+  <tr>
+  <th>
+    segunda
+  </th>
+  <td align="center">
+<b>Complexidade e STL</b><br>
+Prof. Emanuel Silva
+
+  </td>
+  <td align="center">
+<b>Guloso e Busca Binária</b><br>
+Prof. Emanuel Silva
+
+  </td>
+  </tr>
+
+  <tr>
+  <th>
+    terça
+  </th>
+  <td align="center">
+<b>Programação Dinâmica</b><br>
+Prof. Bernardo Amorim
+  </td>
+  <td align="center">
+<b>Tarjan</b><br>
+Prof. Bruno Monteiro
+  </td>
+  </tr>
+
+  <tr>
+  <th>
+    quarta
+  </th>
+  <td align="center">
+<b>LCA</b><br>
+Prof. Bernardo Amorim
+  </td>
+  <td align="center">
+<b>Teoria dos Números</b><br>
+Prof. Emanuel Silva
+  </td>
+  </tr>
+
+  <tr>
+  <th>
+    quinta
+  </th>
+  <td align="center">
+<b>Geometria</b><br>
+Prof. Bruno Monteiro
+  </td>
+  <td align="center">
+<b>Hashing e KMP</b><br>
+Prof. Bruno Monteiro
+  </td>
+  </tr>
+
+  <tr>
+  <th>
+    sexta
+  </th>
+  <td align="center">
+<b>Árvore de Segmentos</b><br>
+Prof. Bruno Monteiro
+  </td>
+  <td align="center">
+<b>DSU e Kruskal</b><br>
+Prof. Bernardo Amorim
+  </td>
+  </tr>
+</table>
+
+{% endblock %}  
+
+
+
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Correção - Fase 2 Turno B - Modalidade Programação Nível 2</h1>
+
+<p>Na Modalidade Programação, a correção das soluções dos competidores
+  é realizada online, usando o Ambiente de Prova (sistema CMS). Após a prova os coordenadores
+  podem visualizar as soluções enviadas e os resultados dos competidores de suas escolas.
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+<h3>Veja também</h3>
+<ul>
+<li><a href="{% url 'fase2:correcao_ini' %}">Correção Modalidade Iniciação</a>
+<li><a href="{% url 'fase2:correcao_prog' %}">Correção Modalidade Programação</a>
+</ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+    {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+    {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

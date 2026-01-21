@@ -1,0 +1,72 @@
+title:SuperChef
+template:tasks/tarefa_iniciacao.html
+
+<p>
+<p>Paulo, Rita, Sara e Tito estão participando do SuperChef, uma competição
+entre chefes de restaurantes. A cada turno da competição um prato diferente
+deve ser preparado e os participantes são eliminados se não conseguem preparar
+o prato de maneira satisfatória. Antes de preparar os pratos os participantes
+devem buscar os ingredientes na despensa, e para isso são ordenados numa
+fila. Ao final de cada turno a fila é reordenada de acordo com uma das
+seguintes regras:
+
+<p><ul>
+<li> Regra A: quem estava na última posição é colocado imediatamente à frente de quem
+estava anteriormente na primeira posição.
+<li> Regra B: quem estava na terceira posição é colocado imediatamente à frente de quem
+estava anteriormente na segunda posição.
+<li> Regra C: quem estava na terceira posição é colocado imediatamente à frente de quem
+estava anteriormente na primeira posição.
+</ul>
+
+<p>A regra a ser utilizada é definida pela organização do SuperChef a
+cada turno.  Se uma regra envolve uma posição em que o participante foi
+eliminado, essa regra não pode ser usada. Por exemplo, se o
+participante que estava na última posição é eliminado, a regra A não
+pode ser utilizada. Se nenhuma das regras pode ser utilizada, os
+participantes permanecem na mesma posição na fila.
+
+\question
+Se a ordem num turno é Tito, Paulo, Rita, Sara e somente Rita é eliminada
+nesse turno, então qual das seguintes alternativas é a ordem dos participantes
+para o próximo turno?
+
+(A) & Paulo, Sara, Tito 
+(B) & Paulo, Tito, Sara 
+(C) & Sara, Tito, Paulo \correct
+(D) & Sara, Paulo, Tito 
+(E) & Tito, Paulo, Sara
+
+\question
+Se a ordem num turno é Rita, Paulo, Sara, Tito e nenhum participante é eliminado
+nesse turno, então qual das seguintes alternativas é sempre verdadeira sobre
+a ordem da fila no próximo turno?
+
+(A) & Rita é a segunda da fila.  
+(B) & Paulo é o terceiro da fila. \correct
+(C) & Sara é a primeira da fila. 
+(D) & Tito é o primeiro da fila. 
+(E) & Tito é o quarto da fila.
+
+\question
+Se a ordem num turno é Paulo, Sara, Tito, Rita e nenhum participante é eliminado
+nesse turno, então qual das seguintes alternativas poderia ser
+a ordem da fila no próximo turno?
+
+(A) & Tito, Paulo, Sara, Rita \correct
+(B) & Paulo, Rita, Tito, Sara 
+(C) & Rita, Paulo, Tito, Sara 
+(D) & Rita, Tito, Paulo, Sara 
+(E) & Sara, Paulo, Tito, Rita 
+
+\question
+Se dois turnos ocorrem sem que nenhum participante seja eliminado,
+e se a ordem da fila no terceiro turno é igual à ordem do primeiro turno,
+então qual das alternativas seguintes representa as regras usadas até
+o momento?
+
+(A) & A seguida de C 
+(B) & A seguida de A
+(C) & B seguida se C 
+(D) & B seguida de B \correct
+(E) & C seguida de B 

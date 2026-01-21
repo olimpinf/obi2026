@@ -1,0 +1,70 @@
+{% extends "admin/base_site.html" %}
+{% load i18n obi_extras %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:index' %}">Fase {{ phase }}</a>
+&rsaquo; Mostra Correção
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+  <div id="content-main">
+
+<h1>Mostra Correção</h1>
+<p>
+<b>Num. Inscrição</b>: {{ compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ compet.compet_type|obi_format_compet_type_short }}<br>
+{% if phase == 1 %}
+<b>Pontuação</b>: {{ compet.compet_points_fase1 }} pontos<br>
+{% elif phase == 2 %}
+<b>Pontuação</b>: {{ compet.compet_points_fase2 }} pontos<br>
+{% else %}
+<b>Pontuação</b>: {{ compet.compet_points_fase3 }} pontos<br>
+{% endif %}
+<b>
+{% if phase != 3 %}
+{% if compet.compet_sex == "M" %}
+Classificado
+{% else %}
+Classificada
+{% endif %}
+para a Fase Estadual</b>: 
+{% if compet.compet_classif_fase2 %}
+SIM
+{% else %}
+NÃO
+{% endif %}
+{% endif %}
+</b>
+
+<p>&nbsp;</p>
+{% if modality == 'prog' %}
+{% for l in log %}
+<hr>
+<pre>
+{{ l.result_log }}
+</pre>
+{% endfor %}
+{% else %}
+<hr>
+{% for l in log %}
+<pre>
+{% if phase == 3 %}
+{{ l.log_fase3 }}
+{% endif %}
+</pre>
+  {% endfor %}
+{% endif %}
+
+
+<hr>
+  </div>
+{% endblock %}

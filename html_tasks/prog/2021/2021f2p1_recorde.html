@@ -1,0 +1,118 @@
+title:Recorde
+template:tasks/tarefa_programacao.html
+
+<p>
+Atletas conseguem resultados cada vez melhores! O <i>recorde mundial</i>
+de uma determinada modalidade esportiva é o melhor resultado conseguido
+por um atleta nessa modalidade, em competições oficiais.
+Competições oficiais incluem campeonatos mundiais, como os campeonatos
+mundiais de ginástica, atletismo ou natação, e também as Olimpíadas.
+
+<p>Como as Olimpíadas acontecem a cada quatro anos e competições
+oficiais acontecem todos os anos, é possível que o
+melhor resultado obtido em Olimpíadas em uma dada modalidade
+seja um resultado pior do que o recorde mundial para
+aquela modalidade. Por isso, nas provas das Olimpíadas são sempre
+mencionados dois recordes: o recorde olímpico (melhor resultado
+que já foi obtido em Olimpíadas) e o recorde mundial (melhor
+resultado em qualquer competição oficial, incluindo as Olimpíadas).
+
+<p>Nesta tarefa, dados o resultado de uma prova nas Olimpíadas e os recordes
+mundial e olímpico para essa prova, sua tarefa é determinar se
+o resultado é um novo recorde mundial e/ou um novo recorde olímpico. 
+
+<h3>Entrada</h3>
+<p>A entrada é composta por três linhas.
+A primeira linha é um inteiro R, o melhor resultado obtido por
+um atleta numa prova das Olimpíadas.
+A segunda linha é um inteiro M, o recorde mundial para essa prova.
+A terceira linha é um inteiro L, o recorde olímpico para essa prova.
+Para as provas desta tarefa, quanto menor o valor melhor o resultado.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir duas linhas.
+A primeira linha deve ser <span class="ttt">RM</span> se
+o resultado é um recorde mundial, ou <span class="ttt">*</span> (asterisco)
+caso contrário.
+ A segunda linha deve ser <span class="ttt">RO</span> se
+o resultado é um recorde olímpico, ou <span class="ttt">*</span> (asterisco)
+caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  R  &leq;  1000
+<li> 1  &leq;  M  &leq;  1000
+<li> 1  &leq;  L  &leq;  1000
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+97
+95
+98
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+*
+RO
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+10
+10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+*
+*
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+78
+80
+81
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+RM
+RO
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

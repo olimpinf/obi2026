@@ -1,0 +1,156 @@
+title:Catálogo de Músicas
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Joyce  é uma  menina que  gosta muito  de ouvir  música, e  possui uma
+enorme  coleção  de  músicas  num  <b>DVD</b>.   Ela  é  uma  menina
+organizada  e deixa  suas  músicas em  pastas, mas  como  o número  de
+músicas e de pastas é grande,  Joyce construiu um catálogo para melhor
+localizá-las.</p>
+
+<p>Para  o  catálogo  Joyce  utilizou uma  convenção  usual  em  sistemas
+operacionais,  em que  a descrição  da localização  de cada  arquivo é
+formada pela  sequência dos  nomes das  pastas no  caminho da  raiz do
+<b>DVD</b>   até  o   arquivo,   separados   pelo  caractere   barra
+("/"). Por exemplo,  na figura abaixo, a  descrição da música
+<b>Sampa.mp3</b> no catálogo é <b>MPB/Caetano/Sampa.mp3</b>.
+
+<center>
+<img src="/static/img/task_images/2013f1p2_catalogo.png" width="70%" height="70%">
+</center>
+
+Utilizando  essa convenção,  o  catálogo do <b>DVD</b> mostrado  na
+figura é:</p>
+
+<p><b>  Rock/AngraCarryOn.mp3</b></p>
+
+<p><b>  MPB/Caetano/Sampa.mp3</b></p>
+
+<p><b>  MPB/Cartola/Alvorada.mp3</b></p>
+
+
+<p>Como o <b>DVD</b> de Joyce tem muitas músicas e pastas, o catálogo é
+muito grande.  Joyce notou no entanto que o catálogo poderia ser menor
+(ter um número menor de caracteres) caso ela utilizasse outro conceito
+usual na nomeação de arquivos em sistemas operacionais: usar uma pasta
+como referência, ao invés da raiz.</p>
+
+<p>Se uma  pasta diferente da  raiz for escolhida como  referência, então
+para  todos os  arquivos que  estejam  diretamente nessa  pasta ou  em
+alguma  subpasta não  será mais  necessário escrever  o nome  da pasta
+referência no catálogo. Para as  demais pastas, é necessário indicar o
+caminho utilizando as  pastas acima (na direção da  raiz) utilizando a
+convenção  "../"  para a  pasta  imediatamente  acima da  pasta
+referência.  No exemplo da figura acima, no caso de a referência ser a
+pasta <b>Caetano</b>, a música <b>Sampa.mp3</b> seria simplesmente
+descrita como  <b>Sampa.mp3</b>.  Já a  música <b>Alvorada.mp3</b>
+seria descrita como <b>../Cartola/Alvorada.mp3</b>.</p>
+
+<p>Assim, se a pasta <b>Caetano</b> for utilizada como referência,
+o catálogo será:</p>
+
+<p><b>  ../../Rock/AngraCarryOn.mp3 </b></p>
+<p><b>  Sampa.mp3 </b></p>
+<p><b>  ../Cartola/Alvorada.mp3 </b></p>
+
+
+<p>Nesse caso,  a descrição do  catálogo tem  59 carateres, menor  do que
+quando a referência utilizada é a raiz do DVD.</p>
+
+<p>Seu objetivo é, dada a informação de todas as músicas do catálogo,
+determinar o número mínimo de caracteres necessários para descrever o
+catálogo.</p>
+<h3>Entrada</h3>
+A primeira linha  da entrada contém um inteiro  N, indicando quantos
+arquivos  Joyce  possui no  DVD.   Cada  uma das  N  linhas
+seguintes contém a descrição de um arquivo, a partir da raiz.
+<h3>Saída</h3>
+Seu programa deve imprimir uma única linha, contendo apenas um inteiro,  o número
+mínimo  de  caracteres necessários para descrever o catálogo.
+<h3>Restrições</h3><ul>
+	<li> 1  ≤  N  ≤  10<sup>5</sup></li>
+	<li> Número de pastas na entrada  ≤  10<sup>5</sup></li>
+	<li> O  nome de cada  pasta e de  cada arquivo é composto por no máximo 20
+	  caracteres,  entre  letras  minúsculas, maiúsculas  e  ponto
+	  (.)</li>
+	<li> Cada  pasta possui no máximo  100 pastas  como filhas
+	  diretas.</li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+  <li> Em  um conjunto de casos  de teste que totaliza  30 pontos, N
+     ≤  1000 e  o número de pastas  ≤  1000.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+Rock/AngraCarryOn.mp3
+MPB/Caetano/Sampa.mp3
+MPB/Cartola/Alvorada.mp3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+59
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+Preferidas/chacoalha/uia.mp3
+Preferidas/chacoalha/eia.mp3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+14
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+delta/india/juliet/lima
+bravo/echo
+bravo/foxtrot
+charlie/hotel
+delta/india/kilo
+bravo/golf
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+76
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

@@ -1,0 +1,103 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h1>{{ f.compet.compet_id|obi_format_compet_id}} -- {{f.compet.compet_name}}</h1>
+<h2>Submissões consideradas para pontuação</h2>
+<p class='small'>Excepcionalmente, na Fase 3 todas as submissões foram corrigidas,
+  independente de terem sido aceitas ou rejeitadas. O competidor ganha a maior pontuação
+  entre todas as submissões.</p>
+{% if not submissions_judged %}
+Não há submissões aceitas para correção.
+{% else %}
+{% regroup submissions_judged by problem_name_full as subm_list %}
+{% for problem_name_full in subm_list %}
+
+<h3>{{problem_name_full.grouper}}</h3>
+<table class='basic'>
+  <tr><th>Hora</th><th>Linguagem</th><th>Resultado</td><th>Programa</th><th>Relatório</th></tr>
+   {% for s in problem_name_full.list %}
+<tr>
+  <td>{{ s.sub_time|date:'d/m/Y H:i:s' }}</td>
+  <td>{{ s.sub_lang }}</td><td>{% if s.sub_id in f.id_results_judged %}{{ f.res_results_judged|get_item:s.sub_id }}{% else %} julgando {% endif %}</td>
+  <td>{{s.sub_file}}</td>
+  <td>{% if s.sub_id in f.id_results_judged %}<a href="{% url 'exams:retrieve_res_log_judge_coord' f.exam_descriptor f.compet.compet_id s.sub_id %}" target="_blank">Link</a>{% else %} julgando {% endif %}</td>
+</tr>
+   {% endfor %}
+</table>
+{% endfor %}
+{% endif %}
+
+<hr>
+<h2>Submissões realizadas durante a prova</h2>
+<p class='small'>Lista de todas as submissões realizadas
+  durante a prova.</p>
+{% if not submissions %}
+Não há submissões.
+{% else %}
+{% regroup submissions by problem_name_full as subm_list %}
+{% for problem_name_full in subm_list %}
+
+<h3>{{problem_name_full.grouper}}</h3>
+<table class='basic'>
+  <tr><th>Hora</th><th>Linguagem</th><th>Resultado</td><th>Programa</th><th>Relatório</th></tr>
+   {% for s in problem_name_full.list %}
+<tr>
+  <td>{{ s.sub_time|date:'d/m/Y H:i:s' }}</td>
+  <td>{{ s.sub_lang }}</td><td>{% if s.sub_id in f.id_results %}{% if f.res_results|get_item:s.sub_id %} -- {% else %} -- {% endif %}{% else %} julgando {% endif %}</td>
+  <td>{{s.sub_file}}</td>
+  <td>{% if s.sub_id in f.id_results %}<a href="{% url 'exams:retrieve_res_log_coord' f.exam_descriptor f.compet.compet_id s.sub_id %}" target="_blank">Link</a>{% else %} julgando {% endif %}</td>
+</tr>
+   {% endfor %}
+</table>
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h1>Total de Pontos: {{ f.total_points }}</h1>
+  Classificado para Fase Estadual (Fase 2): {% if f.show_results %}
+  {% if f.compet.compet_classif_fase1 %}Sim{% elif f.compet.compet_classif_fase1 is not None %}Não{% else %}?{% endif %}
+  {% else %}?{% endif %}
+  <small><p> Em cada Escola, para cada modalidade e nível, passam para
+      a Fase Estadual os melhores classificados na própria escola, até
+      o limite de 15% dos participantes efetivos da Escola na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Estadual
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>). No momento foi aplicado somente
+      o <em>critério local</em>. Competidores adicionais poderão ser
+      classificados pelo <em>critério nacional</em>. O <em>critério
+      nacional</em> será aplicado quando todas as eventuais
+      solicitações de recorreção tiverem sido processadas, de acordo
+      com o Calendário da OBI2020.
+    </p>
+  </small>
+<hr>
+
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_review_tasks_coord.html" %}
+  <hr>
+  <ul>
+  <li><a href="/static/extras/obi2020/provas/ProvaOBI2020_f1{{ f.level }}.pdf">Caderno de Tarefas</a>
+  </ul>
+  <h2>Instruções</h2>
+    {% if f.mod == 'i' %}
+    {% include "exams/includes/instructions_review_ini.html" %}
+    {% else %}
+    {% include "exams/includes/instructions_review_prog.html" %}
+    {% endif %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

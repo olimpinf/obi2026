@@ -1,0 +1,53 @@
+{% extends "admin/add_form.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+
+
+{% block content_title %}<h1>Modalidade Programação - Submissão de Soluções</h1>{% endblock %}
+
+{% block content_before %}
+<!--p>Os programas submetidos foram corrigidos. 
+
+<p>Atalhos:
+<ul>
+  <li><a href = "/restrito/fase1/listaclassificados/">Lista Classificados</a>
+  <li><a href="../consulta_subm_fase1">Consulta Soluções Aceitas para Correção</a>
+  <li><a href = "/restrito/fase1/mostracorrecao/">Mostra Correção e Recupera Soluções</a>
+</ul>
+
+
+<h2>Solicitação de recorreção</h2>
+<p>Em caso de problemas na correção, o Coordenador Local  pode solicitar a recorreção
+das soluções de competidores da sua escola. Veja como na página
+<p>
+  <a href="/resultados/programacao/recursos">Solicitações de Recorreção</a>
+  
+<p>Eventuais recorreções podem incluir mais classificados para a Fase 2,
+mas nenhum competidor já classificado deixará de estar classificado após
+as recorreções.
+
+<hr-->
+<h2>Submissão de Soluções</h2>
+<!--p><font color="red">O sistema de submissão está desativado, está
+encerrado o prazo para envio de soluções.</font-->
+<!--p><font color="red">O sistema de submissão está desativado, ele será ativado
+ao final das provas.</font-->
+
+<p>Na Modalidade Programação, a correção das soluções dos competidores
+é realizada pela Coordenação da OBI.  Por isso, as soluções dos
+competidores (arquivos de programas) devem ser enviados para correção,
+utilizando o formulário abaixo.
+
+<p>Após o envio das soluções dos alunos, você pode 
+<a href="/restrito/fase3/submsolucoes/consulta_subm_aceitas">Consultar as
+Soluções de seus alunos aceitas para correção</a>, e recuperá-las se
+necessário.
+
+<p><b>Solicitamos que os arquivos com submissões dos alunos sejam
+submetidos no sistema até o dia 25/09, quarta-feira.</b></p-->
+
+<h2>Formulário de submissão</h2>
+{% endblock %}
+{% block content_extra %}
+
+{% endblock %}

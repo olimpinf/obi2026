@@ -1,0 +1,143 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+{% block head_extra %}
+<script>
+  function _flip_all(e) {
+      var inputs, index;
+      inputs = document.getElementsByName('choices_set');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = e.checked;
+      }
+      inputs = document.getElementsByName('choices_unset');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = !e.checked;
+      }
+  }
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+
+{% if items.paginator.count > 0 %} {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} competidor selecionado ({{ total_aut }} autorizados),
+  total de {{ total }} competidores inscritos
+  </p>
+  {% else %}
+<p>{{ items.paginator.count }} competidores selecionados ({{ total_aut }} autorizados),
+  total de {{ total }} competidores inscritos
+  </p>
+  {% endif %}
+<form action="{% url 'restrito:compet_aut_prova_online' exam_descr turn %}" method="post">{% csrf_token %}
+
+<table id='choice_table' class='admin' width="100%">
+    <tr>
+      <td colspan="3"></td>
+      <td style="text-align:center;width:5%">      
+	<input class="mySmallButton" style="float:right;" type="submit" value="Autoriza">
+	
+      </td>
+    </tr>
+  <tr>
+    <th width="15%">Núm. Inscr.</th>
+    <th width="70%">Nome</th>
+    <th class="center">Modalidade</th>
+    <th scope="col"  class="action-checkbox-column">
+      <div class="center text"><span><input type="checkbox" id="action-toggle" onchange="_flip_all(this)"></span></div>
+      <div class="clear"></div>
+    </th>
+  </tr>
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td>{{ c.compet_id|obi_format_compet_id }}</td>
+    <td>{{ c.compet_name }}</td>
+    <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+    <td class="center action-checkbox">
+      <input type="checkbox" name="choices_set" value="{{c.compet_id}}" id="choice_{{c.compet_id}}" class="action-select" {% if c.authorized %}checked{%endif%} onchange="document.getElementById('hidden_{{c.compet_id}}').checked=!this.checked;">
+      <input type="checkbox" name="choices_unset" value="{{c.compet_id}}" id="hidden_{{c.compet_id}}" {% if not c.authorized %}checked{%endif%} class="action-select" style="display:none">
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Não há competidores inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_lista_aut_prova_online' exam_descr turn %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_lista_aut_prova_online' exam_descr turn %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+
+
+</form>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+
+  
+  <h2>Instruções</h2>
+<p>Competidores da Modalidade Programação devem
+    obrigatoriamente utilizar o Ambiente de Prova da OBI e estão
+    automaticamente autorizados. Este formulário de autorização é
+    apenas para competidores da Modalidade Iniciação.</p>
+<ul>
+  <li>O botão "Autoriza"
+    autoriza os marcados e desautoriza os desmarcados.
+  <li>Marque o competidor para autorizar a realização da prova online
+    (ou desmarque para desautorizar)
+    e clique em <em>Autoriza Marcados (e desautoriza não marcados)</em>.
+  <li>Alunos que irão realizar a prova presencialmente
+    no formato "papel e caneta" não devem ser autorizados a realizar a
+    prova online, para evitar que acessem a prova pela internet.
+  <li>
+  <li>Por padrão os competidores não estão autorizados. Autorize
+    se necessário para sua escola. 
+  <li>Utilize o formulário Filtros para restringir os competidores
+    visualizados.
+</ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+saci_text_print,text,saci_text_print,math_number,saci_text_print,text,text_print,math_number
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas as palavras ou o número não estão corretos.
+Verifique novamente o enunciado e corrija sua solução, alterando
+o conteúdo dos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/> e 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+<br>
+
+@saci_text_print,text,saci_text_print,math_number,saci_text_print,text
+
+Muito bem, você está no caminho certo, já montou três linhas.
+Agora precisa colocar os blocos para escrever a última linha.
+Para escrever uma nova linha, use um novo bloco
+ <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Note que na última linha você precisa usar o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+<br>
+
+@saci_text_print,text,saci_text_print,math_number
+
+Muito bem, você está no caminho certo, já montou duas linhas.
+Agora precisa colocar os blocos para escrever as outras duas linhas.
+Para escrever uma nova linha, use um novo bloco
+ <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Note que para escrever um número você precisa usar o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+<br>
+
+@saci_text_print,text
+
+Muito bom, você está no caminho certo, já montou os dois primeiros blocos da primeira linha,
+<img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/> e
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>.
+Agora precisa colocar os blocos para escrever as outras linhas.
+Para escrever uma nova linha, use um novo bloco
+ <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Note que para escrever um número você precisa usar o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+<br>
+
+@text_print
+
+Muito bem, você está no caminho certo, está usando
+o bloco   <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Agora precisa encaixar nele o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/> e preencher
+  esse bloco com as palavras corretas.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>
+clique no menu <b>Texto</b> na Barra de Ferramentas e arraste
+o bloco para a área de Programa, encaixando um bloco no outro. Depois é só
+preencher o bloco de texto com a frase especificada no enunciado como a primeira
+linha da saída.
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar usando
+um bloco  <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+com um bloco 
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px" />
+encaixado.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+clique no menu <b>E/S</b> (entrada e saída) na Barra de Ferramentas e arraste
+o bloco para a área de Programa.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>
+clique em <b>Texto</b> na Barra de Ferramentas e arraste
+o bloco para a área de Programa, encaixando um bloco no outro. Depois é só
+preencher o bloco de texto com a frase especificada no enunciado.
+<br>

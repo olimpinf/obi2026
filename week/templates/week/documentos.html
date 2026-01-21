@@ -1,0 +1,68 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica{% endblock %}
+
+{% block header %}<h1>Semana Olímpica - Formulários e Documentos</h1>{% endblock %}
+
+{% block content %}
+<p>Nesta página estão agrupados, para facilidade de acesso, documentos e formulários que devem ser
+preenchidos.
+
+<h2>Documentos</h2>
+<ul>
+  <li>Documentos para estadia no Hotel
+    <ul>
+
+    <li><a href="/static/extras/obi2025/semana/autorizacao_hotel.pdf">Autorização para Hospedagem</a><br>
+      Se o aluno é menor de idade, por lei, o hotel necessita da autorização dos pais. Sem essa autorização
+      o aluno não poderá ficar hospedado. Os pais dos alunos menores de idade devem imprimir o documento, 
+      preencher com os seus dados, <b>assinar e reconhecer a firma em cartório</b> (ou <b>assinar usando GOV.BR</b>) e
+      entregar para os filhos trazerem a Campinas.
+    </li>
+    <li><a href="/static/extras/obi2024/semana/fnrh.pdf">Ficha Embratur</a><br>
+      Para agilizar o procedimento de <i>check-in</i> no dia de chegada, o hotel solicita que os
+      participantes tragam preenchida a Ficha Embratur.
+    </li>
+    <li>Cópia (simples) de RG e CPF (todos os hóspedes).
+    </li>
+  </ul>
+</ul>
+
+
+<h2>Formulários</h2>
+<ul>
+{% comment %}
+  <li><a href="https://forms.gle/5xs94qiiv6Jw2SCz7" target="_blank">Dados de
+    acompanhantes</a><br> 
+    Este formulário contém informações gerais
+    sobre acompanhantes pagantes (nome, telefones de contato, tamanho de
+    camiseta, alergias, etc.).
+    Você pode verificar se o seu formulário
+    foi recebido consultando a página <a href="{% url 'week:partic' %}">Participantes</a>.
+  </li>
+{% endcomment %}
+<li><a href="https://forms.gle/tESoHDDPR13c5vKX7" target="_blank">Formulário de informações de
+    acompanhantes</a><br>
+  Acompanhantes pagos e não pagos devem preencher.
+
+<li><a href="https://forms.gle/hyFPvc8dnUtzKhyx7" target="_blank">Chegadas e
+      Partidas</a><br>
+    Este formulário contém informações sobre chegadas
+    e partidas, e é especialmenete importante se você precisa de
+    traslado do aeroporto ou rodoviária para o hotel. Alunos
+    convidados, acompanhantes pagos e acompanhantes não pagos que
+    necessitem transporte devem preencher este formulário.  Você pode
+    verificar se o seu formulário foi preocessado consultando a
+    página <a href="{% url 'week:arrivals' %}">Chegadas</a> e a
+    página <a href="{% url 'week:departures' %}">Partidas</a>. Por favor
+    note que a atualização não é automática, pode demorar algum tempo
+    entre o recebimento do formulário e a atualização da página.
+  </li>
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+  {% include "week/includes/see_also.html" %}
+{% endblock %}

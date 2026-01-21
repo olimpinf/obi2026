@@ -1,0 +1,87 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          <strong>{{ field.label_tag }}</strong>
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-danger float-end" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}"
+>Cancelar</button>
+  <button type="submit" class="btn btn-primary" name="save" value="save">Enviar</button>
+</form>
+<p>&nbsp;</p>
+{% endblock %}
+
+{% block content-related %}
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  <h4>Instruções</h4>
+  <p>O envio das Folhas de Respostas
+    deve ser realizado até 
+{{ "ini-fase-2-envio-respostas"|obi_date|date:'d/m' }}.
+  <p>
+    Solicitamos que armazenem as Folhas de Respostas dos alunos, para o caso de algum competidor reclamar da correção.
+
+<ol>
+<li>Certifique-se de que o número de inscrição está corretamente
+preenchido no caso de Folhas de Respostas avulsas (nas Folhas de Respostas
+pré-prenchidas o número de inscrição já vem corretamente preenchido!).
+<li>Não submeta Folhas de Respostas em branco, de competidores que não compareceram.
+<li>Separe as Folhas de Respostas dos competidores em lotes, separados pelo nível (Júnior, 1 e 2).
+<li>Para cada lote (contendo Folhas de Respostas de um único nível),
+digitalize (escaneie) as Folhas de Respostas, e salve em um arquivo de
+formato PDF. Muitos aplicativos permitem salvar várias páginas
+digitalizadas em um único arquivo, geralmente de tipo PDF. Ou seja, o
+aplicativo gera um único arquivo no formato PDF contendo as imagens
+digitalizadas.
+<li>Para cada arquivo de Folhas de Respostas digitalizadas, utilize o
+formulário <a href="{% url 'fase2:corretorfolhasrespostas' %}">Correção Automatizada</a>
+para submeter para a correção automatizada.
+<li>O resultado da correção será enviado para o endereço de correio eletrônico do Coordenador Local da OBI.
+<li>A pontuação dos competidores será inserida automaticamente, mas
+solicitamos que os Coordenadores verifiquem nos arquivos recebidos por
+email se está tudo correto, se as Folhas de Resposta foram corretamente
+corrigidas. Os arquivos indicam condições de erro como Número de Inscrição
+incorreto ou mal preenchido, dificuldade de processar o arquivo
+  submetido, etc.)
+  {% comment %}
+<!--li>Verifique a pontuação inserida automaticamente, utilizando o
+formulário <a href="{% url 'fase1:inserepontosini'%}">
+Insere/Modifica Pontuação</a> para consultar as pontuações dos
+competidores.
+<li>Em caso de erros na correção automatizada de um competidor, siga
+o procedimento para correção manual para esse competidor.
+</li-->
+  {% endcomment %}
+</ol>
+    
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+</div>
+{% endblock content-related %}
+

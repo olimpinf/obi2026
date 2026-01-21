@@ -1,0 +1,27 @@
+1,1,500,Arthur Lobo Leite Lopes,Colégio Farias Brito,Fortaleza,CE
+1,1,500,Rafael Nascimento Soares,Centro Federal de Educação Tecnológica Celso Suckow da Fonseca,Rio de Janeiro,RJ
+1,1,500,Leonardo Valente Nascimento,Colégio Etapa,São Paulo,SP
+2,4,459,Gabriel Lucas Costa Martins,Centro Federal de Educação Tecnológica de Minas Gerais,Belo Horizonte,MG
+2,5,442,Marcos Paulo Evers Cordeiro,Colégio Master Bezerra,Fortaleza,CE
+3,6,434,Pedro Miguelez,Colégio Santa Cruz,São Paulo,SP
+3,8,424,Pedro Suyama Leston Rey,Colégio Etapa,São Paulo,SP
+4,9,406,Carlos Cabral de Menezes Filho,Facom UFU e UberHub Code Club,Uberlândia,MG
+4,9,406,Luana Amorim Lima,Centro Federal de Educação Tecnológica Celso Suckow da Fonseca,Rio de Janeiro,RJ
+5,9,406,Arthur Henrique Paixão Santos,Colégio Etapa,São Paulo,SP
+5,12,365,Filipe de Souza Lalic,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+6,13,358,Luiz Felipe Funaki Bigarelli,Colégio Etapa,São Paulo,SP
+6,13,358,Rafael Setton Alencar de Carvalho,Maple Bear Canadian School Porto Velho,Porto Velho,RO
+7,16,331,Samuell Henrique Carvalho Paes Costa,IFPI - São Raimundo Nonato,São Raimundo Nonato,PI
+7,18,325,Vitor Rocha Veiga,Colégio Farias Brito,Fortaleza,CE
+8,18,325,Estela Baron Nakamura,Colégio Pódion,Brasília,DF
+8,20,319,Vladimir Arauzo Huisa,Colégio Etapa,São Paulo,SP
+9,21,313,Heitor Raimundo Domingues Pereira do Prado,ESI - Colégio Santa Teresa,Ituiutaba,MG
+9,23,303,João Vitor Tomaz Alves Ferreira,Colégio Etapa,São Paulo,SP
+10,25,291,Enzo Dantas de Britto Monte Araujo,Colégio Farias Brito,Fortaleza,CE
+10,29,272,Anita Ramos Almeida,Colégio Etapa Valinhos,Valinhos,SP
+11,45,234,Sophia Damm Zogaib Mardones,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+11,49,230,Maria Elaine de Holanda Cavalcante,Colégio Farias Brito,Fortaleza,CE
+12,77,192,Endy Lumy Okamura Miyashita,Colégio Farias Brito,Fortaleza,CE
+12,100,165,Sara Miyuka Abe,Colegio Integrado Objetivo,São Paulo,SP
+13,144,144,Maria Eduarda Bertole Matos,Colegio Integrado Objetivo,São Paulo,SP
+13,193,113,Anna Paula Siqueira da Silva,Centro Federal de Educação Tecnológica Celso Suckow da Fonseca,Rio de Janeiro,RJ

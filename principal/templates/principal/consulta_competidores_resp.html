@@ -1,0 +1,53 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}<h1>{{pagetitle}}</h1>{% endblock %}
+
+{% block content %}
+
+{% if items.paginator.count == 0 %}
+  <p>Nenhum competidor satisfaz os dados da consulta.</p>
+{% elif items.paginator.count == 1 %}
+  <p>Um(a) competidor(a) satisfaz os dados da consulta.</p>
+{% else %}
+  <p>{{ items.paginator.count }} competidores satisfazem os dados de consulta.</p>
+{% endif %}
+
+{% if items.paginator.count > 0 %}
+<table class="basic">
+  <tr><th width="15%">Num. Inscr.</th><th width="30%">Nome do Competidor</th><th width="10%">Mod.</th><th width="20%">Escola</th><th width="20%">Cidade/Estado</th></tr>
+{% for item in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ item.compet_id|obi_format_compet_id }}</td>
+  <td>{{ item.compet_name }}</td>
+  <td>{{ item.compet_type|obi_format_compet_type_short }}</td>
+  <td>{{ item.compet_school.school_name }}</td>
+  <td>{{ item.compet_school.school_city }}/{{item.compet_school.school_state }}</td>
+  </tr>
+{% endfor %}
+{% endif %}
+</table>
+
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url urlresp %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url urlresp %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+
+<a href="{% url urlconsult %}" class="btn btn-small btn-primary" role="button">Nova consulta</a>
+
+{% endblock %}

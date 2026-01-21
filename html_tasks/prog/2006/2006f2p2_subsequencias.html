@@ -1,0 +1,93 @@
+title:Subsequências
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma <em>subsequência</em> de uma sequência de caractere S é definida como uma sequência de 
+caracteres de S, não necessariamente consecutivos, na mesma ordem em que eles ocorrem na 
+sequência original.
+
+<p>Dadas duas sequências de caracteres S<sub>1</sub> e S<sub>2</sub> dizemos que S<sub>1</sub> possui grau N de independência em 
+relação a S<sub>2</sub>se, dada qualquer subsequência de tamanho N de S<sub>1</sub>, não é possível formar tal 
+subsequência a partir de S<sub>2</sub> Por exemplo, o grau de independência da sequência S<sub>1</sub> =‘ababaa’ em 
+relação á sequência S<sub>2</sub>=‘abbaa’ é igual
+a 3, pois todas as subsequências de S<sub>1</sub> de tamanho 1 (‘a’, ‘b’) e todas as subsequências de tamanho 
+2 (‘aa’, ‘ab’, ‘ba’, ‘bb’) podem ser formadas a partir de S<sub>2</sub> mas a subsequência ‘bab’, de 
+tamanho 3, não pode ser formada a partir de S<sub>2</sub>.
+
+<p>
+Escreva um programa que, dadas duas sequências S<sub>1</sub> e S<sub>2</sub>  determine o grau N de 
+independencia de S<sub>1</sub> em
+relação a S<sub>2</sub>.
+
+<h3>Entrada</h3>
+<p>A entrada conté um único conjunto de testes, que deve ser lido do
+dispositivo de entrada padráo (normalmente o teclado). A entrada
+contém três linhas. A primeira linha contém dois inteiros N e M que
+indicam respectivamente o comprimento da sequência e o
+comprimento da sequência. A segunda linha contém a
+sequência S<sub>1</sub> e a terceira linha contém a sequência S<sub>2</sub> As sequências são
+formadas somente pelas letras minúsculas sem acento (‘a’ - ‘z’). Sempre existe uma
+solução para os casos de teste fornecidos.
+
+<h3>Saída</h3>
+	
+<p>Seu programa deve imprimir, na saída padrão, uma única linha,
+contendo o grau N de indepedência de S<sub>1</sub> em relação a S<sub>2</sub>.
+
+<h3>Restrições</h3>
+<ul>
+  <li>1 &leq; N &leq; 2000
+  <li>1 &leq; M &leq; 2000
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+ababaa abbaa
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+3
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+babab babba
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+3
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+banana anbnaanbaan
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+5
+</pre>
+ </td>
+ </tr>
+</table>

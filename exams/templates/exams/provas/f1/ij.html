@@ -1,0 +1,28 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h2>{{ exam_title }}</h2>
+
+Escolha a tarefa no menu de Tarefas.
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Tarefas</h2>
+  <ul>
+    <li><a href="automato">Autômato</a> ({% get_num_answers_exam 'provaf1ij_automato' exam_answers %})</li>
+    <li><a href="zoo">Bicho Preguiça</a> ({% get_num_answers_exam 'provaf1ij_zoo' exam_answers %})</li>
+  </ul>
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base_one_column.html" %}
+{% load obi_extras i18n %}
+
+{% block title %}Acesso Restrito{% endblock %}
+
+{% block header %}<h1>Acesso Restrito</h1>{% endblock %}
+
+{% block content %}
+
+  {% if next == '/restrito/' %}
+  <p>Você está entrando na área reservada para escolas.
+  {% elif next == '/compet/' %}
+  <p>Você está entrando na área reservada para competidores.  
+  {% endif %}
+
+  {% if form.errors %}
+    {% if user.is_authenticated %} 
+    <p style="color:#006600;font-size:85%">Você está autenticado em uma conta que não permite acesso à página solicitada. Por favor autentique-se
+      com uma conta que tenha permissão de acesso.
+    {% else %}
+    <p style="color:#006600;font-size:85%">Seu usuário ou senha não estão corretos, por favor tente novamente.
+    {% endif %}
+    {% if next == '/restrito/' %}
+    <p style="color:#006600;font-size:85%">
+    <p style="color:#006600;font-size:85%">Se o professor Coordenador Local da escola mudou, não tem problema, basta
+      realizar um novo cadastro para a escola, <a href="{% url 'principal:cadastra_escola' %}">clicando aqui</a>.
+    {% elif next == '/compet/' %}
+    <p style="color:#006600;font-size:85%">Note que a senha utilizada na OBI do ano passado não é
+      mais válida. Seu nome de usuário é o seu número de inscrição na {{'OBI'|obi_date_year}}
+      (por exemplo, 98754-G) e sua senha foi enviada em uma mensagem de correio eletrônico.
+      Se você não recebeu ou não tem mais acesso à mensagem, clique no link "Esqueceu sua senha ou nome de usuário?" abaixo
+      e uma nova senha será enviada para o endereço eletrônico cadastrado.
+      Em caso de dúvida contate o Coordenador Local da {{'OBI'|obi_date_year}} na sua escola.
+    {% endif %}
+  {% endif %}
+
+  <p>Por favor autentique-se.</p>
+    
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+      <div class="form-group pt-1 pb-1 col-9 col-md-6 col-lg-3">
+	<input type="input" id="id_username" name="username" class="form-control" placeholder="{% if next == '/restrito/' %}Nome de usuário{% elif next == '/compet/' %}Número de inscrição{% endif %}
+" required autofocus>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="form-group pt-1 pb-1 col-9 col-md-6 col-lg-3">
+	<input type="password" id="id_password" name="password" class="form-control" placeholder="Senha" required>
+      </div>
+    </div>
+    <input type="hidden" name="next" value="{% url 'principal:index' %}">
+    <p class="pt-1 text-center"><a href="{% url 'principal:password_reset' %}">Esqueceu sua senha ou nome de usuário?</a></p>
+    
+    {# to make redirect at login work #}
+    <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+    
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary btn-block" type="submit" value="login">Entrar</button>
+    </div>
+    
+    
+    <p class="small text-center text-gray-soft pt-1">
+  {% if next == '/restrito/' %}
+  Sua escola não está cadastrada? <a href="{% url 'principal:cadastra_escola' %}">Cadastre sua escola</a> (apenas professores ou funcionários da escola podem cadastrar a escola).
+    </p>
+  {% endif %}
+    </form>
+
+
+{% endblock %}
+  

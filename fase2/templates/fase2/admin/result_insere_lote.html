@@ -1,0 +1,58 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls %}
+
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; 
+<a href="{% url 'admin:app_list' 'fase1' %}">Fase 1</a>
+&rsaquo; 
+Modalidade Iniciação
+&rsaquo; 
+Insere Pontuação por Lote
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h1>Resultado da Submissão</h1>
+
+<p>{{ msg|safe }}</p>
+
+{% if errors %}
+<table class="basic">
+  <tr><th width="15%">Num. Linha</th><th width="20%">Erro</th><th width="65%">Linha</tr>
+  {% for error in errors %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ error.linenum }}</td>
+  <td>{{ error.msg }}</td>
+  <td>{{ error.line }}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% if valid %}
+<table class="basic">
+  <tr><th width="15%">Num. Inscr.</th><th width="15%">Nível</th><th width="55%">Nome</th><th width="15%">Pontos</tr>
+  {% for v in valid %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ v.id }}</td>
+  <td>{{ v.level }}</td>
+  <td>{{ v.name }}</td>
+  <td>{{ v.points }}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<H2>&nbsp;</H2>
+
+<a class="button action" href="javascript: history.go(-1)">VOLTAR</a>
+&nbsp;&nbsp;&nbsp;
+<a class="button action" href="../..">OK</a>
+
+
+{% endblock %}

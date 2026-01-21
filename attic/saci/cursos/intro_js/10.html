@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 10 - Valores inteiros e o tipo booleano</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 10 - Valores inteiros e o tipo booleano</div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 10 - Valores inteiros e o tipo booleano</div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/9/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/11/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+<li style="margin-left: 10px;">Exercício 3</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Valores inteiros e o tipo booleano</h2>
+
+
+<p>Às vezes, estamos interessados no valor inteiro de uma expressão
+aritmética. Um caso comum é necessitarmos realizar uma divisão
+inteira.
+
+<p>Por exemplo, a expressão 7/2 em javascript resulta em 3.5.  Mas na
+divisão inteira, ou seja, quando a parte fracionária da divisão não
+tem sentido, o resultado é 3.
+
+<p>Por exemplo, se dividirmos 7 moedas de 1 real por duas pessoas,
+cada pessoa ganha três moedas, e sobra uma moeda inteira sem dividir,
+porque não tem sentido dividir uma moeda.
+
+<p>Para extrair o valor inteiro de uma expressão aritmética, arredondado para baixo, 
+é necessário utilizar o comando <em>Math.floor(expressão_aritmética)</em>, que
+tem como resultado o valor de <em>expressão_aritmética</em> arredondado para
+baixo. (Note que em inglês <em>Math</em> significa matemática e <em>floor</em> significa piso.
+
+Exemplos:
+<ul>
+<li><span class="tt">math.floor(1.78)</span> resulta em <span class="tt">1</span>
+<li><span class="tt">math.floor(3/2)</span> resulta em <span class="tt">1</span>
+<li><span class="tt">math.floor(3*0.7)</span> resulta em <span class="tt">2</span>
+</ul>
+
+<p>Para extrair o valor inteiro de uma expressão aritmética, arredondado para cima, 
+é necessário utilizar o comando <em>Math.ceil(expressão_aritmética)</em>, que
+tem como resultado o valor de <em>expressão_aritmética</em> arredondado para
+cima. (Note que em inglês <em>Math</em> significa matemática e <em>ceil</em> significa teto.
+
+Exemplos:
+<ul>
+<li><span class="tt">math.ceil(1.78)</span> resulta em <span class="tt">2</span>
+<li><span class="tt">math.ceil(3/2)</span> resulta em <span class="tt">2</span>
+<li><span class="tt">math.ceil(3*0.7)</span> resulta em <span class="tt">3</span>
+</ul>
+
+<p>Podemos ainda utilizar o comando <em>Math.round(expressão_aritmética)</em>, que
+tem como resultado o valor de <em>expressão_aritmética</em> arredondado para
+o <em>inteiro mais próximo</em>. (Note que em inglês <em>Math</em> significa matemática e <em>round</em> significa arredondar.
+
+Exemplos:
+<ul>
+<li><span class="tt">math.round(1.78)</span> resulta em <span class="tt">2</span>
+<li><span class="tt">math.round(3/2)</span> resulta em <span class="tt">2</span> (este é um caso especial: sempre arredonda para cima se o valor estiver
+exatamente entre dois inteiros, como neste caso, em que o valor é 1.5)
+<li><span class="tt">math.round(3*0.7)</span> resulta em <span class="tt">2</span>
+</ul>
+
+
+<h3>O tipo booleano</h3>
+
+<p>Variáveis do tipo <em>booleano</em> armazenam valores lógicos, que
+são apenas dois: verdadeiro e falso. (O nome booleano é uma homenagem
+ao matemático inglês George Boole.)
+
+<p>
+Em Javascript, as constantes lógicas são
+representadas pelas palavras em inglês
+<span class="tt">true</span> (verdadeiro) e <span class="tt">false</span> (falso).
+
+
+<p>Veja abaixo alguns exemplos de uso de variáveis booleanas:
+
+<pre class="code">
+var ok, pontos;
+
+ok = true;      // atribui "verdadeiro" a ok
+ok = false;     // atribui "falso" a ok
+
+pontos = 4500;
+
+// podemos atribuir o valor de uma expressão lógica a ok
+ok = pontos >= 5000; // atribui "falso" a ok
+
+// podemos usar uma variável lógica em expressões lógicas, como um comando condicional
+if (ok)
+    printf("promovido\n"); // como ok é falso, este comando não é executado
+</pre>
+
+<h3>Inicialização de variável junto com a declaração</h3>
+
+<p>
+Em javascript, variáveis podem ser inicializadas com um valor no comando de declaração.
+Veja este exemplo, que declara e ao mesmo tempo atribui às
+variáveis ok e pontos respectivamente os valores <span class="tt">true</span> e 0.
+
+<pre class="code">
+var ok = true,
+    pontos = 0;
+    
+</pre>
+
+<p>Note que o mesmo efeito pode ser obtido primeiro declarando as variáveis,
+e depois executando os comandos de atribuição separadamente, como temos feito
+até agora:
+
+<pre class="code">
+var ok,
+    pontos;
+
+ok = true;
+pontos = 0;
+</pre>
+
+<p>Às vezes é conveniente usar essa facilidade da linguagem, mas é uma
+questão de estilo e de preferência.
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Pedágio</h2>
+</center>
+
+<p>A invenção do carro tornou muito mais confortável realizar viagens
+de longa distância. Realizar uma viagem rodoviária tem dois tipos de
+custos: cada quilômetro percorrido na rodovia tem um custo associado
+ao combustível utilizado, e também é necessário pagar os vários
+pedágios localizados na rodovia.</p>
+
+<p>Os pedágios são igualmente espaçados ao logo da rodovia; o começo
+da rodovia não possui um pedágio, mas o seu final pode estar logo após
+um pedágio (por exemplo, se a distância entre dois pedágios
+consecutivos for de 37 km e a rodovia tiver 111 km, o motorista deve
+pagar um pedágio aos 37 km, aos 74 km e aos 111 km, logo antes de
+terminar a sua viagem).</p>
+
+<p>Dadas as características da rodovia, o custo de combustível por
+quilômetro e o custo de cada pedágio, escreva um programa para calcular
+o custo total da viagem.</p>
+
+<h3>Entrada</h3>
+<p>A entrada consiste de duas linhas. A primeira linha da entrada
+contém dois inteiros <em>L</em> e <em>D</em> indicando o comprimento
+da rodovia e a distância entre pedágios, respectivamente, ambos em
+quilômetros. A segunda linha contém dois inteiros <em>K</em>
+e <em>P</em>, indicando o custo de combustível por quilômetro percorrido
+e o valor de cada pedágio.  O primeiro pedágio está localizado no
+quilômetro <em>D</em> da rodovia (ou seja, a distância do início da
+rodovia para o primeiro pedágio é <em>D</em> quilômetros).</p>
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve imprimir uma única linha contendo um único
+inteiro, indicando o custo total da viagem.</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; <em>L</em> &le; 10<SUP>4</SUP>
+<li> 1 &le; <em>D</em> &le; 10<SUP>4</SUP>
+<li> 1 &le; <em>K</em> &le; 10<SUP>4</SUP>
+<li> 1 &le; <em>P</em> &le; 10<SUP>4</SUP>
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+111 37
+1 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+141
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100 30
+3 14
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+342
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+20 70
+9 17
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+180
+</pre>
+      </td>
+    </tr>
+</table>
+<p>
+<font size="1">Tarefa da OBI2010, Modalidade Programação Nível 1, Fase 1</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Volta</h2>
+</center>
+
+<p>
+Em corridas de automóvel é bastante comum que o líder de uma prova, em
+determinado momento, ultrapasse o último colocado. O líder, neste
+momento, está uma volta à frente do último colocado, que se torna,
+assim, um retardatário. Neste problema, dados os tempos que o piloto
+mais rápido e o piloto mais lento levam para completar uma volta, você
+deve determinar em que volta o último colocado se tornará um
+retardatário, ou seja, será ultrapassado pelo líder. Você deve
+considerar que, inicialmente, eles estão lado a lado, na linha de
+partida do circuito, ambos no início da volta de número 1 (a primeira volta da corrida); 
+e que uma nova volta se inicia sempre depois que
+o líder cruza a linha de partida.
+
+
+<h3>Entrada</h3> 
+<p>
+A única linha da entrada contém dois números inteiros X e Y,
+indicando os tempos, em segundos, que o piloto mais rápido e o
+piloto mais lento levam para completar uma volta, respectivamente.
+
+<h3>Sa&iacute;da</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único inteiro: a volta em que o piloto mais
+lento se tornará um retardatário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &le; X < Y  &le; 10000
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+2
+      </pre>
+    </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+2
+</pre>
+      </td>
+    </tr>
+</table>
+
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+4
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6875 7109
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+31
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da Maratona de Programação da SBC 2014, Fase Local</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 3 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Receita de bolo</h2>
+</center>
+<p>
+João deseja fazer bolos para seus amigos, usando uma receita que indica que devem ser usadas 2 xícaras de
+farinha de trigo, 3 ovos e 5 colheres de sopa de leite. Em casa ele tem A xícaras de farinha de trigo, B ovos e
+C colheres de sopa de leite.
+João não tem muita prática com a cozinha, e portanto ele só se arriscará a fazer medidas exatas da receita de
+bolo (por exemplo, se ele tiver material suficiente para fazer mais do que 2 e menos do que 3 bolos, ele fará
+somente 2 bolos). Sabendo disto, ajude João escrevendo um programa que determine qual a quantidade máxima
+de bolos que ele consegue fazer.
+
+<h3>Entrada</h3>
+<p>
+
+A entrada é dada em uma única linha, que contém três números inteiros A, B e C, indicando respectivamente
+o número de xícaras de farinha de trigo, o número de ovos e o número de colheres de sopa de leite que João tem
+em casa.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir uma única linha, contendo um único inteiro, a quantidade máxima de bolos que
+João consegue fazer.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li>1 &le; A &le; 100
+<li>1 &le; B &le; 100
+<li>1 &le; C &le; 100
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+4 6 10
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+2
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+4 6 9
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+1
+</pre>
+</td></tr></table>
+<p>
+<font size="1">Tarefa da OBI2012, Nível Júnior, Fase 2</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 3 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars4" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg4" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+
+<p>Após ler os valores da entrada, a solução envolve somente montar a
+equação correta para o cálculo do custo da viagem, que é composto por
+dois termos, o custo do combustível e o custo do pedágio.  
+
+<p>Para calcular o custo do pedágio, é necessário calcular primeiro o
+número de pedágios que existem, dados o comprimento da
+rodovia (L) e a distância entre pedágios (D).
+
+<div class="center">
+<img src="/static/saci-images/pedagio_solution.png" alt="figura pedagio">
+</div>
+<p>O número de pedágios é o resultado da divisão inteira do
+comprimento da rodovia pela distância entre pedágios, e pode ser calculado como <span
+class="tt">Math.floor(L/D)</span>, o que nos permite então calcular o custo
+de pedágio da viagem, multiplicando o número de pedágios pelo custo de cada
+pedágio.  
+<p>O custo de combustível da viagem é o comprimento da rodovia
+vezes o custo de combustível por quilômetro.
+<p>E finalmente podemos calcular o custo total da viagem, que é a soma
+das duas parcelas de custo calculadas.
+
+<p>Este problema também poderia ser resolvido com a técnica de
+simulação, ou seja, simulando o que acontece na viagem, usando um
+comando de repetição. A variável contadora da repetição representa os
+quilômetros rodados.  Iniciamos com um custo zero e na repetição, para
+cada quilômetro, acrescentamos o custo do combustível e verificamos se
+é a posição de um pedágio; se for acrescentamos o custo de mais um
+pedágio.  Mas a solução com a equação é muito, muito mais eficiente!
+(Imagine uma estrada com 10 mil quilômetros: o programa vai executar
+10 mil repetições, e em cada repetição ainda tem que executar um teste
+de condição...)
+
+<p>O programa abaixo implementa a solução usando a equação.
+
+<pre class="code">
+// Solução para o exercício 1, Aula 10
+// Pedágio
+
+var L, D, K, P;
+
+// lê entrada
+scanf("%d%d", "L", "D");
+scanf("%d%d", "K", "P");
+
+// calcula e escreve o resultado
+printf("%d\n", L*K + P*Math.floor(L/D));
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 2, Aula 10
+// Corrida
+
+var X,Y,res;
+
+// lê a entrada  
+scanf("%d%d", "X","Y");
+
+// calcula e escreve o resultado
+printf("%d\n", Math.ceil(Y/(Y-X)));
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 3, Aula 10
+// Receita de bolo
+
+var A, B, C, min;
+
+// lê a entrada  
+scanf("%d%d%d", "A","B","C");
+
+// calcula quantos bolos podem ser feitos com cada ingrediente
+A = Math.floor(A/2);
+B = Math.floor(B/3);
+C = Math.floor(C/5);
+
+// calcula a menor quantidade de bolos
+min = A;
+if (B < min)
+    min = B;
+if (C < min)
+    min = C;
+
+// imprime o resultado
+printf("%d\n", min);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEsIEF1bGEgMTAKLy8gUGVkw6FnaW8KCnZhciBMLCBELCBLLCBQOwoKLy8gbMOqIGVudHJhZGEKc2NhbmYoIiVkJWQiLCAiTCIsICJEIik7CnNjYW5mKCIlZCVkIiwgIksiLCAiUCIpOwoKLy8gY2FsY3VsYSBlIGVzY3JldmUgbyByZXN1bHRhZG8KcHJpbnRmKCIlZFxuIiwgTCpLICsgUCpNYXRoLmZsb29yKEwvRCkpOwoKXi8vIFNvbHXDp8OjbyBwYXJhIG8gZXhlcmPDrWNpbyAyLCBBdWxhIDEwCi8vIENvcnJpZGEKCnZhciBYLFkscmVzOwoKLy8gbMOqIGEgZW50cmFkYSAgCnNjYW5mKCIlZCVkIiwgIlgiLCJZIik7CgovLyBjYWxjdWxhIGUgZXNjcmV2ZSBvIHJlc3VsdGFkbwpwcmludGYoIiVkXG4iLCBNYXRoLmNlaWwoWS8oWS1YKSkpOwpeLy8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDMsIEF1bGEgMTAKLy8gUmVjZWl0YSBkZSBib2xvCgp2YXIgQSwgQiwgQywgbWluOwoKLy8gbMOqIGEgZW50cmFkYSAgCnNjYW5mKCIlZCVkJWQiLCAiQSIsIkIiLCJDIik7CgovLyBjYWxjdWxhIHF1YW50b3MgYm9sb3MgcG9kZW0gc2VyIGZlaXRvcyBjb20gY2FkYSBpbmdyZWRpZW50ZQpBID0gTWF0aC5mbG9vcihBLzIpOwpCID0gTWF0aC5mbG9vcihCLzMpOwpDID0gTWF0aC5mbG9vcihDLzUpOwoKLy8gY2FsY3VsYSBhIG1lbm9yIHF1YW50aWRhZGUgZGUgYm9sb3MKbWluID0gQTsKaWYgKEIgPCBtaW4pCiAgICBtaW4gPSBCOwppZiAoQyA8IG1pbikKICAgIG1pbiA9IEM7CgovLyBpbXByaW1lIG8gcmVzdWx0YWRvCnByaW50ZigiJWRcbiIsIG1pbik7Cg==">
+  <input type="hidden" id="hiddentests" value="MjAgNQoyIDMKOzIwIDYKMyAxMAo7ODMgOTEKNzIgNDUKOzEwMCAxMDAKMTAwIDEwMAo7MjAwIDEKNTAwIDUwMAo7MTAwMCAzMDAKMTAzMCAyMDAwCjszMDAwIDEwMDAKMjExMSAzNjkyCjs1NzM0IDE0MzMKOTY3OCA4NTI3CjsxMDAwMCAxMDAwMAo5MDAwIDgwMDAKOzEwMDAwIDEKMTAwMDAgMTAwMDAKXjEgMTAKOzQgOAo7NSA3Cjs2ODc1IDcxMDkKOzM2MjcgOTAzNAo7OTgwMSA5OTYxCjsxNzY2IDcwNzAKOzUzMDggNTY2Mwo7NTAzNiA4ODAyCjs5OTk5IDEwMDAwCl42IDkgMzUKOzEgNjUgMzQKOzYxIDU4IDgKOzkgMTggOTYKOzk4IDU5IDI3Cjs0MCAzNSA2OAo7OTQgNzAgMTYKOzMzIDkzIDI3CjsyMSAxNCA4Nwo7MTcgNTAgMzcK">
+  <input type="hidden" id="hiddenresults" value="NTIKOzkwCjs1OTc2CjsxMDEwMAo7MjAwMDAwCjsxMDM2MDAwCjs2MzQ0MDc2Cjs1NTUyNzc2MAo7OTAwMDgwMDAKOzIwMDAwMDAwMApeMgo7Mgo7NAo7MzEKOzIKOzYzCjsyCjsxNgo7Mwo7MTAwMDAKXjMKOzAKOzEKOzQKOzUKOzExCjszCjs1Cjs0Cjs3Cg==">
+  <input type="hidden" id="hiddensamples" value="MTExIDM3CjEgMTAKXjEgMTAKXjQgNiA5Cg==">
+  <input type="hidden" id="hiddenhints" value="LioKQXDzcyBsZXIgb3MgdmFsb3JlcyBkYSBlbnRyYWRhLCBhIHNvbHXn428gZW52b2x2ZSBzb21lbnRlIG1vbnRhciBhIGVxdWHn428gY29ycmV0YSBwYXJhIG8gY+FsY3VsbyBkbyBjdXN0byBkYSB2aWFnZW0sIHF1ZSDpIGNvbXBvc3RvIHBvciBkb2lzIHRlcm1vcywgbyBjdXN0byBkbyBjb21idXN07XZlbCBlIG8gY3VzdG8gZG8gcGVk4Wdpby4gCjxwPlBhcmEgY2FsY3VsYXIgbyBjdXN0byBkbyBwZWThZ2lvLCDpIG5lY2Vzc+FyaW8gY2FsY3VsYXIgcHJpbWVpcm8gbyBu+m1lcm8gZGUgcGVk4Wdpb3MgcXVlIGV4aXN0ZW0sIGRhZG9zIG8gY29tcHJpbWVudG8gZGEgcm9kb3ZpYSAoTCkgZSBhIGRpc3TibmNpYSBlbnRyZSBwZWThZ2lvcyAoRCkuIFF1YWwgbyBu+m1lcm8gZGUgcGVk4Wdpb3MsIGVtIHRlcm1vcyBkZSBMIGUgRD8KPGRpdiBjbGFzcz0iY2VudGVyIj4gPGltZyBzcmM9Imh0dHA6Ly9vbGltcGlhZGEuaWMudW5pY2FtcC5ici9leHRyYXMvc2FjaS9pbWFnZW5zL3BlZGFnaW9faGludC5wbmciIGFsdD0iZmlndXJhMiI+IDwvZGl2PiA8cD5PIG76bWVybyBkZSBwZWThZ2lvcyDpIG8gcmVzdWx0YWRvIGRhIGRpdmlz428gaW50ZWlyYSBkbyBjb21wcmltZW50byBkYSByb2RvdmlhIHBlbGEgZGlzdOJuY2lhIGVudHJlIHBlZOFnaW9zLiBDb21vIG8gbvptZXJvIGRlIHBlZOFnaW9zIOkgdW0gaW50ZWlybywg6SBuZWNlc3PhcmlvIHVzYXIgdW1hIGRhcyBmdW7n9WVzIDxzcGFuIGNsYXNzPSJ0dCI+TWF0aC5mbG9vcjwvc3Bhbj4sIDxzcGFuIGNsYXNzPSJ0dCI+TWF0aC5yb3VuZDwvc3Bhbj4gb3UgPHNwYW4gY2xhc3M9InR0Ij5NYXRoLmNlaWw8L3NwYW4+LiBRdWFsIGRhcyB0cupzIOkgYSBjb3JyZXRhLCBubyBjYXNvIGRlc3RlIHByb2JsZW1hPwo8cD5PIG76bWVybyBkZSBwZWThZ2lvcyBwb2RlIHNlciBjYWxjdWxhZG8gY29tbyA8c3BhbiBjbGFzcz0idHQiPk1hdGguZmxvb3IoTC9EKTwvc3Bhbj4sIG8gcXVlIG5vcyBwZXJtaXRlIGVudONvIGNhbGN1bGFyIG8gY3VzdG8gZGUgcGVk4WdpbyBkYSB2aWFnZW0sIG11bHRpcGxpY2FuZG8gbyBu+m1lcm8gZGUgcGVk4Wdpb3MgcGVsbyBjdXN0byBkZSBjYWRhIHBlZOFnaW8uICA8cD5PIGN1c3RvIGRlIGNvbWJ1c3TtdmVsIGRhIHZpYWdlbSDpIG8gY29tcHJpbWVudG8gZGEgcm9kb3ZpYSB2ZXplcyBvIGN1c3RvIGRlIGNvbWJ1c3TtdmVsIHBvciBxdWls9G1ldHJvLiA8cD5FIGZpbmFsbWVudGUgcG9kZW1vcyBjYWxjdWxhciBvIGN1c3RvIHRvdGFsIGRhIHZpYWdlbSwgcXVlIOkgYSBzb21hIGRhcyBkdWFzIHBhcmNlbGFzIGRlIGN1c3RvIGNhbGN1bGFkYXMuCjxwPkVzdGUgcHJvYmxlbWEgdGFtYultIHBvZGVyaWEgc2VyIHJlc29sdmlkbyBjb20gYSB06WNuaWNhIGRlIHNpbXVsYefjbywgb3Ugc2VqYSwgc2ltdWxhbmRvIG8gcXVlIGFjb250ZWNlIG5hIHZpYWdlbSwgdXNhbmRvIHVtIGNvbWFuZG8gZGUgcmVwZXRp5+NvLiBBIHZhcmnhdmVsIGNvbnRhZG9yYSBkYSByZXBldGnn428gcmVwcmVzZW50YSBvcyBxdWls9G1ldHJvcyByb2RhZG9zLiBJbmljaWFtb3MgY29tIHVtIGN1c3RvIHplcm8gZSBuYSByZXBldGnn428sIHBhcmEgY2FkYSBxdWls9G1ldHJvLCBhY3Jlc2NlbnRhbW9zIG8gY3VzdG8gZG8gY29tYnVzdO12ZWwgZSB2ZXJpZmljYW1vcyBzZSDpIGEgcG9zaefjbyBkZSB1bSBwZWThZ2lvOyBzZSBmb3IgYWNyZXNjZW50YW1vcyBvIGN1c3RvIGRlIG1haXMgdW0gcGVk4Wdpby4gTWFzIGEgc29sdefjbyBjb20gYSBlcXVh5+NvIOkgbXVpdG8sIG11aXRvIG1haXMgZWZpY2llbnRlISAoSW1hZ2luZSB1bWEgZXN0cmFkYSBjb20gMTAgbWlsIHF1aWz0bWV0cm9zOiBvIHByb2dyYW1hIHZhaSBleGVjdXRhciAxMCBtaWwgcmVwZXRp5/VlcywgZSBlbSBjYWRhIHJlcGV0aefjbyBhaW5kYSB0ZW0gcXVlIGV4ZWN1dGFyIHVtIHRlc3RlIGRlIGNvbmRp5+NvLi4uKQo8cD5BIGFiYSBTb2x15/VlcyBtb3N0cmEgdW0gZXhlbXBsbyBkZSBzb2x15+NvLl5e">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="Qv_6CkpbpzQ">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

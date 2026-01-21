@@ -1,0 +1,32 @@
+{% extends "base_onecolumn.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+
+<p>
+A sua escola é 
+</p>
+
+<a href="{% url 'principal:cadastra_escola_3' {{ hash }} 'eb'  %}" class="btn btn-small btn-primary mb-3 me-5" role="button">Ensino Básico</a>
+<a href="{% url 'principal:cadastra_escola_3' {{ hash }} 'es'  %}" class="btn btn-small btn-primary mb-3" role="button">Ensino Superior</a> ()
+
+
+1. Universidade
+2. Centro Universitário
+3. Faculdade
+4. Instituto Federal de Educação, Ciência e Tecnologia                                
+5. Centro Federal de Educação Tecnológica
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

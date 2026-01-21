@@ -1,0 +1,30 @@
+{% extends "base_two_columns.html" %}
+{% load static %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}<h1>{{ pagetitle }}</h1>{% endblock %}
+
+{% block content %}
+
+<h4>Confirmo que NÃO participarei da Semana Olímpica</h4>
+<a class="btn btn-primary mt-4 me-4" role="button" href="{% url 'compet:index' %}">Cancelar</a>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<a class="btn btn-danger mt-4 ms-4" role="button" href="{% url 'week:do_deny' %}">Confirmar ausência</a>
+
+
+{% endblock %}
+
+{% block content-related %}
+
+{% include "week/includes/see_also.html" %}
+
+{% endblock %}
+
+

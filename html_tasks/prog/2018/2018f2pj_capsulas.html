@@ -1,0 +1,93 @@
+title:Cápsulas
+template:tasks/tarefa_programacao.html
+
+<p>
+O discípulo Fan Chi'ih retornou recentemente da China com algumas
+cápsulas mágicas, que são capazes de produzir moedas de ouro! Uma
+cápsula possui um certo ciclo de produção, que é um número C de
+dias. A cada C dias a cápsula produz uma nova moeda; a moeda é sempre
+produzida no último dia do ciclo. Fan Chi'ih vai
+ativar todas as cápsulas ao mesmo tempo e quer acumular uma fortuna de
+pelo menos F moedas. Ele precisa da sua ajuda para computar o número
+mínimo de dias para que as cápsulas produzam, no total, pelo menos F
+moedas. Na tabela abaixo, por exemplo, existem três cápsulas com
+ciclos de 3, 7 e 2 dias. Se Fan Chi'ih quiser acumular pelo
+menos 12 moedas, ele vai ter que esperar pelo menos 14 dias.
+
+<div class="center">
+<img src="/static/img/task_images/2018f2pj_capsulas.png" width="600px"/>
+</div>
+ 
+<h3>Entrada</h3>
+A primeira linha da entrada contém dois inteiros N e
+ F, indicando o número de cápsulas e o número de moedas que Fan
+ Chi'ih quer produzir, respectivamente. A segunda linha contém N
+ inteiros C<sub>i</sub>, para 1 &leq;  i &leq;  N, representando os ciclos de cada
+ cápsula.
+
+ 
+<h3>Saída</h3>
+Imprima um inteiro, representando o número mínimo de dias
+ para que as cápsulas produzam, no total, pelo menos F moedas.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup>; 1 &leq;  F &leq;  10<sup>9</sup>
+<li> 1 &leq;  C<sub>i</sub> &leq;  10<sup>6</sup>
+ <li> Em todos os casos de teste, a resposta é sempre menor ou igual
+ a 10<sup>8</sup> dias;
+ <li> Em todos os casos de teste, o número de moedas
+ produzido, no total, após 10<sup>8</sup> dias, é sempre menor ou igual a
+ 10<sup>9</sup>.
+
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, os ciclos C<sub>i</sub> são todos iguais
+(ou seja C<sub>i</sub> = C<sub>j</sub> para todo 1  &leq;  i  &leq;  N e 1  &leq;  j  &leq;  N).
+<li> Para um conjunto de casos de testes valendo 20 pontos, N  &leq;  10<sup>3</sup>, F  &leq;  10<sup>3</sup> e C<sub>i</sub> &leq;  10<sup>3</sup>
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 12
+3 7 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+14
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 100
+17 13 20 10 12 16 10 13 13 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+130
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

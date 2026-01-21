@@ -1,0 +1,30 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+
+<h1>Resultado da Consulta</h1>
+
+<p>{{ msg|safe }}</p>
+
+{% if result %}
+<p>Confira abaixo se todas as soluções dos competidores foram inseridas no sistema.</p>
+  {% for item in result %}
+  {% ifchanged item.level %}
+      <h2>{{ item.level }}</h2>
+   {% endifchanged %}
+  {% ifchanged item.compet %}
+      <h4>{{ item.compet }}</h4>
+   {% endifchanged %}
+      {{ item.program }} &nbsp; &nbsp;
+  {% endfor %}
+{% endif %}
+
+
+<H2>&nbsp;</H2>
+{% if errors %}
+<a class="button action" href="javascript: history.go(-1)">VOLTAR</a>
+{% else %}
+<a class="button action" href="../..">OK</a>
+{% endif %}
+
+{% endblock %}

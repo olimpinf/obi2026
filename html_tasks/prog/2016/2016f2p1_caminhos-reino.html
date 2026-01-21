@@ -1,0 +1,154 @@
+title:Caminhos do reino
+template:tasks/tarefa_programacao.html
+<p>
+O reino de Daglônia é um lugar estranho. Todas as estradas do reino só podem ser usadas 
+em <it>uma direção</it> e de cada cidade sai <it>exatamente uma</it> estrada. 
+O reino é dividido em duas partes: o <it>ciclo interno</it> e os <it>caminhos periféricos</it>. 
+Cada uma das cidades do reino pertence a uma dessas partes. No ciclo interno, a estrada que sai de cada cidade
+vai à próxima cidade do ciclo, de forma que é possível percorrer um caminho que sai de uma
+cidade qualquer e retorna a essa mesma cidade.
+
+A algumas cidades do ciclo interno pode chegar um dos caminhos periféricos, que 
+são as ligações entre a parte central do reino e o mundo exterior, por onde 
+pessoas podem chegar ao reino (mas não sair). Um caminho periférico começa em 
+uma cidade na qual nenhuma estrada do reino chega e segue pelas estradas de cada 
+cidade até chegar em uma cidade do ciclo interno.
+
+
+A cada cidade pertecente a um caminho periférico chega no máximo 
+uma estrada. A cada cidade do ciclo interno chegam no máximo duas estradas:
+uma estrada do ciclo interno (que sempre existe) e uma estrada de um caminho periférico (que pode
+ou não existir).
+
+A figura abaixo mostra um exemplo
+das cidades e estradas do reino, com cidades numeradas de 1 a N.
+
+<div class="center">
+<img src="/static/img/task_images/2016f2p1_reino.png" width="200px"/>
+</div>
+
+Na figura, os caminhos 
+periféricos são (3  &rarr;  1) e (4) e o ciclo interno é 
+(2  &rarr;  6  &rarr;  5  &rarr;  2). 
+
+Há rumores de que um país vizinho vai declarar guerra contra a Daglônia, 
+e por isso os habitantes do reino querem se encontrar com 
+seus familiares no menor tempo possível. Você foi contratado pelo Rei para 
+ajudá-las. Você receberá Q perguntas da seguinte forma: dadas as cidades
+A e B onde estão duas pessoas do reino que querem se encontrar, você
+deve determinar qual o tempo mínimo em que elas podem se encontrar, considerando 
+que cada estrada é percorrida em uma unidade de tempo. O ponto de encontro das 
+duas pessoas pode ser diferente das cidades iniciais e ambas podem se deslocar
+<it>simultaneamente</it> para chegar ao ponto de encontro.
+
+Considerando o exemplo da figura acima, pessoas nas cidades 4 e 3 
+podem se encontrar na cidade 2 ou 6 em tempo 3. Pessoas nas cidades 1 
+e 3 podem se encontrar na cidade 1 em tempo 1. Pessoas nas cidades 6 
+e 3 podem se encontrar na cidade 2 em tempo 2.
+
+<h3>Entrada</h3>
+
+A  primeira linha  contém um  inteiro N,  representando o  número de
+cidades. As cidades são identificadas por inteiros de 1 a N.
+A  segunda linha contém N  inteiros F<sub>1</sub>, F<sub>2</sub>, ...  \ F<sub>N</sub>,
+onde F<sub>i</sub> é o destino da estrada que parte da cidade i.  A terceira
+linha contém um inteiro Q, que  representa o número de perguntas.  As
+Q  linhas seguintes  contém dois  inteiros A  e B,  indicando as
+cidades para as quais você deve responder a pergunta descrita acima.
+Existe pelo menos um caminho periférico. 
+
+<h3>Saída</h3>
+
+Seu programa deve produzir Q linhas, cada uma contendo um único inteiro, o menor tempo 
+necessário para que as duas pessoas se encontrem em uma cidade qualquer.
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  N  &leq;  10<sup>5</sup>
+<li> 1  &leq;  F<sub>i</sub>  &leq;  N
+<li> F<sub>i</sub>  &ne;  i
+<li> 1  &leq;  Q  &leq;  10<sup>5</sup>
+<li> 1  &leq;  A, B  &leq;  N
+<li> O reino representado respeita as condições do enunciado. Particularmente, 
+existe exatamente um ciclo, existe pelo menos uma cidade que não pertence ao ciclo, 
+a cada cidade do ciclo chegam no máximo duas estradas e a cada cidade que não 
+pertence ao ciclo chega no máximo uma estrada.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um conjunto de casos de teste equivalente a 40 pontos, Q = 1.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+2 6 1 6 2 5
+5
+4 3
+1 3
+6 3
+5 2
+2 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+1
+2
+1
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+13
+7 3 9 5 3 7 5 2 6 1 10 11 9
+10
+4 10
+10 8
+12 11
+10 4
+7 3
+8 11
+6 11
+3 4
+6 12
+8 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+4
+1
+3
+2
+5
+3
+2
+4
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

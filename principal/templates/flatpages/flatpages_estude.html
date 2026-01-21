@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load obi_extras %}
+
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block title %} {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  <h1> {{ flatpage.title }} </h1>
+{% endblock %}
+
+  {% block content %}{{ flatpage.content }}{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  <h2>Veja também</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+    {% comment %}
+        {% get_flatpages '/estude/' as flatpages_estude %}
+        {% for page in flatpages_estude %}
+           {% if not page.url == flatpage.url %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	   {% endif %}
+        {% endfor %}
+    {% endcomment %}
+         <li><a href="{% url 'pratique' %}">Pratique</a></li>
+         <li><a href="{% url 'ementa' %}">Ementa</a></li>
+    {% endblock browse %}
+  </ul>
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{flatpage.title}}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

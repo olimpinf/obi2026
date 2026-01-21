@@ -1,0 +1,127 @@
+title:Ralouim
+template:exams/tarefa_programacao.html
+order:4
+<p>
+Para a tradicional festa infantil de Ralouim, o rei da Nlogônia
+instalou tendas de distribuição de guloseimas no seu extenso Jardim Real,
+onde está também situado o Palácio Real.
+
+<p>Cada tenda tem uma quantidade ilimitada de guloseimas. As crianças devem
+sair do Palácio Real e visitar as tendas para ganhar guloseimas, mas
+o Rei estabeleceu algumas regras:
+
+<ul>
+<li> a cada visita a uma tenda, a criança ganha exatamente uma guloseima.
+<li> uma tenda pode ser visitada mais de uma vez pela mesma criança,
+desde que as visitas não sejam consecutivas (ou seja, uma imediatamente após a outra).
+<li> as distâncias que uma criança percorre para chegar à &quot;próxima tenda&quot;
+devem ser estritamente decrescentes. Ou seja, a distância que a criança
+percorre do Palácio até a primeira tenda que a criança visita deve ser maior
+do que a distância que a criança percorre entre a primeira tenda e a segunda
+tenda, que por sua vez deve ser maior do que a distância que a criança percorre entre
+a segunda tenda e a terceira tenda, e assim por diante.
+</ul>
+
+<p>Pedrinho percebeu que se planejar direito suas visitas, pode ganhar muitas guloseimas!
+Escreva um programa para ajudar Pedrinho a ganhar o maior número possível de guloseimas no Ralouim.
+
+
+
+
+
+<h3>Entrada</h3>
+
+<p>A primeira linha da entrada contém um inteiro N, o número de
+tendas. Cada uma das N linhas seguintes contém dois inteiros X e
+Y, as coordenadas de uma tenda no Jardim Real. A localização do
+Palácio Real é (0,0) e não existe tenda com essas  coordenadas,
+todas as tendas têm localizações distintas.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um único
+inteiro, o maior número de guloseimas que Pedrinho pode ganhar.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  2000
+<li> -10000  &leq;  X  &leq;  10000
+<li> -10000  &leq;  Y  &leq;  10000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, 1  &leq;  N  &leq;  50.
+<li> Para um conjunto de casos de testes valendo 40 pontos adicionais, 1  &leq;  N  &leq;  200.
+<li> Para um conjunto de casos de testess valendo 40 pontos adicionais, nenhuma restrição adicional.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+6 0
+5 0
+1 0
+2 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+0 3
+3 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+6 8
+2 1
+2 2
+2 3
+5 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

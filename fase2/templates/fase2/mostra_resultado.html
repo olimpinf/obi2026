@@ -1,0 +1,64 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Resultado Fase 2{% endblock %}
+
+{% block header %}<h1>Consulta Resultado Fase 2</h1>{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-3">{{ compet.compet_name }}</h2>
+
+<b>Num. Inscrição</b>: {{ compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ compet.compet_type|obi_format_compet_type_full }}<br>
+{% if compet.compet_points_fase2 != None%}
+  <b>Pontuação</b>: {{ compet.compet_points_fase2 }} pontos<br>
+{% else %}
+<b>Pontuação</b>: não encontrada <br>
+{% endif %}
+
+{% if compet.compet_sex == "F" %}
+<b>Classificada para a Fase Nacional (Fase 3)</b>: 
+{% else %}
+<b>Classificado para a Fase Nacional (Fase 3)</b>: 
+{% endif %}
+{% if show_classif %}
+  {% if compet.compet_classif_fase2 %}
+  <font color="green">Sim</font>
+  {% else %}
+  <font color="red">Não</font>
+  {% endif %}
+{% else %}
+? (ainda não computado, aguarde)
+{% endif %}
+ <br>
+
+{% if log %}
+ <h3>Relatório de correção</h3>
+ <pre>
+{{ log }}
+</pre>
+{% endif %}
+
+{% if folha_resp %}
+<p> <a href="{% url 'fase2:serve_folha_resp' compet.compet_id %}">Clique aqui</a> para ver o relatório de correção em PDF.</p>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+<h4>Informação</h4>
+
+<p><small>
+  <small><p> Em cada Estado, para cada modalidade e nível, passam para
+      a Fase Nacional os melhores classificados no Estado, até
+      o limite de 15% dos participantes efetivos da Estado na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Nacional
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>).
+</small></p>
+
+      
+{% endblock %}

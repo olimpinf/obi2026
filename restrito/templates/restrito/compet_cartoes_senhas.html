@@ -1,0 +1,58 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+
+<p>Este é o formulário para gerar cartões com as senhas para as páginas pessoais dos competidores.
+
+<p>Estas <b>não</b> são as senhas do CMS (ambiente de prova da modalidade Programação).
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  {# first button is default, enter key will trigger it #}
+  <button type="submit" class="btn btn-primary" name="save" value="save">Gerar</button>
+  <button type="submit" class="btn btn-danger float-end" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}">Cancelar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Instruções</h2>
+  {% block browse %}
+  <ul>
+    <li>Escolha a modalidade e ordem dos cartões no formulário e clique em <em>Gerar</em>.
+  </ul>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

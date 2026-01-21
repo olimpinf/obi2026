@@ -1,0 +1,64 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>Convidados Semana Olímpica</h1>
+
+<p>Os competidores devem entrar em suas páginas pessoais da OBI2025 para confirmar a participação na Semana Olímpica. A confirmação
+  deve ser feita até sexta-feira, 8/11.
+  
+
+{% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+  <p>{{ items.paginator.count }} competidor selecionado, total de {{ total }} competidores convidados</p>
+</p>
+  {% else %}
+  <p>{{ items.paginator.count }} competidores selecionados, total de {{ total }} competidores convidados</p>
+  {% endif %}
+
+<table id='choice_table' class='admin' width="100%">
+  <tr>
+    <th width="15%">Núm. Inscr.</th>
+    <th width="70%">Nome</th>
+    <th align="center">Modalidade</th>
+    <th align="center">Manif.<br>interesse</th>
+    <th align="center">Pagto.<br>confirmado</th>
+
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td>{% if c.compet %}{{ c.compet_id|obi_format_compet_id }}{% endif %}</td>
+    <td>{% if c.compet %}{{ c.compet.compet_name }}{% endif %}</td>
+    <td class="center">{% if c.compet %}{{ c.compet.compet_type|obi_format_compet_type_short }}{% endif %}</td>
+    <td class="center">{% if c.form_info %}<img src="/static/admin/img/icon-yes.svg">{% else %}<img src="/static/admin/img/icon-no.svg">{% endif %}</td>
+    <td class="center">{% if c.tax_confirmed %}<img src="/static/admin/img/icon-yes.svg">{% else %}<img src="/static/admin/img/icon-no.svg">{% endif %}</td>
+
+{% comment %}
+    <td class="center">{{ c.compet_points_fase1|default_if_none:'-' }}</td>
+    </td>
+{% endcomment %}
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Não há competidores inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_lista_status_prova_online' exam_descr turn %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_lista_status_prova_online' exam_descr turn %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+  Para mais informações sobre a Semana Olímpica <a href="{% url 'week:index' %}">clique aqui</a>.
+
+{% endblock %}

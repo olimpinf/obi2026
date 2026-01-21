@@ -1,0 +1,108 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Passo a passo: aplicação da Prova da Competição Feminina da OBI (CF-OBI)</h1>
+
+<h2>Antes da prova</h2>
+<ol>
+  <li>Imprima as senhas de acesso ao Ambiente de Prova.
+    <ol>
+      <li>Na página de coordenação, Seção "Competição Feminina", linha "Modalidade Programação",
+      clique em "Senhas Prova". Um arquivo PDF no formato de "cartões"
+      é gerado, cada cartão com as informações de uma competidora (nome, usuário, senha).</li>
+    </ol>
+  </li>
+  <li>Imprima as Listas de Presença
+    <ol>
+      <li>As listas de presença não são obrigatórias, mas é recomendável que as alunas
+	assinem. Guarde as listas assinadas para comprovar a participação das alunas em caso
+	de problemas com a prova ou a correção.</li>
+      <li>Para imprimir as listas de presença, na página de coordenação, Seção "Competição Feminina", linha "Modalidade Programação",
+      clique em "Aplicação da Prova", e procure a seção Listas de Presença.</li>
+    </ol>
+  </li>
+</ol>
+
+<h2>Preparação dos laboratórios</h2>
+<ol>    
+  <li>Para desenvolver suas soluções, cada aluna deve ter à sua
+    disposição um computador com editores de texto e pelo menos um
+    compilador entre C, C++, Java ou o interpretador
+    Python. Normalmente as alunas usam o que já está instalado nos
+    laboratórios da escola. Se a escola não tem
+    compiladores ou ambientes de desenvolvimento já instalados, veja
+    em {% url 'aplicativos' %} alguns aplicativos algumas sugestões de
+    aplicativos que podem ser instalados.</li>
+
+   <li>As alunas acessam o Ambiente de Prova usando um navegador internet (como Firefox, Chrome, Safari, etc.).</li>
+
+   <li>A aluna não deve acessar a Internet a não ser através do
+      Ambiente de Prova da {{ 'OBI'|obi_date_year }}. Se possível,
+      o ideal é permitir o acesso apenas aos endereços do Ambiente de Prova da OBI (veja abaixo).
+      Se isso não é possível, os professores devem supervisionar as alunas
+      de forma a que não acessem outros endereços da Internet.</li>
+
+    <li>As alunas devem fazer as provas <b>individualmente, sem consulta a qualquer material impresso
+        (como livros ou apostilas) ou digital (como programas feitos anteriormente) ou qualquer outro
+        meio (como Inteligências Artificiais).</b></li>
+</ol>
+
+<h2>Endereços do Ambiente de prova</h2>
+<ul>
+  <li>São utilizados três endereços diferentes para o Ambiente de Prova, um para
+    cada nível da modalidade Programação da CF-OBI:
+    <ul>
+      <li>Nível Júnior: <a href="https://pj.provas.ic.unicamp.br"><span class="ttt">https://pj.provas.ic.unicamp.br</span></a>
+      <li>Nível 1: <a href="https://p1.provas.ic.unicamp.br"><span class="ttt">https://p1.provas.ic.unicamp.br</span></a>
+      <li>Nível 2: <a href="https://p2.provas.ic.unicamp.br"><span class="ttt">https://p2.provas.ic.unicamp.br</span></a>
+    </ul>
+  </li>
+  <li>O ambiente de prova estará aberto das 08:00 às 18:00. Note que o
+   ambiente FECHA às 18:00, para todos os níveis, não sendo possível
+   submeter soluções após esse horário.</li>
+</ul>
+
+
+<h2>No dia da prova</h2>
+<ol>    
+  <li>Distribua as senhas para as alunas.
+    <ul>
+      <li>Os cartões estão no formato de etiquetas auto-colantes, mas podem ser
+	recortados manualmente para serem entregues para as alunas.</li>
+    </ul>
+  </li>
+  <li>O nome de usuário é o número de inscrição (completo, por exemplo 01234-B).</li>
+  <li>Informe os endereços do Ambiente de Prova para as alunas (veja os endereços acima)</li>
+  <li><b>Supervisione as alunas, para garantir que façam a prova individualmente e sem uso de
+    qualquer material externo (livros, internet, anotações, arquivos de problemas já feitos, Inteligências Artificiais, etc.)</b></li>
+  <li>O tempo de prova, controlado pelo Ambiente de Prova, é três horas para os Níveis Júnior, 1 e 2.</li>
+</ol>
+
+<h2>Resultados da Prova</h2>
+<ol>
+  <li>Após o período de aplicação da prova, competidoras e coordenadores locais poderão ver
+    a correção das soluções submetidas.</li>
+  <li>Os resultados são provisórios, pois pode haver re-julgamento das soluções em caso de necessidade.</li>
+  <li>Os resultados finais serão divulgados de acordo com o calendário.</li>
+</ol>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

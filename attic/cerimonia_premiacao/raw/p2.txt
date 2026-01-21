@@ -1,0 +1,26 @@
+1,1,495,Maria Clara Fontes Silva,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+1,1,495,Pedro Suayama Leston Rey,Organização Educacional Farias Brito - Pré vestibular Aldeota,Fortaleza,CE
+2,3,460,Joao Pedro Gomes Cordeiro de Castro,Organização Educacional Farias Brito - Pré vestibular Aldeota,Fortaleza,CE
+2,4,429,Leonardo de Faria Pottes,Centro de Excelência Master,Aracaju,SE
+3,5,426,Julia Galdino Tiosso Lopez,Colégio Etapa - Vila Mariana,São Paulo,SP
+3,6,418,João Paulo Campos de Oliveira,Colégio Método,Belo Horizonte,MG
+4,7,413,Enzo Ivamoto Hirota,Colégio Etapa - Vila Mariana,São Paulo,SP
+4,7,413,Matheus Moreira Cabral,Colégio Bandeirantes,São Paulo,SP
+5,10,396,Chuan Xi Chen,Colégio Etapa - Vila Mariana,São Paulo,SP
+5,11,394,Levi Magalhaes Pereira Castello Branco,Colégio Ari de Sá sede Aldeota,Fortaleza,CE
+6,12,382,Ian Carlos Melo Cunha,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+6,12,382,Lucas Batista Mesquita,Colégio Etapa - Vila Mariana,São Paulo,SP
+6,12,382,Tiago Popovic Giavina-bianchi,Colégio Santa Cruz,São Paulo,SP
+7,15,378,Vinícius Reis Souza de Oliveira,COLÉGIO MILITAR DE BELO HORIZONTE,Belo Horizonte,MG
+7,16,350,Andre Souza Alberti,Ifes - Campus Vitória,Vitória,ES
+7,16,350,Gabriela Barbieri Stroeh,Colégio Etapa Valinhos,Valinhos,SP
+8,19,336,Gustavo Nogueira Mendes,Colégio Etapa - Vila Mariana,São Paulo,SP
+8,21,319,Marcio Vitor Santos Freitas,FARIAS BRITO PRE VESTIBULAR CENTRAL,Fortaleza,CE
+8,21,319,Sofia Torres de Paula Cintra,Colégio Etapa - Vila Mariana,São Paulo,SP
+9,29,288,Otávio Rocha Pinheiro,FARIAS BRITO PRE VESTIBULAR CENTRAL,Fortaleza,CE
+9,31,282,Lucas Haruo Kojima,Colégio Etapa - Vila Mariana,São Paulo,SP
+9,32,279,Daniela Emilia Cerda Sales,Organização Educacional Farias Brito - Pré vestibular Aldeota,Fortaleza,CE
+10,33,269,Manuella Autran do Nascimento Magalhaes,Farias Brito - Colégio de Aplicação,Fortaleza,CE
+10,33,269,Mateus Salazar Costa,Centro educacional Adalberto Valle - Unidade Morada do Sol,Manaus,AM
+11,35,262,Talita Ribeiro de Rezende,Ecol Colegio e Pre-Vestibular LTDA,Campinas,SP
+11,37,254,Rafael Alves Amiune,Pensi Colégio e Curso,Rio de Janeiro,RJ

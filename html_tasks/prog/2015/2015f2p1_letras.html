@@ -1,0 +1,92 @@
+title:Letras
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Uma <em>cadeia de caracteres </em> é uma sequência de letras do alfabeto. 
+Uma cadeia de caracteres <em> crescente</em> é uma sequência de letras
+onde a próxima letra (da esquerda para a direita) nunca ocorre antes no alfabeto do que a
+letra anterior. Por exemplo ABBD é crescente, enquanto ABBAD não é crescente.</p>
+
+<p>Uma <em>subsequência </em>de uma cadeia de caracteres é uma cadeia de
+caracteres que pode ser obtida a partir da remoção de zero ou mais
+caracteres da cadeia de caracteres original. Por exemplo ANNA é uma
+subsequência de BANANAS. Outro exemplo seria ANNS, que é uma subsequência crescente de BANANAS.</p>
+
+<p>
+Dada uma cadeia de caracteres S, escreva um programa para determinar o tamanho da maior subsequência de S  que é uma cadeia de caracteres crescente.</p>
+<h3>Entrada</h3>
+A entrada consiste em uma única linha, contendo uma cadeia de caracteres S.
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo um único inteiro, 
+o tamanho da maior subsequência de S que é uma cadeia de caracteres crescente.
+<h3>Restrições</h3><ul>
+	<li> A cadeia de caracteres de entrada contém letras maiúsculas do alfabeto, de A até Z.</li>
+	<li> 1  ≤  comprimento(S)  ≤  3 x 10<sup>5</sup>.</li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+	<li> Em um conjunto de casos de teste valendo 20 pontos: comprimento(S)  ≤  20.</li>
+	<li> Em um conjunto de casos de teste valendo 30 pontos: comprimento(S)  ≤  3000.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+BANANAS
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+AAXBBXZZX
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+AAA
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

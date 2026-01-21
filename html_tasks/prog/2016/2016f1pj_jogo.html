@@ -1,0 +1,103 @@
+title:Jogo de par ou ímpar
+template:tasks/tarefa_programacao.html
+<p>
+Dois amigos, Alice e Bob, estão  jogando um jogo muito simples, em que
+um  deles  grita ou  &quot;par&quot;  ou  &quot;ímpar&quot;  e o  outro  imediatamente
+responde  ao  contrário,  respectivamente &quot;ímpar&quot;  ou  &quot;par&quot;.   Em
+seguida, ambos  exibem ao mesmo tempo  uma mão cada um,  em que alguns
+dedos estão estendidos  e outros dobrados. Então eles  contam o número
+total de  dedos estendidos.  Se  a soma  for par, quem  gritou &quot;par&quot;
+ganha. Se a soma for ímpar, quem gritou &quot;ímpar&quot; ganha.
+
+Por exemplo, suponhamos  que a Alice gritou &quot;par&quot; e  o Bob respondeu
+&quot;ímpar&quot;.  Em  seguida,  Alice  não  deixou  nenhum  dos  seus  dedos
+estendidos,  ao passo  que Bob  deixou três  dedos estendidos.  A soma
+então é três, que é ímpar, portanto Bob ganhou.
+
+Seu programa  deve determinar quem  ganhou, tendo a informação de quem
+gritou par e o número de dedos estendidos de cada um.
+
+<h3>Entrada</h3>
+
+A entrada contém três linhas, cada uma com um número inteiro, P, D_1 e D_2, nesta ordem. Se P
+=  0 então  Alice gritou  &quot;par&quot;, ao  passo que  se P=1  então Bob
+gritou &quot;par&quot;.  Os números D_1  e D_2 indicam, respectivamente, o
+número de dedos estendidos da Alice e do Bob.
+
+<h3>Saída</h3>
+
+Seu programa deverá  imprimir uma única linha, contendo 
+um único número inteiro, que deve ser
+0 se Alice foi a ganhadora, ou 1 se Bob foi o ganhador.
+
+<h3>Restrições</h3>
+<ul>
+<li> P = 0 ou P = 1
+<li> 0  &leq;  D_1  &leq;  5
+<li> 0  &leq;  D_2  &leq;  5
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0
+0
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+0
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0
+1
+5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

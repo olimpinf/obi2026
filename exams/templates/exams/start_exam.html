@@ -1,0 +1,75 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block head_extra %}
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+    update_time_remaining("{{ f.time_remaining }}",
+			  {% if f.status == 'running' %} true {% else %} false {% endif %});
+});
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h1>{{ f.exam_title }}</h1>
+
+{% if f.status == 'running' %}
+  {% if f.is_finish_review %}
+<p>Revise as respostas</p>
+  {% else %}
+<p>A prova está em andamento.</p>
+<p>Escolha as tarefas no menu ao lado.
+  {% endif %}
+{% else %}
+<p>Leia atentamente as instruções, na coluna à direita da página, antes de iniciar a prova.
+
+<p>A prova ainda não foi iniciada, você não pode visualizar as tarefas da prova. O tempo de prova começará a contar a partir do
+  momento que o botão  <em>Iniciar a prova</em>, abaixo, for clicado.</p>
+
+<p>Não é necessário <em>encerrar</em> a prova, ela será encerrada automaticamente quando o tempo de prova expirar.
+  
+<p>
+  Clique no  botão  <em>Iniciar a prova</em> para ver as tarefas e iniciar a prova.</p>
+<a class="myButton action" href="{% url 'exams:exam' f.exam_descriptor %}" >Iniciar a prova</a>
+{% endif %}
+
+{% if f.mod == 'p'%}
+<br>
+<br>
+<p>Veja instruções para submissão e exemplos de soluções nas diferentes linguagens:
+
+  <ul>
+    <li><a href="/pratique/exemplo_solucao_c">C</a></li>
+    <li><a href="/pratique/exemplo_solucao_cpp">C++</a></li>
+    <li><a href="/pratique/exemplo_solucao_py3">Python3</a></li>
+    <li><a href="/pratique/exemplo_solucao_java">Java</a></li>
+    <li><a href="/pratique/exemplo_solucao_js">Javascript</a></li>
+  </ul>
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}  
+  {% include "exams/includes/countdown.html" %}
+
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_tasks.html" %}
+  
+  <h2>Instruções</h2>
+    {% if f.mod == 'i' %}
+  {% include "exams/includes/instructions_ini.html" %}
+    {% else %}
+  {% include "exams/includes/instructions_prog.html" %}
+    {% endif %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+
+\newcommand\BackgroundPic{
+  \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{
+      \vfill
+      \centering
+      \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{letterhead.pdf}
+      \vfill
+    }
+  }
+}
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+
+
+\thispagestyle{plain}
+\pagenumbering{gobble}
+
+\vspace*{2cm}
+
+\hfill Campinas, 4 de fevereiro de 2024
+
+\vspace*{1cm}
+
+\noindent
+A que interessar possa,
+
+\vspace*{5mm}
+\noindent
+em nome da Olimpíada Brasileira de Informática -- OBI, venho por meio desta
+informar que a professora
+ 
+\begin{center}
+\emph{Greyce Graziely Coelho}
+\end{center}
+\vspace*{2mm}
+
+\noindent
+participou como \emph{acompanhante} da \emph{Brazilian ICPC Summer School 2024},
+realizada no Instituto de Computação da Unicamp, entre os dias 21 e 27 de
+janeiro de 2024.
+
+A professora Greyce acompanhou a aluna Maria Clara Fontes Silva, que participou
+do evento como treinamento para a Olimpíada Internacional de Informática, para
+a qual Maria Clara foi selecionada.
+
+A participação da aluna Maria Clara foi custeada pela Olimpíada Brasileira de Informática,
+que é promovida pela SBC -- Sociedade Brasileira de Computação, com
+coordenação do Instituto de Computação da Unicamp, e reúne anualmente
+mais de 100 mil competidores de todo o país. Para mais informações, por
+favor consulte\\
+\begin{center}
+ \texttt{http://olimpiada.ic.unicamp.br}.
+\end{center}
+
+\vspace*{3mm}
+
+Atenciosamente,
+
+\vfill
+
+\begin{center}
+\includegraphics[width=5cm]{signature_blue.jpg}\\
+Prof. Dr. Ricardo Anido\\
+Instituto de Computação - UNICAMP\\
+Coordenador da OBI
+\end{center}
+
+\vfill
+
+\end{document}

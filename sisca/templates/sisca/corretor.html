@@ -1,0 +1,133 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Corretor de Folhas de Respostas{% endblock %}
+
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block content %}
+{% comment %}
+<p><font color="#aa0000">A correção não está operacional, o sistema está apresentando erro de conexão com
+    o servidor que efetua a correção. Estamos trabalhando para resolver o problema.</font></p>
+{% endcomment %}
+
+<p><font color="#aa0000"><em>O sistema Sisca será desativado permanentemente em 31/07/2023.</em></font>
+
+<p><font color="#aa0000"><em>Um sistema com funcionalidade similar, mas tecnologia de processamento de imagens
+      mais avançada, está disponível para testes no link a seguir.</em></font>
+
+<p><font color="#aa0000"><em><a href="https://web.scangrader.com/pt">https://web.scangrader.com/pt</a></em></font>
+
+<p><font color="#aa0000"><em><b>Note que folhas de respostas geradas pelo
+      Sisca, apesar de similares em formato, NÃO poderão ser
+      processadas nesse novo sistema. Você deve usar as folhas de
+      respostas geradas pelo novo sistema.</b></em></font>
+  
+
+
+<h2>Corretor de Folhas de Resposta</h2>
+<form enctype="multipart/form-data" action="" method="post" >
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include 'sisca/includes/see_also_sisca.html' %}
+
+  <h2>Instruções para uso do Corretor</h2>
+<li>Clique apenas uma vez o botão <em>Enviar</em>. O envio do arquivo
+pela Internet pode demorar (até alguns minutos), principalmente para
+arquivos grandes, com muitas folhas de respostas.
+<li>O resultado da correção será enviado para o endereço de email informado.
+<li>No campo <em>Referência</em> deve ser informado um identificador
+para o lote de folhas de respostas, que será usado para rotular a mensagem de email.
+<li>O <em>Arquivo de Folhas de Respostas</em> deve ser um arquivo no formato pdf contendo as
+  folhas de respostas escaneadas (preferência tons de cinza, densidade 150 dpi). Não envie
+  arquivos com mais do que cerca de 100 folhas de respostas para correção; se necessário divida as
+  folhas de respostas em vários arquivos.
+<li>O <em>Arquivo de gabarito</em> deve ser um arquivo texto contendo
+uma linha para cada questão da prova. A linha deve conter o número da
+questão, seguido por ponto, seguido por espaço, seguido por uma letra
+(correspondente à alternativa correta). Se a letra for substituída por
+um asterisco ('*'), qualquer resposta marcada é considerada
+correta. Se a letra for substituída por um sinal de menos ('-'),
+nenhuma resposta é considerada correta (significa que a questão foi
+anulada). Se a letra for substituída por um sinal de igual ('='),
+nenhuma resposta é considerada correta (significa que a questão não
+existe na prova; note que ainda que a questão não seja utilizada na
+prova é necessário incluir essa informação no gabarito).  Você pode
+ainda substituir a letra por uma sequência letras separadas por uma
+vírgula, e nesse caso todas as respostas correspondentes às letras da
+sequência são consideradas corretas. Uma linha iniciando com o
+caractere '#' é ignorada e pode ser usada para incluir um comentário
+no gabarito. Um exemplo de gabarito para um teste de 10 questões é
+mostrado abaixo:
+</ul>
+<hr>
+<pre>
+# Gabarito para a Prova Exemplo
+1. A
+2. B
+3. A,D,E
+4. D
+5. *
+6. C
+7. -
+8. D
+9. =
+10. =
+</pre>
+<hr>
+<p>No exemplo, a primeira linha é um comentário e é ignorada.
+  Para a Questão 3, as alternativas A, D e E são consideradas corretas;
+  para a Questão 5 qualquer alternativa é considerada
+  correta; para a Questão 7, nenhuma alternativa é considerada correta (questão
+  anulada); para as questões 9 e 10 nenhuma alternativa é considerada
+  correta (questões não existentes na prova).
+
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li><a href="{% url 'sisca_index' %}">Sisca</a></li>
+      <ul><li>Corretor de Folhas de Respostas</li></ul></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

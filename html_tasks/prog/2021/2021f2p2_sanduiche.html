@@ -1,0 +1,130 @@
+title:Sanduíche
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma nova lanchonete abriu na cidade, prometendo um menu com a maior
+variedade de sanduíches da região. A cada dia o Chef de cozinha compra
+N ingredientes distintos e prepara o menu usando esses N
+ingredientes. Infelizmente não é possível ter sanduíches com qualquer
+combinação de ingredientes: a cada dia o Chef determina que M pares de
+ingredientes não podem ser utilizados no mesmo sanduíche, porque ele
+considera que esses ingredientes &quot;não combinam&quot;.
+
+<p>Por exemplo, suponha que num determinado dia N é igual a quatro e
+os ingrediantes são queijo, presunto, goiabada e azeitona, e M é igual
+a dois: os pares (goiabada, presunto) e (azeitona, goiabada) não podem
+ser utilizados no mesmo sanduíche. Nesse dia, alguns dos sanduíches
+que podem ser feitos são:
+<ul>
+<li> presunto, queijo
+<li> azeitona
+<li> presunto, azeitona, queijo
+<li> goiabada, queijo
+</ul>
+
+<p>Alguns dos sanduíches que não podem ser feitos são:
+<ul>
+<li> presunto, queijo, goiabada
+<li> azeitona, goiabada
+<li> goiabada, presunto, azeitona
+</ul>
+
+<p>Dados os N ingredientes e os M pares de ingredientes
+que não combinam, sua tarefa é determinar qual o máximo número de
+sanduíches diferentes que podem ser feitos. Dois sanduíches A e B
+são considerados diferentes se A contém  um ingrediente X que não
+está presente em B ou se B contém um ingrediente Y que não está
+presente em A. Um sanduíche deve conter ao menos um ingrediente.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha contém dois números inteiros N e M,
+  indicando respectivamente o número de ingredientes e o número de
+  pares de ingredientes que não combinam.  Os ingredientes são
+  identificados por números de 1 a N.  Cada uma das M linhas
+  seguintes contém dois números inteiros X e Y que representam um
+  par de ingredientes que não combinam.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, o número de
+sanduíches diferentes que podem ser feitos. 
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  20
+<li> 0  &leq;  M  &leq;  400
+<li> 1  &leq;  X  &leq;  N
+<li> 1  &leq;  X < Y
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, N  &leq;  5.
+<li> Para um conjunto de casos de testes valendo outros 40 pontos, N  &leq;  10.
+<li> Para um conjunto de casos de testes valendo outros 50 pontos, nenhuma restrição adicional.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 2
+2 3
+1 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+1 2
+2 3
+1 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

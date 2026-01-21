@@ -1,0 +1,130 @@
+title:Tiro ao alvo
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Recentemente Juquinha ganhou de  aniversário um joguinho bem clássico:
+Tiro  ao Alvo.   Ele arrumou  um  ótimo lugar  em seu  quarto para  se
+divertir  com o  jogo, porém  após  ler todas  as regras  do jogo  ele
+percebeu que precisa da sua ajuda para calcular a pontuação obtida.</p>
+
+<p>Segundo as regras,  o alvo do jogo é composto  por C círculos, todos
+centrados na origem (0,0).  Juquinha atira  T vezes e após cada tiro
+informa  suas  coordenadas.  A  pontuação  de  cada  tiro é  feita  da
+seguinte  forma: para  cada  círculo  em que  o  tiro estiver  contido
+Juquinha recebe um ponto.</p>
+
+<p>Considere por exemplo a figura abaixo. O tiro marcado com a letra 
+  A recebe zero pontos, pois não  está contido por nenhum círculo.  O
+tiro marcado  com a letra   B recebe um ponto,  pois está contido
+por um círculo (o  mais externo).  O tiro marcado com  a letra \sf C
+recebe dois pontos, pois está contido por dois círculos (note que este
+caso  mostra  que  tiros  exatamente   na  borda  de  um  círculo  são
+considerados como  contidos pelo  círculo).  Já o  tiro marcado  com a
+letra    D recebe  três  pontos,  pois  está contido  pelos  três
+círculos. Considerando todos os pontos,  a pontuação total de Juquinha
+é de 13 pontos.
+
+<center>
+<img src="/static/img/task_images/2013f1p2_tiro.png">
+</center>
+
+Dados os  raios de C círculos  centrados na origem e  as coordenadas
+dos T tiros realizados por Juquinha, escreva um programa que calcula
+o total de pontos que Juquinha obteve.</p>
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém dois inteiros positivos, C e T,
+que representam, respectivamente,  o número de círculos do alvo e  o número de
+tiros.
+
+<p>Cada  uma  das C  linhas seguintes contém  um inteiro  positivo.  O
+i-ésimo inteiro  R_i representa  o raio  do i-ésimo  círculo. Os
+raios R_i são fornecidos em ordem crescente.
+ 
+Cada uma das T linhas seguintes contém um par X,Y de inteiros, que
+representam as coordenadas de cada tiro.</p> 
+<h3>Saída</h3>
+Seu  programa  deve  imprimir  uma única  linha,  contendo  apenas  um
+inteiro, o total de pontos obtidos por Juquinha.
+<h3>Restrições</h3>  <ul>
+  <li>   1  ≤  C  ≤  10<sup>5</sup></li>
+  <li>   1  ≤  R_i  ≤  10<sup>6</sup> para 1  ≤  i  ≤  C</li>
+  <li>   R_i > R_i-1 para 2  ≤  i  ≤  C</li>
+  <li>   1  ≤  T  ≤  10<sup>5</sup></li> 
+  <li>   -10<sup>5</sup>  ≤  X,Y  ≤  10<sup>5</sup></li>
+  </ul>
+
+<h3>Informações sobre a pontuação</h3>
+Em um conjunto de casos de teste que totaliza 30 pontos:
+  <ul>
+  <li> 1  ≤  C  ≤  10<sup>3</sup></li>
+  <li> 1  ≤  R_i  ≤  10<sup>4</sup> para 1  ≤  i  ≤  N</li>
+  <li> 1  ≤  T  ≤  10<sup>3</sup></li>
+  <li> -10<sup>2</sup>  ≤  X,Y  ≤  10<sup>2</sup></li>
+  </ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 10
+1
+2
+5
+0 0
+-2 0
+0 -2
+3 -4
+-4 -3
+3 1
+6 2
+-1 2
+-5 -2
+1 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+13
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 6
+1
+2
+5
+1 0
+0 3
+-5 0
+0 0
+-3 -3
+1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+11
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

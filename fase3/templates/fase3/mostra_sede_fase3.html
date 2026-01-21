@@ -1,0 +1,78 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sede da Fase Nacional{% endblock %}
+
+{% block header %}<h1>Sede da Fase Nacional</h1>{% endblock %}
+
+{% block content %}
+
+  {% if mod == 'ini' %}
+  <h2>Sede para Modalidade Iniciação</h2>
+  {% else %}
+  <h2>Sede para Modalidade Programação</h2>
+  {% endif %}
+  
+<h3>{{ school.school_name}}</h3>
+<ul>
+<li><b>Coordenador</b>: Prof(a). {{school.school_deleg_name}}</li>
+<li><b>Telefone</b>: {{school.school_phone}}</li>
+<li><b>Endereço</b>: {{school.school_address}}, {{school.school_address_number}}<br>
+{% if school.school_address_complement.strip %}
+  {{school.school_address_complement}} 
+{% endif %}
+</li>
+<li><b>Bairro/Distrito</b>: {{school.school_address_district}}</li>
+<li><b>Cidade</b>: {{school.school_city}}</li>
+<li><b>Estado</b>: {{school.school_state}}</li>
+<li><b>CEP</b>: {{school.school_zip}}</li>
+{% if school.school_address_building %}</li>
+<li><b>Local da Prova</b>:<br>
+<em>
+{{school.school_address_building|newline_to_break|safe}}
+</em>
+</li>
+{% endif %}
+{% if school.school_address_map %}</li>
+<li><a href="{{school.school_address_map}}">Mapa</a></li>
+{% endif %}
+{% if school.school_address_other %}</li>
+<li><b>Outras Informações</b>:<br>
+<pre style="color: red;">
+<b>
+{{school.school_address_other}}
+</b>
+</pre>
+</li>
+{% endif %}
+</ul>
+
+<p>&nbsp;</p>
+
+{% comment %}
+  {% if mod == 'ini' %}
+<p><i>As provas da Modalidade Iniciação acontecem 15/10/2022, sábado. Horários:
+    <ul>
+      <li>Nível Júnior, Nível 1 e Nível 2: 9:00 às 11:00
+    </ul>
+    </i>
+  {% else %}
+<p><i>As provas da Modalidade Programação acontecem 01/10/2022, sábado. Horários:
+    <ul>
+      <li>Nível Júnior: das 8:00 às 11:00
+      <li>Nível 1: das 8:00 às 12:00
+      <li>Níveis 2 e Sênior: das 13:00 às 18:00
+    </ul>
+  </i>
+  {% endif %}
+{% endcomment %}
+
+<a class="myButton action" href="javascript: history.go(-1)">Voltar</a>
+
+{% endblock %}
+
+{% block content-related %}
+
+<a href="{% url 'fase3:consulta_sua_sede' %}" class="btn btn-primary" role="button">Nova consulta</a>
+
+{% endblock %}

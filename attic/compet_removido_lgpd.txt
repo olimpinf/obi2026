@@ -1,0 +1,12 @@
+compet:
+2021
+ compet_id |         compet_name         | compet_birth_date | compet_type | compet_sex |          compet_email           | compet_year | compet_points_fase1 | compet_points_fase2 | compet_points_fase3 | compet_points_final | compet_answers_fase1 | compet_answers_fase2 | compet_answers_fase3 | compet_rank_fase1 | compet_rank_fase2 | compet_rank_fase3 | compet_rank_final | compet_rank_state | compet_medal | compet_classif_fase1 | compet_classif_fase2 | compet_classif_fase3 | compet_school_id_fase3 | compet_school_id | user_id | compet_conf | compet_id_full | compet_classif_fase2b | compet_classif_fase2a | compet_points_fase2a | compet_points_fase2b | compet_class 
+-----------+-----------------------------+-------------------+-------------+------------+---------------------------------+-------------+---------------------+---------------------+---------------------+---------------------+----------------------+----------------------+----------------------+-------------------+-------------------+-------------------+-------------------+-------------------+--------------+----------------------+----------------------+----------------------+------------------------+------------------+---------+-------------+----------------+-----------------------+-----------------------+----------------------+----------------------+--------------
+
+certif_hash:
+     63315 | Rafael Luttembarck Hallgren | 2007-01-01        |           2 | M          | rafael.hallgren@uirapuru.g12.br | F9          |                   1 |                  20 |                  38 |                     |                      |                      |                      |                   |                   |                   |                62 |                17 | b            | t                    | t                    |                      |                        |              948 |   63853 | ka-24-ci    | 63315-D        |                       |                       |                      |                      | 
+  id  |             hash              | colab_id | compet_id | school_id | compet_cf_id 
+------+-------------------------------+----------+-----------+-----------+--------------
+ 8279 | 2021:57efb106bc5ca0022e5e1db8 |          |     63315 |           |             
+
+******************

@@ -1,0 +1,8 @@
+<xml id="toolbox" style="display: none">
+  <category name="E/S" colour="#bb6622">
+    <block type="saci_text_print"></block>
+  </category>
+  <category name="Texto" colour="%{BKY_TEXTS_HUE}">
+    <block type="text"></block>
+  </category>
+</xml>

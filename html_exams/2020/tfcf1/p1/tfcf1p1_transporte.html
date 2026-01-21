@@ -1,0 +1,98 @@
+title:Transporte
+template:exams/tarefa_programacao.html
+order:1
+<p>
+Na pandemia, todos os transportes tiveram que diminuir sua capacidade de passageiros a fim de impedir a propagação do Coronavírus. Para que o metrô funcionasse com segurança, se fez necessário reduzir a capacidade máxima de passageiros de cada um dos vagões para 30% da original a fim de promover o distanciamento social, evitando aglomerações e assim dificultando a transmissão do vírus (ou seja, se a capacidade máxima original era de 100 passageiros, a nova capacidade máxima passa a ser de 30 passageiros).
+</p>
+
+<p>
+No entanto, como o metrô possui um alto custo de operação, ele precisa de um número mínimo de passageiros para que não haja prejuízo para as empresas, então existe uma capacidade mínima para que ele funcione. Com a redução da capacidade máxima, não sabemos se o funcionamento do metrô será viável, pois a nova capacidade máxima pode vir a ser menor que a capacidade mínima. Neste problema, será fornecida a capacidade máxima original e a capacidade mínima dos vagões e seu programa deve calcular a nova capacidade máxima. Se o funcionamento do metrô for viável, você deve imprimir a nova capacidade máxima, caso contrário, deve imprimir o número 0 (zero).
+</p>
+
+<p>
+Como nova capacidade máxima pode resultar em um número com casas decimais, só exiba a parte inteira do resultado.
+</p>
+
+<h3>Entrada</h3>
+<p>
+A entrada é composta por dois números inteiros <samp>L</samp> e <samp>M</samp>, representando, respectivamente, a capacidade máxima original e a capacidade mínima dos vagões do metrô.
+</p>
+
+<h3>Saída</h3>
+<p>
+Se o funcionamento do metrô for viável, seu programa deve imprimir uma linha contendo um <b>único</b> inteiro, representando a nova capacidade máxima do metrô, atente-se ao fato de que se a nova capacidade máxima resultar em um número com casas decimais, <b>o programa deve imprimir somente a parte inteira</b>. Caso o funcionamento do metrô não seja viável, seu programa deve imprimir o número 0 (zero).
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  ≤  <samp>L</samp>  ≤  10<sup>7</sup></li>
+<li> 1  ≤  <samp>M</samp>  ≤  <samp>L</samp></li>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 80 pontos, é garantido que sempre será viável que o metrô funcione.</li>
+<li> Em um conjunto de casos de teste somando 20 pontos, nenhuma restrição adicional.</li>
+</ul>
+
+<h3>Exemplos</h3>
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 1</b>
+<pre>
+6 1
+</pre>
+      </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 1</b>
+<pre>
+1
+</pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 2</b>
+<pre>
+161 6
+</pre>
+      </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 2</b>
+<pre>
+48
+</pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table cellspace="2" width="100%" border="1">
+  <tbody>
+    <tr>
+    <td width="50%" valign="top">
+      <b>Exemplo de entrada 3</b>
+<pre>
+74 30
+</pre>
+    </td>
+    <td width="50%" valign="top">
+      <b>Exemplo de saída 3</b>
+<pre>
+0
+</pre>
+    </td>
+    </tr>
+</tbody>
+</table>

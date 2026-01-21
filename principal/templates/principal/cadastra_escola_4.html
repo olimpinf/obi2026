@@ -1,0 +1,38 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+
+<p>
+  Recupere seu nome de usuário e senha:
+
+  <ol>
+    <li>Clique no link <a href="/restrito">ENTRAR -> ESCOLAS</a> no
+      cabeçalho da página da OBI.
+    <li>No formulário de login, clique em <a href="/password_reset">"Esqueceu sua senha ou nome de  usuário?"</a> e siga as instruções.
+  </ol>
+
+<p>Se você não tem mais acesso ao endereço de email cadastrado (o
+  acesso é necessário para obtenção de nova senha), não tem problema:
+  basta realizar um novo cadastro para a escola (se a escola for
+  cadastrada com o mesmo nome anterior, ou mesmo número INEP, as
+  informações relativas ao histório de participação da escola na OBI
+  em anos anteriores serão recuperadas automaticamente pelo sistema).
+
+<p><a href="/cadastra_escola">Clique aqui</a> para realizar um novo cadastro da escola.
+
+
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

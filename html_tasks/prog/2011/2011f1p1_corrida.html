@@ -1,0 +1,114 @@
+title:Corrida
+template:tasks/tarefa_programacao.html
+ 
+      
+
+
+<p>Todo ano, os habitantes da Mlogônia, apesar das crises internas, reúnem-se em torno de um esporte que é a
+paixão nacional: as corridas de carros. A Grande Corrida anual é um enorme evento organizado pela Associação
+de Corridas da Mlogônia (ACM), sendo amplamente televisionado e reportado em jornais e revistas de todo o
+país. Os resultados da corrida são tema principal das rodas de conversa por semanas.</p>
+<p>Por bastante tempo, os resultados da Grande Corrida eram compilados manualmente. Observadores especializados 
+iam à pista medir o tempo de cada um dos <i>N</i> carros, numerados de 1 a <i>N</i> , em cada uma das <i>M</i> voltas,
+anotando então os resultados em tabelas para posterior análise por parte das equipes e dos jornalistas. Muitos
+erros eram introduzidos nesse processo, e a organização decidiu informatizar todo o sistema.</p>
+<p>A ACM percebeu que o esforço necessário para a construção do sistema seria grande, e optou por contar com a
+ajuda de uma equipe de programadores. Percival foi contratado para escrever a parte do software que determina
+quais foram os carros vencedores, mas está com dificuldades e pede sua ajuda. A sua tarefa, neste problema,
+é determinar os três carros melhor colocados, fornecidos os tempos que cada carro levou para completar cada
+volta da corrida.</p>
+
+
+<h3>Entrada</h3>
+
+<p>A primeira linha da entrada contém dois inteiros <i>N</i> e <i>M</i> representando o número de carros e o número de voltas
+da corrida, respectivamente.</p>
+<p>Cada uma das <i>N</i> linhas seguintes representa um carro: a primeira linha representa o primeiro carro, a segunda
+linha representa o segundo carro, e assim por diante. Cada linha contém <i>M</i> inteiros representando os tempos em
+cada volta da corrida: o primeiro inteiro é o tempo da primeira volta, o segundo inteiro é o tempo da segunda
+volta, e assim por diante.</p>
+<p>Garante-se que não houve dois carros que gastaram o mesmo tempo para completar a corrida inteira.</p>
+
+<h3>Saída</h3>
+<p>
+A saída consiste de três linhas, contendo um único inteiro cada. A primeira linha contém o número do carro que
+ganhou a corrida, a segunda contém o número do segundo colocado e a terceira contém o número do terceiro
+colocado.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+	<li>3 ≤ <i>N</i> ≤ 100</li>
+	<li>1 ≤ <i>M</i> ≤ 100</li>
+	<li>1 ≤ qualquer número da entrada que represente o tempo de uma volta ≤ 10<sup>6</sup></li>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li>Em um conjunto de casos de teste que totaliza 20 pontos, <i>N</i> = 3;</li>
+	<li>Em um conjunto de casos de teste que totaliza 20 pontos, <i>M</i> = 1;</li>
+</ul>
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+3 1
+1
+2
+3
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+1
+2
+3
+			</pre>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+5 2
+3 7
+2 5
+1 1
+15 2
+2 2
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+3 
+5 
+2
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+<p>Neste exemplo, existem 5 carros numa corrida de duas voltas. Os tempos de cada carro em cada
+volta foram como na tabela a seguir.</p>
+<center>
+  <img src="/static/img/task_images/2011f1p1_corrida.png">
+</center>
+<p>Sendo assim, o vencedor foi o carro 3 (com um tempo total de 2), seguido pelo carro 5 (com um
+tempo total de 4) e pelo carro 2 (com um tempo total de 7).</p>
+
+
+      

@@ -1,0 +1,117 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Erro{% endblock %}
+
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Erro no arquivo enviado</h2>
+
+
+  <p>Foram detectados erros na submissão. Por favor corrija e submeta novamente.</p>
+  {% if error_msg %}
+  <ul><li>{{ error_msg|safe }}</li></ul>
+  {% endif %}
+  {% if errors %}
+  <table class="basic">
+  <tr><th width="15%">Num. Linha</th><th width="40%">Erro</th><th width="45%">Conteúdo da linha</th></tr>
+  {% for error in errors %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ error.linenum }}</td>
+  <td>{{ error.msg }}</td>
+  <td>{{ error.line }}</td>
+  </tr>
+  {% endfor %}
+  </table>
+  {% endif %}
+
+<H2>&nbsp;</H2>
+
+<a class="button action" href="javascript: history.go(-1)">VOLTAR</a>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include 'sisca/includes/see_also_sisca.html' %}
+
+  <h2>Instruções para uso do Gerador</h2>
+<ul>
+<li>Você pode gerar uma Folha de Respostas "avulsa", com o dados de
+identificação do participante em branco, para serem preenchidos
+manualmente, ou fornecer um arquivo com os dados dos participantes e
+gerar Folhas de Respostas "identificadas", com os dados dos
+participantes já preenchidos.
+<li><em>Rótulo1, Rótulo2</em> e <em>Rótulo3</em> serão impressos no
+cabeçalho da Folha de Respostas, e podem ser usados para identificar a
+escola/disciplina/teste/data.  Por exemplo, <em>Rótulo1</em> pode ser o nome
+da escola, <em>Rótulo2</em> a disciplina e a turma, e <em>Rótulo3</em> a data da
+prova.
+<li><em>Número de dígitos da identificação</em> indica quantos dígitos
+devem ser usados no Número de Identificação do participante.  O número
+de dígitos pode ser entre 2 e 40. Para o número de dígitos entre 2 e 6
+será utilizado um painel com marcas para preenchimento do número de
+identificação. O número de dígitos pode ser maior do que 6 apenas para
+Folhas de Respostas identificadas, e nesse caso será utilizado um
+código QR para o número de identificação, ao invés do painel com
+marcas.
+<li> O Número de Identificação pode ser acrescido de um caractere de
+verificação, para maior confiabilidade de que o participante preencheu
+corretamente o seu Número de Identificação na Folha de Respostas. O
+caractere de verificação é calculado como a soma dos dígitos do Número
+de Identificação, mais um, módulo 10 (note que módulo 10 significa
+resto da divisão por 10).  No valor assim obtido, 0 corresponde ao
+caractere de verificação A, 1 ao caractere de verificação B e assim
+por diante. Por exemplo, o Número de Identificação 012345 tem como
+caractere de verificação a letra G, pois (0+1+2+3+4+5)+1= 6 mod 10, e
+deve ser marcado na folha como <em>012345-G</em>. Como outro exemplo,
+o Número de Identificação 001 tem como caractere de verificação a
+letra C, pois (0+0+1)+1=2 mod 10, e deve ser marcado na Folha de
+Respostas como <em>001-C</em>,
+<li>Ao preencher o número de identificação na Folha de Respostas, <em>não deixe de marcar os
+zeros à esquerda</em>, pois isso prejudica o
+processamento automatizado.
+<li>Utilize papel branco para imprimir as folhas de resposta. Papel
+reciclado (não branco) dificulta a correção automatizada.
+<li> Ao fazer cópias da Folha de Respostas, verifique que o código QR
+no canto esquerdo do rodapé esteja bem visível. Verifique também que
+as molduras (retângulos) que circundam as regiões das marcas
+(identificação e questões) estejam bem
+visíveis. <a href="/static/img/FolhaRespostasRegioes.pdf">Veja aqui
+uma ilustração das áreas que devem estar bem visíveis</a>.
+<li> Imprima as folhas de resposta preferencialmente em papel tamanho
+A4, sem margem (para aproveitar melhor a página, e proporcionar marcas
+de tamanho maior nas respostas).
+<li>O <em>Arquivo de participantes</em> deve ser um arquivo no formato
+CSV. O arquivo deve ser uma planilha com duas colunas, a primeira
+sendo o número de identificação do participante e a segunda sendo o
+nome de do participante. Aplicativos de planilha, como Microsoft Excel
+ou OpenOffice, permitem salvar as planilhas no formato CSV. Clique
+<a href="/static/extras/misc/participantes.csv" download="participantes.csv">
+aqui</a> para baixar um exemplo de arquivo de participantes.
+</ul>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li><a href="{% url 'sisca_index' %}">Sisca</a></li>
+      <ul><li>Gerador de Folhas de Respostas</li></ul></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}
+
+

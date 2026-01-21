@@ -1,0 +1,107 @@
+title:Matriz Escada
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Joãozinho está aprendendo sobre matrizes. Hoje ele aprendeu como deixar matrizes na forma escada, e está
+exercitando. Para ajudá-lo, você deve escrever um programa que determine se o resultado dele realmente está
+no formato correto.</p>
+
+<p>Uma matriz está na forma escada quando, para cada linha, as condições a seguir forem satisfeitas:</p>
+
+<ul>
+  <li> Se a linha só possuir zeros, então todas as linhas abaixo desta também só possuem zeros.</li>
+  <li> Caso contrário, seja X o elemento diferente de zero mais à
+    esquerda da linha; então, para todas as linhas abaixo da linha de X,
+    todos os elementos nas colunas à esquerda de X e na coluna de X são iguais a zero.</li>
+</ul>
+<h3>Entrada</h3>
+A primeira linha possui dois inteiros N e M, as dimensões da matriz.
+Cada uma das N linhas seguintes contém M inteiros não-negativos, os elementos da matriz.
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo o caractere "S" caso a matriz esteja no formato escada,
+ou "N", caso contrário.
+<h3>Restrições</h3><ul>
+  <li> 1  ≤  N  ≤  500 e 1  ≤  M  ≤  500.</li>
+  <li> Cada elemento da matriz está entre 0 e 10<sup>5</sup>.</li>
+</ul>
+<h3>Informações sobre a pontuação</h3>
+<ul>
+  <li> Em um conjunto de casos de teste equivalente a 80 pontos, N  ≤  50 e M  ≤  50.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 6
+1 2 9 9 9 9
+0 0 3 9 9 9
+0 0 0 0 5 9
+0 0 0 0 0 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 8
+0 5 1 0 3 2 2 0
+0 0 0 0 4 0 1 2
+0 0 0 0 0 0 3 2
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 5
+1 1 2 3 4
+0 1 1 4 5
+0 1 2 3 6
+0 0 0 2 0
+0 0 0 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

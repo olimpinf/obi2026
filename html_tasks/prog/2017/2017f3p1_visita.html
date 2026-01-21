@@ -1,0 +1,102 @@
+title:Visita entre cidades
+template:tasks/tarefa_programacao.html
+
+<p>
+A Linearlândia é composta de N cidades, numeradas de 1 até
+N. Para alguns pares de cidades existe exatamente uma estrada
+bidirecional entre as duas cidades do par. Os
+pares de cidades ligados diretamente por uma estrada são
+escolhidos de forma que sempre é possível ir de qualquer cidade para
+qualquer outra cidade por um, e somente um, caminho (um caminho é uma
+sequência de estradas, sem repetição).
+
+<p>Dada a lista de pares de cidades ligados diretamente por estradas, as distâncias entre os pares de cidades, 
+uma cidade origem e uma cidade destino, seu programa deve
+computar qual a distância entre a cidade de origem e a cidade destino,
+usando as estradas.
+Por exemplo, na figura, a distância para ir da cidade 12 para a cidade 7 é
+23; a distância da cidade 15 para a cidade 12 é 16; e a distância
+da cidade 7 para a cidade 15 é 33.
+
+
+<div class="center">
+<img src="/static/img/task_images/2017f3p1_visita.png" />
+</div>
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém três inteiros N, A e B,
+representando o número de cidades na Linearlândia, a cidade origem e a
+cidade destino, respectivamente. As cidades são identificadas por
+inteiros de 1 a N. As N-1 linhas seguintes contém,
+cada uma, três inteiros P, Q e D, indicando que existe uma estrada
+ligando diretamente as cidades P e Q, com distância D.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo um inteiro representando
+a distância para ir de A até B pelas estradas de Linearlândia.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  N &leq;  10000
+<li> 1 &leq;  A &leq;  N, 1 &leq;  B &leq;  N, A &ne;  B
+<li> 1 &leq;  P &leq;  N, 1 &leq;  Q &leq;  N
+<li> 1 &leq;  D  &leq;  100
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 2 4
+1 2 10
+2 3 11
+3 4 12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+23
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+16 15 7
+3 5 8
+12 3 3
+5 1 5
+2 1 5
+4 1 10
+6 1 3
+7 1 7
+12 8 3
+12 9 3
+12 10 3
+12 11 3
+3 13 6
+13 14 6
+15 13 7
+15 16 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+33
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

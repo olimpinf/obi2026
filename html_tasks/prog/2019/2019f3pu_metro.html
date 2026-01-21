@@ -1,0 +1,130 @@
+title:Metrô da Nlogônia
+template:tasks/tarefa_programacao.html
+
+<p>
+Há dois sistemas de metrô na capital da Nlogônia, operados por duas
+empresas diferentes. O dois sistemas, denominados Círculo e Quadrado,
+são independentes e não conectados entre si, ou seja, não há nenhuma
+estação em comum e nenhum trilho em comum. Em cada sistema há
+exatamente um caminho possível entre duas estações quaisquer,
+possivelmente passando por outras estações do sistema. A figura abaixo
+mostra uma representação de dois sistemas de metrô independentes,
+similares ao metrô da capital da Nlogônia. Apropriadamente, no sistema
+Círculo as estações são representadas por círculos, e no sistema
+Quadrado as estações são representadas por quadrados.
+
+<div class="center">
+<img src="/static/img/task_images/2019f3p2_metro.png" />
+</div>
+
+<p>
+Vamos chamar de <it>diâmetro do sistema</it> de metrô o maior número de
+estações no trajeto entre qualquer par de estações do sistema. Assim,
+o diâmetro do sistema Círculo  na figura acima é cinco (trajeto
+<span class="ttt">2-3-4-5-7</span> por exemplo) e o diâmetro do sistema Quadrado é quatro (trajeto
+<span class="ttt">4-3-5-6</span> por exemplo).
+
+<p>O rei da Nlogônia decidiu que os dois sistemas existentes devem ser
+integrados, para facilitar a vida dos usuários. A integração vai ser
+implementada através da construção de um único novo trecho de metrô
+ligando exatamente um par de estações existentes (uma estação do
+sistema Círculo e uma estação do sistema Quadrado).  O rei determinou
+ainda que o diâmetro do sistema integrado seja o menor possível.
+
+<p>Você pode ajudar a planejar a integração dos sistemas? Dadas as
+descrições dos dois sistemas, sua tarefa é determinar qual par
+de estações deve ser ligado para realizar a integração como desejada
+pelo rei.
+
+<h3>Entrada</h3>
+
+<p>A primeira linha contém dois inteiros N e M, indicando
+respectivamente o número de estações do sistema Círculo e do sistema
+Quadrado. No sistema Círculo as estações são identificadas por números
+de 1 a N e no sistema Quadrado as estações são identificadas por
+números de 1 a M.  Cada uma das N-1 linhas seguintes descreve as
+ligações entre estações do sistema Círculo e contém dois inteiros A
+e B indicando que existe uma ligação entre as estações A e B.
+Cada uma das M-1 linhas seguintes descreve as ligações entre
+estações do sistema Quadrado e contém dois inteiros X e Y indicando
+que existe uma ligação entre as estações X e Y.
+
+
+<h3>Saída</h3>
+Seu programa deve produzir dois inteiros, o primeiro representando uma estação
+do sistema Círculo e o segundo representando uma estação do sistema
+Quadrado. Se houver mais de um par possível, indique qualquer um
+entre os possíveis.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  N,M  &leq;  10<sup>5</sup>
+<li> 1  &leq;  A,B  &leq;  N
+<li> 1  &leq;  X,Y  &leq;  M
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, N,M  &leq;  100.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, N,M  &leq;  1000.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 6
+1 3
+3 2
+3 4
+4 5
+5 7
+6 5
+1 3
+2 3
+3 4
+3 5
+5 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4 3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 4
+1 2
+2 3
+1 2
+2 3
+3 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,95 @@
+title:Escalonamento ótimo
+template:tasks/tarefa_programacao.html
+ 
+      
+
+
+<p>O SBC (<i>System for Batch Computing</i>) é um sistema operacional voltado para a execução sequencial de tarefas.
+O operador do sistema cria tarefas e o sistema operacional é responsável por agendar a execução destas tarefas.</p>
+
+<p>Cada tarefa pode depender da conclusão de algumas tarefas para poder começar. Se uma tarefa <i>A</i> depende de
+uma tarefa <i>B</i>, a tarefa <i>B</i> deve terminar antes que a tarefa <i>A</i> inicie sua execução.</p>
+<p>Além disto, cada tarefa possui uma prioridade. É sempre mais vantajoso para o sistema começar executando
+uma tarefa de mais alta prioridade, depois continuar executando uma tarefa de mais alta prioridade dentre as
+que sobraram e assim por diante.</p>
+<p>Neste problema, será dado um inteiro <i>N</i>, que irá representar o número de tarefas no sistema. As tarefas serão
+numeradas de 0 até <i>N</i> - 1. Tarefas com índice menor possuem prioridade maior, de forma que a tarefa 0 é a
+tarefa de mais alta prioridade, a tarefa 1 é a tarefa com a segunda maior prioridade e assim por diante, até a
+tarefa <i>N</i> -1, que é a tarefa com a menor prioridade. Além disso, serão dadas M relações de dependência entre
+as tarefas.</p>
+<p>Seu objetivo será decidir se é possível executar as tarefas em alguma ordem. Caso seja possível, você deverá
+produzir uma ordem de execução ótima para as tarefas, isto é, desempate as ordens possíveis pela prioridade da
+primeira tarefa. Se o empate ainda persistir, desempate pela prioridade da segunda tarefa, e assim por diante.</p>
+
+<h3>Entrada</h3>
+
+<p>A primeira linha da entrada contém inteiros <i>N</i> e <i>M</i>. As próximas <i>M</i> linhas descrevem, cada uma, uma
+dependência entre as tarefas da entrada. Cada uma dessas linhas irá conter dois inteiros <i>A</i> e <i>B</i> que indicam
+que a tarefa <i>B</i> depende da tarefa <i>A</i>, isto é, que a tarefa <i>A</i> deve terminar antes que a tarefa <i>B</i> inicie.</p>
+
+<h3>Saída</h3>
+<p>Se não for possível ordenar as tarefas de forma que as dependências sejam satisfeitas, imprima uma única linha
+contendo o caracter "∗". Caso contrário, imprima <i>N</i> linhas contendo cada uma um número inteiro. O inteiro
+na <i>i</i>-ésima linha deve ser o índice da <i>i</i>-ésima tarefa a ser executada na ordem ótima de execução das tarefas.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+	<li>0 ≤ <i>N</i> ≤ 50000.</li>
+	<li>0 ≤ <i>M</i> ≤ 200000.</li>
+	<li>0 ≤ <i>A</i>, <i>B</i> < <i>N</i>.</li>
+
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li>Em um conjunto de casos de teste totalizando 60 pontos, <i>N</i> ≤ 1000.</li>
+	
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+3 1
+2 0
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+1
+2
+0
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+2 2
+0 1
+1 0
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+∗
+			</pre>
+		</td>
+	</tr>
+</table>
+<br>
+
+
+      

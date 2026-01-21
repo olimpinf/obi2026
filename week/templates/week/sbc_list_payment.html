@@ -1,0 +1,112 @@
+{% extends "base_restricted_sbc.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}<h1>{{ pagetitle }}</h1>{% endblock %}
+
+{% block content %}
+<h2>Pagamentos não confirmados</h2>
+
+{% if todo|length > 0%}  
+<table class="basic" width="100%" border="1">
+  <tr>
+    <th width="70%">Nome</th>
+    <th align="center">CPF/CNPJ</th>
+    <th align="center">Valor</th>
+  </tr>
+  {% for t in todo %}
+  <tr>
+    <td width="70%"> 
+      <a href="{% url 'week:sbc_show_payment' t.id %}">{{ t.doc_name }}</a>
+    </td>
+    <td> 
+      {{ t.doc_number }}
+    </td>
+    <td align="right"> 
+      {{ t.value|format_currency }}
+    </td>
+  </tr>
+  {% endfor %}
+  </table>
+{% else %}
+<p>Não há pagamentos não confirmados.
+{% endif %}
+
+<h2>Pagamentos confirmados</h2>
+
+{% if done|length > 0%}  
+<table class="basic" width="100%" border="1">
+  <tr>
+    <th width="70%">Nome</th>
+    <th align="center">CPF/CNPJ</th>
+    <th align="center">Valor</th>
+  </tr>
+  {% for t in done %}
+  <tr>
+    <td width="70%"> 
+      <a href="{% url 'week:sbc_show_payment' t.id %}">{{ t.doc_name }}</a>
+    </td>
+    <td> 
+      {{ t.doc_number }}
+    </td>
+    <td align="right"> 
+      {{ t.value|format_currency }}
+    </td>
+  </tr>
+  {% endfor %}
+  </table>
+{% else %}
+<p>Não há pagamentos confirmados.
+{% endif %}
+
+<h2>Pagamentos descartados</h2>
+
+{% if ignored|length > 0%}  
+<table class="basic" width="100%" border="1">
+  <tr>
+    <th width="70%">Nome</th>
+    <th align="center">CPF/CNPJ</th>
+    <th align="center">Valor</th>
+  </tr>
+  {% for t in ignored %}
+  <tr>
+    <td width="70%"> 
+      <a href="{% url 'week:sbc_show_payment' t.id %}">{{ t.doc_name }}</a>
+    </td>
+    <td> 
+      {{ t.doc_number }}
+    </td>
+    <td align="right"> 
+      {{ t.value|format_currency }}
+    </td>
+  </tr>
+  {% endfor %}
+  </table>
+{% else %}
+<p>Não há pagamentos descartados.
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

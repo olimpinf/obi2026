@@ -1,0 +1,35 @@
+title:Submissões em Java
+template:flatpages_pratique.html
+
+<p>Para submeter suas soluções em Java, você deve seguir as
+seguintes instruções:
+
+<ul>
+<li>Não use a diretiva <span class="ttt">package</span>.
+<li>O nome de sua classe principal pública deve ser o nome indicado no enunciado da tarefa (em minúsculo, sem acento).
+<li>A entrada de dados é feita pela <i>entrada padrão</i>, a saída deve ser feita na <i>saída padrão</i>.
+</ul>
+
+<h3>Um pequeno exemplo</h3>
+<p>O exemplo abaixo lê dois valores inteiros e imprime o maior valor.
+
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+import java.util.Scanner;
+
+public class tarefa {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        // lê duas variáveis inteiras
+        int a = in.nextInt();
+        int b = in.nextInt();
+
+        // escreve o resultado
+	if (a > b)
+	    System.out.printf("%d\n", a);
+	else
+	    System.out.printf("%d\n", b);
+    }
+}
+</pre>

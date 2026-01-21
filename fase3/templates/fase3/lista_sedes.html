@@ -1,0 +1,76 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sedes da Fase Nacional{% endblock %}
+
+{% block header %}<h1>Sedes da Fase Nacional</h1>{% endblock %}
+
+{% block content %}
+
+{% comment %}
+<p>As sedes para ainda não estão todas determinadas, ao longo do dia
+  vamos atualizar a lista de sedes para oferecer sedes mais próximas
+  dos competidores classificados. Se você é professor, seus alunos
+  estão alocados em uma sede muito longe (ou ainda sem sede) e sua
+  escola pode colaborar sediando a Fase Nacional em sua região,
+  preencha o formulário enviado por email para os Coordenadores.
+</p>
+{% endcomment %}
+
+  {% if mod == 'ini' %}
+  <h2>Sedes para Modalidade Iniciação</h2>
+  {% else %}
+  <h2>Sedes para Modalidade Programação</h2>
+  {% endif %}
+
+
+{% for school in items %}
+<h2>{{ school.school_name}}</h2>
+<ul>
+<li><b>Coordenador</b>: Prof(a). {{school.school_deleg_name}}</li>
+<li><b>Telefone</b>: {{school.school_phone}}</li>
+<li><b>Endereço</b>: {{school.school_address}}, {{school.school_address_number}}<br>
+{% if school.school_address_complement.strip %}
+  {{school.school_address_complement}} 
+{% endif %}
+</li>
+<li><b>Bairro/Distrito</b>: {{school.school_address_district}}</li>
+<li><b>Cidade</b>: {{school.school_city}}</li>
+<li><b>Estado</b>: {{school.school_state}}</li>
+<li><b>CEP</b>: {{school.school_zip}}</li>
+{% if school.school_address_building %}</li>
+<li><b>Local da Prova</b>: {{school.school_address_building}}</li>
+{% endif %}
+{% if school.school_address_map %}</li>
+<li><a href="{{school.school_address_map}}">Mapa</a></li>
+{% endif %}
+</ul>
+
+Sede para competidores classificados da(s) cidade(s):<br />
+<i>
+{% with school.school_id|stringformat:"s"|obi_get_phase3_cities as cities %}
+       {{cities}}.
+{% endwith %}
+</i>
+
+
+<p>
+</p>
+
+{% endfor %}
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+<a href="{% url 'fase3:consulta_sedes' %}" class="cta">Nova consulta</a>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+</div>
+{% endblock %}

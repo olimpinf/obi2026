@@ -1,0 +1,125 @@
+title:Matriz super-legal
+template:tasks/tarefa_programacao.html
+
+<p>
+Denotando por A<sub>i,j</sub> o elemento na i-ésima linha e j-ésima
+coluna da matriz A,
+dizemos que uma matriz é &quot;legal&quot; se a condição
+<center>
+A<sub>1,1</sub> + A<sub>lin,col</sub>  &leq;  A<sub>1,col</sub> + A<sub>lin,1</sub>
+</center>
+<p>
+é verdadeira para todo lin > 1 e col > 1.
+
+<p>
+Adicionalmente, dizemos que a matriz é &quot;super-legal&quot; se cada uma de suas
+submatrizes com pelo menos duas linhas e duas colunas é legal. Lembre que
+uma submatriz S de uma matriz M<sub>LxC</sub> é uma matriz 
+que inclui todos os elementos M<sub>i,j</sub> tais que l<sub>1</sub>  &leq;  i  &leq;  l<sub>2</sub>
+e c<sub>1</sub>  &leq;  j  &leq;  c<sub>2</sub>, para 1  &leq;  l<sub>1</sub>  &leq;  l<sub>2</sub>  &leq;  L e 1  &leq;  c<sub>1</sub>  &leq;  c<sub>2</sub>  &leq;  C.
+
+<p>
+A sua tarefa é, dada uma matriz A, determinar a maior quantidade de elementos
+de uma submatriz super-legal da matriz A.
+
+<h3>Entrada</h3>
+A primeira linha contém dois inteiros L e C indicando
+  respectivamente o número de linhas e o número de colunas da
+  matriz. Cada uma das L linhas seguintes contém C inteiros
+  X<sub>i</sub> representando os elementos da matriz.
+
+
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo uma única linha, com apenas um número inteiro, a
+  maior quantidade de elementos de uma submatriz super-legal da matriz da
+  entrada, ou zero no caso de não existir uma submatriz super-legal.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  L,C  &leq;  1000
+
+
+<li> -10<sup>6</sup>  &leq;  X<sub>i</sub>  &leq;  10<sup>6</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, L,C  &leq;  3.
+<li> Para um conjunto de casos de testes valendo outros 50 pontos, L,C  &leq;  300.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+1 4 10
+5 2 6
+11 1 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+1 3 1
+2 1 2
+1 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 6
+1 1 4 0 3 3
+4 4 9 7 11 13
+-3 -1 4 2 8 11
+1 5 9 5 9 10
+4 8 10 5 8 8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+15
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

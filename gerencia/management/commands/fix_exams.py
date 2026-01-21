@@ -1,0 +1,65 @@
+import sys
+import logging
+
+from django.conf import settings
+from django.contrib import messages
+from django.core import mail
+from django.utils.text import slugify
+from django.conf import settings
+from django.core.management.base import BaseCommand, CommandError
+from django.contrib.auth.models import User, Group, UserManager
+
+from principal.models import School, Compet, LEVEL_NAME, PasswordCms
+from exams.models import TesteFase1
+from exams.settings import EXAMS
+
+#from restrito.views import send_email_compet_registered
+from principal.utils.utils import (make_password, obi_year,
+                                   capitalize_name, remove_accents,
+                                   write_uploaded_file,
+                                   format_compet_id,)
+#from restrito.views import compet_authorize_default_exams
+
+logger = logging.getLogger(__name__)
+
+EMAIL_FROM="Coordenação da OBI <olimpinf@ic.unicamp.br>"
+
+def fix_exam(exam_descriptor):
+    #compets = Compet.objects.filter(compet_type__in=(4,5,6,7))
+    compets = Compet.objects.filter(compet_type__in=(3,4,5,6))
+    print('exam_descriptor',exam_descriptor)
+    exam_obj = EXAMS[exam_descriptor]['exam_object']
+    print('exam_obj',exam_obj)
+    contest_id = EXAMS[exam_descriptor]['exam_contest_id']
+    print('contest_id',contest_id)
+
+    exams = exam_obj.objects.all()
+    in_exam = []
+    for e in exams:
+        in_exam.append(e.compet_id)
+
+    print(f'found {len(compets)} compets')
+    print(f'found {len(in_exam)} in_exam')
+
+    count=0
+    for c in compets:
+        if c.compet_id in in_exam:
+            continue
+        #print('-----')
+        print('fixing {} - {}, user:{}'.format(c.compet_id_full, c.compet_name, c.user))
+        e = exam_obj(compet_id=c.compet_id, school_id=c.compet_school_id)
+        e.save()
+        count += 1
+
+    return count
+
+class Command(BaseCommand):
+    help = 'Fix missing entries in exams'
+
+    def add_arguments(self, parser):
+        parser.add_argument('exam_descriptor', nargs='+', type=str)
+
+    def handle(self, *args, **options):
+        exam_descriptor= options['exam_descriptor'][0]
+        count = fix_exam(exam_descriptor)
+        self.stdout.write(self.style.SUCCESS('Fixed {} compets.'.format(count)))

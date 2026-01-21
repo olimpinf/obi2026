@@ -1,0 +1,86 @@
+title:Dario e Xerxes
+template:tasks/tarefa_programacao.html
+
+<p>
+A brincadeira da Pedra, Papel e Tesoura, muita gente conhece. Mas dá
+para fazer uma mais legal com cinco opções e não só três! Dois
+jogadores, <span class="ttt">dario</span> e <span class="ttt">xerxes</span>, jogam uma partida com N
+rodadas. Em cada rodada os jogadores escolhem uma &quot;mão&quot; entre cinco
+opções, que vamos representar aqui com os números 0, 1, 2, 3 e
+4. A figura define exatamente quem ganha a rodada. Por exemplo, se
+<span class="ttt">dario</span> escolheu 0 e <span class="ttt">xerxes</span> escolheu 3, então 
+ <span class="ttt">xerxes</span> ganha a rodada, pois existe uma seta na figura indo de 3
+para 0.
+
+<div class="center">
+<img src="/static/img/task_images/2017f2p2_xerxes.png" />
+</div>
+
+<p>
+Depois de N rodadas, o vencedor da partida é o jogador que ganhou
+mais rodadas. O número N será sempre ímpar, para não haver empate na
+partida. Vamos também considerar que os jogadores nunca escolhem a
+mesma mão numa rodada, para não haver empate na rodada. Você deve
+escrever um programa que determine quem venceu a partida, se foi 
+<span class="ttt">dario</span> ou <span class="ttt">xerxes</span>.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, o número de rodadas
+na partida. Cada uma das N linhas seguintes contém dois inteiros
+D e X, representando a mão que os jogadores <span class="ttt">dario</span> e 
+<span class="ttt">xerxes</span>, respectivamente, jogaram em uma rodada.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo o nome do jogador que
+venceu a partida: <span class="ttt">dario</span> ou <span class="ttt">xerxes</span>. Todas as letras devem
+ser minúsculas, sem nenhum acento!
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  999, N é impar
+<li> 0 &leq;  D,X &leq;  4 e D &ne;  X
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+1 3
+4 2
+0 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+dario
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+3 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+xerxes
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

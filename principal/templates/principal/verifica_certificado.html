@@ -1,0 +1,69 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% block title %}Verifica Certificado{% endblock %}
+
+{% block header %}<h1>Verifica Certificado</h1>{% endblock %}
+
+{% block content %}
+
+<p>O Certificado consultado é referente à seguinte participação na OBI:
+<ul>
+ {% if compet %}
+    {% if not is_cf %}
+ <li><b>Edição</b>: OBI{{ year }}
+ <li><b>Nome</b>: {{ compet.compet_name }}
+ <li><b>Escola</b>: {{ compet.compet_school.school_name }} ({{ compet.compet_school.school_city }}/{{ compet.compet_school.school_state }})
+ <li><b>Modalidade e nível</b>: {{ compet.compet_type|obi_format_compet_type_full }}
+   {% if show_classif %}
+ <li><b>Classificação</b>: {{ compet.compet_rank_final|format_number_thousands }}<sup><u>o</u></sup> lugar entre {{ num_compets|format_number_thousands }} participantes
+   {% endif %}
+   {% if award %}
+ <li><b>Premiação</b>: {{ award }}
+   {% endif %}
+   {% else %}
+ <li><b>Edição</b>: Competição Feminina da OBI{{ year }}
+ <li><b>Nome</b>: {{ compet.compet.compet_name }}
+ <li><b>Escola</b>: {{ compet.compet.compet_school.school_name }} ({{ compet.compet.compet_school.school_city }}/{{ compet.compet.compet_school.school_state }})
+ <li><b>Modalidade e nível</b>: {{ compet.compet_type|obi_format_compet_type_full }}
+   {% if show_classif %}
+ <li><b>Classificação</b>: {{ compet.compet_rank|format_number_thousands }}<sup><u>o</u></sup> lugar entre {{ num_compets|format_number_thousands }} participantes
+   {% endif %}
+   {% if award %}
+ <li><b>Premiação</b>: {{ award }}
+   {% endif %}
+   {% endif %}
+   
+ {% elif colab %}
+
+ <li><b>Edição</b>: OBI{{ year }}
+ <li><b>Nome</b>: {{ colab.colab_name }}
+ <li><b>Participação</b>: Professor Colaborador Local
+ <li><b>Escola</b>: {{ colab.colab_school.school_name }} ({{ colab.colab_school.school_city }}/{{ colab.colab_school.school_state }})
+
+ {% elif school %}
+
+ <li><b>Edição</b>: OBI{{ year }}
+ <li><b>Nome</b>: {{ school.school_deleg_name }}
+ <li><b>Participação</b>: Professor Coordenador Local
+ <li><b>Escola</b>: {{ school.school_name }} ({{ school.school_city }}/{{ school.school_state }})
+   
+{% endif %}
+
+
+</ul>
+</div>
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden"></h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+</div>
+{% endblock %}

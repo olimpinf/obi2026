@@ -1,0 +1,1 @@
+select id, username, email from auth_user where id not in (select user_id from compet where user_id is not null) and id not in (select user_id from colab where user_id is not null) and id not in (select user_id from deleg where user_id is not null) order by id;

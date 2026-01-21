@@ -1,0 +1,21 @@
+{{ greetings }} {{ coord_name}},
+
+recebemos algumas mensagens informando que o link de confirmação não estava funcionando corretamente. Sendo assim, estamos enviando novamente a mensagem abaixo.
+
+A escola {{ school.school_name }} é a única escola em {{ school.school_city }}/{{ school.school_state }} com alunos classificados para a Fase 3 (Fase Nacional) da OBI2022 na modalidade {{ mod_name }}, que ocorrerá {{ mod_date }}. Por isso, temos as seguintes opções disponíveis, por favor escolha uma delas:
+
+1) Apenas os alunos de sua escola realizarem a prova na sua própria escola. O(A) Sr(a). receberá acesso às provas e deve se responsabilizar por {% if mod == 'ini' %}aplicar a prova e digitalizar as Folhas de Respostas para enviar para correção{% else %}disponibilizar computadores e aplicar a prova{% endif %}. Se concorda com esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/{% if mod == 'ini' %}1{% else %}2{% endif %}/{{ school.school_hash }}
+
+2) Os alunos da sua escola se deslocarem até outra escola, uma Universidade ou um Instituto Federal, a confirmar, para realizar a prova. Se prefere esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/0/{{ school.school_hash }}
+
+Solicitamos que a escolha seja feita o mais breve possível, para podermos divulgar os locais de prova no site da OBI2022.
+
+Caso tenha algum problema com os links, por favor envie um e-mail para olimpinf@ic.unicamp.br informando se os alunos da sua escola poderão realizar a prova na própria escola ou não. Não é necessário enviar o e-mail caso você clique no link e veja uma página com a mensagem "Obrigado por informar sua preferência para sede da Fase 3".
+
+Atenciosamente,
+
+{% include 'includes/signature.html' %}

@@ -1,0 +1,25 @@
+{% extends "base_one_column.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+
+{% block content %}
+<p>
+  Obrigado por seu interesse na {{ 'OBI'|obi_date_year }}. Em alguns minutos você receberá uma mensagem no endereço
+  de email <code>{{ email }}</code> com um link para realizar o cadastro de escola.
+</p>
+<p>Se você é responsável por mais de uma escola, utilize o mesmo link para cadastrar as escolas.
+</p>
+
+<a class="mt-4 btn btn-primary " role="button" href="/">OK</a>
+
+{% endblock %}
+
+  
+{% block content-related %}
+{% endblock %}
+
+

@@ -1,0 +1,49 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle|safe }}  </h1>
+
+<table class='admin' width="100%">
+  <tr>
+    <th>Grupo</th>
+    <th>Tarefa</th>
+    <th>Modalidade</th>
+    <th>Núm. Inscr.</th>
+    <th>Nome</th>
+  </tr>
+  
+  {% for item in items %}
+  <tr style="background-color:
+    {% ifchanged item.0 %}
+        {% cycle "#dddddd" "#eeeeee" as rowcolors %}
+    {% else %}
+        {{ rowcolors }}
+    {% endifchanged %}">
+    <td>{{ item.0 }}</td>
+    <td>{{ item.1 }}</td>
+    <td>{{ item.2 }}</td>
+    <td>{{ item.3 }}</td>
+    <td>{{ item.4 }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}
+
+{% block content-related %}
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h4>Observações</h4>
+
+  {% block browse %}
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

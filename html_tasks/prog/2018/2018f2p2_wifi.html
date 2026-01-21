@@ -1,0 +1,131 @@
+title:Wifi
+template:tasks/tarefa_programacao.html
+
+<p>
+A arquitetura do novo museu de ciências é bastante peculiar. O prédio
+do museu é uma grande sala retangular. Dentro dessa sala existem
+outras salas retangulares, e dentro delas existem outras salas
+retangulares, e assim recursivamente, como se fossem caixas dentro de
+caixas... As paredes das salas não se tocam. Veja um exemplo na parte
+esquerda da figura, com oito salas.
+
+<div class="center">
+<img src="/static/img/task_images/2018f2p2_wifi.png" width="400px"/>
+</div>
+
+<p>
+O diretor quer instalar uma rede wifi que funcione em todo o
+museu. Para economizar, ele quer comprar o número mínimo possível de
+antenas. O problema é que, pela forma como foram construídas as
+paredes das salas, ocorre uma coisa interessante: o sinal wifi é capaz
+de atravessar as paredes quando vem de dentro para fora, mas
+estranhamente não atravessa as paredes quando vem de fora para dentro
+das salas! A figura mostra duas posições possíveis para uma antena,
+mostrada como um círculo, e a área que o respectivo sinal wifi da
+antena alcançaria.
+
+<p>
+Neste problema, dados N retângulos cujos lados são paralelos aos
+eixos cartesianos, que descrevem as salas do museu, seu programa deve
+computar o número mínimo possível de antenas que o diretor deve
+comprar para que a rede wifi funcione em todo o museu.
+
+ 
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N
+ indicando o número de salas. Cada uma das N linhas seguintes contém
+ quatro inteiros, X<sub>1</sub>,Y<sub>1</sub>,X<sub>2</sub> e Y<sub>2</sub>, definindo as coordenadas do
+ canto superior esquerdo (X<sub>1</sub>,Y<sub>1</sub>) e inferior direito (X<sub>2</sub>,Y<sub>2</sub>) de
+ uma sala. Não há nenhum tipo de interseção entre os retângulos que
+ definem as salas. Um dos retângulos contém todos os demais e
+ representa a sala mais externa (as paredes externas do prédio do
+ museu).
+
+ 
+<h3>Saída</h3>
+<p>Imprima um inteiro, representando o número mínimo
+ possível de antenas de wifi para que a rede funcione em todo o
+ museu.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup>
+<li> -10<sup>9</sup> &leq;  X<sub>1</sub>,Y<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub> &leq;  10<sup>9</sup>; X<sub>1</sub> &lt; X<sub>2</sub> e Y<sub>2</sub> &lt; Y<sub>1</sub>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, 1  &leq;  N  &leq;  10<sup>4</sup>.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+5 19 8 17
+5 15 15 5
+0 20 20 0
+8 10 10 8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+-10000000 10000000 10000000 -10000000
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7
+50 80 90 75
+45 30 50 20
+5 98 6 97
+0 100 100 0
+20 60 98 5
+25 50 70 10
+30 45 65 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

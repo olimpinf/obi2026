@@ -1,0 +1,177 @@
+title:Voo
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+João estava navegando na internet,  olhando horários de voos de várias
+companhias  aéreas entre  diferentes cidades,  e notou  que em  alguns
+casos  voos  diretos  entre  duas cidades  tinham  tempos  diferentes,
+dependendo se eram voos de ida ou de volta.</p>
+
+<p>A única explicação possível era a de voos ligando cidades localizadas
+em diferentes fusos horários. João então chegou à conclusão que seria
+possível  determinar a  diferença entre  os fusos  horários, com  base
+apenas nos horários fornecidos pelas companhias aéreas.</p>
+
+<p>Por  exemplo, um  voo  sai da  Haquérnia  às 10:00  horas  e chega  na
+Nerdínia às  22:00 horas, ao  passo que outro  voo sai da  Nerdínia às
+10:00 horas  e chega na Haquérnia  às 18:00 horas. Qual  a explicação?
+Note que ambos os voos utilizam aeronaves idênticas, na mesma rota, um
+de ida, outro de  volta. Na realidade, o voo dura  10 horas e Nerdínia
+fica  em um  fuso  horário +2  horas  à frente  do  fuso horário  da
+Haquérnia (portanto o fuso horário de Haquérnia fica -2 horas à frente
+do fuso horário de Nerdínia).</p>  
+
+<p>João anotou  então a tabela  de horários de várias  companhias aéreas,
+porém  cometeu um  engano. Esqueceu-se  de anotar  datas de  partida e
+chegada. Por exemplo, se a partida de um  voo é às 18:00 e a chegada é
+às 14:00, João não  sabe dizer se a data de chegada é  a seguinte à da
+partida,  em voo  que  dura  20 horas,  entre  cidades  no mesmo  fuso
+horário, ou  se a data  de chegada  é a mesma  da de partida,  com uma
+duração de  voo de  uma hora,  em que  a cidade  destino está  em fuso
+horário com cinco horas a menos do fuso horário da cidade origem.</p>
+
+<p>Sua tarefa é ajudar  João a determinar a duração do  voo e a diferença
+entre os fusos horários de chegada e de partida de cada par de voos da
+tabela, um de ida  outro de volta, mesmo sem saber  as datas dos voos.</p>
+<h3>Entrada</h3>A entrada  é composta de apenas  uma linha, com 4  horários, separados
+por  um espaço  em branco.   Esses horários  envolvem voos  entre duas
+cidades,  A e  B e  são,  respectivamente, p_A,  c_B, p_B  e
+c_A. O horário p_A indica a hora  da partida de um voo de A para
+B, hora local  de A. O horário  c_B indica a hora  de chegada do
+mesmo voo na cidade  B, hora local de B. O horário  p_B é a hora
+de partida  do voo de  volta, de  B para A,  hora local de  B. O
+horário c_A é a hora de chegada do voo de volta, hora local de A.
+<h3>Saída</h3>A saída consiste de uma linha,  informando a duração do voo em minutos
+e  quantas  horas  B está  à  frente  de  A,  em termos  de  fusos
+horários. Os dois valores devem ser separados por um espaço em branco.
+<h3>Restrições</h3><ul>
+  <li> Todos os  horários são da forma <b>h:m</b>, em  que 0  ≤  h
+    < 24 e 0  ≤  m < 60.</li>
+  <li> A  duração de cada voo é inferior a 12 horas.</li>  
+  <li> A  diferença delta  entre dois fusos  horários é  sempre um
+    número inteiro de horas, no intervalo -12 < delta  ≤  12.</li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+  <li> Em um  conjunto de casos de teste equivalente  a 30 pontos, as
+    datas de  partida e  de chegada  de cada voo  são iguais.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10:00 22:00 10:00 18:00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+600 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+17:00 23:00 17:00 13:00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+60 5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10:00 18:00 10:00 22:00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+600 -2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+17:00 13:00 17:00 23:00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+60 -5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+18:00 12:00 18:00 14:00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+420 11
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+18:00 14:00 18:00 12:00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+420 -11
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

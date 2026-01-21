@@ -1,0 +1,89 @@
+<h2>Variáveis</h2>
+
+<h3>O que são variáveis?</h3>
+
+<p>Durante a execução de um programa é necessário armazenar e
+atualizar com informações na memória do computador – a menos que o
+programa seja muito simples, como os que vimos até agora. Por exemplo,
+num aplicativo de jogo, precisamos manter a informação da pontuação de
+um jogador. A cada vez que o jogador recolhe uma moeda no jogo,
+devemos atualizar a informação, somando um ao valor corrente do seu
+número de moedas.  Nesse exemplo, o número de moedas de um jogador é
+associado a uma <em>variável</em> do programa.
+
+<p></em>Variáveis</em> nos permitem
+armazenar, atualizar e mostrar o valor de informações durante a execução de um programa.
+
+<h3>Nomes de Variáveis</h3>
+<p>Em Python o nome de uma variável deve ser formado por combinações de letras
+maiúsculas (A-Z), minúsculas (a-z), dígitos (0-9) e o caractere
+sublinhado ('_'). Além disso, nomes de variáveis devem obedecer outras regras:
+<ul>
+<li>não podem começar com dígitos;
+<li>não podem conter caracteres acentuados;
+<li>não podem ser uma palavra reservada da linguagem de programação (como veremos, algumas palavras
+têm significado especial para Python, e por isso são chamadas <em>palavras reservadas</em>).
+</ul>
+
+<p>Alguns exemplos de nomes de variáveis:
+<ul>
+  <li>nomes corretos: <span class="ttt">var1</span>, <span class="ttt">var2</span>,
+     <span class="ttt">x</span>,
+    <span class="ttt">media</span>, <span class="ttt">ValorMaximo</span>
+</li> nomes incorretos: <span class="ttt">Média</span>, <span class="ttt">2var</span>
+</ul>
+
+<h3>Criando uma variável com Blockly</h3>
+
+<p>Para criar uma variável usamos o menu <em>Variável</em> na Barra de
+  Ferramentas. Ao clicar no menu <em>Variável</em> aparece um submenu em que há um botão <em>Criar variável...</em>:
+  <center>
+    <img src="/static/saci/blockly_images/sub_menu_create_variable.png">
+  </center>
+
+  Clique nesse botão e escolha um nome para a  variável.
+  
+<p>Após a criação da variável dois novos blocos aparecem no submenu do menu <em>Variável</em>. Por exemplo, criando uma variável de nome <span class='ttt'>pontos</span> aparecem os blocos:
+    <img align="middle" src="/static/saci/blockly_images/block_variable.png" height="40px"/> e 
+    <img align="middle" src="/static/saci/blockly_images/block_variable_set.png" height="40px"/>. 
+
+<p>  O bloco
+  
+  <img align="middle" src="/static/saci/blockly_images/block_variable.png" height="40px"/>
+
+  é chamado de <em>bloco de variável</em>. Ele representa a variável do nome indicado,
+  podendo ser usado por exemplo em expressões aritméticas ou encaixado no bloco
+
+  <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/> .
+
+
+<p>O bloco
+
+  <img align="middle" src="/static/saci/blockly_images/block_variable_set.png" height="40px"/>
+
+  é chamado de <em>bloco de atribuição</em>: ele atribui um novo valor à
+  variável; o valor antigo da variável é descartado. Você pode encaixar nesse bloco
+  um bloco de Matemática ou um bloco de texto.
+
+  
+<p>Por exemplo, considere o seguinte programa
+
+  <center>
+    <img src="/static/saci/blockly_images/group_print_variable.png" height="101"/>
+  </center>
+
+<p>Esse programa produz na saída
+
+  <div style="width:50%;margin:10px auto 10px auto;">
+    <pre style="border:1px solid black;padding:8px">
+1000
+1275
+</pre>
+  </div>
+
+<p>Veja esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+pontos = 1000
+print(pontos)
+print(pontos + 275)
+</pre>

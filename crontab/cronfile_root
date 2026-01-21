@@ -1,0 +1,4 @@
+# temporary fixes
+#0,5,10,15,20,25,30,35,40,45,50,55 * * * * systemctl restart gunicorn
+
+0,15,30,45 * * * * systemctl restart gunicorn

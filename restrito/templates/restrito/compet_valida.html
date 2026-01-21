@@ -1,0 +1,76 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+{% if registered %}
+<p><font color="#777">Atenção: há um competidor já registrado com esse nome, com os seguintes dados:
+<ul>    
+<li><b>Número de inscrição</b>: {{ registered.compet_id|obi_format_compet_id }}
+<li><b>Ano escolar</b>: {{ registered.compet_year|obi_format_school_year_full }} 
+  {% if registered.compet_year != instance.compet_year %} <font color="red"> (diferente!)</font>  {% endif %}
+<li><b>Modalidade</b>: {{ registered.compet_type|obi_format_compet_type_full }}
+  {% if registered.compet_type != instance.compet_type %} <font color="red"> (diferente!)</font>  {% endif %}
+<li><b>Gênero</b>: {{ registered.compet_sex}}
+  {% if registered.compet_sex != instance.compet_sex %} <font color="red"> (diferente!)</font>  {% endif %}
+<li><b>Data de nascimento</b>: {{ registered.compet_birth_date}}
+  {% if registered.compet_birth_date != instance.compet_birth_date %} <font color="red"> (diferente!)</font>  {% endif %}
+<li><b>Email</b>: {% if registered.compet_email != "" %} {{ registered.compet_email }} {% else %} Não informado {% endif%}
+  {% if registered.compet_email != instance.compet_email %} <font color="red"> (diferente!)</font>  {% endif %}
+</ul>
+<p>Você pode atualizar os
+dados do competidor já inscrito com os dados abaixo clicando no botão
+"Atualizar", ou pode desconsiderar a pré-inscrição clicando no botão
+  "Excluir", mantendo os dados do competidor já inscrito.
+  </font>
+{% endif %}
+  <form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+    {% if fieldset.title == 'hidden' %}
+      {% for field in fieldset %}
+        {{ field }}
+      {% endfor %}
+    {% else %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>      
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endif %}
+  {% endfor %}
+<br>
+
+  {# first button is default, enter key will trigger it #}
+  <button type="submit" class="btn btn-warning float-end" name="cancel" value="cancel" onclick="{% go_to_url '/restrito/compet_pre_inscricao_lista' %}">Cancelar</button>
+  <button type="submit" class="btn btn-danger me-4 float-end" name="delete" value="delete">Excluir</button>
+
+
+{% if registered %}
+  <button type="submit" class="btn btn-primary" name="update" value="update">Atualizar</button>
+{% else %}
+  <button type="submit" class="btn btn-primary" name="save" value="save">Validar</button>
+{% endif %}
+</form>
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Instruções</h4>
+
+    <p>Verifique se a informação fornecida está correta.</p>
+
+{% endblock %}

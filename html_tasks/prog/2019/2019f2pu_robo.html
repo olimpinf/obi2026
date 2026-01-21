@@ -1,0 +1,141 @@
+title:Robo marciano
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma empresa de turismo aeroespacial está se preparando para a exploração
+comercial de Marte. Ela implantou uma base de operações no planeta,
+onde conduz experimentos que visam garantir a segurança de futuros
+turistas.
+
+<p>
+A base em Marte é composta por um conjunto de áreas retangulares cobertas
+por um teto protetor contra a radiação solar. As áreas retangulares têm
+lados paralelos aos eixos Norte-Sul e Leste-Oeste. Vários robôs, controlados
+por comandos enviados desde o Centro de Operações da empresa, na Terra,
+deslocam-se constantemente pela base para acessar materiais e equipamentos.
+
+<p>
+Os robôs podem deslocar-se apenas nas quatro direções cardeais (norte,
+sul, leste e oeste), mas podem transitar tanto em áreas cobertas como
+não cobertas. Em particular, um robô pode entrar e sair de uma área
+coberta por qualquer ponto da borda dessa área. Para preservar a vida útil
+dos robôs, é importante que eles se mantenham o máximo possível
+protegidos da intensa radiação solar, ou seja, que eles transitem
+preferencialmente nas áreas cobertas da base.
+
+<div class="center">
+<img src="/static/img/task_images/2019f2pu_robo.png" width="500px" />
+</div>
+
+<p>
+Dadas as descrições das áreas cobertas, a posição atual de um robô e
+a posição para a qual este robô deve se deslocar, sua tarefa é determinar
+a menor distância que o robô deve percorrer fora das áreas cobertas
+para chegar à posição de destino.
+
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém quatro inteiros X<sub>i</sub>, Y<sub>i</sub>, X<sub>f</sub> e
+Y<sub>f</sub>  indicando, respectivamente, a posição inicial do robô, (X<sub>i</sub>,
+Y<sub>i</sub>) e a posição final do robô, (X<sub>f</sub>,Y<sub>f</sub>).
+
+<p>
+A segunda linha contém um único inteiro N, indicando o número de áreas
+ cobertas. Cada uma das N linhas seguintes contém quatro inteiros
+ X<sub>1</sub>, Y<sub>1</sub>, X<sub>2</sub> e Y<sub>2</sub> indicando
+ uma região retangular coberta, tal que (X<sub>1</sub>, Y<sub>1</sub>)
+ e (X<sub>2</sub>,Y<sub>2</sub>) são vértices opostos do retângulo de
+ lados paralelos aos eixos. Duas áreas cobertas podem ter regiões
+ comuns.
+
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo uma única linha, com um único número inteiro, a menor distância que o robô deve percorrer em áreas
+não cobertas para ir da posição inicial à posição final do robô.
+
+<h3>Restrições</h3>
+<ul>
+<li> 0  &leq;  N  &leq;  1000
+<li> 0  &leq;  X<sub>i</sub>, Y<sub>i</sub>, X<sub>f</sub> , Y<sub>f</sub>  &leq;  10<sup>6</sup>
+<li> 0  &leq;  X<sub>1</sub>  &leq;  X<sub>2</sub>  &leq;  10<sup>6</sup> e 0  &leq;  Y<sub>1</sub>  &leq;  Y<sub>2</sub>  &leq;  10<sup>6</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 30 pontos, X<sub>1</sub>,Y<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,X<sub>i</sub>,X<sub>f</sub>,Y<sub>i</sub>,Y<sub>f</sub>  &leq;  10 e N &leq;  5.
+<li> Para um conjunto de casos de testes valendo outros 50 pontos, X<sub>1</sub>,Y<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,X<sub>i</sub>,X<sub>f</sub>,Y<sub>i</sub>,Y<sub>f</sub>  &leq;  1000 e N &leq;  100.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 4 3
+3
+0 0 1 5
+2 0 5 1
+3 2 6 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 5 5 0
+1
+0 0 1 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 5 0
+2
+0 0 1 5
+0 0 3 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

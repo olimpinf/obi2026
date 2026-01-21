@@ -1,0 +1,142 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:index' %}">Fase 3</a>
+&rsaquo; <a href="../">Cadernos de Tarefas</a>
+&rsaquo; Modalidade Programação
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+  <div id="content-main">
+<h1>Cadernos de Tarefas - Fase 3 - Modalidade Programação</h1>
+
+<p>Para cada competidor, é necessário imprimir uma cópia do Caderno de
+Tarefas. Ao final da prova, o Coordenador Local deve recolher as
+soluções dos alunos, preparar um arquivo com as soluções e
+enviar para correção, utilizando a página
+<a href="../../correcaoprogramacao/">Modalidade Programação - Correção</a> (ainda não disponível,
+será disponibilizada logo após a prova). 
+
+<p>Veja a seguir um passo-a-passo detalhado sobre o procedimento de aplicação
+e correção das provas da Modalidade Programação.
+
+<h2>Passo-a-passo</h2>
+<ul>
+<li>Pegue o arquivo do Caderno de Tarefas (prova) nos links abaixo.
+<li>Faça uma cópia do Caderno de Tarefas do respectivo nível (Júnior,
+1, 2 ou Sênior) para cada competidor.
+<li>No dia da prova, cada aluno deve ter à sua disposição um
+computador com editores de texto e pelo menos um compilador entre C,
+C++, Java ou o interpretador Python.
+<li>Os alunos devem fazer as provas individualmente, e sem acesso à Internet.
+<li>Ao final da prova, sugerimos copiar as soluções dos alunos para um
+  pen-drive, como cópia de segurança. Copie apenas os arquivos dos programas-fonte
+  dos alunos (ou seja, o programa do aluno como texto, em uma das linguagens
+  da OBI2019). O nome dos arquivos devem obedecer ao descrito no Caderno
+  de Tarefas. 
+<li>Será necessário organizar as
+  soluções dos alunos numa estrutura de diretórios específica, descrita
+  na página <a href="../../correcaoprogramacao/">Modalidade Programação - Correção</a>.
+  para cada
+  aluno deve ser criada uma pasta cujo nome é o número de inscrição do
+  aluno, e as soluções de cada aluno devem ser colocadas na pasta
+  correspondente ao aluno. As pastas devem ser então compactadas em um
+  arquivo do tipo zip ou tgz, que deve ser então enviado através da
+  (apenas os arquivos-fonte dos programas.
+<li> Siga as instruções da página 
+<a href="../../correcaoprogramacao">Modalidade Programação - Correção</a>
+(ainda não disponível)
+para submissão das soluções dos alunos.
+</ul>
+
+<p>
+Solicitamos que mantenham os arquivos de soluções dos alunos, para o caso de algum aluno reclamar da correção.
+<p>
+
+<h2>Cadernos de Tarefas, Modalidade Programação</h2>
+<p>Para pegar os Cadernos de Tarefas, clique nos links abaixo. Os cadernos
+estão no formato PDF. Se você não conseguir abri-los corretamente, pode
+ser necessário instalar o aplicativo (gratuito) <a href="http://www.adobe.com/br/products/acrobat/readstep2.html">
+Adobe Acrobat Reader</a>.</p>
+
+<p><i>Certifique-se de que o número de versão da prova (encontrado no rodapé da página de rosto do Caderno de Tarefas) é igual ao indicado abaixo.</i>
+
+<!--p><font color="red"> Os Cadernos de Tarefas ainda NÃO estão disponíveis, serão
+disponibilizados 08:00 do dia 19/09, quinta-feira.</font-->
+
+<ul>
+<li><a href="FolhaTeste2019.pdf">Folha de Teste</a>
+<li><a href="ProvaOBI2019_f3pj.pdf">Nível Júnior</a>
+</li>
+<li><a href="ProvaOBI2019_f3p1.pdf">Nível 1</a>
+</li>
+<li><a href="ProvaOBI2019_f3p2.pdf">Nível 2</a>
+<li><a href="ProvaOBI2019_f3pu.pdf">Nível Sênior</a>
+</ul>
+
+<!--h2>Caso Especial: Prova no ambiente Saci</h2>
+<p>Alguns (poucos) alunos estudaram programação pelo ambiente Saci,
+da OBI, que ensina a linguagem de programação Javascript. 
+Para esses alunos, preparamos uma versão especial da prova, 
+para que tenham o mesmo ambiente (e para que possam testar suas
+soluções em Javascript).
+
+<p>Se algum aluno solicitar a prova no ambiente Saci, siga os passos:
+<ul>
+<li> Faça o download
+da prova no nível desejado, abaixo (a prova é um arquivo .zip)
+<li> Copie o arquivo .zip para o computador onde o aluno vai fazer a
+prova (por exemplo, saci_p1.zip).
+<li> Descompacte o arquivo. Vai ser criada uma pasta (por exemplo, saci_p1)
+<li> Dentro da pasta criada, clique duas vezes no arquivo de nome "index.html";
+o navegador padrão (Firefox, Chrome, Opera...) do sistema deve abrir e mostrar a prova.
+<li> Se não funcionar, abra uma janela de um navegador (Firefox, Chrome...)
+e abra o arquivo "index.html" pelo navegador. A prova deve aparecer como uma
+página do navegador.
+</ul>
+
+<p>Provas no ambiente Saci:
+<ul>
+<li><a href="/restrito/fase3/cadernostarefas/ini/arquivos_zip/saci_f3pj.zip">Nível Júnior</a>
+<font color="red"> (ainda NÃO disponível, será
+disponibilizado 12:00 (meio-dia) do dia 22/08, quarta-feira)</font>
+</li>
+<li><a href="/restrito/fase3/cadernostarefas/ini/arquivos_zip/saci_f3p1.zip">Nível 1</a>
+<font color="red"> (ainda NÃO disponível, será
+disponibilizado 12:00 (meio-dia) do dia 22/08, quarta-feira)</font>
+</li>
+<li><a href="/restrito/fase1/cadernostarefas/ini/arquivos_zip/saci_f3p2.zip">Nível 2</a>
+<font color="red"> (ainda NÃO disponível, será
+disponibilizado 12:00 (meio-dia) do dia 22/08, quarta-feira)</font>
+</li>
+<li><a href="/restrito/fase3/cadernostarefas/ini/arquivos_zip/saci_f3pu.zip">Nível Sênior</a>
+<font color="red"> (ainda NÃO disponível, será
+disponibilizado 12:00 (meio-dia) do dia 22/08, quarta-feira)</font>
+</li>
+</ul-->
+
+<h2>Listas de Presença, Modalidade Programação</h2>
+<p>As listas de presença são fornecidas apenas para auxiliar a gestão da sede, para saber quem
+  realmente compareceu e quem não compareceu. Elas não são obrigatórias, mas sugerimos o seu uso
+  para o caso de haver disputas, no futuro, sobre a presença ou não do(a) competidor(a) na prova.
+<ul>
+<li><a href="/restrito/fase3/cadernostarefas/prog/lista_presenca/PJ">Nível Júnior</a>
+<li><a href="/restrito/fase3/cadernostarefas/prog/lista_presenca/P1">Nível 1</a>
+<li><a href="/restrito/fase3/cadernostarefas/prog/lista_presenca/P2">Nível 2</a>
+<li><a href="/restrito/fase3/cadernostarefas/prog/lista_presenca/PS">Nível Sênior</a>
+</li>
+</ul>
+
+<hr>
+  </div>
+{% endblock %}

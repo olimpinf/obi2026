@@ -1,0 +1,21 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}{{ pagetitle }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ pagetitle }}</h1>
+
+<p>Você informou que NÃO irá participar da Semana Olímpica da OBI2024. Se desejar alterar sua resposta, envie um e-mail para olimpinf@ic.unicamp.br.</p>
+{% endblock %}
+
+{% block content-related %}
+
+    {% include "week/includes/see_also.html" %}
+
+{% endblock %}
+
+

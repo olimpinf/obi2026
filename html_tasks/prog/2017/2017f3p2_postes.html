@@ -1,0 +1,91 @@
+title:Postes
+template:tasks/tarefa_programacao.html
+
+<p>
+Seu João é proprietário de uma enorme fazenda, protegida por uma cerca
+formada por postes de madeira e arame farpado. Cada poste da cerca tem
+1 metro de altura. Os postes são colocados separados dois metros um
+dos outros, ao redor de toda a fazendo, e portanto muitos postes são
+utilizados.
+
+<p>Infelizmente um incêndio destruiu uma grande parte dos postes da
+cerca. Alguns postes, mesmo um pouco queimados, ainda podem ser
+utilizados, desde que sejam reforçados. Outros estão irremediavelmente
+inutilizados e devem ser substituídos por postes novos.
+
+<p>O engenheiro que trabalha para o Seu João percorreu toda a cerca
+e fez uma lista dos tamanhos de cada poste depois do incêndio.
+O engenheiro determinou que, se o poste tem menos do que 50 cm,
+ele deve ser substituído. Se o poste tem ao menos 50 cm, mas menos do que
+85 cm, ele deve ser consertado. Se o poste tem 85 cm ou mais, ele 
+não necessita  conserto e pode ser usado normalmente.
+
+<p>Dada a lista com os tamanhos de cada poste, você deve escrever
+um programa para determinar o número de postes que devem ser
+substituídos e o número de postes que devem ser reforçados para
+consertar a cerca da fazenda do Seu João.
+
+
+
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N,
+indicando o número de postes da cerca.
+A segunda linha contém N números inteiros X<sub>i</sub>,
+indicando os tamanhos dos postes após o incêndio.
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo
+dois inteiros: o número de postes que devem ser substituídos,
+seguido do número de postes que devem ser consertados.
+
+<h3>Restrições</h3>
+<ul>
+<li> 3  &leq;  N &leq;  1000
+<li> 0  &leq;  X<sub>i</sub>  &leq;  100
+</ul>
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+85 49 50 84 50
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+48 49 30 47
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4 0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

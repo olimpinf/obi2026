@@ -1,0 +1,19 @@
+1,1,50,Aline Fioravante Zuliani,Escola Educação Criativa,Ipatinga,MG
+1,1,50,Anna Beatriz Gomes Travascio,Colégio Militar do Rio de Janeiro,Rio de Janeiro,RJ
+1,1,50,Arthur Saraiva Albuquerque,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+1,1,50,Bernardo Espindola Costa,Colégio Militar do Rio de Janeiro,Rio de Janeiro,RJ
+1,1,50,Caio Facó Fonseca Bittencourt,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+1,1,50,Elisa Moura de Sousa Brasil,COLÉGIO CHRISTUS,Fortaleza,CE
+1,1,50,Felipe Policarpo Caetano,ARI DE SÁ - DUQUE DE CAXIAS,Fortaleza,CE
+1,1,50,Gontran Luís Menezes Gifoni,COLÉGIO SANTA CECÍLIA,Fortaleza,CE
+1,1,50,Guilherme Gomes de Freitas,Colégio Farias Brito Sobralense,Sobral,CE
+1,1,50,Ian Carlos Melo Cunha,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+1,1,50,João Pedro Bezerril Patrício,COLÉGIO CHRISTUS,Fortaleza,CE
+1,1,50,Laura Oliveira Mota,COLÉGIO CHRISTUS,Fortaleza,CE
+1,1,50,Leonardo de Faria Pottes,Centro de Excelência Master,Aracaju,SE
+1,1,50,Lucca Oliveira Baldez da Silva,Colégio Etapa Valinhos,Valinhos,SP
+1,1,50,Manuella Autran do Nascimento Magalhaes,Organização Educacional Farias Brito - Pré vestibular Aldeota,Fortaleza,CE
+1,1,50,Mateus Sales Ramalho,COLÉGIO MOTIVA LTDA - Matriz,Campina Grande,PB
+1,1,50,Mel Morais Militão,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+1,1,50,Miguel Ramos Toledo,Escola Educação Criativa,Ipatinga,MG
+1,1,50,Raí Barros Moura Naves,Colégio Magnum Agostiniano,Belo Horizonte,MG

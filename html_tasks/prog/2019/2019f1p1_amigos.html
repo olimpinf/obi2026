@@ -1,0 +1,123 @@
+title:Distância entre amigos
+template:tasks/tarefa_programacao.html
+
+<p>
+Ao longo da rua existem N prédios de largura igual, mas com número
+de andares diferentes. Quase toda a turma do colégio mora em algum
+apartamento desses prédios e eles resolveram definir a distância entre
+dois apartamentos quaisquer da rua para saber, ao final, qual par de
+colegas da turma mora mais longe um do outro.
+
+<p>Funciona assim: para um colega A visitar um colega B, que mora num
+prédio diferente, ele deve descer <i>a</i> andares até o térreo do seu
+prédio; depois andar para a esquerda ou direita, dependendo do lado
+para o qual seu colega mora, por <i>p</i> prédios; depois subir <i>b</i> andares
+até o apartamento do colega B. A distância entre A e B, então,
+será <i>a+p+b</i>. A figura mostra um exemplo, para N=14, onde estão
+marcados dois andares de prédios diferentes para os quais a distância
+é 12.
+
+<div class="center">
+<img src="/static/img/task_images/2019f1p1_predios.png" width="600px"/>
+</div>
+
+<p>
+Dado um número de andares de cada prédio ao longo da rua, seu programa
+deve computar a distância máxima possível entre dois apartamentos
+quaisquer na rua.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N representando o
+número de prédios na rua. A segunda linha contém N inteiros A<sub>i</sub>,
+1 &leq;  i  &leq;  N, representando o número de andares de cada prédio, sem
+contar o térreo. Quer dizer, por exemplo, se A<sub>i</sub>=19, então quem mora
+no último andar precisa descer 19 andares até o térreo. Veja a
+figura, que corresponde ao primeiro exemplo de entrada abaixo.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo um número inteiro
+representando a distância máxima possível entre dois apartamentos na
+rua.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  N &leq;  200000 (2 x 10<sup>5</sup>);
+<li> 1  &leq;  A<sub>i</sub>  &leq;  10<sup>9</sup> para todo 1 &leq;  i  &leq;  N.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+
+  <li> Em um conjunto de casos de teste somando 25 pontos, N &leq; 
+      10<sup>4</sup> e A<sub>i</sub> &leq;  10<sup>4</sup>
+
+
+
+ <li> Em um conjunto de casos de teste somando 25 pontos, A<sub>i</sub> &leq;  100
+
+ <li> Em um conjunto de casos de teste somando 50 pontos, nenhuma
+ restrição adicional
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14
+2 3 1 6 4 3 7 5 6 4 5 3 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+18
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+1 1 4 3 1 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

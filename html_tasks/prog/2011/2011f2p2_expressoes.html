@@ -1,0 +1,91 @@
+title:Expressões
+template:tasks/tarefa_programacao.html
+ 
+      
+
+
+<p>Pedrinho e Zezinho estão precisando estudar resolução de expressões matemáticas para uma prova que irão fazer.
+Para isso, eles querem resolver muitos exercícios antes da prova. Como sabem programar, então decidiram fazer
+um gerador de expressões matemáticas.</p>
+
+<p>O gerador de expressões que eles criaram funciona em duas fases. Na primeira fase é gerada uma cadeia de
+caracteres que contém apenas os caracteres "{", "[", "(", "}", "]" e ")". Na segunda fase, o gerador adiciona os
+números e operadores na estrutura criada na primeira fase. Uma cadeia de caracteres é dita <i>bem definida</i> (ou
+válida) se atende as seguintes propriedades:</p>
+
+<ol>
+	<li>Ela é uma cadeia de caracteres vazia (não contém nenhum caractere).</li>
+	<li>Ela é formada por uma cadeia <i>bem definida</i> envolvida por parênteses, colchetes ou chaves. Portanto, se a
+cadeia S é <i>bem definida</i>, então as cadeias (S), [S] e {S} também são <i>bem definidas</i>.</li>
+	<li>Ela é formada pela concatenação de duas cadeias bem definidas. Logo, se as cadeias X e Y são <i>bem
+definidas</i>, a cadeia XY é <i>bem definida</i>.</li>
+</ol>
+
+<p>Depois que Pedrinho e Zezinho geraram algumas expressões matemáticas, eles perceberam que havia algum
+erro na primeira fase do gerador. Algumas cadeias não eram <i>bem definidas</i>. Eles querem começar a resolver as
+expressões o mais rápido possível, e sabendo que você é um ótimo programador (e participa da OBI) resolveram
+pedir que escreva um programa que dadas várias cadeias geradas na primeira fase, determine quais delas são
+<i>bem definidas</i> e quais não são.</p>
+
+<h3>Entrada</h3>
+
+<p>A entrada é composta por diversas instâncias. A primeira linha da entrada contém um inteiro T indicando o
+número de instâncias. Em seguida temos <i>T</i> linhas, cada uma com uma cadeia <i>A</i>.</p>
+
+<h3>Saída</h3>
+<p>Para cada instância imprima uma linha contendo a letra S se a cadeia é <i>bem definida</i>, ou a letra N caso contrário.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+	<li>1  ≤ T ≤ 20.</li>
+	<li>a cadeia de caracteres <i>A</i> tem entre 1 e 100000 caracteres.</li>
+	<li>a cadeia de caracteres <i>A</i> contém apenas caracteres "{", "[", "(", "}", "]" e ")".</li>
+
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+12
+()
+[]
+{}
+(]
+}{
+([{}])
+{}()[]
+()]
+{[]
+(
+(([{}{}()[]])(){}){}
+(((((((((({([])}])))))))))
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+S
+S
+S
+N
+N
+S
+S
+N
+N
+N
+S
+N
+			</pre>
+		</td>
+	</tr>
+</table>
+<br>
+
+
+      

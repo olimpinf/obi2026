@@ -1,0 +1,63 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h1 class="mb-3">{{ compet.compet_id_full }} -- {{ compet.compet_name }}</h1>
+
+{% if show_results %}
+<h3>Total de Pontos:  {{ compet.compet_points_fase1 }}</h3>
+
+  {% if show_classif %}
+  <h4>Classificado para Fase 2: {% if compet.compet_classif_fase1 %}<font color="green"> Sim </font>{% else %}Não{% endif %}</h4>
+  {% endif %}
+
+{% else %}
+<p>Resultados ainda não disponíveis
+{% endif %}
+
+<p><em>Competidores têm acesso a mais detalhes da correção em suas páginas pessoais na OBI2024.</em></p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  <small><p> Em cada Escola, para cada modalidade e nível, passam para
+      a Fase Estadual os melhores classificados na própria escola, até
+      o limite de 15% dos participantes efetivos da Escola na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Estadual
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>). <!--span>No momento foi aplicado somente
+      o <em>critério local</em>. Competidores adicionais poderão ser
+      classificados pelo <em>critério nacional</em>. O <em>critério
+      nacional</em> será aplicado quando todas as eventuais
+      solicitações de recorreção tiverem sido processadas, de acordo
+      com o Calendário da OBI2020.</span-->
+      {% if not show_classif %}
+      <p>A classificação será divulgada de acordo com o Calendário da OBI2021.    
+      {% endif%}
+<hr>
+
+<h2>Tarefas</h2>
+
+  <ul>
+    <li><a href="/static/extras/obi2024/provas/ProvaOBI2024_f1{{ level_name }}.pdf">Caderno de Tarefas</a>
+      {% if level_name.0 == 'i' %}
+      <!--li><a href="/static/extras/obi2024/provas/SolucaoOBI2024_f1{{ level_name }}.pdf">Caderno de Soluções</a-->
+    <li><a href="/static/extras/obi2024/gabaritos/GabaritoOBI2024_f1{{ level_name }}.pdf">Gabarito</a></li></ul>
+      {% endif %}
+  </ul>
+
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

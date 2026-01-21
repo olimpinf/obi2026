@@ -1,0 +1,113 @@
+title:Bingo!
+template:exams/tarefa_programacao.html
+order:1
+<p>
+O grande prêmio do Bingo de São João será um carro
+zero-quilômetro. Todo mundo quer ser o primeiro a completar sua
+cartela, claro. São N cartelas identificadas de 1 até N que contêm,
+cada uma, K números distintos entre os números naturais de 1 até U,
+para K&lt;U. Um número, claro, pode aparecer em mais de uma cartela e
+duas cartelas podem até ser iguais, ter o mesmo conjunto de
+números. Justamente por isso, veja que pode acontecer empate com mais
+de uma cartela sendo completada no mesmo instante.
+
+<p>Neste problema, serão dados na entrada os conjuntos de números de
+todas as cartelas e a sequência de números sorteados, que será uma
+permutação dos naturais de 1 até U. Seu programa deve determinar qual
+ou quais cartelas vão ser completadas primeiro e ganhar o carro.
+
+<p>Por exemplo, para N=4, K=5 e U=10, com as cartelas dadas pela
+tabela abaixo, se a sequência de números sorteados for
+[7,3,5,2,6,1,9,10,4,8], então haverá uma cartela vencedora, a número
+3.
+
+  <table class="simple" style="margin-left:auto;margin-right:auto">
+    <tr><th>número da cartela </th><td> </td><td> </td><td> </td><td> </td><td>  </td></tr>
+    <tr><th>1 </th><td> 3 </td><td> 10 </td><td> 8 </td><td> 7 </td><td> 2  </td></tr>  
+    <tr><th>2 </th><td> 4 </td><td> 1 </td><td> 7 </td><td> 10 </td><td> 9  </td></tr>
+    <tr><th>3 </th><td> 9 </td><td> 1 </td><td> 5 </td><td> 3 </td><td> 6  </td></tr>
+    <tr><th>4 </th><td> 6 </td><td> 8 </td><td> 1 </td><td> 5 </td><td> 7  </td></tr>
+  </table>
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém três inteiros N, K e U
+representando respectivamente o número de cartelas, quantos números
+cada cartela contém e o maior natural que pode ocorrer numa
+cartela. As N linhas seguintes contêm, cada uma, K inteiros distintos
+C<sub>i</sub>, para 1 &leq; i &leq; K, representando o conjunto de números de
+cada cartela, da cartela 1 até a N. A última linha da entrada contém U
+inteiros indicando a sequência de números sorteados, uma permutação
+dos naturais entre 1 e U.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma linha contendo os números identificadores das cartelas vencedoras do carro, em ordem crescente.
+
+<h3>Restrições</h3>
+
+<ul>
+<li> 1 &leq;  N &leq; 1000 
+<li> 1 &leq;  K &leq; 1000 
+<li> 1 &leq;  U &leq; 10000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 15 pontos, N &leq;  100, K &leq;  50, U &leq;  100, e apenas uma cartela é vencedora.
+<li> Em um conjunto de casos de teste somando 15 pontos, N &leq;  100, K &leq;  50, U &leq;  100.
+<li> Em um conjunto de casos de teste somando 30 pontos, N &leq;  100, K &leq;  500, U &leq;  1000.
+<li> Em um conjunto de casos de teste somando 40 pontos, nenhuma restrição adicional.
+</ul>
+
+<h3>Exemplos</h3>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 10
+3 10 8 7 2
+4 1 7 10 9
+9 1 5 3 6
+6 8 1 5 7
+7 3 5 6 1 9 2 10 4 8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 4 9
+1 9 3 2
+4 5 6 7
+2 3 5 4
+2 6 8 1
+2 5 7 9
+1 9 7 4 5 3 2 8 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 3 5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

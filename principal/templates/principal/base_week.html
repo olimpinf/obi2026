@@ -1,0 +1,167 @@
+{% load i18n %}
+{% load static %}<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="keywords" content="olimpíada, programação de computadores, informática" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="{% static "img/icon-tile.png" %}">
+
+    <title>{% block title %}Olímpiada Brasileira de Informática{% endblock %} | OBI </title>
+    <link rel="stylesheet" href="{% static "css/obi2022.css" %}" >
+    <script src="{% static "js/lib/webfontloader/webfontloader.js" %}"></script>
+    <script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="{% static "js/lib/modernizr.js" %}"></script>
+    {% block head_extra %}{% endblock head_extra %}
+  </head>
+
+  <body id="{% block sectionid %}generic{% endblock %}" class="{% block body_class %}{% endblock %}">
+
+    {% include "includes/header.html" %}
+
+    <div role="sub-banner">
+      <div class="container">
+	<h1> Olimpíada Brasileira de Informática</h1>
+      </div>
+    </div>
+
+    <div class="copy-banner">
+      <div class="container">
+        {% block header %}{% endblock %}
+      </div>
+    </div>
+    <div id="billboard">{% block billboard %}{% endblock %}</div>
+
+    <div class="container {% block layout_class %}sidebar-right{% endblock %}">
+      <div role="main">
+
+        {% block messages %}
+          {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                  {{ message }}
+                  <i class="close icon icon-remove" title="close"></i>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endblock %}
+
+<!--table width="100%">
+<tr>
+<td width="25%" align="center" valign="center">
+<a href="https://www.alurastart.com.br"><img src="/static/img/logo-alura.svg" width="150px"</a>
+</td>
+<td width="25%" align="center" valign="center">
+<a href="https://www.google.com.br"><img src="/static/img/logo-google.svg" width="150px"</a>
+</td>
+<td width="25%" align="center" valign="center">
+<a href="https://www.unicamp.br/iq/cces"><img src="/static/img/logo-escience.png" width="100px"</a>
+</td>
+<td width="25%" align="center" valign="center">
+<a href="https://www.unicamp.br/prp/faepex"><img src="/static/img/logo-faepex.png" width="100px"</a>
+</td>
+</tr>
+</table-->
+
+        {% block content %}
+	{% endblock %}
+
+<!--table width="100%">
+<tr>
+<td width="25%" align="center" valign="center">
+<a href="https://www.alurastart.com.br"><img src="/static/img/logo-alura.svg" width="150px"</a>
+</td>
+<td width="25%" align="center" valign="center">
+<a href="https://www.google.com.br"><img src="/static/img/logo-google.svg" width="150px"</a>
+</td>
+<td width="25%" align="center" valign="center">
+<a href="https://www.unicamp.br/iq/cces"><img src="/static/img/logo-escience.png" width="100px"</a>
+</td>
+<td width="25%" align="center" valign="center">
+<a href="https://www.unicamp.br/prp/faepex"><img src="/static/img/logo-faepex.png" width="100px"</a>
+</td>
+</tr>
+</table-->
+
+
+        <a href="#top" class="backtotop"><i class="icon icon-chevron-up"></i> Volta ao início </a>
+      </div>
+
+      {% block content-related %}{% endblock %}
+      {% block content-extra %}{% endblock %}
+
+    </div>
+
+    {% block secondary %}{% endblock %} {# Used only with one column pages #}
+    {% block tertiary %}{% endblock %} {# Used only with one column pages #}
+
+    {# Used to display urgent news, events, and alerts #}
+    {% block alert %}
+    {% endblock %}
+
+    {% block footer %}
+      {% include "includes/footer.html" %}
+    {% endblock %}
+
+    {# Require JS #}
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("{% static 'js/lib/jquery/dist/jquery.min.js' %}"),
+            "jquery.inview": extless("{% static 'js/lib/jquery.inview/jquery.inview.min.js' %}"),
+            "jquery.payment": extless("{% static 'js/lib/jquery.payment/lib/jquery.payment.js' %}"),
+            "jquery.unveil": extless("{% static 'js/lib/unveil/jquery.unveil.min.js' %}"),
+            "jquery.flot": extless("{% static 'js/lib/jquery-flot/jquery.flot.min.js' %}"),
+            "clipboard": extless("{% static 'js/lib/clipboard/dist/clipboard.min.js' %}"),
+            "mod/floating-warning": extless("{% static 'js/mod/floating-warning.js' %}"),
+            "mod/list-collapsing": extless("{% static 'js/mod/list-collapsing.js' %}"),
+            "mod/list-feature": extless("{% static 'js/mod/list-feature.js' %}"),
+            "mod/mobile-menu": extless("{% static 'js/mod/mobile-menu.js' %}")
+        }
+    };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="{% static "js/local.js" %}"></script>
+    <script data-main="{% static "js/main.js" %}" src="{% static "js/lib/require.js" %}"></script>
+    {% block body_extra %}{% endblock body_extra %}
+
+  </body>
+</html>

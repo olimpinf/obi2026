@@ -1,0 +1,139 @@
+title:Três por Dois
+template:exams/tarefa_programacao.html
+order:2
+<p>
+Uma loja de chocolates está fazendo uma promoção do tipo &quot;leve
+três pague dois&quot;. Mais precisamente, você pode escolher quaisquer
+três chocolates da loja e paga apenas pelos dois mais caros que
+escolher, levando o mais barato gratuitamente. Se você levar mais do
+que três chocolates, você pode agrupá-los em grupos de três e levar o
+chocolate mais barato de cada grupo gratuitamente.
+
+<p>Por exemplo, se você escolher chocolates de preços (em reais) 8, 5,
+10, 2, 5, 10 e 4, você pode agrupá-los como (8,5,10), (2,5,10) e (4),
+pagará um total de (10+8) + (10+5) + 4, ou seja, 37 reais. Mas você
+pode agrupá-los de uma forma melhor e assim conseguir pagar
+menos. Você consegue ver como?
+
+<p>
+Dados os preços dos chocolates escolhidos, escreva um programa para
+determinar o menor preço a pagar.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N, o número de chocolates escolhidos.
+Cada uma das N linhas seguintes contém um número inteiro P, o preço de um chocolate escolhido.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um único número inteiro,
+o menor preço a pagar pelos chocolates escolhidos.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  100000
+<li> 1  &leq;  P  &leq;  1000
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 50 pontos, N  &leq;  1000.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+5
+6
+6
+5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+17
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+3
+3
+3
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+7
+8
+7
+7
+5
+7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+29
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7
+8
+5
+10
+2
+5
+10
+4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+32
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

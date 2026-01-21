@@ -1,0 +1,103 @@
+title:Pangrama
+template:tasks/tarefa_programacao.html
+
+<p>
+Um <i>pangrama</i> é uma frase que contém todas as letras de um determinado
+alfabeto. 
+
+<p>Em português, um pangrama pode incluir também letras acentuadas, mas neste
+problema vamos desconsiderar os acentos (mesmo que isso torne a frase
+mal escrita!)
+
+<p>Veja alguns exemplos de pangramas em português (sem acentos):
+<ul>
+<li> grave e cabisbaixo, o filho justo zelava pela querida mae doente
+<li> hoje a noite, sem luz, decidi xeretar a quinta gaveta de vovo: achei linguica, pao e fuba
+<li> marta foi a cozinha pois queria ver belo jogo de xicaras
+</ul>
+
+<p>Note que para os pangramas acima consideramos o alfabeto composto pelas letras
+
+<p><div class="center">
+a b c d e f g h i j l m n o p q r s t u v x z
+</div>
+
+<p>(ou seja, não consideramos as letras k, w ou y). Note ainda que as frases não contêm letras
+acentuadas mas podem conter símbolos gráficos como espaço em branco, vírgula e dois pontos.
+
+<h3>Entrada</h3>
+<p>A primeira e única linha da entrada contém uma cadeia
+de caracteres C.
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo um único caractere,
+que deve ser  <span class="ttt">S</span> se a frase for um pangram ou <span class="ttt">N</span> caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> A cadeia de caracteres C tem no mínimo um e no máximo 200 caracteres. Os únicos caracteres
+em C são as letras minúsculas do alfabeto mostrado acima, espaços em
+branco, vírgulas e o caractere dois pontos.
+</ul>
+
+
+<h3>Exemplos</h3>
+long
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="80%">
+      <b>Entrada</b>
+      <pre>
+gazeta publica hoje: breve anuncio de faxina na quermesse
+</pre>
+      </td>
+    <td valign="top" width="20%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="80%">
+      <b>Entrada</b>
+      <pre>
+esta frase nao usa todas as letras, estao faltando algumas
+</pre>
+      </td>
+    <td valign="top" width="20%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="80%">
+      <b>Entrada</b>
+      <pre>
+abcdefghijlmnopqrstuvxz
+</pre>
+      </td>
+    <td valign="top" width="20%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

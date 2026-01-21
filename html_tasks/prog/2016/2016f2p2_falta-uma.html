@@ -1,0 +1,90 @@
+title:Falta uma
+template:tasks/tarefa_programacao.html
+<p>
+Carolina tem um jogo de tabuleiro que possui 24 cartas contendo, cada
+uma, uma permutação dos quatro primeiros números naturais. (Cartas
+distintas contêm permutações distintas.) Lembre-se de que a quantidade
+de permutações de quatro números é 4!, que é igual a 24. Só que ela
+contou e encontrou apenas 23 cartas. Está faltando uma! Dê uma olhada
+nessa lista embaralhada de 23 cartas. Qual está faltando?
+
+<center>
+<table class="basic" border="1px">
+  <tr>
+<td>4 1 2 3 </td><td> 1 2 3 4 </td><td> 1 3 4 2 </td><td> 4 3 2 1 </td><td> 2 1 3 4 </td><td> 3 1 2 4  </td>
+  </tr>
+  <tr>
+<td>2 1 4 3 </td><td>    ?    </td><td> 4 3 1 2 </td><td> 1 2 4 3 </td><td> 1 4 3 2 </td><td> 3 2 4 1  </td>
+  </tr>
+  <tr>
+<td>4 1 3 2 </td><td> 3 4 1 2 </td><td> 2 3 4 1 </td><td> 1 3 2 4 </td><td> 3 4 2 1 </td><td> 4 2 1 3  </td>
+  </tr>
+  <tr>
+<td>1 4 2 3 </td><td> 2 4 3 1 </td><td> 4 2 3 1 </td><td> 3 2 1 4 </td><td> 2 3 1 4 </td><td> 2 4 1 3  </td>
+  </tr>
+<table>
+</center>
+<p>Agora suponha que o jogo tenha um baralho de N! cartas, com todas as
+permutações possíveis dos N primeiros naturais. Neste problema, dado
+N e uma lista com N!-1 cartas, seu programa deve imprimir a carta
+que está faltando.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N. As N!-1 linhas
+seguintes contêm, cada uma, N naturais.  Cada linha representa uma
+permutação distinta dos N primeiros naturais.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma única linha, contendo N naturais
+representando a permutação que está faltando na entrada.
+
+<h3>Restrições</h3>
+<ul>
+  <li> 2 &leq;  N &leq;  8.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+3 2 1
+2 1 3
+1 3 2
+3 1 2
+1 2 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2 3 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+2 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

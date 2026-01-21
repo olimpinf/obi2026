@@ -1,0 +1,166 @@
+title:O Chefe
+template:tasks/tarefa_programacao.html
+
+<p>
+Todos conhecem  Iks, a  última moda  em redes  sociais, que  fez tanto
+sucesso que competidores como Facebook e Google+ estão começando a ter
+dificuldades financeiras.  Assim como muitas companhias  &quot;.com&quot;, Iks
+surgiu em uma pequena garagem, mas hoje emprega milhares de pessoas no
+mundo todo.
+
+<p>O sistema de gerência utilizado em  Iks é bem diferente do padrão. Por
+exemplo, não há diretorias ou superintendências.  No entanto,
+como é  usual em outras companhias,  há uma cadeia (ou  melhor, várias
+cadeias) de comando: uma pessoa  pode gerenciar outras pessoas, e pode
+ser  gerenciada por  outras pessoas.   As  figuras  abaixo mostram  a
+cadeia de comando para alguns empregados, junto com suas idades.
+
+
+<div class="center">
+<img src="/static/img/task_images/2017f1p2_chefe.png" width="100%"/>
+</div>
+ 
+
+<p>Uma pessoa P<sub>1</sub> pode gerenciar outra pessoa P<sub>2</sub> diretamente (quando
+P<sub>1</sub> é o  superior imediato de P<sub>2</sub>) ou  indiretamente (quando P<sub>1</sub>
+gerencia diretamente  uma pessoa  P<sub>3</sub> que  gerencia P<sub>2</sub>  direta ou
+indiretamente). Por exemplo, na figura (a) acima, Alice gerencia David
+diretamente  e  Clara indiretamente.  Uma  pessoa  não gerencia  a  si
+própria, nem direta nem indiretamente.
+
+<p>Um folclore que apareceu  em Wall Street é que Iks  é tão bem sucedido
+porque em sua rede de comando um(a) gerente é sempre mais jovem do que
+as pessoas que  ele(a) gerencia. Como  podemos ver na figura acima, isso
+não é  verdade.  Mas  esse  folclore incentivou  Iks a desenvolver uma
+ferramenta para analisar o seu sistema de  gerenciamento, e estudar se
+tem  alguma  influência  no  sucesso  da empresa. Você foi  contratado
+para trabalhar nessa ferramenta.
+
+<p>Dadas a  descrição da  cadeia de comando  na Iks e  as idades  de seus
+empregados,   escreva   um  programa   que   execute   uma  série   de
+instruções. Instruções podem  ser de dois tipos: trocas  de gerência e
+perguntas. Uma instrução de troca  de gerência faz dois empregados A
+e B  trocarem suas posições  na cadeia  de comando. Como  exemplo, a
+figura (b) acima mostra a cadeia  de comando resultante quando David e
+George  trocam suas  respectivas posições  na cadeia  de comando.  Uma
+instrução de  pergunta identifica  um empregado A  e deseja  saber a
+idade do mais  jovem gerente (direto ou indireto) de  A na cadeia de
+comando. Por  exemplo, no cenário  da figura  (a) acima a  idade do(a)
+gerente mais jovem de Clara é 18  anos; já no cenário da figura (b), a
+idade do(a) gerente mais jovem de Clara é 21 anos.
+
+<h3>Entrada</h3>
+A entrada é  composta de várias linhas.  A primeira  linha contém três
+inteiros  N,  M  e  I, indicando  respectivamente  o  número  de
+empregados, o  número de  relações de  gerência direta  e o  número de
+instruções.  Empregados  são identificados por  números de 1 a  N. A
+segunda linha contém N inteiros K<sub>i</sub>,  onde K<sub>i</sub> indica a idade do
+empregado de número i.
+
+<p>Cada uma  das M  linhas seguintes  contém dois  inteiros X  e Y,
+indicando  que X  gerencia Y  diretamente.  Seguem-se  I linhas,
+cada uma descrevendo uma instrução. Uma instrução de troca de gerência
+é descrita em uma linha contendo o identificador <span class="ttt">T</span> seguido de
+dois inteiros A e B, indicando os dois empregados que devem trocar
+seus  lugares na  cadeia  de  comando.  Uma  instrução  de pergunta  é
+descrita em uma  linha contendo o identificador  <span class="ttt">P</span> seguido de
+um  inteiro E  , indicando  um  empregado. A  última instrução  será
+sempre do tipo pergunta.
+ 
+
+<h3>Saída</h3>
+Para cada instrução  de pergunta seu programa deve  imprimir uma linha
+contendo um único  inteiro, a idade da pessoa mais  jovem que gerencia
+(direta  ou indiretamente)  o  empregado nomeado  na  pergunta.  Se  o
+empregado  nomeado   não  possui  um  gerente,   imprima  o  caractere
+&lsquo;<span class="ttt">*</span>&rsquo; (asterisco).
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  500 
+<li> 0  &leq;  M  &leq;  60 \times 10<sup>3</sup>
+<li> 1  &leq;  I  &leq;  500 
+<li> 1  &leq;  K<sub>i</sub>  &leq;  100, para 1  &leq;  i  &leq;  N
+<li> 1  &leq;  X,Y  &leq;  N, X  &ne;  Y
+<li> 1  &leq;  A,B  &leq;  N
+<li> 1  &leq;  E  &leq;  N
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 8 9
+21 33 33 18 42 22 26
+1 2
+1 3
+2 5
+3 5
+3 6
+4 6
+4 7
+6 7
+P 7
+T 4 2
+P 7
+P 5
+T 1 4
+P 7
+T 4 7
+P 2
+P 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+18
+21
+18
+18
+*
+26
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 5 6
+10 20 30 40 50 60
+1 5
+1 4
+3 6
+2 5
+4 5
+P 1
+P 5
+P 6
+T 1 6
+P 1
+P 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+*
+10
+30
+30
+60
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

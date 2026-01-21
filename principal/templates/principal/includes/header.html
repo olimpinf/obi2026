@@ -1,0 +1,73 @@
+{% load obi_extras %}
+<div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="{% url 'principal:index' %}">obi</a>
+    <div role="navigation">
+      <ul>
+        <li{% if '/compet/' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'compet:index' %}">Acesso Competidores</a>
+        </li>
+        <li{% if 'noticias' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'weblog:index' %}">Notícias</a>
+        </li>
+        <li{% if 'consultas' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'principal:consultas' %}">Consultas</a>
+        </li>
+        <li{% if 'resultados' in request.path %} class="active"{% endif %}>
+          <a href="/resultados">Resultados</a>
+        </li>
+        <li{% if 'pratique' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'pratique' %}">Pratique</a>
+        </li>
+      </ul>
+      <ul>
+        <li {% if '/restrito/' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'restrito:index' %}">Acesso Escolas</a>
+        </li>
+        <li {% if 'faq' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'faq:index' %}">Perguntas Frequentes</a>
+        </li>
+        <li{% if 'regulamento' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'regulamento' %}">Regulamento</a>
+        </li>
+        <li{% if 'datas' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'cal:obi_completo' %}">Calendário</a>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+{% if user.is_authenticated %}
+<div role="sub-banner-admin">
+  <div class="container">    
+    <span class="title-navigation3">XXV Olimpíada Brasileira de Informática</span>
+    <div role="navigation3">
+      <ul>
+	{% if user|obi_user_group == 'compet' %} 
+	<li>
+	  <a href="/compet"><img src="/static/img/icon-home.svg" width="24px" valign="middle"></a>
+        </li>
+	{% elif user|obi_user_group == 'local_coord' or user|obi_user_group == 'colab' or user|obi_user_group == 'colab_full' %} 
+	<li>
+	  <a href="/restrito"><img src="/static/img/icon-home.svg" width="24px" valign="middle"></a>
+        </li>
+	{% endif %}
+        <li>
+          <a href="{% url 'logout' %}">Encerrar a Sessão</a>
+        </li>
+        <li>
+          Autenticado como <em>{{ user }}</em>
+        </li>
+      </ul>
+    </div>    
+  </div>
+</div>
+{% else %}
+<div role="sub-banner">
+  <div class="container">    
+    <span class="title-navigation2">XXV Olimpíada Brasileira de Informática</span>
+  </div>
+</div>
+{% endif %}
+

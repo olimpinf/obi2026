@@ -1,0 +1,10 @@
+# Solução do Desafio da Aula 5
+
+nota1 = int(input())
+nota2 = int(input())
+if nota1 >= 85:
+  nota1 = 100
+if nota2 <= 30:
+  nota2 = 0
+print(nota1)
+print(nota2)

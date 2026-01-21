@@ -1,0 +1,23 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block content %}
+
+<h1>Resultado da Submissão</h1>
+
+{% if msg %}
+  <p>{{ msg|safe }}</p>
+  <H2>&nbsp;</H2>
+  <a class="button action" href="javascript: history.go(-1)">VOLTAR</a>
+{% else %}
+  <p>Os arquivos foram recebidos corretamente e estão sendo processados; o resultado da correção será enviado para o email do coordenador da sede.
+  </p>
+  <H2>&nbsp;</H2>
+  <a class="button action" href="">Submeter outro arquivo</a>
+  &nbsp;
+  &nbsp;
+  <a class="button action" href="{% url  'admin:index' %}">OK</a>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,137 @@
+title:Jogo dos copos
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma brincadeira muito comum e divertida entre dois jogadores usa uma
+moeda e três copos opacos (ou seja, não é possível ver o que está
+dentro do copo olhando pela lateral do copo). Os três copos são
+colocados com a boca para baixo, em uma linha, um ao lado do outro, em
+posições que vamos chamar de A, B e C. Uma moeda é colocada embaixo
+de um dos copos.
+
+<p>
+Na brincadeira, um jogador chamado banca realiza um movimento para trocar a posição
+de dois copos, arrastando os copos de tal modo que se a moeda está em
+baixo de um dos copos envolvidos no movimento, ela continua embaixo
+do mesmo copo após a troca de posição. O jogador banca pode realizar três
+tipos de movimento, ilustrados na figura abaixo:
+<ol>
+<li>  Trocar o copo na posição A com o copo na posição B.
+<li>  Trocar o copo na posição B com o copo na posição C.
+<li>  Trocar o copo na posição A com o copo na posição C.
+</ol>
+
+<div class="center">
+<img src="/static/img/task_images/2019f2pj_copos.png" width="600px" />
+</div>
+
+<p>
+O jogador banca realiza vários movimentos de troca tentando
+confundir o outro jogador, chamado espectador. Ao final o jogador
+espectador deve dizer em qual posição está a moeda.
+
+<p>
+Por exemplo, considere que inicialmente a moeda está embaixo do copo
+na posição A e que o jogador banca realiza uma sequência de apenas três
+trocas, executando um movimento do tipo 1, após o qual moeda termina embaixo do
+copo na posição B, seguido de um movimento do tipo 2, após o qual a moeda termina embaixo do
+copo na posição C, seguido de um movimento do tipo 3, após o qual a moeda termina embaixo do
+copo na posição A.
+
+<p>
+Nesta tarefa, dadas a descrição da sequência de movimentos e a posição inicial da moeda,
+você deve escrever um programa que determine a posição final da moeda após
+todos os movimentos.
+
+<h3>Entrada</h3>
+A primeira linha contém um inteiro N, o número de movimentos
+que o jogador banca realiza.
+A segunda linha contém um caractere, entre <span class="ttt">A, \textttB</span> e <span class="ttt">C</span>,
+indicando a posição inicial da moeda. Cada uma das N linhas seguintes contém 
+um inteiro, indicando o tipo de movimento efetuado pelo jogador banca na
+sequência.
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, com um único caractere entre
+  <span class="ttt">A</span>, <span class="ttt">B</span>
+  e <span class="ttt">C</span>, a posição em que a moeda se encontra
+  ao final da sequência de movimentos.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  1000
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+A
+1
+2
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+A
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+C
+1
+2
+3
+3
+1
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+B
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+B
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+B
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

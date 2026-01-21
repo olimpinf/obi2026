@@ -1,0 +1,112 @@
+title:Retângulo
+template:tasks/tarefa_programacao.html
+
+<p>
+Vô Pedro é um fazendeiro meticuloso. Em sua fazenda ele tem uma
+plantação no formato circular, com algumas árvores
+plantadas exatamente na circunferência da plantação. A figura (a)
+abaixo mostra a plantação com as árvores.
+
+<p>Agora vô Pedro quer usar uma longa corda e quatro das árvores para
+demarcar um retângulo na plantação, usando as árvores como vértices,
+com a corda marcando os lados.  A figura (b) abaixo mostra dois
+retângulos que podem ser demarcados usando as árvores na plantação
+figura (a).
+
+<div class="center"><img src="/static/img/task_images/2021f2p1_retangulo.png" width="600px" /></div>
+
+<p>Dada a descrição das posições das árvores na plantação circular de
+vô Pedro, sua tarefa é determinar se é possível demarcar um retângulo
+conforme descrito acima.
+
+
+<h3>Entrada</h3>
+<p> A primeira linha da entrada contém um inteiro N
+  indicando o número de árvores na circunferência da plantação.  As
+  árvores são representadas como pontos na circunferência.  A segunda
+  linha contém N inteiros L<sub>1</sub>, L<sub>2</sub>, &mldr; L<sub>N</sub>, indicando o
+  comprimento do arco entre cada par de árvores consecutivas. Os arcos
+  são dados no sentido anti-horário.
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo um único caractere,
+  que deve ser <span class="ttt">S</span> se é possível demarcar um retângulo usando as árvores
+  como vértices, ou <span class="ttt">N</span> caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 4  &leq;  N  &leq;  10<sup>5</sup>
+<li> 1  &leq;  L<sub>i</sub>  &leq;  10<sup>6</sup> para i = 1,2,&mldr;,N
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, N  &leq;  100.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, N  &leq;  300.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, N  &leq;  1000.
+<li> Para um conjunto de casos de testes valendo outros 40 pontos, nenhuma restrição adicional.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+3 3 4 2 6 2 2 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+14 16 15 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+3 7 7 3 10 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

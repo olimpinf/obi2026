@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:'Olimpíada Brasileira de Informática' }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'cadastro:index' %}">{{ site_header|default:'Olimpíada Brasileira de Informática' }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

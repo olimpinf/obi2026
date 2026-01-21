@@ -1,0 +1,25 @@
+# Carro elétrico
+1. C
+2. A
+3. C
+4. B
+# Olimpíadas esportivas
+5. C
+6. B
+7. A
+8. E
+# Pizza
+9. A
+10. C
+11. E
+12. E
+# Votação
+13. E
+14. E
+15. B
+16. B
+# Vassouras voadoras
+17. D
+18. B
+19. A
+20. D

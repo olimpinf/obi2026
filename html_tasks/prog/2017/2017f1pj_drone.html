@@ -1,0 +1,114 @@
+title:Drone de Entrega
+template:tasks/tarefa_programacao.html
+
+<p>
+A loja do Pará, especializada em vendas pela internet, está
+desenvolvendo <it>drones</it> para entrega de caixas com as compras dos
+clientes. Cada caixa tem a forma de um paralelepípedo reto retângulo
+(ou seja, no formato de um tijolo).
+
+<p>O <it>drone</it> entregará uma caixa de cada vez, e colocará a caixa
+diretamente dentro da casa do cliente, através de uma janela. Todas as
+janelas dos clientes têm o formato retangular e estão sempre
+totalmente abertas. O <it>drone</it> tem um aplicativo de visão
+computacional que calcula exatamente as dimensões H e L da
+janela. O <it>drone</it> consegue colocar a caixa através da janela somente quando
+uma das faces da caixa está paralela à janela, mas consegue virar e
+rotacionar a caixa antes de passá-la pela janela.
+
+<p>O aplicativo de controle do <it>drone</it> está quase pronto, mas falta
+um pequeno detalhe: um programa que, dadas as dimensões da maior janela do
+cliente e as dimensões da caixa que deve ser entregue, determine se o
+<it>drone</it> vai ser capaz de entregar a compra (pela janela) ou se a
+compra terá que ser entregue por meios normais.
+
+<h3>Entrada</h3>
+
+A entrada é composta por cinco linhas, cada uma contendo um número
+inteiro. A três primeiras linhas contêm os valores A,
+B, C, indicando as três dimensões da caixa, em centímetros. 
+As duas últimas linhas contêm os valores  H e L,
+indicando a altura e a largura da janela, em centímetros.
+
+<h3>Saída</h3>
+
+Seu programa deve escrever uma única linha, contendo apenas a letra <span class="ttt">S</span>
+se a caixa passa pela janela e apenas a letra <span class="ttt">N</span> em caso
+contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  A, B, C  &leq;  100
+<li> 1  &leq;  H, L  &leq;  100
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+30
+50
+80
+80
+60
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+75
+100
+50
+100
+30
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+20
+22
+5
+20
+10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

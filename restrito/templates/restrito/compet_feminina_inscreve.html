@@ -1,0 +1,39 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+
+<h2>Inscrição na Competição Feminina da OBI (CF-OBI)</h2>
+
+Escolha uma opção de acordo com as instruções apresentadas ao lado:
+
+
+  {% comment %}
+<div class="text-center">
+<a href="{% url 'restrito:compet_feminina_inscreve_prog' %}" class="btn btn-success mt-4" role="button">Inscrever competidora(s) já inscrita(s) na Modalidade <u>Programação</u> da OBI</a>
+</div>
+  {% endcomment %}
+<div class="text-center">
+<a href="{% url 'restrito:compet_feminina_inscreve_ini' %}" class="btn btn-success mt-4" role="button">Inscrever competidora já inscrita na OBI</a>
+</div>
+
+<div class="text-center">
+<a href="{% url 'restrito:compet_feminina_inscreve_nova' %}" class="btn btn-success mt-4" role="button">Inscrever nova competidora</a>
+</div>
+
+{% endblock %}
+
+{% block content-related %}
+    <h2>Instruções</h2>
+    <ul>
+      {% comment %}
+      <li><b>Competidoras inscritas na Modalidade Programação da OBI</b> podem participar da CF-OBI no mesmo nível na qual estão inscritas na OBI.
+          Para inscrevê-las, clique em <em>Inscrever competidora(s) já inscrita(s) na Modalidade Programação da OBI</em>.</li>
+      {% endcomment %}
+      <li><b>Competidoras já inscritas na  OBI</b> podem selecionar um nível da Modalidade Programação para participar da CF-OBI.
+          Essa escolha não modificará a participação na OBI.
+          Para inscrevê-las, clique em <em>Inscrever competidora(s) já inscrita(s) na OBI</em>.</li>
+      <li><b>Competidoras que não estão inscritas na OBI</b> podem ser inscritas para participar apenas da CF-OBI. Para inscrevê-las, clique em <em>Inscrever nova competidora</em>.</li>
+    </ul>
+{% endblock %}

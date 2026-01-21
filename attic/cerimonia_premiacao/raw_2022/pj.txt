@@ -1,0 +1,13 @@
+1,1,400,Mateus Salazar Costa,SuperGeeks Botafogo,Rio de Janeiro,RJ
+1,1,400,Tiago Popovic Giavina Bianchi,Colégio Santa Cruz,São Paulo,SP
+1,1,400,Maria Clara Fontes Silva,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+2,5,366,Lucas Cardoso Garcia,Centro de Excelência Master,Aracaju,SE
+2,7,361,João Pedro Gomes Cordeiro de Castro,Instituto Dom Barreto,Teresina,PI
+3,9,349,Enzo Ivamoto Hirota,Colégio Etapa,São Paulo,SP
+3,10,344,André Tamay Honda,Colégio Etapa,São Paulo,SP
+4,14,300,Rebeca Lins de Lemos Souza,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+4,14,300,Álef Araújo Sarmento,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+5,16,290,Matheus Cristian Rocha Gomes,Associação Efigênia Vidigal de Educação e Cultura,Belo Horizonte,MG
+5,19,257,Pavel Sergeevich Demidov,Penhense Escola,São Paulo,SP
+6,24,200,Alícia Alarcon Flaibam,Colégio Villa Lobos,Amparo,SP
+6,60,100,Rafaela Valentina Costa Kage,Colégio Etapa Valinhos,Valinhos,SP

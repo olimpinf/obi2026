@@ -1,0 +1,30 @@
+{{ greetings }}
+
+     {{ compet.compet_name}}
+
+você está recebendo esta mensagem porque seu professor efetuou sua inscrição na Olimpíada Brasileira de Informática (OBI{{ year }}).
+
+Esta mensagem é apenas um lembrete de que a prova da Fase 1 da Modalidade Iniciação deve ser feita entre os dias 30 de maio e 01 de junho (segunda-feira a quarta-feira da semana que vem). 
+
+A prova pode ser feita online ou na escola: seu professor é quem vai determinar como a prova vai ser feita.
+
+Se a prova for online você pode escolher o dia e o horário de início da prova, desde as 7:00 do dia 21/6 até as 22:00 do dia 23/6. Após você iniciar a prova, você tem uma hora para terminá-la (não é possível "pausar" o tempo de prova!). Você pode fazer a prova em casa, mas a prova deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, programas que você mesmo tenha feito anteriormente, arquivos de computador...). Confiamos no seu "espírito olímpico" para obedecer a essas regras!
+
+Se você ainda não fez a Prova Teste, por favor procure fazê-la antes da prova real, é importante para se familiarizar com o Ambiente de Prova da OBI{{ year }}. Você pode refazer a Prova Teste quantas vezes quiser. Para acessar a Prova Teste (e a Prova da Fase 1) acesse sua página pessoal na OBI{{ year }}:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se
+
+usuário: {{ compet.compet_id_full }}
+senha: {{ compet.compet_conf }}
+
+Em caso de qualquer problema entre em contato com o professor Coordenador da OBI{{ year }} na sua escola:
+
+Nome: Prof(a). {{ school.school_deleg_name }}
+Endereço de email: {{ school.school_deleg_email }}
+
+
+Boa prova!
+
+{% include 'includes/signature.html' %}

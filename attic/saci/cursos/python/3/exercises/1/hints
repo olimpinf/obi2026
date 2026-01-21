@@ -1,0 +1,90 @@
+saci_text_print,saci_math_arithmetic,math_number,saci_math_arithmetic,math_number,math_number
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas os valores não estão corretos.
+Verifique novamente o enunciado e corrija sua solução, alterando
+o conteúdo dos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+<br>
+
+@saci_text_print,saci_math_arithmetic,saci_math_arithmetic,math_number,math_number,math_number
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas os valores não estão corretos.
+Verifique novamente o enunciado e corrija sua solução, alterando
+como necessário os valores dos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/> e
+  as operações do bloco
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e 
+<br>
+
+@saci_text_print,saci_math_arithmetic,math_number,math_number
+
+Muito bom, você está no caminho certo, já montou alguns blocos.
+Mas na sua expressão você precisa usar mais um <em>bloco de aritmética</em>
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e
+  mais um <em>bloco de número</em> 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+  O novo <em>bloco de aritmética</em> deve ser encaixado como um dos valores
+  do <em>bloco de aritmética</em> que você já montou.
+  <p>
+  Revise o enunciado do desafio e corrija sua expressão.
+<br>
+
+@saci_text_print,saci_math_arithmetic,math_number
+
+Muito bom, você está no caminho certo, já montou alguns blocos.
+Mas na sua expressão você precisa usar mais um <em>bloco de aritmética</em>
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e
+  mais um <em>bloco de número</em> 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+  O novo <em>bloco de aritmética</em> deve ser encaixado como um dos valores
+  do <em>bloco de aritmética</em> que você já montou.
+  <p>
+  Revise o enunciado do desafio e corrija sua expressão.
+<br>
+
+@saci_text_print,saci_math_arithmetic
+
+Muito bom, você está no caminho certo, já montou alguns blocos.
+Mas na sua expressão você precisa usar mais um <em>bloco de aritmética</em>
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e
+  mais um <em>bloco de número</em> 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+  O novo <em>bloco de aritmética</em> deve ser encaixado como um dos valores
+  do <em>bloco de aritmética</em> que você já montou.
+  <p>
+  Revise o enunciado do desafio e corrija sua expressão.
+<br>
+
+@saci_text_print
+
+Muito bem, você está no caminho certo, está usando
+o bloco   <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Agora precisa encaixar nele o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> para
+  começar a montar a expressão que dá o resultado correto.
+<br>
+Para usar os blocos <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/>
+<img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>
+clique em <b>Matemática</b> na Barra de Ferramentas e arraste
+o bloco para a área de Programa, encaixando um bloco no outro.
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar usando
+um bloco  <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+e montar a expressão que representa a solução utilizando blocos
+<img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px" />
+e  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px" />.
+<br>
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+clique no menu <b>E/S</b> (entrada e saída) na Barra de Ferramentas e arraste
+o bloco para a área de Programa.
+Para usar os blocos <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/>
+<img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>
+clique em <b>Matemática</b> na Barra de Ferramentas e arraste
+o bloco para a área de Programa, encaixando um bloco no outro.
+<br>

@@ -1,0 +1,27 @@
+{% load i18n %}
+{% regroup dates by year as dates_by_year %}
+
+
+
+<div id="blog" class="blog">
+  <div class="container">
+    <div class="blog-list">
+      
+      <ul> 
+  {% for month in dates_by_year %}
+        <li id="header-{{ month.grouper }}">
+          <h2><a href="{% url 'blog_restrito:archive-year' month.grouper %}" data-bs-toggle="nocollapse" data-bs-target="#level-1-{{ month.grouper }}" class="collapsed">{{ month.grouper }} <!--i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i--></a></h2>
+          <div id="level-1-{{ month.grouper }}" class="collapse show" data-bs-parent=".blog-list">
+	    <ul>
+          {% for d in month.list %}
+               <li><a href="{% url 'blog_restrito:archive-month' d|date:"Y" d|date:"m" %}">{{ d|date:"F" }}</a></li>
+          {% endfor %}
+	    </ul>
+	    </div>
+       </li>
+  {% endfor %}
+      </ul>
+      </div>
+    </div>
+</div>
+

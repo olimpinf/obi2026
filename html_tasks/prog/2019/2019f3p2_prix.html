@@ -1,0 +1,123 @@
+title:Grand Prix da Nlogônia
+template:tasks/tarefa_programacao.html
+
+<p>
+A Nlogônia irá realizar o Grand Prix de corrida de carros. Foram dados
+planos de construção de um circuito para a realização do evento e você
+ficou responsável pela avaliação do plano.  Um grafo direcionado de N
+vertices e M arestas é considerado um Grand Prix se existe algum ciclo
+direcionado, ou seja, existe um vertice P e um caminho direcionado
+saindo de P que chega novamente em P.  A Nlogônia pode ser
+representada como um grafo direcionado que contêm N esquinas,
+numeradas de 1 a N. Foram dados para você M planos de construção, cada
+um contendo três inteiros U, L e R, que significa o seguinte: caso
+esse plano seja aceito, será construída uma estrada direcionada da
+esquina U para a esquina i, para todo L &leq; i &leq; R. Sua tarefa é
+computar o menor inteiro X tal que aceitando todos os planos de 1 até
+X, teremos um Grand Prix em Nlogônia.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém dois inteiros N e M,
+representando, respectivamente, o número de esquinas e o número de
+planos. As M linhas seguintes contêm, cada uma, três inteiros U, L e R, descrevendo
+um plano de construção.
+
+
+<h3>Saída</h3>
+<p>
+Imprima um inteiro X, o menor inteiro tal que aceitando todos os
+planos de 1 até X, inclusive, conseguiremos um Grand Prix. Caso
+Nlogônia não consiga realizar o Grand Prix, imprima -1.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  N &leq;  200000
+<li> 1 &leq;  M &leq;  200000
+<li> 1 &leq;  L &leq;  R  &leq;  N
+<li> 1 &leq;  U &leq;  N
+<li> É garantido que não existe uma aresta de um vertice indo para ele mesmo.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+  <li> Em um conjunto de casos de teste valendo 10 pontos, N &leq;  200000, M &leq;  200000 e L = R para todo plano.
+ <li> Em um conjunto de casos de teste valendo 10 pontos, N &leq;  1000, M &leq;  500.
+ <li> Em um conjunto de casos de teste valendo 10 pontos, N &leq;  500, M &leq;  20000.
+ <li> Em um conjunto de casos de teste valendo 25 pontos, N &leq;  200000, M &leq;  200000 e é garantido que L = 1 para todo plano.
+ <li> Em um conjunto de casos de teste valendo 45 pontos, nenhuma restrição adicional.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8 6
+5 6 8
+3 1 2
+6 2 4
+1 4 5
+8 4 7
+2 3 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2 2
+1 2 2
+2 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 6
+1 2 5
+3 4 5
+5 2 2
+1 2 4
+3 4 5
+4 2 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

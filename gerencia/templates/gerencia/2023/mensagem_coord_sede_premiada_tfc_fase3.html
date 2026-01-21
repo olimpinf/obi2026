@@ -1,0 +1,19 @@
+{{ greetings }} {{ coord_name }},
+
+uma aluna da escola {{ school.school_name }} foi premiada na Competição Feminina da OBI 2023 e portanto recebeu um convite para participar da Fase 3 (Fase Nacional) da OBI2023 na modalidade Programação, que ocorrerá em {{ mod_date }}.
+
+A cidade de {{ school.school_city }}/{{ school.school_state }} não tem uma sede alocada para a prova atualmente. Por isso, temos as seguintes opções disponíveis, por favor escolha uma delas:
+
+1) A aluna realizará a prova na sua própria escola. O(A) Sr(a). receberá acesso à prova e deve se responsabilizar por disponibilizar computadores e aplicar a prova. Se concorda com esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/2/{{ school.school_hash }}
+
+2) A aluna se deslocará até uma outra escola, Universidade ou Instituto Federal, a confirmar, para realizar a prova. Se prefere esta opção, clique no seguinte link:
+
+https://olimpiada.ic.unicamp.br/restrito/seleciona_sede_fase3/3/{{ school.school_hash }}
+
+Solicitamos que a escolha seja feita o mais breve possível, para podermos divulgar os locais de prova no site da OBI2023.
+
+Atenciosamente,
+
+{% include 'includes/signature.html' %}

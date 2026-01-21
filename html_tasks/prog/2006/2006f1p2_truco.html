@@ -1,0 +1,121 @@
+title:Truco
+template:tasks/tarefa_programacao.html
+
+<p>Truco é um jogo de cartas que pode ser jogado por duas ou mais
+ pessoas. Existem diversas variações: o Truco Cego ou Truco Espanhol
+ (popular no sul do Brasil, Argentina, Uruguai e outros países), o
+ Truco Paulista, Capixaba ou Mineiro (variações populares no Brasil),
+ o Truco Índio e o Truco Eteviano. Em geral, é urna disputa de três
+ rodadas ( “melhor de três” ) para ver quem tem as cartas mais
+ “fortes” (de valor simbólico mais alto).
+
+<p>Adalberto e Bernardete estão jogando uma variação de truco com 40
+cartas (foram retirados do baralho todas as cartas de valor 8, 9 e 10,
+além dos coringas) , e o valor simbólico independente do naipe da
+carta. A ordem de valor simbólico das cartas nessa variação de truco
+é mostrada abaixo, ordenada da mais “fraca” (mais à esquerda) para a
+mais "forte" (mais à direita)
+
+<center> 4 5 6 7 Q J K A 2 3 
+</center>
+
+<p>Cada partida é
+disputada em três rodadas. A cada rodada, os jogadores escolhem uma
+das cartas para mostrar, e vence aquele que tiver a carta com o maior
+valor simbólico. Em caso de empate (ou seja, os dois apresentarem
+cartas com os mesmos valores simbólicos), Adalberto vence, pois é mais
+velho que Bernardete. Vence a partida aquele que vencer o maior número
+de rodadas. Depois de algumas partidas, Adalberto e Bernardete estão
+com dificuldades para saber quem venceu mais partidas, e pediram a sua
+ajuda.
+
+<p>
+Sua tarefa é escrever um programa que calcule o número de partidas que cada um dos competidores 
+(Adalberto e Bernarrlete) venceram.
+
+<h3>Entrada</h3>
+A primeira linha da saída possui um inteiro N que 
+indica o número de partidas disputadas entre Adalberto e Bernardete. 
+As N linhas seguintes contem cada uma seis inteiros, 
+A<sub>1</sub>, A<sub>2</sub>, A<sub>3</sub>,
+B<sub>1</sub>, B<sub>2</sub> e B<sub>3</sub>,
+que correspondem às três cartas apresentadas por Adalberto nas rodadas 1, 2 
+e 3 daquela partida, seguidas pelas três cartas 
+apresentadas por Bernardete nas rodadas
+1, 2 e 3 da mesma partida. Na entrada, 
+o número 1 representa o As (A), 11 representa o Valete (J), 12 representa a Dama (Q) e 13 
+representa o Rei (K).
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma única linha, que contém os números 
+de partidas vencidas por Adalberto e por Bernardete, nessa ordem.
+
+<h3>Restrições</h3>
+<ul>
+  <li>1 &leq; N &leq; 1 000 000
+  <li>1 &leq; A<sub>i</sub> &leq; 13
+  <li>1 &leq; B<sub>i</sub> &leq; 13
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+1
+1 2 3 1 3 2
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+1 0
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+2
+1 5 6 6 3 4
+5 6 2 11 13 1 2
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+1 1
+</pre>
+ </td>
+ </tr>
+</table>
+
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+5
+1 2 11 12 7 6
+3 5 1 13 1 4
+4 5 7 11 12 13
+1 5 6 3 5 2
+5 6 7 4 5 2
+
+
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+3 2
+</pre>
+ </td>
+ </tr>
+</table>

@@ -1,0 +1,119 @@
+title:Camisetas da Olimpíada
+template:exams/tarefa_programacao.html
+order:3
+<p>
+A Olimpíada Municipal de Programação vai distribuir camisetas
+para os melhores colocados, e por isso solicitou que os
+premiados informassem o tamanho preferido da camiseta, entre
+os tamanhos pequeno e médio.
+
+<p>A empresa que confeccionou as camisetas, por uma falha, pode ter se
+enganado na quantidade de camisetas para cada tamanho. Foram produzidas
+camisetas em número suficiente para todos os premiados, mas talvez não
+do tamanho preferido.
+
+<p>Dadas a lista com os tamanhos preferidos pelos premiados e a quantidade de camisetas de cada tamanho produzidas pela empresa, escreva um programa para determinar
+se todos os premiados receberão camisetas do tamanho escolhido.
+
+<h3>Entrada</h3>
+<p>A primeira linha contém um inteiro N, o número de premiados.
+A segunda linha contém N inteiros T<sub>i</sub>, indicando os tamanhos solicitados
+pelos premiados, sendo que T<sub>i</sub> = 1 representa o tamanho pequeno e
+T<sub>i</sub> = 2 representa o tamanho médio.
+A terceira linha contém
+um inteiro P, o número de camisetas de
+tamanho pequeno produzidas. A quarta e última contém um inteiro M, o
+número de camisetas de tamanho médio produzidas.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único
+caractere, que deve ser a letra maiúscula '<span class="ttt">S</span>' se todos os
+premiados serão atendidos com a camiseta do tamanho que escolheram, ou
+a letra maiúscula '<span class="ttt">N</span>' caso contrário.}
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  1000
+<li> 0  &leq;  P  &leq;  1000
+<li> 0  &leq;  M  &leq;  1000
+<li> N  &leq;  P + M
+<li> 1  &leq;  X<sub>i</sub>  &leq;  2 para 1  &leq;  i  &leq;  N
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, 1  &leq;  N  &leq;  10.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+1 1 2 1 2
+3
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+2 2 2 2
+1
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+1 1 1 2 1 1
+4
+4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

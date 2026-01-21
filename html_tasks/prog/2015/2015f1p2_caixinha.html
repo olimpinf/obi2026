@@ -1,0 +1,96 @@
+title:Caixinha de Palitos
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+A caixinha contém N palitos de picolé, que precisam ser divididos
+entre os amigos Renato, Gustavo e Bruno, para um trabalho
+escolar. Cada amigo deve ganhar pelo menos 1 (um) palito. O professor
+vai determinar um número M máximo de palitos que cada um pode
+ganhar. Nesta tarefa, dados N e M, seu programa deve calcular
+quantas maneiras distintas existem de se dividir todos os N palitos
+entre os três amigos. Por exemplo, para N=100: se M=15, então há
+zero maneiras de se dividir, pois a soma dos números de palitos de
+Renato, Gustavo e Bruno seria no máximo 45, só que precisa ser sempre
+N; mas se M=34, aí veja que haveria 6 maneiras distintas:
+
+<center>
+<img src="/static/img/task_images/2015f1p2_caixinha.png" width="300px">
+</center></p>
+
+
+<h3>Entrada</h3>A entrada é composta por apenas uma linha com dois números naturais
+N e M, indicando, respectivamente, o número de palitos na caixinha
+e o número máximo que cada amigo pode ganhar.
+<h3>Saída</h3>Seu programa deve escrever uma única linha na saída, contendo um único número natural: quantas maneiras
+distintas existem de se dividir os N palitos entre os três amigos.
+<h3>Restrições</h3><ul>
+  <li> 3 ≤  N ≤  100000, 1 ≤  M ≤  N;</li>
+</ul>
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 20 pontos, N ≤  300</li>
+<li> Em um conjunto de casos de teste somando 50 pontos, N ≤  30000</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100 34
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100000 98765
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4997567718
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

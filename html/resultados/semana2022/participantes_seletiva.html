@@ -1,0 +1,65 @@
+title: Participantes da Seletiva
+template:flatpages_result.html
+
+
+<p>Participantes serão considerados confirmados quando o formulário de
+confirmação (enviado por email) e a Taxa de Ressarcimento forem
+recebidos. Se você é convidado ou acompanhante não preencheu o 
+formulário de confirmação, entre em contato com a Coordenação da OBI
+(olimpinf<img src="/static/img/at.gif">ic.unicamp.br).
+
+<p>Nas tabelas abaixo, a cor verde significa que já recebemos e
+ processamos a informação. Se suas colunas sob seu nome estão todas verdes,
+ significa que temos as informações completas que necessitamos.
+  
+<h3>Participantes</h3>
+  <table class="simple" border="1">
+  <tr>
+    <th width="70%">Nome</th><th>Formulário<br>Confirmação</th><th></th><th>Taxa<br>recebida</th>
+  </tr>
+  {% for c in participants %}
+  <tr>
+    <td width="70%">{{ c.compet.compet_name|obi_capitalize_name }} </td>
+    {% endif %}
+    {# form info general#}
+    {% if c.form_info %}
+       <td bgcolor="#44BB11">
+    {% else %}
+    <td>
+    {% endif %}
+    {# tax #}
+    {% if c.tax %}
+      <td bgcolor="#44BB11"></td>
+    {% else %}
+    <td></td>
+  {% endif %}  
+  </tr>
+  {% endfor %}
+  </table>
+
+{% endblock %}  
+
+
+
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

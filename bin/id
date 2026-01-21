@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z "$2" ]; 
+then 
+    city=$1
+else
+    city="$1 $2"
+fi
+echo ${city}
+
+psql -P pager=off -d obi2019 -U obi -c "select distinct school_id,school_name,school_city,school_is_site_phase3 as sede from compet,school where compet_school_id=school_id and compet_classif_fase2 and school_city ilike '%${city}%';"

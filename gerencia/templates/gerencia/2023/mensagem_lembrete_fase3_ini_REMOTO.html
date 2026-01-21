@@ -1,0 +1,56 @@
+{{ greetings }}
+
+     {{ compet.compet_name}}
+
+você está recebendo esta mensagem porque está classificad{{ suffix }} para a Fase 3 (Fase Nacional) da Olimpíada Brasileira de Informática (OBI{{ year }}).
+
+{% comment %}
+Esta mensagem é apenas um lembrete de que a prova da Fase 3 da Modalidade Iniciação ocorre no próximo sábado, dia 01 de outubro de 2022.
+{% endcomment %}
+Esta mensagem é apenas um lembrete de que a prova da Fase 3 da Modalidade Iniciação ocorre amanhã, dia 01 de outubro de 2022.
+
+Você pode fazer a prova tanto em casa (na forma online, usando o Ambiente de Prova da OBI{{ year }}) como na sua escola (em papel ou também online, a escola decide). Consulte o professor Coordenador da OBI{{ year }} na sua escola para saber se você deve fazer a prova em casa ou na escola. O professor Coordenador da OBI{{ year }} na sua escola é:
+
+    Prof(a). {{compet.compet_school.school_deleg_name }}
+
+Seja a prova feita na escola ou em casa, ela deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, anotações pessoais...). Confiamos no seu "espírito olímpico" para obedecer a essas regras!
+
+Para a prova online, o Ambiente de Prova estará aberto entre 8:00 e 13:00 do dia 02/10 e você pode escolher o momento iniciar a prova (entre 8:00 e 11:00). Após você iniciar a prova, você tem DUAS HORAS para terminá-la (não é possível "pausar" o tempo de prova!). Note que o Ambiente de Prova fecha às 13:00 e após esse horário não será mais possível submeter respostas.
+
+{% comment %}
+Aproveite estes últimos dias para fazer ou refazer a Prova Teste, é importante estar bem familiarizado com o Ambiente de Prova da OBI{{ year }} se você for fazer a prova online. Você pode refazer a Prova Teste quantas vezes quiser. Leia também as instruções ao final desta mensagem.
+{% endcomment %}
+Aproveite este último dia para fazer ou refazer a Prova Teste, é importante estar bem familiarizado com o Ambiente de Prova da OBI{{ year }} se você for fazer a prova online. Você pode refazer a Prova Teste quantas vezes quiser. Leia também as instruções ao final desta mensagem.
+
+Para acessar a Prova da Fase 3 (e a Prova Teste) acesse sua página pessoal na OBI{{ year }}, através link "ACESSO COMPETIDORES" da página da OBI{{ year }}:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para autenticar-se:
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+
+
+Boa prova!
+
+**********
+INSTRUÇÕES
+**********
+
+* No Ambiente de Prova da OBI{{ year }}, as respostas são salvas automaticamente
+  assim que marcadas. Você pode alterar suas respostas quantas vezes quiser.
+
+* Procure não deixar questões sem resposta. Você não perde pontos por
+  respostas erradas.
+
+* A correção das tarefas será realizada após o período de aplicação
+  da prova e o resultado será divulgado posteriormente.
+
+* A prova é individual e sem consulta a qualquer material. Você pode
+  usar caneta, lápis, papel em branco, borracha e régua.
+
+* Não divulgue ou comente as tarefas da prova com outros competidores
+  até o término do período de aplicação da prova (sábado 01/10, 13:00).
+
+{% include 'includes/signature.html' %}

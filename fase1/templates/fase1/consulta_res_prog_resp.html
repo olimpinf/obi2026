@@ -1,0 +1,78 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Correção Fase 1 - Programação{% endblock %}
+
+{% block header %}<h1>Consulta Correção Fase 1 - Programação</h1>{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-3">{{ result.compet.compet_name }}</h2>
+
+<b>Num. Inscrição</b>: {{ result.compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ result.compet.compet_type|obi_format_compet_type_short }}<br>
+
+{% if result.compet.compet_points_fase1 %}
+<b>Pontuação</b>: {{ result.compet.compet_points_fase1 }} pontos<br>
+{% else %}
+<b>Pontuação</b>: não encontrada <br>
+{% endif %}
+
+{% if result.compet.compet_sex == "F" %}
+<b>Classificada para a Fase Estadual (Fase 2)</b>: 
+{% else %}
+<b>Classificado para a Fase Estadual (Fase 2)</b>: 
+{% endif %}
+{% if result.compet.compet_classif_fase1 %}
+Sim
+{% else %}
+Não
+{% endif %}
+<br>
+
+<p><em>Competidores têm acesso a mais detalhes sobre a correção em suas páginas pessoais na OBI2023.</em></p>
+
+{% if result.log %}
+<b>Relatório de correção</b>:
+{% for log in result.log %}
+<hr>
+<pre>
+{{ log.result_log }}
+</pre>
+{% endfor %}
+{% else %}
+<b>Relatório de correção</b>: não encontrado<br>
+{% endif %}
+
+<hr>
+<p>
+<!--p>O resultado é preliminar, e pode ser alterado em função
+de recorreções.-->
+<p>
+<a href="{% url 'fase1:recupera_subm_prog' %}">Recupera soluções</a> 
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include "includes/see_also_result.html" %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Consulta Correção Fase 1 - Programação</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

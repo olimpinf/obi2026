@@ -1,0 +1,32 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+{% block title %}Pratique{% endblock %}
+
+{% block header %}Pratique{% endblock %}
+{% block head_extra %}
+{% include "tasks/includes/head_tasks.html" %}
+{% endblock %}
+
+{% block content %}
+<h1>{{ problem_name_full }}</h1>
+
+<p>Sua solução foi recebida e está sendo corrigida. 
+
+<p>Por favor aguarde um momento...
+  
+{% endblock %}
+
+{% block content-related %}
+    {% include "tasks/includes/contents_tasks.html" %}
+
+{% endblock %}
+
+{% block body_extra %}
+<script>
+setTimeout(function() {
+  window.location.href = "../resultado/";
+}, 4000);
+</script>
+{% endblock body_extra %}

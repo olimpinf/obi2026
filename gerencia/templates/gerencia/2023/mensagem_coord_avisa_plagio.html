@@ -1,0 +1,46 @@
+{{ greetings }} {{ school_data.coord_name}},
+
+infelizmente detectamos plágio na prova da Fase 1 da OBI{{ year }}
+entre competidores da escola
+
+   {{ school_data.school_name }}
+
+Os competidores envolvidos são:
+
+{% for p in school_data.item %}
+* {{ p.source_name }}:
+  {{ p.compet_id_full_1 }} - {{ p.compet_name_1 }}
+  {{ p.compet_id_full_2 }} - {{ p.compet_name_2 }}
+
+{% endfor %}
+
+A deteção de plágio foi feita por um software utilizado em cursos da
+Unicamp; numa segunda etapa todos os arquivos identificados pelo
+software foram inspecionados visualmente para confirmar a cópia.
+Solicitamos que o(a) Sr(a). verifique pessoalmente os arquivos relacionados
+acima, consultando a página de "status" da prova: na página de
+coordenação, seção "Fase 1", linha "Prova Fase 1 Online: , clique em
+"Status".  Se o(a) Sr(a). considerar que não houve fraude, por favor entre
+em contato.
+
+Entendemos que alguns dos competidores envolvidos são muito jovens.
+Além disso, o fato de a prova ser online torna impossível a
+fiscalização efetiva dos alunos. Mas não podemos admitir esse tipo de
+comportamento. Os competidores serão desclassificados e removidos da
+lista de inscritos na OBI{{ year }}.
+
+Solicitamos também que o(a) Sr.(a) informe aos competidores envolvidos
+a razão da desclassificação e que os orientem a não repetirem esse
+comportamento em anos futuros; se forem novamente envolvidos em
+qualquer tipo de infração do regulamento serão proibidos
+definitivamente de participar da OBI.
+
+Não haverá anúncio público sobre a desclassificação. Infelizmente
+detectamos plágios todos os anos, em todas as fases da OBI{{ year }}, o que
+somente reforça a necessidade de desclassificação, para que a
+competição seja a mais justa possível.
+
+Agradecemos a colaboração com a OBI{{ year }}, atenciosamente,
+
+{% include 'includes/signature.html' %}
+

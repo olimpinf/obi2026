@@ -1,0 +1,11 @@
+#!/bin/sh
+
+city=$1
+state=$2
+
+psql -d obi2024 -U obi -c "select count(*),name_short, school_id,school_site_phase3_prog as \"sede\", school_name,school_city from level, compet,school where level.id=compet_type and compet_classif_fase2 and school_id=compet_school_id and school_city ilike '${city}' and compet_type in (3,4,5,6) and school_state='${state}' group by name_short,school_id,school_city, school_name order by school_city;"
+
+psql -d obi2024 -U obi -c "select count(*),name_short from level, compet,school where level.id=compet_type and compet_classif_fase2 and school_id=compet_school_id and school_city ilike '${city}' and school_state='${state}' and compet_type in (3,4,5,6) group by name_short"
+
+psql -d obi2024 -U obi -c "select count(*) from level, compet,school where level.id=compet_type and compet_classif_fase2 and school_id=compet_school_id and school_city ilike '${city}' and school_state='${state}' and compet_type in (3,4,5,6);"
+

@@ -1,0 +1,11 @@
+% db=obi2020
+insert into teste_fase1 (compet_id,school_id) select compet_id,compet_school_id from compet where compet_email is not null and compet.compet_id not in (select teste_fase1.compet_id from teste_fase1);
+
+update teste_fase1 set time_start=Null, time_finish=Null, answers=Null where compet_id=x;
+
+
+
+% db=corretor
+
+delete from res_teste_fase1 where team_id=x;
+delete from sub_teste_fase1 where team_id=x;

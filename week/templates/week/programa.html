@@ -1,0 +1,221 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Programação</h2>
+
+Na Seletiva IOI os alunos têm como atividades aulas, discussões de problemas e provas.
+
+<p>As atividades ocorrerão entre os dias 2 e 6 de maio de
+2022. O dia de chegada é 1/5 (domingo) e o dia de partida é 7/5 (sábado).
+</p>
+
+<h4>Programa da Semana Olímpica</h4>
+<ul>
+  <li>1/5 (Domingo)
+    <ul>
+      <li>Todo o dia - Chegada dos participantes (para os convidados do Estado de São Paulo, a chegada deve ser após as 16:00)</li>
+      <li>19:00 - Jantar </li>
+    </ul> 
+  </li>
+
+  <li>2/05 (Segunda-Feira)
+    <ul>
+      <li>07:30 - 08:30 - Café da manhã </li>
+      <li>09:00 - 12:00 - Aulas Teóricas</li>
+      <li>12:00 - 13:15 - Almoço </li>
+      <li>13:15 - 15:15 - Aulas Práticas</li>
+      <li>15:15 - 15:30 - Lanche </li>
+      <li>15:30 - 18:00 - Aulas Práticas </li>
+      <li>19:00 - Jantar </li>
+    </ul> 
+    {% comment %}
+    <ul>
+      <li><a href="https://drive.google.com/file/d/1SRL1MiBK91KTcIdGaikahzt_bnCaj28M/view">Aula prof. Felipe</a>
+    </ul>
+    {% endcomment %}
+  </li>
+  <li>3/05 (Terça-Feira)
+    <ul>
+      <li>07:30 - 08:30 - Café da manhã </li>
+      <li>09:00 - 12:00 - Aulas Teóricas</li>
+      <li>12:00 - 13:15 - Almoço</li>
+      <li>13:15 - 15:15 - Aulas Práticas</li>
+      <li>15:15 - 15:30 - Lanche</li>
+      <li>15:30 - 18:30 - Prova 1</li>
+      <li>19:00 - Jantar </li>
+    </ul>
+    {% comment %}
+    <ul>
+      <li><a href="https://docs.google.com/document/d/1YawOubrtv6SNfJgLHVmmy2kHTCR-geSZ9X3b9ANZs7Q/edit?usp=sharing">Problemas aula prof. Emanuel</a>
+      <li><a href="https://docs.google.com/document/d/19O2t9pj-R5AZHwbfWd3IvIYSkJbtRJYd7vJAlSqh25g/edit?usp=drivesdk">Problemas aula prof. Bruno</a>
+    </ul>
+    {% endcomment %}
+  </li>
+  <li>4/05 (Quarta-Feira)
+    <ul>
+      <li>07:30 - 08:30 - Café da manhã </li>
+      <li>09:00 - 12:00 - Aulas Teóricas</li>
+      <li>12:00 - 13:15 - Almoço</li>
+      <li>13:15 - 15:15 - Aulas Práticas</li>
+      <li>15:15 - 15:30 - Lanche</li>
+      <li>15:30 - 18:30 - Prova 2</li>
+      <li>19:00 - Jantar </li>
+    </ul> 
+  </li>
+
+  <li>5/05 (Quinta-Feira)
+    <ul>
+      <li>07:30 - 08:30 - Café da manhã </li>
+      <li>09:00 - 12:00 - Aulas Teóricas</li>
+      <li>12:00 - 13:15 - Almoço</li>
+      <li>13:15 - 15:15 - Aulas Práticas</li>
+      <li>15:15 - 15:30 - Lanche</li>
+      <li>15:30 - 18:30 - Prova 3</li>
+      <li>19:00 - Jantar </li>
+    </ul> 
+  </li>
+
+  <li>6/05 (Sexta-Feira)
+    <ul>
+      <li>07:30 - 08:00 - Café da manhã </li>
+      <li>08:15 - 09:00 - Ônibus para o IC/Unicamp</li>
+      <li>09:00 - 12:00 - Aulas Teóricas</li>
+      <li>12:00 - 13:00 - Almoço </li>
+      <li>13:30 - 18:30 - Prova 4</li>
+      <li>19:00 - Jantar </li>
+    </ul> 
+  </li>
+  <li>7/05 (Sábado)
+    <ul>
+      <li>07:30 - 09:00 - Café da manhã </li>
+      <li>A partir das  5:00 horas - Partida dos competidores</li>
+      <li>12:00 - 13:00 - Almoço para os competidores que viajam mais tarde </li>
+    </ul> 
+  </li>
+
+</ul>
+
+
+{% comment %}
+<h3>Abertura</h3>
+<p>Haverá uma pequena cerimônia de abertura na segunda-feira  (6/12), por volta de 20 minutos,
+  iniciando 08:30. O link para a abertura é <span class="ttt">
+    <a href="https://www.youtube.com/channel/UC027mkV9IJ4TCOY8PERkxoQ">https://www.youtube.com/channel/UC027mkV9IJ4TCOY8PERkxoQ</a>.
+  </span>
+  
+  <ul>
+    <li>Prof. Dr. Anderson de Rezende Rocha, Diretor do Instituto de Computação da Unicamp
+    <li>Prof. Dr. Carlos Eduardo Ferreira, IME-USP, Diretor de Competições da SBC
+    <li>Profa. Dra. Flávia Pisani, IC-Unicamp, Coordenadora da Semana Olímpica da OBI2021
+    <li>Prof. Dr. Ricardo Anido, IC-Unicamp, Coordenador da OBI2021
+  </ul>
+<p>
+  Obs. :Não haverá atividade no domingo (5/12), ao contrário do previamente anunciado.
+
+<h3>Encerramento</h3>
+<p>Haverá uma pequena cerimônia de encerramento no sábado  (11/12), por volta de 30 minutos,
+  iniciando 10:00. O link para a cerimônia de encerramento será divulgado aqui.
+  
+  <span class="ttt">
+    <a href="https://www.youtube.com/channel/UC027mkV9IJ4TCOY8PERkxoQ">https://www.youtube.com/channel/UC027mkV9IJ4TCOY8PERkxoQ</a>.
+  </span>
+  
+
+<h3>Cursos</h3>
+
+
+<p>As atividades da Semana Olímpica acontecerão em dois períodos, manhã e tarde, de
+segunda-feira (6/12) a sexta-feira (10/12).
+
+  
+<p>Diariamente, a programação será:
+
+
+<table class="basic center">
+  <tr>
+    <th>Horário</th><th>Atividade</th>
+  </tr>
+  <tr>
+    <td>09:00-10:30</td><td>Aula teórica</td>
+  </tr>
+  <tr>
+    <td><s>10:30-12:30</s> 10:45-12:45</td><td>Atividade Prática</td>
+  </tr>
+  <tr>
+    <td colspan=2></td>
+  </tr>
+  <tr>
+    <td>14:00-15:30</td><td>Aula teórica</td>
+  </tr>
+  <tr>
+    <td><s>15:30-17:30</s> 15:45-17:45</td><td>Atividade Prática</td>
+  </tr>
+</table>
+
+<p>Serão oferecidos três cursos:
+
+<h4>1) Introdução à Programação de Computadores (em C/C++)</h4>
+  <p><em>Para convidados da Modalidade Iniciação, Níveis 1 e 2 (duas turmas)</em>
+
+<h4>2) Introdução a Técnicas de Programação, Estruturas de Dados e Algoritmos</h4>
+    <p><em>Para convidados da Modalidade Programação Nível Júnior</em>
+
+<h4>3) Técnicas de Programação, Estruturas de Dados e Algoritmos</h4>
+    <p><em>Para convidados da Modalidade Programação Nível 1</em>
+
+<p>Os cursos abordarão tópicos da <a href="/info/ementa">Ementa da OBI</a>.
+      
+</p>
+<p>Apenas os alunos com participação confirmada terão acesso às aulas e
+  atividades práticas.
+
+<p>Os links para as aulas e atividades práticas serão disponibilizado na página pessoal dos alunos.
+
+<p> Recomendamos que os alunos assistam ao curso do
+nível para o qual foi convidado, mas os alunos podem escolher qual
+aula seguir (por exemplo, se achar que conseguiria acompanhar uma aula
+mais avançada, ou sentir necessidade de assistir uma aula menos
+  avançada do que a recomendada).
+
+<p>As aulas serão gravadas e
+disponibilizadas para que todos possam assistir qualquer aula
+posteriormente.
+
+<h3>Ativides práticas</h3>
+<p>As atividades práticas serão realizadas com a ajuda de <a href="monitores">monitores</a> (alunos
+  de graduação e pós-graduação da Unicamp e de outras universidades).
+
+<h3>Certificados</h3>
+<p>Serão disponibilizados Certificados de Participação para os alunos que efetivamente participarem de todas as atividades.
+{% endcomment %}
+  
+ 
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

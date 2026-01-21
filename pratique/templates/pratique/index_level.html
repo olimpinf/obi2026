@@ -1,0 +1,32 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+{% block title %}Pratique{% endblock %}
+
+{% block header %}Pratique{% endblock %}
+{% block head_extra %}
+{% include "tasks/includes/head_tasks.html" %}
+{% endblock %}
+
+{% block content %}
+<p>Escolha uma tarefa do menu ao lado.</p>
+
+{% if mod == 'p' %}
+<p>Veja instruções para submissão e exemplos de soluções nas diferentes linguagens:
+  <ul>
+    <li><a href="{% url 'pratique:example_c' modlevel %}">C</a></li>
+    <li><a href="{% url 'pratique:example_cpp' modlevel %}">C++</a></li>
+    <li><a href="{% url 'pratique:example_py' modlevel %}">Python3</a></li>
+    <li><a href="{% url 'pratique:example_java' modlevel %}">Java</a></li>
+    <li><a href="{% url 'pratique:example_js' modlevel %}">Javascript</a></li>
+  </ul>
+
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+
+  {% include "tasks/includes/contents_tasks.html" %}
+
+{% endblock %}

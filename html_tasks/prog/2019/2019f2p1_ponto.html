@@ -1,0 +1,122 @@
+title:Ponto do meio
+template:tasks/tarefa_programacao.html
+
+<p>
+Paulo foi contratado por uma companhia de mapas digitais para
+implementar melhorias em seus mapas. Seu primeiro trabalho na empresa
+é implementar o algoritmo denominado <it>deslocamento do ponto
+do meio</it>. Não vamos descrever aqui o algoritmo completo, vamos
+focar apenas num aspecto importante para Paulo,
+que está preocupado em otimizar o uso de memória
+em sua implementação do algoritmo.
+O algoritmo funciona em passos. Inicialmente, quatro pontos do
+mapa são selecionados, formando um quadrado. Então a cada passo, para cada
+quadrado, faça:
+<ul>
+<li> adicione quatro novos pontos, um ponto em cada lado do quadrado, exatamente
+no meio do lado. 
+<li> adicione também mais um novo ponto, exatamente no meio do quadrado.
+</ul>
+
+<p>
+O algoritmo utiliza os pontos criados para calcular e armazenar valores do mapa,
+mas Paulo está interessado apenas no número de pontos criados pelo algoritmo.
+Na figura abaixo, pontos brancos representam pontos adicionados no
+passo corrente, pontos pretos representam pontos adicionados em passos
+anteriores.
+
+<div class="center">
+<img src="/static/img/task_images/2019f2p1_pontomedio.png" width="500px"/>
+</div>
+
+
+<p>
+Paulo notou que o algoritmo gera muitos pontos, e muitos pontos
+pertencem a mais de um quadrado. Para economizar memória, Paulo
+planeja calcular e armazenar cada ponto apenas uma vez.
+
+<p>
+Sua tarefa, dado o número de passos que Paulo planeja executar, é
+determinar a quantidade de pontos únicos que Paulo necessita calcular
+e armazenar.
+
+
+
+<h3>Entrada</h3>
+A entrada consiste de uma única linha que contém um inteiro N, o número de passos.
+
+<h3>Saída</h3> 
+Seu programa deve produzir uma única linha, com apenas
+um número inteiro, a quantidade de pontos únicos que Paulo deve
+calcular e armazenar em N passos.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  50
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, N  &leq;  3.
+<li> Para um conjunto de casos de testes valendo outros 40 pontos, 4  &leq;  N  &leq;  10.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+25
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1089
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

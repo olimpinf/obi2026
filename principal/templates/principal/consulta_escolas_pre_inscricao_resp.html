@@ -1,0 +1,55 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Pré-inscrição de Competidor{% endblock %}
+
+{% block header %}Pré-inscrição de Competidor{% endblock %}
+
+{% block content %}
+{% if items.paginator.count == 0 %}
+  <p>Nenhuma escola satisfaz os dados da consulta.</p>
+{% elif items.paginator.count == 1 %}
+  <p>Uma escola satisfaz os dados de consulta. Clique no nome da escola para ver as informações da escola.</p>
+{% else %}
+  <p>{{ items.paginator.count }} escolas satisfazem os dados de consulta. Clique no nome da escola para ver as informações da escola.</p>
+{% endif %}
+
+{% if items.paginator.count > 0 %}
+<table class="table table-sm table-striped table-bordered">
+  <thead class="table-primary">
+    <tr><th width="60%">Nome da Escola</th><th width="30%">Cidade</th><th width="10%">Estado</th></tr>
+  </thead>
+{% for item in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td><a href="{% url 'principal:mostra_escola_pre_inscricao' item.school_id %}">{{ item.school_name }}</a></td>
+  <td>{{ item.school_city }}</td>
+  <td align="center">{{ item.school_state }}</td>
+  </tr>
+{% endfor %}
+{% endif %}
+</table>
+
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'principal:consulta_escolas_pre_inscricao_resp' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'principal:consulta_escolas_pre_inscricao_resp' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+
+    <a href="{% url 'principal:consulta_escolas' %}" class="btn btn-primary btn-sm mb-3" role="button">Nova consulta</a>
+
+    <h4>Mais informações</h4>
+    <p>Clique no nome da escola para prosseguir.</p>
+
+{% endblock %}

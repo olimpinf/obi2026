@@ -1,0 +1,9 @@
+The following code will embed a PDF without any toolbars and hide the print/download icons
+
+<embed src="{URL_TO_PDF.PDF}#toolbar=0&navpanes=0&scrollbar=0" width="425" height="425">
+
+
+To remove text from PDF:
+
+gs -o output.pdf -dNoOutputFonts -sDEVICE=pdfwrite input.pdf
+

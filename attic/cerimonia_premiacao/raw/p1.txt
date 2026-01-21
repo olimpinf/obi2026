@@ -1,0 +1,16 @@
+1,1,400,Rafael Augusto Nascimento Melo,Centro de Excelência Master,Aracaju,SE
+2,2,345,Gabriel de Carvalho Silva Martins,Centro de Excelência Master,Aracaju,SE
+2,2,345,Leonardo Faria Lima,Colégio Etapa - Vila Mascote,São Paulo,SP
+3,4,339,Juan Pedro Ribeiro Hora,Centro de Excelência Master,Aracaju,SE
+3,5,316,David Sztern Cohen,Escola ORT,Rio de Janeiro,RJ
+3,6,310,Igor Brumana de Lima,Instituto Federal de Minas Gerais - Campus Itabirito,Itabirito,MG
+4,8,279,Carlos Eduardo Mendonça Leite Santana,Centro de Excelência Master,Aracaju,SE
+4,8,279,Levi Oliveira dos Santos,COC São Luis,São Luís,MA
+4,10,257,João Pedro Andrade Brito Santos,colégio de ciências pura e aplicada,Aracaju,SE
+5,11,249,Theo Sampaio Ferreira,COLEGIO SANTO ANTONIO,Belo Horizonte,MG
+5,14,234,Carlos Eduardo Costa de Carvalho,COLEGIO AMADEUS LTDA,Aracaju,SE
+5,14,234,João Santos Pereira,COLÉGIO MILITAR DE BELO HORIZONTE,Belo Horizonte,MG
+6,14,234,Vitor Hugo Antunes Gonçalves,E.E. Antônio Cardoso da Silva,Monte Azul,MG
+6,17,213,Nathan dos Santos Rossi,Colégio Técnico Industrial de Santa Maria,Santa Maria,RS
+7,17,213,Samuel Nogueira Santiago,Colégio Ari de Sá sede Aldeota,Fortaleza,CE
+7,74,113,Malu Araujo Azevedo,Instituto Federal de Mato Grosso do Sul - Campus Campo Grande,Campo Grande,MS

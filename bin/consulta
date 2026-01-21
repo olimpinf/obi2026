@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z "$2" ]; 
+then 
+    city=$1
+else
+    city="$1 $2"
+fi
+echo ${city}
+
+psql -P pager=off -d obi2019 -U obi -c "select count(*),compet_type,school_site_phase3_prog,school_site_phase3_ini from compet,school where compet_school_id=school_id and compet_classif_fase2 and school_city ilike '%${city}%' and compet_type in (1,2,7) group by compet_type,school_site_phase3_prog,school_site_phase3_ini;"

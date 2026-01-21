@@ -1,0 +1,130 @@
+title:Ogro
+template:tasks/tarefa_programacao.html
+
+<p>
+O Ogro da Nlogônia está aprendendo a contar até dez usando os dedos
+das mãos (assim como os humanos, ele possui 2 mãos com 5 dedos
+cada)). Ele está treinando muito, mas gostaria de ter um aplicativo
+para ajudá-lo nessa empreitada.
+
+O Ogro aprendeu a mostrar a representação de um número
+com as mãos da seguinte forma:
+<ul>
+<li> se o número pode ser representado usando apenas uma
+das mãos, o Ogro usa os dedos na mão esquerda e mantém a mão direita fechada.
+<li> caso contrário, o Ogro mostra todos os cinco dedos da mão esquerda,
+e na mão direita mostra os dedos que faltam para representar o
+número.
+</ul>
+
+Por exemplo, para o número 3, o Ogro mostra:
+<div class="center">
+<span class="ttt">III *</span>
+</div>
+
+onde cada letra I representa um dedo e a mão fechada é representada pelo símbolo `<span class="ttt">*</span>' (asterisco).
+Para o número 8 o Ogro mostra:
+<div class="center">
+<span class="ttt">IIIII III</span>
+</div>
+
+Sua tarefa é ajudar o Ogro em seu treinamento, escrevendo um programa
+para, dado um número entre 0 e 10, mostrar a configuração de dedos
+correspondente a esse número, de acordo com as regras acima.
+
+
+
+
+
+<h3>Entrada</h3>
+A primeira e única linha da entrada contém um inteiro N,
+  o número que deve ser representado com os dedos das mãos.
+
+
+
+
+
+<h3>Saída</h3>
+Seu programa deve
+  produzir duas linhas na saída. A primeira linha deve conter a representação
+  dos dedos da mão esquerda, a segunda linha deve conter a representação
+  dos dedos da mão direita. A letra `<span class="ttt">I</span>' deve ser usada para representar
+  um dedo, e o caractere <span class="ttt">*</span>' (asterisco) deve ser usado para
+  representar a mão fechada (isto é, nenhum dedo mostrado).
+
+<h3>Restrições</h3>
+<ul>
+<li> 0  &leq;  N  &leq;  10
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+IIIII
+III
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+III
+*
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+*
+*
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

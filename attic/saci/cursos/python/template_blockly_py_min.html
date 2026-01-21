@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="#lang#">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>#titlehead#</title>
+    <link rel="stylesheet" href="/static/saci/css/saci_blockly.min.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+    #blockly_toolbox#
+    <script src="/static/saci/js/brython.js"></script>
+    <script src="/static/saci/js/brython_modules.js"></script>
+    <script type="text/javascript">
+      var _tmp_input;
+      var _prog_language='py';
+      var _page_language='pt';
+      var _use_blockly=true;
+      var _the_theme='energyblue';
+    </script>
+    <script type="text/python">
+      from browser import window
+      from saci_run import saci_run
+      window.saci_run = saci_run
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+
+<body class='default'>
+  
+<div id="headerdiv" style="padding: 0px 12px 5px 12px">
+  <div><a href="/saci"><img src="/static/saci/css/images/LogoSaci.svg" height="35px"alt="Logo Saci" style="vertical-align:bottom;float:left;padding-right:5px"/></a>
+    <div style="display:inline;width:100%">
+      <span id="div1" class="footer" style="display:inline;float:left;font-size:0.85em">
+	#programming_the_future#<br>
+	#course_name#
+      </span>  
+      <span class="footer" style="float:right;font-size:0.85em;text-align:right">
+	<span id="headerUser">#user#</span> #register#<br>
+	#login#
+      </span>
+    </div>   
+    <div id="title" class="themeSaci" style="font-size:1.5em;font-weight:bold;padding-top:5px;clear:left">#title#</div>
+    <div id="headerPrevNext" class="footer">
+      #prevclass#
+      #nextclass#
+    </div>
+  </div>
+</div>
+
+<div id="mainTabsContainer">
+  <ul>
+    #video_tab#
+    #revision_tab#
+    <li style="margin-left: 10px;">#program_tab#</li>
+    #exercise_tabs#
+  </ul>
+  
+  #video_div#
+  #revision_div#
+  <div id="splitContainer" style="border:0">
+    <div> <!-- start top splitContainer -->
+      <div id="tab2container" style="background-color:#ffffff;padding:6px"><!-- area de trabalho -->
+	<!--div width="100%" style="margin:auto"-->
+	<div id='select_exercise' style="position:relative;z-index:1;display:inline-block;padding: 0px; float:left" data-intro="Quando houver mais de um desafio, selecione qual desafio quer resolver." data-position="bottom" data-index="17">
+        </div>
+
+	  <div width="100%" style="text-align:center;padding: 6px; float:right;" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras." data-position="left" data-index="11" >
+            <button id="smallersizeBTN">A</button>
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div style="margin-left:auto;margin-right:auto;display:table">
+	    <span data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="bottom" data-index="4">
+	      <button style="display:inline-block" id="codeexecuteBTN"></button>
+	    </span>
+	    <span data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="bottom" data-index="5">
+	      <button style="display:inline-block" id="codesubmitBTN"></button>
+	    </span>
+	    <span data-intro="Com este botão você pode salvar o seu programa para uso posterior." data-position="bottom" data-index="6">
+	      <button style="display:inline-block" id="codesaveBTN" class="leftspace" ></button>
+	    </span>
+	    <span data-intro="Com este botão você recupera um programa salvo anteriormente." data-position="bottom" data-index="7">
+	      <button style="display:inline-block" id="coderetrieveBTN"></button>
+	    </span>
+	    <span data-intro="Use este botão para remover o conteúdo do editor." data-position="bottom" data-index="8">
+	      <button style="display:inline-block" id="codeclearBTN"></button>
+	    </span>
+	    <span data-intro="Use este botão para trocar entre a programação por blocos ou texto." data-position="bottom" data-index="9">
+	      <button style="display:inline-block" id="codeblocklyBTN" class="leftspace"></button>
+	    </span>
+	    <span id="codehintBTNdiv">
+	      <span data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Desafio</em>)." data-position="bottom" data-index="10">
+	      <button style="display:inline-block;" id="codehintBTN"></button>
+	      </span>
+            </span>
+	  </div>
+	<!--/div-->
+	<div>
+	  <!--div style="border: 0px solid #aaaaaa; background-color:#ffffff; padding:0px 3px;"-->
+            <div>
+	      <div id="blocklyArea"><textarea id="textareaCode" name="textareaCode"></textarea></div>
+            </div>
+	  <!--/div-->
+	</div>
+      </div>
+    </div>  <!-- end top splitContainer -->
+    <div> <!-- start bottom splitContainer -->
+      <div id="splitter1">
+	<div style="background-color:#ffffff"> <!-- start left side splitter1 -->
+	  <div id="inputPanel" style="margin:6px" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="3">
+	    <textarea id="textareaInput"></textarea>
+	    <div class="sacibold" style="display:inline-block">#input#</div>
+	    <div style="display:inline-block;vertical-align:text-top;float:right">
+	      <span data-intro="Com este botão você pode salvar a entrada para uso posterior." data-position="top" data-index="14">
+		<button id="inputsaveBTN" style="display:inline-block"></button>
+	      </span>
+	      <span data-intro="Use este botão você pode recuperar uma entrada salva." data-position="top" data-index="15">
+		<button id="inputretrieveBTN" style="display:inline-block"></button>
+	      </span>
+	      <span data-intro="Use este botão para limpar o painel de Entrada." data-position="top" data-index="16">
+		<button id="inputclearBTN" style="display:inline-block"></button>
+	      </span>
+	    </div>
+	  </div>
+	</div> <!-- end left side splitter1 -->
+	<div style="background-color:#ffffff"> <!-- start right side splitter1 -->
+	  <div id="outputPanel" style="margin:6px" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="2">
+	    <textarea id="textareaOutput"></textarea>
+	    <div class="sacibold" style="display:inline-block">#output#</div>
+	    <div style="display:inline-block;vertical-align:text-top;float:right">
+	      <span id='outputexpectedBTNspan' data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="left" data-index="12">
+		<button id="outputexpectedBTN" style="display:inline-block"></button>
+	      </span>
+	      <span data-intro="Use este botão para limpar o painel de Saída." data-position="left" data-index="13">
+		<button id="outputclearBTN" style="display:inline-block"></button>
+	      </span>
+            </div>
+          </div>
+	</div> <!-- end right side splitter1 -->
+      </div>  <!-- end splitter1 -->
+    </div> <!-- end bottom splitContainer -->
+  </div> <!-- end splitContainer -->
+  <!-- exercícios -->
+  #exercise_statement_divs#
+  <!-- end exercícios -->
+</div> <!-- end mainTabsContainer -->
+
+
+<div id="footerdiv" style="padding: 3px 5px 5px 5px;">
+  <div class="footer floatLeft">
+    <a href="/saci"><img src="/static/saci/css/images/LogoSaci60x21.png" alt="Logo Saci" align="bottom"/></a>&nbsp;
+    <span style="display:inline-block">
+      <a href="/">#obi#</a><br>
+      <a href="https://www.ic.unicamp.br">#institute_of_computing#</a> &bull;
+      <a href="https://www.unicamp.br">UNICAMP</a>
+    </span>
+  </div>
+  <div class="footer floatRight" style="display:inline">
+    <span id="doTourLNK" style="display:none;"><a href="#" onclick="_do_a_tour();return false;">#do_a_tour#</a> | </span> 
+    <a id="mycourseLNK" href="#" onclick="_show_history();return false;">#my_course#</a> | 
+    <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;">#report_a_problem#</a>
+  </div>
+</div>
+
+  <!-- blockly -->
+  <div id="blocklyDiv" style="position: absolute" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="bottom" data-index="1"></div>
+  
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader">Salva X</div>
+      <div>
+        <br><span style="font-weight:normal">Digite uma frase para facilitar a busca quando for recuperar:</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">#save#</button>
+          <button id="saveCancelBTN">#cancel#</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none;width:80%" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2">Recupera X</div>
+      <div>
+        <div id="jqxgrid">
+        </div>
+	<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">#retrieve#</button>
+          <button id="retrieveRemoveBTN" class="topspace">#delete#</button>
+          <button id="retrieveCancelBTN" class="topspace">#cancel#</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">#send#</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">#cancel#</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader">Salva X</div>
+      <div>
+        <img src="/static/saci/css/images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">#cancel#</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci//css/images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications -->
+  <div style="display:none ;" id="notification">
+      <span id="notificationMessage">
+	Mensagem.
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext">
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div style="display:none ;" id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="#hiddensolutions#">
+  <input type="hidden" id="hiddentests" value="#hiddentests#">
+  <input type="hidden" id="hiddenresults" value="#hiddenresults#">
+  <input type="hidden" id="hiddensamples" value="#hiddensamples#">
+  <input type="hidden" id="hiddenhints" value="#hiddenhints#">
+  <input type="hidden" id="hiddencourse" value="#hiddencourse#">
+  <input type="hidden" id="hiddenclassindex" value="#hiddenclassindex#">
+  <input type="hidden" id="hiddenvideo" value="#video#">
+  <input type="hidden" id="hiddenrevision_is_present" value="#revision_is_present#">
+  <input type="hidden" id="hiddenvideo_is_present" value="#video_is_present#">
+  <script type="text/javascript" src="/static/saci/js/saci_blockly.min.js" charset="utf-8"></script>
+</body>
+</html>

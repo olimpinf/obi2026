@@ -1,0 +1,226 @@
+<h3>O bloco <em>Imprima com final</em></h3>
+
+<p>Até o momento temos usado o bloco  <img src="/static/saci/blockly_images/block_print.png"/ align="middle" height="40px"> para escrever na saída. Vamos ver agora outro bloco para escrever na saída, o bloco <em>imprima com final</em>, que pode ser encontrado no menu E/S da Barra de Ferramentas:
+
+  <center>
+  <img src="/static/saci/blockly_images/menu_block_print_with_end.png"/>
+  </center>
+
+<p>O bloco "imprima com final" tem um campo para inserirmos um texto
+que vai ser escrito ao final da execução do comando:
+  <center>
+  <img src="/static/saci/blockly_images/block_print_with_end.png"/>
+  </center>
+
+<p>Por exemplo, se o bloco for utilizado para escrever a cadeia de caracteres
+  "abc" e escolhermos o caractere "*" (asterisco) como texto final:
+
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_abc.png"/>
+  </center>
+
+<p>será escrito na saída:
+<pre style="background-color:#eeeeee;padding:4px;width:100px">
+abc*
+</pre>    
+
+<p>e o computador não inicia uma nova linha, ou seja, a proxima vez
+que for escrever vai escrever na mesma linha, após o caractere
+  asterisco. Assim, se bloco seguinte for outro bloco <em>imprima com final</em>
+  para escrever a cadeia de cadeia de caracteres "def" com o caractere
+  "+" como texto final:
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_def.png"/>
+  </center>
+<p>será escrito na saída:
+<pre style="background-color:#eeeeee;padding:4px;width:100px">
+abc*def+
+</pre>    
+
+<p>Para ilustrar melhor, vamos comparar a execução do bloco <em>imprima
+com final</em> com a execução do bloco <em>imprima</em>.
+
+<center>
+  <table>
+    <tr><td>
+      <img src="/static/saci/blockly_images/group_print_for_i.png"/>
+      </td>
+      <td>
+	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;
+      </td>
+      <td>
+	<img src="/static/saci/blockly_images/group_print_with_end_for_i.png"/>
+      </td>
+    </tr>
+    
+    <tr><td>
+      <pre style="background-color:#eeeeee;padding:4px;">
+1
+2
+3
+4
+</pre>
+      </td>
+      <td>
+	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+      </td>
+      <td>
+	<pre style="background-color:#eeeeee;padding:4px;">
+1234
+</pre>
+      </td>
+    </tr>
+  </table>
+</center>
+<p>&nbsp;</p>
+  
+<p>Usando o bloco imprima, este comando de repetição escreve quatro
+linhas na saída, com os números 1, 2, 3, 4, e o computador muda de
+linha, em preparação para escrever a próxima linha.
+  
+<p>Já o mesmo comando de repetição, mas agora com o bloco
+<em>imprima com final</em>, com o campo do texto final vazio,
+indicando que não queremos um texto impresso ao final de cada execução
+do comando, escreve na saída os números 1, 2, 3, 4 na mesma linha, um após o outro,
+e o computador não muda de linha ao final do comando.
+
+<p>Vamos ver um outro exemplo usando o mesmo comando de repetição,
+  agora com o caractere asterisco como texto final:
+  
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_for_i_asterisk.png"/>
+  </center>
+<p>será escrito na saída:
+<pre style="background-color:#eeeeee;padding:4px;width:100px">
+1*2*3*4*
+</pre>    
+<p>e o computador não muda de linha ao final do comando.
+
+  <h3>O símbolo especial "\n"</h3>
+<p>Vamos ver mais outro exemplo usando o mesmo comando de repetição,
+  agora com "\n" como texto final:
+  
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_for_i_asterisk.png"/>
+  </center>
+<p>será escrito na saída:
+<pre style="background-color:#eeeeee;padding:4px;width:100px">
+1
+2
+3
+4
+</pre>    
+<p>e o computador muda de linha ao final do comando. Ou seja, o bloco
+  <em>imprima com final</em> com texto final igual a "\n" (barra
+  invertida seguida de n minúsculo) produz exatamente o mesmo resultado que o
+  bloco <em>imprima</em>.
+<p>Isto acontece porque a cadeia de caracteres "\n" representa um <em>símbolo</em>
+  especial da linguagem Python, que representa para o computador o comando "mude de linha".
+
+<p>Você pode usar o símbolo "\n" em qualquer texto. Por exemplo, um bloco
+  <em>imprima</em> usado para escrever na saída o texto "Tic\nTac" tem o mesmo
+  resultado que dois blocos <em>imprima</em>, um para escrever "Tic" e outro para
+  escrever "Tac":
+
+<center>
+  <table>
+    <tr><td>
+      <img src="/static/saci/blockly_images/group_print_TicTac.png"/>
+      </td>
+      <td>
+	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;
+      </td>
+      <td>
+	<img src="/static/saci/blockly_images/group_print_Tic_n_Tac.png"/>
+      </td>
+    </tr>
+    
+    <tr><td>
+      <pre style="background-color:#eeeeee;padding:4px;">
+Tic
+Tac	  
+</pre>
+      </td>
+      <td>
+	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+      </td>
+      <td>
+	<pre style="background-color:#eeeeee;padding:4px;">
+Tic
+Tac	  
+</pre>
+      </td>
+    </tr>
+  </table>
+</center>
+<p>&nbsp;</p>
+
+<h3>Repetindo a repetição</h3>
+<p>Vamos agora usar um comando de repetição com uma variável chamada
+<span class="tt">coluna</span>, e que vai variar de 1 até 6.
+
+<p>usar um bloco "imprima com final" para escrever um sinal de mais, com o campo do texto final sem preencher, ou seja, não vai haver texto após o sinal de mais. Vamos também  usar um bloco imprima para fazer o computador iniciar uma nova linha. Note que podemos encaixar no bloco <em>imprima</em> um bloco Texto sem nada preenchido, ou posso deixar o comando imprima sem um bloco encaixado. O resultado é o mesmo, o computador vai mudar de linha. Vou deixar sem o bloco texto:
+
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_column.png"/>
+  </center>
+  
+<p>Quando executada, a repetição produz seis sinais de mais na saída. Então o comando
+  <em>imprima</em> é executado e o computador muda de linha.
+<pre style="background-color:#eeeeee;padding:4px;width:200px">
+++++++
+	  
+</pre>
+
+<p>Vamos agora usar um outro bloco de repetição, com uma variável
+  chamada <span class="tt">linha</tt>, que vai variar de 1 até 3, e
+  encaixar a repetição da coluna na repetição da linha.
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_line_column.png"/>
+  </center>
+
+<p>Quando executado, esse trecho de programa 
+  escreve três linhas, cada linha contendo seis colunas com
+o sinal de mais:
+<pre style="background-color:#eeeeee;padding:4px;width:200px">
+++++++
+++++++
+++++++
+</pre>
+
+
+<p>Vamos fazer uma modificação no programa: ao invés de escrever
+  sempre seis colunas, fazer o laço da coluna executar com a variável
+  <span class="tt">coluna</span> de 1
+  até o valor de <span class="tt">linha</span>:
+
+  <center>
+  <img src="/static/saci/blockly_images/group_print_with_end_line_column_var.png"/>
+  </center>
+  
+<p>Ou seja, agora o laço da coluna vai ser executado três vezes, a primeira vez de
+  1 até o valor de <span class="tt">linha</span>  que é 1, a segunda vez de 
+  1 até até o valor de <span class="tt">linha,</span>, que é 2, e a terceira vez de 
+  1 até até o valor de <span class="tt">linha</span>, que é 3.
+
+<p>Quando executado, esse trecho de programa produz:
+<pre style="background-color:#eeeeee;padding:4px;width:200px">
++
+++
++++
+</pre>
+
+
+<p>Veja esse último trecho programa na linguagem Python (não precisa entender o
+programa em Python, o exemplo é apenas para você ter uma ideia da
+linguagem Python; mais adiante no curso vamos ver os comandos em
+  Python em detalhes):
+<pre style="background-color:#eeeeee;padding:4px;width:400px">
+for linha in range(1, 4):
+    for coluna in range(1, linha + 1):
+        print('+', end='')
+    print()
+</pre>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,50 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Corretor de Folhas de Respostas{% endblock %}
+
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block content %}
+
+<p><font color="#aa0000"><em>O sistema Sisca está desativado.</em></font>
+
+<p><font color="#aa0000"><em>Um sistema com funcionalidade similar, mas tecnologia de processamento de imagens
+      mais avançada, está disponível para testes no link a seguir.</em></font>
+
+<p><font color="#aa0000"><em><a href="https://web.scangrader.com/pt">https://web.scangrader.com/pt</a></em></font>
+
+<p><font color="#aa0000"><em><b>Note que folhas de respostas geradas pelo
+      Sisca, apesar de similares em formato, NÃO poderão ser
+      processadas nesse novo sistema. Você deve usar as folhas de
+      respostas geradas pelo novo sistema.</b></em></font>
+  
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li><a href="{% url 'sisca_index' %}">Sisca</a></li>
+      <ul><li>Corretor de Folhas de Respostas</li></ul></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

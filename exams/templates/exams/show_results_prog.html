@@ -1,0 +1,217 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams static %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{% static 'assets/css/cws_style.css' %}" >
+    <!--link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script-->
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>  
+    <script type="text/javascript" src="{% static 'assets/js/cws_utils.js' %}"></script>
+    <script>
+
+var utils = new CMS.CWSUtils("url", "url", "contest_name",
+                             '{% now "U" %}',
+                             '{% now "U" %}',
+                             '{% now "U" %}',
+                             '{% now "U" %}',
+                             {{ 0 }});
+$(document).on("click", "#submission_list tbody tr td.status .details", function(event){
+    console.log("on click");
+
+    var submission_id = $(this).parent().parent().attr("data-submission");
+    console.log("submission_id",submission_id);
+    var modal = $("#submission_detail");
+    //console.log("modal",modal);
+    //var modal_body = $("#modal-body");
+    //console.log("modal_body",modal_body);
+    //modal_body.html('<div class="loading"><img src="{% static "img/loading.gif" %}"/>carregando...</div>');
+    //modal_body.innerHTML = '<p>loading';
+    //console.log("modal_body",modal_body.innerHTML);
+    //console.log("modal_body",modal_body);
+    // modal_body.load("" + submission_id, function() {
+    // 	console.log("modal_body.load");
+    //     $(".score_details .subtask .subtask-head").each(function () {
+    //         $(this).prepend('<i class="icon-chevron-right"></i>');
+    //     });
+    //     $(".score_details .subtask .subtask-head").click(function () {
+    //         $(this).parent().toggleClass("open");
+    //         if ($(this).parent().hasClass("open")) {
+    //             $(this).children("i").removeClass("icon-chevron-right").addClass("icon-chevron-down");
+    //         } else {
+    //             $(this).children("i").removeClass("icon-chevron-down").addClass("icon-chevron-right");
+    //         }
+    //     });
+    //     $(".score_details table.testcase-list").addClass("table table-bordered table-striped");
+    //     $(".score_details table.testcase-list tbody tr:not(.undefined) td.outcome").each(function () {
+    //         $(this).html('<span class=\"outcome\" >'  + $(this).text() + "</span>");
+    //     });
+    // });
+    var tmp = document.getElementById("popup-detail");
+    tmp.style.display = "block";
+    //modal.modal("show");
+});
+document.addEventListener('keydown', function(event) {
+    var popupMain = document.getElementById("popup-detail");
+    const key = event.key; // const {key} = event; in ES6+
+    if (key === "Escape") {
+        popupMain.style.display = "none";
+        return;
+    }
+});
+
+function close_detail_popup() {
+    var popupMain = document.getElementById("popup-detail");
+    popupMain.style.display = "none";
+}
+
+
+function get_score_class (score, max_score) {
+    if (score <= 0) {
+        return "score_0";
+    } else if (score >= max_score) {
+        return "score_100";
+    } else {
+        return "score_0_100";
+    }
+};
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h1>{{ pagetitle }}</h1>
+
+{% if f.show_results %}
+<h2 class="mt-4">Submissões realizadas</h2>
+
+<i class="icon-chevron down"></i>
+
+{% if not submissions %}
+Não há submissões.
+{% else %}
+{% regroup submissions by task_title as subm_list %}
+{% for task_title in subm_list %}
+
+<h4 class="mt-3">{{task_title.grouper}} ({{f.task_points|get_item:task_title.grouper}} pontos)</h4>
+<table id="submission_list" class="simple">
+    <colgroup>
+        <col class="time"/>
+        <col class="status"/>
+        <col class="total_score"/>
+        <col class="files"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th class="time">Hora</th>
+            <th class="status">Status</th>
+            <th class="total_score" style="text-align:center">Informação sobre a Pontuação</th>
+            <th class="files" style="text-align:center">Arquivos</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for s in task_title.list %} {% with s_idx=forloop.counter %}
+      
+        {% get_submission_result submission_results s.submission_id as sr %}   
+        {% include "exams/includes/submission_row.html" %}
+
+        {% endwith %}
+    {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% endif %}
+
+
+<div class="details-popup-main" id="popup-detail">
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content" id="submission_detail">
+	<div class="modal-header">
+          <h5>Detalhes da submissão</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	</div>
+	<div class="modal-body" id="modal-body">
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% else %}
+<p>Os resultados ainda não estão disponíveis.
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+
+  {% block browse-wrapper %}
+  {% if f.exam_descriptor == 'testef1'%}
+  <h4>Total de Pontos: {% if f.show_results %}{{ f.compet.compet_points_fase0 }}{% else %}?{% endif %}</h4>
+  {% elif f.exam_descriptor == 'provaf1'%}
+  <h4>Total de Pontos: {% if f.show_results %}{{ f.compet.compet_points_fase1 }}{% else %}?{% endif %}</h4>
+  {% elif f.exam_descriptor == 'provaf2'%}
+  <h4>Total de Pontos: {% if f.show_results %}{{ f.compet.compet_points_fase2 }}{% else %}?{% endif %}</h4>
+  {% elif f.exam_descriptor == 'provaf3'%}
+  <h4>Total de Pontos: {% if f.show_results %}{{ f.compet.compet_points_fase3 }}{% else %}?{% endif %}</h4>
+  {% endif %}  
+  {% if f.next_phase %}
+  Classificado para {{f.next_phase}}: {{f.classif_next_phase}}
+  {% endif %}
+<hr>
+
+{% if f.mod == 'i' %}
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_review_tasks.html" %}
+{% elif f.mod == 'p' %}
+    {% if f.exam_descriptor == 'testef1' %}
+    <font size="+1"><a href="/static/extras/obi2022/provas/ProvaOBI2022_f0{{ f.level }}.pdf">Caderno de Tarefas</a></font>
+    {% elif f.exam_descriptor == 'provaf1'%}
+      <h3><a href="/static/extras/obi{{ ""|obi_date_year }}/provas/ProvaOBI{{ ""|obi_date_year }}_f1{{ f.level }}.pdf">Caderno de Tarefas</a></h3>
+    {% elif f.exam_descriptor == 'provaf2'%}
+      <h3><a href="/static/extras/obi{{ ""|obi_date_year }}/provas/ProvaOBI{{ ""|obi_date_year }}_f2{{ f.level }}.pdf">Caderno de Tarefas</a></h3>
+    {% elif f.exam_descriptor == 'cfobif1'%}
+      <h3><a href="/static/extras/obi{{ ""|obi_date_year }}/provas/ProvaOBI{{ ""|obi_date_year }}_cf{{ f.level }}.pdf">Caderno de Tarefas</a></h3>
+    {% elif f.exam_descriptor == 'provaf3'%}
+      <h3><a href="/static/extras/obi{{ ""|obi_date_year }}/provas/ProvaOBI{{ ""|obi_date_year }}_f3{{ f.level }}.pdf">Caderno de Tarefas</a></h3>
+    {% endif %}
+<hr>
+  <h4>Informação sobre a Pontuação</h4>
+
+  {% comment %}
+ <p><em>A pontuação mostrada é preliminar e pode ser alterada por eventuais recursos de recorreção.</em></p>
+  {% endcomment %}
+
+
+  <p>A pontuação é calculada da seguinte maneira:
+    <ul>
+      <li>Cada submissão é verificada com vários casos de teste, divididos em <em>subtarefas</em>, cada subtarefa valendo um certo número de pontos.
+	Para cada tarefa, a soma dos máximos pontos possíveis das suas subtarefas é 100 pontos.
+      <li>Para cada subtarefa, sua solução é avaliada com diferentes casos de teste e para cada caso de teste recebe um número de pontos
+	que depende do resultado da execução de seu programa com o caso de teste.
+      <li>Para cada submissão a pontuação de cada subtarefa é o menor número de pontos obtido entre todos os casos de teste da
+	subtarefa, a menos que o enunciado especifique diferentemente.
+      <li>A pontuação final de cada subtarefa é a maior pontuação da subtarefa, entre todas as submissões.
+      <li>A pontuação final de cada tarefa é a soma das pontuações finais de suas subtarefas.
+    </ul>
+  </p>
+
+  <p>Por exemplo, considere uma competidora que fez duas submissões
+    para uma tarefa que contém duas subtarefas. Considere ainda que a
+    primeira solução submetida recebeu 30 pontos para a primeira
+    subtarefa e 10 pontos para a segunda subtarefa, e a segunda
+    solução recebeu 0 pontos para a primeira subtarefa e 40 pontos
+    para a segunda subtarefa. Então a pontuação final dessa
+    competidora para essa tarefa é 70 pontos, ou seja, o máximo entre
+    (30, 0), correspondente à primeira subtarefa, somado ao máximo entre (10, 40),
+    correspondente à segunda subtarefa.
+    
+{% endif %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+
+{% endblock %}

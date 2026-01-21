@@ -1,0 +1,110 @@
+title:Passa Bolinha
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+O professor Miguel desafiou os alunos do colégio onde ele leciona com
+uma brincadeira que exige muita atenção! No pátio do colégio, os
+alunos formam um quadrado com N fileiras e N colunas, de modo que
+a primeira fileira esteja voltada para o norte. Cada um dos N<sup>2</sup>
+alunos segura uma bandeira e tem um número colado na
+camiseta. Inicialmente, as bandeiras estão abaixadas e os alunos estão
+voltados para o norte. Todos os alunos têm que seguir exatamente o
+mesmo comportamento:</p>
+
+<ul>
+<li> Ao receber a bolinha, levanta sua bandeira e realiza a seguinte
+  ação quatro vezes, em sequência:
+<ul>
+<li> Vira-se 90 graus no sentido horário. Se o colega que ficou à sua
+  frente tiver um número na camiseta maior ou igual ao seu, e estiver
+  com a bandeira abaixada, passa a bolinha ao colega e aguarda que ele
+  lhe devolva a bolinha;</li>
+</ul></li>
+<li> Devolve a bolinha a quem lhe passou a bolinha inicialmente.</li>
+</ul>
+
+<p>Nesta tarefa, você deve escrever um programa que, dados os números nas
+camisetas de cada aluno, e a posição do aluno a quem o professor
+Miguel vai entregar a bolinha, calcule quantas bandeiras estarão
+levantadas ao final, quando esse aluno devolver a bolinha ao
+professor. Por exemplo, a parte direita da figura abaixo mostra que
+sete alunos vão levantar a bandeira se o professor entregar
+inicialmente a bolinha ao aluno na fileira 3, coluna 1, como indicado
+na parte esquerda da figura.</p>
+
+<p>
+<center>
+<img src="/static/img/task_images/2014f2pj_bolinha.png">
+</center></p>
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, o número de fileiras
+(que é igual ao de colunas). A segunda linha contém dois números, I
+e J, indicando respectivamente, a fileira e a coluna do aluno a quem
+o professor Miguel entregará a bolinha. As N linhas seguintes contém
+N inteiros cada uma, indicando os números que estão nas camisetas
+dos alunos.
+<h3>Saída</h3>
+Seu programa deve imprimir apenas uma linha contendo um inteiro, o
+número de bandeiras que estarão levantadas ao final.
+<h3>Restrições</h3><ul>
+<li> 1 ≤  N ≤  100</li>
+<li> 1 ≤  I ≤  N e 1 ≤  J ≤  N</li>
+<li> Os números nas camisetas estão entre 1 e 9, inclusive</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+3 1
+6 7 9 9
+1 4 3 5
+2 4 5 1
+1 3 2 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+4 5
+9 4 9 6 1 9
+9 9 3 8 9 3
+9 9 3 9 9 6
+9 9 3 9 2 1
+9 9 9 9 7 9
+9 4 9 4 9 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+21
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

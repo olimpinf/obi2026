@@ -1,0 +1,91 @@
+title:O Banco Inteligente
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Caixas automáticos nos bancos são uma invenção ótima mas, às vezes, a
+gente precisa de dinheiro trocado e a máquina entrega notas de
+R$100,00. Outras vezes, a gente quer sacar um valor um pouco maior e
+por questões de segurança gostaria de receber tudo em notas de
+R$100,00, mas a máquina entrega um monte de notas de R$20,00. O
+Banco Inteligente está tentando minimizar esse problema dando aos
+clientes a possibilidade de escolher o valor das notas na hora do
+saque. Para isso, eles precisam da sua ajuda para saber, dado o valor
+S do saque e quantas notas de cada valor a máquina tem, quantas
+formas distintas existem de entregar o valor S. O banco
+disponibiliza notas de 2, 5, 10, 20, 50 e 100. Por
+exemplo, se S = 22 e o número de notas de cada valor é
+N<sub>2</sub> = 5, N<sub>5</sub> = 4, N<sub>10</sub> = 3, N<sub>20</sub> = 10, N<sub>50</sub> = 0 e N<sub>100</sub> = 10, então há quatro
+formas distintas da máquina entregar o valor do saque:
+
+<ul>
+  <li>20 + 2,
+  <li>10 + 10 + 2,
+  <li>10 + 5 + 5 + 2 e
+  <li>5 + 5 + 5 + 5 + 2.
+</ul>
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro S, o valor do saque.
+A segunda linha contém seis inteiros N<sub>2</sub>, N<sub>5</sub>, N<sub>10</sub>, N<sub>20</sub>, N<sub>50</sub> e
+N<sub>100</sub>, respectivamente, o número de notas de valores
+2, 5, 10, 20, 50 e 100, disponíveis na máquina.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir um inteiro, o número de formas distintas da
+  máquina entregar o saque.
+
+<h3>Restrições</h3>
+  <ul>
+<li> 0 ≤  S ≤  5000 e N<sub>i</sub> ≤  500</li>
+</ul>
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 20 pontos, N ≤  1000 e N<sub>i</sub> ≤  30</li>
+<li> Em um conjunto de casos de teste somando 40 pontos, N ≤  1000 e N<sub>i</sub> ≤  50</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+22
+5 4 3 10 0 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1000
+20 20 20 20 20 20
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+34201
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

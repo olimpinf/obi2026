@@ -1,0 +1,67 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Envia Convite Recupera Cadastro{% endblock %}
+
+{% block header %}<h1>Envia Convite Recupera Cadastro</h1>{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary mt-4">Envia</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Instruções</h2>
+    {% block browse %}
+    <p>Utilize o formulário para restringir sua consulta. Se desejar listar todas as escolas, deixe o formulário em branco.</p>
+    <p>Para listar todas as escolas de um estado, selecione um estado e deixe os outros campos em branco.</p>
+    <p>Alternativamente, insira apenas parte do nome da escola que você procura, 
+    ou parte do nome da cidade que você procura.
+    Por exemplo, inserindo 'rio' no campo <i>Cidade</i> do formulário, serão listadas todas as
+    escolas cadastradas em cidades com nome contendo 'rio' no nome, como por exemplo Rio de Janeiro,
+    São José do Rio Preto, etc.
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Consulta Escola</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}
+

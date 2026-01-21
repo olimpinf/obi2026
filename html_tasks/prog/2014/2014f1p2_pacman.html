@@ -1,0 +1,92 @@
+title:PacMan
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Pacman é um jogo muito conhecido, onde o personagem tenta comer a maior quantidade possível de bolinhas, tendo
+ao mesmo tempo que
+fugir de vários fantasmas. Dessa vez, nosso personagem quer carregar a comida coletada para casa, mas o encontro com 
+um fantasma, ao invés de terminar o jogo, faz com que toda a comida coletada seja roubada.</p>
+
+<p>Neste problema os fantasmas não se movem, e o jogador sempre faz o Pacman
+percorrer o seguinte caminho:</p>
+
+<ol>
+<li> O Pacman começa no canto superior esquerdo do tabuleiro.</li>
+<li> O Pacman percorre toda a linha, da esquerda para direita, até chegar ao lado direito do tabuleiro.</li>
+<li> O jogador desce uma posição, e percorre toda a linha, desta vez da direita para a esquerda.</li>
+<li> As etapas 2 e 3 se repetem até que todo o tabuleiro tenha sido percorrido.</li>
+</ol>
+
+<p>Infelizmente, Pacman não pode ignorar os comandos do usuário para fugir dos fantasmas ou pegar mais comida, mas
+ele pode, a qualquer momento, se aproveitar de um bug de implementação e interromper o jogo, levando consigo toda a comida
+que estiver carregando.</p>
+
+<p>Você deve escrever um programa que determine a maior quantidade de comida que o Pacman pode levar, se escolher a melhor hora possível
+para sair. Note que o jogador também tem a opção de não sair antes do final do jogo.</p>
+<h3>Entrada</h3>
+A primeira linha contém um inteiro N, o tamanho do tabuleiro do jogo, que é quadrado.
+Cada uma das N linhas seguintes contém N caracteres, que podem ser (aspas para melhor clareza):
+<ul>
+  <li> "." um espaço vazio;</li>
+  <li> "o" uma comida;</li>
+  <li> "A" um fantasma.</li>
+</ul>
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha contendo um único inteiro, a quantidade máxima de comida que o Pacman pode levar para casa.
+<h3>Restrições</h3><ul>
+  <li> 2 ≤  N  ≤  100</li>
+  <li> Não há um fantasma e uma comida na mesma posição.</li>
+  <li> Não há fantasma nem comida na posição inicial do Pacman (ou seja, o primeiro caractere da primeira linha do tabuleiro é ".").</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+.ooo.
+..ooA
+..Aoo
+Aoooo
+..ooo
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+.o.
+oAA
+ooo
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

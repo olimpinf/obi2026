@@ -1,0 +1,46 @@
+# postgres
+CREATE DATABASE obi2026;
+CREATE USER obi WITH PASSWORD 'guga.LC';
+ALTER DATABASE obi2026 OWNER TO obi;
+ALTER ROLE obi SET client_encoding TO 'utf8';
+ALTER ROLE obi SET default_transaction_isolation TO 'read committed';
+ALTER ROLE obi SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE obi2026 TO obi;
+
+sudo apt install texlive-latex-extra
+sudo apt-get install texlive-lang-portuguese
+
+deactivate
+python -m venv django5.1
+cd django5.1
+source bin/activate
+pip install Django==5.1
+pip install --upgrade pip
+pip install psycopg2-binary
+pip install unidecode
+pip install qrcode
+pip install pandas
+pip install openpyxl
+pip install babel
+pip install python-magic
+pip install docutils
+pip install paramiko
+pip install requests
+pip install reportlab
+pip install django-simple-captcha
+pip install django-impersonate
+pip install gunicorn
+pip install channels
+
+
+# installs for editor LSP
+sudo apt update
+# java
+sudo apt install openjdk-21-jdk
+# Go to the official Eclipse download page for jdt.ls: http://download.eclipse.org/jdtls/milestones/
+# Click the latest version (e.g., 1.39.0).
+# Download the file named jdt-language-server-[version]-exec.jar.
+# Place this file somewhere on your server. For this guide, I'll assume you've moved it to: /usr/local/bin/jdt-ls.jar.
+
+# python
+pip install python-lsp-server

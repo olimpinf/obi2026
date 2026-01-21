@@ -1,0 +1,6 @@
+# Solução do Desafio da Aula 2
+
+print("Digite sua senha:")
+print(7259)
+print("Senha errada, tente novamente:")
+print(2795)

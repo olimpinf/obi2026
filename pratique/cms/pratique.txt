@@ -1,0 +1,34 @@
+####################################
+# configuration file for the contest
+####################################
+
+# short name of the contest -- cannot contain spaces!
+name = "pratique"
+
+# description, shown in the contest page header
+description = "Pratique"
+
+# problems -- "all" or list of problem names, as ['problem1','problem2']
+# problems are in directory ../problems
+problems = 'all'
+
+# contest date and time
+start = "2021-09-25 08:00:00 -03:00"
+stop = "2025-09-25 15:00:00 -03:00"
+
+# per_user_time: if set, contestants can start any time
+# and use this amount of time (in seconds)
+# for example, for 2 hours, set it to 60*60*2
+per_user_time = 60*60*5
+
+# tokens
+token_mode =  "disabled"
+
+# submission limits for all tasks -- if not set, must be set in the tasks
+min_submission_interval = 60
+max_submission_number = 100
+
+# user test limits for all tasks -- if not set, must be set in the tasks
+# or tests must be disabled in the admin interface
+#min_user_test_interval = 60
+#max_user_test_number = 50

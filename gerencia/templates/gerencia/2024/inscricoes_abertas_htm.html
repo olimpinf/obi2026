@@ -1,0 +1,99 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+<style>
+.button {
+  background-color: #0066FF; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.button:hover {
+  background-color: #0044bb; /* Blue */
+}
+.a {
+  color: white;
+  text-decoration: none;
+}
+.button-sm {
+  background-color: #ff0000; /* red */
+  border: none;
+  color: white;
+  padding: 5x 10px 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.button-sm:hover {
+  background-color: #880000; /* dark red */
+}
+.a {
+  color: white;
+  text-decoration: none;
+}
+
+.attention {
+  background-color: #aaa; /* red */
+  border: none;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+</style>
+</head>
+<body>
+
+<p>{{greeting}} {{ coord_name }}
+
+<p>Estão abertas as inscrições para a OBI2024.
+
+<p>Caso o(a) Sr(a) ainda seja professor(a) da escola
+
+<p><em>{{ school_name }}</em>
+
+<p>e possa continuar auxiliando na organização da OBI atuando como Coordenador Local, e não há alterações em seu endereço de correio eletrônico ou em seu nome de usuário, basta usar o mesmo nome de usuário e senha utilizados no ano passado na <a href="https://olimpiada.ic.unicamp.br/contas/login/?next=/restrito/">página de login da OBI2024</a>. 
+
+<p>Caso não se lembre, seu nome de usuário é:
+
+<pre>
+{{ username }}
+</pre>
+  
+<p>Não armazenamos senhas de coordenadores, portanto se não se lembra da senha, é necessário solicitar uma nova senha, clicando em "Esqueceu sua senha ou nome de usuário?" na <a href="https://olimpiada.ic.unicamp.br/contas/login/?next=/restrito/">página de login da OBI2024</a>.
+
+<p>Se deseja fazer alterações no cadastro da escola, incluindo modificar o endereço de correio eletrônico usado ou o seu nome de usuário, por favor preencha um novo cadastro, clicando no seguinte link:
+
+<p><a href="https://olimpiada.ic.unicamp.br/cadastra_escola">https://olimpiada.ic.unicamp.br/cadastra_escola</a>
+
+<p>(a Secretaria da OBI fará a unificação do novo cadastro com o cadastro do ano anterior, desde que o nome da escola e a cidade da escola sejam os mesmos).
+
+<p>Caso o(a) Sr(a) lecione agora em outra escola, mas deseje continuar atuando como Coordenador Local da nova escola, basta preencher o formulário de cadastro para a nova escola. É simples e rápido: 
+
+<p><a href="https://olimpiada.ic.unicamp.br/cadastra_escola">https://olimpiada.ic.unicamp.br/cadastra_escola</a>
+
+<p>Apreciamos e agradecemos a sua colaboração com a OBI!.
+
+{% include 'includes/signature_htm.html' %}
+
+</body>
+</html>

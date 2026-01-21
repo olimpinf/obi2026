@@ -1,0 +1,37 @@
+update school set school_city = 'Ipojuca', school_state='PE' where school_city ilike 'Recife' and school_state='PB';
+
+
+update school set school_city = 'Amambai' where school_city ilike 'Amamba%' and school_state='MS';
+update school set school_city = 'Ananindeua' where school_city ilike 'ANANINDEUA';
+update school set school_city = 'Arapiraca' where school_city ilike 'ARAPIRACA-AL';
+update school set school_city = 'Barra Velha' where school_city ilike 'BARRA VELHA';
+update school set school_city = 'Belo Horizonte' where school_city ilike 'BELO HORIZONTE';
+update school set school_city = 'Birigui' where school_city ilike 'Birig%' and school_state='SP';
+update school set school_city = 'Brasília' where school_city ilike 'BRASILIA';
+update school set school_city = 'Brasília' where school_city ilike 'Sobradinho' and school_state='DF';
+update school set school_city = 'Campina Grande' where school_city ilike 'Campina Grande';
+update school set school_city = 'Campinas' where school_city ilike 'Campinas';
+update school set school_city = 'Capanema' where school_city ilike 'Capanema';
+update school set school_city = 'Crato' where school_city ilike 'Crato';
+update school set school_city = 'Fortaleza' where school_city ilike 'fortaleza';
+update school set school_city = 'Foz do Iguaçu' where school_city ilike 'Foz do iguacu';
+update school set school_city = 'Guarulhos' where school_city ilike 'guarulhos';
+update school set school_city = 'Jijoca de Jericoacoara' where school_city ilike 'JIJOCA DE JERICOACOARA';
+update school set school_city = 'Juazeiro do Norte' where school_city ilike 'JUAZEIRO DO NORTE';
+update school set school_city = 'Marituba' where school_city ilike 'MARITUBA';
+update school set school_city = 'Mococa' where school_city ilike 'MOCOCA';
+update school set school_city = 'Nossa Senhora do Socorro' where school_city ilike 'nossa senhora do socorro';
+update school set school_city = 'Pacujá' where school_city ilike 'Pacuj%';
+update school set school_city = 'Pindaré-Mirim' where school_city ilike 'Pindar% Mirim' and school_state='MA';
+update school set school_city = 'Porto Alegre' where school_city ilike 'Porto Alegre';
+update school set school_city = 'Poços de Caldas' where school_city ilike 'POCOS DE CALDAS';
+update school set school_city = 'Santana de Parnaíba' where school_city ilike 'SANTANA DE PARNAÍBA';
+update school set school_city = 'São Carlos' where school_city ilike 'S%O CARLOS';
+update school set school_city = 'São José dos Campos' where school_city ilike 'S%O JOS% DOS CAMPOS';
+update school set school_city = 'São José do Rio Preto' where school_city ilike 'S%O JOS% RIO PRETO';
+update school set school_city = 'São Luís' where school_city ilike 's%o lu%s';
+update school set school_city = 'São Paulo' where school_city like 's%o paulo';
+update school set school_city = 'Tupã' where school_city ilike 'TUPÃ';
+update school set school_city = 'São Luís' where school_city ilike 'São Lu´s';
+update school set school_city = 'Valinhos' where school_city ilike 'Valinhos';
+update school set school_city = 'Porto Alegre' where school_city ilike 'PORTO ALEGRE';

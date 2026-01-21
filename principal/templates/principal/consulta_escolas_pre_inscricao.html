@@ -1,0 +1,67 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Pré-inscrição de Competidor{% endblock %}
+
+{% block header %}Pré-inscrição de Competidor{% endblock %}
+
+{% block content %}
+
+<p>Primeiramente vamos verificar se sua escola está cadastrada na OBI{{ ''|obi_date_year }}. Utilize o formulário
+  abaixo para fazer a consulta.
+<p>Para listar todas as escolas cadastradas, deixe o formulário em
+  branco. Mas é melhor restringir a consulta utilizando os campos do
+  formulário.  Para listar todas as escolas de um estado, selecione um
+  estado e deixe os outros campos em branco.  Alternativamente, além
+  de selecionar o estado, informe apenas parte do nome da escola que
+  você procura, ou parte do nome da cidade que você procura no campo
+  adequado do formulário.  Por exemplo, inserindo 'rio' no
+  campo <i>Cidade</i> do formulário, serão listadas todas as escolas
+  cadastradas em cidades com nome contendo 'rio' no nome, como por
+  exemplo Rio de Janeiro, São José do Rio Preto, etc.
+
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+</form>
+
+
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Instruções para pré-inscrição</h4>
+
+  <p>Estes são os passos para efetuar a pré-inscrição:
+    <ol>
+      <li>Selecionar a sua escola (ela deve estar cadastrada na OBI;
+	se ela não está cadastrada você deve procurar um professor e
+	pedir que ele cadastre a escola na OBI.)
+      <li>Preencher o formulário com os seus dados.
+    </ol>
+  <p>Sua inscrição será efetivada quando o Coordenador Local da OBI em sua escola
+    validar os seus dados. Você receberá uma mensagem de email quando sua inscrição tiver
+    sido efetivada.
+
+{% endblock %}

@@ -1,0 +1,95 @@
+<h2>Execuções condicionais encadeadas</h2>
+
+<p>
+  Suponha que ao invés de escrever a nota final de um aluno (valores de
+0 a 100), a prof. Vilma queira escrever um
+<em>conceito</em>, como A, B, ou C. O conceito do aluno é determinado da
+seguinte forma:
+<ol>
+<li>se a média é maior do que ou igual a 80, o conceito é A;
+<li>se a média é menor do que 80, mas maior do que ou igual a 50,
+  o conceito é B; e
+<li> se a média é menor do que 50, o conceito é C.
+</ol>
+
+<p>Esse caso é um exemplo condições <em>encadeadas</em>. Note que as
+condições não são independentes, pois dependem de uma mesma variável
+(a nota do aluno). Ou seja, a condição (2) depende de a condição (1) não ser
+verdadeira, e a condição (3) depende de as condições (1) e (2) não
+serem verdadeiras.  Por isso, não podemos usar simplesmente dois
+comandos condicionais um em seguida do outro, porque a lógica não
+estará correta. Por exemplo, o programa
+
+  <center>
+    <img src="/static/saci/blockly_images/group_control_if_chain_wrong.png" height="215"/>
+  </center>
+  
+<p>não implementa corretamente as restrições da Profa. Vilma,
+  porque embora produza o resultado correto se a nota for menor do que
+  80, se a nota for por exemplo 85 serão impressas duas linhas, uma
+  com o conceito "A" e outra com o conceito "B".
+
+<p>Uma forma correta de implementar as restrições da Profa. Vilma pode
+  ser vista no programa abaixo, em que um <em>bloco se-então-senão</em>
+  é "encaixado" (ou "encadeado") em outro <em>bloco se-então-senão</em>:
+
+  <center>
+    <img src="/static/saci/blockly_images/group_control_if_chain_correct.png" height="255"/>
+  </center>
+  
+<p>Programas com <em>blocos se-então</em>
+  encadeados são tão frequentes que a linguagem Python tem uma forma
+  abreviada para essa construção, e em Blockly o <em>bloco
+  se-então</em> pode ser modificado para construir execuções
+  condicionais encadeadas.  Para modificar o <em>bloco
+  se-então</em> clique no botão de opções
+  
+  <img src="/static/saci/blockly_images/button_option_block_control_if.png" height="16" align="bottom"/>
+
+  do bloco:
+
+  <center>
+    <img src="/static/saci/blockly_images/block_control_if_option.png" height="220"/>
+  </center>
+
+<p>Arraste o <em>bloco senão-se</em> e encaixe-o abaixo do <em>bloco se</em>. O
+  bloco <em>bloco se-então</em> muda de aspecto e inclui um novo encaixe para
+  uma nova condição marcada com o rótulo "<em>senão se</em>" e um nova abertura
+  para encaixar blocos, marcada com o rótulo "<em>então</em>":
+
+  <center>
+    <img src="/static/saci/blockly_images/block_control_if_elif_option.png" height="265"/>
+  </center>
+
+<p>Você pode encadear quantos blocos condicionais for necessário para sua aplicação, como
+  neste exemplo:
+
+  <center>
+    <img src="/static/saci/blockly_images/block_control_if_elif_many.png" height="290"/>
+  </center>
+  
+<p>Para fechar o painel, clique novamente no botão de opções 
+  <img src="/static/saci/blockly_images/button_option_block_control_if.png" height="16" align="bottom"/>
+  do bloco.
+  
+<p>Como exemplo de uso do bloco de execução condicional no formato <em>se-então-senão-se-então</em>,
+  o programa acima, que implementa o critério de aprovação da profa. Vilma, pode
+  ser implementado da seguinte forma:
+
+  <center>
+    <img src="/static/saci/blockly_images/group_control_if_elif_pass_fail.png" height="230"/>
+  </center>
+
+<p>Veja esse programa na linguagem Python:
+<pre style="background-color:#eeeeee;width:50%;padding:4px">
+nota = int(input())
+if nota >= 80:
+  print('A')
+elif nota >= 50:
+  print('B')
+else:
+  print('C')
+</pre>
+
+<p>&nbsp;</p>
+

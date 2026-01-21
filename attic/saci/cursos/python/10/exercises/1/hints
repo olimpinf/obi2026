@@ -1,0 +1,8 @@
+@empty
+
+Você deve usar uma variável para armazenar o número de vezes que a música mais escutada foi escutada. Chame por exemplo essa variável de maisTocada. Qual o valor inicial dessa variável? Zero é um bom valor, já que cada música é escutada pelo menos uma vez, de acordo com o enunciado. Use um bloco de atribuição para fazer a variável maisTocada ter o valor zero.
+<p>
+Você deve ler o número de vezes que  cada música da lista foi  escutada. Para isso, leia da entrada o número de músicas na lista e armazene em uma variável. Para ler o número de vezes que cada
+música foi escutada use um bloco Repita.
+Em cada passo do do laço de repetição, você deve ler um número da entrada e comparar o número lido com o valor da variável maisTocada. Se o número lido é maior, encontramos uma música que foi mais escutada do que a que conhecemos até então, portanto atualizamos o valor da variável maisTocada com o número lido. Ao final das repetições, a variável maisTocada tem o resultado.
+<br>

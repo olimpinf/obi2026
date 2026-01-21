@@ -1,0 +1,69 @@
+#!/bin/sh                                                                                                    
+
+# execute as user postgres
+
+# db running remote
+#psql -U postgres -h 10.0.0.16 -c "DROP DATABASE obi2018"
+#psql -U postgres -h 10.0.0.16 -c "CREATE DATABASE obi2018 OWNER obi ENCODING 'UTF8'"
+
+# db running locally
+psql postgres -c "DROP DATABASE obi2021"
+psql postgres -c "DROP DATABASE obi2020"
+psql postgres -c "DROP DATABASE obi2019"
+psql postgres -c "DROP DATABASE obi2018"
+psql postgres -c "DROP DATABASE obi2017"
+psql postgres -c "DROP DATABASE obi2016"
+psql postgres -c "DROP DATABASE obi2015"
+psql postgres -c "DROP DATABASE obi2014"
+psql postgres -c "DROP DATABASE obi2013"
+psql postgres -c "DROP DATABASE obi2012"
+psql postgres -c "DROP DATABASE obi2011"
+psql postgres -c "DROP DATABASE obi2010"
+psql postgres -c "DROP DATABASE obi2009"
+psql postgres -c "DROP DATABASE obi2008"
+psql postgres -c "DROP DATABASE obi2007"
+psql postgres -c "DROP DATABASE obi2006"
+psql postgres -c "DROP DATABASE obi2005"
+psql postgres -c "DROP DATABASE obi2004"
+psql postgres -c "DROP DATABASE obi2003"
+psql postgres -c "DROP DATABASE corretor"
+psql postgres -c "DROP DATABASE sisca"
+psql postgres -c "DROP DATABASE saci"
+psql postgres -c "DROP DATABASE pcss"
+psql postgres -c "DROP USER obi"
+
+psql postgres -c "CREATE USER obi WITH PASSWORD 'guga.LC'"
+psql postgres -c "CREATE DATABASE obi2021 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2020 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2019 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2018 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2017 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2016 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2015 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2014 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2013 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2012 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2011 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2010 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2009 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2008 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2007 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2006 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2005 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2004 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE obi2003 OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE corretor OWNER obi ENCODING 'UTF8'"
+psql postgres -c "CREATE DATABASE sisca OWNER obi ENCODING 'UTF8'"
+
+##find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+##find . -path "*/migrations/*.pyc"  -delete
+##./manage.py makemigrations
+##./manage.py migrate
+
+
+#psql postgres -c "DROP DATABASE obi2019"
+#psql postgres -c "CREATE DATABASE obi2019 OWNER obi ENCODING 'UTF8'"
+#git checkout */migrations/
+
+echo ""
+echo "now import a database dump"

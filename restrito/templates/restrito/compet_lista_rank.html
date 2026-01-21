@@ -1,0 +1,83 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}  </h1>
+<p class="object-tools">
+    <a href="{% url 'restrito:compet_inscreve' %}" class="addlink">
+      Inscreve Competidor
+    </a>
+</p>
+{% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} competidor selecionado, total de {{ total }} competidores inscritos</p>
+  {% else %}
+<p>{{ items.paginator.count }} competidores selecionados, total de {{ total }} competidores inscritos</p>
+  {% endif %}
+<table class='admin' width="100%">
+  <tr>
+    <th width="15%">Núm. Inscr.</th>
+    <th width="70%">Nome</th>
+    <th class="center">Modalidade</th>
+    <th class="center">Classif. Nacional</th>
+    {% comment %}
+    <th class="center">Classif. Estadual</th>
+    {% endcomment %}
+    <th class="5%"></th>
+  </tr>
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td>{{ c.compet_id|obi_format_compet_id }}</td>
+    <td>{{ c.compet_name }}</td>
+    <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+    <td class="center">{% if c.compet_rank_final %}{{ c.compet_rank_final }}<sup><u>o</u></sup>{% else %}--{% endif %}</td>
+    {% comment %}
+    <td class="center">{% if c.compet_rank_state %}{{ c.compet_rank_state }}<sup><u>o</u></sup>{% else %}--{% endif %}</td>
+    {% endcomment %}
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Não há competidores inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:compet_lista_rank' compet_level %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:compet_lista_rank' compet_level  %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  
+  <h2>Informações sobre a modalidade {{ level_name }}</h2>
+
+  <ul>
+    <li>Total de competidores: {{ num_compet_level }}
+    <li>Total de competidores no estado: {{ num_compet_level_state }}
+  </ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+<h1>{{ f.compet.compet_id|obi_format_compet_id}} -- {{f.compet.compet_name}}</h1>
+
+<h2>Folha de Respostas</h2>
+{% if f.answers %}    
+<pre>
+{{ f.answer_list}}
+</pre>
+{% else %}
+<p>Não disponível.
+{% endif%}
+{% endblock %}
+
+{% block content-related %}
+
+  {% block browse-wrapper %}
+  <h1>Total de Pontos: {{ f.total_points }}</h1>
+  {% if f.next_phase %}
+  Classificado para {{f.next_phase}}: {{f.classif_next_phase}}
+
+  {% if f.next_phase == 'Fase Estadual' %}
+  <small><p> Em cada Escola, para cada modalidade e nível, passam para
+      a Fase Estadual os melhores classificados na própria escola, até
+      o limite de 15% dos participantes efetivos da Escola na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Estadual
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>). <!--span>No momento foi aplicado somente
+      o <em>critério local</em>. Competidores adicionais poderão ser
+      classificados pelo <em>critério nacional</em>. O <em>critério
+      nacional</em> será aplicado quando todas as eventuais
+      solicitações de recorreção tiverem sido processadas, de acordo
+      com o Calendário da OBI2020.</span-->
+    </p>
+  </small>
+  {% elif f.next_phase == 'Fase Nacional' %}
+  <small><p> Em cada Estado, para cada modalidade e nível, passam para
+      a Fase Nacional os melhores classificados no Estado, até
+      o limite de 15% dos participantes efetivos da Estado na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Nacional
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>). <!--span>No momento foi aplicado somente
+      o <em>critério local</em>. Competidores adicionais poderão ser
+      classificados pelo <em>critério nacional</em>. O <em>critério
+      nacional</em> será aplicado quando todas as eventuais
+      solicitações de recorreção tiverem sido processadas, de acordo
+      com o Calendário da OBI2020.</span-->
+  <p>A classificação será divulgada quando o período de solicitação de
+      recorreções tiver sido finalizado.
+  {% endif %}
+  {% endif %}
+<hr>
+{% if f.answers %}    
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_review_tasks_coord.html" %}
+  <hr>
+{% endif %}
+
+
+
+
+  {% comment %}
+  {% if f.phase == 1 %}
+  <ul>
+  <li><a href="pdf/ProvaOBI2022_f1{{ f.level }}.pdf">Caderno de Tarefas</a>
+
+  <li><a href="/static/extras/obi2022/provas/ProvaOBI2022_f1{{ f.level }}.pdf">Caderno de Tarefas</a>
+  <li><a href="/static/extras/obi2022/provas/SolucaoOBI2022_f1{{ f.level }}.pdf">Caderno de Soluções</a>
+  <li><a href="/static/extras/obi2022/gabaritos/GabaritoOBI2022_f1{{ f.level }}.pdf">Gabarito</a></li></ul>
+    </ul>
+  {% elif f.phase == 2 %}
+  <ul>
+  <li><a href="/static/extras/obi2022/provas/ProvaOBI2022_f{{ f.phase }}{{ f.level }}.pdf">Caderno de Tarefas</a>
+  <!--li><a href="/static/extras/obi2022/provas/SolucaoOBI2022_f{{ f.phase }}{{ f.level }}.pdf">Caderno de Soluções</a-->
+  <li><a href="/static/extras/obi2022/gabaritos/GabaritoOBI2022_f{{ f.phase }}{{ f.level }}.pdf">Gabarito</a></li>
+  </ul>
+  {% else %}
+  <ul>
+  <li><a href="/fase3/prog/restrito/pdf/ProvaOBI2022_f3{{ f.level }}.pdf">Caderno de Tarefas</a>
+  <!--li><a href="/static/extras/obi2022/provas/SolucaoOBI2022_f{{ f.phase }}{{ f.level }}.pdf">Caderno de Soluções</a-->
+  <!--li><a href="/static/extras/obi2022/gabaritos/GabaritoOBI2022_f{{ f.phase }}{{ f.level }}.pdf">Gabarito</a></li-->
+  </ul>
+{% endif %}
+    {% endcomment %}
+  <h2>Instruções</h2>
+    {% if f.mod == 'i' %}
+    {% include "exams/includes/instructions_review_ini.html" %}
+    {% else %}
+    {% include "exams/includes/instructions_review_prog.html" %}
+    {% endif %}
+    {% block browse %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

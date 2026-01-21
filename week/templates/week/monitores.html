@@ -1,0 +1,276 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Monitores{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+
+<h2>Monitores</h2>
+
+<p>Há dois tipos de monitores: Monitores da Semana e Monitores de Laboratório.
+  Os monitores de ambos os tipos são alunos e alunas de cursos de graduação e pós-graduação da Unicamp.</p>
+
+<p>Os <em><a href="#monitores">monitores da semana</a></em>
+  acompanham os alunos durante toda a semana, em todas as atividades, e
+  ficam hospedados no mesmo hotel que os alunos. Os <em><a href="#monitores-laboratorio">monitores de
+      laboratório</a></em> auxiliam os alunos durante os exercícios práticos
+  (laboratórios).
+
+<h3 id="monitor-chefe">Coordenador de Monitores</h3>
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/wladimir_carrillo.jpeg" width=200>
+    </td>
+    <td><b>Wladimir Arturo Garces Carrillo</b><br>
+      Doutorado em Ciência da Computação<br>
+      <span style="font-size:80%">(Segunda vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 1 %}">certificado</a>]
+    </td>
+  </tr>
+</table>
+
+<h3 class="mt-3" id="monitores">Monitores da Semana</h3>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/amanda_coelho.jpg" width=200>
+    </td>
+    <td><b>Amanda Scherr Caldeira Coelho</b><br>
+      Engenharia de Computação<br>
+      <span style="font-size:80%">(Primeira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 2 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/athyrson_ribeiro.jpeg" width=200>
+    </td>
+    <td><b>Athyrson Machado Ribeiro</b><br>
+      Doutorado em Ciência da Computação<br>
+      <span style="font-size:80%">(Segunda vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 3 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/caio_santos.jpg" width=200>
+    </td>
+    <td><b>Caio Maia Moreira Santos</b><br>
+      Ciência da Computação<br>
+      <span style="font-size:80%">(Primeira vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 4 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/evelyn_silva.jpeg" width=200>
+    </td>
+    <td><b>Evelyn Roberta de Lima Silva</b><br>
+      Mestrado em C. Computação<br>
+      <span style="font-size:80%">(Segunda vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 5 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/guilherme_monteiro.jpeg" width=200>
+    </td>
+    <td><b>Guilherme de Godoi Monteiro</b><br>
+      Ciência da Computação<br>
+      <span style="font-size:80%">(Segunda vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 6 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/gustavo_sousa.jpeg" width=200>
+    </td>
+    <td><b>Gustavo Oliveira de Sousa</b><br>
+      Engenharia de Computação<br>
+      <span style="font-size:80%">(Segunda vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 7 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/jarol_soria.png" width=200>
+    </td>
+    <td><b>Jarol Vijay Butron Soria</b><br>
+      Mestrado em Ciência da Computação<br>
+      <span style="font-size:80%">(Terceira vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 8 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/juliana_dantas.jpeg" width=200>
+    </td>
+    <td><b>Juliana Costa Dantas</b><br>
+      Ciência da Computação<br>
+      <span style="font-size:80%">(Primeira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 9 %}">certificado</a>]
+    </td>
+  </tr>
+  
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/maria_clara_oliveira.jpg" width=200>
+    </td>
+    <td><b>Maria Clara da Costa Oliveira</b><br>
+      Engenharia Mecânica<br>
+       <span style="font-size:80%">(Terceira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 10 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/mariana_mandarino.jpg" width=200>
+    </td>
+    <td><b>Mariana Fonsechi Mandarino</b><br>
+      Engenharia de Computação<br>
+      <span style="font-size:80%">(Primeira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 11 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/paulo_bassani.png" width=200>
+    </td>
+    <td><b>Paulo Bassani</b><br>
+      Engenharia de Computação<br>
+      <span style="font-size:80%">(Quarta vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 12 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/vinicius_soares.jpeg" width=200>
+    </td>
+    <td><b>Vinicius Leme Soares</b><br>
+      Engenharia de Computação<br>
+      <span style="font-size:80%">(Primeira vez como monitor)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 13 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/thais_farias.jpeg" width=200>
+    </td>
+    <td><b>Thais Steinmüller Farias</b><br>
+      Engenharia de Computação<br>
+      <span style="font-size:80%">(Terceira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 14 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/victoria_santos.jpg" width=200>
+    </td>
+    <td><b>Victoria Alchangelo dos Santos</b><br>
+      Enfermagem<br>
+      <span style="font-size:80%">(Terceira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 15 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/viviane_pimentel.jpg" width=200>
+    </td>
+    <td><b>Viviane da Silva Pimentel</b><br>
+      Mestrado em Ciência da Computação<br>
+      <span style="font-size:80%">(Primeira vez como monitora)</span>
+      [<a href="{% url 'week:emite_certificado' 'monitor' 16 %}">certificado</a>]
+    </td>
+  </tr>
+
+</table>
+
+
+<h3 class="mt-3" id="monitores-laboratorio">Monitores de Laboratório</h3>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+  <td width=200>
+    <img src="/static/extras/obi2025/semana/fotos_monitores/ana_gomes.jpg" width=200>
+  </td>
+  <td><b>Ana Luiza Mota Gomes</b><br>
+    Engenharia de Computação<br>
+      [<a href="{% url 'week:emite_certificado' 'monitor_lab' 1 %}">certificado</a>]
+  </td>
+  </tr>
+
+  <tr>
+  <td width=200>
+    <img src="/static/extras/obi2025/semana/fotos_monitores/ana_borges.jpeg" width=200>
+  </td>
+  <td><b>Ana Margarida Borges</b><br>
+    Engenharia de Computação<br>
+      [<a href="{% url 'week:emite_certificado' 'monitor_lab' 2 %}">certificado</a>]
+  </td>
+  </tr>
+
+  <tr>
+  <td width=200>
+    <img src="/static/extras/obi2025/semana/fotos_monitores/gabriela_taniguchi.jpeg" width=200>
+  </td>
+  <td><b>Gabriela Taniguchi</b><br>
+    Engenharia de Computação<br>
+      [<a href="{% url 'week:emite_certificado' 'monitor_lab' 3 %}">certificado</a>]
+  </td>
+  </tr>
+
+  
+  <tr>
+  <td width=200>
+    <img src="/static/extras/obi2025/semana/fotos_monitores/leonardo_ferreira.jpg" width=200>
+  </td>
+  <td><b>Leonardo Ferreira</b><br>
+    Engenharia de Computação<br>
+      [<a href="{% url 'week:emite_certificado' 'monitor_lab' 4 %}">certificado</a>]
+  </td>
+  </tr>
+  
+  <tr>
+    <td width=200>
+      <img src="/static/extras/obi2025/semana/fotos_monitores/lucas_senno.jpeg" width=200>
+    </td>
+    <td><b>Lucas Cabral Senno</b><br>
+      Ciência da Computação<br>
+      [<a href="{% url 'week:emite_certificado' 'monitor_lab' 5 %}">certificado</a>]
+    </td>
+  </tr>
+
+  <tr>
+  <td width=200>
+    <img src="/static/extras/obi2025/semana/fotos_monitores/lucas_bertanha.jpg" width=200>
+  </td>
+  <td><b>Lucas Henrique Bertanha</b><br>
+    Engenharia de Computação<br>
+      [<a href="{% url 'week:emite_certificado' 'monitor_lab' 6 %}">certificado</a>]
+  </td>
+  </tr>
+
+</table>
+{% endblock %}
+
+{% block content-related %}
+{% include "week/includes/see_also.html" %}
+{% endblock %}

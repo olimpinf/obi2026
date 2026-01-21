@@ -1,0 +1,136 @@
+title:Pesos
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma fábrica instalou um elevador composto de duas cabines ligadas por
+uma roldana, como na figura. Quando uma cabine sobe, a outra desce. No
+primeiro andar da fábrica existem algumas caixas de pesos diversos e
+precisamos levar todas as caixas para o segundo andar, usando o
+elevador. Apenas uma caixa pode ser colocada por vez dentro de uma
+cabine. Além disso, existe uma restrição de segurança importante:
+durante uma viagem do elevador, a diferença de peso entre as cabines
+pode ser no máximo de 8 unidades. De forma mais rigorosa, P-Q &leq;  8,
+onde P é o peso da cabine mais pesada e Q, o peso da cabine mais
+leve. O gerente da fábrica não está preocupado com o número de viagens
+que o elevador vai fazer. Ele apenas precisa saber se é possível ou
+não levar todas as caixas para o segundo andar. No exemplo da figura,
+podemos levar todas as três caixas usando a seguinte sequência de seis
+viagens do elevador:
+
+<div class="center">
+<img src="/static/img/task_images/2018f2pj_copa.png" width="600px"/>
+</div>
+
+<ol>
+ <li> Sobe a caixa de peso 4, desce a outra cabine vazia; (diferença de 4)
+ <li> Sobe a caixa de peso 10, desce a caixa de peso 4;  (diferença de 6)
+ <li> Sobe a caixa de peso 15, desce a caixa de peso 10;  (diferença de 5)
+ <li> Sobe a caixa de peso 4, desce a outra cabine vazia; (diferença de 4)
+ <li> Sobe a caixa de peso 10, desce a caixa de peso 4; (diferença de 6)
+ <li> Sobe a caixa de peso 4, desce a outra cabine vazia (diferença de 4).
+</ol>
+
+<p>Dados os pesos de N caixas no primeiro andar, em ordem crescente,
+seu programa deve determinar se é possível ou não levar todas as N caixas
+para o segundo andar.
+
+ 
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N
+ indicando o número de caixas. A segunda linha da entrada
+ contém N inteiros representando os pesos das caixas, em ordem crescente.
+
+ 
+<h3>Saída</h3>
+Imprima uma linha na saída. A linha deve conter o
+ caracter <span class="ttt">S</span> caso seja possível, ou <span class="ttt">N</span> caso não seja
+ possível levar todas as caixas até o segundo andar da fábrica.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 1 &leq;  N &leq;  10<sup>4</sup>
+ <li> O peso das caixas está entre 1 e 10<sup>5</sup>, inclusive.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+4 10 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+2 6 15 20 25 35 35 40
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+10 14 20 23
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

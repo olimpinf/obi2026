@@ -1,0 +1,108 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+{% if pagetitle %}
+<h1>{{ pagetitle }}</h1>
+{% endif %}
+
+{% if task.statement %}
+  {{ task.statement }}
+<form class="question" action="" method="post">
+  {% csrf_token %}
+    {% for q in task.questions %}
+    <p><b>Questão {{ q.num }}.</b> {{ q.text|safe }}
+      {% reflect q.alternatives f.shuffle_pattern as reflected_alternatives %}
+      {% for a in reflected_alternatives %}{% with anum=forloop.counter %}
+      <br />
+      {% reflected anum f.shuffle_pattern as anum_refl %}
+      <span {% if a.correct %}{%if f.show_results %}class="greenbg"{%endif%}{% elif q.num in f.answers_task and f.answers_task|get_item:q.num != anum_refl %}{% else %}{% if f.show_results %}class="redbg"{% endif %}{% endif %}>
+      <input disabled type="radio" {% if q.num in f.answers_task and f.answers_task|get_item:q.num == anum_refl %}checked{% endif %} id="{{q.num}}_{% reflected anum f.shuffle_pattern %}" name="{{ q.num }}" value="{% reflected anum f.shuffle_pattern %}"/> {{ a.text|safe }}
+      </span>
+      {% endwith %}{% endfor %}
+    {%if f.show_results %}<br><em>Resposta {% if f.correct_answers_task|get_item:q.num %}correta{% else %} errada{% endif %}.</em>{% endif %}{% endfor %}
+
+{% comment %}
+      {% for a in q.alternatives %}{% with anum=forloop.counter %}
+       <br />
+       {% if task.show_answers and a.correct %}
+          <span class="greenbg"><input type="radio" checked id="{{qnum}}_{{anum}}" name="{{ qnum }}" value="{{anum}}"/> {{ a.text|safe }} </span>
+       {% else %}
+          <input type="radio" id="{{qnum}}_{{anum}}" name="{{ qnum }}" value="{{anum}}"/> {{ a.text|safe }}
+       {% endif %}
+      {% endwith %}{% endfor %}
+    {% endwith %}{% endfor %}
+{% endcomment %}
+	  
+<p>
+  <input type="hidden" name="descriptor" value="{{ task.descriptor }}"> 
+</form>
+{% elif f.show_results %}
+<p>Escolha as tarefas no menu ao lado para visualizar a correção.
+{% else %}
+<p>O resultado será divulgado de acordo com o calendário anunciado.
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h1>Total de Pontos: {{ f.total_points }}</h1>
+  {% if f.next_phase %}
+  Classificado para {{f.next_phase}}: {{f.classif_next_phase}}
+
+  {% if f.next_phase == 'Fase Estadual' %}
+  <small><p> Em cada Escola, para cada modalidade e nível, passam para
+      a Fase Estadual os melhores classificados na própria escola, até
+      o limite de 15% dos participantes efetivos da Escola na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Estadual
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>). <!--span>No momento foi aplicado somente
+      o <em>critério local</em>. Competidores adicionais poderão ser
+      classificados pelo <em>critério nacional</em>. O <em>critério
+      nacional</em> será aplicado quando todas as eventuais
+      solicitações de recorreção tiverem sido processadas, de acordo
+      com o Calendário da OBI2020</span-->.
+    </p>
+  </small>
+  {% elif f.next_phase == 'Fase Nacional' %}
+  <small><p> Em cada Estado, para cada modalidade e nível, passam para
+      a Fase Nacional os melhores classificados no Estado, até
+      o limite de 15% dos participantes efetivos da Estado na
+      respectiva modalidade e nível (<em>critério
+      local</em>). Adicionalmente, também passam para a Fase Nacional
+      os melhores classificados nacionalmente até o limite de 5% dos
+      participantes efetivos na respectiva modalidade e nível
+      (<em>critério nacional</em>). <!--span>No momento foi aplicado somente
+      o <em>critério local</em>. Competidores adicionais poderão ser
+      classificados pelo <em>critério nacional</em>. O <em>critério
+      nacional</em> será aplicado quando todas as eventuais
+      solicitações de recorreção tiverem sido processadas, de acordo
+      com o Calendário da OBI2020</span-->.
+  <!--p>A classificação será divulgada quando o período de solicitação de
+      recorreções tiver sido finalizado.</p-->
+  {% endif %}
+  {% endif %}
+<hr>
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_review_tasks.html" %}
+  {% get_num_answers_exam_total f.answers f.level as tasks %}
+  Total de Tarefas: {{ tasks.0 }}<br>
+  Total de Questões: {{ tasks.1 }} ({{ tasks.2 }} sem resposta)<br>
+    
+  <h2>Instruções</h2>
+  {% include "exams/includes/instructions_review_ini.html" %}
+
+  {% endblock browse-wrapper %}
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+
+</div>
+{% endblock content-related%}
+

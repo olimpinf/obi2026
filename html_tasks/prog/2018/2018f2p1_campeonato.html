@@ -1,0 +1,138 @@
+title:Campeonato
+template:tasks/tarefa_programacao.html
+
+<p>
+O sorteio das posições dos jogadores na chave decisiva da copa do
+mundo de ping-pong está deixando a todos nervosos. É que ninguém quer
+pegar o jogador mais bem ranqueado, o Master Kung, logo nas oitavas de
+final, ou nas quartas de final. Melhor que só seja possível enfrentar
+Master Kung na semifinal ou na final! Os jogadores são identificados
+por números inteiros de 1 a 16, sendo que Master Kung é o jogador
+de número 1. O jogador para o qual nós estamos torcendo, Master Lu,
+tem o número 9.
+
+<p>
+A chave possui 16 posições também numeradas de 1 a 16, como na
+figura abaixo. A organização da copa vai fazer um sorteio para definir
+em qual posição cada jogador vai iniciar a chave decisiva. Nas oitavas
+de final, o jogador na posição 1 enfrenta o jogador na posição 2;
+o da posição 3 enfrenta o da posição 4; e assim por diante, como
+na figura.
+
+<div class="center">
+<img src="/static/img/task_images/2018f2p1_campeonato.png" width="600px"/>
+</div>
+
+<p>O objetivo deste problema é decidir em que fase da chave os jogadores
+Master Kung e Master Lu vão se enfrentar, caso vençam todas as suas
+respectivas partidas antes de se enfrentarem. Por exemplo, se o
+sorteio da chave determinar a seguinte ordem de jogadores da posição 1 até
+a 16: [4, 11, 3, 2, 8, 13, 14, 5, 16, 9, 12, 6, 10, 7, 1, 15], eles
+vão se enfrentar na semifinal.
+
+ 
+<h3>Entrada</h3>
+<p>A primeira e única linha da entrada contém 16 números X<sub>i</sub>
+   inteiros distintos, de valores entre 1 e 16. Ou seja, uma
+   permutação dos inteiros entre 1 e 16. A permutação define a
+   ordem dos jogadores nas posições da chave decisiva da copa.
+
+ 
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha contendo uma das
+   palavras seguintes, decidindo a fase em que vão se enfrentar os
+   jogadores Master Kung e Master Lu, se eles vencerem todas as suas
+   partidas antes de se enfrentarem: <span class="ttt">oitavas</span>,
+     <span class="ttt">quartas</span>, <span class="ttt">semifinal</span>
+     ou <span class="ttt">final</span>.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 1  &leq;  X<sub>i</sub>  &leq;  16
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, Master Kung
+(o jogador 1) está na posição 1 da chave.
+</ul>
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 11 3 2 8 13 14 5 16 9 12 6 10 7 1 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+semifinal
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 11 8 13 14 5 1 9 16 2 12 6 3 7 10 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+oitavas
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 11 1 13 14 5 3 8 16 2 12 6 9 7 10 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+final
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 11 8 13 9 5 3 1 16 2 12 6 7 14 10 15
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+quartas
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

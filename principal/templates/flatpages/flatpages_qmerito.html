@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load obi_extras %}
+
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block title %} {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  <h1> {{ flatpage.title }} </h1>
+{% endblock %}
+
+  {% block content %}{{ flatpage.content }}{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}
+

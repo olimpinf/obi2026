@@ -1,0 +1,125 @@
+title:Quadrado Aritmético
+template:tasks/tarefa_programacao.html
+ 
+      
+
+ <p>Arnaldo e Bernardo são dois garotos que compartilham um peculiar gosto por curiosidades matemáticas. Nos
+últimos tempos, sua principal diversão tem sido investigar propriedades matemágicas de tabuleiros quadrados
+preenchidos com inteiros. Um belo dia, Arnaldo desenhou o tabuleiro da seguinte figura.</p>
+ 
+<div align="center">
+<img src="/static/img/task_images/2011f1p2_quadrado1.png" width="150" height="140">
+</div>
+ 
+<p>— Olha só, várias somas nesse quadrado são iguais! — exclamou Bernardo.</p>
+<p>— Como assim? — devolveu, intrigado, Arnaldo.</p>
+<p>— Observe:</p>
+
+<div align="center">
+<img src="/static/img/task_images/2011f1p2_quadrado2.png" width="450" height="140">
+</div>
+
+<p>— É mesmo! (-41) + 40 + 54 dá 53, 28 + (-29) + 54 também! — exclamou Arnaldo.</p>
+<p>— Eu já verifiquei: existem 6 formas de escolhermos 3 células deste quadrado de forma que cada linha e coluna
+tenha exatamente uma célula escolhida. Em todas elas, a soma dá 53. Além disso, todos os números são
+distintos nesse quadrado. — notou Bernardo, exibindo suas habilidades aritméticas.</p>
+<p>— Que bacana! Esse quadrado é realmente mágico! Ou, melhor, esse quadrado é realmente <i>aritmético!</i> Será
+que existem mais quadrados como esse?</p>
+<p>Uma <i>escolha legal</i> de células é uma escolha em que toda linha e toda coluna tenha exatamente uma célula
+escolhida. Um <i>quadrado aritmético</i> de tamanho <i>N</i> e soma <i>S</i> é um tabuleiro de inteiros de <i>N</i> linhas e <i>N</i> colunas
+em que qualquer <i>escolha legal</i> tem soma S e em que todos os números são distintos.</p>
+<p>Sua tarefa, neste problema, é gerar um quadrado aritmético de tamanho <i>N</i> e soma <i>S</i>, dados <i>N</i> e <i>S</i>. Como
+Arnaldo e Bernardo vão querer conferir a sua solução em suas calculadoras, você não deve gerar um quadrado
+em que alguma célula tenha valor absoluto maior do que 10<sup>9</sup>.</p>
+
+<h3>Entrada</h3>
+<p>A primeira e única linha da entrada contém dois números inteiros <i>N</i> e <i>S</i> (1 ≤ <i>N</i> ≤ 1000 e -1000 ≤ <i>S</i> ≤ 1000)
+representando, respectivamente, o tamanho e a soma do quadrado aritmético pedido.</p>
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir <i>N</i> linhas, cada uma com <i>N</i> inteiros entre -10⁹ e 10⁹, representando o quadrado
+aritmético pedido. Para uma mesma entrada, podem existir vários quadrados aritméticos válidos; seu programa
+deve imprimir qualquer um deles, mas <b> apenas um.</b></p>
+<p>É garantido que existirá pelo menos um quadrado aritmético válido para cada entrada testada.</p>
+
+<h3>Restrições</h3>
+<ul>
+	<li>1 ≤ <i>N</i> ≤ 1000</li>
+	<li>-1000 ≤ <i>S</i> ≤ 1000</li>
+	<li>-10<sup>9</sup> ≤ valor de cada célula ≤ 10<sup>9</sup></li>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li>Em um conjunto de casos de teste que totaliza 30 pontos, <i>N</i> ≤ 3;</li>
+	<li>Em um conjunto de casos de teste que totaliza 70 pontos, <i>N</i> ≤ 100;</li>
+</ul>
+
+<h3>Exemplos</h3>
+
+<p>Observe que, neste problema, para uma mesma entrada, podem existir várias saídas corretas. As saídas abaixo
+indicam apenas uma de várias potenciais soluções. Contanto que sua saída seja um quadrado aritmético válido
+segundo as condições do enunciado, sua solução será considerada correta, mesmo que não seja igual aos exemplos
+indicados abaixo.</p>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+2 49
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+23 40
+9 26
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+3 53
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+-41 -29 2
+28 40 71
+11 23 54
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+1 -55
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+-55
+			</pre>
+		</td>
+	</tr>
+</table>
+<br>
+
+
+      

@@ -1,0 +1,92 @@
+{% load obi_extras %}
+
+<p>Prezado(a) Prof(a). {{ coord_name}},
+
+{% if modality == 'ini' %}
+<p>sua escola tem competidores classificados para a Fase 3 na modalidade Iniciação.
+<p>Estamos consultando algumas escolas para saber do interesse e disponbilidade em sediar a Fase 3 (Fase Nacional) na sua cidade/região.
+A prova deve ser aplicada presencialmente na escola no dia 20 de setembro (sábado), no período da manhã. Para a aplicação, será necessário imprimir os Cadernos de Tarefas e Folha de Respostas para cada participante, aplicar a prova, digitalizar as Folhas de Respostas após a prova e enviá-las para correção utilizando o portal da OBI2025.
+
+<p>A escola sede Modalidade Iniciação da sua cidade receberá cerca de {{ school_ini|dictsum }} competidores(as) para a prova, possívelmente de outras escolas. É ainda possível que o número de competidores seja um pouco maior, para acomodar competidores de cidades próximas (o total será perto desse mostrado, pois normalmente são bem poucos competidores de cidades vizinhas; se for significativamente maior entraremos em contato antes da decisão).
+
+<p>1) Caso haja disponibilidade de sua escola para sediar a Fase 3 para <b>todos</b> os competidores da modalidade Iniciação de sua cidade/região, clique no seguinte link:
+
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/2
+
+<p>2) Caso haja disponbilidade em sediar a Fase 3, mas <b>apenas para competidores da modalidade Iniciação de sua escola</b> (e não de outras escolas da cidade ou região), clique no seguinte link (note que sua escola terá baixa prioridade na definição das sedes):
+
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/4
+
+<p>3) Caso não haja disponbilidade em sediar a Fase 3, clique no seguinte link:
+  
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/5
+
+{% else %}
+<p>Estamos consultando algumas escolas para saber do interesse e disponbilidade em sediar a Fase 3 (Fase Nacional) na sua cidade/região.
+
+<p>Mesmo que sua escola tenha apenas competidores da Modalidade Programação classificados para a Fase 3, idealmente gostaríamos de ter uma única
+  sede na cidade para as duas modalidades (Iniciação e Programação). Por isso, agradeceríamos se sua escola se dispusesse a sediar ambas as modalidades.
+
+<p>A prova da Modalidade Iniciação deve ser aplicada presencialmente na escola no dia 20 de setembro (sábado), no período da manhã. Para a aplicação, será necessário imprimir os Cadernos de Tarefas e Folha de Respostas para cada participante, aplicar a prova, digitalizar as Folhas de Respostas após a prova e enviá-las para correção utilizando o portal da OBI2025.
+
+<p>Na Modalidade Iniciação, em  sua cidade, há {{ school_ini|dictsum }} competidores(as) classificados, considerando todas as escolas.
+  
+<p>A prova da Modalidade Programação deve ser aplicada presencialmente na escola no dia 27 de setembro (sábado), em ambos os períodos, manhã (Nível Júnior e Nível 1) e tarde (Nível 2 e Nível Sênior). Para a aplicação, será necessário disponibilizar computador para cada participante, contendo um ambiente de desenvolvimento para programação e acesso à internet (acesso idealmente restrito apenas ao ambiente de prova da OBI2025).
+
+<p>Na Modalidade Programação, em  sua cidade, há {{ school_prog|dictsum }} competidores(as) classificados, considerando todas as escolas.
+
+<p>É ainda possível que o número de competidores seja um pouco maior do que os mostrados, para acomodar competidores de cidades próximas (o total será perto desse mostrado, pois normalmente são bem poucos competidores de cidades vizinhas; se for significativamente maior entraremos em contato antes da decisão).
+
+<p>1) Caso haja disponibilidade de sua escola para sediar a Fase 3 para <b>todos</b> os competidores de sua cidade/região, tanto da modalidade Iniciação como da modalidade Programação, clique no seguinte link:
+
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/1
+
+<p>2) Caso haja disponbilidade em sediar a Fase 3 todos os competidores de sua cidade/região mas apenas na modalidade Programação, clique no seguinte link
+
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/3
+  
+<p>2) Caso haja disponbilidade em sediar a Fase 3, mas <b>apenas para competidores de sua escola</b> (e não de outras escolas da cidade ou região),
+  clique no seguinte link (note que sua escola terá baixa prioridade na definição das sedes):
+
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/4
+
+<p>3) Caso não haja disponbilidade em sediar a Fase 3, clique no seguinte link:
+
+<p>https://olimpiada.ic.unicamp.br/restrito/consulta_sede_fase3/{{ school.school_hash }}/5
+
+{% endif %}
+  
+
+<p><b>Por favor note que esta mensagem é apenas uma consulta</b>. A escolha da sede da Fase 3 em sua cidade/região será realizada com base nas respostas recebidas das escolas.
+
+<p>Solicitamos que responda a esta consulta o mais breve possível, para podermos finalizar os locais de prova e divulgá-los no portal da OBI2025.
+
+
+  <h4>Competidores classificados para a Fase 3 em {{school.school_city}}/{{school.school_state}} (modalidade Iniciação)</h4>
+  
+  {% with 0 as total %}
+  <ul>
+  {% for school, count in school_ini.items %}
+    <li>{{ school }}: {{ count }}</li>
+  {% endfor %}
+  </ul>
+  <p><strong>Total de competidores(as): {{ school_ini|dictsum }}</strong></p>
+  {% endwith %}
+
+{% if modality == 'prog' %}
+  <h4>Competidores classificados para a Fase 3 em {{school.school_city}}/{{school.school_state}} (modalidade Programação)</h4>
+  
+  {% with 0 as total %}
+  <ul>
+  {% for school, count in school_prog.items %}
+    <li>{{ school }}: {{ count }}</li>
+  {% endfor %}
+  </ul>
+  <p><strong>Total de competidores(as): {{ school_prog|dictsum }}</strong></p>
+  {% endwith %}
+{% endif %}
+
+
+Atenciosamente,
+
+{% include 'includes/signature.html' %}

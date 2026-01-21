@@ -1,0 +1,30 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+<p>{{ msg|safe }}</p>
+
+{% if errors %}
+<table class="admin">
+  <tr><th width="15%">Num. Linha</th><th width="20%">Erro</th><th width="65%">Linha</tr>
+  {% for error in errors %}
+  <tr class="{% cycle 'odd' 'even' %}">
+  <td>{{ error.linenum }}</td>
+  <td>{{ error.msg }}</td>
+  <td>{{ error.line }}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<p style="clear:both">
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+  <a class="btn btn-primary" role="button" href="/restrito">OK</a>
+</p>
+<p style="clear:both">&nbsp</p>
+{% endblock %}
+
+{% block content-related %}
+{% include "restrito/includes/instrucoes_lote.html" %}
+{% endblock %}

@@ -1,0 +1,85 @@
+title:Mina
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Nossa mina de ouro será representada por N linhas e N colunas de
+quadrados. O mineiro está no quadrado inicial (superior esquerdo) e
+precisa cavar até o quadrado final (inferior direito), onde existe a
+maior concentração de ouro da mina. Alguns quadrados, porém, estão
+bloqueados por pedras, o que dificulta o trabalho. Sabendo que o
+mineiro pode realizar apenas movimentos ortogonais, seu programa deve
+calcular o número mínimo de quadrados bloqueados pelos quais o mineiro
+tem que passar para chegar no quadrado inferior direito. Os quadrados
+inicial e final nunca estão bloqueados. A figura abaixo ilustra três
+possíveis minas, para N=8, para as quais os números mínimos de
+quadrados bloqueados são, respectivamente, três, zero e nove. A figura
+também mostra três possíveis trajetórias mínimas, como exemplo.
+
+<center>
+<img src="/static/img/task_images/2015f2p2_mina.png" width="500px">
+</center></p>
+
+<h3>Entrada</h3>A primeira linha da entrada contém um inteiro N, 2 ≤  N ≤  100,
+representando as dimensões da mina. Cada uma das N linhas seguintes
+contém N inteiros, definindo os quadrados da mina. O inteiro 0
+representa um quadrado livre e o inteiro 1, um quadrado bloqueado.
+<h3>Saída</h3>Seu programa deve produzir uma única linha, contendo um único inteiro,
+o número mínimo de quadrados bloqueados pelos quais o mineiro tem que
+passar para chegar no quadrado final.
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+0 1 0 0 0 0
+1 1 0 0 1 1
+1 0 1 1 1 1
+0 0 0 1 1 0
+0 0 1 1 1 0
+0 1 0 0 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+0 0
+1 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

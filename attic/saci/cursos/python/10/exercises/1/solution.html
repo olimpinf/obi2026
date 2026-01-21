@@ -1,0 +1,33 @@
+<p>Vamos usar uma variável, com o nome maisTocada, para armazenar o
+  número de vezes que a música mais escutada foi escutada. Usamos um bloco <em>Repita</em>
+  para ler o número de vezes que cada música foi escutada. Em cada passo do do laço de repetição,
+  comparamos o número lido com o valor da variável maisTocada. Se o número lido é maior, encontramos
+  uma música que foi mais escutada do que a que conhecemos até então, portanto atualizamos o valor
+  da variável maisTocada com o número lido. Ao final das repetições, a variável maisTocada tem o resultado.
+
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/saci/blockly_images/sol_class_10.png" height="230px"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio da Aula 10
+
+maisTocada = 0
+N = int(input())
+for i in range(N):
+  num = int(input())
+  if num > maisTocada:
+    maisTocada = num
+print(maisTocada)
+
+      </pre>
+    </td>
+  </tr>
+</table>

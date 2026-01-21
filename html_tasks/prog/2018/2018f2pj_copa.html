@@ -1,0 +1,143 @@
+title:Copa
+template:tasks/tarefa_programacao.html
+
+<p>
+O sorteio das posições dos jogadores na chave decisiva da copa do
+mundo de ping-pong está deixando a todos nervosos. É que ninguém quer
+pegar o jogador mais bem ranqueado, o Mestre Kung, logo nas oitavas de
+final, ou nas quartas de final. Melhor que só seja possível enfrentar
+Mestre Kung na semifinal ou na final!
+
+<p>
+A chave possui 16 posições numeradas de 1 a 16, como na
+figura abaixo. A organização da copa vai fazer um sorteio para definir
+em qual posição cada jogador vai iniciar a chave decisiva. Nas oitavas
+de final, o jogador na posição 1 enfrenta o jogador na posição 2;
+o da posição 3 enfrenta o da posição 4; e assim por diante, como
+na figura.
+
+<div class="center">
+<img src="/static/img/task_images/2018f2pj_copa.png" width="600px"/>
+</div>
+
+<p>
+O objetivo deste problema é, dadas as posições de Mestre Kung e Mestre
+Lu na chave, decidir em que fase da competição Mestre Kung e Mestre Lu
+vão se enfrentar, caso vençam todas as suas respectivas partidas antes
+de se enfrentarem. Por exemplo, se o sorteio da chave determinar que
+Mestre Kung ocupará a posição 1 e Mestre Lu a posição 2 da chave, eles
+se encontrarão nas oitavas de final; se Mestre Kung ocupar a posição 6
+e Mestre Kung ocupar a posição 9 da chave, eles se encontrarão somente
+na final.
+
+
+<h3>Entrada</h3>
+<p>
+A entrada consiste de duas linhas. A primeira linha da
+  entrada contém um inteiro K que indica a posição de Mestre Kung na
+  chave. A segunda linha da entrada contém um inteiro L que indica a
+  posição de Mestre Lu na chave.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma linha contendo uma das
+  palavras seguintes, decidindo a fase em que vão se enfrentar os
+  jogadores Mestre Kung e Mestre Lu, se eles chegarem a se enfrentar:
+  <span class="ttt">oitavas</span>, <span class="ttt">quartas</span>, <span class="ttt">semifinal</span>
+  ou <span class="ttt">final</span>.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 1  &leq;  K  &leq;  16
+ <li> 1  &leq;  L  &leq;  16
+ <li> K  &ne;  L
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 30 pontos, K = 1.
+</ul>
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+14
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+semifinal
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+oitavas
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+13
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+final
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+quartas
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

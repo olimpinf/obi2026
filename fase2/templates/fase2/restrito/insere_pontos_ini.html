@@ -1,0 +1,125 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block head_extra %}
+<script>
+  function _focus_next(e) {
+      $(e).parent().parent().next().find('input').focus();
+}
+</script>
+{% endblock head_extra %}
+
+{% block body_onload %}
+{# document.getElementById('{{ focus }}_compet_points').focus(); #}
+{% if focus %}
+_focus_next(document.getElementById('{{ focus }}_compet_points'));
+{% endif %}
+{% endblock body_onload %}
+
+{% block content %}
+<h1>{{ pagetitle }}  </h1>
+{% if not show_classif %}<p>A classificação para a Fase 3 ainda não foi computada.</p>{% endif %}
+  {% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} competidor selecionado, total de {{ total }} competidores inscritos</p>
+  {% else %}
+<p>{{ items.paginator.count }} competidores selecionados, total de {{ total }} competidores inscritos</p>
+{% endif %}
+
+<table class='admin' width="100%">
+  <tr>
+    <th width="15%">Núm. Inscr.</th>
+    <th width="70%">Nome</th>
+    <th class="center">Modalidade</th>
+    <th class="10%">Pontuação</th>
+    <th class="5%">Classif.</th>
+  </tr>
+  
+  {% for c in items %}
+  <tr class="{% cycle 'odd' 'even' %}">
+    <td>{{ c.compet_id|obi_format_compet_id }}</td>
+    <td>{{ c.compet_name }}</td>
+    <td class="center">{{ c.compet_type|obi_format_compet_type_short }}</td>
+    <td class="center"><input disabled type="text" name="{{ c.compet_id }}_compet_points" id="{{ c.compet_id }}_compet_points" value="{{c.compet_points_fase2|default_if_none:''}}" size="2" maxlength="2" onchange="window.location='compet_insere_pontos/{{ c.compet_id }}/'+document.getElementById('{{ c.compet_id }}_compet_points').value; return false;"></td>
+    <td class="center">{% if show_classif %}{% if c.compet_classif_fase2 %}<img src="/static/admin/img/icon-yes.svg" alt="Sim">
+    {% else %}<img src="/static/admin/img/icon-no.svg"{% endif %}{% else %}<img src="/static/admin/img/icon-unknown.svg" alt="None">{% endif %}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Não há competidores inscritos com o filtro selecionado.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'fase1:inserepontosini' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'fase2:inserepontosini' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+
+  
+  <h2>Instruções</h2>
+
+  <ul>
+    <li>Insira a pontuação dos competidores no campo "Pontuação".
+    <li>Se um competidor não participou da prova, deixe o campo
+      "Pontuação" em branco (vazio). Nesse caso o competidor não fará
+      juz ao certificado de participação.
+    <li>Utilize o formulário Filtros para restringir os competidores
+      visualizados.
+  </ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

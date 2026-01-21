@@ -1,0 +1,82 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Consulta Correção Fase 1 - Iniciação{% endblock %}
+
+{% block header %}<h1>Consulta Correção Fase 1 - Iniciação</h1>{% endblock %}
+
+{% block content %}
+
+<h2>{{ result.compet.compet_name }}</h2>
+
+<b>Num. Inscrição</b>: {{ result.compet.compet_id|obi_format_compet_id }}<br>
+<b>Nível</b>: {{ result.compet.compet_type|obi_format_compet_type_short }}<br>
+{% if result.compet.compet_points_fase1 %}
+  <b>Pontuação</b>: {{ result.compet.compet_points_fase1 }} pontos<br>
+
+  {% comment %}
+  <b><a href="{% url 'fase1:mostra_folha_respostas'%}">Folha de Respostas</a></b><br>
+  {% if result.compet.compet_answers_fase1 %}
+  <b>Respostas</b>:<br>
+  <pre>
+  {{ result.compet.compet_answers_fase1 }}
+  </pre>
+  {% else %}
+  <pre>
+Folha de Respostas corrigida localmente pelo professor coordenador da OBI.
+  </pre>
+  {% endif %}
+  {% endcomment %}
+
+{% else %}
+<b>Pontuação</b>: não encontrada <br>
+{% endif %}
+
+
+{% if result.compet.compet_sex == "F" %}
+<b>Classificada para a Fase Estadual (Fase 2)</b>: 
+{% else %}
+<b>Classificado para a Fase Estadual (Fase 2)</b>: 
+{% endif %}
+{% if result.compet.compet_classif_fase1 %}
+Sim
+{% else %}
+Não
+{% endif %}
+ <br>
+
+<hr>
+<p><small>Em cada Escola, para cada modalidade e nível, passam
+para a Fase Estadual os melhores classificados na própria escola, até o limite de 15%
+dos participantes efetivos da Escola na respectiva modalidade e nível.
+Adicionalmente, também passam para a Fase Estadual 
+os melhores classificados nacionalmente até o limite de
+5% dos participantes efetivos na respectiva modalidade e nível.
+</small></p>
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include "includes/see_also_result.html" %}
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Consulta Resultado Fase 2 - Iniciação</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

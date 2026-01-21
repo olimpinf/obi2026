@@ -1,0 +1,140 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Seletiva para IOI2022{% endblock %}
+
+{% block header %}<h1>Seletiva para IOI2022</h1>{% endblock %}
+
+{% block content %}
+
+<h1>Convidados Seletiva</h1>
+
+<p>
+  Por favor aguardem mais informações.
+</p>
+<!--entre em contato com a Coordenação da OBI
+(olimpinf<img src="/static/img/at.gif">ic.unicamp.br).-->
+
+{% for i in invited %}
+  {% if i.level != "Acompanhantes Pagantes" and i.level != "Acompanhantes não Pagantes" %}
+  <h3>{{ i.level }} ({{ i.participants|length }} convidados)</h3>
+  <table class="basic" width="100%" border="1">
+  <tr>
+    <th width="12%">Num. Inscr.</th>
+    <th width="50%">Nome</th>
+    {% comment %}
+    <th align="center">Manif. interesse</th>
+    <th align="center">Pagto.<br>informado</th>
+    <th align="center">Pagto.<br>confirmado</th>
+    {% endcomment %}
+  </tr>
+  {% for c in i.participants %}
+  <tr>
+    {# name #}
+    {% if i.level == "Acompanhantes Pagantes"%}
+    <td width="50%"> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }}
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }}
+      {% endif %}
+    </td>
+    {% else %}
+    <td>{{ c.compet.compet_id_full }}</td>
+    <td width="50%">{{ c.compet.compet_name|obi_capitalize_name }}</td>
+    {% endif %}
+
+    {% comment %}
+    {# form info general#}
+    {% if c.form_info %}
+       <td align="center"><img src="/static/admin/img/icon-yes.svg"></td>
+    {% else %}
+       <td align="center"><img src="/static/admin/img/icon-no.svg"></td>
+    {% endif %}
+
+    {# form arrival #}
+    {% if c.form_arrival %}
+       <td align="center"></td>
+    {% else %}
+       <td align="center"></td>
+    {% endif %}
+
+    {# tax sent#}
+    {% if c.tax_paid %}
+      <td align="center"><img src="/static/admin/img/icon-yes.svg"></td>
+    {% else %}
+       <td align="center"><img src="/static/admin/img/icon-no.svg"></td>
+    {% endif %}  
+
+    {# tax received#}
+    {% if c.tax_confirmed %}
+      <td align="center"><img src="/static/admin/img/icon-yes.svg"></td>
+    {% else %}
+       <td align="center"><img src="/static/admin/img/icon-no.svg"></td>
+    {% endif %}  
+   {% endcomment %}
+  </tr>
+  {% endfor %}
+  </table>
+
+  {% else %}
+
+{% comment %}
+
+{# acompanhantes não pagantes #}
+  <h3>{{ i.level }} ({{ i.participants|length }} competidores)</h3>
+  <table class="simple" border="1">
+  <tr>
+    <th width="70%">Nome</th>
+    <th>Formulário<br>Informações</th>
+    <!--th>Chegadas e<br>Partidas</th-->
+</tr>
+  {% for c in i.participants %}
+  <tr>
+    {# name #}
+    {% if i.level == "Acompanhantes não Pagantes"%}
+    <td width="70%"> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }} </td>
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }} </td>
+    {% endif %}
+    {% else %}
+    <td width="70%">{{ c.compet.compet_name|obi_capitalize_name }} </td>
+    {% endif %}
+    {# form info general#}
+    {% if c.form_info %}
+       <td bgcolor="#44BB11">
+    {% else %}
+    <!--td>
+    {% endif %}
+    {# form arrival #}
+    {% if c.form_arrival %}
+       <td bgcolor="#44BB11">
+    {% else %}
+    <td-->
+    {% endif %}
+  </tr>
+  {% endfor %}
+  </table>
+{% endcomment %}
+{% endif %} 
+
+
+{% endfor %} {# i in invited #}
+{% endblock %}  
+
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

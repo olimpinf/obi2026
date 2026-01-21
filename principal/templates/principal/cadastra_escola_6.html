@@ -1,0 +1,28 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+
+<p>
+  Você deve preencher o
+  <a href="{% url 'principal:cadastra_escola' %}">Formulário de Cadastro de Escola</a>.
+</p>
+
+<p>
+As informações relativas ao histórico de participação da escola na OBI em anos anteriores (como número de medalhas) serão recuperadas automaticamente pelo sistema, com base no número INEP e/ou nome e cidade da escola.
+</p>  
+
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

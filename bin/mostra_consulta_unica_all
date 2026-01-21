@@ -1,0 +1,50 @@
+#! /usr/bin/env bash
+
+CITY=$1;
+STATE=$2;
+
+if [[ "$CITY" == "" ]]
+then
+    echo 'city empty'
+    CITY='%'
+fi
+
+if [[ "$STATE" == "" ]]
+then
+    echo 'state empty'
+    STATE='%'
+fi
+
+psql -d obi2025 -U obi <<EOF
+SELECT
+    se.school_answer_consulta_fase3 AS resp,
+    s.school_id AS sch_id,
+    LEFT(s.school_name,30) AS school_name,
+    s.school_deleg_name,
+    s.school_deleg_email,
+    s.school_city,
+    s.school_state AS state,
+    COUNT(CASE WHEN c.compet_type IN (1,2,7) THEN 1 END) AS ini_count,
+    COUNT(CASE WHEN c.compet_type IN (3,4,5,6) THEN 1 END) AS prog_count
+FROM school s
+JOIN school_extra se ON s.school_id = se.school_id
+JOIN compet c ON c.compet_school_id = s.school_id
+WHERE c.compet_classif_fase2 = TRUE
+  AND (s.school_city, s.school_state) IN (
+    SELECT s2.school_city, s2.school_state
+    FROM compet c2
+    JOIN school s2 ON c2.compet_school_id = s2.school_id
+    WHERE c2.compet_classif_fase2 = TRUE
+    GROUP BY s2.school_city, s2.school_state
+    HAVING COUNT(DISTINCT s2.school_id) = 1
+  )
+GROUP BY
+    se.school_answer_consulta_fase3,
+    s.school_id,
+    s.school_name,
+    s.school_deleg_name,
+    s.school_deleg_email,
+    s.school_city,
+    s.school_state
+ORDER BY resp, s.school_state, s.school_city;
+EOF

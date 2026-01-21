@@ -1,0 +1,54 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica{% endblock %}
+
+{% block header %}<h1>Semana Olímpica - Iniciação 1 e 2</h1>{% endblock %}
+
+{% block content %}
+<p>
+<h1>Dia 1</h1>
+
+<ul>
+  <li><a href="/static/extras/obi2025/semana/ini/Dia1.pdf">Slides da aula</a>
+  <li><a href="https://docs.google.com/spreadsheets/d/12azD4UcWD8CqsJR8_XK4SQWm9_UNn6dBIooVDtc_TrY/edit?usp=drivesdk">Lista de exercícios</a>
+</ul>
+
+{% comment %}
+<h1>Dia 2</h1>
+
+<ul>
+  <li><a href="https://drive.google.com/file/d/1_zh_rBd0eYeAF2iLR90Hmx3vPI6ptjMr/view?usp=sharing">Slides da aula</a>
+  <li><a href="https://bcwd.me/d-13729">Lista de exercícios</a> (use a chave QcG8o1F)
+</ul>
+
+<h1>Dia 3</h1>
+
+<ul>
+  <li><a href="/static/extras/obi2023/semana/ini/Dia3.pdf">Slides da aula</a>
+
+</ul>
+
+<h1>Dia 4</h1>
+
+<ul>
+  <li><a href="/static/extras/obi2023/semana/ini/Dia4.pdf">Slides da aula</a>
+
+</ul>
+
+
+<h1>Dia 5</h1>
+
+<ul>
+  <li><a href="/static/extras/obi2023/semana/ini/Dia5.pdf">Slides da aula</a>
+  <li><a href="https://docs.google.com/spreadsheets/d/1WnPt7LUD8SCB0wCmqrSk9x3Y7mfwgRWnPPUzpmx3nmQ/edit?usp=sharing">Lista de exercícios</a>
+</ul>
+
+{% endcomment %}
+
+
+{% endblock %}
+
+{% block content-related %}
+  {% include "week/includes/see_also.html" %}
+{% endblock %}

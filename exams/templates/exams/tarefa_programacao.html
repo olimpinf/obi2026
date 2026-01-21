@@ -1,0 +1,76 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% comment %}
+{% block body_onload %}_drawSubmitButton('alertJavascript1','Submete');{% endblock body_onload %}
+{% endcomment %}
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+{% if pagetitle %}
+<h1>{{ pagetitle }}</h1>
+{% endif %}
+
+{% if task.statement %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">Submeta sua solução</legend>
+  <table border="0" width="100%">
+    <tr><td>
+  <label for="id_sub_lang"><b>Linguagem:</b></label>
+  <select name="sub_lang" required id="id_sub_lang" class="select">
+  <option value="" selected>Selecione</option>
+  <option value="1">C</option>
+  <option value="2">C++</option>
+  <option value="7">Python3</option>
+  <option value="5">Java</option>
+  <option value="6">Javascript</option>
+  </select></td>
+     <td>
+  &nbsp;<label for="id_data"><b>Arquivo:</b></label> <input type="file" name="data" id="id_data" required />
+     </td>
+     <td align="right">
+       <button type="submit" class="btn btn-primary mt-4">Submeter</button>
+       {% comment %}
+       <span id="alertJavascript1">
+       {% endcomment %}
+       </span>
+     </td>
+     </tr>
+  </table>
+  </fieldset>
+  <input type="hidden" name="problem_request_path" value="{{ request.path }}">
+  <input type="hidden" name="problem_name" value="{{ task.descriptor }}">
+  <input type="hidden" name="problem_name_full" value="{{ task.title }}">
+</form>
+{{ task.statement }}
+{% else %}
+<p>Escolha as tarefas no menu ao lado.
+<p>Leia atentamente as instruções, na coluna à direita da página.
+{% endif %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "exams/includes/countdown.html" %}
+
+  <div>Submissões restantes: {{ f.subm_remaining }}</div>
+  </div>
+
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_tasks.html" %}
+
+  <h2>Instruções</h2>
+  {% include "exams/includes/instructions_prog.html" %}
+
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock content-related%}
+

@@ -1,0 +1,20 @@
+{% load i18n obi_extras %}{% autoescape off %}
+{{ greeting }} {{ full_name }},
+
+recebemos uma solicitação para recadastramento de escola na Olimpíada Brasileira de Informática.
+
+Se você não solicitou o recadastramento, por favor desconsidere esta mensagem.
+
+Escolha para qual escola deseja redefinir a senha e clique no link correspondente
+
+{% for u in user_schools %}
+  Escola: {{ u.school_name }}
+  Link para redefinir a senha: https://olimpiada.ic.unicamp.br/cadastra_escola_auto/{{ u.hash }}
+{% endfor %}
+
+Os links podem ser utilizados uma única vez. Se não conseguir clicar no link,
+copie o link e cole-o na barra de endereços de seu navegador.
+
+
+{% include 'includes/signature.html' %}
+{% endautoescape %}

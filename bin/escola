@@ -1,0 +1,5 @@
+#!/bin/bash
+
+id=$1
+
+psql -P pager=off -d obi2019 -U obi -c "select school_id,school_name,school_site_phase3_type,school_site_phase3_ini,school_site_phase3_prog from school where school_id=${id};"

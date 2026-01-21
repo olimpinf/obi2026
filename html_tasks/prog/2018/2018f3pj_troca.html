@@ -1,0 +1,131 @@
+title:Troca
+template:tasks/tarefa_programacao.html
+
+<p>
+Um cientista especializado em bioinformática está estudando formas de
+simular alguns fenômenos, que ocorrem dentro das células, relacionados
+ao funcionamento de proteínas. Parece muito complicado, não? Só que o
+problema computacional básico que ele precisa resolver eficientemente
+é fácil de entender. Existe uma sequência de N cartas, indexadas de
+1 a N, e cada carta contém dois números impressos, um de cada
+lado. As cartas são colocadas na mesa, na sequência, com um dos lados
+virado para cima. Dados dois inteiros i e j, com i &leq;  j, a
+operação <i>troca(i,j)</i> consiste em virar todas as cartas da
+posição i até a posição j, inclusive. Por exemplo, considere a
+sequência de cartas abaixo.
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr><td>
+  virado para cima </td><td align="center"> 31 </td><td align="center"> 2 </td><td align="center"> 45 </td><td align="center"> 3 </td><td align="center">
+  8 </td><td align="center"> 1 </td><td align="center"> 32 </td><td align="center"> 10 </td><td align="center"> 4 </td><td align="center"> 27 </td><td align="center"> 12
+  </td><td align="center"> 7 </td><td align="center"> 7 </td><td align="center"> 9 </td><td align="center"> 63 </td><td align="center"> 47 
+</tr>
+<tr><td align="center">
+  virado para baixo </td><td align="center"> 1 </td><td align="center"> 12 </td><td align="center"> 6 </td><td align="center"> 4 </td><td align="center">
+  97 </td><td align="center"> 2 </td><td align="center"> 87 </td><td align="center"> 10 </td><td align="center"> 3 </td><td align="center"> 9 </td><td align="center"> 55
+  </td><td align="center"> 56 </td><td align="center"> 11 </td><td align="center"> 90 </td><td align="center"> 3 </td><td align="center"> 8 
+</tr>
+</table>
+
+<p>A operação de <i>troca(5,11)</i> resultaria na seguinte sequência de
+cartas:
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr><td align="center">
+  virado para cima </td><td align="center"> 31 </td><td align="center"> 2 </td><td align="center"> 45 </td><td align="center"> 3 </td><td align="center">
+  97 </td><td align="center"> 2 </td><td align="center"> 87 </td><td align="center"> 10 </td><td align="center"> 3 </td><td align="center"> 9 </td><td align="center"> 55
+  </td><td align="center"> 7 </td><td align="center"> 7 </td><td align="center"> 9 </td><td align="center"> 63 </td><td align="center"> 47 
+</tr>
+<tr><td align="center">
+  virado para baixo </td><td align="center"> 1 </td><td align="center"> 12 </td><td align="center"> 6 </td><td align="center"> 4 </td><td align="center">
+  8 </td><td align="center"> 1 </td><td align="center"> 32 </td><td align="center"> 10 </td><td align="center"> 4 </td><td align="center"> 27 </td><td align="center"> 12
+  </td><td align="center"> 56 </td><td align="center"> 11 </td><td align="center"> 90 </td><td align="center"> 3 </td><td align="center"> 8 
+</tr>
+</table>
+
+<p>O problema do cientista é que a sequência de cartas pode ser muito
+grande e podem ser feitas muitas operações de troca. Ele precisa
+saber a sequência dos números que estarão virados para cima ao final
+de todas as operações. Você pode ajudá-lo?
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém dois inteiros N e T,
+  indicando respectivamente a quantidade de cartas e a quantidade de
+  operações de troca. A segunda linha contém N inteiros, indicando
+  os números virados para cima inicialmente. A terceira linha contém
+  N números, indicando os virados para baixo inicialmente. As T
+  linhas seguintes contém, cada uma, dois inteiros I e J,
+  indicando os limites de uma operação de troca.
+
+
+<h3>Saída</h3>
+Imprima uma linha contendo N inteiros representando os
+  números que estarão virados para cima após todas as operações.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup>
+<li> 1 &leq;  T &leq;  10<sup>5</sup>
+<li> 1 &leq;  I &leq;  J &leq;  N
+<li> O valor dos elementos dos vetores está entre 0 e 10<sup>9</sup>, inclusive.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+ <li> Para um conjunto de casos de teste valendo 10 pontos, I=J
+  para todas as operações;
+ <li> Para um conjunto de casos de teste valendo 20 pontos, N &leq; 
+   10<sup>4</sup> e T &leq;  10<sup>4</sup>.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+16 1
+31 2 45 3 8 1 32 10 4 27 12 7 7 9 63 47
+1 12 6 4 97 2 87 10 3 9 55 56 11 90 3 8
+5 11
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+31 2 45 3 97 2 87 10 3 9 55 7 7 9 63 47
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 5
+7 88 23 44 1 67 73 2 9 11
+4 55 1 1 3 74 82 9 8 37
+1 3
+5 10
+2 6
+5 9
+1 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7 55 1 44 1 67 82 2 9 37
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

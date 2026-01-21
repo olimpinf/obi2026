@@ -1,0 +1,47 @@
+<p>
+Vamos usar uma variável para armazenar o saldo corrente (vamos
+chamá-la 'saldo') e uma variável para armazenar o menor saldo
+que conhecemos (vamos chamá-la de 'menor_saldo'). O valor inicial
+para essas duas variáveis é o valor do saldo inicial, lido da
+entrada.
+<p>
+Vamos ler da entrada o número de movimentações (cada movimentação é um
+depósito ou uma retirada).  Para isso, usamos uma variável de nome 'N'.
+Para ler o valor
+de cada movimentação usamos um bloco Repita (com a variável N como número
+de repetições).  Em cada passo do
+do laço de repetição, lemos uma movimentação da entrada,
+atualizamos o valor do saldo (que passa a valer saldo mais o valor da
+movimentação lida) e comparamos o saldo resultante com o valor da
+variável menor_saldo. Se o saldo resultante é menor, temos um saldo
+menor do que o que conhecemos até então, portanto devemos atualizar o
+valor da variável menor_saldo com o saldo atual. Ao final do laço, a
+variável menor_saldo tem o resultado.
+
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/saci/blockly_images/sol_class_10_2.png" height="230px"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio 2 da Aula 10
+
+N = int(input())
+saldo = int(input())
+menor_saldo = saldo
+for count in range(int(N)):
+    x = int(input())
+    saldo = saldo + x
+    if saldo < menor_saldo:
+        menor_saldo = saldo
+print(menor_saldo)
+      </pre>
+    </td>
+  </tr>
+</table>

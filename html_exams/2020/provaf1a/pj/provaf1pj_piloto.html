@@ -1,0 +1,104 @@
+title:Piloto Automático
+template:exams/tarefa_programacao.html
+order:1
+<p>
+Uma grande fábrica de carros elétricos está realizando melhorias no
+sistema de piloto automático e precisa da sua ajuda para implementar
+um programa que decida se um carro B, que está trafegando no meio
+de dois carros A e C, precisa acelerar, desacelerar ou manter
+a velocidade atual. Os carros são iguais e os sensores do piloto
+automático vão fornecer, como entrada, a posição atual da traseira dos
+três carros. Veja um exemplo na figura.
+
+<div class="center"><img src="/static/img/task_images/provaf1p1_piloto.png" width="500px" /></div>
+
+<p>O carro B precisa ser acelerado se a distância da sua traseira
+para a traseira do carro A for menor do que a distância da sua
+traseira para a traseira do carro C.  Se for maior, ele precisa
+ser desacelerado. Se for igual, precisa manter a velocidade
+atual. Quer dizer, o carro B precisa ser acelerado se (B-A) &lt; (C-B),
+desacelerado se (B-A) &gt; (C-B) e manter a velocidade se (B-A) for igual a
+(C-B).
+
+<h3>Entrada</h3>
+<p> A primeira linha da entrada contém um inteiro A. A segunda linha
+da entrada contém um inteiro B. A terceira linha da entrada contém um
+inteiro C. Os três inteiros representam as posições atuais das
+traseiras dos carros A, B e C, respectivamente.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma linha contendo um inteiro: 1 se o
+carro B precisa acelerar; -1 se precisa desacelerar; ou 0 se precisa
+manter a velocidade atual.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 0 &leq;  A < B < C &leq;  500
+
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+23
+38
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+105
+212
+319
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+80
+120
+132
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

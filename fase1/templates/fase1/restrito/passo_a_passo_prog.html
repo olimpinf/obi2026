@@ -1,0 +1,108 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Passo a passo: aplicação da Prova Fase 1 - Modalidade Programação</h1>
+
+<h2>Antes da prova</h2>
+<ol>
+  <li>Inscreva os competidores.
+    <ol>
+      <li>Na página de coordenação, Seção "Cadastro", linha "Competidores".
+      Podem ser inscritos um por um, ou usando um arquivo com os dados dos
+	competidores (inscrição em lote).
+    </ol>
+  <li>Imprima as senhas de acesso ao Ambiente de Prova.
+    <ol>
+      <li>Na página de coordenação, Seção "Fase 1", linha "Modalidade Programação",
+      clique em "Senhas Prova". Um arquivo PDF no formato de "cartões"
+      é gerado, cada cartão com as informações de um competidor (nome, usuário, senha).
+      Você também pode baixar as senhas da prova <a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">clicando aqui</a>.
+    </ol>
+  <li>Imprima as Listas de Presença
+    <ol>
+      <li>As listas de presença não são obrigatórias, mas é recomendável que os competidores
+	assinem. Guarde as listas assinadas para comprovar a participação dos competidores em caso
+	de problemas com a prova ou a correção.
+      <li>Para imprimir as listas de presença, na página de coordenação, Seção "Fase 1", linha "Modalidade Programação",
+      clique em "Aplicação da Prova", e procure a seção Listas de Presença.
+    </ol>
+</ol>
+<h2>Preparação dos laboratórios</h2>
+<ol>    
+  <li>Para desenvolver suas soluções, cada competidor deve ter à sua
+    disposição um computador com editores de texto e pelo menos um
+    compilador entre C, C++, Java ou o interpretador
+    Python. Normalmente os competidores usam o que já está instalado nos
+    laboratórios da escola. Se a escola não tem
+    compiladores ou ambientes de desenvolvimento já instalados, veja
+    em {% url 'aplicativos' %} alguns aplicativos algumas sugestões de
+    aplicativos que podem ser instalados.
+
+   <li>Os competidores acessam o Ambiente de Prova usando um navegador internet (como Firefox, Chrome, Safari, etc.).
+
+    <li>O competidor não deve acessar a Internet a não ser através do
+      Ambiente de Prova da {{ 'OBI'|obi_date_year }}. Se possível,
+      o ideal é permitir o acesso apenas aos endereços do Ambiente de Prova da OBI (veja abaixo).
+      Se isso não é possível, os professores devem supervisionar os competidores
+      de forma a que não acessem outros endereços da Internet.
+
+    <li>Os competidores devem fazer as provas individualmente, sem consulta a qualquer
+      material impresso (como livros ou apostilas) ou digital (como programas feitos anteriormente).
+</ol>
+<h2>Endereços do Ambiente de provas</h2>
+<ul>
+  <li>São utilizados quatro endereços diferentes para o Ambiente de Prova, um para
+    cada nível da modalidade Programação:
+    <ul>
+      <li>Nível Júnior: <a href="https://pj.provas.ic.unicamp.br"><span class="ttt">https://pj.provas.ic.unicamp.br</span></a>
+      <li>Nível 1: <a href="https://p1.provas.ic.unicamp.br"><span class="ttt">https://p1.provas.ic.unicamp.br</span></a>
+      <li>Nível 2: <a href="https://p2.provas.ic.unicamp.br"><span class="ttt">https://p2.provas.ic.unicamp.br</span></a>
+      <li>Nível Sênior: <a href="https://ps.provas.ic.unicamp.br"><span class="ttt">https://ps.provas.ic.unicamp.br</span></a>
+    </ul>
+  <li>A cada dia, o ambiente de prova estará aberto das 8:00 às
+   21:00.
+</ul>
+
+
+<h2>No dia da prova</h2>
+<ol>    
+  <li>Distribua as senhas para os competidores.
+    <ul>
+      <li>Os cartões estão no formato de etiquetas auto-colantes, mas podem ser
+	recortados manualmente para serem entregues para os competidores.
+    </ul>
+  <li>O nome de usuário é o número de inscrição (completo, por exemplo 01234-B).
+  <li>Informe os endereços do Ambiente de Provas para os competidores (veja os endereços acima)
+  <li>Supervisione os competidores, para garantir que façam a prova individualmente e sem uso de
+    qualquer material externo (livros, internet, anotações, arquivos de problemas já feitos, etc)
+  <li>O tempo de prova, controlado pelo Ambiente de Prova, é duas horas.
+  <li>
+</ol>
+
+<h2>Resultados da Prova</h2>
+<ol>
+  <li>Após o período de aplicação da prova,  competidores e coordenadores locais poderão ver
+    a correção das soluções submetidas.
+  <li>Os resultados são provisórios, pois pode haver re-julgamento das soluções em caso de necessidade.
+  <li>Os resultados finais serão divulgados de acordo com o calendário.
+</ol>
+
+{% endblock %}
+
+{% block content-related %}
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

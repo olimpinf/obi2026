@@ -1,0 +1,18 @@
+#! /usr/bin/env sh
+
+CITY=$1
+STATE=$2
+
+echo '*********'
+echo 'Iniciação'
+echo '*********'
+echo
+psql -d obi2025 -U obi -c "select school_id,school_name,school_deleg_name from school where school_id = (select distinct school_site_phase3_ini from school where school_site_phase3_ini!=0 and school_city='${CITY}' and school_state='${STATE}')"
+
+echo '***********'
+echo 'Programação'
+echo '***********'
+echo
+psql -d obi2025 -U obi -c "select school_id,school_name,school_deleg_name from school where school_id = (select distinct school_site_phase3_prog from school where school_site_phase3_prog!=0 and school_city='${CITY}' and school_state='${STATE}')"
+
+

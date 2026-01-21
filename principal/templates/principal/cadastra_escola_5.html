@@ -1,0 +1,22 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Cadastro de Escola{% endblock %}
+
+{% block header %}<h1>Cadastro de Escola</h1>{% endblock %}
+
+{% block content %}
+
+<p>Sua escola já está cadastrada, use o nome de usuário e senha utilizados no ano passado para entrar na página
+  de coordenação da OBI{{OBI|obi_date_year}}, clicando em "ENTRAR -> ESCOLAS" no topo direito da página.
+
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+<p class="small mt-3">
+Voltar para a página anterior.
+</p>
+{% endblock %}
+
+

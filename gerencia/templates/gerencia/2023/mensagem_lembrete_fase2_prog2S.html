@@ -1,0 +1,61 @@
+{{ greetings }}
+
+     {{ compet.compet_name}}
+
+você está recebendo esta mensagem porque está classificad{{ suffix }} para a Fase 2 (Fase Estadual) da Olimpíada Brasileira de Informática (OBI{{ year }}).
+
+Esta mensagem é apenas um lembrete de que a prova da Fase 2 da Modalidade Programação ocorre na próxima terça-feira, dia 23 de agosto. 
+
+Devido à pandemia de Covid-19, você pode fazer a prova em casa ou presencialmente na escola, mas em ambos os casos a prova deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, programas que você mesmo tenha feito anteriormente, arquivos de computador...). Confiamos no seu "espírito olímpico" para obedecer a essas regras!
+
+A prova será feita utilizando o Ambiente de Prova da OBI (o mesmo que foi usado na Fase1). O Ambiente de Prova estará aberto de 9:00 até 13:00 do dia 23/08. A prova tem duração de três horas para os níveis 2 e Sênior.  Você pode escolher o momento iniciar a prova, entre 9:00 e 10:00; após você iniciar a prova, você tem três horas para terminá-la (não é possível "pausar" o tempo de prova!). Note que o Ambiente de Prova fecha às 13:00 e após esse horário não será mais possível submeter soluções. 
+
+Leia também as instruções ao final desta mensagem.
+
+Para acessar a Prova da Fase 2 acesse sua página pessoal na OBI{{ year }}, através link "ACESSO COMPETIDORES" da página da OBI{{ year }}:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para o login
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+
+
+Boa prova!
+
+**********
+INSTRUÇÕES
+**********
+
+* Para realizar a prova você deve ter acesso a um ambiente para
+  desenvolvimento de programas de computador, para a linguagem de
+  programação de sua preferência (entre C, C++, Python, Java ou
+  Javascript). Se você aprendeu a programar no ambiente
+  Saci, pode usar o ambiente de desenvolvimento Javascript do Saci
+  para desenvolver e testar seus programas:
+  https:olimpiada.ic.unicamp.br/saci/cursos/provaf2/2021/
+
+* Compile e execute a sua solução no seu ambiente de desenvolvimento
+  antes de submetê-la, com testes criados por você mesmo (usando como
+  base os Exemplos de Entrada da tarefa); não use o Ambiente de
+  Prova como ambiente de testes.
+
+* Obedeça estritamente o formato de saída especificado no enunciado da
+  tarefa. Em particular, não escreva na saída antes de fazer a leitura
+  da entrada. Ou seja, não escreva frases como "Entre com o valor de N:",
+  pois isto viola o formato de saída especificado.
+
+* Veja exemplos de programas nas diferentes linguagens, com indicações
+   de como os comandos de entrada e saída devem ser usados em cada
+   linguagem no link https://olimpiada.ic.unicamp.br/pratique/pj/
+
+* A prova é individual e sem consulta a qualquer material. Você pode
+  usar caneta, lápis, papel em branco, borracha e régua. Você pode
+  consultar o manual da linguagem de programação que estiver usando.
+
+* Não divulgue ou comente as tarefas da prova com outros competidores
+  até o término do período de aplicação da prova.
+
+
+{% include 'includes/signature.html' %}

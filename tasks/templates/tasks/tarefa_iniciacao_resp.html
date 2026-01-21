@@ -1,0 +1,30 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load tasks %}
+
+{% block title %} Pratique - {{task.title}} {% endblock %}
+
+{% block header %}
+  Pratique
+{% endblock %}
+
+  {% block content %}
+<h1 class="center">{{ task.title }}</h1>
+
+<p>
+<b>Respostas corretas</b>: {{ correct_answers }} (de um total de {{total_questions}}).
+
+<p>&nbsp;</p>
+<form action="/pratique/{{ task.url }}/" method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary" name="" value="">Quero tentar mais uma vez</button>
+  &nbsp;
+  <button type="submit" class="btn btn-warning" name="show_answers" value="show_answers">Quero ver o gabarito</button>
+</form>
+  {% endblock %}
+
+{% block content-related %}
+
+{% include "tasks/includes/contents_tasks.html" %}
+{% endblock content-related%}
+

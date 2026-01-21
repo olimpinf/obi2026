@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 8 - O tipo cadeia de caracteres</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 8 - O tipo cadeia de caracteres</div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 8 - O tipo cadeia de caracteres</div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/7/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/9/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>O tipo cadeia de caracteres</h2>
+
+<p>
+Já vimos que uma variável é composta por um <em>nome</em>,
+um <em>tipo</em> e um <em>valor</em>. Até o momento usamos
+apenas variáveis e expressões do tipo <em>número</em>.
+Mas linguagens de programação normalmente admitem outros
+tipos de variáveis e expressões.
+<p>
+
+<p>Uma variável do tipo <em>cadeia de caracteres</em> é
+capaz de armazenar, como o nome diz, cadeias de caracteres.
+
+<p>
+Cadeias de caracteres são representadas em Javascript
+por uma sequência de caracteres entre aspas, como por exemplo
+<span class="tt">"Esta é uma cadeia de caracteres"</span>.
+
+<h4>Atribuição a variáveis de tipo cadeia de caracteres</h4>
+
+<p>O operador de atribuição <span class="tt">'='</span> funciona da mesma forma que para variáveis do tipo número.
+A variável do lado esquerdo do operador armazena a cadeia de caracteres
+do lado direito do operador,
+como mostrado no exemplo abaixo:
+
+<pre class="code">
+var prenome, sobrenome, mensagem;
+
+prenome = "Ricardo";
+sobrenome = "Anido";
+mensagem = "Por favor desligue o computador";
+</pre>
+
+<h4>Operador concatenação</h4>
+
+<p>O operador '+' para o tipo cadeia de caracteres efetua
+a concatenação de duas cadeias (concatenar significa colocar uma
+cadeia de caracteres em seguida da outra). Veja o exemplo:
+
+<pre class="code">
+var prenome, sobrenome, nome;
+
+prenome = "Ricardo";
+sobrenome = "Anido";
+nome = prenome + " " + sobrenome;
+</pre>
+
+<p>
+Ao final desse trecho a variável <em>nome</em> tem o valor <span class="tt">"Ricardo Anido"</span> (note
+o espaço entre nome e sobrenome).
+
+<p>
+Podemos ainda atribuir uma <em>cadeia vazia</em> a uma variável. A cadeia vazia é uma cadeia com zero caracteres
+e é designada por duas aspas consecutivas.
+
+<pre class="code">
+var nome;
+
+nome = "";
+</pre>
+
+
+<h4>Cadeias de caracteres e o comando printf</h4>
+<p>
+Para escrever cadeias de caracteres utilizamos o especificador
+de formato "%s" na cadeia formatadora do comando <span class="tt">printf</span>,
+como no exemplo abaixo.
+
+<pre class="code">
+var nome1, nome2;
+nome1 = "Ricardo";
+nome2 = "Cristina"
+
+printf("Bom dia, %s e %s!", nome1, nome2);
+</pre>
+
+<h4>Cadeias de caracteres e o comando scanf</h4>
+<p>
+Podemos ler caracteres cadeias de caracteres com o
+comando <span class="tt">scanf</span>, utilizando o especificador de formato "%s" na
+cadeia formatadora.
+
+<p>
+Suponha que a entrada contenha
+
+<pre>
+Ricardo Anido 10 A
+</pre>
+
+Então após o trecho abaixo ser executado
+
+<pre class="code">
+var prenome, sobrenome, nota, turma;
+
+scanf("%s%s%d%s", "prenome", "sobrenome", "nota", "turma");
+</pre>
+
+<p>
+a variável <span class="tt">prenome</span> contém a cadeia de
+caracteres <span class="tt">Ricardo</span>, a variável <span class="tt">sobrenome</span> contém a
+cadeia de caracteres <span class="tt">Anido</span>, a variável <span class="tt">nota</span> contém o
+inteiro 10, e a variável <span class="tt">turma</span> contém a cadeia de caracteres
+<span class="tt">A</span>.
+
+<p>Note que o comando <span class="tt">scanf</span> não pode ser utilizado para
+ler cadeias de caracteres que contenham espaço em branco! O especificador
+<span class="tt">%s</span> lê caracteres da entrada até encontrar um delimitador
+que pode ser um espaço em branco ou um final de linha.
+
+<h3>Teste de Equalidade</h3>
+
+Podemos usar os operadores de comparação <span class="tt">===</span> e <span class="tt">!==</span>
+para testar a igualdade de cadeias de caracteres. No trecho de código
+abaixo, "Bom dia" é impresso apenas se a cadeia de caracteres lida
+da entrada é exatamente igual a "Ricardo".
+
+<pre class="code">
+var nome;
+
+scanf("%s", "nome");
+if (nome === "Ricardo")
+   printf("Bom dia\n");
+</pre>
+
+<h3>Comprimento de cadeias de caracteres</h3>
+
+O <em>comprimento</em> de uma cadeia de caracteres é igual ao número
+de caracteres que a compõe. Podemos determinar o número
+de caracteres de uma cadeia de caracteres armazenada em uma
+variável utilizando a expressão
+<p><div class="center">
+<em>nome_de_variável.length</em>
+</div>
+
+<p>
+(ou seja, o nome da variável, seguido de '.' seguido da palavra <em>length</em>, que
+em inglês significa comprimento).
+
+<p>
+Veja um exemplo
+<pre class="code">
+var a;
+
+a = "Cadeia";
+printf("%d\n", a.length);
+</pre>
+
+<p>
+Nesse exemplo o valor <span class="tt">6</span> é impresso na saída, pois esse é o número
+de caracteres da cadeia armazenada na variável <span class="tt">a</span>.
+
+<p></p>
+
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Mini-calculadora</h2>
+</center>
+
+<p>
+Escreva programa que implemente uma calculadora simples para
+realizar as operações de adição, subtração, multiplicação e divisão entre dois operandos.
+</p>
+
+<h3>Entrada</h3>
+<p>A entrada consiste de apenas uma linha, contendo um número X com duas casas decimais,
+seguido de um espaço em branco, seguido de um caractere C, seguido de um espaço
+em branco, seguido de um número Y com duas casas decimais. O caractere C
+indica a operação a ser realizada entre os operandos X e Y, e pode ser
+<span class="tt">'+'</span>, <span class="tt">'-'</span>, <span class="tt">'*'</span> ou <span class="tt">'/'</span>, indicando respectivamente as operações de 
+adição, subtração, multiplicação e divisão. 
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve imprimir uma única linha contendo o resultado da operação
+indicada na entrada, com duas casas decimais de precisão.
+
+<h3>Restrições</h3>
+<ul>
+<li> 0.00 &le; X &le; 1000.00
+<li> 0.00 < Y &le; 1000.00
+<li> C é um dos caracteres <span class="tt">'+'</span>, <span class="tt">'-'</span>, <span class="tt">'*'</span> ou <span class="tt">'/'</span>
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2.00 + 3.50
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+5.50
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+100.00 - 99.99
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+0.01
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10.00 / 3.00
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+3.33
+</pre>
+      </td>
+    </tr>
+</table>
+<p>
+<font size="1"></font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Desafio da maior palavra</h2>
+</center>
+
+<p>
+Aldo e Beatriz gostam de jogos de palavras. Um dos jogos que eles
+acham mais divertido é encontrar palavras com muitas letras. Por exemplo,
+eles definem que o tema do desafio é <em>nome de cidades</em>, e
+os dois tentam encontrar a maior palavra que seja nome de uma 
+cidade. Vence o desafio quem encontrar maior palavra, ou
+seja a palavra com o maior número de letras.
+<p>
+Eles pediram que você escreva um programa que, dadas as duas
+palavras que Aldo e Beatriz encontraram, determine qual dos
+dois é o vencedor.
+
+<h3>Entrada</h3>
+<p>A entrada consiste de apenas uma linha, contendo duas
+palavras A e B, respectivamente as palavras encontradas por
+Aldo e por Bia. Uma palavra é uma sequência de letras e do símbolo
+<span class="tt">'-'</span>. 
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve imprimir uma única linha contendo um 
+único caractere, que deve ser A se a maior palavra é
+a de Aldo, ou B se a maior palavra é a de Beatriz, ou
+o caractere <span class="tt">*</span> (asterisco) se as duas palavras
+têm o mesmo número de letras.
+
+<h3>Restrições</h3>
+<ul>
+<li> As palavras têm entre 1 e 20 caracteres, entre letras não acentuadas.
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+Pindamonhangaba SaoJoaoDaBoaVista
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+B
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+TrepadeiraElefante CrisantemoVermelho
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+*
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+Jabuticaba Uva
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+A
+</pre>
+      </td>
+    </tr>
+</table>
+<p>
+<font size="1"></font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 1 da Aula 8
+// Mini-calculadora
+
+var x,y,   // os operandos
+    op,    // o operador
+    res;   // o resultado
+
+// lê a entrada
+scanf("%f%s%f", "x", "op", "y");
+
+// calcula o resultado
+if (op === "+")
+   res = x+y;
+else if (op === "-")
+   res = x-y;
+else if (op === "*")
+   res = x*y;
+else
+   res = x/y;
+
+// imprime o resultado
+printf("%.2f\n",res);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 2 da Aula 8
+// Desafio de maior palavra
+
+var A,B,   // as cadeias de Aldo e Beatriz
+    res;   // armazena o resultado
+
+// lê a entrada
+scanf("%s%s", "A", "B");
+
+// calcula o resultado
+if (A.length > B.length)
+   res = "A";
+else if (A.length < B.length)
+   res = "B";
+else
+   res = "*";
+
+// imprime o resultado
+printf("%s\n",res);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEgZGEgQXVsYSA4Ci8vIE1pbmktY2FsY3VsYWRvcmEKCnZhciB4LHksICAgLy8gb3Mgb3BlcmFuZG9zCiAgICBvcCwgICAgLy8gbyBvcGVyYWRvcgogICAgcmVzOyAgIC8vIG8gcmVzdWx0YWRvCgovLyBsw6ogYSBlbnRyYWRhCnNjYW5mKCIlZiVzJWYiLCAieCIsICJvcCIsICJ5Iik7CgovLyBjYWxjdWxhIG8gcmVzdWx0YWRvCmlmIChvcCA9PT0gIisiKQogICByZXMgPSB4K3k7CmVsc2UgaWYgKG9wID09PSAiLSIpCiAgIHJlcyA9IHgteTsKZWxzZSBpZiAob3AgPT09ICIqIikKICAgcmVzID0geCp5OwplbHNlCiAgIHJlcyA9IHgveTsKCi8vIGltcHJpbWUgbyByZXN1bHRhZG8KcHJpbnRmKCIlLjJmXG4iLHJlcyk7Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMiBkYSBBdWxhIDgKLy8gRGVzYWZpbyBkZSBtYWlvciBwYWxhdnJhCgp2YXIgQSxCLCAgIC8vIGFzIGNhZGVpYXMgZGUgQWxkbyBlIEJlYXRyaXoKICAgIHJlczsgICAvLyBhcm1hemVuYSBvIHJlc3VsdGFkbwoKLy8gbMOqIGEgZW50cmFkYQpzY2FuZigiJXMlcyIsICJBIiwgIkIiKTsKCi8vIGNhbGN1bGEgbyByZXN1bHRhZG8KaWYgKEEubGVuZ3RoID4gQi5sZW5ndGgpCiAgIHJlcyA9ICJBIjsKZWxzZSBpZiAoQS5sZW5ndGggPCBCLmxlbmd0aCkKICAgcmVzID0gIkIiOwplbHNlCiAgIHJlcyA9ICIqIjsKCi8vIGltcHJpbWUgbyByZXN1bHRhZG8KcHJpbnRmKCIlc1xuIixyZXMpOwo=">
+  <input type="hidden" id="hiddentests" value="MTAwLjEwICsgMjAwLjAwCjswLjAwICsgMC4wMQo7OTk5Ljk5IC0gMTAwMC4wMAo7MC4wMSAqIDEwMDAuMDAKOzEwMDAuMDAgKiAwLjAwCjsxMDAwLjAwIC8gMC4wMQo7MTAwMC4wMCAvIDEwMDAuMDAKOzEyMy40NSAtIDY3Ljg5CjsxMDAwLjAwICogMTAwMC4wMAo7MC4wMSAtIDEwMDAuMDAKXkphYnV0aWNhYmFEb01hdG8gQQo7QUFBQUFBQUFBQUFBQUFBQUFBQUEgQUFBQUFBQUFBQUFBQUFBQUFBQUEKO1ggWQo7WCBYWAo7WFggWAo7WlpaWlpaWlpaWlpaWlpaWlpaWlogWlpaWlpaWlpaWlpaWlpaWlpaWgo7QUFBQUFBQUFBQUFBQUFBQUFBQUEgQQo7VCBUVFRUVFRUVFRUVFRUVFRUVFRUVAo7VGF0dXJhbmFEYU1hdGEgQmljaG9Eb1BlRXNxdWVyZG8KO0dHR0dHR0dHR0dHR0dHR0dHR0cgQUFBQUFBQUFBQUFBQUFBQUFBQUEK">
+  <input type="hidden" id="hiddenresults" value="MzAwLjEwCjswLjAxCjstMC4wMQo7MTAuMDAKOzAuMDAKOzEwMDAwMC4wMAo7MS4wMAo7NTUuNTYKOzEwMDAwMDAuMDAKOy05OTkuOTkKXkEKOyoKOyoKO0IKO0EKO0EKO0EKO0IKO0IKO0IK">
+  <input type="hidden" id="hiddensamples" value="Mi4wMCArIDMuNTAKXlBpbmRhbW9uaGFuZ2FiYSBTYW9Kb2FvRGFCb2FWaXN0YQo=">
+  <input type="hidden" id="hiddenhints" value="LioKU2V1IHByb2dyYW1hIGRldmUgPHVsPjxsaT5kZWNsYXJhciB0cupzIHZhcmnhdmVpcyBwYXJhIGFybWF6ZW5hciBvIGNhcmFjdGVyZSBDIGUgb3MgdmFsb3JlcyBYIGUgWSBkZXNjcml0b3Mgbm8gZW51bmNpYWRvIDxsaT51c2FyIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gcGFyYSBsZXIgYSBlbnRyYWRhIDxsaT51c2FyIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBlbmNhZGVhZG9zIHBhcmEgZGV0ZXJtaW5hciBvIHJlc3VsdGFkbyA8bGk+cGFyYSBjYWRhIGNvbWFuZG8gY29uZGljaW9uYWwsIHVzYXIgdW0gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4gcGFyYSBlc2NyZXZlciBvIHJlc3VsdGFkby4gPC91bD4KSW5pY2lhbG1lbnRlIHZvY+ogZGV2ZSBsZXIgZGEgZW50cmFkYSB1bSBu+m1lcm8gcmVhbCwgc2VndWlkbyBkZSB1bSBjYXJhY3RlcmUsIHNlZ3VpZG8gZGUgb3V0cm8gbvptZXJvIHJlYWwuIFBvcnRhbnRvLCBvIGNvbWFuZG8gZGUgbGVpdHVyYSA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBkZXZlIHVzYXIgYSBjYWRlaWEgZm9ybWF0YWRvcmEgIiVmJXMlZiIuIEVzY3JldmEgbyBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IG5vIHNldSBwcm9ncmFtYSBwYXJhIGxlciBhcyB2YXJp4XZlaXMgcXVlIHZvY+ogZGVjbGFyb3UuClN1cG9uaGEgcXVlIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIGFybWF6ZW5hbSBvcyB2YWxvcmVzIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+WCBlIFkgPC9kaXY+IDxwPmRlc2NyaXRvcyBubyBlbnVuY2lhZG8gc+NvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+eDwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPnk8L3NwYW4+IDwvZGl2PiA8cD5lIHF1ZSBvIGNhcmFjdGVyZSBDIHF1ZSByZXByZXNlbnRhIGEgb3BlcmHn428g6SBhcm1hemVuYWRvIG5hIHZhcmnhdmVsIGRlIG5vbWUgPHNwYW4gY2xhc3M9InR0Ij5vcDwvc3Bhbj4uIE9zIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyBlbmNhZGVhZG9zIGRldmVtIHRlc3RhciBvIHZhbG9yIGRhIHZhcmnhdmVsIDxzcGFuIGNsYXNzPSJ0dCI+b3A8L3NwYW4+IGUgaW1wcmltaXIgbyByZXN1bHRhZG8gYXByb3ByaWFkby4gT3Ugc2VqYSwgPHVsPiA8bGk+c2UgPHNwYW4gY2xhc3M9InR0Ij5vcDwvc3Bhbj4gY29udOltIG8gY2FyYWN0ZXJlICIrIiwgbyByZXN1bHRhZG8gYSBzZXIgaW1wcmVzc28g6SB4K3kgPGxpPnNlIDxzcGFuIGNsYXNzPSJ0dCI+b3A8L3NwYW4+IGNvbnTpbSBvIGNhcmFjdGVyZSAiLSIsIG8gcmVzdWx0YWRvIGEgc2VyIGltcHJlc3NvIOkgeC15IDxsaT5zZSA8c3BhbiBjbGFzcz0idHQiPm9wPC9zcGFuPiBjb2506W0gbyBjYXJhY3RlcmUgIioiLCBvIHJlc3VsdGFkbyBhIHNlciBpbXByZXNzbyDpIHgqeSA8bGk+c2UgPHNwYW4gY2xhc3M9InR0Ij5vcDwvc3Bhbj4gY29udOltIG8gY2FyYWN0ZXJlICIvIiwgbyByZXN1bHRhZG8gYSBzZXIgaW1wcmVzc28g6SB4L3kKTyBwcmltZWlybyBjb21hbmRvIGNvbmRpY2lvbmFsIOkgcG9ydGFudG8gPHByZT4gaWYgKG9wPT09IisiKTxicj4gICBwcmludGYoIiUuMmZcbiIsIHgreSk7PGJyPiBlbHNlLi4uIDwvcHJlPiA8cD5Db21wbGV0ZSBhZ29yYSBvIHByb2dyYW1hLCBlc2NyZXZlbmRvIG9zIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyBlbmNhZGVhZG9zIHBhcmEgb3Mgb3V0cm9zIHZhbG9yZXMgcG9zc+12ZWlzIGRhIHZhcmnhdmVsIDxzcGFuIGNsYXNzPSJ0dCI+b3A8L3NwYW4+Ll4uKgpTZXUgcHJvZ3JhbWEgZGV2ZSA8dWw+PGxpPmRlY2xhcmFyIGR1YXMgdmFyaeF2ZWlzIHBhcmEgYXJtYXplbmFyIGFzIGNhZGVpYXMgZGUgY2FyYWN0ZXJlcyBBIGUgQiBkZXNjcml0YXMgbm8gZW51bmNpYWRvIDxsaT51c2FyIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gcGFyYSBsZXIgYXMgY2FkZWlhcyBkZSBjYXJhY3RlcmVzIGRhIGVudHJhZGEgcGFyYSBhcyB2YXJp4XZlaXMgcXVlIHZvY+ogZGVjbGFyb3UgPGxpPnVzYXIgY29tYW5kb3MgY29uZGljaW9uYWlzIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+IGVuY2FkZWFkb3MgcGFyYSBkZXRlcm1pbmFyIG8gcmVzdWx0YWRvIDxsaT5wYXJhIGNhZGEgY29tYW5kbyBjb25kaWNpb25hbCB1c2FyIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+IHBhcmEgZXNjcmV2ZXIgbyByZXN1bHRhZG8uIDwvdWw+ClN1cG9uaGEgcXVlIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIGFybWF6ZW5hbSBhcyBjYWRlaWFzIGRlIGNhcmFjdGVyZXMgPHA+PGRpdiBjbGFzcz0iY2VudGVyIj5BIGUgQiA8L2Rpdj4gPHA+ZGVzY3JpdGFzIG5vIGVudW5jaWFkbyBz428gPHA+PGRpdiBjbGFzcz0iY2VudGVyIj4gPHNwYW4gY2xhc3M9InR0Ij5hPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+Yjwvc3Bhbj4uIDwvZGl2PiA8cD4gT3MgY29tYW5kb3MgY29uZGljaW9uYWlzIGVuY2FkZWFkb3MgZGV2ZW0gY29tcGFyYXIgbyBjb21wcmltZW50byBkYXMgZHVhcyBjYWRlaWFzIGRlIGNhcmFjdGVyZXMgZSBpbXByaW1pciBvIHJlc3VsdGFkbyBhcHJvcHJpYWRvLiBPdSBzZWphLCA8dWw+IDxsaT5zZSA8c3BhbiBjbGFzcz0idHQiPmEubGVuZ3RoID4gYi5sZW5ndGg8L3NwYW4+IG8gcmVzdWx0YWRvIGEgc2VyIGltcHJlc3NvIOkgPHNwYW4gY2xhc3M9InR0Ij5hLmxlbmd0aDwvYT4gPGxpPnNlIDxzcGFuIGNsYXNzPSJ0dCI+YS5sZW5ndGggPCBiLmxlbmd0aDwvc3Bhbj4gbyByZXN1bHRhZG8gYSBzZXIgaW1wcmVzc28g6SA8c3BhbiBjbGFzcz0idHQiPmIubGVuZ3RoPC9hPiA8bGk+Y2FzbyBjb250cuFyaW8gbyByZXN1bHRhZG8gYSBzZXIgaW1wcmVzc28g6SAiKiIuCk8gcHJpbWVpcm8gY29tYW5kbyBjb25kaWNpb25hbCDpIHBvcnRhbnRvIDxwcmU+IGlmIChhLmxlbmd0aCA+IGIubGVuZ3RoKTxicj4gICBwcmludGYoIiVkXG4iLCBhLmxlbmd0aCk7PGJyPiBlbHNlLi4uIDwvcHJlPiA8cD5Db21wbGV0ZSBhZ29yYSBvIHByb2dyYW1hLCBlc2NyZXZlbmRvIG9zIGNvbWFuZG9zIG5lY2Vzc+FyaW9zIHBhcmEgb3Mgb3V0cm9zIGNhc29zLg==">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="ZKCGgTA5G4Y">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

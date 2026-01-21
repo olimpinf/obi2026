@@ -1,0 +1,177 @@
+================================================================================
+           GUIA DE INSTALAÇÃO - EditorOBI Auto-Login
+================================================================================
+
+Este guia explica como preparar os computadores da escola para usar o
+EditorOBI com login automático.
+
+================================================================================
+REQUISITOS MÍNIMOS
+================================================================================
+
+✓ Sistema Operacional: Windows, macOS, ou Linux
+✓ Python 3.6 ou superior (geralmente já instalado no Linux/macOS)
+✓ Conexão com a internet (apenas durante a instalação)
+
+================================================================================
+PASSO 1: INSTALAR PYTHON (se necessário)
+================================================================================
+
+Linux (Ubuntu/Debian):
+    Python já vem instalado. Para verificar:
+    $ python3 --version
+
+Windows:
+    1. Baixe Python de: https://www.python.org/downloads/
+    2. Durante a instalação, marque "Add Python to PATH"
+    3. Verifique: abra o Prompt de Comando e digite: python --version
+
+macOS:
+    Python já vem instalado. Para verificar:
+    $ python3 --version
+
+================================================================================
+PASSO 2: INSTALAR FIREFOX
+================================================================================
+
+O script requer o navegador Firefox.
+
+Linux (Ubuntu/Debian):
+    $ sudo apt install firefox
+
+Windows:
+    Baixe de: https://www.mozilla.org/pt-BR/firefox/new/
+    Execute o instalador
+
+macOS:
+    Baixe de: https://www.mozilla.org/pt-BR/firefox/new/
+    Arraste para a pasta Applications
+
+================================================================================
+PASSO 3: INSTALAR GECKODRIVER
+================================================================================
+
+Geckodriver permite que o Python controle o Firefox.
+
+Linux (Ubuntu/Debian):
+    $ sudo apt install firefox-geckodriver
+
+Windows:
+    1. Baixe de: https://github.com/mozilla/geckodriver/releases
+    2. Escolha "geckodriver-vXX.X.X-win64.zip" (versão mais recente)
+    3. Extraia o arquivo geckodriver.exe
+    4. Copie para C:\Windows\System32\
+       (ou adicione a pasta ao PATH do sistema)
+
+macOS:
+    $ brew install geckodriver
+    
+    (Se não tiver Homebrew instalado, baixe manualmente de:
+     https://github.com/mozilla/geckodriver/releases)
+
+================================================================================
+PASSO 4: BAIXAR O SCRIPT
+================================================================================
+
+1. Baixe o arquivo auto_login.py
+2. Salve em uma pasta de fácil acesso, por exemplo:
+   
+   Linux/macOS:  ~/obi/auto_login.py
+   Windows:      C:\obi\auto_login.py
+
+================================================================================
+PASSO 5: PRIMEIRO USO
+================================================================================
+
+Na primeira execução, o script instalará automaticamente as dependências
+Python necessárias (requests e selenium). Isso requer internet.
+
+Linux/macOS:
+    $ cd ~/obi
+    $ python3 auto_login.py SEU_USUARIO SUA_SENHA
+
+Windows:
+    > cd C:\obi
+    > python auto_login.py SEU_USUARIO SUA_SENHA
+
+O script irá:
+1. ✓ Verificar se Firefox está instalado
+2. ✓ Verificar se geckodriver está instalado
+3. ✓ Instalar dependências Python automaticamente (requests, selenium)
+4. ✓ Fazer login no sistema
+5. ✓ Abrir o Firefox com sua sessão autenticada
+
+================================================================================
+USO DIÁRIO (APÓS INSTALAÇÃO)
+================================================================================
+
+Forma básica:
+    python3 auto_login.py USUARIO SENHA
+
+Usando arquivo de senha (mais seguro):
+    1. Crie um arquivo .password com sua senha
+    2. Execute: python3 auto_login.py USUARIO --password-file .password
+
+Reusar sessão anterior (mais rápido):
+    python3 auto_login.py USUARIO --reuse-session
+
+================================================================================
+RESOLUÇÃO DE PROBLEMAS
+================================================================================
+
+ERRO: "Firefox is not installed"
+→ Instale o Firefox seguindo o Passo 2
+
+ERRO: "geckodriver is not installed"  
+→ Instale o geckodriver seguindo o Passo 3
+
+ERRO: "Login failed"
+→ Verifique se o usuário e senha estão corretos
+→ Verifique se há conexão com a internet
+→ Tente acessar manualmente: https://olimpiada.ic.unicamp.br
+
+ERRO: "ModuleNotFoundError: No module named 'requests'"
+→ Instale manualmente: pip install requests selenium
+
+O Firefox abre mas não está logado:
+→ Pode ser um problema de cookies do domínio
+→ Use a opção --print-cookies para injetar manualmente
+
+================================================================================
+CRIANDO UM ATALHO (OPCIONAL)
+================================================================================
+
+Linux/macOS - Criar script bash:
+    
+    Crie um arquivo ~/obi/login.sh:
+    
+        #!/bin/bash
+        cd ~/obi
+        python3 auto_login.py "$USER" --password-file .password
+    
+    Torne executável:
+        $ chmod +x ~/obi/login.sh
+    
+    Use:
+        $ ~/obi/login.sh
+
+Windows - Criar arquivo .bat:
+    
+    Crie um arquivo C:\obi\login.bat:
+    
+        @echo off
+        cd C:\obi
+        python auto_login.py %USERNAME% --password-file .password
+        pause
+    
+    Clique duas vezes no arquivo para executar
+
+================================================================================
+SUPORTE
+================================================================================
+
+Para dúvidas ou problemas, consulte:
+- Site da OBI: https://olimpiada.ic.unicamp.br
+- Email de suporte: [adicionar email]
+
+================================================================================

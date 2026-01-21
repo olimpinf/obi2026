@@ -1,0 +1,127 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras exams static %}
+{# load flatpages #}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{% static 'assets/css/cws_style.css' %}" >
+    <script type="text/javascript" src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/cws_utils.js' %}"></script>
+    <script>
+
+var utils = new CMS.CWSUtils("url", "url", "contest_name",
+                             '{% now "U" %}',
+                             '{% now "U" %}',
+                             '{% now "U" %}',
+                             '{% now "U" %}',
+                             {{ 0 }});
+
+
+$(document).on("click", ".score_details .subtask .subtask-head", function(event){
+    console.log("click");
+//    $(".score_details .subtask .subtask-head").click(function () {
+	$(this).parent().toggleClass("open");
+	if ($(this).parent().hasClass("open")) {
+	    $(this).children("i").removeClass("icon-chevron-right").addClass("icon-chevron-down");
+	} else {
+	    $(this).children("i").removeClass("icon-chevron-down").addClass("icon-chevron-right");
+	}
+    });
+
+
+function get_score_class (score, max_score) {
+    if (score <= 0) {
+        return "score_0";
+    } else if (score >= max_score) {
+        return "score_100";
+    } else {
+        return "score_0_100";
+    }
+};
+</script>
+
+{% include "tasks/includes/head_tasks.html" %}
+
+{% endblock head_extra %}
+
+{% block title %}Pratique{% endblock %}
+
+{% block header %}Pratique{% endblock %}
+
+{% block content %}
+
+<h1>{{ problem_name_full }}</h1>
+    
+{% if msg %}
+<p>{{ msg }}
+{% else %}
+<h2>Resumo da correção</h2>
+<center>  
+<table id="submission_list" class="table table-striped" >
+  <tbody>
+  <tr>
+    <td class="public_score {% get_score_class sr.public_score  100  as score_class %} {{ score_class }}" style="text-align:left"><b>Pontuação</b></td>
+    <td class="public_score {% get_score_class sr.public_score  100  as score_class %} {{ score_class }}" style="text-align:left">
+    {% format_score sr.public_score 100 0 as score %} {{ score }}
+  </tr>
+  <tr>
+    <th class="">Linguagem</th>
+    <td>{{ language }}</td>
+  </tr>
+  <tr>
+    <th class="">Limite de tempo permitido</th>
+    <td>{{ time_limit }} s</td>
+  </tr>
+  <tr>
+    <th class="">Limite de memória permitido</th>
+    <td>{{ memory_limit|format_size }}</td>
+  </tr>
+  <tr>
+    <th class="">Máximo tempo usado</th>
+    <td>{{ max_time }} s</td>
+  </tr>
+  <tr>
+    <th class="">Máxima memória usada</th>
+    {% if max_memory %}
+    <td>{{ max_memory|format_size }}</td>
+    {% else %}
+    <td>N/D</td>
+    {% endif %}
+  </tr>
+  {% comment %}
+  <tr>
+    <th class="status">
+    <a class="details" style="font-weight:bold;text-align:left">Detalhes da Correção</a>
+    </th>
+    <td></td>    
+  </tr>
+  {% endcomment %}
+  </tbody>    
+</table>
+</center>  
+
+{%comment%}
+<h3 id="submission_details"><a class="details" style="text-decoration:underline">Detalhes da Correção</a>
+</h3>
+{%endcomment%}
+
+
+<div class="fdetails-popup-main" id="popup-detail">
+  <div class="fmodal-main" id="submission_detail">
+    <div class="fmodal-body small">      
+      <h2>Detalhes da correção</h2>
+      
+      <h4>Execução dos testes</h4>
+      {% include "tasks/includes/submission_details.html" %}
+    </div>
+  </div>
+</div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block content-related %}
+
+    {% include "tasks/includes/contents_tasks.html" %}
+
+{% endblock %}

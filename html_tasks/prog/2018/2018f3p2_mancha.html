@@ -1,0 +1,161 @@
+title:Mancha
+template:tasks/tarefa_programacao.html
+
+<p>
+Juninho está participando de um projeto de iniciação científica sobre
+identificação de doenças de pele através de análises de imagens
+digitais. Muitas vezes o formato de uma lesão de pele, ou mancha, pode
+indicar as possibilidades de diagnóstico. O professor orientador tem
+algumas imagens digitalizadas de manchas e precisa identificar aquelas
+que são &quot;regulares&quot; segundo uma definição bastante precisa, que será
+dada abaixo. Juninho precisa da sua ajuda para processar a imagem da
+mancha e decidir se ela é ou não regular.
+
+<div class="center">
+<img src="/static/img/task_images/2018f3p2_mancha.png" width="500px"/>
+</div>
+
+<p>
+A imagem é um reticulado de N x N pixels. Os pixels escuros
+representam a mancha, que é sempre conexa, ou seja, é composta de
+apenas uma componente. De forma mais precisa, dado qualquer par de
+pixels pertencentes à mancha, sempre existe um caminho, uma sequência
+de pixels escuros entre eles seguindo somente por direções ortogonais,
+totalmente contido dentro da mancha. A figura acima ilustra três
+possíveis manchas, para N=10.
+
+<p>
+Dados dois pixels P e Q, a distância de Manhattan entre eles é
+definida como: <i>d_manhattan(P,Q)</i>=|P<sub>l</sub>-Q<sub>l</sub>|+|P<sub>c</sub>-Q<sub>c</sub>|, onde P<sub>l</sub> é
+o índice da linha do pixel P e P<sub>c</sub> é o índice da coluna do pixel
+P, na imagem digitalizada. O mesmo vale para Q<sub>l</sub> e Q<sub>c</sub>. Ou seja,
+a distância de Manhattan é a soma da diferença absoluta entre a linha
+de P e a linha de Q com a diferença absoluta entre as colunas de
+P e Q. Dados dois pixels P e Q que pertencem à mancha,
+definiremos <i>d(P,Q></i> como sendo o comprimento do menor caminho
+existente entre P e Q, que esteja totalmente contido dentro da
+mancha.
+
+<p>
+No exemplo da figura mais à esquerda, onde P e Q estão
+representados por um pequeno círculo, <i>d(P,Q></i>=9 e
+<i>d_manhattan(P,Q)</i>=9. Na figura do meio, <i>d(P,Q></i>=10 e
+<i>d_manhattan(P,Q)</i>=6; e na figura mais à direita, <i>d(P,Q></i>=5 e
+<i>d_manhattan(P,Q)</i>=3.
+
+<p>
+Finalmente, uma mancha será <it>regular</it> se, para qualquer par de pixels
+P e Q pertencentes à mancha, tivermos
+<i>d(P,Q></i>=<i>d_manhattan(P,Q)</i>. Dessa forma, verifique que a figura mais
+à esquerda ilustra uma mancha regular, enquanto que as outras duas são
+irregulares.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um inteiro N,
+  representando as dimensões da imagem. As N linhas seguintes
+  contêm, cada uma, uma cadeia de N caracteres definindo uma linha
+  de pixels da imagem. Os caracteres podem ser: &quot;<span class="ttt">.</span>&quot; para
+  pixels fora da mancha; e &quot;<span class="ttt">*</span>&quot; para pixels que pertencem à
+  mancha.
+
+
+<h3>Saída</h3>
+<p>Imprima uma linha contendo o caractere &quot;<span class="ttt">S&quot;</span>, se a
+  mancha for regular; ou &quot;<span class="ttt">N</span>&quot;, se for irregular.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 2 &leq;  N &leq;  1000;
+ <li> A mancha possui pelo menos dois pixels.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+ <li> Para um conjunto de casos de teste valendo 20 pontos, N &leq; 
+   20;
+ <li> Para um conjunto de casos de teste valendo 40 pontos, N &leq; 
+   100.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+..........
+.....*....
+...***....
+..*****...
+..*****...
+..*******.
+.********.
+...*****..
+......**..
+..........
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+..........
+....*.***.
+....*.***.
+..******..
+..****....
+....**....
+....****..
+...*****..
+.......*..
+..........
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+.*
+**
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

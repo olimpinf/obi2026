@@ -1,0 +1,25 @@
+title:Submissões em Python2
+template:flatpages_pratique.html
+
+<p>Para submeter suas soluções em Python2, você deve seguir as
+seguintes instruções:
+
+<ul>
+  <li>A entrada de dados é feita pela <i>entrada padrão</i>, a saída deve ser feita na <i>saída padrão</i>.
+</ul>
+
+<h3>Um pequeno exemplo</h3>
+<p>O exemplo abaixo lê dois valores inteiros e imprime o maior valor.
+
+<pre style="border-style:solid;border-width:1px;padding:5px;background:#ddd">
+# exemplo de solucao em Python2
+
+# le dois valores inteiros
+val1, val2 = [int(i) for i in raw_input().split()]
+
+# escreve o resultado
+if val1 > val2:
+    print val1
+else:
+    print val2
+</pre>

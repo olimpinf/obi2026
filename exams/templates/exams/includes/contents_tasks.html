@@ -1,0 +1,21 @@
+{% load obi_extras exams %}
+
+<ul>
+    {% with f.compet.compet_type as level %}
+    {% get_tasks f.exam_descriptor level as tasks %}
+      {% for task in tasks %}
+    <li><a {% if f.status == 'running' %}href="{% url 'exams:exam_task' f.exam_descriptor task.descriptor|obi_get_task_id %}" {% else %} href="" onclick="alert('Prova não iniciada');"{% endif %}>{{task.title}}</a>{% if f.mod == 'i' %} ({% get_num_answers_exam task.descriptor f.answers as num_answers %}<span id="st_{{ task.descriptor }}">{{ num_answers|safe }}</span>) {% endif %}</li>
+      {% endfor %}
+    {% endwith %}
+  </ul>
+
+  {% if f.mod == 'p' %}
+  <br>
+  <a class="myButton action" {% if f.status == 'running' %}href="{% url 'exams:show_submissions' f.exam_descriptor %}" {% else %} href="" onclick="alert('Prova não iniciada');"{% endif %}>Ver resultados de submissões</a>
+  {% endif %}
+  {% get_num_answers_exam_total f.answers f.level as tasks %}
+  Total de Tarefas: {{ tasks.0 }}<br>
+  Total de Questões: {{ tasks.1 }}
+  (<span id='st_tasks'>{% if tasks.2 > 0 %}<font color="red">{{ tasks.2 }} sem resposta</font>{% else %}{{ tasks.2 }} sem resposta{% endif %}</span>)
+    
+  

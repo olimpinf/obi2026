@@ -1,0 +1,28 @@
+{{greeting}} {{school.school_deleg_name}}
+
+se o(a) Sr(a). já recebeu a mensagem de confirmação de cadastro na OBI{{ year }} 
+para a escola
+
+{{school.school_name}}
+
+com a senha para acesso ao sistema da OBI, por favor descconsidere esta 
+mensagem.
+
+Detectamos que houve um período de instabilidade no servidor de correio
+eletrônico, que fez com que algumas mensagens enviadas de forma automática
+pelo sistema da OBI{{ year }} não tenham sido entregues.
+
+Se o(a) Sr(a). não recebeu ainda a mensagem de confirmação de cadastro na
+OBI{{ year }} clique no link abaixo que enviaremos uma nova mensagem de confirmação
+de cadastro, com a senha para acesso ao sistema da OBI.
+
+https://olimpiada.ic.unicamp.br/reenvia_conf_cadastro/{{school.school_hash}}
+
+(Se não conseguir clicar, copie o link para a barra de endereços de
+seu navegador de internet.)
+
+Agradecemos a colaboração com a OBI{{ year}}.
+
+Atenciosamente,
+
+{% include 'includes/signature.html' %}

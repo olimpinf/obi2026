@@ -1,0 +1,101 @@
+title:Janela
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+A sala de aulas utilizada para os cursos da OBI tem uma grande janela,
+composta de três folhas de vidro.  A janela tem um metro de altura por
+seis  metros de  comprimento. Cada  folha da  janela tem  um metro  de
+altura e dois metros de comprimento. As folhas deslizam sobre trilhos,
+ao longo do comprimento da janela, de forma que é possível controlar a
+abertura da janela, para circulação de ar.</p>
+
+<p>Dadas as posições das três folhas da janela, deseja-se determinar qual
+a área da janela que está aberta, em centímetros quadrados.</p>
+
+<p>A figura  abaixo ilustra duas  configurações das folhas da  janela. Na
+figura, os cantos inferiores esquerdos de cada folha são indicados por
+ F1, F2 e  F3. Na configuração (a)
+a janela está totalmente fechada, e  portanto o total da área aberta é
+igual a  zero.  Na configuração  (b) há duas  aberturas, e o  total de
+área aberta é  igual a <b>(100 x  100) + (50 x  100) = 15.000
+cm^2</b>.
+
+<center>
+<img src="/static/img/task_images/2013f2p2_janela.png" width="60%">
+</center>
+
+Dadas as posições  das três folhas da janela, escreva  um programa que
+calcule a área da janela que está aberta, em centímetros quadrados.</p>
+<h3>Entrada</h3>A primeira e única linha da  entrada contém três inteiros F_1, F_2
+e F_3,  indicando as posições  das três  folhas.  A posição  de cada
+folha é dada  pela distância, em centímetros,  da extremidade esquerda
+da janela até a extremidade esquerda da folha.
+
+<h3>Saída</h3>Seu programa deve imprimir uma única linha, contendo um único inteiro,
+a área aberta da janela em centímetros quadrados.
+<h3>Restrições</h3><ul>
+<li> 0  ≤  F_1, F_2, F_3  ≤  400.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 200 400
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 50 350
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+15000
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+344 344 344
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+40000
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

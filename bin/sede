@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z "$2" ]; 
+then 
+    city=$1
+else
+    city="$1 $2"
+fi
+echo ${city}
+
+psql -P pager=off -d obi2019 -U obi -c "select school_name,school_id,school_site_phase3_type as type,school_site_phase3_ini as ini, school_site_phase3_prog as prog from school where school_city ilike '%${city}%' group by school_name, school_id;"

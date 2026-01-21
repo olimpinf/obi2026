@@ -1,0 +1,132 @@
+title:Jogo do Preto e Branco
+template:exams/tarefa_programacao.html
+order:2
+<p>
+Você gosta de quebra-cabeças? O jogo do Preto e Branco é um
+quebra-cabeças que usa um tabuleiro retangular com L linhas e C colunas,
+formando L &times; C casas. No tabuleiro são posicionadas algumas
+peças pretas, cada peça em uma casa diferente.
+
+<p>
+O objetivo do jogo é colocar o maior número possível de peças brancas no
+tabuleiro, obedecendo às seguintes restrições:
+<ul>
+<li> cada casa do tabuleiro pode conter no máximo uma peça;
+<li> uma peça branca deve ter ao menos uma peça preta como vizinha,
+à direita, à esquerda, acima ou abaixo;
+<li> uma peça branca não pode ter outra peça branca como vizinha,
+à direita, à esquerda, acima ou abaixo;
+</ul>
+
+<p>
+A figura abaixo mostra dois exemplos de jogos, com as respectivas soluções,
+um com um tabuleiro 
+3 &times; 3 e outro com um tabuleiro 3 &times; 5.
+
+<div class="center"><img src="/static/img/task_images/provaf3p1_jogo.png" width="500px" /></div>
+
+<p>
+Sua tarefa é escrever um programa que, dadas as descrições do tabuleiro e das peças
+pretas posicionadas, determine o maior número de peças brancas que podem
+ser colocadas.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha contém dois inteiros L e C, o número de linhas
+e o número de colunas do tabuleiro. As linhas são numeradas de 1 a L e as
+colunas são numeradas de 1 a C. A segunda linha contém um inteiro
+P, o número de peças pretas colocadas no tabuleiro. Cada uma das P
+linhas seguintes descreve a posição de uma peça preta e contém dois
+inteiros X<sub>i</sub> e Y<sub>i</sub>, indicando a linha e a coluna em que a peça foi
+colocada.
+
+
+<h3>Saída</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único
+inteiro, o maior número de peças brancas que podem ser colocadas no tabuleiro.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  L  &leq;  6
+<li> 1  &leq;  C  &leq;  6
+<li> 1  &leq;  P  &leq;  10
+<li> 1  &leq;  X<sub>i</sub>  &leq;  L para 1  &leq;  i  &leq;  L
+<li> 1  &leq;  Y<sub>i</sub>  &leq;  C para 1  &leq;  i  &leq;  C
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, L = 1.
+<li> Para um conjunto adicional de casos de testes valendo 80 pontos, nenhuma restrição adicional.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+3
+1 1
+1 3
+3 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 6
+2
+1 2
+1 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 5
+3
+2 2
+2 3
+3 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

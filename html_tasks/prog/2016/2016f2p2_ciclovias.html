@@ -1,0 +1,140 @@
+title:Ciclovias
+template:tasks/tarefa_programacao.html
+
+<p>
+A cidade de  Nlogônia é mundialmente conhecida  pelas suas iniciativas
+de preservação ambiental. Dentre elas,  uma das que mais chama atenção
+é a existência  de ciclovias em todas as ruas  da cidade.  Essa medida
+teve um  sucesso tão grande, que  agora a maioria dos  moradores usa a
+bicicleta diariamente.   Em Nlogônia, as interseções  são numeradas de
+1 até N.   Cada rua liga duas  interseções A e B  e possui uma
+ciclovia entre  A e B.  Um  caminho P de tamanho  K é definido
+como uma sequência de interseções P<sub>1</sub>, P<sub>2</sub>, &hellip; , P<sub>K</sub>, tal que para
+todo i, 1  &leq;  i < K, existe uma ciclovia entre P<sub>i</sub> e P<sub>i+1</sub>.
+Arnaldo  e  Bernardo  estavam  passeando de  bicileta  pelas  ruas  de
+Nlognônia quando pensaram em um novo jogo.  Nesse jogo, os dois partem
+de alguma interseção C e procuram o caminho P de maior tamanho que
+satisfaça a seguinte regra: as subsequências
+<div class="center">
+P<sub>1</sub>, P<sub>3</sub>, P<sub>5</sub>, &hellip; ,
+P<sub>2x+1</sub> &nbsp; &nbsp; e  &nbsp; &nbsp;
+P<sub>2</sub>,  P<sub>4</sub>, P<sub>6</sub>, &hellip;,  P<sub>2x</sub>
+</div>
+		      
+da sequência 
+P  devem ser  <i>ambas</i> crescentes.  Ganha  o jogo
+aquele que encontrar o maior caminho.  Bernardo te ligou pedindo ajuda
+para  se  preparar para  o  jogo.   Com o  mapa  da  cidade você  deve
+encontrar  o  tamanho   do  maior  caminho  possível   para  todas  as
+interseções  iniciais possíveis,  seguindo  as  restrições acima.   No
+exemplo abaixo, o maior caminho possível para início na interseção 1
+é P = (1, 3, 5, 4, 7) e  para início na interseção 5 é P = (5, 3,
+6) ou P = (5,4,7).
+
+<div class="center">
+<img src="/static/img/task_images/2016f2p2_ciclovias.png" width="300px"/>
+</div>
+
+<h3>Entrada</h3>
+A primeira linha contém dois inteiros N e M, representando
+respectivamente o número de interseções e o número de ruas.
+As M linhas seguintes contém dois inteiros A e B
+indicando que existe uma ciclovia entre A a B.
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo N inteiros R<sub>1</sub>, R<sub>2</sub>, &hellip;  R<sub>N</sub>,
+onde R<sub>i</sub> é o tamanho do maior caminho possível se o jogo começar na interseção i.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  10<sup>5</sup>
+<li> 0  &leq;  M  &leq;  N(N-1)/2
+<li> 0  &leq;  M  &leq;  5 x 10<sup>5</sup>
+<li> A  &ne;  B
+<li> 1  &leq;  A, B  &leq;  N
+<li> Não existem duas ciclovias iguais.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um conjunto de casos de teste equivalente a 20 pontos, N  &leq;  7.
+  <li> Em um conjunto de casos de teste equivalente a 40 pontos, N  &leq;  100.
+  <li> Em um conjunto de casos de teste equivalente a 60 pontos, N  &leq;  1000.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5 5
+1 5
+1 3
+1 2
+2 5
+4 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4 4 4 2 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 6
+1 3
+2 3
+4 2
+3 4
+3 5
+5 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+7 5 6 4 2 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 6
+1 2
+1 3
+3 5
+3 6
+5 4
+4 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5 6 4 2 3 2 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

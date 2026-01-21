@@ -1,0 +1,37 @@
+title:Robo furador
+template:exams/tarefa_iniciacao.html
+order:2
+
+<p>Um robô furador pode ser programado usando os comandos gráficos  &rarr;  e &#9678;,
+que realizam as seguintes operações :
+<ul>
+<li> &rarr; : robô move-se 1cm para a frente
+<li> &#9678; : robô faz um furo na posição corrente
+</ul>
+
+<p>Assim, podemos programar que o robô faça dois furos a uma distância de 1cm um do outro com os comandos &#9678;  &rarr;  &#9678;.
+Além disso, podemos programar repetições, utilizando números e parênteses. Por exemplo
+<ul>
+<li> 4  &rarr;  : repete quatro vezes a ação &quot;move-se 1cm para a frente&quot; (ou seja, o robô move-se 4cm para a frente)
+<li> 3  &#9678; : repete três vezes a ação &quot;faz um furo na posição corrente&quot; (como o robô não se move, faz um único furo na posição corrente)
+<li> 2  (  &rarr;   &rarr;  ) : repete duas vezes a ação &quot;move-se 1cm para a frente, move-se 1cm para a frente&quot; (ou seja, o robô move-se 4cm para a frente)
+</ul>
+
+\question
+Qual dos seguintes comandos produz quatro furos em linha reta, cada furo distante 1cm do furo seguinte?
+
+(A) & 4 ( &rarr;   &rarr;  &#9678;)
+(B) & 4  &rarr;  4 &#9678;
+(C) & 4 (  &rarr;  &#9678; ) \correct
+(D) & 4 &#9678;  4  &rarr; 
+(E) & 4 &#9678;  &rarr;  
+
+\question
+O que produz o comando 2 ( 4 (  &rarr; )  &#9678;) ?
+
+(A) & quatro furos em linha reta, cada furo distante 2cm do furo seguinte
+(B) & dois furos em linha reta, cada furo distante 4cm do furo seguinte \correct
+(C) & quatro furos em linha reta, cada furo distante 2cm do furo seguinte
+(D) & dois furos em linha reta, cada furo distante 1cm do furo seguinte
+(E) & quatro furos em linha reta, cada furo distante 1cm do furo seguinte
+

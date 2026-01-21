@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load obi_extras %}
+
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block title %} {{flatpage.title}} {% endblock %}
+
+{% block header %}
+  <h1> {{ flatpage.title }} </h1>
+{% endblock %}
+  {% block content %}
+  {{flatpage.url}}
+  {{ flatpage.content }}
+  {% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% endblock browse-wrapper %}
+
+  <h2>Veja também</h2>
+  <ul>
+    <li>Resoluções de problemas disponibilizadas pelo <a href="https://noic.com.br">Núcleo Olímpico de Incentivo ao Conhecimento</a> - NOIC:
+      <ul>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-2022/fase1-pj/">Programação Júnior</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-2022/fase1-p2/">Programação 1</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-2022/fase1-p2/">Programação 2</a></li>
+	<li><a href="https://noic.com.br/materiais-informatica/comentario/obi-2022/fase1-ps/">Programação Sênior</a></li>
+      </ul>
+  </ul>
+  
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}
+

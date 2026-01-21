@@ -1,0 +1,133 @@
+title:Chaves
+template:tasks/tarefa_programacao.html
+<p>
+Seu amigo Juca está enfrentando problemas com programação. Na linguagem C,
+algumas partes do código devem ser colocadas entre chaves <span class="ttt">"\ \</span>" e
+ele frequentemente esquece de colocá-las ou as coloca de forma errada. 
+Porém, como Juca tem dificuldade
+para entender os erros de compilação, ele nunca sabe exatamente o que procurar.
+Por isso ele te pediu para fazer um programa que determine se um código está
+com as chaves balanceadas, ou seja, se é válido. Um código está com as chaves balanceadas se: 
+<ul>
+<li> Não há chaves (como por exemplo &quot;<span class="ttt">Bom</span>&quot; ou  &quot;<span class="ttt">Correto</span>&quot;);
+<li> O código é composto por uma sequência de códigos válidos (como por exemplo &quot;<span class="ttt">Bom Correto</span>&quot; ou &quot;<span class="ttt">\\</span>\\&quot; ou &quot;<span class="ttt">\\</span>Correto&quot;); ou
+<li> O código é formado por um código válido entre chaves (como por exemplo &quot;<span class="ttt">\\\</span>\&quot; ou &quot;<span class="ttt">\Bom\</span>&quot;). 
+</ul>
+
+O código de Juca é composto por N linhas de até 100 caracteres cada.
+Pode haver linhas vazias e espaços consecutivos.
+
+
+<h3>Entrada</h3>
+
+A primeira linha contém um inteiro N, representando
+o número de linhas no código.
+As N linhas seguintes contém até 100 caracteres.
+
+<h3>Saída</h3>
+
+Seu programa deve produzir uma única linha, contendo uma única letra, <span class="ttt">"S"</span> 
+se o código está com as chaves balanceadas e <span class="ttt">"N"</span>, caso contrário.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  10<sup>3</sup>.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um conjunto de casos de teste equivalente a 50 pontos, N = 1 e todos os carateres são <span class="ttt">"\"</span> ou <span class="ttt">"\</span>" (como no terceiro exemplo).
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello World\n");
+}
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+{I{N{
+}F{])
+
+}O}R{
+}M}A{T}I{C@!!{onze}!!}
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+{{}}{{}}}
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1
+{{{3}}}{{{2}}a{{1}}{0}
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

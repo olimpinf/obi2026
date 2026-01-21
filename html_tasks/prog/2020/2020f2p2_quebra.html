@@ -1,0 +1,117 @@
+title:Quebra-cabeças
+template:tasks/tarefa_programacao.html
+
+<p>
+Um quebra-cabeças é composto por um tabuleiro composto por células quadradas
+organizadas em duas linhas de N colunas. Cada célula do tabuleiro
+pode conter uma ficha numerada, como na figura abaixo.
+
+<div class="center">
+  <img src="/static/img/task_images/provaf2p2_quebra.png" width="180px" />
+</div>
+
+<p>
+As fichas podem ser deslizadas para uma célula não ocupada à direita
+ou à esquerda da posição corrente da ficha, mas a ordem das fichas, da
+esquerda para a direita, não pode ser alterada. Assim, na figura acima
+as fichas -3 e 5 podem ser movidas no máximo uma célula para a
+direita ou para a esquerda; já a ficha 3 pode ser movida somente
+para a esquerda, uma ou duas células. A figura abaixo ilustra algumas
+configurações possíveis para o quebra-cabeça da figura acima.
+
+<div class="center">
+  <img src="/static/img/task_images/provaf2p2_quebra_2.png" width="650px" />
+</div>
+
+<p>
+O <i>valor</i> de uma configuração é a soma das multiplicações entre
+as fichas da primeira e da segunda linha do tabuleiro, para cada
+coluna (a ausência de ficha em uma célula é equivalente à presença
+de uma ficha de valor zero). Ou seja,
+para a configuração (a) acima, o valor é
+2 &times; -1 + -3 &times; 0 + 5 &times; 2 + 0  &times; 3 = 8;
+para a configuração (b), o valor é
+2 &times; -1 + -3 &times; 0 + 0 &times; 2 + 5  &times; 3 = 13;
+para a configuração (c), o valor é
+0 &times; -1 + 0 &times; 2 + 2 &times; 3 + -3 &times; 0 + 5  &times; 0 = 6.
+O objetivo do quebra-cabeça é encontrar uma configuração com o  maior valor
+possível.
+
+<p>
+Dada a descrição do tabuleiro e das fichas do quebra-cabeças, escreva
+um programa para determinar o maior valor possível que uma configuração
+pode ter.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém um inteiro N, o número
+  de colunas do tabuleiro. Cada uma das duas linhas seguintes descreve
+  as fichas de uma linha do tabuleiro. A linha da entrada inicia com um inteiro M
+  indicando o número de fichas na linha do tabuleiro, seguido de M inteiros
+  X<sub>i</sub> indicando o valor e ordem das fichas.
+
+
+<h3>Saída</h3>
+
+Seu programa deve produzir uma única linha, contendo um único número
+inteiro, o valor máximo de uma configuração para o quebra-cabeças da entrada.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  500
+<li> 1  &leq;  M  &leq;  N
+<li> -100  &leq;  X<sub>i</sub> &leq;  100 e X<sub>i</sub>  &ne;  0 para 1  &leq;  i  &leq;  M
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, 1  &leq;  N  &leq;  10 e M = N-1.
+<li> Para um conjunto adicional de casos de testes valendo 30 pontos, 1  &leq;  N  &leq;  200.
+<li> Para um conjunto adicional de casos de testes valendo 50 pontos, nenhuma restrição adicional.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+3 2 -3 5
+3 -1 2 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+19
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+4 -20 7 13 -2
+5 1 -2 7 1 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+133
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

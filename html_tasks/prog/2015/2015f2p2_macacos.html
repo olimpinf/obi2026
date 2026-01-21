@@ -1,0 +1,125 @@
+title:Macacos me Mordam!
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Em uma floresta há N árvores alinhadas. A i-ésima árvore tem
+altura H<sub>i</sub> e está localizada na posição X<sub>i</sub> da floresta.  Obi, o
+macaco camarada, está na primeira árvore da floresta, e deseja ir até a última árvore da
+floresta, porque ele ouviu dizer que há muitas bananas esperando por ele lá.</p>
+
+<p>Para ir até a última árvore, Obi vai pular entre as árvores.
+Obi é um macaco muito ágil, e consegue pular de uma árvore A para
+outra árvore B sempre que, do topo da árvore A ele consegue enxergar o
+topo da árvore B, independente das posições das árvores A e B.
+Mas Obi é também um macaco muito preguiçoso, e quer pular o menor número
+de vezes possível.
+
+<center>
+<img src="/static/img/task_images/2015f2p2_macacos.png" width="350px">
+</center></p>
+
+
+<p>Na figura acima podemos ver que, do topo da árvore na posicão 2, Obi não consegue enxergar o topo da árvore na posição 4, e portanto
+ele não pode pular de uma para outra sem passar pela árvore na posição 3. Assim, para o caso da figura acima, para ir da árvore 1
+para a árvore 4
+ele tem que passar por todas as árvores, dando um total de três
+pulos.</p> 
+
+<p>Dada a descrição da floresta, você deve escrever um programa para determinar o menor número de pulos que Obi deve dar para ir da
+primeira à última árvore da floresta.</p>
+<h3>Entrada</h3>
+A primeira linha da entrada contém um número N, indicando a quantidade de árvores na floresta. 
+Cada uma das N linhas seguintes descreve uma árvore da floresta, e contém dois inteiros X<sub>i</sub> e H<sub>i</sub>, respectivamente a posição e a altura de uma árvore.
+Cada árvore ocupa uma posição distinta na floresta (ou seja, não há duas árvores com o mesmo valor X<sub>i</sub>).
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo um único número inteiro, a menor
+a quantidade de pulos que Obi deve dar para ir da primeira até a última árvore da floresta.
+<h3>Restrições</h3><ul>
+	<li> 2  ≤  N  ≤  3 x 10<sup>5</sup></li>
+	<li> 1  ≤  H<sub>i</sub>, X<sub>i</sub>  ≤  10<sup>9</sup></li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+	<li> Em um conjunto de casos de teste cuja soma é 40 pontos: 2  ≤  N  ≤  300</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+1 3
+2 4
+3 3
+4 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+1 3
+2 4
+3 3
+4 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10
+3 7
+1 3
+5 6
+6 6
+9 6
+8 15
+12 5
+13 1
+10 9
+14 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

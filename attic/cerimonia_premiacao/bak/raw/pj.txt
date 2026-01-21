@@ -1,0 +1,17 @@
+1	1	300	Carlos Cabral de Menezes Filho	Instituto UberHub Educação	Uberlândia	MG
+1	1	300	Marcos Paulo Evers	COLÉGIO MASTER BEZERRA	Fortaleza	CE
+1	1	300	Pedro Suyama Leston Rey	Colégio Etapa	São Paulo	SP
+
+2	4	230	Maria Elaine de Holanda Cavalcante	FARIAS BRITO COLÉGIO PRÉ VESTIBULAR CENTRAL	Fortaleza	CE
+2	5	230	Joel Gontijo Mazoni	Colegio Magnum Agostiniano (unid. Cidade Nova)	Belo Horizonte	MG
+2	6	230	Luís Miguel Nunes Matos	COLÉGIO SANTA CECÍLIA	Fortaleza	CE
+
+3	7	230	Andres Alonso Bie Perez	SuperGeeks Belo Horizonte	Belo Horizonte	MG
+3	8	230	Guilherme Aguiar	COLÉGIO MASTER BEZERRA	Fortaleza	CE
+3	9	230	Murilo Maeda Kataoka	Colégio Etapa	São Paulo	SP
+4	10	230	Arthur Felipe Souza Starling	ESCOLA EDUCAÇÃO CRIATIVA	Ipatinga	MG
+4	11	230	Julio Nunes Avelar	E. E. Professor Antônio Passos Silva	Guapé	MG
+
+4	12	225	Thales Sena de Queiroz	FARIAS BRITO COLÉGIO PRÉ VESTIBULAR CENTRAL	Fortaleza	CE
+
+

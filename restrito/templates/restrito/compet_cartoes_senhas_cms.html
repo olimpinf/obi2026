@@ -1,0 +1,109 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block head_extra %}
+<script type="text/javascript">
+window.addEventListener("load", (event) => {
+    $('#aviso').modal('show');
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="modal fade" id="aviso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+	<h4>Declaração</h4>	
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	<em>
+	<p class="emph">
+	  Eu, <b>{{ name }}</b>, declaro que na escola <b>{{school_name}}</b> a prova será aplicada de acordo com as
+	    regras estabelecidas no <a href="/info/regulamento"> regulamento
+	      da OBI2025</a>, de forma presencial, nas dependências da escola,
+	    sob supervisão de um professor ou funcionário designado.
+	<p class="emph">
+	    Declaro ainda que tenho conhecimento de que a não obediência às regras
+	    estabelecidas resultará na desclassificação de competidores e 
+	    escola.
+	</em>
+	<div class="mt-2">
+	  <div class="float-end">
+	    <a class="btn btn-danger" href="/restrito" role="button">Não concordo</a>
+	  </div>
+	  <div class="float-start">
+	    <button type="button" class="btn btn-primary" onclick="$('#aviso').modal('hide');">Concordo</button>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h1>{{ pagetitle }}</h1>
+
+<p>Este é o formulário para gerar cartões com as senhas para o Ambiente de Prova da modalidade Programação (CMS).
+
+  {% comment %}
+    <p><em>
+      Caro Coordenador de Sede da Fase Nacional, a prova deve ser aplicada de forma presencial, nas dependências da escola,
+    sob supervisão de um professor ou funcionário designado. A não obediência às regras
+      estabelecidas resultará na desclassificação dos competidores.
+      </em>
+    <p>
+      Excepcionalmente, para a Prova Teste, se não for possível a aplicação na escola, o competidor poderá realizar a prova fora da
+      escola (por exemplo, na sua casa).
+  {% endcomment %}
+      
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  </label><br>
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  {# first button is default, enter key will trigger it #}
+
+  <div class="mt-2">
+    <div class="float-start">
+      <button type="submit" class="btn btn-primary" name="save" value="save">Gerar</button>
+    </div>
+    <div class="float-end">
+      <button type="submit" class="btn btn-danger" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}">Cancelar</button>
+    </div>
+  </div>
+
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+
+  <h4>Instruções</h4>
+  <ul>
+    <li>Escolha a modalidade e ordem dos cartões no formulário e clique em <em>Gerar</em>.
+  </ul>
+      
+{% endblock %}

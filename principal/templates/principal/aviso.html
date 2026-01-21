@@ -1,0 +1,20 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block title %} Aviso {% endblock %}
+
+{% block header %}
+  <h1>Aviso</h1>
+{% endblock %}
+
+{% block content %}
+  <h4>{{ msg|safe }}</h4>
+  <p>&nbsp;</p>
+{% endblock %}
+
+{% block content-related %}
+  <a class="btn btn-small btn-primary" role="button" href="javascript: history.go(-1)">Voltar</a>
+  <p class="small">Voltar para página anterior</p?
+{% endblock %}

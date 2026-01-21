@@ -1,0 +1,89 @@
+title:Sinuca
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Nadine e Celine inventaram um passatempo com bolas de sinuca, pretas e
+brancas, que são colocadas uma por vez na mesa, de acordo com uma
+regra fixa. Agora elas estão tentando descobrir, com um computador, a
+cor da bola que vai ser colocada por último!  Você pode ajuda-las?</p>
+
+<p>Funciona assim. No início, são colocadas N bolas formando a primeira
+fileira. Em seguida, um triângulo equilátero é formado, fileira a
+fileira, de acordo com a seguinte regra. Ao se colocar uma bola na
+nova fileira, ela ficará encostada em duas bolas da fileira anterior e
+sua cor será:</p>
+
+<ul>
+<li> Preta, se estiver encostada em duas bolas de mesma cor;</li>
+<li> Branca, se estiver encostada em duas bolas de cores diferentes.</li>
+</ul>
+
+<p>A figura abaixo ilustra a formação de um triângulo para N=5.</p>
+
+<p>
+<center>
+<img src="/static/img/task_images/2014f2pj_sinuca.png">
+</center></p>
+
+<p>
+Nesta tarefa, você deve escrever um programa que, dadas as cores das
+bolas da primeira fileira, descubra qual é a cor da bola que será
+colocada por último. Na figura, foi uma bola branca!</p>
+<h3>Entrada</h3>
+A entrada é composta por duas linhas. A primeira linha contém um
+inteiro N, o número de bolas da primeira fileira. A segunda linha
+contém N inteiros representando as cores das bolas da primeira
+fileira. Se a bola é preta, o número será "<span class="tt">1</span>", se for branca,
+será "<span class="tt">-1</span>".
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo a palavra "<span class="tt">branca</span>", se a última bola for preta; ou a palavra "<span class="tt">branca</span>",
+se for branca.
+<h3>Restrições</h3><ul>
+<li> 2 ≤  N ≤  64</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+1 -1 1 1 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+branca
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+1 -1 -1 1 -1 1 1 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+preta
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

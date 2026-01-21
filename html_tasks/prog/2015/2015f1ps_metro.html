@@ -1,0 +1,108 @@
+title:Metrô
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Os sistemas de Metrô das cidades da Cosmolândia seguem sempre o mesmo
+padrão. Há uma estação central e uma linha circular, de modo que a
+estação central está dentro da área delimitada pela linha
+circular. A partir da estação central saem pelo menos 5, e no máximo
+100, linhas radiais que não se interceptam entre si e que vão pelo
+menos até alguma estação da linha circular, podendo ir muito além, até
+os subúrbios mais remotos da cidade. Veja um exemplo na figura abaixo,
+que possui 6 linhas radiais e onde a linha circular passa por 16
+estações.</p>
+<p>
+Cada sistema possui N estações, numeradas de 1 a N. O número de
+uma estação não tem relação alguma com a sua posição no sistema. O
+problema é o seguinte. Um engenheiro da Agência Federal de Trânsito da
+Cosmolândia precisa descobrir rapidamente por quantas estações a linha
+circular passa. Ele tem apenas a informação sobre as ligações entre
+pares de estações, sem qualquer identificação das linhas às quais
+pertencem as duas estações do par. Você pode ajudá-lo?
+
+<center>
+<img src="/static/img/task_images/2015f1pu_metro.png" width="50%">
+</center></p>
+
+
+<h3>Entrada</h3>A primeira linha da entrada contém dois inteiros N e M,
+respectivamente, o número total de estações e de ligações entre pares
+de estações. As M linhas seguintes contêm, cada uma, dois inteiros
+P e Q, indicando que a estação de número P está ligada à estação
+de número Q.
+<h3>Saída</h3>Seu programa deve imprimir um inteiro, representando o número de
+estações pelas quais passa a linha circular do sistema.
+<h3>Restrições</h3><ul>
+  <li> 6 ≤  N ≤  20000, M ≤  20100</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6 10
+1 6
+1 3
+4 1
+3 4
+5 4
+3 5
+2 5
+3 2
+6 3
+2 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12 17
+7 1
+9 3
+5 1
+7 12
+7 3
+4 10
+3 2
+6 8
+10 5
+7 6
+2 11
+7 10
+12 4
+8 9
+3 12
+1 8
+7 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

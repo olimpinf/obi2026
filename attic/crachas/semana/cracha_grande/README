@@ -1,0 +1,17 @@
+exemplo de uso:
+
+Se for usar qrcode:
+1) cd qrcodes
+2) ./build_qrcodes.py ../acompanhantes.csv
+
+Se não for usar, editar imprime_crachas.py e remover o qrcode do template tex
+
+3) ./imprime_crachas.py acompanhantes.csv azul > acompanhantes.tex
+
+4) lualatex acompanhantes
+ (tem que usar lualatex por conta da fonte usada)
+
+
+Impressora Epson: A4, scale 87%, color on plain paper
+
+Separador no arquivo é vírgula, lembrar de trocar vírgulas no campo alergias para ponto e vírgula se importar do Google.

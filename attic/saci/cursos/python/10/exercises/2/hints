@@ -1,0 +1,21 @@
+@empty
+
+Você deve usar uma variável para armazenar o saldo corrente (vamos
+chamá-la 'saldo') e uma variável para armazenar o menor saldo
+que conhecemos (vamos chamá-la de 'menor_saldo'). O valor inicial
+para essas duas variáveis é o valor do saldo inicial informado na
+entrada.
+
+<p>
+Você deve ler da entrada o número de movimentações (cada
+movimentação é um depósito ou uma retirada).  Para isso, use uma
+variável (por exemplo, N). Para ler o valor de cada movimentação use
+um bloco Repita (com a variável N como número de repetições).  Em cada
+passo do do laço de repetição, você deve ler uma movimentação da
+entrada, atualizar o valor do saldo (que passa a valer saldo mais o
+valor da movimentação lida) e comparar o saldo resultante com o valor
+da variável menor_saldo. Se o saldo resultante é menor, temos um saldo
+menor do que o que conhecemos até então, portanto você deve atualizar
+o valor da variável menor_saldo com o saldo atual. Ao final do laço, a
+variável menor_saldo tem o resultado.
+<br>

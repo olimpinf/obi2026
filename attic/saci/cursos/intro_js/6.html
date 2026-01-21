@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 6 - O comando condicional if</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 6 - O comando condicional <span class="tt">if</span></div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 6 - O comando condicional <span class="tt">if</span></div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/5/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/7/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+<li style="margin-left: 10px;">Exercício 3</li>
+<li style="margin-left: 10px;">Exercício 4</li>
+<li style="margin-left: 10px;">Exercício 5</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Comando condicional <span class="tt">if</span></h2>
+
+<p>O comando condicional permite que blocos diferentes de comandos sejam executados, dependendo
+do resultado de uma <em>expressão lógica</em> (uma expressão cujo resultado é Verdadeiro
+ou Falso).
+
+<h3>Formato Geral</h3>
+<p>
+O formato geral do comando condicional if é:
+
+<p>
+<span class="tt">if</span> (<em>expressão_lógica</em>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<em>bloco_de_comandos1</em><br>
+}<br>
+<span class="tt">else</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<em>bloco_de_comandos2</em><br>
+}<br>
+</p>
+
+<p>O que ocorre na execução:
+</p>
+<p>
+<ul>
+<li>se o valor da <em>expressão_lógica</em> é Verdadeiro, os comandos do <em>bloco_de_comandos1</em>
+são executados
+<li>caso contrário (<em>expressão_lógica</em> é Falso),  os comandos do <em>bloco_de_comandos2</em>
+são executados.
+</ul>
+</p>
+
+<p>Um exemplo de uso de comando condicional é dado abaixo.
+
+<pre class="code">
+if (media >= 5.0) {
+  printf("Aprovado\n");
+}
+else {
+  printf("Reprovado\n");
+}
+</pre>
+
+<p>O que ocorre na execução:
+</p>
+<p>
+<ul>
+<li>se o valor da variável <span class="tt">média</span> é maior ou igual a 5.0, o comando <span class="tt">printf("Aprovado\n")</span> é impresso;
+<li>caso contrário (valor menor do que 5.0), o comando comando <span class="tt">printf("Reprovado\n");</span> é impresso.
+</ul>
+
+<h3>Operadores de comparação</h3>
+
+<p>Os seguintes operadores de comparação são disponíveis em Javascript:
+
+<p>
+<table border="1" cellspacing="1px" cellpadding="10px">
+<tr>
+  <th>Símbolo</th><th>Operação</th><th>Exemplo</th>
+</tr>
+<tr>
+  <td align="center">></td><td align="center">maior</td><td align="center"><span class="tt">media > 6.0</span></td>
+</tr>
+<tr>
+  <td align="center"><</td><td align="center">menor</td><td align="center"><span class="tt">nota2 < nota1*2</span></td>
+</tr>
+<tr>
+  <td align="center">>=</td><td align="center">maior ou igual</td><td align="center"><span class="tt">nota2 >= nota1</span></td>
+</tr>
+<tr>
+  <td align="center"><=</td><td align="center">menor ou igual</td><td align="center"><span class="tt">x <= 3*y</span></td>
+</tr>
+<tr>
+  <td align="center">===</td><td align="center">igual</td><td align="center"><span class="tt">media === 10.0</span></td>
+</tr>
+<tr>
+  <td align="center">!==</td><td align="center">diferente</td><td align="center"><span class="tt">nota2 !== 0.0</span></td>
+</tr>
+</table>
+
+<h3>Variações do comando <span class="tt">if</span></h3>
+
+<h4>Comando <span class="tt">if</span> sem a cláusula <span class="tt">else</span></h4>
+
+<p>
+Muitas vezes não temos necessidade da cláusula "senão" do comando condicional, pois não há nada a ser feito. Nesses casos, podemos omitir
+a cláusula "else" do comando condicional, que fica então com o seguinte formato:
+
+<p>
+<span class="tt">if</span> <em>expressão_lógica</em> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<em>bloco_de_comandos1</em><br>
+}<br>
+<span class="tt">else</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<em>bloco_de_comandos2</em><br>
+}<br>
+</p>
+
+<p>
+Exemplo:
+<pre class="code">
+if (media === 10.0) {
+  printf("Parabéns!\n");
+}
+</pre>
+
+<h4>Comandos <span class="tt">if</span> encadeados</h4>
+<p>
+O Comando <if> permite testar <em>uma</em> condição. O que fazer quando existir
+<em>mais de uma</em> condição a ser testada?
+
+<p>Suponha que ao invés de escrever a média de um aluno, queiramos escrever
+um conceito, como A, B, e C. O conceito é determinado da seguinte forma:
+
+<ul>
+<li> se a média é maior do que ou igual a 8.0, o conceito é A;
+<li> se a média é menor do que 8.0, mas maior do que ou igual a 5.0, o conceito é B; e
+<li> se a média é menor do que 5.0, o conceito é C.
+</ul>
+
+<p>Podemos iniciar o teste das múltiplas condições com um
+comando <span class="tt">if</span> para testar se a média é maior do que ou igual a
+8.0, e se for escrevemos 'A'. 
+
+<pre class="code">
+if (media >= 8.0) {
+  printf("A\n");
+}
+else
+</pre>
+
+Se a média não for maior o do que ou igual a 8.0, podemos encadear um outro
+comando <span class="tt">if</span> para testar então se a média é maior do que ou
+igual a 5.0. Se for, escrevemos 'B'. Se não for, escrevemos 'C'.
+
+<pre class="code">
+if (media >= 8.0) {
+  printf("A\n");
+}
+else if (media >= 5.0) {
+  printf("B\n");
+}
+else {
+  printf("C\n");
+}
+</pre>
+
+<p>
+<p></p>
+
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Triplo do maior</h2>
+</center>
+
+
+<p>
+Escreva um programa que
+<ul><li> declare duas variáveis de
+nomes <span class="tt">valor1</span> e <span class="tt">valor2</span>
+<li>
+use o comando <span class="tt">scanf</span> para ler da entrada dois
+valores inteiros para as variáveis <span class="tt">valor1</span>
+e <span class="tt">valor2</span>
+<li>
+escreva uma linha na saída, contendo um inteiro, o triplo do maior dos dois valores
+lidos da entrada.
+</ul>
+
+<h3>Entrada</h3>
+<p>
+A única linha da entrada contém dois números inteiros distintos A e B.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever uma única linha na saída, contendo um número inteiro,
+o triplo do maior valor lido da entrada.
+</p>
+
+<h3>Restrições</h3>
+<p>A entrada obedece às seguintes restrições:
+<ul>
+<li>0 &le; A &le; 1000
+<li>0 &le; B &le; 1000
+<li>A &ne; B
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+10 11
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+33
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1000 234
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+3000
+</pre>
+</td></tr></table>
+<p>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1 0
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+2
+</pre>
+</td></tr>
+</table>
+<p>&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Aviões de papel</h2>
+</center>
+<p>
+Para descontrair os alunos após as provas da OBI, a Diretora da escola
+organizou um campeonato de aviões de papel. Cada aluno participante
+receberá uma certa quantidade de folhas de um papel especial para
+fazer os seus modelos de aviões. A quantidade de folhas que cada aluno
+deverá receber ainda não foi determinada: ela será decidida pelos
+juízes do campeonato.
+<p>
+A diretora convidou, para atuarem como juízes, engenheiros
+da Embraer, uma das mais bem sucedidas empresas brasileiras,
+que vende aviões com tecnologia brasileira no mundo todo. 
+O campeonato está programado para começar logo após a prova da OBI,
+mas os juízes ainda não chegaram à escola. A diretora está aflita,
+pois comprou uma boa quantidade de folhas de papel especial, mas
+não sabe se a quantidade comprada vai ser suficiente.
+<p>
+Considere, por exemplo, que a Diretora comprou 100 folhas de papel
+especial, e que há 33 competidores. Se os juízes decidirem que cada
+competidor tem direito a três folhas de papel, a quantidade comprada
+pela diretora é suficiente. Mas se os juízes decidirem que cada
+competidor tem direito a quatro folhas, a quantidade comprada pela
+diretora não seria suficiente.
+<p>
+Você deve escrever um programa que, dados o número de competidores,
+o número de folhas de papel especial compradas pela Diretora e o
+número de folhas que cada competidor deve receber, determine
+se o número de folhas comprado pela Diretora é suficiente.
+
+<h3>Entrada</h3>
+<p>A entrada é composta de uma linha contendo três números inteiros  C,
+ P e
+ F 
+representando respectivamente o número de competidores,
+a quantidade de folhas de papel especial compradas pela Diretora e
+a quantidade de folhas de papel especial que cada competidor deve receber.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve escrever uma única linha 
+contendo  o caractere 'S' se a quantidade de folhas compradas
+pela Diretora é suficiente, ou o caractere 'N' caso contrário.
+Note que os caracteres devem ser letras maiúsculas.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq; C &leq; 1000
+<li>  1 &leq; P &leq; 1000 
+<li> 1 &leq; F &leq; 1000 
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+10 100 10
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+S
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+10 90 10
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+N
+</pre>
+</td></tr></table>
+<p>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+5 40 2
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+S
+</pre>
+</td></tr></table>
+<p>
+<font size="1">Tarefa da OBI2009, Modalidade Programação Júnior, Fase 1</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 3 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Frota de taxi</h2>
+</center>
+<p>
+A Companhia de Taxi Tabajara (CTT) é uma das maiores empresas de
+transporte do país. Possui uma vasta frota de carros e opera em todas
+as grandes cidades. Recentemente a CTT modernizou a sua frota,
+adquirindo um lote de 500 carros bi-combustíveis (carros que podem
+utilizar como combustível tanto álcool quanto gasolina). Além do maior
+conforto para os passageiros e o menor gasto com manutenção, com os
+novos carros é possível uma redução adicional de custo: como o preço
+da gasolina está sujeito a variações muito bruscas e pode ser
+vantagem, em certos momentos, utilizar álcool como
+combustível. Entretanto, os carros possuem um melhor desempenho
+utilizando gasolina, ou seja, em geral, um carro percorre mais
+quilômetros por litro de gasolina do que por litro de álcool.
+
+<p>
+Você deve escrever um programa que, dados o preço do litro de álcool,
+o preço do litro de gasolina e os quilômetros por litro que um carro
+bi-combustível realiza com cada um desses combustíveis, determine se é
+mais econômico abastecer os carros da CTT com álcool ou com
+gasolina. No caso de não haver diferença de custo entre abastecer
+com álcool ou gasolina a CTT prefere utilizar gasolina.
+
+<h3>Entrada</h3>
+<p>
+A entrada é composta por uma linha contendo quatro números reais com
+precisão de duas casas decimais A, G, R<sub>a</sub> e R<sub>g</sub>,
+representando respectivamente o preço por litro do álcool, o preço por
+litro da gasolina, o rendimento (km/l) do carro utilizando álcool e o
+rendimento (km/l) do carro utilizando gasolina.
+
+<h3>Saída</h3>
+<p>
+A saída deve ser composta por uma única linha contendo o caractere
+‘A’ se é mais econômico abastecer a frota com álcool ou o caractere
+‘G’ se é mais econômico ou indiferente abastecer a frota com gasolina.
+</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 0.01 &leq; A &leq; 10.00
+<li> 0.01 &leq; G &leq; 10.00 
+<li> 0.01 &leq; R<sub>a</sub> &leq; 20.00
+<li> 0.01 &leq; R<sub>g</sub> &leq; 20.00 
+
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1.20 2.30 10.00 15.00
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+A
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1.00 1.00 9.00 9.01
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+G
+</pre>
+</td></tr></table>
+<p>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+1.00 1.00 11.00 11.00
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+G
+</pre>
+</td></tr></table>
+<p>
+<font size="1">Tarefa da OBI2005, Modalidade Programação Nível 1, Fase 1</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 3 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 4 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars4" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg4" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Notas da prova</h2>
+</center>
+<p>Rosy é uma talentosa professora do Ensino Médio que já ganhou muitos prêmios pela qualidade de sua aula.
+Seu reconhecimento foi tamanho que foi convidada a dar aulas em uma escola da Inglaterra. Mesmo falando
+bem inglês, Rosy ficou um pouco apreensiva com a responsabilidade, mas resolveu aceitar a proposta e encará-la
+como um bom desafio.</p>
+<p>Tudo ocorreu bem para Rosy até o dia da prova. Acostumada a dar notas de 0 (zero) a 100 (cem), ela fez o
+mesmo na primeira prova dos alunos da Inglaterra. No entanto, os alunos acharam estranho, pois na Inglaterra
+o sistema de notas é diferente: as notas devem ser dadas como conceitos de A a E. O conceito A é o mais alto,
+enquanto o conceito E é o mais baixo.</p>
+<p>Conversando com outros professores, ela recebeu a sugestão de utilizar a seguinte tabela, relacionando as notas
+numéricas com as notas de conceitos:</p>
+<div class="center"> 
+<table border="1" cellspacing="1px" cellpadding="10px">
+<tr>
+  <th>Nota</th><th>Conceito</th>
+</tr>
+<tr>
+  <td align="center">86 a 100</td><td align="center">A</td>
+</tr>
+<tr>
+  <td align="center">61 a 85</td><td align="center">B</td>
+</tr>
+<tr>
+  <td align="center">36 a 60</td><td align="center">C</td>
+</tr>
+<tr>
+  <td align="center">1 a 35</td><td align="center">D</td>
+</tr>
+<tr>
+  <td align="center">0</td><td align="center">E</td>
+</tr>
+</table>
+
+</div>
+<p>O problema é que Rosy já deu as notas no sistema numérico, e terá que converter as notas para o sistema de
+letras. Porém, Rosy precisa preparar as próximas aulas (para manter a qualidade que a tornou reconhecida), e
+não tem tempo suficiente para fazer a conversão das notas manualmente.</p>
+
+<h3>Tarefa</h3>
+<p>Você deve escrever um programa que recebe uma nota no sistema numérico e determina o conceito correspondente.</p>
+
+<h3>Entrada</h3>
+<p>A entrada contém um único conjunto de testes, que deve ser lido do <em>dispositivo de entrada padrão</em> (normalmente
+o teclado). A entrada contém uma única linha com um número inteiro <em>N</em> (0 &le; <em>N</em> &le; 100), representando uma
+nota de prova no sistema numérico.</p>
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve imprimir uma única linha, contendo uma letra (A,
+B, C, D, ou E em maiúsculas) representando o conceito correspondente à
+nota dada na entrada.</p>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+<pre>
+12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+<pre>
+D
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+<pre>
+87
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+<pre>
+A
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+<pre>
+0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+<pre>
+E
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da OBI2009, Modalidade Programação Júnior, Fase 1</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 4 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 5 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars5" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg5" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Conta de água</h2>
+</center>
+
+
+<p>A empresa local de abastecimento de água, a Saneamento Básico da Cidade (SBC), está promovendo uma
+campanha de conservação de água, distribuindo cartilhas e promovendo açãoes demonstrando a importância da
+água para a vida e para o meio ambiente.</p>
+<p>Para incentivar mais ainda a economia de água, a SBC alterou os preços de seu fornecimento de forma que,
+proporcionalmente, aqueles clientes que consumirem menos água paguem menos pelo metro cúbico. Todo cliente
+paga mensalmente uma assinatura de R$ 7, que inclui uma franquia de 10 m<SUP>3</SUP> de água. Isto é, para qualquer
+consumo entre 0 e 10 m<SUP>3</SUP>, o consumidor paga a mesma quantia de R$ 7 reais (note que o valor da assinatura deve
+ser pago mesmo que o consumidor não tenha consumido água). Acima de 10 m<SUP>3</SUP>, cada metro cúbico subsequente
+tem um valor diferente, dependendo da faixa de consumo. A SBC cobra apenas por quantidades inteiras de
+metros cúbicos consumidos. A tabela abaixo especifica o preço por metro cúbico para cada faixa de consumo:</p>
+
+
+<div class="center">
+<table border="1" cellpadding="10px">
+  <tr>
+    <td>
+      <b>Faixa de consumo (m<SUP>3</SUP>)</b>
+      </td>
+    <td>
+      <b>Preço (por m<SUP>3</SUP>)</b>
+      </td>
+    </tr>
+  <tr>
+    <td>
+até 10<br>
+11 a 30<br>
+31 a 100<br>
+101 em diante
+    </td>
+    <td>
+incluído na franquia<br>
+R$ 1<br>
+R$ 2<br>
+R$ 5<br>
+      </td>
+    </tr>
+</table>
+</div>
+<p></p>
+
+<p>Assim, por exemplo, se o consumo foi de 120 m<SUP>3</SUP>, o valor da conta é:</p>
+<ul>
+<li>7 reais da assinatura básica;</li>
+<li>20 reais pelo consumo no intervalo 11 a 30 m<SUP>3</SUP>;</li>
+<li>140 reais pelo consumo no intervalo 31 a 100 m<SUP>3</SUP>;</li>
+<li>100 reais pelo consumo no intervalo 101 a 120 m<SUP>3</SUP>.</li>
+</ul>
+<p>Logo o valor total da conta de água é R$ 267.</p>
+
+<p>Escreva um programa que, dado o consumo de uma residência em m<SUP>3</SUP>, calcula o valor da conta de água daquela
+residência.</p>
+
+<h3>Entrada</h3>
+<p>A única linha da entrada contém um único inteiro <em>N</em>, indicando o consumo de água da residência, em m<SUP>3</SUP>
+(0 &le; <em>N</em> &le; 103).</p>
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve escrever uma única linha, contendo o valor da conta de água da residência.</p>
+
+<h3>Restrições</h3>
+
+<ul>
+<li>0 &le; N &le; 1000
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+7
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+14
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+11
+</pre>
+      </td>
+    </tr>
+</table>
+
+
+<p></p>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+42
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+51
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da OBI2010, Modalidade Programação Nível 1, Fase 1</font>
+<p>&nbsp;</p></div> <!-- end exercise 5 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars6" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg6" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 1, Aula 6
+// Triplo do maior
+
+var valor1, valor2;
+
+// lê a entrada
+scanf("%d%d", "valor1", "valor2");
+
+// calcula e escreve o resultado
+if (valor1 > valor2) {
+  printf("%d\n", 3*valor1);
+}
+else {
+  printf("%d\n", 3*valor2);
+}
+</pre>
+
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 2, Aula 6
+// Aviões de papel
+
+var C, P, F;
+
+// lê a entrada
+scanf("%d%d%d", "C", "P", "F");
+
+// calcula e escreve o resultado
+if (C * F <= P) {
+  printf("S\n");
+}
+else {
+  printf("N\n");
+}
+</pre>
+
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div class="seeMoreContent">
+<p>Podemos determinar a opção mais econômica de duas formas. Uma é
+comparar o preço de cada km rodado com cada um dos
+combustíveis. O código segue abaixo.
+
+<pre class="code">
+// Solução para o exercício 2, Aula 6
+// Frota de taxi
+
+var preco_a, preco_g; // Preço do litro do álcool e da gasolina
+var km_a, km_g;       // Rendimento do álcool e da gasolina, em km/l
+
+// lê a entrada
+scanf("%f%f%f%f", "preco_a", "preco_g", "km_a", "km_g");
+
+// calcula e escreve o resultado
+// compara o preço do km rodado com cada combustível
+if (preco_a/km_a < preco_g/km_g) {
+  printf("A\n");
+} 
+else { 
+  printf("G\n");
+}
+</pre>
+
+<p>Outra maneira é comparar
+qual dos combustíveis permite que o carro ande mais quilômetros,
+considerando que um mesmo valor é gasto para comprar cada tipo de
+combustível. O código segue abaixo.
+
+<pre class="code">
+// Solução para o exercício 2, Aula 6
+// Frota de taxi
+
+var preco_a, preco_g; // Preço do litro do álcool e da gasolina
+var km_a, km_g;       // Rendimento do álcool e da gasolina, em km/l
+
+// lê a entrada
+scanf("%f%f%f%f", "preco_a", "preco_g", "km_a", "km_g");
+
+// calcula e escreve o resultado
+// compara qual combustível permite que o carro ande mais quilômetros
+// com o mesmo gasto de combustível
+if (km_a/preco_a > km_g/preco_g) {
+  printf("A\n");
+} 
+else { 
+  printf("G\n");
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex4-show" class="showLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div id="solution-ex4" class="seeMore">
+<a href="#" id="solution-ex4-hide" class="hideLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div class="seeMoreContent">
+Podemos determinar o conceito referente a uma nota numérica de duas formas. 
+Uma é comparar os intervalos de notas numéricas em ordem decrescente de notas.
+O código segue abaixo.
+
+<pre class="code">
+// Solução para o exercício 4, Aula 6
+// Notas da prova
+
+var N;
+
+// lê a entrada
+scanf("%d", "N");
+
+// calcula e escreve o resultado
+// percorre os intervalos em ordem decrescente
+if (N >= 86) {
+    // intervalo 86 a 100
+    printf("A\n");
+}
+else if (N >= 61) {
+    // intervalo 61 a 85
+    printf("B\n");
+}
+else if (N >= 36) {
+    // intervalo 36 a 60
+    printf("C\n");
+}
+else if (N >= 1) {
+    // intervalo 1 a 35
+    printf("D\n");
+}
+else { // N===0
+    printf("E\n");
+}
+</pre>
+
+Outra maneira é comparar os intervalos de notas numéricas em ordem crescente de notas.
+O código segue abaixo.
+
+<pre class="code">
+// Solução para o exercício 4, Aula 6
+// Notas da prova
+
+var N;
+
+// lê a entrada
+scanf("%d", "N");
+
+// calcula e escreve o resultado
+// percorre os intervalos em ordem crescente
+if (N===0) { // N===0
+    printf("E\n");
+}
+else if (N <= 35) {
+    // intervalo 1 a 35
+    printf("D\n");
+}
+else if (N <= 60) {
+    // intervalo 36 a 60
+    printf("C\n");
+}
+else if (N <= 85) {
+    // intervalo 61 a 85
+    printf("B\n");
+}
+else {
+    // intervalo 86 a 100
+    printf("A\n");
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex5-show" class="showLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div id="solution-ex5" class="seeMore">
+<a href="#" id="solution-ex5-hide" class="hideLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div class="seeMoreContent">
+<pre class="code">
+// Solução para o exercício 5, Aula 6
+// Conta de água
+
+var N;     // consumo de água
+
+// lê a entrada
+scanf("%d", "N");
+
+// calcula e escreve o resultado
+if (N <= 10) {
+  // paga apenas a franquia de R$ 7,00
+  printf("%d\n", 7);
+} 
+else if (N <= 30) {
+  // paga a franquia de R$ 7,00
+  // mais o consumo que excede 10m3 ao preço de R$ 1,00 por m3
+  printf("%d\n", 7 + (N - 10));
+}
+else if (N <= 100) {
+  // paga a franquia de R$ 7,00 
+  // mais R$ 20,00 pelo consumo de 10m3 a 30m3 (20m3 a R$ 1,00)
+  // mais o consumo que excede 30m3 ao preço de R$ 2,00 por m3
+  printf("%d\n", 27 + 2 * (N - 30));
+} 
+else {
+  // paga a franquia de R$ 7,00 
+  // mais R$ 20,00 pelo consumo de 10m3 a 30m3 (20m3 a R$ 1,00)
+  // mais R$ 140,00 pelo consumo até de 30m3 a 100m3 (70m3 a R$ 2,00)
+  // mais o consumo que excede 100m3 ao preço de R$ 5,00 por m3
+  printf("%d\n", 167 + 5 * (N - 100));
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEsIEF1bGEgNgovLyBUcmlwbG8gZG8gbWFpb3IKCnZhciB2YWxvcjEsIHZhbG9yMjsKCi8vIGzDqiBhIGVudHJhZGEKc2NhbmYoIiVkJWQiLCAidmFsb3IxIiwgInZhbG9yMiIpOwoKLy8gY2FsY3VsYSBlIGVzY3JldmUgbyByZXN1bHRhZG8KaWYgKHZhbG9yMSA+IHZhbG9yMikgewogIHByaW50ZigiJWRcbiIsIDMqdmFsb3IxKTsKfQplbHNlIHsKICBwcmludGYoIiVkXG4iLCAzKnZhbG9yMik7Cn0KXi8vIFNvbHXDp8OjbyBwYXJhIG8gZXhlcmPDrWNpbyAyLCBBdWxhIDYKLy8gQXZpw7VlcyBkZSBwYXBlbAoKdmFyIEMsIFAsIEY7CgovLyBsw6ogYSBlbnRyYWRhCnNjYW5mKCIlZCVkJWQiLCAiQyIsICJQIiwgIkYiKTsKCi8vIGNhbGN1bGEgZSBlc2NyZXZlIG8gcmVzdWx0YWRvCmlmIChDICogRiA8PSBQKSB7CiAgcHJpbnRmKCJTXG4iKTsKfQplbHNlIHsKICBwcmludGYoIk5cbiIpOwp9Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMiwgQXVsYSA2Ci8vIEZyb3RhIGRlIHRheGkKCnZhciBwcmVjb19hLCBwcmVjb19nOyAgIC8vIFByZcOnbyBkbyBsaXRybyBkbyDDoWxjb29sIGUgZGEgZ2Fzb2xpbmEKdmFyIGttX2EsIGttX2c7ICAgICAvLyBSZW5kaW1lbnRvIGRvIMOhbGNvb2wgZSBkYSBnYXNvbGluYSwgZW0ga20vbAoKLy8gbMOqIGEgZW50cmFkYQpzY2FuZigiJWYlZiVmJWYiLCAicHJlY29fYSIsICJwcmVjb19nIiwgImttX2EiLCAia21fZyIpOwoKLy8gY2FsY3VsYSBlIGVzY3JldmUgbyByZXN1bHRhZG8KaWYgKHByZWNvX2Eva21fYSA8IHByZWNvX2cva21fZykgewogIHByaW50ZigiQVxuIik7Cn0gCmVsc2UgeyAKICBwcmludGYoIkdcbiIpOwp9Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gNCwgQXVsYSA2Ci8vIE5vdGFzIGRhIHByb3ZhCgp2YXIgTjsKCi8vIGzDqiBhIGVudHJhZGEKc2NhbmYoIiVkIiwgIk4iKTsKCi8vIGNhbGN1bGEgZSBlc2NyZXZlIG8gcmVzdWx0YWRvCmlmIChOID49IDg2KSB7CiAgICBwcmludGYoIkFcbiIpOwp9CmVsc2UgaWYgKE4gPj0gNjEpIHsKICAgIHByaW50ZigiQlxuIik7Cn0KZWxzZSBpZiAoTiA+PSAzNikgewogICAgcHJpbnRmKCJDXG4iKTsKfQplbHNlIGlmIChOID49IDEpIHsKICAgIHByaW50ZigiRFxuIik7Cn0KZWxzZSB7IC8vIE49PT0wCiAgICBwcmludGYoIkVcbiIpOwp9Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gNSwgQXVsYSA2Ci8vIENvbnRhIGRlIMOhZ3VhCgp2YXIgTjsgICAgIC8vIGNvbnN1bW8gZGUgw6FndWEKCi8vIGzDqiBhIGVudHJhZGEKc2NhbmYoIiVkIiwgIk4iKTsKCi8vIGNhbGN1bGEgZSBlc2NyZXZlIG8gcmVzdWx0YWRvCmlmIChOIDw9IDEwKSB7CiAgLy8gcGFnYSBhcGVuYXMgYSBmcmFucXVpYSBkZSBSJCA3LDAwCiAgcHJpbnRmKCIlZFxuIiwgNyk7Cn0gCmVsc2UgaWYgKE4gPD0gMzApIHsKICAvLyBwYWdhIGEgZnJhbnF1aWEgZGUgUiQgNywwMAogIC8vIG1haXMgbyBjb25zdW1vIHF1ZSBleGNlZGUgMTBtMyBhbyBwcmXDp28gZGUgUiQgMSwwMCBwb3IgbTMKICBwcmludGYoIiVkXG4iLCA3ICsgKE4gLSAxMCkpOwp9CmVsc2UgaWYgKE4gPD0gMTAwKSB7CiAgLy8gcGFnYSBhIGZyYW5xdWlhIGRlIFIkIDcsMDAgCiAgLy8gbWFpcyBSJCAyMCwwMCBwZWxvIGNvbnN1bW8gZGUgMTBtMyBhIDMwbTMgKDIwbTMgYSBSJCAxLDAwKQogIC8vIG1haXMgbyBjb25zdW1vIHF1ZSBleGNlZGUgMzBtMyBhbyBwcmXDp28gZGUgUiQgMiwwMCBwb3IgbTMKICBwcmludGYoIiVkXG4iLCAyNyArIDIgKiAoTiAtIDMwKSk7Cn0gCmVsc2UgewogIC8vIHBhZ2EgYSBmcmFucXVpYSBkZSBSJCA3LDAwIAogIC8vIG1haXMgUiQgMjAsMDAgcGVsbyBjb25zdW1vIGRlIDEwbTMgYSAyMG0zICgyMG0zIGEgUiQgMSwwMCkKICAvLyBtYWlzIFIkIDE0MCwwMCBwZWxvIGNvbnN1bW8gYXTDqSBkZSAzMG0zIGEgMTAwbTMgKDcwbTMgYSBSJCAyLDAwKQogIC8vIG1haXMgbyBjb25zdW1vIHF1ZSBleGNlZGUgMTAwbTMgYW8gcHJlw6dvIGRlIFIkIDUsMDAgcG9yIG0zCiAgcHJpbnRmKCIlZFxuIiwgMTY3ICsgNSAqIChOIC0gMTAwKSk7Cn0K">
+  <input type="hidden" id="hiddentests" value="NCAyOQo7MzUgOQo7MTIgNgo7NTI1IDcKOzgxIDM4NQo7NTEgNTIKOzY2IDEwMAo7MTQ0IDIxMQo7OTk5IDEwMDAKOzUxMyA2NApeNCAyOSA3Cjs0IDM1IDkKOzIgMTIgNgo7NzMgNTI1IDcKOzgxIDM4NSAxMwo7MTEgNTEgNAo7NjYgMTAwIDkKOzEzIDE0NCAxMQo7MTAwMCAxMDAwIDEwMDAKOzggNTEzIDY0Cl4xLjAwIDEuMDAgOC4wMCA4LjAxCjsxLjIwIDIuMzAgMTAuMDAgMTYuMDAKOzEuMDAgMS4wMCAyLjAwIDIuMDAKOzAuMDEgMC4wMSAyMC4wMCAyMC4wMAo7MS4yMCAxLjI1IDEuMDAgMC41MAo7MC4wMSAwLjAyIDIwLjAwIDIwLjAwCjsxMC4wMCAwLjAxIDIwLjAwIDIwLjAwCjs1LjAwIDYuMDAgMS4wMCAxLjAwCjsxMC4wMCAwLjAxIDEwLjAwIDAuMDEKOzEwLjAwIDAuMDEgMTAuMDEgMC4wMQpeMTAwCjswCjsxCjszNQo7MzYKOzYwCjs2MQo7ODUKOzg2Cjs5OQpeMwo7MTUKOzQwCjsxOTAKOzEwCjswCjsxMDAwCjszNQo7ODM5Cjs5OTkK">
+  <input type="hidden" id="hiddenresults" value="ODcKOzEwNQo7MzYKOzE1NzUKOzExNTUKOzE1Ngo7MzAwCjs2MzMKOzMwMDAKOzE1MzkKXlMKO04KO1MKO1MKO04KO1MKO04KO1MKO04KO1MKXkcKO0EKO0cKO0cKO0EKO0EKO0cKO0EKO0cKO0EKXkEKO0UKO0QKO0QKO0MKO0MKO0IKO0IKO0EKO0EKXjcKOzEyCjs0Nwo7NjE3Cjs3Cjs3Cjs0NjY3CjszNwo7Mzg2Mgo7NDY2Mgo=">
+  <input type="hidden" id="hiddensamples" value="MTAgMTEKXjEwIDEwMCAxMApeMS4yMCAyLjMwIDEwLjAwIDE1LjAwCgpeMTIKXjgK">
+  <input type="hidden" id="hiddenhints" value="KFxidmFyXHMrdmFsb3IxXHMqLFxzKnZhbG9yMlxzKjt8XGJ2YXJccyt2YWxvcjFccyo7XHMqdmFyXHMrdmFsb3IyXHMqOylccypzY2FuZlwoXCIlZCVkXCJccyosXHMqXCJ2YWxvcjFcIlxzKixccypcInZhbG9yMiJcKVxzKjtccyppZlxzKlwoXHMqdmFsb3IxXHMqPlxzKnZhbG9yMlxzKlwpXHMqCk11aXRvIGJlbS4gVmVqbyBxdWUgauEgZGVjbGFyb3UgYXMgdmFyaeF2ZWlzLCBlc2NyZXZldSBvIGNvbWFuZG8gZGUgbGVpdHVyYSA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBjb3JyZXRhbWVudGUgZSB0ZW50b3UgZXNjcmV2ZXIgbyBjb21hbmRvIGNvbmRpY2lvbmFsIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+IHBhcmEgdGVzdGFyIHF1YWwgZGFzIGR1YXMgdmFyaeF2ZWlzIHRlbSBvIG1haW9yIHZhbG9yLiA8cD5BIGV4cHJlc3PjbyBs82dpY2EgZG8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBlc3ThIGNvcnJldGEsIG1hcyBvcyBibG9jb3MgZGUgY29tYW5kb3MgbuNvIGVzdONvIGNvcnJldG9zLgpPIGZvcm1hdG8gZ2VyYWwgZG8gY29tYW5kbyBjb25kaWNpb25hbCDpIDxwPjxzcGFuIGNsYXNzPSJ0dCI+IGlmICg8ZW0+ZXhwcmVzc2FvX2zzZ2ljYTwvZW0+KSB7PGJyPiAmbmJzcDsmbmJzcDsmbmJzcDs8ZW0+YmxvY29fZGVfY29tYW5kb3MxPC9lbT48YnI+IH08YnI+IDxlbT5lbHNlPC9lbT4gezxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7PGVtPmJsb2NvX2RlX2NvbWFuZG9zMjwvZW0+PGJyPjwvc3Bhbj4gfSA8cD5PIDxlbT5ibG9jb19kZV9jb21hbmRvczE8L2VtPiDpIGV4ZWN1dGFkbyBzZSA8ZW0+ZXhwcmVzc+NvX2zzZ2ljYTwvZW0+IOkgdmVyZGFkZWlyYSwgZSBvIDxlbT5ibG9jb19kZV9jb21hbmRvczI8L2VtPiDpIGV4ZWN1dGFkbyBjYXNvIGNvbnRy4XJpby4KVm9j6iB1c291IGEgZXhwcmVzc+NvIGzzZ2ljYSA8c3BhbiBjbGFzcz0idHQiPih2YWxvcjEgPiB2YWxvcjIpPC9zcGFuPiwgZSBwb3J0YW50byBjb21vIDxlbT5ibG9jb19kZV9jb21hbmRvczE8L2VtPiBzZXUgcHJvZ3JhbWEgZGV2ZSB0ZXIgdW0g+m5pY28gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4gcGFyYSBlc2NyZXZlciBuYSBzYe1kYSBvIHZhbG9yIDxzcGFuIGNsYXNzPSJ0dCI+Myp2YWxvcjE8L3NwYW4+LiBFIGNvbW8gPGVtPmJsb2NvX2RlX2NvbWFuZG9zMjwvZW0+IHNldSBwcm9ncmFtYSBkZXZlIHRlciB1bSD6bmljbyBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiBwYXJhIGVzY3JldmVyIG5hIHNh7WRhIG8gdmFsb3IgPHNwYW4gY2xhc3M9InR0Ij4zKnZhbG9yMjwvc3Bhbj4uCkAoXGJ2YXJccyt2YWxvcjFccyosXHMqdmFsb3IyXHMqO3xcYnZhclxzK3ZhbG9yMVxzKjtccyp2YXJccyt2YWxvcjJccyo7KVxzKnNjYW5mXChcIiVkJWRcIlxzKixccypcInZhbG9yMVwiXHMqLFxzKlwidmFsb3IyIlwpXHMqO1xzKmlmXHMrXCgKTXVpdG8gYmVtLiBWZWpvIHF1ZSBq4SBkZWNsYXJvdSBhcyB2YXJp4XZlaXMsIGVzY3JldmV1IG8gY29tYW5kbyBkZSBsZWl0dXJhIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IGNvcnJldGFtZW50ZSBlIHRlbnRvdSBlc2NyZXZlciBvIGNvbWFuZG8gY29uZGljaW9uYWwgPHNwYW4gY2xhc3M9InR0Ij5pZjwvc3Bhbj4gcGFyYSB0ZXN0YXIgcXVhbCBkYXMgZHVhcyB2YXJp4XZlaXMgdGVtIG8gbWFpb3IgdmFsb3IuIE1hcyBvIGNvbWFuZG8gY29uZGljaW9uYWwgbuNvIGVzdOEgY29ycmV0by4KTyBmb3JtYXRvIGdlcmFsIGRvIGNvbWFuZG8gY29uZGljaW9uYWwg6SA8cD48c3BhbiBjbGFzcz0idHQiPiBpZiAoPGVtPmV4cHJlc3Nhb19s82dpY2E8L2VtPikgezxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7PGVtPmJsb2NvX2RlX2NvbWFuZG9zMTwvZW0+PGJyPiB9PGJyPiA8ZW0+ZWxzZTwvZW0+IHs8YnI+ICZuYnNwOyZuYnNwOyZuYnNwOzxlbT5ibG9jb19kZV9jb21hbmRvczI8L2VtPjxicj48L3NwYW4+IH0gPHA+TyA8ZW0+YmxvY29fZGVfY29tYW5kb3MxPC9lbT4g6SBleGVjdXRhZG8gc2UgPGVtPmV4cHJlc3Pjb19s82dpY2E8L2VtPiDpIHZlcmRhZGVpcmEsIGUgbyA8ZW0+YmxvY29fZGVfY29tYW5kb3MyPC9lbT4g6SBleGVjdXRhZG8gY2FzbyBjb250cuFyaW8uCkEgZXhwcmVzc+NvIGzzZ2ljYSBkbyBjb21hbmRvIGNvbmRpY2lvbmFsIHBvZGUgc2VyIHBvciBleGVtcGxvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+PHNwYW4gY2xhc3M9InR0Ij4odmFsb3IxID4gdmFsb3IyKTwvc3Bhbj48L2Rpdj4gPHA+ZSBjYWRhIHVtIGRvcyBibG9jb3MgZG8gY29tYW5kbyBjb25kaWNpb25hbCBkZXZlIHNlciB1bSBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiBwYXJhIGVzY3JldmVyIG8gcmVzdWx0YWRvIG5hIHNh7WRhLiBDb3JyaWphIG8gY29tYW5kbyBjb25kaWNpb25hbCBubyBzZXUgcHJvZ3JhbWEuCiBAKFxidmFyXHMrdmFsb3IxXHMqLFxzKnZhbG9yMlxzKjt8XGJ2YXJccyt2YWxvcjFccyo7XHMqdmFyXHMrdmFsb3IyXHMqOylccypzY2FuZlwoXCIlZCVkXCJccyosXHMqXCJ2YWxvcjFcIlxzKixccypcInZhbG9yMiJcKVxzKjsKT0ssIGVzdOEgbm8gYm9tIGNhbWluaG8uIFZlam8gcXVlIGrhIGRlY2xhcm91IGFzIHZhcmnhdmVpcyBlIGVzY3JldmV1IG8gY29tYW5kbyBkZSBsZWl0dXJhIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IGNvcnJldGFtZW50ZS4gQWdvcmEg6SBuZWNlc3PhcmlvIHZlcmlmaWNhciBxdWFsIGRhcyBkdWFzIHZhcmnhdmVpcyB0ZW0gbyBtYWlvciB2YWxvci4gUGFyYSBpc3NvIHZvY+ogZGV2ZSB1c2FyIG8gY29tYW5kbyBjb25kaWNpb25hbCA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPi4KTyBmb3JtYXRvIGdlcmFsIGRvIGNvbWFuZG8gY29uZGljaW9uYWwg6SA8cD48c3BhbiBjbGFzcz0idHQiPiBpZiAoPGVtPmV4cHJlc3Nhb19s82dpY2E8L2VtPikgezxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7PGVtPmJsb2NvX2RlX2NvbWFuZG9zMTwvZW0+PGJyPiB9PGJyPiA8ZW0+ZWxzZTwvZW0+IHs8YnI+ICZuYnNwOyZuYnNwOyZuYnNwOzxlbT5ibG9jb19kZV9jb21hbmRvczI8L2VtPjxicj48L3NwYW4+IH08YnI+CkEgZXhwcmVzc+NvIGzzZ2ljYSBkbyBjb21hbmRvIGNvbmRpY2lvbmFsIHBvZGUgc2VyIHBvciBleGVtcGxvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+PHNwYW4gY2xhc3M9InR0Ij4odmFsb3IxID4gdmFsb3IyKTwvc3Bhbj48L2Rpdj4gPHA+ZSBjYWRhIHVtIGRvcyBibG9jb3MgZG8gY29tYW5kbyBjb25kaWNpb25hbCBkZXZlIHNlciB1bSBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiBwYXJhIGVzY3JldmVyIG8gcmVzdWx0YWRvIG5hIHNh7WRhLiBFc2NyZXZhIGFnb3JhIG8gY29tYW5kbyBjb25kaWNpb25hbCBubyBzZXUgcHJvZ3JhbWEuCkAoXGJ2YXJccyt2YWxvcjFccyosXHMqdmFsb3IyXHMqO3xcYnZhclxzK3ZhbG9yMVxzKjtccyp2YXJccyt2YWxvcjJccyo7KVxzKnNjYW5mXChcIiVkJWRcIlxzKixccypcIlx3K1wiXHMqLFxzKlwiXHcrXCJcKVxzKjsKQm9tLi4uIFZlam8gcXVlIGrhIGRlY2xhcm91IGEgdmFyaeF2ZWwgY29tIG8gbm9tZSBjb3JyZXRvIGUgYXTpIGVzY3JldmV1IHVtIGNvbWFuZG8gZGUgbGVpdHVyYSA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBjb20gYSBjYWRlaWEgZm9ybWF0YWRvcmEgbmEgZm9ybWEgY29ycmV0YS4gTWFzIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgZG8gY29tYW5kbyBkZSBsZWl0dXJhIG7jbyBlc3TjbyBjb3JyZXRvcy4gPHA+IE5vdGUgcXVlIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgbm8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBkZXZlIHNlciA8c3BhbiBjbGFzcz0idHQiPnZhbG9yMTwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPnZhbG9yMjwvc3Bhbj4uCjxwPkNvbW8gZXhlbXBsbywgbyBjb21hbmRvIGFiYWl4byBs6iB0cupzIGludGVpcm9zIHBhcmEgdHLqcyB2YXJp4XZlaXMgZGUgbm9tZXMgPHNwYW4gY2xhc3M9InR0Ij5taW4sIG1lZDwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPm1heDwvc3Bhbj46IDxwPjxzcGFuIGNsYXNzPSJ0dCI+c2NhbmYoIiVkJWQlZCIsIm1pbiIsIm1lZCIsIm1heCIpOzwvc3Bhbj4gPHA+RXNjcmV2YSBvIGNvbWFuZG8gZGUgbGVpdHVyYSBubyBzZXUgcHJvZ3JhbWEsIHVzYW5kbyBjb21vIGd1aWEgbyBleGVtcGxvIGFjaW1hLiBVc2UsIG5hIGxpc3RhIGRlIHZhcmnhdmVpcyBkbyBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+LCBvcyBub21lcyBkYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91LgpAKFxidmFyXHMrdmFsb3IxXHMqLFxzKnZhbG9yMlxzKjt8XGJ2YXJccyt2YWxvcjFccyo7XHMqdmFyXHMrdmFsb3IyXHMqOylccypzY2FuZlwoXCIlZCVkXCIsLipcKVxzKjsKQm9tLCBlc3ThIGluZG8gYmVtLiBWZWpvIHF1ZSBq4SBkZWNsYXJvdSBhIHZhcmnhdmVsIGNvcnJldGFtZW50ZSBlIGF06SBlc2NyZXZldSB1bSBjb21hbmRvIGRlIGxlaXR1cmEgPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gY29tIGEgY2FkZWlhIGZvcm1hdGFkb3JhIG5hIGZvcm1hIGNvcnJldGEuIE1hcyBsaXN0YSBkZSB2YXJp4XZlaXMgZG8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBu428gZXN04SBlc2NyaXRhIGRlIGZvcm1hIGNvcnJldGEuCk8gZm9ybWF0byBnZXJhbCBkbyBjb21hbmRvIOkgPHA+PGRpdiBjbGFzcz0iY2VudGVyIj48c3BhbiBjbGFzcz0idHQiPnNjYW5mKDwvc3Bhbj4iPGVtPmNhZGVpYV9mb3JtYXRhZG9yYTwvZW0+IiwgPGVtPmxpc3RhX2RlX3ZhcmnhdmVpczwvZW0+KTs8L3NwYW4+PC9kaXY+PHA+IG9uZGUgPGVtPmNhZGVpYSBmb3JtYXRhZG9yYTwvZW0+IOkgdW1hIGNhZGVpYSBkZSBjYXJhY3RlcmVzIHF1ZSBlc3BlY2lmaWNhIG9zIGZvcm1hdG9zIGVtIHF1ZSBhcyB2YXJp4XZlaXMgZGEgPGVtPmxpc3RhX2RlX3ZhcmnhdmVpczwvZW0+IGRldmVtIHNlciBsaWRhcy4gQXMgdmFyaeF2ZWlzIG5hIDxlbT5saXN0YV9kZV92YXJp4XZlaXM8L2VtPiBkZXZlbSBzZXIgc2VwYXJhZGFzIHBvciB27XJndWxhLCBlIGNhZGEgbm9tZSBkZSB2YXJp4XZlbCBkZXZlIHNlciBjb2xvY2FkbyBlbnRyZSBhc3BhcyBkdXBsYXMuCjxwPkNvbW8gZXhlbXBsbywgbyBjb21hbmRvIGFiYWl4byBs6iB0cupzIGludGVpcm9zIHBhcmEgdHLqcyB2YXJp4XZlaXMgZGUgbm9tZXMgPHNwYW4gY2xhc3M9InR0Ij5taW4sIG1lZDwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPm1heDwvc3Bhbj46IDxwPjxzcGFuIGNsYXNzPSJ0dCI+c2NhbmYoIiVkJWQlZCIsIm1pbiIsIm1lZCIsIm1heCIpOzwvc3Bhbj4gPHA+RXNjcmV2YSBvIGNvbWFuZG8gZGUgbGVpdHVyYSBubyBzZXUgcHJvZ3JhbWEsIHVzYW5kbyBjb21vIGd1aWEgbyBleGVtcGxvIGFjaW1hLiBVc2UsIG5hIGxpc3RhIGRlIHZhcmnhdmVpcyBkbyBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+LCBvcyBub21lcyBkYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91LgpAKFxidmFyXHMrdmFsb3IxXHMqLFxzKnZhbG9yMlxzKjt8XGJ2YXJccyt2YWxvcjFccyo7XHMqdmFyXHMrdmFsb3IyXHMqOylccypzY2FuZi4qCkJvbS4uLiBWZWpvIHF1ZSBq4SBkZWNsYXJvdSBhIHZhcmnhdmVsIGNvbSBvIG5vbWUgY29ycmV0byBlIGF06SBlc2NyZXZldSB1bSBjb21hbmRvIGRlIGxlaXR1cmEgPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4uIE1hcyBvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gbuNvIGVzdOEgZXNjcml0byBkZSBmb3JtYSBjb3JyZXRhLgpPIGZvcm1hdG8gZ2VyYWwgZG8gY29tYW5kbyDpIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+PHNwYW4gY2xhc3M9InR0Ij5zY2FuZig8L3NwYW4+IjxlbT5jYWRlaWFfZm9ybWF0YWRvcmE8L2VtPiIsIDxlbT5saXN0YV9kZV92YXJp4XZlaXM8L2VtPik7PC9zcGFuPjwvZGl2PjxwPiBvbmRlIDxlbT5jYWRlaWEgZm9ybWF0YWRvcmE8L2VtPiDpIHVtYSBjYWRlaWEgZGUgY2FyYWN0ZXJlcyBxdWUgZXNwZWNpZmljYSBvcyBmb3JtYXRvcyBlbSBxdWUgYXMgdmFyaeF2ZWlzIGRhIDxlbT5saXN0YV9kZV92YXJp4XZlaXM8L2VtPiBkZXZlbSBzZXIgbGlkYXMuIEFzIHZhcmnhdmVpcyBuYSA8ZW0+bGlzdGFfZGVfdmFyaeF2ZWlzPC9lbT4gZGV2ZW0gc2VyIHNlcGFyYWRhcyBwb3Igdu1yZ3VsYSwgZSBjYWRhIG5vbWUgZGUgdmFyaeF2ZWwgZGV2ZSBzZXIgY29sb2NhZG8gZW50cmUgYXNwYXMgZHVwbGFzLgo8cD5QYXJhIGVzdGUgZXhlcmPtY2lvIHZvY+ogcHJlY2lzYSBsZXIgZGEgZW50cmFkYSBkb2lzIHZhbG9yZXMgaW50ZWlyb3MsIHBvcnRhbnRvIGEgPGVtPmNhZGVpYV9mb3JtYXRhZG9yYTwvZW0+IOkgIiVkJWQiIGUgYSA8ZW0+bGlzdGFfZGVfdmFyaeF2ZWlzPC9lbT4g6SBmb3JtYWRhIHBlbG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIHZvY+ogcXVlciBsZXIsIGNhZGEgbm9tZSBlbnRyZSBhc3BhcyBkdXBsYXMuCjxwPkNvbW8gZXhlbXBsbywgbyBjb21hbmRvIGFiYWl4byBs6iB0cupzIGludGVpcm9zIHBhcmEgdHLqcyB2YXJp4XZlaXMgZGUgbm9tZXMgPHNwYW4gY2xhc3M9InR0Ij5taW4sIG1lZDwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPm1heDwvc3Bhbj46IDxwPjxzcGFuIGNsYXNzPSJ0dCI+c2NhbmYoIiVkJWQlZCIsIm1pbiIsIm1lZCIsIm1heCIpOzwvc3Bhbj4gPHA+RXNjcmV2YSBvIGNvbWFuZG8gZGUgbGVpdHVyYSBubyBzZXUgcHJvZ3JhbWEsIHVzYW5kbyBjb21vIGd1aWEgbyBleGVtcGxvIGFjaW1hLiBVc2UsIG5hIGxpc3RhIGRlIHZhcmnhdmVpcyBkbyBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+LCBvcyBub21lcyBkYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91LgpAXGJ2YXJccyt2YWxvcjFccyosXHMqdmFsb3IyXHMqO3xcYnZhclxzK3ZhbG9yMVxzKjtccyp2YXJccyt2YWxvcjJccyo7Ck9LLCBlc3ThIGluZG8gYmVtLiBWZWpvIHF1ZSBq4SBkZWNsYXJvdSBhcyB2YXJp4XZlaXMgY29tIG9zIG5vbWVzIGNvcnJldG9zLiBFc2NyZXZhIGFnb3JhIG8gY29tYW5kbyBkZSBsZWl0dXJhIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+LCBxdWUgdGVtIG8gZm9ybWF0byBnZXJhbCA8cD48ZGl2IGNsYXNzPSJjZW50ZXIiPjxzcGFuIGNsYXNzPSJ0dCI+c2NhbmYoPC9zcGFuPiI8ZW0+Y2FkZWlhX2Zvcm1hdGFkb3JhPC9lbT4iLCA8ZW0+bGlzdGFfZGVfdmFyaeF2ZWlzPC9lbT4pOzwvc3Bhbj48L2Rpdj48cD4gb25kZSA8ZW0+Y2FkZWlhIGZvcm1hdGFkb3JhPC9lbT4g6SB1bWEgY2FkZWlhIGRlIGNhcmFjdGVyZXMgcXVlIGVzcGVjaWZpY2Egb3MgZm9ybWF0b3MgZW0gcXVlIGFzIHZhcmnhdmVpcyBkYSA8ZW0+bGlzdGFfZGVfdmFyaeF2ZWlzPC9lbT4gZGV2ZW0gc2VyIGxpZGFzLiBBcyB2YXJp4XZlaXMgbmEgPGVtPmxpc3RhX2RlX3ZhcmnhdmVpczwvZW0+IGRldmVtIHNlciBzZXBhcmFkYXMgcG9yIHbtcmd1bGEsIGUgY2FkYSBub21lIGRlIHZhcmnhdmVsIGRldmUgc2VyIGNvbG9jYWRvIGVudHJlIGFzcGFzIGR1cGxhcy4KUGFyYSBlc3RlIGV4ZXJj7WNpbyB2b2PqIHByZWNpc2EgbGVyIGRhIGVudHJhZGEgZG9pcyB2YWxvcmVzIGludGVpcm9zLCBwb3J0YW50byBhIDxlbT5jYWRlaWFfZm9ybWF0YWRvcmE8L2VtPiDpIDxzcGFuIGNsYXNzPSJ0dCI+IiVkJWQiPC9zcGFuPiBlIDxlbT5saXN0YV9kZV92YXJp4XZlaXM8L2VtPiDpIGZvcm1hZGEgcGVsb3Mgbm9tZXMgZGFzIHZhcmnhdmVpcyBxdWUgdm9j6iBxdWVyIGxlciwgY2FkYSBub21lIGVudHJlIGFzcGFzIGR1cGxhcy4KPHA+Q29tbyBleGVtcGxvLCBvIGNvbWFuZG8gYWJhaXhvIGzqIHRy6nMgaW50ZWlyb3MgcGFyYSB0cupzIHZhcmnhdmVpcyBkZSBub21lcyA8c3BhbiBjbGFzcz0idHQiPm1pbiwgbWVkPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+bWF4PC9zcGFuPjogPHA+PHNwYW4gY2xhc3M9InR0Ij5zY2FuZigiJWQlZCVkIiwibWluIiwibWVkIiwibWF4Iik7PC9zcGFuPiA8cD5Fc2NyZXZhIG8gY29tYW5kbyBkZSBsZWl0dXJhIG5vIHNldSBwcm9ncmFtYSwgdXNhbmRvIGNvbW8gZ3VpYSBvIGV4ZW1wbG8gYWNpbWEuIFVzZSwgbmEgbGlzdGEgZGUgdmFyaeF2ZWlzIGRvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4sIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIHZvY+ogZGVjbGFyb3UuCkBcYnZhclxzKyhcdyspXHMqLFxzKihcdyspXHMqO3xcYnZhclxzKyhcdyspXHMqO1xzKnZhclxzKyhcdyspXHMqOwpIbW0sIHZlam8gcXVlIGrhIGRlY2xhcm91IGR1YXMgdmFyaeF2ZWlzLCBtYXMgb3Mgbm9tZXMgZXN0428gZGlmZXJlbnRlcyBkb3MgZXNwZWNpZmljYWRvcy4gT3Mgbm9tZSBkYXMgdmFyaeF2ZWlzLCBkZSBhY29yZG8gY29tIG8gZW51bmNpYWRvLCBkZXZlbSBzZXIgPHNwYW4gY2xhc3M9InR0Ij52YWxvcjE8L3NwYW4+IGUgPHNwYW4gY2xhc3M9InR0Ij52YWxvcjI8L3NwYW4+ICh0b2RhcyBhcyBsZXRyYXMgbWlu+nNjdWxhcykuIENvcnJpamFzIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgZGVjbGFyYWRhcy4KQGVtcHR5ClZvY+ogZGV2ZSBpbmljaWFsbWVudGUgZGVjbGFyYXIgZHVhcyB2YXJp4XZlaXMgZGUgbm9tZXMgPHNwYW4gY2xhc3M9InR0Ij52YWxvcjE8L3NwYW4+IGUgPHNwYW4gY2xhc3M9InR0Ij52YWxvcjI8L3NwYW4+LiBQYXJhIGRlY2xhcmFyIHVtYSB2YXJp4XZlbCwgdXNhbW9zIGEgcGFsYXZyYSByZXNlcnZhZGEgPHNwYW4gY2xhc3M9InR0Ij52YXI8L3NwYW4+LiBPIGV4ZW1wbG8gYWJhaXhvIG1vc3RyYSBhIGRlY2xhcmHn428gZGUgdHLqcyB2YXJp4XZlaXMgZGUgbm9tZXMgPHNwYW4gY2xhc3M9InR0Ij5taW48L3NwYW4+LDxzcGFuIGNsYXNzPSJ0dCI+bWVkPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+bWF4PC9zcGFuPjo8cD48c3BhbiBjbGFzcz0idHQiPnZhciBtaW4sIG1lZCwgbWF4Ozwvc3Bhbj4gPHA+RXNjcmV2YSBubyBFZGl0b3IgYSBkZWNsYXJh5+NvIGRlIGR1YXMgdmFyaeF2ZWlzIGRlIG5vbWVzIDxzcGFuIGNsYXNzPSJ0dCI+dmFsb3IxPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+dmFsb3IyPC9zcGFuPiB1c2FuZG8gY29tbyBndWlhIG8gZXhlbXBsbyBhY2ltYS4gRSBu428gc2UgZXNxdWXnYSBkbyBwb250by1lLXbtcmd1bGEgYW8gZmluYWwgZGEgZGVjbGFyYefjby5eLioKQmVtLCBhbnRlcyBkZSBlc2NyZXZlciBvIHByb2dyYW1hLCBhIHByaW1laXJhIGNvaXNhIGEgZmF6ZXIg6SBlbnRlbmRlciBvIHByb2JsZW1hIGUgcGVuc2FyIG5hIHNvbHXn428uIErhIHRlbSBhIHNvbHXn428gZW0gbWVudGU/IErhIHZlcmlmaWNvdSAoY29tIHBhcGVsIGUgbOFwaXMpIHF1ZSBzdWEgc29sdefjbyByZXNvbHZlIGNvcnJldGFtZW50ZSBvcyBleGVtcGxvcyBkZSBlbnRyYWRhIG1vc3RyYWRvcyBubyBlbnVuY2lhZG8/CkVudONvIHZhbW9zIGzhLiBTZXUgcHJvZ3JhbWEgZGV2ZSA8dWw+PGxpPmRlY2xhcmFyIHRy6nMgdmFyaeF2ZWlzIHBhcmEgYXJtYXplbmFyIG9zIHZhbG9yZXMgZGUgQywgUCBlIEYgZGVzY3JpdG9zIG5vIGVudW5jaWFkby4gPGxpPnVzYXIgdW0gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBwYXJhIGxlciBkYSBlbnRyYWRhIHRy6nMgdmFsb3JlcyBpbnRlaXJvcyBwYXJhIGFzIHZhcmnhdmVpcyBxdWUgdm9j6iBkZWNsYXJvdSA8bGk+dXNhciB1bSBjb21hbmRvIGNvbmRpY2lvbmFsIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+IHBhcmEgZGV0ZXJtaW5hciBvIHJlc3VsdGFkbyA8bGk+dXNhciBkb2lzIGNvbWFuZG9zIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiwgdW0gcGFyYSBlc2NyZXZlciA8c3BhbiBjbGFzcz0idHQiPlM8L3NwYW4+IGUgb3V0cm8gcGFyYSBlc2NyZXZlciA8c3BhbiBjbGFzcz0idHQiPk48L3NwYW4+IG5hIHNh7WRhLCBkZXBlbmRlbmRvIGRvIHJlc3VsdGFkbyBkYSBleHByZXNz428gY29uZGljaW9uYWwgZG8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiA8L3VsPgpBIHBhcnRlIGNlbnRyYWwgZGEgc29sdefjbyDpIGVuY29udHJhciBhIGV4cHJlc3PjbyBs82dpY2EgY29ycmV0YSBwYXJhIG8gY29tYW5kbyBjb25kaWNpb25hbC4gUXVhbCDpIGEgZXhwcmVzc+NvIGzzZ2ljYSBxdWUgdmVyaWZpY2Egc2UgbyBu+m1lcm8gZGUgZm9saGFzIGRlIHBhcGVsIGVzcGVjaWFsIOkgc3VmaWNpZW50ZT8gQW50ZXMgZGUgcHJvc3NlZ3VpciwgZXNjcmV2YSBhIGV4cHJlc3PjbyBs82dpY2EgY29tIHBhcGVsIGUgbOFwaXMsIGNvbnNpZGVyYW5kbyBxdWUgb3Mgbm9tZXMgZGFzIHZhcmnhdmVpcyBxdWUgYXJtYXplbmFtIG9zIHZhbG9yZXMgPHA+PGRpdiBjbGFzcz0iY2VudGVyIj5DLCBQIGUgRiA8L2Rpdj4gPHA+ZGVzY3JpdG9zIG5vIGVudW5jaWFkbyBz428gPHA+PGRpdiBjbGFzcz0iY2VudGVyIj4gPHNwYW4gY2xhc3M9InR0Ij5jLCBwPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+Zjwvc3Bhbj4gPC9kaXY+IDxwPmUgdmVyaWZpcXVlIHF1ZSBlbGEgZXN04SBjb3JyZXRhLCB1dGlsaXphbmRvIG9zIGV4ZW1wbG9zIG1vc3RyYWRvcyBubyBlbnVuY2lhZG8uCkjhIHbhcmlhcyBtYW5laXJhcyBkZSB2ZXJpZmljYXIgc2UgbyBu+m1lcm8gZGUgZm9saGFzIGRlIHBhcGVsIGVzcGVjaWFsIGNvbXByYWRhcyDpIHN1ZmljaWVudGUuIFVtYSBwb3NzaWJpbGlkYWRlIOkgPHA+PGRpdiBjbGFzcz0iY2VudGVyIj4gPHNwYW4gY2xhc3M9InR0Ij4oYypmIDw9IHApPC9zcGFuPiA8L2Rpdj4gPHA+IE5vIGNhc28gZGUgZXNzYSBleHByZXNz428gc2VyIHZlcmRhZGVpcmEsIHNldSBwcm9ncmFtYSBkZXZlIGVzY3JldmVyIDxzcGFuIGNsYXNzPSJ0dCI+Uzwvc3Bhbj4gbmEgc2HtZGEgdXNhbmRvIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+LiBDYXNvIGNvbnRy4XJpbywgc2V1IHByb2dyYW1hIGRldmUgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij5OPC9zcGFuPiBuYSBzYe1kYSwgdXNhbmRvIG91dHJvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+Ll4uKgpCZW0sIGFudGVzIGRlIGVzY3JldmVyIG8gcHJvZ3JhbWEsIGEgcHJpbWVpcmEgY29pc2EgYSBmYXplciDpIGVudGVuZGVyIG8gcHJvYmxlbWEgZSBwZW5zYXIgbmEgc29sdefjby4gSuEgdGVtIGEgc29sdefjbyBlbSBtZW50ZT8gSuEgdmVyaWZpY291IChjb20gcGFwZWwgZSBs4XBpcykgcXVlIHN1YSBzb2x15+NvIHJlc29sdmUgY29ycmV0YW1lbnRlIG9zIGV4ZW1wbG9zIGRlIGVudHJhZGEgbW9zdHJhZG9zIG5vIGVudW5jaWFkbz8KRW50428gdmFtb3MgbOEuIFNldSBwcm9ncmFtYSBkZXZlIDx1bD48bGk+RGVjbGFyYXIgcXVhdHJvIHZhcmnhdmVpcyBwYXJhIGFybWF6ZW5hciBvcyB2YWxvcmVzIDxzcGFuIGNsYXNzPSJ0dCI+QSwgRywgUjxzdWI+YTwvc3ViPjwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPlI8c3ViPmc8L3N1Yj48L3NwYW4+IGRlc2NyaXRvcyBubyBlbnVuY2lhZG8uIDxsaT5Vc2FyIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gcGFyYSBsZXIgZGEgZW50cmFkYSBxdWF0cm8gdmFsb3JlcyBpbnRlaXJvcyBwYXJhIGFzIHZhcmnhdmVpcyBxdWUgdm9j6iBkZWNsYXJvdS4gPGxpPlVzYXIgdW0gY29tYW5kbyBjb25kaWNpb25hbCA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBwYXJhIGRldGVybWluYXIgYSBvcOfjbyBtYWlzIGJhcmF0YSBkZSBjb21idXN07XZlbC4gPGxpPlVzYXIgZG9pcyBjb21hbmRvcyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4sIHVtIHBhcmEgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij5BPC9zcGFuPiBlIG91dHJvIHBhcmEgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij5HPC9zcGFuPiBuYSBzYe1kYSwgZGVwZW5kZW5kbyBkbyByZXN1bHRhZG8gZGEgZXhwcmVzc+NvIGNvbmRpY2lvbmFsIGRvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5pZjwvc3Bhbj4uIDwvdWw+CkEgcGFydGUgY2VudHJhbCBkYSBzb2x15+NvIOkgZW5jb250cmFyIGEgZXhwcmVzc+NvIGzzZ2ljYSBjb3JyZXRhIHBhcmEgbyBjb21hbmRvIGNvbmRpY2lvbmFsLiBPIGV4ZXJj7WNpbyBwZWRlIHBhcmEgZGV0ZXJtaW5hciBxdWFsIGEgb3Dn428gbWFpcyBlY29u9G1pY2EgZGUgY29tYnVzdO12ZWwuIEjhIGR1YXMgbWFuZWlyYXMgZGUgY2FsY3VsYXIgaXNzby4gVW1hIOkgY29tcGFyYXIgcXVhbCBvIHByZedvIGRlIGNhZGEga20gcm9kYWRvIGNvbSBjYWRhIHVtIGRvcyBjb21idXN07XZlaXMuIDxwPlVtYSBvdXRyYSBtYW5laXJhIOkgY29tcGFyYXIgcXVhbCBkb3MgY29tYnVzdO12ZWlzIHBlcm1pdGUgcXVlIG8gY2Fycm8gYW5kZSBtYWlzIHF1aWz0bWV0cm9zLCBjb25zaWRlcmFuZG8gcXVlIHVtIG1lc21vIHZhbG9yIOkgZ2FzdG8gcGFyYSBjb21wcmFyIGNhZGEgdGlwbyBkZSBjb21idXN07XZlbC4KQW50ZXMgZGUgcHJvc3NlZ3VpciwgZXNjcmV2YSBhIGV4cHJlc3PjbyBs82dpY2EgZG8gY29tYW5kbyBjb25kaWNpb25hbCAoY29tIHBhcGVsIGUgbOFwaXMpLCBjb25zaWRlcmFuZG8gcXVlIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIGFybWF6ZW5hbSBvcyB2YWxvcmVzIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+QSwgRywgUjxzdWI+YTwvc3ViPjwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPlI8c3ViPmc8L3N1Yj4gPC9kaXY+IDxwPmRlc2NyaXRvcyBubyBlbnVuY2lhZG8gc+NvIHJlc3BlY3RpdmFtZW50ZSA8cD48ZGl2IGNsYXNzPSJjZW50ZXIiPiA8c3BhbiBjbGFzcz0idHQiPnByZWNvQSwgcHJlY29HLCByZW5kaW1BPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+cmVuZGltRzwvc3Bhbj4sIDwvZGl2PiA8cD5lIHZlcmlmaXF1ZSBxdWUgZWxhIGVzdOEgY29ycmV0YSwgdXRpbGl6YW5kbyBvcyBleGVtcGxvcyBtb3N0cmFkb3Mgbm8gZW51bmNpYWRvLgpVbWEgcG9zc+12ZWwgZXhwcmVzc+NvIGzzZ2ljYSBwYXJhIG8gY29tYW5kbyBjb25kaWNpb25hbCDpIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+KHByZWNvQS9yZW5kaW1BIDwgcHJlY29HL3JlbmRpbUcpPC9zcGFuPiA8L2Rpdj4gPHA+T3V0cmEgcG9zc+12ZWwgZXhwcmVzc+NvIGzzZ2ljYSBwYXJhIG8gY29tYW5kbyBjb25kaWNpb25hbCDpIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+KHJlbmRpbUEvcHJlY29BID4gcmVuZG1HL3ByZWNvRyk8L3NwYW4+IDwvZGl2PiA8cD5Ob3MgZG9pcyBjYXNvcywgc2UgYSBleHByZXNz428gZm9yIHZlcmRhZGVpcmEgc2V1IHByb2dyYW1hIGRldmUgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij5BPC9zcGFuPiBuYSBzYe1kYSB1c2FuZG8gdW0gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4uIFNlbuNvLCBzZXUgcHJvZ3JhbWEgZGV2ZSBlc2NyZXZlciA8c3BhbiBjbGFzcz0idHQiPkc8L3NwYW4+IG5hIHNh7WRhLCB1c2FuZG8gb3V0cm8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4uXi4qCkJlbSwgYW50ZXMgZGUgZXNjcmV2ZXIgbyBwcm9ncmFtYSwgYSBwcmltZWlyYSBjb2lzYSBhIGZhemVyIOkgZW50ZW5kZXIgbyBwcm9ibGVtYSBlIHBlbnNhciBuYSBzb2x15+NvLiBK4SB0ZW0gYSBzb2x15+NvIGVtIG1lbnRlPyBK4SB2ZXJpZmljb3UgKGNvbSBwYXBlbCBlIGzhcGlzKSBxdWUgc3VhIHNvbHXn428gcmVzb2x2ZSBjb3JyZXRhbWVudGUgb3MgZXhlbXBsb3MgZGUgZW50cmFkYSBtb3N0cmFkb3Mgbm8gZW51bmNpYWRvPwpFbnTjbyB2YW1vcyBs4S4gU2V1IHByb2dyYW1hIGRldmUgPHVsPjxsaT5EZWNsYXJhciB1bWEgdmFyaeF2ZWwgcGFyYSBhcm1hemVuYXIgYSBub3RhIG5vIHNpc3RlbWEgbnVt6XJpY28gPHNwYW4gY2xhc3M9InR0Ij5OPC9zcGFuPiBkZXNjcml0YSBubyBlbnVuY2lhZG8uIDxsaT5Vc2FyIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gcGFyYSBsZXIgZGEgZW50cmFkYSB1bSB2YWxvciBpbnRlaXJvIHBhcmEgYSB2YXJp4XZlbCBxdWUgdm9j6iBkZWNsYXJvdS4gPGxpPlVzYXIgY29tYW5kb3MgY29uZGljaW9uYWlzIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+IGVuY2FkZWFkb3MgcGFyYSBkZXRlcm1pbmFyIG8gY29uY2VpdG8gY29ycmVzcG9uZGVudGUg4CBub3RhIG51belyaWNhIGxpZGEuIDxsaT5Vc2FyIGNvbWFuZG9zIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiwgdW0gcGFyYSBjYWRhIGNvbmNlaXRvLCBwYXJhIGVzY3JldmVyIG8gY29uY2VpdG8gbmEgc2HtZGEuIDwvdWw+CkNhZGEgY29uY2VpdG8g6SBkZXRlcm1pbmFkbyBwb3IgdW0gaW50ZXJ2YWxvIGRlIG5vdGFzIG51belyaWNhcy4gTyBleGVyY+1jaW8gcGVkZSBwYXJhIGVuY29udHJhciBvIGNvbmNlaXRvIGNvcnJlc3BvbmRlbnRlIGEgdW1hIG5vdGEgbnVt6XJpY2EuIFBhcmEgaXNzbyDpIG5lY2Vzc+FyaW8gY29tcGFyYXIgbyB2YWxvciBkYSBub3RhIG51belyaWNhIGxpZGEgY29tIG9zIGxpbWl0ZXMgZG9zIGludGVydmFsb3MgcGFyYSBkZXRlcm1pbmFyIGVtIHF1YWwgaW50ZXJ2YWxvIGEgbm90YSBsaWRhIHNlIGVuY2FpeGEuIENvbW8gc+NvIHbhcmlvcyBpbnRlcnZhbG9zIGRpc2p1bnRvcywg6SBuZWNlc3PhcmlvIHVzYXIgY29tYW5kb3MgPHNwYW4gY2xhc3M9InR0Ij5pZjwvc3Bhbj4gZW5jYWRlYWRvcy4gPHA+IEjhIGR1YXMgbWFuZWlyYXMgZGUgZmF6ZXIgb3JnYW5pemFyIG9zIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyBlbmNhZGVhZG9zOiB1bWEg6SBwZXJjb3JyZXIgb3MgaW50ZXJ2YWxvcyBkZSBub3RhcyBvcmRlbmFkb3MgZG8gbWVub3IgcGFyYSBvIG1haW9yIHZhbG9yLCBlIG91dHJhIOkgcGVyY29ycmVyIG9zIGludGVydmFsb3Mgb3JkZW5hZG9zIGRvIG1haW9yIHBhcmEgbyBtZW5vciB2YWxvci4gPHA+UGFyYSBjYWRhIGludGVydmFsbyBkZSBub3RhcyAoY2FkYSBjb21hbmRvIGNvbmRpY2lvbmFsKSBlc2NyZXZhIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+IHBhcmEgZXNjcmV2ZXIgbmEgc2HtZGEgbyBjb25jZWl0byBjb3JyZXNwb25kZW50ZSBhbyBpbnRlcnZhbG8uCkNvbnNpZGVyYW5kbyBxdWUgYSB2YXJp4XZlbCBxdWUgdm9j6iBkZWNsYXJvdSBwYXJhIGFybWF6ZW5hciBvIHZhbG9yIGRhIG5vdGEgbnVt6XJpY2Egc2VqYSA8c3BhbiBjbGFzcz0idHQiPk48L3NwYW4+LCBvIHByaW1laXJvIGNvbWFuZG8gY29uZGljaW9uYWwgdXNhbmRvIGEgb3JkZW0gZGVjcmVzY2VudGUgZGUgaW50ZXJ2YWxvcyDpOiA8cD48c3BhbiBjbGFzcz0idHQiPiBpZiAoTiA+PSA4Nikgezxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7Ly8gaW50ZXJ2YWxvIDg2IGEgMTAwICZuYnNwOyZuYnNwOyZuYnNwO3ByaW50ZigiQVxuIik7PGJyPiB9PGJyPiBlbHNlIC4uLiA8L3NwYW4+Ck8gc2VndW5kbyBjb21hbmRvIGNvbmRpY2lvbmFsIGRldmUgZXNjcmV2ZXIgbyBjb25jZWl0byBwYXJhIG8gcHLzeGltbyBpbnRlcnZhbG8sIHBhcmEgbm90YXMgbnVt6XJpY2FzIGVudHJlIDYxIGUgODU6IDxwPjxzcGFuIGNsYXNzPSJ0dCI+IC4uLiBpZiAoTiA+PSA2NSkgezxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7Ly8gaW50ZXJ2YWxvIDYxIGEgODUgJm5ic3A7Jm5ic3A7Jm5ic3A7cHJpbnRmKCJCXG4iKTs8YnI+IH08YnI+IGVsc2UgLi4uIDwvc3Bhbj4KQmVtLCBq4SBkZXZlIHRlciBmaWNhZG8gY2xhcm8gbyBtZWNhbmlzbW8uIENvbXBsZXRlIGFnb3JhIG8gY+FsY3VsbyBwYXJhIG9zIG91dHJvcyBpbnRlcnZhbG9zIGRlIG5vdGFzLl4uKgpCZW0sIGFudGVzIGRlIGVzY3JldmVyIG8gcHJvZ3JhbWEsIGEgcHJpbWVpcmEgY29pc2EgYSBmYXplciDpIGVudGVuZGVyIG8gcHJvYmxlbWEgZSBwZW5zYXIgbmEgc29sdefjby4gSuEgdGVtIGEgc29sdefjbyBlbSBtZW50ZT8gSuEgdmVyaWZpY291IChjb20gcGFwZWwgZSBs4XBpcykgcXVlIHN1YSBzb2x15+NvIHJlc29sdmUgY29ycmV0YW1lbnRlIG9zIGV4ZW1wbG9zIGRlIGVudHJhZGEgbW9zdHJhZG9zIG5vIGVudW5jaWFkbz8KRW50428gdmFtb3MgbOEuIFNldSBwcm9ncmFtYSBkZXZlIDx1bD48bGk+RGVjbGFyYXIgdW1hIHZhcmnhdmVsIHBhcmEgYXJtYXplbmFyIG8gdmFsb3IgZG8gY29uc3VtbyBkZSDhZ3VhIDxzcGFuIGNsYXNzPSJ0dCI+Tjwvc3Bhbj4gZGVzY3JpdG8gbm8gZW51bmNpYWRvLiA8bGk+VXNhciB1bSBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IHBhcmEgbGVyIGRhIGVudHJhZGEgdW0gdmFsb3IgaW50ZWlybyBwYXJhIGEgdmFyaeF2ZWwgcXVlIHZvY+ogZGVjbGFyb3UuIDxsaT5Vc2FyIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBlbmNhZGVhZG9zIHBhcmEgZGV0ZXJtaW5hciBhIGZhaXhhIGRlIGNvbnN1bW8gZGUg4Wd1YSBjb3JyZXNwb25kZW50ZSBhbyBjb25zdW1vIGxpZG8uIDxsaT5Vc2FyIGNvbWFuZG9zIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiwgdW0gcGFyYSBjYWRhIGZhaXhhIGRlIGNvbnN1bW8sIHBhcmEgZXNjcmV2ZXIgbyB2YWxvciBkYSBjb250YS4gPC91bD4KTyBleGVyY+1jaW8gcGVkZSBwYXJhIGNhbGN1bGFyIG8gdmFsb3IgZGEgY29udGEgZGUg4Wd1YS4gUGFyYSBpc3NvIOkgbmVjZXNz4XJpbyBjb21wYXJhciBvIHZhbG9yIGRlIGNvbnN1bW8gbGlkbyBjb20gb3MgbGltaXRlcyBkYXMgZmFpeGFzIGRlIGNvbnN1bW8gcGFyYSBkZXRlcm1pbmFyIGVtIHF1YWwgZmFpeGEgbyBjb25zdW1vIGxpZG8gc2UgZW5jYWl4YSwgZSBhc3NpbSBzYWJlciBhIHJlZ3JhIHF1ZSBkZXZlIHNlciBhcGxpY2FkYS4gQ29tbyBz428gduFyaWFzIGZhaXhhcyBkZSBjb25zdW1vLCDpIG5lY2Vzc+FyaW8gdXNhciBjb21hbmRvcyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBlbmNhZGVhZG9zLiA8cD4gVW1hIG1hbmVpcmEgZGUgb3JnYW5pemFyIG8gY/NkaWdvIOkgZXNjcmV2ZXIgb3MgY29tYW5kb3MgY29uZGljaW9uYWlzIGVuY2FkZWFkb3MgZGUgZm9ybWEgYSBwZXJjb3JyZXIgYXMgZmFpeGFzIGVtIG9yZGVtIGNyZXNjZW50ZSBkZSB2YWxvcmVzIGRlIGNvbnN1bW8uIDxwPlBhcmEgY2FkYSBmYWl4YSAoY2FkYSBjb21hbmRvIGNvbmRpY2lvbmFsKSBlc2NyZXZhIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+IHBhcmEgZXNjcmV2ZXIgbmEgc2HtZGEgbyB2YWxvciBkYSBjb250YS4gTm90ZSBxdWUgYSByZWdyYSBkZSBj4WxjdWxvIGRvIGNvbnN1bW8gbGV2YSBlbSBjb250YSB0YW1i6W0gbyB2YWxvciBkYSBmcmFucXVpYSBlIG8gdmFsb3IgZGFzIGZhaXhhcyBkZSBjb25zdW1vIGRlIG1lbm9yIHZhbG9yLgpPIHZhbG9yIGRhIGNvbnRhIHBhcmEgY29uc3Vtb3MgYXTpIDEwIG08c3VwPjM8L3N1cD4g6SBhcGVuYXMgYSBmcmFucXVpYSwgcG9ydGFudG8sIGNvbnNpZGVyYW5kbyBxdWUgYSB2YXJp4XZlbCBxdWUgdm9j6iBkZWNsYXJvdSBwYXJhIGFybWF6ZW5hciBvIHZhbG9yIGRvIGNvbnN1bW8gZG8gdXN14XJpbyBzZWphIDxzcGFuIGNsYXNzPSJ0dCI+Tjwvc3Bhbj4sIG8gcHJpbWVpcm8gY29tYW5kbyBjb25kaWNpb25hbCDpOiA8cD48c3BhbiBjbGFzcz0idHQiPiBpZiAoTiA8PSAxMCkgezxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7cHJpbnRmKCIlZFxuIiwgNyk7PGJyPiB9PGJyPiBlbHNlIC4uLiA8L3NwYW4+Ck8gc2VndW5kbyBjb21hbmRvIGNvbmRpY2lvbmFsIGRldmUgY2FsY3VsYXIgYSBjb250YSBwYXJhIGEgcHLzeGltYSBmYWl4YSBkZSBjb25zdW1vLCBkZSAxMSBtPHN1cD4zPC9zdXA+IGEgMzAgbTxzdXA+Mzwvc3VwPjogPHA+PHNwYW4gY2xhc3M9InR0Ij4gLi4uIGlmIChOIDw9IDMwKSB7PGJyPiAmbmJzcDsmbmJzcDsmbmJzcDsvLyBwYWdhIGEgZnJhbnF1aWEgZGUgUiQgNywwMDxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7Ly8gbWFpcyBvIGNvbnN1bW8gcXVlIGV4Y2VkZSAxMG0zPGJyPiAmbmJzcDsmbmJzcDsmbmJzcDsvLyAmbmJzcDsmbmJzcDsmbmJzcDthbyBwcmXnbyBkZSBSJCAxLDAwIHBvciBtMzxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7cHJpbnRmKCIlZFxuIiwgNyArIChOIC0gMTApKTs8YnI+IH08YnI+IGVsc2UgLi4uIDwvc3Bhbj4KTyB0ZXJjZWlybyBjb21hbmRvIGNvbmRpY2lvbmFsIGRldmUgY2FsY3VsYXIgYSBjb250YSBwYXJhIGEgcHLzeGltYSBmYWl4YSBkZSBjb25zdW1vLCBkZSAzMSBtPHN1cD4zPC9zdXA+IGEgMTAwIG08c3VwPjM8L3N1cD46IDxwPjxzcGFuIGNsYXNzPSJ0dCI+IC4uLiBpZiAoTiA8PSAxMDApIHs8YnI+ICZuYnNwOyZuYnNwOyZuYnNwOy8vIHBhZ2EgYSBmcmFucXVpYSBkZSBSJCA3LDAwPGJyPiAmbmJzcDsmbmJzcDsmbmJzcDsvLyBtYWlzIFIkIDIwLDAwIHBlbG8gY29uc3VtbyBkZSAxMG0zIGEgMzBtMzxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7Ly8gJm5ic3A7Jm5ic3A7Jm5ic3A7KDIwbTMgYSBSJCAxLDAwKTxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7Ly8gbWFpcyBvIGNvbnN1bW8gcXVlIGV4Y2VkZSAzMG0zPGJyPiAmbmJzcDsmbmJzcDsmbmJzcDsvLyAmbmJzcDsmbmJzcDsmbmJzcDthbyBwcmXnbyBkZSBSJCAyLDAwIHBvciBtMzxicj4gJm5ic3A7Jm5ic3A7Jm5ic3A7cHJpbnRmKCIlZFxuIiwgMjcgKyAyKihOIC0gMzApKTs8YnI+IH08YnI+IGVsc2UgLi4uIDwvc3Bhbj4KQmVtLCBq4SBkZXZlIHRlciBmaWNhZG8gY2xhcm8gbyBtZWNhbmlzbW8uIENvbXBsZXRlIGFnb3JhIG8gY+FsY3VsbyBwYXJhIGFzIG91dHJhcyBkdWFzIGZhaXhhcyBkZSBjb25zdW1vLg==">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="EvQZgt8rIoM">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

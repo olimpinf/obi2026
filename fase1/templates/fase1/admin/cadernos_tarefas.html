@@ -1,0 +1,51 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:index' %}">Fase 1</a>
+&rsaquo; Cadernos de Tarefas
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+  <div id="content-main">
+
+<h1>Cadernos de Tarefas</h1>
+
+<p>
+É de extrema importância que se mantenha sigilo e
+controle sobre o conteúdo da prova e
+sobre a forma de disponibilização. Solicitamos portanto
+que todo cuidado seja tomado no sentido de preservar
+o sigilo das provas. Em particular, se o computador utilizado
+é compartilhado, remova o arquivo do computador
+após a impressão dos Cadernos de Tarefas.</p>
+
+<p>Os Cadernos de Tarefas (provas) serão disponibilizados no início da
+semana em que sua aplicação está prevista. Veja a data específica
+nos links abaixo.
+
+<p>É necessário imprimir uma cópia do Caderno de Tarefas
+ para cada competidor(a). Infelizmente a OBI não tem recursos para cobrir essa despesa,
+e agradecemos imensamente a contribuição das escolas na impressão das provas.
+
+<p>Clique nos links abaixo para acessar os Cadernos de Tarefas e mais instruções
+para as modalidades Iniciação e Programação.
+
+<ul>
+<li><a href="{% url 'admin:cadernos_tarefas_ini'%}">Cadernos de Tarefas e Instruções para a Modalidade Iniciação
+
+<li><a href="{% url 'admin:cadernos_tarefas_prog'%}">Cadernos de Tarefas e Instruções para a Modalidade Programação
+</ul>
+
+<hr>
+  </div>
+{% endblock %}

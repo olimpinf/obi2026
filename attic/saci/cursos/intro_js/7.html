@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Aula 7 - Mais sobre o comando condicional if</title>
+    <link rel="stylesheet" href="/static/css/saci.min.css" type="text/css" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1468469-1', 'auto');
+      ga('send', 'pageview');
+</script>
+</head>
+<body class='default'>
+  <div id="headerdiv" style="width:97%">
+    <div style="overflow:hidden">
+      <div id="headerLeft" class="footer themeSaci">Projeto Programando o Futuro &#8211; <a href="/saci/cursos/intro_js">
+        Introdução à Programação de Computadores</a></div>
+      <div id="headerRight" class="footer themeSaci"><!--div id="headerUser">naoregistrado@saci</div---></div>
+    <div style="clear:bloth"></div>
+    </div>
+    <!--div style="font-size:1.5em;font-weight:bold;margin-top:10px;color:#7c4204;margin-bottom:-4px">Aula 7 - Mais sobre o comando condicional <span class="tt">if</span></div-->
+    <div class="themeSaci" style="font-size:1.5em;font-weight:bold;margin-top:10px;margin-bottom:-4px">Aula 7 - Mais sobre o comando condicional <span class="tt">if</span></div>
+    <div id="headerPrevNext" class="footer">
+      <a href="/saci/cursos/intro_js/6/" class="prevClass">aula anterior</a>
+      &nbsp; &bull; &nbsp; 
+      <a href="/saci/cursos/intro_js/8/" class="nextClass">próxima aula</a>
+    </div>
+  </div>
+
+  <div id="splitContainer">
+    <div>
+      <div id="splitter">
+        <div  data-intro="Inicie assistindo ao vídeo da aula neste espaço. Você pode assistir em tela cheia, usando os controles do vídeo." data-position="right" data-index="1"> <!-- video panel  start -->
+          <div><!--video-->
+            <div style="margin:0">
+              <div id="player"></div>
+            </div>
+          </div><!-- end video-->
+        </div> <!-- video panel end -->
+        <div> <!--tabs panel start -->
+          <div id="tabs" class="jqx-hideborder"data-intro="Selecione um exercício para resolver. Além dos exercícios, nesta área você  encontra exemplos de soluções e um resumo da aula em forma de texto." data-position="bottom" data-index="2">
+            <ul>
+              <li style="margin-left: 10px;">Resumo</li>
+              <li style="margin-left: 10px;">Exercício 1</li>
+<li style="margin-left: 10px;">Exercício 2</li>
+<li style="margin-left: 10px;">Exercício 3</li>
+<li style="margin-left: 10px;">Exercício 4</li>
+<li style="margin-left: 10px;">Exercício 5</li>
+
+              <li style="margin-left: 10px;">Soluções</li>
+            </ul>
+            <div style="padding:10px;position:absolute"> <!-- revisao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars0" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg0" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Operadores lógicos</h2>
+
+<p>
+Muitas vezes a condição de um comando condicional <span class="tt">if</span> envolve
+mais de uma comparação.
+
+<p>Por exemplo, considere que uma disciplina tenha duas provas, P1 e P2,
+e o aluno é aprovado se:
+
+<p><ul>
+<li> Média das notas das duas provas é maior do que ou igual a 6.0; E
+<li> Nota da P2 é maior do que ou igual a 7.0
+</ul>
+
+<p>
+Um outro exemplo de condição que envolve mais de uma comparação é 
+se quisermos escrever palavra "Parabéns" se:
+
+<p>
+<ul>
+<li> Nota da P1 é igual a 10; OU
+<li> Nota da P2 é igual a 10.
+</ul>
+
+<p>
+Quando a condição envolve mais do que uma comparação podemos
+usar <em>operadores lógicos</em> para construir a expressão
+condicional do comando <span class="tt">if</span>.
+
+<p>
+Os seguintes operadores lógicos são disponíveis em Javascript:
+<p>
+<table border="1" cellspacing="1px" cellpadding="10px">
+<tr>
+  <th>Símbolo</th><th>Operação</th><th>Exemplo</th>
+</tr>
+<tr>
+  <td align="center">&&</td><td align="center">e-lógico</td><td align="center"><span class="tt">media >= 6.0 && nota_p1 >= 7.0</span></td>
+</tr>
+<tr>
+  <td align="center">||</td><td align="center">ou-lógico</td><td align="center"><span class="tt">nota_p1 >= 10.0 || nota_p1 >= 10.0</span></td>
+</tr>
+</table>
+
+<p>Podemos também usar parênteses para construir expressões condicionais mais complexas, como por exemplo:
+
+<pre class="code">
+if ( (media >= 6.0 && nota_p2 >= 7.0) || 
+     (nota_p2 === 10.0 && nota_p1 !== 0.0) ) {
+   printf(“Aprovado\n”);
+}
+else {
+   printf(“Reprovado\n”);
+}
+</pre>
+<p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div> <!-- end revisao -->
+            <!-- exercícios -->
+            <div style="padding:10px; position:absolute"> <!-- exercise 1 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars1" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg1" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Tira-teima</h2>
+</center>
+<p>
+Uma quadra de tênis tem o formato de um retângulo, cujos lados medem 36 pés por 78 pés, que correspondem
+a um retângulo de 432 polegadas por 936 polegadas. No último Grand Slam da Austrália, Rafael Nadal perdeu
+para Novak Djokovi&cacute;, num dos jogos mais bonitos de tênis dos últimos tempos.
+Muitas vezes, uma jogada é tão rápida, e a bola tão próxima da borda da quadra, que o juiz pode tomar uma
+decisão que pode ser contestada por um dos jogadores. Para isso, existe o tira-teima, que utiliza a imagem
+gravada do jogo para decidir se a bola estava dentro ou fora da metade da quadra correspondente a um dos
+jogadores.
+Considere que a semi-quadra de Rafael Nadal corresponde a um retângulo em que dois vértices têm coordenadas
+(0,0) e (432, 468), onde todos os números são em polegadas.
+Você deve escrever um programa para, dadas as coordenadas (X, Y) do ponto de contato da bola com o solo,
+determinar se uma bola bateu no solo dentro ou fora da semi-quadra. Note que se a bola bate na linha divisória
+ela é considerada uma bola dentro.
+
+<h3>Entrada</h3>
+<p>
+A entrada é dada em uma única linha, que contém dois inteiros X e Y, que correspondem às coordenadas do
+ponto (X, Y) de contato da bola com o solo, em polegadas.
+
+<h3>Saída</h3>
+<p>
+Seu programa deve imprimir uma única linha, contendo a palavra <strong>dentro</strong> se a bola bateu dentro da semi-quadra,
+e a palavra <strong>fora</strong> caso contrário.
+</p>
+
+
+<h3>Restrições</h3>
+<ul>
+<li>-500 &le; X, Y &le; 500
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+-2 200
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+fora
+</pre>
+</td></tr></table>
+
+<p>
+<table width="100%" cellspace="2" border="1">
+<tr><td valign="top" width="50%">
+<b>Entrada</b>
+<pre>
+432 10
+</pre>
+</td>
+<td valign="top" width="50%">
+<b>Saída</b>
+<pre>
+dentro
+</pre>
+</td></tr></table>
+<p>
+<font size="1">Tarefa da OBI2012, Modalidade Programação Júnior, Fase 2</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 1 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 2 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars2" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg2" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Zerinho ou Um</h2>
+</center>
+
+<p>
+Todos devem conhecer o jogo <em>Zerinho ou Um</em> (em algumas regiões
+também conhecido como <em>Dois ou Um</em>), utilizado para determinar um
+ganhador entre três ou mais jogadores. Para quem não conhece, o jogo
+funciona da seguinte maneira. Cada jogador escolhe um valor entre zero
+ou um; a um comando (geralmente um dos competidores anuncia em voz
+alta "Zerinho ou... Um!"), todos os participantes mostram o valor
+escolhido, utilizando uma das mãos: se o valor escolhido foi um, o
+competidor mostra o dedo indicador estendido; se o valor escolhido foi
+zero, mostra a mão com todos os dedos fechados. O ganhador é aquele
+que tiver escolhido um valor diferente de todos os outros; se não há
+um jogador com valor diferente de todos os outros (por exemplo
+todos os jogadores escolhem zero, ou um grupo de jogadores escolhe
+zero e outro grupo escolhe um), não há ganhador.
+
+Alice, Beto e Clara são grandes amigos e jogam Zerinho a toda hora:
+para determinar quem vai comprar a pipoca durante a sessão de cinema,
+quem vai entrar na piscina primeiro, etc. Jogam tanto que resolveram 
+fazem um plugin no Facebook para jogar Zerinho. Como não sabem programar,
+dividiram as tarefas entre amigos que sabem, inclusive você.
+
+<p>
+Dados os três  valores escolhidos por Alice, Beto e  Clara, cada valor
+zero ou  um, escreva um  programa que determina  se há um  ganhador, e
+nesse caso determina quem é o ganhador.
+
+<h3>Entrada</h3> 
+<p>A entrada é composta de uma única linha, que contém três inteiros
+A, B e C, indicando respectivamente
+os valores escolhidos por Alice, Beto e Clara.
+
+<h3>Sa&iacute;da</h3>
+<p>
+Seu programa deve produzir uma única linha, contendo um único caractere.
+Se o vencedor é Alice o caractere deve ser 'A',
+se o vencedor é Beto o caractere deve ser 'B',
+se o vencedor é Clara o caractere deve ser 'C' e
+se não há vencedor o caractere deve ser '*' (asterisco).
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 0 &le; A &le; 1
+<li> 0 &le; B &le; 1
+<li> 0 &le; C &le; 1
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 1 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+C
+      </pre>
+    </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+*
+</pre>
+      </td>
+    </tr>
+</table>
+
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+1 0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+A
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da Maratona de Programação da SBC 2013, Fase Local</font>
+<p>
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 2 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 3 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars3" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg3" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Detectando colisões</h2>
+</center>
+
+<p>Detecção de colisão é uma das operações mais comuns (e importantes)
+em jogos eletrônicos. O objetivo, basicamente, é verificar se dois
+objetos quaisquer colidiram, ou seja, se a interseção entre eles é
+diferente de vazio. Isso pode ser usado para saber se duas naves
+colidiram, se um monstro bateu numa parede, se um personagem pegou um
+item, etc.</p>
+
+<p>Para facilitar as coisas, muitas vezes os objetos são aproximados
+por figuras geométricas simples (esferas, paralelepípedos, triângulos
+etc). Neste problema, os objetos são aproximados por retângulos num
+plano.</p>
+
+<p>Um retângulo é definido pelas coordenadas de dois pontos no plano:
+o canto inferior esquerdo tem coordenadas (<em>x</em><SUB>0</SUB>,<em>y</em><SUB>0</SUB>) e o canto superior direito tem
+coordenadas (<em>x</em><SUB>1</SUB>,<em>y</em><SUB>1</SUB>), como mostra a
+figura abaixo.
+
+<div class="center">
+<img src="/static/saci-images/2007f1p1_colisoes.png" alt="figura colisões" width="800px">
+</div>
+
+<p>Escreva um programa que, dados dois retângulos, determine se eles
+se interceptam ou não.</p>
+
+<h3>Entrada</h3> 
+A entrada contém duas linhas. Cada linha contém
+quatro inteiros
+<em>X</em><SUB>0</SUB>, <em>Y</em><SUB>0</SUB>, <em>X</em><SUB>1</SUB> e <em>Y</em><SUB>1</SUB>,
+representando as coordenadas do
+canto inferior esquerdo e do canto superior direito de um
+retângulo. Os lados do retângulo são sempre paralelos aos
+eixos <em>X</em> e <em>Y</em>.</p>
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve escrever uma única linha, contendo o número 1
+(um) caso haja interseção entre os retângulos dados ou o número 0 (zero) não caso haja
+interseção.</p>
+
+<h3>Restrições</h3>
+<ul>
+<li> 0 &le; <em>X</em><SUB>0</SUB> < <em>X</em><SUB>1</SUB> &le; 1.000.000
+<li> 0 &le; <em>Y</em><sub>0</sub> < <em>Y</em><SUB>1</SUB> &le; 1.000.000
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 1 1
+1 1 2 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+1
+      </pre>
+    </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 2 2
+1 1 3 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+1
+</pre>
+      </td>
+    </tr>
+</table>
+
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 1 1
+2 2 3 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+0
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da OBI2007, Modalidade Programação Nível 1, Fase 1</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 3 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 4 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars4" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg4" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Álbum de fotos</h2>
+</center>
+
+<p>Clara está organizando as fotos da sua última viagem num álbum de fotos. Como ela tem muitas fotos, para
+economizar páginas do álbum ela quer colar duas fotos por página do álbum.</p>
+
+<p>Como as fotos são retangulares, as fotos podem ser coladas giradas (mas sempre com lados paralelos aos da
+página do álbum, para preservar o equilíbrio estético do álbum), mas elas devem sempre ficar inteiramente
+contidas no interior da página, e não devem se sobrepor.</p>
+
+<p>Em geral, das muitas formas de posicionar as fotos do álbum só algumas (ou nenhuma) satisfazem estas restrições,
+então pode ser difícil decidir se é possível colar as duas fotos em uma mesma página do álbum, e por isso
+Clara pediu a sua ajuda para escrever um programa que, dadas as dimensões da página e de duas fotos, decide se é
+possível colar as duas fotos na página.</p>
+
+<p>Por exemplo, cada página pode ser 5 x 7, e duas fotos são 3 x 4. Nesse caso, é possível colar as duas fotos:</p>
+
+<div class="center"> 
+  <img src="/static/saci-images/2012f2p2_album.png" width="170px" height="230px">
+</div>
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém dois inteiros <em>X</em> e <em>Y</em> , indicando a largura e a altura da página do álbum.
+Cada uma das duas linhas seguintes contém dois inteiros <em>L</em> e <em>A</em>, indicando a largura e a altura das fotos.</p>
+
+<h3>Sa&iacute;da</h3>
+<p>Seu programa deve escrever uma única linha, contendo um único caractere: 'S', se é possível colar as duas fotos na página do
+álbum, e 'N', caso contrário.</p>
+
+<h3>Restri&ccedil;&otilde;es</h3>
+<ul>
+  <li>1 &le; <em>X</em> &le; 1000</li>
+  <li>1 &le; <em>Y</em> &le; 1000</li>
+  <li>1 &le; <em>L</em> &le; 1000</li>
+  <li>1 &le; <em>A</em> &le; 1000</li>
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 5
+3 4
+3 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+S
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 10
+6 6
+6 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+N
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+13 8
+4 9
+6 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+N
+</pre>
+      </td>
+    </tr>
+</table>
+
+<p>
+<font size="1">Tarefa da OBI2012, Modalidade Programação Nível 2, Fase 2</font>
+<p> 
+&nbsp;
+</p>
+<p>&nbsp;</p></div> <!-- end exercise 4 -->
+<div style="padding:10px; position:absolute"> <!-- exercise 5 -->
+  
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars5" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg5" class="rank">
+	Avalie este exercício
+      </div>
+    </div>
+  </div>
+
+<center>
+<h2>Vice-líder</h2>
+</center>
+<p>A OBI (Organização de Bocha Internacional) é responsável por organizar a competição mundial de bocha.
+Infelizmente esse esporte não é muito popular, e numa tentativa de aumentar a sua popularidade, ficou decidido
+que seriam chamados, para a Grande Final Mundial, o campeão e o vice-campeão de cada sede nacional, ao
+invés de apenas o primeiro lugar.</p>
+<p>Tumbólia é um país pequeno que já havia realizado a sua competição nacional quando a nova regra foi instituída,
+e o comitê local não armazenou quem foi o segundo classificado. Felizmente eles armazenaram a pontuação de
+todos competidores - que foram apenas três, devido ao tamanho diminuto do país. Sabe-se também que as
+pontuações de todos jogadores foram diferentes, de forma que não ocorreu empate entre nenhum deles.</p>
+<p>Resta agora descobrir quem foi o vice-campeão e para isso o comitê precisa de ajuda.</p>
+
+<h3>Entrada</h3>
+<p>A primeira e única linha da entrada consiste de três inteiros separados por espaços, <em>A</em>, <em>B</em> e <em>C</em>, as pontuações
+dos 3 competidores.</p>
+
+<h3>Sa&iacute;da</h3>
+<p>Imprima uma única linha na saída, contendo apenas um número inteiro, a pontuação do vice-campeão.</p>
+
+<h3>Restri&ccedil;&otilde;es</h3>
+<ul>
+  <li>1 &le; <em>A</em> &le; 100</li>
+  <li>1 &le; <em>B</em> &le; 100</li>
+  <li>1 &le; <em>C</em> &le; 100</li>
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 6
+	</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p></p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 5 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Sa&iacute;da</b>
+      <pre>
+9
+</pre>
+      </td>
+    </tr>
+</table>
+<p>
+<font size="1">Tarefa da OBI2012, Modalidade Programação Nível 1, Fase 1</font>
+<p>&nbsp;</p></div> <!-- end exercise 5 -->
+
+            <!-- end exercícios -->
+            <div style="padding:10px;position:absolute"> <!-- solucao -->
+                
+  <div style="width:130px;position:absolute;right:0px;top:10px;">
+    <div style="margin-left:auto;margin-right:auto">
+      <div id="exerciseRatingStars6" style="margin-left:auto;margin-right:auto"><span></span></div>
+      <div id="exerciseRatingMsg6" class="rank">
+	Avalie esta aula
+      </div>
+    </div>
+  </div>
+<h2>Soluções para os exercícios</h2><p>Nesta seção você encontra exemplos de soluções para os exercícios. Mas antes de ver a solução para um exercício tente resolvê-lo, criando a sua própria solução.</p><a href="#" id="solution-ex1-show" class="showLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div id="solution-ex1" class="seeMore">
+<a href="#" id="solution-ex1-hide" class="hideLink" onclick="_showHide('solution-ex1');return false;">
+Solução do Exercício 1
+</a>
+<div class="seeMoreContent">
+Há várias maneiras de verificar se a bola
+foi dentro ou fora. O problema se traduz em determinar
+se um ponto de coordenadas (x,y) está dentro ou fora 
+de um retângulo cujo canto inferior esquerdo tem coordenadas (0,0) e
+cujo canto superior direito tem coordenadas (432,468).
+
+<div class="center">
+<img src="/static/saci-images/point_in_rectangle.png" alt="figura">
+</div>
+
+<p>Note que temos que testar se 
+<ul>
+<li>o valor de 
+<span class="tt">x</span> está dentro dos limites 0 e 432, e 
+<li>o valor de 
+<span class="tt">y</span> está dentro dos limites 0 e 468.
+</ul>
+
+<p>A expressão lógica que verifica se a variável 
+<span class="tt">x</span> está dentro dos limites é
+<p><div class="center">
+<span class="tt">x >= 0 && x <= 432</span>
+</div>
+
+<p>Note que em Javascript NÃO é correto escrever a expressão como
+<p><div class="center">
+<span class="tt">0 >= x => 432</span>
+</div>
+
+<p>A expressão lógica que verifica se a variável 
+<span class="tt">y</span> está dentro dos limites é
+<p><div class="center">
+<span class="tt">y >= 0 && y <= 468</span>
+</div>
+
+<p>A bola é dentro quando a variável 
+<span class="tt">x</span> está dentro dos limites E a variável
+<span class="tt">y</span> está dentro dos limites. Ou seja, 
+a expressão completa que deve ser usada no comando condicional 
+é formada pelo E-lógico das duas expressões mostradas anteriormente:
+<p><div class="center">
+<span class="tt">x >= 0 && x <= 432 && y >= 0 && y <= 468</span>
+</div>
+
+<p>A solução abaixo usa essa abordagem para resolver a tarefa.
+
+<pre class="code">
+// Solução para o exercício 1, Aula 7
+// Tira-teima
+
+var x, y;
+
+// lê a entrada
+scanf("%d%d", "x", "y");
+
+// calcula e escreve o resultado
+if (x >= 0 && x <= 432 && y >= 0 && y <= 468) {
+  printf("dentro\n");
+}
+else {
+  printf("fora\n");
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex2-show" class="showLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div id="solution-ex2" class="seeMore">
+<a href="#" id="solution-ex2-hide" class="hideLink" onclick="_showHide('solution-ex2');return false;">
+Solução do Exercício 2
+</a>
+<div class="seeMoreContent">
+<p>Um jogador é vencedor se escolheu 0 e os outros escolheram 1; ou
+então se o jogador escolheu 1 e os outros escolheram zero. Mas isso
+pode ser simplificado, re-escrevendo a condição de outra forma: um
+jogador é vencedor se o seu valor é diferente dos outros valores.
+
+A expressão lógica que verifica se uma variável 
+<span class="tt">a</span> tem valor diferente de outras duas variáveis
+<span class="tt">b</span> e <span class="tt">c</span>
+ pode ser escrita como
+<p><div class="center">
+<span class="tt">b===c && a!==c</span>
+</div>
+
+<p>
+Note que não é preciso testar se 
+<span class="tt">a</span> é diferente de 
+<span class="tt">b</span>, já que 
+<span class="tt">b</span> tem o mesmo valor que
+<span class="tt">c</span>. 
+
+<p>A solução abaixo usa essa abordagem para resolver a tarefa.
+
+<pre class="code">
+// Solução para o exercício 2, Aula 7
+// Zerinho ou Um
+
+// lê a entrada
+scanf("%d%d%d", "a", "b", "c");
+
+// calcula e escreve o resultado
+if (a===b && c!==b)
+    printf("C\n");
+else if (a===c && b!==c)
+    printf("B\n");
+else if (b===c && a!==c)
+    printf("A\n");
+else
+    printf("*\n");
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex3-show" class="showLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div id="solution-ex3" class="seeMore">
+<a href="#" id="solution-ex3-hide" class="hideLink" onclick="_showHide('solution-ex3');return false;">
+Solução do Exercício 3
+</a>
+<div class="seeMoreContent">
+<p>Esse problema é um exemplo de que, se um problema nos parece
+difícil, devemos procurar mudar a abordagem para a solução. No caso,
+podemos por exemplo pensar em determinar se os retângulos NÃO têm
+interseção, pois com essa abordagem pode ser mais fácil de enxergar a
+solução do que com a abordagem direta de determinar se os retângulos
+têm interseção.
+
+<p>Considere dois os retângulos R1 e R2 quaisquer.
+Existem quatro situações que determinam que R1 e R2 não têm 
+interseção:
+<ul>
+<li>R1 está mais abaixo do que R2
+<li>R1 está mais acima do que R2
+<li>R1 está mais à esquerda do que R2
+<li>R1 está mais à direita do que R2
+</ul>
+
+<p>Essas situações são mostradas na figura abaixo:
+<div class="center">
+<img src="/static/saci-images/colisoes_non_intercept.png" alt="figura2">
+</div>
+
+<p>A solução abaixo implementa essa abordagem.
+<pre class="code">
+// Solução para o exercício 3, Aula 7
+// Detectando colisões
+
+var x_inf_esq_r1, y_inf_esq_r1, x_sup_dir_r1, y_sup_dir_r1; // coordenadas do primeiro retângulo
+var x_inf_esq_r2, y_inf_esq_r2, x_sup_dir_r2, y_sup_dir_r2; // coordenadas do segundo retângulo
+
+// lê o primeiro retângulo
+scanf("%d%d%d%d","x_inf_esq_r1", "y_inf_esq_r1", "x_sup_dir_r1", "y_sup_dir_r1");
+// lê o segundo retângulo
+scanf("%d%d%d%d","x_inf_esq_r2", "y_inf_esq_r2", "x_sup_dir_r2", "y_sup_dir_r2");
+
+// calcula e escreve o resultado
+// é mais fácil verificar se os retângulao NÃO se interceptam
+
+if (y_inf_esq_r2 > y_sup_dir_r1 ||     // R1 abaixo de R2
+    y_inf_esq_r1 > y_sup_dir_r2 ||     // R1 acima de R2
+    x_sup_dir_r1 < x_inf_esq_r2 ||     // R1 à esquerda de R2
+    x_sup_dir_r2 < x_inf_esq_r1) {     // R1 à direita de R2
+    // não se interceptam
+    printf("0\n");
+}
+else {
+    // se interceptam
+    printf("1\n");
+}
+</pre>
+
+<p>Mas também é possível resolver o problema determinando diretamente
+  se os retângulos têm interseção. Para isso, observe as figuras
+  abaixo, que mostram o retângulo R2 "deslizando" por sobre o
+  retângulo R1, na direção do eixo <em>x</em> e na direção do eixo <em>y</em>.
+
+<div class="center">
+<img src="/static/saci-images/colisoes_animated.gif" alt="figura2">
+</div>
+
+<p>Note que, no eixo <em>x</em>, ocorre interseção enquanto a coordenada <em>x</em> do
+  lado esquerdo de R2 for menor do que a coordenada <em>x</em> do lado direito
+  de R1, e (ao mesmo tempo) a coordenada <em>x</em> do lado direito de R2 for
+  maior ou igual à coodenada <em>x</em> do lado esquerdo de de R1.
+
+<p>Já no eixo <em>y</em>, a interseção ocorre enquanto a coordenada <em>y</em> do lado
+  inferior de R2 for menor do que a coordenada <em>y</em> do lado superior de
+  R1, e (ao mesmo tempo) a coordenada <em>y</em> do lado superior de R2 for
+  maior ou igual à coordenada <em>y</em> do lado inferior de R1.
+
+<p>Basta agora notar que R1 e R2 têm interseção quando as duas condições
+  acima são verdadeiras (e-lógico das duas condições, no eixo <em>x</em> e no
+  eixo <em>y</em>).
+
+<p>A solução abaixo implementa essa abordagem.
+<pre class="code">
+// Solução para o exercício 3, Aula 7
+// Detectando colisões
+var x_inf_esq_r1, y_inf_esq_r1, x_sup_dir_r1, y_sup_dir_r1; // coordenadas do primeiro retângulo
+var x_inf_esq_r2, y_inf_esq_r2, x_sup_dir_r2, y_sup_dir_r2; // coordenadas do segundo retângulo
+
+// lê o primeiro retângulo
+
+scanf("%d%d%d%d","x_inf_esq_r1", "y_inf_esq_r1", "x_sup_dir_r1", "y_sup_dir_r1");
+// lê o segundo retângulo
+scanf("%d%d%d%d","x_inf_esq_r2", "y_inf_esq_r2", "x_sup_dir_r2", "y_sup_dir_r2");
+
+// calcula e escreve o resultado
+// verifica se os retângulos se interceptam
+if ((x_inf_esq_r2 <= x_sup_dir_r1 && x_sup_dir_r2 >= x_inf_esq_r1) &&
+    (y_inf_esq_r2 <= y_sup_dir_r1 && y_sup_dir_r2 >= y_inf_esq_r1))	{
+    // se interceptam
+    printf("1\n");
+}
+else {
+    // não se interceptam
+    printf("0\n");
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex4-show" class="showLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div id="solution-ex4" class="seeMore">
+<a href="#" id="solution-ex4-hide" class="hideLink" onclick="_showHide('solution-ex4');return false;">
+Solução do Exercício 4
+</a>
+<div class="seeMoreContent">
+<p>
+Para saber se as duas fotos cabem na página, é necessário analisar
+se existe uma configuração de fotos em que as restrições do problema
+são obedecidas, entre as várias possíveis maneiras de colocar
+as fotos.
+<p>
+Uma das possibilidades é colocar as duas fotos sem rotação, lado a
+lado. Nesse caso a soma das larguras das fotos tem que ser menor do
+que a largura da página do álbum. Além disso, a altura de cada foto tem que ser
+menor do que a altura da página do álbum. Ou seja, essa primeira possibilidade
+é viável se as três condições abaixo são satisfeitas (simultâneamente):
+<ul>
+<li>Largura Foto1 + Largura da Foto 2 &le; Largura do Álbum
+<li>Altura da Foto1 &le; Altura do Álbum
+<li>Altura da Foto2 &le; Altura do Álbum
+</ul>
+
+<p>Mas essa é apenas uma possibilidade. Podemos girar cada uma das fotos,
+e podemos ainda girar o álbum. Assim, existem no total oito possibilidades:
+
+<ul>
+<li> Foto1 sem rotação, Foto2 sem rotação, Álbum sem rotação
+<li> Foto1 sem rotação, Foto2 com rotação, Álbum sem rotação
+<li> Foto1 com rotação, Foto2 sem rotação, Álbum sem rotação
+<li> Foto1 com rotação, Foto2 com rotação, Álbum sem rotação
+<li> Foto1 sem rotação, Foto2 sem rotação, Álbum com rotação
+<li> Foto1 sem rotação, Foto2 com rotação, Álbum com rotação
+<li> Foto1 com rotação, Foto2 sem rotação, Álbum com rotação
+<li> Foto1 com rotação, Foto2 com rotação, Álbum com rotação
+</ul>
+
+<p>O programa abaixo implementa essa solução.
+<pre class="code">
+// Solução para o exercício 4, Aula 7
+// Álbum de fotos
+
+var L, A;           // largura e altura do álbum
+var L1, A1, L2, A2; // largura e altura das duas fotos
+
+// lê a entrada  
+scanf ("%d%d%d%d%d%d", "L", "A", "L1", "A1", "L2", "A2");
+
+// calcula e escreve o resultado
+if ( ((L >= L1 + L2) && (A >= A1) && (A >= A2)) ||  // Foto1 sem rotação, Foto2 sem rotação, Álbum sem rotação
+     ((L >= L1 + A2) && (A >= A1) && (A >= L2)) ||  // Foto1 sem rotação, Foto2 com rotação, Álbum sem rotação
+     ((L >= A1 + L2) && (A >= L1) && (A >= A2)) ||  // Foto1 com rotação, Foto2 sem rotação, Álbum sem rotação
+     ((L >= A1 + A2) && (A >= L1) && (A >= L2)) ||  // Foto1 com rotação, Foto2 com rotação, Álbum sem rotação
+     ((A >= L1 + L2) && (L >= A1) && (L >= A2)) ||  // Foto1 sem rotação, Foto2 sem rotação, Álbum com rotação
+     ((A >= L1 + A2) && (L >= A1) && (L >= L2)) ||  // Foto1 sem rotação, Foto2 com rotação, Álbum com rotação
+     ((A >= A1 + L2) && (L >= L1) && (L >= A2)) ||  // Foto1 com rotação, Foto2 sem rotação, Álbum com rotação
+     ((A >= A1 + A2) && (L >= L1) && (L >= L2)) ) { // Foto1 com rotação, Foto2 com rotação, Álbum com rotação
+   printf("S\n");
+}
+else {
+    printf("N\n");
+}
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<a href="#" id="solution-ex5-show" class="showLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div id="solution-ex5" class="seeMore">
+<a href="#" id="solution-ex5-hide" class="hideLink" onclick="_showHide('solution-ex5');return false;">
+Solução do Exercício 5
+</a>
+<div class="seeMoreContent">
+<p>Considere que os
+nomes das variáveis que armazenam os valores 
+A, B e C 
+descritos no enunciado são 
+<span class="tt">a</span>, <span class="tt">b</span> e <span
+class="tt">c</span>.
+
+<p>O jogador A é o vice-campeão se o valor de <span class="tt">a</span> está
+entre o valor de <span class="tt">b</span> e o valor de <span class="tt">c</span>. 
+Ou seja, A é vice-campeão se uma das duas
+seguintes condições for verdadeira (OU-lógico):
+<ul>
+<li><span class="tt">a > b && a < c</span>
+<li><span class="tt">a > c && a < b</span>
+</ul>
+
+<p>O jogador B é o vice-campeão se o valor de <span class="tt">b</span> está
+entre o valor de <span class="tt">a</span> e o valor de <span class="tt">c</span>. 
+Ou seja, B é vice-campeão se uma das duas
+seguintes condições for verdadeira (OU-lógico):
+<ul>
+<li><span class="tt">b > a && b < c</span>
+<li><span class="tt">b > c && b < a</span>
+</ul>
+<p>Note que não é necessário escrever a expressão lógica que determina que o vice-campeão
+é o jogador com pontuação C, pois se o vice-campeão não é A e não é B, só pode ser C.
+
+<p>O programa abaixo implementa a solução descrita acima.
+<pre class="code">
+// Solução para o exercício 5, Aula 7
+// Vice-campeão
+
+var a, b, c;  // pontos dos jogadores
+var vice;     // variável para armazenar o resultado
+
+// lê a entrada
+scanf("%d%d%d", "a", "b", "c");
+
+// calcula o resultado
+if ( (a > b && a < c) || (a > c && a < b) )
+    vice = a;
+else if ( (b > a && b < c) || (b > c && b < a) )
+    vice = b;
+else
+    vice = c;
+
+// escreve o resultado
+printf("%d\n", vice);
+</pre>
+
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div> <!-- end solucao -->
+          </div> 
+        </div> <!-- tabs panel end -->
+      </div>
+    </div>
+    <div>
+      <div id="tab2container" data-intro="Esta é a Área de Trabalho, onde você desenvolve as soluções para os exercícios." data-position="top" data-index="3"><!-- area de trabalho -->
+	<div width="100%">
+	  <div id="exercise_title" class="themeSaci" style="padding: 4px 4px;float:left;font-weight:bold;background-color:#e0e0e0" data-intro="Certifique-se de que selecionou o exercício desejado, para que o sistema possa corrigir sua solução." data-position="top" data-index="4">
+            <span>&nbsp;</span>
+	  </div>
+	  <div style="padding: 3px 3px; float:right;background-color:#e0e0e0" data-intro="Use estes botões para aumentar ou diminuir o tamanho das letras na Área de Trabalho." data-position="left" data-index="8" >
+            <button id="smallersizeBTN">A</button> 
+            <button id="largersizeBTN">A</button>
+	  </div>
+	  <div class="themeSaci" style="margin: 0 auto ;padding: 4px 4px;font-weight:bold;width:150px">
+            Área de Trabalho
+	  </div>
+	</div>
+	<div id="splitter1">
+          <div style="background-color:#e0e0e0;" data-intro="Neste painel você coloca os dados de entrada para seu programa." data-position="top" data-index="6">
+            <div id="inputPanel" style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+              <div style="border: none;">
+		<div class="sacibold themeSaci">Entrada
+                  <textarea id="textareaInput"></textarea>
+                  <button style="padding:4px 8px;" id="inputsaveBTN">Salva</button>
+                  <button style="padding:4px 8px;" id="inputretrieveBTN">Recupera</button>
+                  <button style="padding:4px 8px;" id="inputclearBTN">Limpa</button>
+		</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="splitter2">
+              <div style="background-color:#e0e0e0;" data-intro="Você escreve o seu programa usando o editor, neste painel." data-position="top" data-index="5">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none; background-color:#e0e0e0;">
+                    <div class="sacibold themeSaci">Programa
+                      <textarea id="textareaCode" name="textareaCode"></textarea>
+                      <button style="padding:4px 8px;" id="codeexecuteBTN" data-intro="Com este botão o sistema executa  seu programa, lendo dados do painel de Entrada. O resultado é mostrado no painel de Saída." data-position="top" data-index="9">Executa</button>
+                      <button style="padding:4px 8px;" id="codesubmitBTN" data-intro="Com este botão o sistema testa o seu programa com vários casos de teste (escondidos). O resultado é mostrado no painel de Saída." data-position="top" data-index="10">Submete</button>
+                      <button style="padding:4px 8px;" id="codesaveBTN" class="leftspace" data-intro="Com este botão você pode salvar o seu programa para uso posterior (é preciso estar registrado no Sistema Saci). Use o botão Recupera para recuperar um programa salvo." data-position="top" data-index="11">Salva</button>
+                      <button style="padding:4px 8px;" id="coderetrieveBTN">Recupera</button>
+                      <button style="padding:4px 8px;" id="codeclearBTN" data-intro="Use este botão para remover todo o conteúdo do painel de Programa." data-position="top" data-index="12">Limpa</button>
+                      <button style="padding:4px 8px;" id="codeformatBTN" data-intro="Use este botão para <i>formatar</i>, ou seja, colocar num formato padrão, um trecho de programa selecionado." data-position="top" data-index="13">Formata</button>
+                      <div id="codehintBTNdiv" style="display:none"><button style="padding:4px 8px;" id="codehintBTN" class="leftspace" data-intro="Use este botão para dicas sobre como resolver os exercícios. Se o botão não estiver visível, não há dicas para o exercício (mas você pode ver uma solução na aba <em>Soluções</em>)." data-position="top" data-index="14">Ajuda</button>
+		      </div>
+                    </div>
+                  </div>
+		</div>
+              </div>
+              <div style="background-color:#e0e0e0;" data-intro="O resultado de seu programa é mostrado neste painel." data-position="top" data-index="7">
+		<div style="border: 0px solid #aaaaaa; background-color:#e0e0e0; padding:3px;">
+                  <div style="border: none;">
+                    <div class="sacibold themeSaci">Saída
+                      <textarea id="textareaOutput"></textarea>
+                      <button style="padding:4px 8px;" id="outputclearBTN">Limpa</button>
+                      <button style="padding:4px 8px;" id="outputexpectedBTN" data-intro="Com este botão você pode conferir a saída esperada do exercício, para os dados presentes no painel de Entrada." data-position="top" data-index="15">Saída Esperada</button>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div> <!-- splitter2 -->
+          </div>
+	</div> <!--splitter1 -->
+      </div> <!-- tab2container -->
+    </div>
+  </div> <!-- splitContainer -->
+
+  <div id="footerdiv" style="width:97%; padding: 6px 0 3px 0">
+    <div class="footer floatLeft">
+      <a href="/saci"><img src="/static/saci-images/LogoSaci60x21.png" alt="Logo Saci" class="logo_saci_footer"/></a>&nbsp;
+      <a href="http://www.ic.unicamp.br">Instituto de Computação</a> &bull;
+      <a href="http://www.unicamp.br">UNICAMP</a> &bull;
+      <a href="/">Olimpíada Brasileira de Informática</a>
+    </div>
+    <div class="footer floatRight">
+      <a id="mycourseLNK" href="#" onclick="_show_history();return false;"><!--Meu curso--></a> <!--|-->
+      <a id="reportProblemLNK" href="#" onclick="_report_a_problem();return false;"><!--Relate um problema--></a> <!--|-->
+       <a id="doTourLNK" href="#" onclick="_do_a_tour();return false;">Faça um passeio</a>
+    </div>
+  </div>
+
+  <!-- modal window -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="modalWindow">
+      <div id="modalHeader" style="font-weight:bold">Salva X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic" style="text-align:center">
+          Aula1 - um nome bem comprido para não ter problema de espaço<br>Exercício 1<br>
+        </div>
+        <br>Comentário: <span style="font-weight:normal">(digite uma frase para facilitar a busca)</span><br>
+        <input type="text" size=60 id="modalComment"><br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <div class="alertbutton">
+          <button id="saveSubmitBTN">Salva</button>
+          <button id="saveCancelBTN">Cancela</button><br>
+        </div>
+      </div>
+    </div><!-- end modalWindow -->
+  </div><!-- end mainContainer -->
+  
+  <!-- modal window 2-->
+  <div style="display:none ;" id="mainContainer2">
+    <div id="modalWindow2">
+      <div id="modalHeader2" style="font-weight:bold">Recupera X</div>
+      <div style="font-weight:bold">
+        <div id="modalContentDynamic2" style="text-align:center">
+          Aula1<br>Exercício 1<br>
+        </div>
+        
+        <div id="jqxgrid">
+        </div>
+        &nbsp;<br>&nbsp;<br>
+        <div class="alertbutton">
+          <button id="retrieveSubmitBTN" class="topspace">Recupera</button>
+          <button id="retrieveRemoveBTN" class="topspace">Remove</button>
+          <button id="retrieveCancelBTN" class="topspace">Cancela</button>
+	</div>
+      </div>
+    </div><!-- end modalWindow2 -->
+
+  <!-- modal reportWindow -->
+  <div style="display:none ;" id="mainContainer3">
+    <div id="reportWindow">
+      <div>Descreva o problema</div>
+      <div>
+        <div style="text-align:center;padding:5px;height:150px">
+	  <textarea id="report_msg" rows="7" cols="60" maxlength="600"></textarea>
+        </div>
+        <div class="alertbutton">
+          <button id="reportOkBTN" style="padding:4px 12px;">Envia</button>
+          <button id="reportCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end reportWindow -->
+
+  <!-- modal historyWindow -->
+  <div style="display:none ;" id="mainContainer5">
+    <div id="historyWindow">
+      <div>Meu curso</div>
+      <div id="historyContent">content</div>
+    </div>
+  </div><!-- end historyWindow -->
+
+  <!-- confirmwindow -->
+  <div style="display:none ;" id="mainContainer4">
+    <div id="confirmWindow">
+      <div id="confirmHeader" style="font-weight:bold">Salva X</div>
+      <div>
+        <img src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="confirmContentDynamic" style="text-align:center;padding:5px">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha
+        </div>
+        <div class="alertbutton">
+          <button id="confirmOkBTN" style="padding:4px 12px;">OK</button>
+          <button id="confirmCancelBTN" style="padding:4px 12px;">Cancela</button>
+        </div>
+      </div>
+    </div><!-- end confirmWindow -->
+
+  <!-- alertwindow -->
+  <div style="display:none ;" id="mainContainer">
+    <div id="alertWindow">
+      <div id="alertHeader" style="font-weight:bold">
+        Um header
+      </div>
+      <div>
+        <img id="alertWindowImg" src="/static/saci-images/mini-alert-icon.png"> 
+        <div id="alertContentDynamic" style="text-align:center;padding-bottom:10px;display:block">
+          Um aviso bem comprido para caber qualquer tipo de aviso<br>
+          e uma segunda linha<br>e precisa de uma terceira<br>linha<br>emais uma.
+        </div>
+        <div class="alertbutton">
+          <button id="alertOkBTN" style="padding:4px 12px;">OK</button>
+        </div>
+      </div>
+    </div><!-- end alertWindow -->
+    
+  </div><!-- end mainContainer -->
+  </div><!-- end mainContainer2 -->
+
+  <!--notifications-->
+  <div id="notificationHint">
+      <span id="notificationHintMessage">
+	Dicas.
+      </span>
+      <span id="notificationHintMessageNext" style="float:right">
+      </span>
+  </div>
+  <div id="notificationError">
+      <span id="notificationErrorMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationSuccess">
+      <span id="notificationSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <div id="notificationAlmostSuccess">
+      <span id="notificationAlmostSuccessMessage">
+	Dicas.
+      </span>
+  </div>
+  <input type="hidden" id="hiddensolutions" value="Ly8gU29sdcOnw6NvIHBhcmEgbyBleGVyY8OtY2lvIDEsIEF1bGEgNwovLyBUaXJhLXRlaW1hCgp2YXIgeCwgeTsKCi8vIGzDqiBhIGVudHJhZGEKc2NhbmYoIiVkJWQiLCAieCIsICJ5Iik7CgovLyBjYWxjdWxhIGUgZXNjcmV2ZSBvIHJlc3VsdGFkbwppZiAoeCA+PSAwICYmIHggPD0gNDMyICYmIHkgPj0gMCAmJiB5IDw9IDQ2OCkgewogIHByaW50ZigiZGVudHJvXG4iKTsKfQplbHNlIHsKICBwcmludGYoImZvcmFcbiIpOwp9Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMiwgQXVsYSA3Ci8vIFplcmluaG8gb3UgVW0KCi8vIGzDqiBhIGVudHJhZGEKc2NhbmYoIiVkJWQlZCIsICJhIiwgImIiLCAiYyIpOwoKLy8gY2FsY3VsYSBlIGVzY3JldmUgbyByZXN1bHRhZG8KaWYgKGE9PT1iICYmIGMhPT1iKQogICAgcHJpbnRmKCJDXG4iKTsKZWxzZSBpZiAoYT09PWMgJiYgYiE9PWMpCiAgICBwcmludGYoIkJcbiIpOwplbHNlIGlmIChiPT09YyAmJiBhIT09YykKICAgIHByaW50ZigiQVxuIik7CmVsc2UKICAgIHByaW50ZigiKlxuIik7Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gMywgQXVsYSA3Ci8vIERldGVjdGFuZG8gY29saXPDtWVzCgp2YXIgeF9pbmZfZXNxX3IxLCB5X2luZl9lc3FfcjEsIHhfc3VwX2Rpcl9yMSwgeV9zdXBfZGlyX3IxOyAvLyBjb29yZGVuYWRhcyBkbyBwcmltZWlybyByZXTDom5ndWxvCnZhciB4X2luZl9lc3FfcjIsIHlfaW5mX2VzcV9yMiwgeF9zdXBfZGlyX3IyLCB5X3N1cF9kaXJfcjI7IC8vIGNvb3JkZW5hZGFzIGRvIHNlZ3VuZG8gcmV0w6JuZ3VsbwoKLy8gbMOqIG8gcHJpbWVpcm8gcmV0w6JuZ3VsbwpzY2FuZigiJWQlZCVkJWQiLCJ4X2luZl9lc3FfcjEiLCAieV9pbmZfZXNxX3IxIiwgInhfc3VwX2Rpcl9yMSIsICJ5X3N1cF9kaXJfcjEiKTsKLy8gbMOqIG8gc2VndW5kbyByZXTDom5ndWxvCnNjYW5mKCIlZCVkJWQlZCIsInhfaW5mX2VzcV9yMiIsICJ5X2luZl9lc3FfcjIiLCAieF9zdXBfZGlyX3IyIiwgInlfc3VwX2Rpcl9yMiIpOwoKLy8gY2FsY3VsYSBlIGVzY3JldmUgbyByZXN1bHRhZG8KLy8gw6kgbWFpcyBmw6FjaWwgdmVyaWZpY2FyIHNlIG9zIHJldMOibmd1bGFvIE7Dg08gc2UgaW50ZXJjZXB0YW0KCmlmICh5X2luZl9lc3FfcjIgPiB5X3N1cF9kaXJfcjEgfHwgICAgIC8vIFIxIGFiYWl4byBkZSBSMgogICAgeV9pbmZfZXNxX3IxID4geV9zdXBfZGlyX3IyIHx8ICAgICAvLyBSMSBhY2ltYSBkZSBSMgogICAgeF9zdXBfZGlyX3IxIDwgeF9pbmZfZXNxX3IyIHx8ICAgICAvLyBSMSDDoCBlc3F1ZXJkYSBkZSBSMgogICAgeF9zdXBfZGlyX3IyIDwgeF9pbmZfZXNxX3IxKSB7ICAgICAvLyBSMSDDoCBkaXJlaXRhIGRlIFIyCiAgICAvLyBuw6NvIHNlIGludGVyY2VwdGFtCiAgICBwcmludGYoIjBcbiIpOwp9CmVsc2UgewogICAgLy8gc2UgaW50ZXJjZXB0YW0KICAgIHByaW50ZigiMVxuIik7Cn0KXi8vIFNvbHXDp8OjbyBwYXJhIG8gZXhlcmPDrWNpbyA0LCBBdWxhIDcKLy8gw4FsYnVtIGRlIGZvdG9zCgp2YXIgeCwgeTsgICAgICAgICAgIC8vIGxhcmd1cmEgZSBhbHR1cmEgZG8gw6FsYnVtCnZhciBMMSwgQTEsIEwyLCBBMjsgLy8gbGFyZ3VyYSBlIGFsdHVyYSBkYXMgZHVhcyBmb3RvcwoKLy8gbMOqIGEgZW50cmFkYSAgCnNjYW5mICgiJWQlZCVkJWQlZCVkIiwgIngiLCAieSIsICJMMSIsICJBMSIsICJMMiIsICJBMiIpOwoKLy8gY2FsY3VsYSBlIGVzY3JldmUgbyByZXN1bHRhZG8KaWYgKCAoKHggPj0gTDEgKyBMMikgJiYgKHkgPj0gQTEpICYmICh5ID49IEEyKSkgfHwKICAgICAoKHggPj0gTDEgKyBBMikgJiYgKHkgPj0gQTEpICYmICh5ID49IEwyKSkgfHwKICAgICAoKHggPj0gQTEgKyBMMikgJiYgKHkgPj0gTDEpICYmICh5ID49IEEyKSkgfHwKICAgICAoKHggPj0gQTEgKyBBMikgJiYgKHkgPj0gTDEpICYmICh5ID49IEwyKSkgfHwKICAgICAoKHkgPj0gTDEgKyBMMikgJiYgKHggPj0gQTEpICYmICh4ID49IEEyKSkgfHwKICAgICAoKHkgPj0gTDEgKyBBMikgJiYgKHggPj0gQTEpICYmICh4ID49IEwyKSkgfHwKICAgICAoKHkgPj0gQTEgKyBMMikgJiYgKHggPj0gTDEpICYmICh4ID49IEEyKSkgfHwKICAgICAoKHkgPj0gQTEgKyBBMikgJiYgKHggPj0gTDEpICYmICh4ID49IEwyKSkgKSB7CiAgIHByaW50ZigiU1xuIik7Cn0KZWxzZSB7CiAgICBwcmludGYoIk5cbiIpOwp9Cl4vLyBTb2x1w6fDo28gcGFyYSBvIGV4ZXJjw61jaW8gNSwgQXVsYSA3Ci8vIFZpY2UtY2FtcGXDo28KCnZhciBhLCBiLCBjOyAgLy8gcG9udG9zIGRvcyBqb2dhZG9yZXMKdmFyIHZpY2U7ICAgICAvLyB2YXJpw6F2ZWwgcGFyYSBhcm1hemVuYXIgbyByZXN1bHRhZG8KCi8vIGzDqiBhIGVudHJhZGEKc2NhbmYoIiVkJWQlZCIsICJhIiwgImIiLCAiYyIpOwoKLy8gY2FsY3VsYSBvIHJlc3VsdGFkbwppZiAoIChhID4gYiAmJiBhIDwgYykgfHwgKGEgPiBjICYmIGEgPCBiKSApCiAgICB2aWNlID0gYTsKZWxzZSBpZiAoIChiID4gYSAmJiBiIDwgYykgfHwgKGIgPiBjICYmIGIgPCBhKSApCiAgICB2aWNlID0gYjsKZWxzZQogICAgdmljZSA9IGM7CgovLyBlc2NyZXZlIG8gcmVzdWx0YWRvCnByaW50ZigiJWRcbiIsIHZpY2UpOwo=">
+  <input type="hidden" id="hiddentests" value="NDc4IDQ2OAo7NDMyIDExMQo7NDUyIDQ2OAo7MjI3IDUwMAo7MTU3IDUwMAo7LTU4IDQ2OAo7NDMyIDI4Mgo7MTIgNDY4Cjs0MzIgLTU5CjswIDAKXjEgMSAxCjswIDEgMAo7MSAwIDAKOzEgMSAwCjsxIDAgMQo7MCAwIDEKOzAgMCAwCjswIDEgMQo7MCAxIDAKOzEgMSAxCl4wIDAgMSAxIAowIDAgMSAxCjswIDAgMiAyCjEgMSAzIDMKOzAgMCAxIDEgCjIgMiAzIDMKOzAgMCA0IDQgCjEgMSAyIDIgCjsxIDEgMyAzIAowIDAgMiAyCjsxIDEgMyAzCjIgMCA0IDIKOzEgMiAzIDMKMCA0IDQgNQo7MTAwMCAxMDAwIDEwMDAwIDEwMDAwCjEwMDAwIDEgMTAwMDEgMTAwMAo7MTAwMCAxMDAwIDEwMDAwIDEwMDAwCjEwMDAwIDEgMTAwMDEgOTk5CjswIDAgMiAxMDAwMDAwCjMgMCAxMDAwMDAwIDEwMDAwMDAKOzEgMSAzIDUKMiAyIDQgNgo7MCAwIDEwMDAwMDAgMTAwMDAwMAoxMDAwMCAxMDAwMCA5MDAwMCA5MDAwMApeOSA4CjQgMwo2IDQKOzkgNwo2IDIKMyA1CjsxIDEKMSAxCjEgMQo7MzU4IDM0NwoxOTMgMjE2CjEzMSAxNjUKOzE2MiA3MDUKMzg0IDExMAo1MiAzMjEKOzI5NyA1MDEKOTcgNDM2CjY1IDIwMAo7ODMgMjY4CjE1MSA3NAoyOCAxMjIKOzY4OSA2NjMKMzU5IDE3OQozMDQgNTEwCjs5MjAgMjk1CjgyMiA0MgoyNTMgOTgKOzY1MCA0MzkKMzIxIDQ0NgoxMTggMjA0CjsyMjYgNDEzCjEyNyAzNzQKMzkgOTkKOzUwIDczCjY0IDI2CjI0IDkKOzMxMiA2OTMKODQ5IDM3Mgo3MDIgNzM3Cjs4NTcgODk3CjUxMiA4MjIKMzg1IDM1CjszOTggNDAyCjYxMyAyMzQKOCA1MjkKXjEwIDQ4IDc1Cjs3NSAxOCA3Nwo7NDggMTEgOTMKOzM3IDE2IDY2CjszNyA0OSA1NAo7NzcgMzMgNTkKOzEgNTYgMTgKOzQgMTUgODAKOzE1IDI5IDQzCjs4NiA2MyAzOQo=">
+  <input type="hidden" id="hiddenresults" value="Zm9yYQo7ZGVudHJvCjtmb3JhCjtmb3JhCjtmb3JhCjtmb3JhCjtkZW50cm8KO2RlbnRybwo7Zm9yYQo7ZGVudHJvCl4qCjtCCjtBCjtDCjtCCjtDCjsqCjtBCjtCCjsqCl4xCjsxCjswCjsxCjsxCjsxCjswCjsxCjswCjswCjsxCjsxCl5TCjtTCjtOCjtTCjtTCjtTCjtOCjtTCjtTCjtTCjtTCjtTCjtOCjtTCjtOCl40OAo7NzUKOzQ4CjszNwo7NDkKOzU5CjsxOAo7MTUKOzI5Cjs2Mwo=">
+  <input type="hidden" id="hiddensamples" value="LTIgMjAwCl4xIDEgMApeMCAwIDEgMQoxIDEgMiAyCl43IDUKMyA0CjMgNApeNCA1IDYK">
+  <input type="hidden" id="hiddenhints" value="LioKQmVtLCBhbnRlcyBkZSBlc2NyZXZlciBvIHByb2dyYW1hLCBhIHByaW1laXJhIGNvaXNhIGEgZmF6ZXIg6SBlbnRlbmRlciBvIHByb2JsZW1hIGUgcGVuc2FyIG5hIHNvbHXn428uIErhIHRlbSBhIHNvbHXn428gZW0gbWVudGU/IErhIHZlcmlmaWNvdSAoY29tIHBhcGVsIGUgbOFwaXMpIHF1ZSBzdWEgc29sdefjbyByZXNvbHZlIGNvcnJldGFtZW50ZSBvcyBleGVtcGxvcyBkZSBlbnRyYWRhIG1vc3RyYWRvcyBubyBlbnVuY2lhZG8/CkVudONvIHZhbW9zIGzhLiBTZXUgcHJvZ3JhbWEgZGV2ZSA8dWw+PGxpPmRlY2xhcmFyIGR1YXMgdmFyaeF2ZWlzIHBhcmEgYXJtYXplbmFyIG9zIHZhbG9yZXMgZGUgWCBlIFkgZGVzY3JpdG9zIG5vIGVudW5jaWFkby4gPGxpPnVzYXIgdW0gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnNjYW5mPC9zcGFuPiBwYXJhIGxlciBkYSBlbnRyYWRhIGRvaXMgdmFsb3JlcyBpbnRlaXJvcyBwYXJhIGFzIHZhcmnhdmVpcyBxdWUgdm9j6iBkZWNsYXJvdSA8bGk+dXNhciB1bSBjb21hbmRvIGNvbmRpY2lvbmFsIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+IHBhcmEgZGV0ZXJtaW5hciBvIHJlc3VsdGFkbyA8bGk+dXNhciBkb2lzIGNvbWFuZG9zIDxzcGFuIGNsYXNzPSJ0dCI+cHJpbnRmPC9zcGFuPiwgdW0gcGFyYSBlc2NyZXZlciA8c3BhbiBjbGFzcz0idHQiPmRlbnRybzwvc3Bhbj4gZSBvdXRybyBwYXJhIGVzY3JldmVyIDxzcGFuIGNsYXNzPSJ0dCI+Zm9yYTwvc3Bhbj4gbmEgc2HtZGEsIGRlcGVuZGVuZG8gZG8gcmVzdWx0YWRvIGRhIGV4cHJlc3PjbyBjb25kaWNpb25hbCBkbyBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+LiA8L3VsPgpBIHBhcnRlIGNlbnRyYWwgZGEgc29sdefjbyDpIGVuY29udHJhciBhIGV4cHJlc3PjbyBs82dpY2EgY29ycmV0YSBwYXJhIG8gY29tYW5kbyBjb25kaWNpb25hbC4gUXVhbCDpIGEgZXhwcmVzc+NvIGzzZ2ljYSBxdWUgdmVyaWZpY2Egc2UgYSBib2xhIGZvaSBkZW50cm8gb3UgZm9yYSBkYSBxdWFkcmE/IEFudGVzIGRlIHByb3NzZWd1aXIsIGVzY3JldmEgYSBleHByZXNz428gbPNnaWNhIGNvbSBwYXBlbCBlIGzhcGlzLCBjb25zaWRlcmFuZG8gcXVlIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIGFybWF6ZW5hbSBvcyB2YWxvcmVzIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+WCBlIFkgPC9kaXY+IDxwPmRlc2NyaXRvcyBubyBlbnVuY2lhZG8gc+NvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+eDwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPnk8L3NwYW4+IDwvZGl2PiA8cD5lIHZlcmlmaXF1ZSBxdWUgZWxhIGVzdOEgY29ycmV0YSwgdXRpbGl6YW5kbyBvcyBleGVtcGxvcyBtb3N0cmFkb3Mgbm8gZW51bmNpYWRvLgpI4SB24XJpYXMgbWFuZWlyYXMgZXNjcmV2ZXIgYSBleHByZXNz428gbPNnaWNhIHF1ZSB2ZXJpZmljYSBzZSBhIGJvbGEgZm9pIGRlbnRybyBvdSBmb3JhLiBOb3RlIHF1ZSB0ZW1vcyBxdWUgdGVzdGFyIHNlIDx1bD4gPGxpPm8gdmFsb3IgZGUgPHNwYW4gY2xhc3M9InR0Ij54PC9zcGFuPiBlc3ThIGRlbnRybyBkb3MgbGltaXRlcyAwIGUgNDMyLCBlIDxsaT5vIHZhbG9yIGRlIDxzcGFuIGNsYXNzPSJ0dCI+eTwvc3Bhbj4gZXN04SBkZW50cm8gZG9zIGxpbWl0ZXMgMCBlIDQ2OC4gPC91bD4KQSBleHByZXNz428gbPNnaWNhIHF1ZSB2ZXJpZmljYSBzZSBhIHZhcmnhdmVsIDxzcGFuIGNsYXNzPSJ0dCI+eDwvc3Bhbj4gZXN04SBkZW50cm8gZG9zIGxpbWl0ZXMg6SA8cD48ZGl2IGNsYXNzPSJjZW50ZXIiPiA8c3BhbiBjbGFzcz0idHQiPnggPj0gMCAmJiB4IDw9IDQzMjwvc3Bhbj4gPC9kaXY+IDxwPiBOb3RlIHF1ZSBlbSBKYXZhc2NyaXB0IE7DTyDpIGNvcnJldG8gZXNjcmV2ZXIgYSBleHByZXNz428gY29tbyA8cD48ZGl2IGNsYXNzPSJjZW50ZXIiPiA8c3BhbiBjbGFzcz0idHQiPjAgPj0geCA9PiA0MzI8L3NwYW4+IDwvZGl2PgpBIGV4cHJlc3PjbyBs82dpY2EgcXVlIHZlcmlmaWNhIHNlIGEgdmFyaeF2ZWwgPHNwYW4gY2xhc3M9InR0Ij55PC9zcGFuPiBlc3ThIGRlbnRybyBkb3MgbGltaXRlcyDpIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+eSA+PSAwICYmIHkgPD0gNDY4PC9zcGFuPiA8L2Rpdj4KQSBib2xhIOkgZGVudHJvIHF1YW5kbyBhIHZhcmnhdmVsIDxzcGFuIGNsYXNzPSJ0dCI+eDwvc3Bhbj4gZXN04SBkZW50cm8gZG9zIGxpbWl0ZXMgRSBhIHZhcmnhdmVsIDxzcGFuIGNsYXNzPSJ0dCI+eTwvc3Bhbj4gZXN04SBkZW50cm8gZG9zIGxpbWl0ZXMuIE91IHNlamEsIGEgZXhwcmVzc+NvIGNvbXBsZXRhIHF1ZSBkZXZlIHNlciB1c2FkYSBubyBjb21hbmRvIGNvbmRpY2lvbmFsIOkgZm9ybWFkYSBwZWxvIEUtbPNnaWNvIGRhcyBkdWFzIGV4cHJlc3P1ZXMgbW9zdHJhZGFzIGFudGVyaW9ybWVudGU6IDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+eCA+PSAwICYmIHggPD0gNDMyICYmIHkgPj0gMCAmJiB5IDw9IDQ2ODwvc3Bhbj4gPC9kaXY+IDxwPiBObyBjYXNvIGRlIGEgZXhwcmVzc+NvIGNvbXBsZXRhIHNlciB2ZXJkYWRlaXJhLCBzZXUgcHJvZ3JhbWEgZGV2ZSBlc2NyZXZlciA8c3BhbiBjbGFzcz0idHQiPmRlbnRybzwvc3Bhbj4gbmEgc2HtZGEgdXNhbmRvIHVtIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+LiBDYXNvIGNvbnRy4XJpbywgc2V1IHByb2dyYW1hIGRldmUgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij5mb3JhPC9zcGFuPiBuYSBzYe1kYSwgdXNhbmRvIG91dHJvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+Ll4uKgpTZXUgcHJvZ3JhbWEgZGV2ZSA8dWw+PGxpPmRlY2xhcmFyIHRy6nMgdmFyaeF2ZWlzIHBhcmEgYXJtYXplbmFyIG9zIHZhbG9yZXMgZGUgQSwgQiBlIEMgZGVzY3JpdG9zIG5vIGVudW5jaWFkbyA8bGk+dXNhciB1bSBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IHBhcmEgbGVyIGRhIGVudHJhZGEgdHLqcyB2YWxvcmVzIGludGVpcm9zIHBhcmEgYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91IDxsaT51c2FyIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBlbmNhZGVhZG9zIHBhcmEgZGV0ZXJtaW5hciBvIHJlc3VsdGFkbyA8bGk+cGFyYSBjYWRhIGNvbWFuZG8gY29uZGljaW9uYWwsIHVzYXIgdW0gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4gcGFyYSBlc2NyZXZlciBvIHJlc3VsdGFkby4gPC91bD4KQSBwYXJ0ZSBjZW50cmFsIGRhIHNvbHXn428g6SBlbmNvbnRyYXIgYSBleHByZXNz428gbPNnaWNhIGNvcnJldGEgcGFyYSBjYWRhIGNvbWFuZG8gY29uZGljaW9uYWwuIEFudGVzIGRlIHByb3NzZWd1aXIsIGVzY3JldmEgYXMgZXhwcmVzc/VlcyBs82dpY2FzIGNvbSBwYXBlbCBlIGzhcGlzLCBjb25zaWRlcmFuZG8gcXVlIG9zIG5vbWVzIGRhcyB2YXJp4XZlaXMgcXVlIGFybWF6ZW5hbSBvcyB2YWxvcmVzIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+QSwgQiBlIEMgPC9kaXY+IDxwPmRlc2NyaXRvcyBubyBlbnVuY2lhZG8gc+NvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+YTwvc3Bhbj4sIDxzcGFuIGNsYXNzPSJ0dCI+Yjwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPmM8L3NwYW4+IDwvZGl2PiA8cD5lIHZlcmlmaXF1ZSBxdWUgZWxhcyBlc3TjbyBjb3JyZXRhcywgdXRpbGl6YW5kbyBvcyBleGVtcGxvcyBtb3N0cmFkb3Mgbm8gZW51bmNpYWRvLgpVbSBqb2dhZG9yIOkgdmVuY2Vkb3Igc2UgZXNjb2xoZXUgMCBlIG9zIG91dHJvcyBlc2NvbGhlcmFtIDE7IG91IGVudONvIHNlIG8gam9nYWRvciBlc2NvbGhldSAxIGUgb3Mgb3V0cm9zIGVzY29saGVyYW0gemVyby4gTWFzIGlzc28gcG9kZSBzZXIgc2ltcGxpZmljYWRvLCByZS1lc2NyZXZlbmRvIGEgY29uZGnn428gZGUgb3V0cmEgZm9ybWE6IHVtIGpvZ2Fkb3Ig6SB2ZW5jZWRvciBzZSBvIHNldSB2YWxvciDpIGRpZmVyZW50ZSBkb3Mgb3V0cm9zIHZhbG9yZXMuIFZvY+ogY29uc2VndWUgZXNjcmV2ZXIgYSBleHByZXNz428gbPNnaWNhIHBhcmEgdmVyaWZpY2FyIHNlIG8gam9nYWRvciBBIChjdWphIHZhcmnhdmVsIOkgPHNwYW4gY2xhc3M9InR0Ij5hPC9zcGFuPikgdmVuY2V1PwpBIGV4cHJlc3PjbyBs82dpY2EgcXVlIHZlcmlmaWNhIHNlIGEgdmFyaeF2ZWwgPHNwYW4gY2xhc3M9InR0Ij5hPC9zcGFuPiB0ZW0gdmFsb3IgZGlmZXJlbnRlIGRhcyBvdXRyYXMgcG9kZSBzZXIgZXNjcml0YSBjb21vIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+Yj09PWMgJiYgYSE9PWM8L3NwYW4+IDwvZGl2PiA8cD4gTm90ZSBxdWUgbuNvIOkgcHJlY2lzbyB0ZXN0YXIgc2UgPHNwYW4gY2xhc3M9InR0Ij5hPC9zcGFuPiDpIGRpZmVyZW50ZSBkZSA8c3BhbiBjbGFzcz0idHQiPmI8L3NwYW4+LCBq4SBxdWUgPHNwYW4gY2xhc3M9InR0Ij5iPC9zcGFuPiB0ZW0gbyBtZXNtbyB2YWxvciBxdWUgPHNwYW4gY2xhc3M9InR0Ij5jPC9zcGFuPi4gU2UgYSBleHByZXNz428gYWNpbWEg6SB2ZXJkYWRlaXJhIG8gdmVuY2Vkb3Ig6SBvIGpvZ2Fkb3IgQS4KPHA+IEVzY3JldmEgYWdvcmEgYXMgZXhwcmVzc/VlcyBs82dpY2FzIHBhcmEgdmVyaWZpY2FyIHNlIEIg6SB2ZW5jZWRvciBlIHNlIEMg6SB2ZW5jZWRvciwgZSBjb21wbGV0ZSBvIHByb2dyYW1hLl4uKgpTZXUgcHJvZ3JhbWEgZGV2ZSA8dWw+PGxpPmRlY2xhcmFyIG9pdG8gdmFyaeF2ZWlzOiBxdWF0cm8gcGFyYSBhcm1hemVuYXIgYXMgY29vcmRlbmFkYXMgZG8gcHJpbWVpcm8gcmV04m5ndWxvLCBlIHF1YXRybyBwYXJhIGFybWF6ZW5hciBhcyBjb29yZGVuYWRhcyBkbyBzZWd1bmRvIHJldOJuZ3Vsby4gPGxpPnVzYXIgY29tYW5kb3MgPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4gcGFyYSBsZXIgZGEgZW50cmFkYSBvaXRvIHZhbG9yZXMgcGFyYSBhcyB2YXJp4XZlaXMgcXVlIHZvY+ogZGVjbGFyb3UgKHZvY+ogcG9kZSBwb3IgZXhlbXBsbyB1c2FyIGRvaXMgY29tYW5kb3MgPHNwYW4gY2xhc3M9InR0Ij5zY2FuZjwvc3Bhbj4sIHBhcmEgb3JnYW5pemFyIG1lbGhvciBvIGPzZGlnbykgPGxpPnVzYXIgdW0gY29tYW5kbyBjb25kaWNpb25hbCA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBwYXJhIGRldGVybWluYXIgbyByZXN1bHRhZG8gPGxpPnVzYXIgZG9pcyBjb21hbmRvcyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4sIHVtIHBhcmEgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij4xPC9zcGFuPiBlIG91dHJvIHBhcmEgZXNjcmV2ZXIgPHNwYW4gY2xhc3M9InR0Ij4wPC9zcGFuPiBuYSBzYe1kYSwgZGVwZW5kZW5kbyBkbyByZXN1bHRhZG8gZGEgZXhwcmVzc+NvIGNvbmRpY2lvbmFsIGRvIGNvbWFuZG8gPHNwYW4gY2xhc3M9InR0Ij5pZjwvc3Bhbj4uIDwvdWw+CkEgcGFydGUgY2VudHJhbCBkYSBzb2x15+NvIOkgZW5jb250cmFyIGEgZXhwcmVzc+NvIGzzZ2ljYSBjb3JyZXRhIHBhcmEgbyBjb21hbmRvIGNvbmRpY2lvbmFsLiBRdWFsIOkgYSBleHByZXNz428gbPNnaWNhIHF1ZSB2ZXJpZmljYSBzZSBkb2lzIHJldOJuZ3Vsb3MgdOptIGludGVyc2Xn428/CkVzdGEgdGFyZWZhIOkgdW0gZXhlbXBsbyBkZSBxdWUsIHNlIHVtIHByb2JsZW1hIG5vcyBwYXJlY2UgZGlm7WNpbCwgcG9kZW1vcyBwcm9jdXJhciBtdWRhciBhIGFib3JkYWdlbSBwYXJhIGEgc29sdefjby4gTm8gY2FzbywgcG9kZW1vcyBwb3IgZXhlbXBsbyBwZW5zYXIgZW0gZGV0ZXJtaW5hciBzZSBvcyByZXTibmd1bG9zIE7DTyB06m0gaW50ZXJzZefjbywgcG9pcyBhc3NpbSBwb2RlIHNlciBtYWlzIGbhY2lsIGRlIGVueGVyZ2FyIGEgc29sdefjbyBkbyBxdWUgY29tIGEgYWJvcmRhZ2VtIGRpcmV0YSBkZSBkZXRlcm1pbmFyIHNlIG9zIHJldOJuZ3Vsb3MgdOptIGludGVyc2Xn428uIFZvY+ogY29uc2VndWUgZGV0ZXJtaW5hciBzZSBkb2lzIHJldOJuZ3Vsb3MgbuNvIHTqbSBpbnRlcnNl5+NvPwpDb25zaWRlcmUgZG9pcyByZXTibmd1bG9zIFIxIGUgUjIgcXVhaXNxdWVyLiBFeGlzdGVtIHF1YXRybyBzaXR1Yef1ZXMgcXVlIGRldGVybWluYW0gcXVlIFIxIGUgUjIgbuNvIHTqbSBpbnRlcnNl5+NvOiA8dWw+IDxsaT5SMSBlc3ThIG1haXMgYWJhaXhvIGRvIHF1ZSBSMiA8bGk+UjEgZXN04SBtYWlzIGFjaW1hIGRvIHF1ZSBSMiA8bGk+UjEgZXN04SBtYWlzIOAgZXNxdWVyZGEgZG8gcXVlIFIyIDxsaT5SMSBlc3ThIG1haXMg4CBkaXJlaXRhIGRvIHF1ZSBSMiA8L3VsPiA8cD5Fc3NhcyBzaXR1Yef1ZXMgc+NvIG1vc3RyYWRhcyBuYSBmaWd1cmEgYWJhaXhvOiA8ZGl2IGNsYXNzPSJjZW50ZXIiPiA8aW1nIHNyYz0iaHR0cDovL29saW1waWFkYS5pYy51bmljYW1wLmJyL2V4dHJhcy9zYWNpL2ltYWdlbnMvY29saXNvZXNfaGludC5wbmciIGFsdD0iZmlndXJhMiIgd2lkdGg9IjQwMHB4Ij4gPC9kaXY+ClNlIGFzIHZhcmnhdmVpcyBxdWUgcmVwcmVzZW50YW0gYXMgY29vcmRlbmFkYXMgZGUgUjEgc+NvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+KHhfaW5mX2VzcV9yMSwgeV9pbmZfZXNxX3IxKSBlIDxicj4oeF9zdXBfZGlyX3IxLCB5X3N1cF9kaXJfcjEpPC9zcGFuPiA8L2Rpdj4gPHA+ZSBhcyB2YXJp4XZlaXMgcXVlIHJlcHJlc2VudGFtIGFzIGNvb3JkZW5hZGFzIGRlIFIyIHPjbyA8cD48ZGl2IGNsYXNzPSJjZW50ZXIiPiA8c3BhbiBjbGFzcz0idHQiPih4X2luZl9lc3FfcjIsIHlfaW5mX2VzcV9yMikgZSA8YnI+KHhfc3VwX2Rpcl9yMiwgeV9zdXBfZGlyX3IyKTwvc3Bhbj4gPC9kaXY+IDxwPiBlbnTjbyBhIGV4cHJlc3PjbyBs82dpY2EgcXVlIHJlcHJlc2VudGEgYSBzaXR1YefjbyAxLCBlbSBxdWUgUjEgZXN04SBtYWlzIGFiYWl4byBkbyBxdWUgUjIsIHBvZGUgc2VyIGVzY3JpdGEgY29tbyA8cD48ZGl2IGNsYXNzPSJjZW50ZXIiPiA8c3BhbiBjbGFzcz0idHQiPnlfaW5mX2VzcV9yMiA+IHlfc3VwX2Rpcl9yMTwvc3Bhbj4gPC9kaXY+IDxwPiBDb21wbGV0ZSBhZ29yYSBvIHByb2dyYW1hIGVzY3JldmVuZG8gYXMgZXhwcmVzc/VlcyBs82dpY2FzIGRhcyBzaXR1Yef1ZXMgMiwgMyBlIDQuCjxwPlBhcmEgdW1hIHNvbHXn428gdXNhbmRvIGEgYWJvcmRhZ2VtIGRlIGRldGVybWluYXIgZGlyZXRhbWVudGUgc2Ugb3MgcmV04m5ndWxvcyB06m0gaW50ZXJzZefjbywgdmVqYSBhIGFiYSBTb2x15/Vlcy5eLioKU2V1IHByb2dyYW1hIGRldmUgPHVsPjxsaT5kZWNsYXJhciBzZWlzIHZhcmnhdmVpcywgcGFyYSBhcm1hemVuYXIgYSBsYXJndXJhIGUgYWx0dXJhIGRhcyBkdWFzIGZvdG9zIGUgZG8g4WxidW0uIDxsaT51c2FyIGNvbWFuZG9zIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IHBhcmEgbGVyIGRhIGVudHJhZGEgc2VpcyB2YWxvcmVzIHBhcmEgYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91ICh2b2PqIHBvZGUgcG9yIGV4ZW1wbG8gdXNhciB0cupzIGNvbWFuZG9zIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+LCBwYXJhIG9yZ2FuaXphciBtZWxob3IgbyBj82RpZ28pIDxsaT51c2FyIHVtIGNvbWFuZG8gY29uZGljaW9uYWwgPHNwYW4gY2xhc3M9InR0Ij5pZjwvc3Bhbj4gcGFyYSBkZXRlcm1pbmFyIG8gcmVzdWx0YWRvIDxsaT51c2FyIGRvaXMgY29tYW5kb3MgPHNwYW4gY2xhc3M9InR0Ij5wcmludGY8L3NwYW4+LCB1bSBwYXJhIGVzY3JldmVyIDxzcGFuIGNsYXNzPSJ0dCI+Uzwvc3Bhbj4gZSBvdXRybyBwYXJhIGVzY3JldmVyIDxzcGFuIGNsYXNzPSJ0dCI+Tjwvc3Bhbj4gbmEgc2HtZGEsIGRlcGVuZGVuZG8gZG8gcmVzdWx0YWRvIGRhIGV4cHJlc3PjbyBs82dpY2EgZG8gY29tYW5kbyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPi4gPC91bD4KPHA+QSBwYXJ0ZSBjZW50cmFsIGRhIHNvbHXn428g6SBlbmNvbnRyYXIgYSBleHByZXNz428gbPNnaWNhIGNvcnJldGEgcGFyYSBvIGNvbWFuZG8gY29uZGljaW9uYWwuIFBhcmEgc2FiZXIgc2UgYXMgZHVhcyBmb3RvcyBjYWJlbSBuYSBw4WdpbmEsIOkgbmVjZXNz4XJpbyBhbmFsaXNhciBzZSBleGlzdGUgdW1hIGNvbmZpZ3VyYefjbyBkZSBmb3RvcyBlbSBxdWUgYXMgcmVzdHJp5/VlcyBkbyBwcm9ibGVtYSBz428gb2JlZGVjaWRhcywgZW50cmUgYXMgduFyaWFzIHBvc3PtdmVpcyBtYW5laXJhcyBkZSBjb2xvY2FyIGFzIGZvdG9zLiA8cD4gVW1hIGRhcyBwb3NzaWJpbGlkYWRlcyDpIGNvbG9jYXIgYXMgZHVhcyBmb3RvcyBzZW0gcm90YefjbywgbGFkbyBhIGxhZG8uIE5lc3NlIGNhc28gYSBzb21hIGRhcyBsYXJndXJhcyBkYXMgZm90b3MgdGVtIHF1ZSBzZXIgbWVub3IgZG8gcXVlIGEgbGFyZ3VyYSBkYSBw4WdpbmEgZG8g4WxidW0uIEFs6W0gZGlzc28sIGEgYWx0dXJhIGRlIGNhZGEgZm90byB0ZW0gcXVlIHNlciBtZW5vciBkbyBxdWUgYSBhbHR1cmEgZGEgcOFnaW5hIGRvIOFsYnVtLiBPdSBzZWphLCBlc3NhIHByaW1laXJhIHBvc3NpYmlsaWRhZGUg6SB2aeF2ZWwgc2UgYXMgdHLqcyBjb25kaef1ZXMgYWJhaXhvIHPjbyBzYXRpc2ZlaXRhcyAoc2ltdWx04m5lYW1lbnRlKTogPHVsPiA8bGk+TGFyZ3VyYSBGb3RvMSArIExhcmd1cmEgZGEgRm90byAyICZsZTsgTGFyZ3VyYSBkbyDBbGJ1bSA8bGk+QWx0dXJhIGRhIEZvdG8xICZsZTsgQWx0dXJhIGRvIMFsYnVtIDxsaT5BbHR1cmEgZGEgRm90bzIgJmxlOyBBbHR1cmEgZG8gwWxidW0gPC91bD4gPHA+TWFzIGVzc2Eg6SBhcGVuYXMgdW1hIHBvc3NpYmlsaWRhZGUuIFBvZGVtb3MgZ2lyYXIgY2FkYSB1bWEgZGFzIGZvdG9zLCBlIHRhbWLpbSBnaXJhciBvIOFsYnVtLiBWb2PqIGNvbnNlZ3VlIGxpc3RhciB0b2RhcyBhcyBwb3NzaWJpbGlkYWRlcz8KPHA+RXhpc3RlbSBubyB0b3RhbCBvaXRvIHBvc3NpYmlsaWRhZGVzOiA8dWw+IDxsaT4gRm90bzEgc2VtIHJvdGHn428sIEZvdG8yIHNlbSByb3Rh5+NvLCDBbGJ1bSBzZW0gcm90YefjbyA8bGk+IEZvdG8xIHNlbSByb3Rh5+NvLCBGb3RvMiBjb20gcm90YefjbywgwWxidW0gc2VtIHJvdGHn428gPGxpPiBGb3RvMSBjb20gcm90YefjbywgRm90bzIgc2VtIHJvdGHn428sIMFsYnVtIHNlbSByb3Rh5+NvIDxsaT4gRm90bzEgY29tIHJvdGHn428sIEZvdG8yIGNvbSByb3Rh5+NvLCDBbGJ1bSBzZW0gcm90YefjbyA8bGk+IEZvdG8xIHNlbSByb3Rh5+NvLCBGb3RvMiBzZW0gcm90YefjbywgwWxidW0gY29tIHJvdGHn428gPGxpPiBGb3RvMSBzZW0gcm90YefjbywgRm90bzIgY29tIHJvdGHn428sIMFsYnVtIGNvbSByb3Rh5+NvIDxsaT4gRm90bzEgY29tIHJvdGHn428sIEZvdG8yIHNlbSByb3Rh5+NvLCDBbGJ1bSBjb20gcm90YefjbyA8bGk+IEZvdG8xIGNvbSByb3Rh5+NvLCBGb3RvMiBjb20gcm90YefjbywgwWxidW0gY29tIHJvdGHn428gPC91bD4gPHA+U2UgYWxndW1hIGRlc3NhcyBjb25kaef1ZXMg6SB2ZXJkYWRlaXJhLCBhIHJlc3Bvc3RhIOkgUyAoYXMgZHVhcyBmb3RvcyBwb2RlbSBzZXIgY29sb2NhZGFzIG5hIHDhZ2luYSksIGNhc28gY29udHLhcmlvIGEgcmVzcG9zdGEg6SBOLiBFc2NyZXZhIGEgZXhwcmVzc+NvIGzzZ2ljYSBjb3JyZXNwb25kZW50ZSDgIHByaW1laXJhIHBvc3NpYmlsaWRhZGUgYWNpbWEsIHBhcmEgYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91IG5vIHNldSBwcm9ncmFtYS4KPHA+IENvbnNpZGVyYW5kbyBxdWUgYSBsYXJndXJhIGUgYWx0dXJhIGRvIOFsYnVtIHNlamFtIHJlc3BlY3RpdmFtZW50ZSA8c3BhbiBjbGFzcz0idHQiPkw8L3NwYW4+IGUgPHNwYW4gY2xhc3M9InR0Ij5BPC9zcGFuPiwgcXVlIGEgRm90bzEgdGVuaGEgbGFyZ3VyYSBlIGFsdHVyYSByZXNwZWN0aXZhbWVudGUgPHNwYW4gY2xhc3M9InR0Ij5MMTwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPkExPC9zcGFuPiwgZSBxdWUgYSBGb3RvMiB0ZW5oYSBsYXJndXJhIGUgYWx0dXJhIHJlc3BlY3RpdmFtZW50ZSA8c3BhbiBjbGFzcz0idHQiPkwyPC9zcGFuPiBlIDxzcGFuIGNsYXNzPSJ0dCI+QTI8L3NwYW4+LCBhIGV4cHJlc3PjbyBs82dpY2EgcGFyYSBhIHByaW1laXJhIHBvc3NpYmlsaWRhZGUgKGZvdG9zIGUg4WxidW0gc2VtIHJvdGHn428pIOk6IDxkaXYgY2xhc3M9ImNlbnRlciI+IChMID49IEwxICsgTDIpICYmIChBID49IEExKSAmJiAoQSA+PSBBMikgPC9kaXY+IDxwPlZvY+ogY29uc2VndWUgZXNjcmV2ZXIgYSBleHByZXNz428gbPNnaWNhIHBhcmEgYSBzZWd1bmRhIHBvc3NpYmlsaWRhZGUgKEZvdG8xIHNlbSByb3Rh5+NvLCBGb3RvMiBjb20gcm90Yefjbywg4WxidW0gc2VtIHJvdGHn428pPwo8cD5BIGV4cHJlc3PjbyBs82dpY2EgcGFyYSBhIHNlZ3VuZGEgcG9zc2liaWxpZGFkZSAoRm90bzEgc2VtIHJvdGHn428sIEZvdG8yIGNvbSByb3Rh5+NvLCDhbGJ1bSBzZW0gcm90Yefjbykg6TogPGRpdiBjbGFzcz0iY2VudGVyIj4gKEwgPj0gTDEgKyBBMikgJiYgKEEgPj0gQTEpICYmIChBID49IEwyKSA8L2Rpdj4gPHA+IENvbXBsZXRlIGFnb3JhIG8gcHJvZ3JhbWEgZXNjcmV2ZW5kbyBhcyBleHByZXNz9WVzIGzzZ2ljYXMgZGUgdG9kYXMgYXMgcG9zc2liaWxpZGFkZXMuIFF1YW5kbyBvIE9VLWzzZ2ljbyBkYXMgb2l0byBleHByZXNz9WVzIGzzZ2ljYXMgZm9yIHZlcmRhZGVpcm8gYSByZXNwb3N0YSDpIFMsIGNhc28gY29udHLhcmlvIGEgcmVzcG9zdGEg6SBOLgo8cD5VbWEg+mx0aW1hIGRpY2E6IGF0ZW7n428gYW8gbW9udGFyIGEgZXhwcmVzc+NvIGzzZ2ljYSBkbyBjb21hbmRvIGNvbmRpY2lvbmFsIDxzcGFuIGNsYXNzPSJ0dCI+aWY8L3NwYW4+IG5vIHNldSBwcm9ncmFtYSwgcG9pcyBz428gbmVjZXNz4XJpb3MgcGFy6m50ZXNlcy5eLioKU2V1IHByb2dyYW1hIGRldmUgPHVsPjxsaT5kZWNsYXJhciB0cupzIHZhcmnhdmVpcywgcGFyYSBhcm1hemVuYXIgb3MgdmFsb3JlcyBkYSBwb250dWHn428gZG9zIHRy6nMgam9nYWRvcmVzLiA8bGk+dXNhciB1bSBjb21hbmRvIDxzcGFuIGNsYXNzPSJ0dCI+c2NhbmY8L3NwYW4+IHBhcmEgbGVyIGRhIGVudHJhZGEgdHLqcyB2YWxvcmVzIHBhcmEgYXMgdmFyaeF2ZWlzIHF1ZSB2b2PqIGRlY2xhcm91IDxsaT51c2FyIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBlbmNhZGVhZG9zIHBhcmEgZGV0ZXJtaW5hciBvIHJlc3VsdGFkbyA8bGk+dXNhciBjb21hbmRvcyA8c3BhbiBjbGFzcz0idHQiPnByaW50Zjwvc3Bhbj4gcGFyYSBlc2NyZXZlciBhIHBvbnR1YefjbyBkbyB2aWNlLWNhbXBl428uIDwvdWw+CjxwPkEgcGFydGUgY2VudHJhbCBkYSBzb2x15+NvIOkgZW5jb250cmFyIGFzIGV4cHJlc3P1ZXMgbPNnaWNhcyBjb3JyZXRhcyBwYXJhIGNhZGEgY29tYW5kbyBjb25kaWNpb25hbCBlbmNhZGVhZG8uIENvbnNpZGVyZSBxdWUgb3Mgbm9tZXMgZGFzIHZhcmnhdmVpcyBxdWUgYXJtYXplbmFtIG9zIHZhbG9yZXMgPHA+PGRpdiBjbGFzcz0iY2VudGVyIj4gQSwgQiBlIEMgPC9kaXY+IDxwPmRlc2NyaXRvcyBubyBlbnVuY2lhZG8gc+NvIDxwPjxkaXYgY2xhc3M9ImNlbnRlciI+IDxzcGFuIGNsYXNzPSJ0dCI+YTwvc3Bhbj4sIDxzcGFuIGNsYXNzPSJ0dCI+Yjwvc3Bhbj4gZSA8c3BhbiBjbGFzcz0idHQiPmM8L3NwYW4+IDwvZGl2PiA8cD5Fc2NyZXZhIGEgZXhwcmVzc+NvIGzzZ2ljYSBxdWUgZGV0ZXJtaW5hIHF1ZSBvIHZpY2UtY2FtcGXjbyDpIG8gam9nYWRvciBjb20gcG9udHVh5+NvIEEuCjxwPk8gam9nYWRvciBBIOkgbyB2aWNlLWNhbXBl428gc2UgbyB2YWxvciBkZSA8c3BhbiBjbGFzcz0idHQiPmE8L3NwYW4+IGVzdOEgZW50cmUgbyB2YWxvciBkZSA8c3BhbiBjbGFzcz0idHQiPmI8L3NwYW4+IGUgbyB2YWxvciBkZSA8c3BhbiBjbGFzcz0idHQiPmM8L3NwYW4+LiBPdSBzZWphLCBBIOkgdmljZS1jYW1wZeNvIHNlIHVtYSBkYXMgZHVhcyBzZWd1aW50ZXMgY29uZGnn9WVzIGZvciB2ZXJkYWRlaXJhIChPVS1s82dpY28pOiA8dWw+IDxsaT48c3BhbiBjbGFzcz0idHQiPmEgPiBiICYmIGEgPCBjPC9zcGFuPiA8bGk+PHNwYW4gY2xhc3M9InR0Ij5hID4gYyAmJiBhIDwgYjwvc3Bhbj4gPC91bD4gPHA+RXNjcmV2YSBhZ29yYSBhIGV4cHJlc3PjbyBs82dpY2EgcXVlIGRldGVybWluYSBxdWUgbyB2aWNlLWNhbXBl428g6SBvIGpvZ2Fkb3IgY29tIHBvbnR1YefjbyBCLgo8cD5PIGpvZ2Fkb3IgQiDpIG8gdmljZS1jYW1wZeNvIHNlIG8gdmFsb3IgZGUgPHNwYW4gY2xhc3M9InR0Ij5iPC9zcGFuPiBlc3ThIGVudHJlIG8gdmFsb3IgZGUgPHNwYW4gY2xhc3M9InR0Ij5hPC9zcGFuPiBlIG8gdmFsb3IgZGUgPHNwYW4gY2xhc3M9InR0Ij5jPC9zcGFuPi4gT3Ugc2VqYSwgQiDpIHZpY2UtY2FtcGXjbyBzZSB1bWEgZGFzIGR1YXMgc2VndWludGVzIGNvbmRp5/VlcyBmb3IgdmVyZGFkZWlyYSAoT1UtbPNnaWNvKTogPHVsPiA8bGk+PHNwYW4gY2xhc3M9InR0Ij5iID4gYSAmJiBiIDwgYzwvc3Bhbj4gPGxpPjxzcGFuIGNsYXNzPSJ0dCI+YiA+IGMgJiYgYiA8IGE8L3NwYW4+IDwvdWw+IDxwPk5vdGUgcXVlIG7jbyDpIG5lY2Vzc+FyaW8gZXNjcmV2ZXIgYSBleHByZXNz428gbPNnaWNhIHF1ZSBkZXRlcm1pbmEgcXVlIG8gdmljZS1jYW1wZeNvIOkgbyBqb2dhZG9yIGNvbSBwb250dWHn428gQywgcG9pcyBzZSBvIHZpY2UtY2FtcGXjbyBu428g6SBBIGUgbuNvIOkgQiwgc/MgcG9kZSBzZXIgQy4KPHA+VW1hIPpsdGltYSBkaWNhOiBhdGVu5+NvIGFvIG1vbnRhciBhcyBleHByZXNz9WVzIGzzZ2ljYXMgZG9zIGNvbWFuZG9zIGNvbmRpY2lvbmFpcyA8c3BhbiBjbGFzcz0idHQiPmlmPC9zcGFuPiBubyBzZXUgcHJvZ3JhbWEsIHBvaXMgc+NvIG5lY2Vzc+FyaW9zIHBhcupudGVzZXMu">
+  <input type="hidden" id="hiddencourse" value="SU5UUk8=">
+  <input type="hidden" id="hiddenvideo" value="qCrkap42bb8">
+  <script type="text/javascript" src="/static/js/saci.min.js" charset="utf-8"></script>
+</body>
+</html>
+

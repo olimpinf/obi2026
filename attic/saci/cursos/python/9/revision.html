@@ -1,0 +1,99 @@
+<p>Muitas vezes a condição para uma execução condicional envolve mais do
+que uma comparação, e as comparações são independentes entre si.
+
+<p>Por exemplo, considere que na disciplina da Profa. Vilma a
+  avaliação seja feita com duas provas, P1 e P2, e para
+  um aluno ser aprovado as duas seguintes condições devem ser
+  satisfeitas:
+
+  <ul>
+    <li>as notas de P1 e P2 são ambas maiores ou iguais do que 50; e 
+    <li>a soma das notas P1 e P2 é maior ou igual do que 140.
+  </ul>
+
+<p>Um outro exemplo de condição que envolve mais de uma comparação é
+se quisermos escrever palavra “Parabéns” quando ao menos uma das
+duas condições abaixo for satisfeita:
+  <ul>
+    <li>nota da P1 é igual a 100; ou
+    <li>nota da P2 é igual a 100.
+  </ul>
+
+<p>Quando a condição envolve mais do que uma comparação vamos
+  usar o <em>bloco operação lógica</em> 
+
+  <img src="/static/saci/blockly_images/block_logic_operation.png" height="40px" align="middle"/>.
+
+  Esse bloco tem dois espaços em branco para serem preenchidos,
+  que são os dois <em>operandos</em> da operação lógica. 
+  Clicando no seletor do bloco (<img src="/static/saci/css/images/down.png"/>) podemos
+  selecionar entre duas operações lógicas:
+  <ul>
+    <li><em>e-lógico</em> ("e")
+    <li><em>ou-lógico</em> ("ou")
+  </ul>
+
+<p>A operação <em>e-lógico</em> tem resultado Verdadeiro quando seus
+  dois operandos forem Verdadeiros; caso contrário o resultado é
+  Falso.
+
+<p>A operação <em>ou-lógico</em> tem resultado Verdadeiro quando pelo
+  menos um dos dois operandos for Verdadeiro; caso contrário o
+  resultado é Falso.
+
+<p>Quando executado, o <em>bloco de operação lógica</em> tem como
+resultado a operação lógica indicada. Ou seja, o <em>bloco de operação
+lógica</em> tem como resultado Verdadeiro ou Falso, dependente dos
+operandos e da operação lógica indicada.
+
+<p>Podemos usar como operando do <em>bloco operação lógica</em>
+  qualquer bloco que tenha como resultado Verdadeiro ou Falso. Assim,
+  podemos usar como operando do <em>bloco de operação lógica</em> um
+  outro <em>bloco de operação lógica</em>. Também podemos usar como
+  operando do <em>bloco de operação lógica</em> um <em>bloco de
+    comparação</em>
+
+  <img src="/static/saci/blockly_images/block_logic_compare.png" height="40px" align="middle"/>
+
+  (recorde que um <em>bloco de comparação</em> tem como resultado
+  Verdadeiro ou Falso). Note também que o <em>bloco de operação
+  lógica</em> é muito similar ao bloco de <em>bloco de
+  comparação</em>, é importante não confundir os dois:
+
+  <center>
+    <img src="/static/saci/blockly_images/block_logic_operation.png" height="40px"/>&nbsp;&nbsp;
+    <img src="/static/saci/blockly_images/block_logic_compare.png" height="40px"/>
+  </center>
+
+  Veja como fica o <em>bloco de operação lógica</em> com
+  dois <em>blocos de comparação</em> usados como operandos:
+ 
+  <center>
+    <img src="/static/saci/blockly_images/group_logic_operation_compare.png" height="55"/>
+  </center>
+
+<p>Um exemplo de uso do <em>bloco operação lógica</em> é:
+
+  <center>
+    <img src="/static/saci/blockly_images/group_logic_operation_example1.png" height="60"/>
+  </center>
+
+<p>Um exemplo mais completo, que implementa o critério de aprovação da Profa. Vilma descrito acima é:
+
+  <center>
+    <img src="/static/saci/blockly_images/group_logic_operation_example2.png" width="600"/>
+  </center>
+  
+<p>Veja esse programa na linguagem Python:
+<pre style="background-color:#eeeeee;width:50%;padding:4px">
+P1 = int(input())
+P2 = int(input())
+if P1 >= 50 and P2 >= 50 and P1 + P2 >= 140:
+  print('Aprovado')
+else:
+  print('Reprovado')
+</pre>
+
+
+
+<p>&nbsp;</p>

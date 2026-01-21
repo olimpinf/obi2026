@@ -1,0 +1,165 @@
+title:Computador
+template:tasks/tarefa_programacao.html
+
+<p>
+Uma grande empresa está construindo uma nova arquitetura de
+computadores que permita a execução eficiente de duas instruções
+especiais de soma. O computador possui N posições de memória,
+endereçadas de 1 a N, e cada posição pode guardar um inteiro maior
+ou igual a zero. Inicialmente, todas as posições contêm o valor
+zero. As instruções especiais de soma são:
+
+<ul>
+
+ <li> FRENTE i V: Dado o endereço i, 1 &leq;  i &leq;  N, e
+ um valor positivo V, o computador deve somar V na posição i,
+ V-1 em i+1, V-2 em i+2, etc, enquanto o valor a ser somando
+ for maior do que zero e a posição for menor ou igual a N;
+
+ <li> TRÁS i V: Dado o endereço i, 1 &leq;  i &leq;  N, e
+ um valor positivo V, o computador deve somar V na posição i,
+ V-1 em i-1, V-2 em i-2, etc, enquanto o valor a ser somando
+ for maior do que zero e a posição for maior ou igual a 1.
+
+</ul>
+
+<p>Por exemplo, para N=16, uma possível sequência de instruções é dada
+abaixo:
+
+<center>
+<table border=1 cellpadding=4>
+<tr>
+<td>0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0</td>
+</tr>
+</table>
+
+<p>FRENTE 4 8
+
+<p>
+<table border=1 cellpadding=4>
+<tr>
+<td>0 </td><td> 0 </td><td> 0 </td><td> 8 </td><td> 7 </td><td> 6 </td><td> 5 </td><td> 4 </td><td> 3 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0</td>
+</tr>
+</table>
+
+<p>TRÁS 16 3
+
+<p>
+<table border=1 cellpadding=4>
+<tr>
+<td>0 </td><td> 0 </td><td> 0 </td><td> 8 </td><td> 7 </td><td> 6 </td><td> 5 </td><td> 4 </td><td> 3 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 2 </td><td> 3</td>
+</tr>
+</table>
+
+<p>TRÁS 2 12
+
+<p>
+<table border=1 cellpadding=4>
+<tr>
+<td>11 </td><td> 12 </td><td> 0 </td><td> 8 </td><td> 7 </td><td> 6 </td><td> 5 </td><td> 4 </td><td> 3 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 2 </td><td> 3</td>
+</tr>
+</table>
+
+<p>FRENTE 8 7
+
+<p>
+<table border=1 cellpadding=4>
+<tr>
+<td>11 </td><td> 12 </td><td> 0 </td><td> 8 </td><td> 7 </td><td> 6 </td><td> 5 </td><td> 11 </td><td> 9 </td><td> 7 </td><td> 5 </td><td> 3 </td><td> 2 </td><td> 2 </td><td> 2 </td><td> 3</td>
+</tr>
+</table>
+</center>
+
+<p>
+Além disso, o computador possui a instrução  IMPRIME i, que
+deve imprimir na saída o valor atual armazenado na posição i da
+memória.
+
+<p>
+Dados N e uma sequência de M instruções, seu programa deve
+imprimir, para cada instrução do tipo  IMPRIME i, uma linha
+contendo o valor armazenado na posição de memória i no instante
+da execução da instrução.
+
+<h3>Entrada</h3>
+<p>
+A primeira linha da entrada contém dois inteiros N e M,
+representando o número de posições de memória e o número de
+instruções, respectivamente. As M linhas seguintes contêm, cada uma,
+a descrição de uma instrução em uma de três formas possíveis: 1 I
+V, representando  FRENTE I V; 2 I V, representando
+ TRÁS I V; e 3 I, representando  IMPRIME I.
+
+<h3>Saída</h3>
+<p>
+Para cada instrução do tipo  IMPRIME i, seu programa deve imprimir
+uma linha contendo um inteiro representando o valor armazenado na posição
+de memória i no instante da execução da instrução.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  200000;
+<li> 1 &leq;  M &leq;  200000;
+<li> 1 &leq;  I &leq;  N;
+<li> 1 &leq;  V &leq;  200000; 
+<li> Ao menos uma instrução será do tipo 3.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+ <li> Em um conjunto de casos de teste somando 20 pontos, N &leq;  10000, M &leq;  10000 e V &leq;  10000;
+</ul>
+
+<h3>Exemplos</h3>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+16 7
+1 4 8
+2 16 3
+3 14
+2 2 12
+1 8 7
+3 10
+3 14
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+7
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+200000 2
+1 2345 193290
+3 112230
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+83405
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

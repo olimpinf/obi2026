@@ -1,0 +1,9 @@
+<li>
+  <{{ header_tag|default:'h2' }} class="event">
+    <a href="{{ object.get_absolute_url }}">{{ object.name|safe }}</a>
+  </{{ header_tag|default:'h2' }}>
+  <dd>
+    {{ object.finish|date:'d/F/Y' }}
+  </dd>
+
+</li>

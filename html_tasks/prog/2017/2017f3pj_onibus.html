@@ -1,0 +1,98 @@
+title:Ônibus
+template:tasks/tarefa_programacao.html
+
+<p>
+A Linearlândia é composta de N cidades, numeradas de 1 até
+N. Para alguns pares de cidades existe uma linha de ônibus que faz o
+trajeto de ida e volta diretamente entre as duas cidades do par. Os
+pares de cidades ligados diretamente por uma linha de ônibus são
+escolhidos de forma que sempre é possível ir de qualquer cidade para
+qualquer outra cidade por um, e somente um, caminho (um caminho é uma
+sequência de linhas de ônibus, sem repetição).
+
+<p>Dada a lista de pares de cidades ligados diretamente por linhas de
+ônibus, uma cidade origem e uma cidade destino, seu programa deve
+computar quantos ônibus é preciso pegar para ir da origem ao destino.
+Por exemplo, na figura, para ir da cidade 2 para a cidade 12 é
+preciso pegar 4 ônibus.
+
+<div class="center">
+<img src="/static/img/task_images/2017f3pj_onibus.png" />
+</div>
+
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém três inteiros N, A e B,
+representando o número de cidades na Linearlândia, a cidade origem e a
+cidade destino, respectivamente. As N-1 linhas seguintes contém,
+cada uma, dois inteiros P e Q, indicando que existe uma linha de
+ônibus ligando diretamente as cidades P e Q.
+
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo um inteiro representando
+quantos ônibus é preciso pegar para ir de A até B.
+
+<h3>Restrições</h3>
+<ul>
+<li> 2 &leq;  N &leq;  10000
+<li> 1 &leq;  A &leq;  N, 1 &leq;  B &leq;  N, A &ne;  B
+<li> 1 &leq;  P &leq;  N, 1 &leq;  Q &leq;  N
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 2 4
+1 2
+2 3
+3 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+16 2 12
+3 5
+12 3
+5 1
+2 1
+4 1
+6 1
+7 1
+12 8
+12 9
+12 10
+12 11
+3 13
+13 14
+15 13
+15 16
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

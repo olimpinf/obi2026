@@ -1,0 +1,63 @@
+{% extends "base_restricted_compet.html" %}
+{% load obi_extras exams %}
+
+{% block head_extra %}
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+    update_time_remaining("{{ f.time_remaining }}", true);
+});
+</script>
+{% endblock head_extra %}
+
+
+{% block content %}
+<span class="exam_header">{{ f.exam_header }}</span>
+{% if pagetitle %}
+<h1>{{ pagetitle }}</h1>
+{% endif %}
+
+{% if task.statement %}
+  {{ task.statement }}
+<form class="question" action="" method="post">
+  {% csrf_token %}
+    {% for q in task.questions %}{% with qnum=forloop.counter %}
+    <p><b>Questão {{ q.num }}.</b> {{ q.text|safe }}
+      {% reflect q.alternatives f.shuffle_pattern as reflected_alternatives %}
+      {% for a in reflected_alternatives %}{% with anum=forloop.counter %}
+      <br />
+      {% reflected anum f.shuffle_pattern as anum_refl %}
+      <input onchange="save_exam_answer('{{ request.path }}salvar', '{{ task.descriptor }}', {{ q.num }}, {{ anum_refl }})" type="radio" {% if q.num in f.answers_task and f.answers_task|get_item:q.num == anum_refl %}checked{% endif %} id="{{q.num}}_{% reflected anum f.shuffle_pattern %}" name="{{ q.num }}" value="{% reflected anum f.shuffle_pattern %}"/> {{ a.text|safe }}
+      {% endwith %}{% endfor %}
+    {% endwith %}{% endfor %}
+</form>
+{% else %}
+<p>A prova está em andamento.</p>
+<p>Escolha as tarefas no menu ao lado.
+{% endif %}
+
+ <div id="message_saved" class="box_message_saved">
+  Sua resposta foi salva no servidor.
+ </div>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "exams/includes/countdown.html" %}
+
+  <h2>Tarefas</h2>
+  {% include "exams/includes/contents_tasks.html" %}
+  
+  <h2>Instruções</h2>
+  {% include "exams/includes/instructions_ini.html" %}
+
+  {% endblock browse-wrapper %}
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+
+</div>
+{% endblock content-related%}
+

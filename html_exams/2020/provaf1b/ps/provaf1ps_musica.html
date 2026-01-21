@@ -1,0 +1,128 @@
+title:Música para Todos
+template:exams/tarefa_programacao.html
+order:4
+<p>
+Uma empresa de <i>streaming</i> de músicas lançou uma nova
+funcionalidade, para grupos de amigos ouvirem em seus aparelhos a
+mesma música ao mesmo tempo, compartilhando assim um momento de
+alegria nestes tempos difíceis de pandemia.
+
+<p>Cada amigo no grupo tem que declarar uma música que adora e uma música
+que detesta. Um amigo fica <i>satisfeito</i> se a música que está
+sendo compartilhada não é a música que ele detesta. Se a música que
+está sendo compartilhada é detestada por um dos amigos, ele pode
+trocar a música sendo compartilhada pela música que ele adora. Se há
+mais de um amigo que detesta a música que está sendo compartilhada,
+somente o amigo que é cliente há mais tempo da empresa é que pode
+trocar a música (e troca pela música que adora).
+
+<p>Obviamente, após a troca da música compartilhada pode ser que outro
+amigo deteste a nova música, e uma nova troca pode ocorrer. E as trocas
+podem ser intermináveis!
+
+<p>Dadas as preferências de um grupo de amigos e a música sendo compartilhada,
+e considerando que sempre ocorre troca enquanto houver amigo não satisfeito,
+escreva um programa para determinar quantas trocas ocorrem até que
+todos os amigos estejam satisfeitos.
+
+
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém três inteiros
+N, M e C, respectivamente o número de amigos, o número de
+músicas e a música que está sendo compartilhada. As músicas são
+identificadas por inteiros de 1 a M.  Cada uma das N linhas
+seguintes descreve as escolhas de um amigo e contém dois inteiros A
+e D, identificando respetivamente a música adorada e a música
+detestada. A ordem dos amigos na entrada obedece à ordem em que os
+amigos se tornaram clientes da empresa (o amigo que aparece antes é
+cliente há mais tempo).  
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha na saída,
+contendo um único inteiro, o número de trocas até que todos os amigos
+fiquem satisfeitos ou o número <span class="ttt">-1 se as trocas continuam
+indefinidamente.</span>
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  10<sup>5</sup> 
+<li> 1  &leq;  M  &leq;  10<sup>5</sup> 
+<li> 1  &leq;  C  &leq;  M 
+<li> 1  &leq;  A,D  &leq;  M e A  &neq;  D
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 40 pontos, 1  &leq;  N,M  &leq;  1000.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 4 2
+1 2
+2 3
+3 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5 2
+1 3
+2 3
+3 2
+5 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3 1
+1 2
+2 3
+3 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

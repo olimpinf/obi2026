@@ -1,0 +1,49 @@
+<div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="{% url 'principal:index' %}">obi</a>
+    <div role="navigation">
+      <ul>
+        <li{% if 'noticias' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'weblog:index' %}">Notícias</a>
+        </li>
+        <li{% if 'consultas' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'principal:consultas' %}">Consultas</a>
+        </li>
+        <li{% if 'resultados' in request.path %} class="active"{% endif %}>
+          <a href="/resultados">Resultados</a>
+        </li>
+        <li{% if 'datas' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'datas' %}">Datas importantes</a>
+        </li>
+        <li{% if 'consultas' in request.path %} class="active"{% endif %}>
+          <a href="{% url 'pratique' %}">Pratique</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div role="sub-banner">
+  <div class="container">    
+    <span class="title-navigation2">XXV Olimpíada Brasileira de Informática</span>
+    <div role="navigation2">
+      <ul>
+	{% if user.is_authenticated %}
+        <li>
+          <a href="">Autenticado como {{ user }} </a>
+        </li>
+        <li>
+          <a href="{% url 'logout' %}">Trocar a senha  </a>
+        </li>
+        <li>
+          <a href="{% url 'logout' %}">Encerrar a Sessão</a>
+        </li>
+	{% else %}
+        <li>
+          <a href="{% url 'restrito:index' %}">Acesso Escolas</a>
+        </li>
+	{% endif %}
+      </ul>
+    </div>    
+  </div>
+</div>

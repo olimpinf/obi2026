@@ -1,0 +1,133 @@
+title:Trem da mina
+template:exams/tarefa_programacao.html
+order:4
+<p>
+Uma antiga mina de ouro foi desativada e Herculano quer torná-la uma
+atração turística. A mina contém uma verdadeira rede ferroviária subterrânea,
+composta de estações e ramos de trilhos, pelos quais trafegavam os
+trens carregando minério. Cada ramo de trilho liga duas estações
+distintas e pode ser usado nas duas direções. Um &quot;ciclo&quot; na rede
+ferroviária é uma sequência de estações s<sub>1</sub>, s<sub>2</sub>, &hellip; , s<sub>n</sub>,
+s<sub>n</sub>+1 = s<sub>1</sub>, tais que s<sub>i</sub>  &ne;  s<sub>i</sub>+1 e (s<sub>i</sub>,s<sub>i</sub>+1) é um ramo
+de trilho, para 1  &leq;  i &leq;  n.  A rede ferroviária pode conter
+ciclos, mas cada estação faz parte de no máximo um ciclo da rede
+ferroviária.  Os ramos de trilhos e estações são tais que, se uma parte do trem
+ocupa um ramo de trilho ou estação, não há espaço para outro (ou o mesmo!)
+trem entrar novamente nesse ramo de trilho ou estação.
+
+
+
+<p>Algumas estações da rede ferroviária têm acesso ao direto ao solo,
+para descarregar o minério. Herculano tem um mapa que descreve a rede
+ferroviária da mina, informando para cada ramo de trilho o seu comprimento e
+quais duas estações o ramo de trilho liga.
+
+<p>Para planejar o passeio turístico de trem pela mina Herculano quer
+saber, para as estações que têm acesso ao solo, conhecendo o
+comprimento do trem, se é possível que o trem entre na mina pela
+estação, percorra a menor distância possível dentro da mina e saia
+novamente pela mesma estação que entrou, sempre andando para a frente,
+sem nunca dar marcha-a-ré. Você pode ajudá-lo?
+<h3>Entrada</h3>
+
+<p>A primeira linha contém dois inteiros E  e R
+ representando respectivamente o número de estações
+e o número de ramos de trilhos da rede ferroviária da mina. 
+As estações são  identificadass por inteiros de 1 a  E.  Cada uma das
+R linhas seguintes descreve um ramo de trilho e contém três inteiros A, B
+e C, onde A  e B
+representam  as  estações  ligadas  pelo   ramo de trilho,  e  C  representa  o
+comprimento  do  ramo de trilho.  Uma  estação  é  ligada por ramos de trilhos a no máximo  outras 100 estações
+e cada duas estações são ligadas por no máximo um ramo de trilho.
+ A próxima linha contém  um inteiro
+K, que indica o número de consultas.  Cada uma
+das K linhas seguintes descreve uma consulta, e contém dois  inteiros X
+e T, que indicam respectivamente a estação pela
+qual Herculano quer que o trem entre e o comprimento do trem.
+
+<h3>Saída</h3>
+<p>Para cada consulta da entrada seu programa deve produzir uma única
+linha, contendo um único número inteiro, o comprimento do percurso
+mínimo que o trem deve percorrer dentro da mina para entrar e sair
+pela estação indicada na consulta, sem dar marcha-a-ré. Se não for
+possível para o trem entrar e sair sem dar marcha-a-ré, a linha deve
+conter o valor -1.
+<h3>Restrições</h3>
+<ul>
+<li> 2  &leq;  E  &leq;  10<sup>4</sup>
+<li> 1  &leq;  R  &leq;  2 &times; E
+<li> 1  &leq;  A  < B  &leq;   E
+<li> 1   &leq;  C  &leq;   100
+<li> 1  &leq;  K  &leq;  100
+<li> 1  &leq;  X  &leq;  E
+<li> 1  &leq;  T  &leq;  10<sup>5</sup>
+<li> Uma  estação  é  ligada por ramos de trilhos a no máximo  outras 100 estações
+e cada duas estações são ligadas por no máximo um ramo de trilho.
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 4
+1 2 10
+1 3 12
+3 4 7
+1 4 6
+4
+2 18
+1 10
+4 26
+3 25
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+45
+25
+-1
+25
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7 8
+1 2 2
+2 3 2
+2 5 10
+5 6 25
+2 6 20
+3 7 1
+4 7 4
+3 4 3
+4
+1 6
+4 50
+7 56
+7 5
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+16
+65
+-1
+8
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

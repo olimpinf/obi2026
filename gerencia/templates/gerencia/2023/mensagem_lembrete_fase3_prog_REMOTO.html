@@ -1,0 +1,115 @@
+{{ greetings }}
+
+     {{ compet.compet_name}}
+
+você está recebendo esta mensagem porque está classificad{{ suffix }} para a Fase 3 (Fase Nacional) da Olimpíada Brasileira de Informática (OBI{{ year }}).
+
+Esta mensagem é apenas um lembrete de que as provas da Fase 3 da Modalidade Programação ocorrem no próximo sábado, dia 08 de outubro. Devido à pandemia de Covid-19, elas serão aplicadas com a mesma sistemática utilizada na Fase 2, isto é, se a escola desejar ela pode aplicar a prova presencialmente, na própria escola do aluno, caso contrário o aluno poderá realizar a prova em sua casa, de forma online. Consulte o professor Coordenador da OBI{{ year }} da sua escola para saber se você deve fazer a prova na escola ou em sua casa.
+
+Horário e duração das provas:
+
+* Programação Nível Júnior: três horas
+  (ambiente aberto entre 08:00 e 13:00, deve iniciar no máximo 10:00)
+
+* Programação Nível 1: quatro horas
+  (ambiente aberto entre 08:00 e 14:00, deve iniciar no máximo 10:00)
+
+* Programação Nível 2: cinco horas
+  (ambiente aberto entre 08:00 e 15:00, deve iniciar no máximo 10:00)
+
+* Programação Nível Sênior: cinco horas
+  (ambiente aberto entre 08:00 e 15:00, deve iniciar no máximo 10:00)
+
+A prova deve ser feita individualmente e sem acesso a qualquer tipo de material de consulta (como livros, internet, programas que você mesmo tenha feito anteriormente, arquivos de computador...), mas você pode consultar o manual da linguagem de programação que você estiver usando. Confiamos no seu "espírito olímpico" para obedecer a essas regras!
+
+Leia também as instruções ao final desta mensagem.
+
+Para acessar a Prova da Fase 3 acesse sua página pessoal na OBI{{ year }}, através link "ACESSO COMPETIDORES" da página da OBI{{ year }}:
+
+https://olimpiada.ic.unicamp.br/compet/
+
+usando para o login
+
+usuário: {{ compet.compet_id_full }}
+senha:  {{ compet.compet_conf }}
+
+Boa prova!
+
+**********
+INSTRUÇÕES
+**********
+
+* Para realizar a prova você deve ter acesso a um ambiente para
+  desenvolvimento de programas de computador, para a linguagem de
+  programação de sua preferência (entre C, C++, Python, Java ou
+  Javascript). Se você aprendeu a programar no ambiente
+  Saci, pode usar o ambiente de desenvolvimento Javascript do Saci
+  para desenvolver e testar seus programas:
+  https:olimpiada.ic.unicamp.br/saci/cursos/provaf2/2021/
+
+* O nome do arquivo de solução somente é significativo para soluções
+  na linguagem Java.  Nesse caso, o nome do arquivo deve ser sempre,
+  independente da tarefa, solucao.java (todas as letras minúsculas,
+  sem acento) e o nome da classe principal do programa deve ser
+  solucao (todas as letras minúsculas, sem acento). Para as outras
+  linguagens o nome do arquivo não tem importância.
+
+* Você pode fazer no máximo 100 submissões de soluções no total, não
+  havendo limite de submissões por tarefa. Não deixe para fazer as
+  submissões ao final da prova, submeta assim que terminar a solução
+  de cada tarefa.
+
+* Compile e execute a sua solução no seu ambiente de desenvolvimento
+  antes de submetê-la, com testes criados por você mesmo (usando como
+  base os Exemplos de Entrada da tarefa); não use o sistema de
+  correção como ambiente de testes.
+
+* Obedeça estritamente o formato de saída especificado no enunciado da
+  tarefa. Em particular, não escreva na saída antes de fazer a leitura
+  da entrada. Ou seja, não escreva frases como "Entre com o valor de N:",
+  pois isto viola o formato de saída especificado.
+
+* Veja exemplos de programas nas diferentes linguagens, com indicações
+  de como os comandos de entrada e saída devem ser usados em cada
+  linguagem no link https://olimpiada.ic.unicamp.br/pratique/pj/
+
+* A prova é individual e sem consulta a qualquer material. Você pode
+  usar caneta, lápis, papel em branco, borracha e régua. Você pode
+  consultar o manual da linguagem de programação que estiver usando.
+
+* Não divulgue ou comente as tarefas da prova com outros competidores
+  até o término do período de aplicação da prova.
+
+* A pontuação é calculada da seguinte maneira:
+
+  - Cada submissão é verificada com vários casos de teste, divididos
+    em "subtarefas", cada subtarefa valendo um certo número de
+    pontos.  Para cada tarefa, a soma dos máximos pontos possíveis das
+    suas subtarefas é 100 pontos.
+
+  - Para cada subtarefa, sua solução é avaliada com diferentes casos
+    de teste e para cada caso de teste recebe um número de pontos que
+    depende do resultado da execução de seu programa com o caso de
+    teste.
+
+  - Para cada submissão a pontuação de cada subtarefa é o menor número
+    de pontos obtido entre todos os casos de teste da subtarefa, a
+    menos que o enunciado especifique diferentemente.
+
+  - A pontuação final de cada subtarefa é a maior pontuação da
+    subtarefa, entre todas as submissões.
+
+  - A pontuação final de cada tarefa é a soma das pontuações finais de
+    suas subtarefas.
+
+  Por exemplo, considere uma competidora que fez duas submissões para
+  uma tarefa que contém duas subtarefas. Considere ainda que a
+  primeira solução submetida recebeu 30 pontos para a primeira
+  subtarefa e 10 pontos para a segunda subtarefa, e a segunda solução
+  recebeu 0 pontos para a primeira subtarefa e 40 pontos para a
+  segunda subtarefa. Então a pontuação final dessa competidora para
+  essa tarefa é 70 pontos, ou seja, o máximo entre (30, 10),
+  correspondente à primeira subtarefa, somado ao máximo de entre
+  (0, 40), correspondente à segunda subtarefa.
+    
+{% include 'includes/signature.html' %}

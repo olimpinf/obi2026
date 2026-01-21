@@ -1,0 +1,243 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Datas Importantes{% endblock %}
+{% block head_extra %}
+{% endblock %}
+
+{% block header %}
+Datas Importantes
+{% endblock %}
+
+{% block content %}
+
+
+<h2>Inscrições</h2>
+<ul>
+  <li>Abertura das inscrições: {{ 'geral-abertura-inscricoes'|obi_date|date:"d/m/Y" }}</li>
+  <li>Cadastro de escolas:
+    <ul>
+      <li>para participação na Modalidade Iniciação: até {{ 'ini-ultimo-dia-cadastro-escolas'|obi_date|date:"d/m/Y" }}</li>
+      <li>para participação na Modalidade Programação: até {{ 'prog-ultimo-dia-cadastro-escolas'|obi_date|date:"d/m/Y" }}</li>
+      <li>para participação na Competição Feminina da OBI (CF-OBI): até {{ 'cfobi-ultimo-dia-cadastro-escolas'|obi_date|date:"d/m/Y" }}</li>
+    </ul>
+  <li>Inscrição de competidores(as):
+    <ul>
+      <li>para participação na Modalidade Iniciação: até {{ 'ini-ultimo-dia-inscricao'|obi_date|date:"d/m/Y" }}, 18:00</li>
+      <li>para participação na Modalidade Programação: até {{ 'prog-ultimo-dia-inscricao'|obi_date|date:"d/m/Y" }}, 18:00</li>
+      <li>para participação na Competição Feminina da OBI (CF-OBI): até {{ 'cfobi-ultimo-dia-inscricao'|obi_date|date:"d/m/Y" }}</li>
+    </ul>
+</ul>
+
+
+<h2 class="mt-4">Provas</h2>
+<h3 class="mt-3">Fase 1 (Local)</h3>
+<table align="center" class="table table-primary table-bordered" width="100%">
+  <thead class="table-dark">
+    <tr>
+ <th align="center">Modalidade</th>
+ <th align="center">Dia</th>
+ <th align="center">Duração</th>
+ <th align="center">Horário</th>
+    </tr>
+    </thead>
+<tr>
+ <td>Iniciação Nível Júnior</td>
+ <td rowspan="3" valign="middle" align="center">
+   {{ 'ini-fase-1-prova'|obi_date|date:'d' }} a
+   {{ 'ini-fase-1-prova'|obi_date_finish|date:'d/m/Y' }}<br/>
+   ({{ 'ini-fase-1-prova'|obi_date|date:'l'|lower }} a<br/>
+   {{ 'ini-fase-1-prova'|obi_date_finish|date:'l'|lower }})
+ </td>
+ <td rowspan="3" valign="middle" align="center"> uma hora</td>
+ <td rowspan="3" valign="middle" align="center">horário à escolha<br>da escola</td>
+</tr>
+<tr>
+
+ <td>Iniciação Nível 1</td>
+</tr>
+<tr>
+ <td>Iniciação Nível 2</td>
+</tr>
+
+<tr>
+ <td>Programação Nível Junior</td>
+ <td rowspan=4 valign="middle" align="center">
+   {{ 'prog-fase-1-prova'|obi_date|date:'d' }} a
+   {{ 'prog-fase-1-prova'|obi_date_finish|date:'d/m/Y' }}<br/>
+   ({{ 'prog-fase-1-prova'|obi_date|date:'l'|lower }} a<br/>
+   {{ 'prog-fase-1-prova'|obi_date_finish|date:'l'|lower }})
+ </td>
+ <td rowspan="4" valign="middle" align="center">duas horas</td>
+ <td rowspan=4 valign="middle" align="center">horário à escolha<br>da escola</td>
+</tr>
+<tr>
+ <td>Programação Nível 1</td>
+</tr>
+<tr>
+ <td>Programação Nível 2</td>
+</tr>
+<tr>
+ <td>Programação Nível Sênior</td>
+</tr>
+
+
+</table>
+
+
+<h3 class="mt-3">Fase 2 (Estadual)</h3>
+<table align="center" class="table table-primary table-bordered" width="100%">
+  <thead class="table-dark">
+  <tr>
+    <th align="center">Modalidade</th>
+    <th align="center">Dia</th>
+    <th align="center">Duração</th>
+    <th align="center">Horário</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>Iniciação Nível Júnior</td>
+    <td rowspan="3" valign="middle" align="center">
+   {{ 'ini-fase-2-prova'|obi_date|date:'d' }} a
+   {{ 'ini-fase-2-prova'|obi_date_finish|date:'d/m/Y' }}<br/>
+   ({{ 'ini-fase-2-prova'|obi_date|date:'l'|lower }} a<br/>
+   {{ 'ini-fase-2-prova'|obi_date_finish|date:'l'|lower }})
+    </td>
+    <td rowspan=3 valign="middle" align="center">
+      uma hora
+    </td>
+    <td rowspan=3 valign="middle" align="center">horário à escolha<br>da escola
+    </td>
+  </tr>
+  <tr>
+    <td>Iniciação Nível 1</td>
+  </tr>
+  <tr>
+    <td>Iniciação Nível 2</td>
+  </tr>
+
+  <tr>
+    <td>Programação Nível Júnior</td>
+    <td rowspan=4 valign="middle" align="center">
+   {{ 'prog-fase-2-prova'|obi_date|date:'d' }} a
+   {{ 'prog-fase-2-prova'|obi_date_finish|date:'d/m/Y' }}<br/>
+   ({{ 'prog-fase-2-prova'|obi_date|date:'l'|lower }} a<br/>
+   {{ 'prog-fase-2-prova'|obi_date_finish|date:'l'|lower }})
+    </td>
+    <td align="center">
+      duas horas
+    </td>
+    <td rowspan=4 valign="middle" align="center">horário à escolha<br>da escola
+    </td>
+  </tr>
+  <tr>
+    <td>Programação Nível 1</td>
+    <td rowspan=3 valign="middle" align="center">
+      três horas
+    </td>
+  </tr>
+  <tr>
+    <td>Programação Nível 2</td>
+  </tr>
+  <tr>
+    <td>Programação Nível Sênior</td>
+  </tr>
+</table>
+
+<h3 class="mt-3">Fase 3 (Nacional)</h3>
+<table align="center" class="table table-primary table-bordered" width="100%">
+  <thead class="table-dark">
+  <tr>
+    <th align="center">Modalidade</th>
+    <th align="center">Horário</th>
+    <th align="center">Dia</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>Iniciação Nível Júnior</td>
+    <td rowspan="3" valign="middle" align="center">10:00-12:00</td>
+    <td rowspan="3" valign="middle" align="center">
+      {{ 'ini-fase-3-prova'|obi_date|date:'d/m/Y' }}<br/>
+      ({{ 'ini-fase-3-prova'|obi_date|date:'l'|lower }})
+    </td>
+  </tr>
+  <tr>
+    <td>Iniciação Nível 1</td>
+  </tr>
+  <tr>
+    <td>Iniciação Nível 2</td>
+  </tr>
+
+  <tr>
+    <td>Programação Nível Júnior</td>
+    <td rowspan=2 valign="middle" align="center">8:00-12:00</td>
+    <td rowspan=4 valign="middle" align="center">
+      {{ 'prog-fase-3-prova'|obi_date|date:'d/m/Y' }}<br/>
+      ({{ 'prog-fase-3-prova'|obi_date|date:'l'|lower }})
+    </td>
+  </tr>
+  <tr>
+    <td>Programação Nível 1</td>
+  </tr>
+  
+  <tr>
+    <td>Programação Nível 2</td>
+    <td rowspan=2 valign="middle" align="center">13:00-18:00</td>
+  </tr>
+  <tr>
+    <td>Programação Nível Sênior</td>
+  </tr>
+</table>
+
+<h3 class="mt-3">Competição Feminina da OBI (CF-OBI)</h3>
+<table align="center" class="table table-primary table-bordered" width="100%">
+  <thead class="table-dark">
+  <tr>
+    <th align="center">Modalidade</th>
+    <th align="center">Dia</th>
+    <th align="center">Duração</th>
+    <th align="center">Horário</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>Programação Nível Júnior</td>
+    <td rowspan="3" valign="middle" align="center">
+      {{ 'cfobi-fase-1-prova'|obi_date|date:'d/m/Y' }}<br/>
+      ({{ 'cfobi-fase-1-prova'|obi_date|date:'l'|lower }})
+    </td>
+    <td rowspan=3 valign="middle" align="center">
+      três horas
+    </td>
+    <td rowspan=3 valign="middle" align="center">horário à escolha<br>da escola
+    </td>
+  </tr>
+  <tr>
+    <td>Programação Nível 1</td>
+  </tr>
+  <tr>
+    <td>Programação Nível 2</td>
+  </tr>
+</table>
+
+<h2 class="mt-4">Semana Olímpica da OBI</h2>
+A Semana Olímpica será realizada no Instituto de Computação da Unicamp, em Campinas, de
+{{ 'semana-olimpica'|obi_date|date:'d' }} de {{ 'semana-olimpica'|obi_date|date:'E'|lower }} a
+{{ 'semana-olimpica'|obi_date_finish|date:'d' }} de {{ 'semana-olimpica'|obi_date_finish|date:'E'|lower }}.
+
+<h2 class="mt-4">Olimpíada Internacional de Informática</h2>
+A IOI{{ ""|obi_date_year }} será em {{ 'ioi'|obi_comment }}, de {{ 'ioi'|obi_date|date:'d' }} de {{ 'ioi'|obi_date|date:'E'|lower }} a {{ 'ioi'|obi_date_finish|date:'d' }} de {{ 'ioi'|obi_date_finish|date:'E'|lower }}.
+
+<h2 class="mt-4">Olimpíada Iberoamericana de Informática</h2>
+A OII{{ ""|obi_date_year }} será em {{ 'oii'|obi_comment }}, {{ 'oii'|obi_date|date:'d' }} de {{ 'oii'|obi_date|date:'E'|lower }}.
+
+<h2 class="mt-4">Olimpíada Europeia de Informática para Garotas</h2>
+A EGOI{{ ""|obi_date_year }} será em {{ 'egoi'|obi_comment }}, de {{ 'egoi'|obi_date|date:'d' }} de {{ 'egoi'|obi_date|date:'E'|lower }} a {{ 'egoi'|obi_date_finish|date:'d' }} de {{ 'egoi'|obi_date_finish|date:'E'|lower }}.
+
+{% endblock %}
+
+{% block content-related %}
+
+
+{% include "cal/includes/see_also_calendar.html" %}
+
+{% endblock %}

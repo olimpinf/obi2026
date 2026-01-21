@@ -1,0 +1,23 @@
+# email de coordenador
+
+85359-D,2677
+110459-D,293
+22483-I,325
+22073-C,816
+
+# erro de fórmula em planilha, fase 2, jplag 99%
+57420-G,2507
+32752-F,1513
+66433-I,3692
+80776-C,3933
+116285-H,296
+116294-G,296
+
+# conversa com professora, opinião Mateus
+71291-F,2863
+
+# muita dúvida
+02150-E,401
+80783-F,2673
+73179-I,4226
+91381-A,205

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova OBI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #ddd;
+    }
+    
+    /* Content area */
+    .content {
+      flex: 1;
+      position: relative;
+      overflow: scroll;
+    }
+
+    /* link */
+    a {
+	color: white;
+    }
+    
+    /* Webview styling */
+    webview {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+
+    /* Info page styling */
+    .info-content {
+      flex: 1;
+      padding: 40px;
+      overflow: auto;
+      background: #bbb;
+      color: black;
+    }
+
+    .info-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .info-content h2 {
+      font-size: 1.8em;
+      margin: 30px 0 15px 0;
+      color: #fff;
+    }
+
+    .info-content p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .info-box {
+      background: #666;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 20px 0;
+      backdrop-filter: blur(10px);
+      /* border: 1px solid #444; */
+      border-left: 6px solid #888;
+      color: white;
+    }
+
+    .info-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.4em;
+    }
+
+    .info-box ul {
+      list-style-position: inside;
+      line-height: 2;
+      font-size: 1.05em;
+    }
+
+    .info-box ul li {
+      margin-bottom: 8px;
+    }
+
+    .warning-box {
+	background: #a0392b;
+      border-left: 6px solid #d74c3c;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      color: white;
+    }
+
+    .warning-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.4em;
+    }
+
+    .warning-box ul {
+      list-style-position: inside;
+      line-height: 2;
+      font-size: 1.05em;
+    }
+
+    .warning-box ul li {
+      margin-bottom: 8px;
+    }
+    
+    .warning-box strong {
+      font-size: 1.2em;
+      color: yellow;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="tab-content active" id="info">
+      <div class="info-content">
+
+<p>
+  Este é o Ambiente de Prova da Olimpíada Brasileira de Informática.
+</p>
+
+<div class="warning-box">
+  <h3>IMPORTANTE</h3>
+  <ul>
+    <li>A prova somente é iniciada — e o tempo de duração começa a contar — quando você clicar no botão "Iniciar" na aba <em>Prova</em>.</li>
+    <li>Antes de inicar a prova, leia a <a href="#folha-informacoes">Folha de Informações</a>.</li>
+    <li>Após iniciar a prova, caso ela seja encerrada, não será possível acessá-la novamente.</li>
+    <li>Para encerrar a prova, clique no botão "Encerrar".</li>
+    <li><strong>Não tente mudar</strong> para outro aplicativo durante a prova – sua prova será encerrada.
+  </ul>
+</div>
+
+<div class="info-box">
+  <h3>Estrutura do ambiente</h3>
+  <p>O ambiente é dividido em três abas principais:</p>
+  <ul>
+    <li><strong>Informações:</strong>
+      <ul style="margin-left:25px">
+        <li>Esta aba, que contém instruções gerais.</li>
+      </ul>
+    <li><strong>EditorOBI:</strong>
+      <ul style="margin-left:25px">
+        <li>Aba destinada à implementação e submissão das suas soluções. Ela contém um editor de código online com compilador integrado.</li>
+        <li>Utilize-a para escrever, compilar e testar seus programas (em C++, Python ou Java) com entradas criadas por você.</li>
+        <li>É também nesta aba que você deve submeter suas soluções para correção.</li>
+      </ul>
+    </li>
+    <li><strong>Prova:</strong>
+      <ul style="margin-left:25px">
+        <li>Nesta aba você inicia a prova e visualiza os enunciados das tarefas.</li>
+        <li>Também é nesta aba que você acompanha o resultado das submissões feitas na aba <em>EditorOBI</em>.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="info-box">
+  <h3>Atalhos de teclado</h3>
+  <ul>
+    <li><strong>Ctrl + 1:</strong> Ir para a aba <em>Informações</em>.</li>
+    <li><strong>Ctrl + 2:</strong> Ir para a aba <em>EditorOBI</em>.</li>
+    <li><strong>Ctrl + 3:</strong> Ir para a aba <em>Prova</em>.</li>
+  </ul>
+</div>
+
+<p style="margin-top: 40px; text-align: center; font-size: 1.2em;">
+  <strong>Boa prova!</strong>
+</p>
+
+<hr>
+
+<h2 id='folha-informacoes' style="text-align: center; color:#333;">Folha de Informações</h2>
+<object
+  data="https://olimpiada.ic.unicamp.br/static/extras/misc/FolhaInformacoes.pdf"
+  type="application/pdf"
+  width="100%"
+  height="1200"
+  >
+</object>
+</body>
+</html>

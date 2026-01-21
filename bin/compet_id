@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import sys
+
+def check_compet_id_obi(id):
+    d1 = id % 10
+    d2 = id % 100 // 10
+    d3 = id % 1000 // 100
+    d4 = id % 10000 // 1000
+    d5 = id // 10000
+    digit = (3 * d1 + 2 * d2 + 1 * d3 + 2 * d4 + 3 * d5) % 10
+    if digit == 0:
+        digit = 10
+    return "%c" % (digit + 64)
+
+
+id = int(sys.argv[1])
+
+print("{}-{}".format(id,check_compet_id_obi(id)))

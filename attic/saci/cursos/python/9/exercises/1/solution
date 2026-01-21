@@ -1,0 +1,9 @@
+# Solução do Desafio da Aula 8
+
+A = int(input())
+B = int(input())
+C = int(input())
+if A == B + C and B == C:
+  print('S')
+else:
+  print('N')

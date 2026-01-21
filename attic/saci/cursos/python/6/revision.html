@@ -1,0 +1,94 @@
+
+<p>Os problemas que resolvemos até agora não necessitaram que o programa
+  executasse diferentes ações dependendo de alguma "condição".
+
+<p>Suponha um aplicativo de jogo em que uma das tarefas do jogador é
+  coletar moedas e que ao final do jogo, se o jogador tem menos do que
+  cinco moedas ele perde todas as moedas que tem. 
+
+<p>Nesse caso, precisamos manter uma variável no programa que armazena
+  o número de moedas do jogador; suponha que essa variável tenha o
+  nome <span class="tt">moedas</span>.  No programa, temos que verificar uma
+  "condição": se o valor de <span class="tt">moedas</span> é menor do que cinco. Caso a
+  condição seja verdadeira temos que fazer a variável <span class="tt">moedas</span> ter o
+  valor zero. Ou seja, a execução do comando "faça <span class="tt">moedas</span>
+  valer zero" é
+<em>condicional</em> ao fato de o valor
+de <span class="tt">moedas</span> ser menor do que cinco.
+
+<p>Em Blockly, execução condicional é definida usando os blocos
+  do menu <em>Lógica</em> da Barra de Ferramentas:
+
+  <center>
+    <img align="middle" src="/static/saci/blockly_images/menu_logic.png" height="190px"/>.
+  </center>
+
+<p>O bloco
+
+    <img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+
+  (chamado de <em>bloco se-então</em>)
+  permite que blocos que estejam encaixados na abertura marcada com "<em>então</em>" sejam executados ou não, dependendo
+  de uma condição.
+
+<p>
+  A condição é definida em um bloco
+
+    <img align="middle" src="/static/saci/blockly_images/block_logic_compare.png" height="40px"/>
+  
+    (chamado de <em>bloco de comparação</em>). 
+
+O <em>bloco de comparação</em> é em geral usado encaixado em um <em>bloco se-senão</em>,
+  como no exemplo abaixo:
+
+  <center>
+  <img align="middle" src="/static/saci/blockly_images/group_block_if_compare.png" height="80px"/>
+  </center>
+
+<p>O <em>bloco de comparação</em> tem dois espaços para serem preenchidos
+  e realiza a comparação dos valores colocados nesses espaços, tendo como resultado Verdadeiro
+  ou Falso. Se o resultado é Verdadeiro os blocos encaixados na abertura marcada com "<em>então</em>" são executados; se
+  o resultado é Falso, os blocos encaixados não são executados.
+
+<p>Podemos selecionar o tipo da comparação usando o seletor do <em>bloco de comparação</em>
+  clicando no seletor do bloco (<img src="/static/saci/css/images/down.png"/>). Podemos
+  selecionar
+  <ul>
+    <li>igual ("=")
+    <li>diferente ("&ne;")
+    <li>menor ("&lt;")
+    <li>menor ou igual ("&le;")
+    <li>maior ("&gt;")
+    <li>maior ou igual ("&ge;").
+  </ul>
+
+<p>Considere o programa abaixo
+
+  <center>
+    <img align="middle" src="/static/saci/blockly_images/group_block_if_compare_then.png" width="290px"/>
+  </center>
+
+<p>O que ocorre na execução:
+<ul>
+<li>se o valor da variável <span class="tt">moedas</span> é menor do
+que 5, o comando "faça <span class="tt">moedas</span> valer 0" é
+executado;
+<li>caso contrário (valor de <span class="tt">moedas</span> maior ou
+igual a 5), o comando "faça moedas valer 0" não é executado.
+</ul>
+
+<p>Assim, se o valor lido para a
+  variável <span class="tt">moedas</span> é 8, o programa produz na saída uma
+  linha com o valor 8; se o valor lido para a
+  variável <span class="tt">moedas</span> é 3, o programa produz na saída uma
+  linha com o valor 0.
+
+
+<p>Veja esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+moedas = int(input())
+if moedas < 5:
+  moedas = 0
+print(moedas)
+</pre>
+

@@ -1,0 +1,121 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+&rsaquo; {% if has_change_permission %}<a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}
+&rsaquo; {% if add %}{% blocktrans with name=opts.verbose_name %}Add {{ name }}{% endblocktrans %}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}<div id="content-main">
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+    <li>
+        {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+    </li>
+    {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.model_name }}_form" novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
+<div>
+{% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
+{% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
+{% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+    </p>
+    {{ adminform.form.non_field_errors }}
+{% endif %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset_compet.html" %}
+{% endfor %}
+{% endblock %}
+
+{% block after_field_sets %}{% endblock %}
+
+{% block inline_field_sets %}
+{% for inline_admin_formset in inline_admin_formsets %}
+    {% include inline_admin_formset.opts.template %}
+{% endfor %}
+{% endblock %}
+
+{% block after_related_objects %}{% endblock %}
+
+{% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+
+
+</div>
+</form></div>
+<h2>Instruções</h2>
+<h3>Formato do arquivo</h3>
+<p>O arquivo deve ter o formato padrão CSV (do inglês "Comma Separated Values", ou seja, "Valores Separados por Vírgula"). 
+Aplicativos de planilhas, como OpenOffice e Excel, permitem salvar o arquivo nesse formato. 
+Você pode baixar um exemplo de planilha vazia, já no formato correto, <a href="/static/extras/misc/competidores_em_lote.csv">clicando aqui</a>.</p>
+<p>A planilha deve ter os seguintes campos, na ordem dada:</p>
+<ul>
+<li><b>Nível</b>: deve ser <b>IJ</b> (iniciação júnior), <b>I1</b> (iniciação júnior), <b> I2</b> (iniciação 2), <b> PJ </b> (programação júnior), <b>P1</b> (programação 1), <b>P2</b> (programação 2) ou <b>PS</b> (programação sênior).
+<li><b>Nome</b>: nome completo, como será impresso no formulário.
+<li><b>Data de Nascimento</b>: no formato dia/mes/ano (como por exemplo 5/4/1994).
+<li><b>Sexo</b>: deve ser uma letra,  <b>M</b> para masculino ou <b>F</b> para feminino.
+<li><b>Escolaridade</b>: ano que está cursando. A seguinte convenção deve ser utilizada:
+  <ul>
+    <li><b>F4</b>: quarto ano do Fundamental</li>
+    <li><b>F5</b>: quinto ano do Fundamental</li>
+    <li><b>F6</b>: sexto ano do Fundamental</li>
+    <li><b>F7</b>: sétimo ano do Fundamental</li>
+    <li><b>F8</b>: oitavo ano do Fundamental</li>
+    <li><b>F9</b>: nono ano do Fundamental</li>
+    <li><b>M1</b>: primeiro ano do Medio</li>
+    <li><b>M2</b>: segundo ano do Médio</li>
+    <li><b>M3</b>: terceiro ano do Médio</li>
+    <li><b>T4</b>: quarto ano do Técnico</li>
+    <li><b>U1</b>: primeiro ano do Universitário</li>
+  </ul>
+<li><b>Email</b>: opcional, mas se possível solicitamos que seja informado o email do aluno (não do professor).
+</ul>
+
+<h3>Passo a passo</h3>
+<ol>
+<li>Obtenha a planilha vazia, já no formato correto, <a href="/static/extras/misc/competidores_em_lote.csv" download="competidores_em_lote.csv">clicando aqui</a>.
+<li>Edite a planilha, inserindo os dados dos alunos.
+<li>Salve a planilha em um arquivo no formato CSV.
+<li>Envie o arquivo utilizando o formulário acima.
+</ol>
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="{% static 'admin/js/change_form.js' %}"
+            {% if adminform and add %}
+                data-model-name="{{ opts.model_name }}"
+            {% endif %}>
+    </script>
+{% endblock %}
+
+{# JavaScript for prepopulated fields #}
+{% prepopulated_fields_js %}
+{% endblock %}

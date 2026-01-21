@@ -1,0 +1,55 @@
+<h2>Expressões Aritméticas</h2>
+
+<p>Uma das vantagens de usar computadores é que eles fazem cálculos matemáticos
+  com precisão e velocidade. 
+<p>Para construir expressões aritméticas nos nossos programas usando Blockly
+vamos usar o <em>bloco aritmética</em>:
+  <img align="middle"  src="/static/saci/blockly_images/block_math_arithmetic.png" height="40px"/>.
+
+<p>Esse bloco tem dois espaços para serem preenchidos. Eles podem ser preenchidos com
+  <em>blocos números</em>
+
+  <img align="middle"  src="/static/saci/blockly_images/block_math_number.png" height="40px"/>,
+
+  como por exemplo na expressão 1234 + 567:
+
+  <center>
+    <img align="middle" src="/static/saci/blockly_images/group_math_arithmetic_1234-567.png" height="45px"/>
+  </center>
+
+<p>Podemos selecionar o tipo da operação usando o seletor do <em>bloco aritmética</em>
+  clicando no seletor do bloco (<img src="/static/saci/css/images/down.png"/>). Podemos
+  selecionar
+  <ul>
+    <li>adição ("+")
+    <li>subtração ("-")
+    <li>multiplicação ("&times;") 
+    <li>divisão ("&divide;") ou
+    <li>exponenciação ("^").
+</ul>
+
+<p>A operação de divisão &divide; é uma  <em>divisão inteira</em>, ou seja,
+  a operação tem como resultado a parte inteira da divisão. Por exemplo,
+  10 &divide; 4 tem resultado 2;  e 5 &divide; 3 tem resultado 1. Veremos
+  mais adiante no curso como realizar divisão fracionária.
+  
+<p>Também podemos usar um outro <em>bloco aritmética</em> para
+    preencher o espaço de um <em>bloco aritmética</em>, o que nos
+    permite construir expressões aritméticas mais complexas. Por
+    exemplo, para escrever na saída o resultado da expressão 4 &times;
+    (453 &divide; 7) usando Blockly é
+  <center>
+    <img src="/static/saci/blockly_images/group_math_arithmetic4x453.png" height="60"/>
+  </center>
+</p>
+
+<p>Veja esse programa na linguagem Python:
+  <pre style="background-color:#eeeeee;width:50%;padding:4px">
+print(4 * (453 // 7))
+</pre>
+
+<p>Note que em Python a operação de multiplicação usa o símbolo '*' ao
+  invés de &times; e a operação de divisão inteira usa o símbolo '//' ao invés
+  de &divide;.
+
+

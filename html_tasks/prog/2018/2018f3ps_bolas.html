@@ -1,0 +1,75 @@
+title:Bolas
+template:tasks/tarefa_programacao.html
+
+<p>
+  Temos oito bolas, colocadas lado a lado em uma sequência. Cada bola
+  tem um número impresso, que pode ter valor de 0 até 9. Queremos
+  trocar algumas bolas de posição na sequência de modo que nenhum par
+  de bolas vizinhas na sequência tenha o mesmo número. Quer dizer,
+  não pode haver duas bolas, uma ao lado da outra, com o mesmo número.
+  A figura ao lado mostra um exemplo para o qual isso foi possível.
+  Mas será que sempre é possível? Seu programa deve decidir se é ou
+  não possível obter uma sequência em que não haja bolas vizinhas com o mesmo
+  número.
+<div class="center">
+<img src="/static/img/task_images/2018f3p2_bolas.png" width="230px" />
+</div>
+
+<h3>Entrada</h3>
+<p>
+A única linha da entrada contém uma sequência de oito
+  inteiros B<sub>i</sub>, para 1 &leq;  i &leq;  8, representando os números
+  impressos em cada bola da sequência.
+
+
+<h3>Saída</h3>
+<p>Imprima uma linha contendo o caractere &quot;<span class="ttt">S</span>&quot; se for
+  possível trocar bolas de posição e obter a sequência sem bolas
+  vizinhas com o mesmo número; ou o caracter &quot;<span class="ttt">N</span>&quot; se não
+  for possível.
+
+<h3>Restrições</h3>
+<ul>
+<li> B<sub>i</sub> é um inteiro entre 0 e 9, inclusive.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 7 3 3 5 5 5 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8 3 8 8 8 8 8 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

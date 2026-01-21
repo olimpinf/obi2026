@@ -1,0 +1,21 @@
+{% load i18n obi_extras %}{% autoescape off %}
+{{ greeting }} {{ full_name }},
+
+recebemos uma solicitação para recadastramento da escola
+
+{{ school_name }}
+
+na Olimpíada Brasileira de Informática.
+
+Se você não solicitou o recadastramento da escola, por favor desconsidere esta mensagem.
+
+Para recadastrar a escola na {{ 'OBI'|obi_date_year }}, clique no link abaixo:
+
+https://olimpiada.ic.unicamp.br/cadastra_escola_auto/{{ hash }}
+
+Esse link pode ser utilizado uma única vez. Se não conseguir clicar no link,
+copie o link e cole-o na barra de endereços de seu navegador.
+
+
+{% include 'includes/signature.html' %}
+{% endautoescape %}

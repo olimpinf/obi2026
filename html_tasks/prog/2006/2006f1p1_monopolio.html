@@ -1,0 +1,120 @@
+title:Monopólio
+template:tasks/tarefa_programacao.html
+
+<p>Monopólio (conhecido no Brasil como Banco Imobiliário) ó um dos
+jogos mais famosos do mundo, com 750 milhões de cópias vendidas.
+Durante o jogo, os jogadores podem comprar propriedades que estejam
+disponíveis, vende-las para que elas voltem a ficar disponíveis, e
+cobrar aluguel pelo uso de uma determinada propriedade por outro
+jogador. O objetivo do jogo é acumular a maior quantidade de dinheiro
+possível. O jogo é composto por um tabuleiro e um conjunto de cédulas
+de dinheiro.
+
+<p>Três amigos, Dália, Elói c Félix, querem jogar uma partida de
+Monopólio, mas o irmãozinho menor de Dália escondeu as cédulas de
+dinheiro. Os três amigos decidiram jogar a partida assim mesmo,
+anotando em um papel todas as operações que ocorreram durante o jogo
+(compras, vendas e pagamentos de aluguéis). Assim que eles pararam
+de jogar perceberam que levaria muito tempo para descobrir quanto
+dinheiro cada um acumulou. Eles então pediram sua ajuda para
+determinar esses valores.
+
+<p>
+Sua tarefa é escrever um programa que, a partir dos registros de
+jogadas realizados pelos três jogadores, determine a quantidade de
+dinheiro acumulada por cada um dos jogadores.
+
+<h3>Entrada</h3>
+A entrada contém um único conjunto de testes, que deve ser lido do dispositivo de entrada 
+padrão (normalmente o teclado). A primeira linha da entrada contém dois inteiros, I e N que 
+indicam respectivamente as quantias de dinheiro que Dália, Elói e Félix possuem no início do jogo 
+e o número de operações realizadas durante o jogo.
+Note que os três jogadores iniciam a partida com a mesma quantidade de dinheiro. 
+Os jogadores são representados na entrada sempre pela letra inicial de seu nome (‘D’, ‘E’ 
+ou ‘F’) . As N linhas contém as operações ocorridas durante o jogo. Cada linha pode ter 
+ um dos formatos abaixo:
+
+<ul>
+<li>Compra: a letra C, seguida da letra inicial de um jogador J e de um inteiro X que 
+representa o valor gasto por J na compra. Exemplo: ‘C D 1000’.
+<li>Venda: a letra V, seguida da letra inicial de um jogador J e de um inteiro A que 
+representa o valor
+recebido por J na venda. Exemplo: ‘V E 200’
+<li>Aluguel: a letra A, seguida da letra inicial de um jogador J que recebe o aluguel, da 
+letra inicial do jogador
+K que paga o aluguel e de um inteiro A que representa o valor do aluguel. Exemplo: ‘A F D 500’.
+</ul>
+Os valores intermediários e totais acumulados por cada jogador estão entre 0 e 1000000.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir, na saída padrão, uma única linha composta de três inteiros 
+que correspondem à quantidade de dinheiro acumulada por Dália, Elói c Félix, nesta ordem.
+
+<h3>Restrições</h3>
+<ul>
+  <li>1 &leq; I &leq; 1 000 000
+  <li>1 &leq; N &leq; 10 000
+<li>Os valores intermediários e totais acumulados por cada jogador estão entre 0 e 1000000.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+1000 1
+C D 500
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+500 1000 1000
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+1000 3
+C D 100
+V E 200
+A D F 1000
+
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+1900 1200 0
+</pre>
+ </td>
+ </tr>
+</table>
+
+<table width="100%" cellspace="2" border="1">
+ <tr>
+ <td valign="top" width="50%">
+ <b>Entrada</b>
+ <pre>
+10000 5
+C D 5000
+C E 3000
+A D F 1000 V E 4000
+A F E 1000
+
+</pre>
+ </td>
+ <td valign="top" width="50%">
+ <b>Saída</b>
+ <pre>
+6000 10000 10000
+</pre>
+ </td>
+ </tr>
+</table>

@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load obi_extras %}
+
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block title %} Erro {% endblock %}
+
+{% block header %}
+  <h1>Erro </h1>
+{% endblock %}
+
+  {% block content %}
+  <h1>Ops, alguma coisa deu errada!</h1>
+  <a class="myButton action" href="javascript: history.go(-1)">VOLTAR À PÁGINA ANTERIOR</a>
+  <a class="myButton action" href="{% url 'principal:relata_erro' request.path|obi_escape_url %}">RELATAR ERRO</a>
+  {% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informações sobre a OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+
+  <h2>Informações sobre a OBI</h2>
+  <ul>
+    {% block browse %}
+    {% load flatpages %}
+        {% get_flatpages '/info/' as flatpages_info %}
+        {% for page in flatpages_info %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+    {% endblock browse %}
+  </ul>
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}
+
+{% comment %}
+
+
+  {% block search %}
+  {% search_form %}
+  {% endblock search %}
+
+  {% donation_snippet %}
+
+  {% block toc-wrapper %}
+    <h2>{% trans "Contents" %}</h2>
+    {% block toc %}
+    {{ doc.toc|safe }}
+    {% endblock toc %}
+  {% endblock toc-wrapper %}
+
+  {% block browse-wrapper %}
+  <h2>{% trans "Browse" %}</h2>
+  <ul>
+    {% block browse %}
+    {% if doc.prev %}
+    <li>{% trans "Prev:" %} <a href="{{ doc.prev.link }}">{{ doc.prev.title|safe }}</a></li>
+    {% endif %}
+    {% if doc.next %}
+    <li>{% trans "Next:" %} <a href="{{ doc.next.link }}">{{ doc.next.title|safe }}</a></li>
+    {% endif %}
+    <li><a href="{% url 'document-detail' lang=lang version=version url="contents" host 'docs' %}">{% trans "Table of contents" %}</a></li>
+    {% for doc, title, accesskey, shorttitle in env.rellinks %}
+    <li><a href="{% url 'document-detail' lang=lang version=version url=doc host 'docs' %}">{{ title }}</a></li>
+    {% endfor %}
+    {% endblock browse %}
+  </ul>
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>{% trans "You are here:" %}</h2>
+  <ul>
+    <li>
+      <a href="{% url 'document-index' lang=lang version=version host 'docs' %}">{% blocktrans %}Django {{ version }} documentation{% endblocktrans %}</a>
+      {% for p in doc.parents %}
+      <ul><li><a href="{{ p.link }}">{{ p.title|safe }}</a>
+      {% endfor %}
+      <ul><li>{% block current-page-title %}{{ doc.title|safe }}{% endblock current-page-title %}</li></ul>
+      {% for p in doc.parents %}</li></ul>{% endfor %}
+    </li>
+  </ul>
+  {% endblock breadcrumbs-wrapper %}
+
+  {% block help-wrapper %}
+  <h2 id="getting-help-sidebar">{% trans "Getting help" %}</h2>
+  <dl class="list-links">
+    <dt><a href="{% url 'document-detail' lang=lang version=version url="faq" host 'docs' %}">FAQ</a></dt>
+    <dd>{% blocktrans %}Try the FAQ — it's got answers to many common questions.{% endblocktrans %}</dd>
+
+    <dt><a href="/en/stable/genindex/">{% trans "Index" %}</a>, <a href="/en/stable/py-modindex/">{% trans "Module Index" %}</a>, or <a href="/en/stable/contents/">{% trans "Table of Contents" %}</a></dt>
+    <dd>{% blocktrans %}Handy when looking for specific information.{% endblocktrans %}</dd>
+
+    <dt><a href="https://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>{% blocktrans %}Search for information in the archives of the django-users mailing list, or post a question.{% endblocktrans %}</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>{% blocktrans %}Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.{% endblocktrans %}</dd>
+
+    <dt><a href="https://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>{% blocktrans %}Report bugs with Django or Django documentation in our ticket tracker.{% endblocktrans %}</dd>
+  </dl>
+  {% endblock help-wrapper %}
+
+  {% block links-wrapper %}
+  <h2>{% trans "Download:" %}</h2>
+  <p>
+    {% if version == "dev" %}{% trans "Offline (development version):" %}
+    {% else %}{% blocktrans %}Offline (Django {{ version }}):{% endblocktrans %}{% endif %}
+    <a href="{{ MEDIA_URL }}docs/django-docs-{{ version }}-{{ lang }}.zip">HTML</a> |
+    <a href="https://media.readthedocs.org/pdf/django/{{ rtd_version }}/django.pdf">PDF</a> |
+    <a href="https://media.readthedocs.org/epub/django/{{ rtd_version }}/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      {% blocktrans %}Provided by <a href="https://readthedocs.org/">Read the Docs</a>.{% endblocktrans %}
+    </span>
+  </p>
+  {% endblock links-wrapper %}
+</div>
+{% endblock content-related %}
+
+{% endcomment %}

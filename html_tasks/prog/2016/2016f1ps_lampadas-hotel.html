@@ -1,0 +1,83 @@
+title:Lâmpadas do hotel
+template:tasks/tarefa_programacao.html
+<p>
+Você está  de volta  em seu  hotel na  Tailândia depois  de um  dia de
+mergulhos. O  seu quarto tem duas  lâmpadas. Vamos chamá-las de  A e
+B.   No hotel  há  dois  interruptores, que  chamaremos  de C<sub>1</sub>  e
+C<sub>2</sub>. Ao  apertar C<sub>1</sub>, a lâmpada  A acende se estiver  apagada, e
+apaga se estiver acesa.  Se apertar C<sub>2</sub>, cada uma das lâmpadas A e
+a B  troca de estado:  se estiver apagada,  fica acesa e  se estiver
+acesa apaga.
+
+Você chegou no hotel e encontrou as lâmpadas em um determinado estado,
+como foram  deixadas por seu amigo.  Vamos chamar o estado  inicial da
+lâmpada A de I<sub>A</sub> e o estado  inicial da lâmpada B de I<sub>B</sub>. Você
+gostaria de  deixar as lâmpadas  em uma certa configuração  final, que
+chamaremos   de  F<sub>A</sub>   e   F<sub>B</sub>,   respectivamente,  apertando   os
+interruptores a menor quantidade de vezes possível. Por exemplo, se as
+duas lâmpadas começam  apagadas, e você quer que apenas  a lâmpada A
+termine acesa, basta apertar o interruptor C<sub>1</sub>.
+ 
+Dados   os   estados   iniciais   e  desejados   das   duas   lâmpadas
+(acesa/apagada), determine o número  mínimo de vezes que interruptores
+devem ser apertados.
+
+<h3>Entrada</h3>
+
+A  entrada contém  quatro inteiros:  I<sub>A</sub>, I<sub>B</sub>,  F<sub>A</sub> e  F<sub>B</sub>, os
+estados iniciais das lâmpadas A e  B e os estados finais desejados
+das lâmpadas A e B, respectivamente  e nessa ordem.  Os valores de
+I<sub>A</sub>, I<sub>B</sub>,  F<sub>A</sub> e F<sub>B</sub> possíveis  são 0, se a  lâmpada estiver
+apagada e 1 caso contrário.
+
+<h3>Saída</h3>
+
+Seu  programa deverá  imprimir um  único  número, o  número mínimo  de
+interruptores que devem ser apertados.
+
+<h3>Informações sobre a pontuação</h3>
+
+<ul>
+  <li> Em um  conjunto de casos de teste equivalente  a 25 pontos, as
+    duas lâmpadas começam sempre apagadas (I<sub>A</sub> = I<sub>B</sub> = 0).
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 1 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0 0 0 1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

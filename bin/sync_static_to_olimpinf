@@ -1,0 +1,3 @@
+#! /bin/sh
+
+rsync -avz static/ olimpinf@olimpiada.ic.unicamp.br:/ext/static/

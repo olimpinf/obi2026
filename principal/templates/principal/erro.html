@@ -1,0 +1,23 @@
+{% extends "base_one_column.html" %}
+{% load obi_extras %}
+
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block title %} Erro {% endblock %}
+
+{% block header %}
+  <h1>Erro </h1>
+{% endblock %}
+
+  {% block content %}
+  <h4>{{ msg|safe }}</h4>
+  <p>&nbsp;</p>
+  <a class="myButton action" href="javascript: history.go(-1)">VOLTAR À PÁGINA ANTERIOR</a>
+  <a class="myButton action" href="{% url 'principal:relata_erro' request.path|obi_escape_url %}">RELATAR ERRO</a>
+  {% endblock %}
+
+{% block content-related %}
+
+  {% include "includes/see_also_info.html" %}
+
+{% endblock %}

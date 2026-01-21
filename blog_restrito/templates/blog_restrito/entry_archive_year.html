@@ -1,0 +1,21 @@
+{% extends "base_blog_restrito.html" %}
+
+{% block title %}{{ year|date:"Y" }} | Weblog{% endblock %}
+
+
+{% block content %}
+
+
+<h1>Arquivo {{ year|date:"Y" }}</h1>
+
+<ul class="list-news">
+
+{% for object in object_list %}
+  {% include 'blog_restrito/news_summary.html' with object=object %}
+{% endfor %}
+
+</ul>
+
+{% include 'blog_restrito/blog_pagination.html' %}
+
+{% endblock %}

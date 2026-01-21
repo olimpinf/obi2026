@@ -1,0 +1,427 @@
+{% extends "base.html" %}
+{% load weblog calendar obi_extras %}
+{% load static %}
+
+{% block head_extra %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+{% comment %}
+<script type="text/javascript">
+window.addEventListener("load", (event) => {
+    $('#aviso').modal('show');
+});
+</script>
+{% endcomment %}
+{% endblock %}
+{% block hero %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>28<sup><u>a</u></sup> Olimpíada Brasileira de Informática</h1>
+          <h2>Do quarto ano do Ensino Fundamental
+	    até o primeiro ano do Ensino Superior,
+	    todos podem participar. A participação é gratuita para escolas e competidores.</h2>
+	  <div class="is-authenticated"> 
+	    {% if user.is_authenticated %}
+	    <a href={% if request.user.compet %}"/compet"{% else %}"/restrito"{% endif %}>
+	    <img class="me-2" style="vertical-align:bottom" src="{% static 'assets/img/icon-home-yellow.svg' %}" height="30px">
+	    Autenticado como {{ user.last_name }}
+	    </a>
+
+	  {% endif %}
+	  </div>
+        </div>
+	
+	<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'assets/img/lampada.svg' %}" class="img-fluid animated" alt="logo obi">
+        </div>
+      </div>
+      {% comment %}
+      <div class="row">
+        <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="300">
+	  <h2>Em solidariedade a competidores, escolas e todos os atingidos pelas enchentes no sul do país, comunicamos que <font color="#ffc438"> as datas da Fase 1 foram <b>ADIADAS</b></font>. <a href="{% url 'cal:datas_importantes' %}">Confira as novas datas!</a></h2>
+	</div>
+      </div>
+      {% endcomment %}
+    </div>
+
+  </section><!-- End Hero -->
+{% endblock %}
+
+  
+{% block main %}
+
+  {% include "includes/sponsors.html" %}
+
+
+  <!-- Modal -->
+
+<div class="modal fade" id="aviso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+	<h4>Prova Fase 2</h4>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	<p>Devido a problemas operacionais no sistema de correção, a organização da OBI decidiu que uma outra prova para a Fase 2 da <em>Programação Nível 2</em> será realizada. Todos os alunos que participaram da prova no dia 16/8 podem escolher participar também dessa nova prova. Pedimos sinceras desculpas pelo inconveniente e agradecemos a compreensão de todos. Observe que isto se aplica somente à prova da <b>Modalidade Programação Nível 2</b>.
+	<p>Essa nova prova será chamada de <em>Fase 2 - Turno B</em>. Ela deverá ser aplicada no dia 26 de agosto, segunda-feira. Veja mais detalhes no menu Calendário.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="aviso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#abc2f4; padding:5px 10px 5px 5px">
+	<img src="{% static 'assets/img/lampada_smaller.svg' %}" height="35px">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color:#3956a6">
+	<h4><font color="#ffffff">Atendendo a pedidos, o cadastro de escolas para a OBI2026 pode ser feito até <b>segunda-feira, 08/06</b>.</font> <a href="{% url 'cal:datas_importantes' %}">Confira as novas datas!</a></h2>
+        <img class="pt-5" src="/static/img/pix-sos-rs.png" width="100%" alt="qr code pix sos rs">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %}
+
+    <!-- ======= Semana Olímpica Section ======= -->
+    <section id="about2" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Semana Olímpica da OBI2026</h2>
+        </div>
+        <div class="row content">
+          <div class="col-lg-12 pt-4 pt-lg-0 text-center">
+	
+	    <p>A Semana Olímpica é oferecida para os melhores classificados da
+	      OBI; a Sociedade Brasileira de Computação e Instituto de Computação da
+	      Unicamp esperam que os alunos aproveitem o melhor possível os cursos
+	      oferecidos, para que possam continuar competindo na OBI no futuro, na
+	      modalidade Programação.
+	    </p>
+
+	    <a href="{% url 'week:index' %}" class="btn-learn-more">Informações sobre a Semana Olímpica</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Fase 3 section -->
+
+
+
+
+    <!-- ======= Fase 3 Section ======= -->
+    <section id="about2" class="about">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Sedes para a Fase Nacional</h2>
+        </div>
+        <div class="row content">
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <a href="{% url 'fase3:consulta_sua_sede' %}" class="btn-learn-more">Consulta sedes Modalidade Iniciação</a>
+            <p>
+            </p>
+            <!--ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul-->
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <a href="{% url 'fase3:consulta_sua_sede' %}" class="btn-learn-more">Consulta sedes Modalidade Programação</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Fase 3 section -->
+{% endcomment %}
+
+    <section id="services" class="services section-bg">
+    </section>
+    
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Quem pode participar</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+	    <h2>Alunos</h2>
+            <p>
+	      Podem participar da OBI todos os alunos de escolas
+	      regulares de Ensino Básico (Fundamental,
+	      Médio, Técnico ou Profissionalizante) e alunos que
+	      estejam cursando, pela primeira vez, o
+	      primeiro ano de um curso de graduação, no momento da
+	      prova da Fase Local da OBI.	      
+            </p>
+            </p>
+            <a href="{% url 'como_participar_aluno' %}" class="btn-learn-more">Saiba Mais</a>
+            <!--ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul-->
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+	    <h2>Escolas</h2>
+	    <p>
+	      Todas as escolas de ensino regular (ensino fundamental,
+	      ensino médio, ensino técnico, faculdades, universidades)
+	      podem participar da OBI.
+            </p>
+            <a href="{% url 'como_participar_escola' %}" class="btn-learn-more">Saiba Mais</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Duas modalidades, sete níveis</h2>
+        </div>
+        <div class="row">
+          <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="mt-md-3 mt-sm-4 icon-box">
+              <div class="icon"><i class="bi bi-file-text"></i></div>
+              <h4><a href="">Modalidade Iniciação</a></h4>
+	    <p>Na modalidade Iniciação, competidores que ainda não sabem programar fazem as
+               provas com papel e lápis. As tarefas são no formato de múltipla escolha, com questões sobre lógica
+               e raciocínio computacional. Os níveis são:</p>
+            <ul>
+               <li><i class="ri-check-double-line"></i> <b>Nível Júnior</b>, para alunos do 4º e 5º anos do Ensino Fundamental;</li>
+               <li><i class="ri-check-double-line"></i> <b>Nível 1</b>, para alunos do 6º e 7º anos do Ensino Fundamental;</li>
+               <li><i class="ri-check-double-line"></i> <b>Nível 2</b>, para alunos do 8º e 9º anos do Ensino Fundamental.</li>
+            </ul>
+	      <p>A modalidade Iniciação, como o nome sugere, é apenas uma modalidade introdutória. Incentivamos
+		os competidores e escolas a migrarem o mais rapidamente possível para a modalidade programação.
+		Quer aprender programação? A OBI oferece <a href="{% url 'pratique:index' %}"> cursos gratuitos </a> para iniciantes.
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="mt-md-3 mt-sm-4 icon-box">
+              <div class="icon"><i class="bi bi-display"></i></div>
+              <h4><a href="">Modalidade Programação</a></h4>
+	      <p>Na Modalidade Programação, competidores fazem as provas no computador, com tarefas de programação
+		que podem ser resolvidas com uma linguagem de programação entre Python, C, C++, Java e Javascript.
+		Os níveis são:</p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> <b>Nível Júnior</b>, para alunos de qualquer ano do Ensino Fundamental;</p></li>
+                <li><i class="ri-check-double-line"></i> <b>Nível 1</b>, para alunos do Ensino Fundamental ao 1&ordm; ano do Ensino Médio;</li>
+                <li><i class="ri-check-double-line"></i> <b>Nível 2</b>, para alunos do Ensino Fundamental ao 3&ordm; ano do Ensino Médio;</li>
+                <li><i class="ri-check-double-line"></i> <b>Nível Sênior</b>, para alunos do 4&ordm; ano do Ensino Técnico e alunos cursando pela primeira vez o 1&ordm; ano de um curso de graduação.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Como Participar Section ======= -->
+    <section id="about2" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Como participar</h2>
+        </div>
+
+	<p>As inscrições de competidores são feitas pelas escolas e portanto é necessário que primeiramente
+	  um professor ou professora da escola realize o cadastro da Escola. Após o cadastro da Escola ser habilitado,
+	  o professor ou professora recebe uma senha e pode iniciar a inscrição de competidores.
+	</p>
+        <div class="row content">
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <a href="{% url 'como_participar_aluno' %}" class="btn-learn-more">Veja como participar se você é aluno</a>
+            <p>
+            </p>
+            <!--ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul-->
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <a href="{% url 'como_participar_escola' %}" class="btn-learn-more">Veja como participar se você é professor</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Como ParticiparSection -->
+
+    <!-- ======= News Section ======= -->
+    <section id="services2" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Notícias e Eventos</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="mt-md-1 mt-sm-2 icon-box">
+              <div class="icon"><i class="bi bi-megaphone"></i></div>
+              <h4><a href="">Últimas Notícias</a></h4>
+	      {% render_latest_blog_entries 1 hide_readmore=False summary_first=True header_tag='h5' %}
+	      <a href="{% url 'weblog:index' %}" class="link-readmore">Mais notícias</a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="mt-md-1 mt-sm-2 icon-box">
+              <div class="icon"><i class="bi bi-calendar3"></i></div>
+              <h4><a href="">Próximos eventos</a></h4>
+
+	      {% render_next_cal_entries 2 header_tag='h5' %}
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End News Section -->
+
+    <!-- ======= Competicao Feminina Section ======= -->
+    <section id="about3" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+	  <h2>Competição Feminina</h2>
+        </div>
+
+	<p>A Competição Feminina da OBI tem o objetivo de incentivar a participação de meninas na modalidade Programação.
+	</p>
+        <div class="row content">
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <ul>
+              <li><i class="ri-check-double-line"></i> A participação na CF-OBI é opcional e não impacta o resultado final das competidoras na OBI.</li>
+              <li><i class="ri-check-double-line"></i> Todas as competidoras que se identificarem como do gênero "Feminino" ou "Outro" podem participar da CF-OBI.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+	    <ul>
+              <li><i class="ri-check-double-line"></i> As inscrições para a CF-OBI serão abertas após as provas da Fase 1 da OBI2026.</li>
+              <li><i class="ri-check-double-line"></i> As melhores classificadas no CF-OBI, em cada modalidade, ganham medalhas, certificados e o convite para participar da Semana Olímpica da OBI.</li>
+	    </ul>
+          </div>
+        </div>
+
+	<div class="row content">
+          <div class="col-lg-12 pt-4 pt-lg-0 text-center">
+            <img src="{% static 'assets/img/logo_cf-obi2023.png' %}" class="animated" height="80px" alt="">
+            <a href="{% url 'competicao_feminina' %}" class="btn-learn-more">Saiba Mais</a>
+	  </div>
+
+
+
+	  
+      </div>
+    </section><!-- End Competicao Feminina Section -->
+
+    <!-- ======= Prepare-se Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Prepare-se</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-signpost"></i></div>
+              <h4><a href="{% url 'ementas' %}">Ementas</a></h4>
+              <p>As ementas indicam o conhecimento esperado dos competidores.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-speedometer2"></i></div>
+              <h4><a href="{% url 'pratique:index' %}">Pratique</a></h4>
+              <p>Você pode praticar com problemas de provas passadas.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-book"></i></div>
+              <h4><a href="{% url 'saci:index' %}">Cursos Gratuítos</a></h4>
+              <p>A OBI oferece cursos gratuitos para iniciantes de todas as idades.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-stack"></i></div>
+              <h4><a href="{% url 'aplicativos' %}">Aplicativos Úteis</a></h4>
+              <p>Veja alguns aplicativos gratuitos que auxiliam na preparação.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Prepare-se Section -->
+
+    <!-- ======= Programming Section ======= -->
+    <section id="programming" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+	  <h2>Cursos de Programação</h2>
+        </div>
+
+	<p>Quer aprender programação de computadores? A OBI disponibiliza cursos gratuitos para iniciantes de todas as idades.
+
+	</p>
+        <div class="row content">
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <ul>
+              <li><i class="ri-check-double-line"></i>Não é necessário instalar nada no seu computador.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+	    <ul>
+              <li><i class="ri-check-double-line"></i>Aulas com vídeos, textos de ajuda e exercícios.</li>
+	    </ul>
+          </div>
+        </div>
+
+	<div class="row content">
+          <div class="col-lg-12 pt-4 pt-lg-0 text-center mb-4">
+            <a href="{% url 'saci:courses' %}" class="btn-learn-more">Veja os cursos</a>
+	  </div>
+      </div>
+
+    </section><!-- End Programming Section -->
+
+{% endblock %}
+  

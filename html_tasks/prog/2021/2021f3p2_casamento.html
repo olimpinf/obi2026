@@ -1,0 +1,143 @@
+title:Casamento de inteiros
+template:tasks/tarefa_programacao.html
+
+<p>
+Vamos definir a operação de <i>casamento</i> de dois números inteiros
+A e B da seguinte forma:
+
+<ul>
+<li> inicialmente fazemos A e B  terem o mesmo número de
+dígitos, adicionando zeros à esquerda conforme necessário;
+<li> então cada dígito de A (do menos significativo
+ao mais significativo) é comparado com o dígito correspondente de B,
+e o dígito de menor valor é eliminado do número a que pertence (se
+os dígitos são iguais nenhum é eliminado).
+<li> o resultado da operação de casamento é o par de números
+inteiros formados pelos dígitos remanescentes de A e B.
+No caso de não haver digito remanescente para um dos números, o resultado
+para esse número é -1.
+</ul>
+
+<p>Por exemplo, considere o casamento de 69961 com 487920:
+<div class="center">
+<div class="center"><img src="/static/img/task_images/2021f3pj_casamento.png" width="500px" /></div>
+</div>
+
+<p>O resultado do casamento é o par de números 489 e 9961.
+
+<p>Dados dois números inteiros, sua tarefa é determinar
+o resultado do casamento desses dois números.
+
+
+
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um número inteiro A,
+a segunda linha contém um número inteiro B.
+
+
+
+
+
+<h3>Saída</h3>
+Seu programa deve produzir uma única linha, contendo os dois números
+inteiros produzidos pelo casamento dos números dados, em ordem não decrescente.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  A  &leq;  10<sup>9</sup>
+<li> 1  &leq;  B  &leq;  10<sup>9</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 22 pontos, 100  &leq;  A  &leq;  999 e 100  &leq;  B  &leq;  999.
+<li> Para um conjunto de casos de testes valendo outros 78 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+69961
+487920
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+489 9961
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5678
+1234
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+-1 5678
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+21
+12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+200
+100
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0 200
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

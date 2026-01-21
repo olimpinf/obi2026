@@ -1,0 +1,149 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:index' %}">Fase 2</a>
+&rsaquo; <a href="../">Cadernos de Tarefas</a>
+&rsaquo; Modalidade Iniciação
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+  <div id="content-main">
+<h1>Cadernos de Tarefas - Fase 1 - Modalidade Iniciação</h1>
+
+<p><em>A prova da Fase 2 será realizada online este ano, devido
+  à pandemia de COVID-19. No caso da prova presencial, não é
+  necessária nenhuma ação por parte dos coordenadores locais,
+  mas estes podem seguir o "status" da prova (se o aluno já
+  iniciou/terminou) online.</em>
+
+<p><em>
+  Em casos excepcionais, em que os alunos não tenham possibilidade de
+  realizar a prova online e a escola tenha condições de oferecer a
+  realização da prova presencial, será possível também realizar a
+  prova da maneira tradicional, em papel. Nesses casos, siga as
+  instruções abaixo.
+</em>
+  
+<p>Para cada competidor, é necessário imprimir uma cópia do Caderno de
+Tarefas e uma Folha de Respostas (onde o competidor deve marcar suas
+respostas). 
+
+<p>Veja a seguir um passo-a-passo detalhado sobre o procedimento de
+aplicação das provas da Modalidade Iniciação.
+
+
+<h2>Passo-a-passo</h2>
+<ul>
+<li>Pegue o arquivo do Caderno de Tarefas (prova) nos links abaixo.
+<li>Faça uma cópia do Caderno de Tarefas do respectivo nível (Júnior,
+1 ou 2) para cada competidor.
+<li>Imprima uma Folha de Respostas para cada aluno (veja abaixo), e distribua junto com a prova; também está disponível um "Caderno de folhas de respostas" (veja abaixo) com 
+os dados dos alunos já pré-impressos, para facilitar o trabalho (esse caderno é gerado automaticamente, portanto insira primeiro todos os alunos antes de gerar o caderno no link abaixo).
+<li>No dia da prova, distribua o Caderno de Tarefas e uma Folha de Respostas para cada aluno. Certifique-se de que
+os competidores recebam o Caderno de Tarefas do nível em que estão inscritos (Júnior, 1 ou 2).
+<li>Os competidores podem usar apenas lápis, borracha e caneta para fazer a prova.
+<li>Recolha a Folha de Respostas dos alunos; certifique-se de que
+estejam corretamente preenchidos os campos <i>Nome</i> e <i>Número de
+Inscrição</i>. 
+<li>Devido à diferença de horários na aplicação da prova,
+solicitamos que recolham também os Cadernos de Tarefas, de forma que
+os alunos não levem os Caderno de Tarefas para casa logo após a prova.
+Os Cadernos de Tarefas podem ser entregues aos alunos 
+no dia seguinte à prova.
+<li>Corrija as Folhas de Respostas e indique o número de acertos de cada
+participante, até {{ ""|obi_date_prova_f1i_coord_insere_pontos }}. Você pode corrigir as Folhas de Respostas
+de duas maneiras: manualmente utilizando o gabarito;
+ou de forma automatizada, utilizando o Sistema Automatizado de correção
+(nesse último caso será necessário digitalizar
+as Folhas de Respostas dos alunos). Após a prova será disponibilizado  um passo-a-passo da correção em
+<a href="{% url 'admin:fase2_correcaoiniciacao_changelist' %}">Modalidade Iniciação -
+Correção</a>.
+</li>
+<li>Indique o número de acertos de cada participante, até {{ ""|obi_date_prova_f1i_coord_insere_pontos }}, utilizando
+o formulário 
+<a href="{% url 'admin:fase1_inserepontosini_changelist' %}">Insere/Modifica Pontuação</a>,
+que será disponibilizado após a prova
+(o número de acertos é inserido automaticamente se o sistema de
+<a href="{% url 'admin:fase1_corretorfolhasrespostas_add' %}">Correção Automatizada</a> é utilizado, mas
+pode ser alterado se necessário com o formulário).
+
+</ul>
+
+<p>
+Solicitamos que mantenham as Folhas de Respostas dos alunos, para o caso de algum competidor reclamar da correção.
+<p>
+
+<h2>Cadernos de Tarefas, Modalidade Iniciação</h2>
+<p>Para pegar os Cadernos de Tarefas, clique nos links abaixo. Os cadernos
+estão no formato PDF. Se você não conseguir abri-los corretamente, pode
+ser necessário instalar o aplicativo (gratuito) <a href="http://www.adobe.com/br/products/acrobat/readstep2.html">
+Adobe Acrobat Reader</a>.</p>
+
+<p>
+<!--font color="red">Os Cadernos de Tarefas ainda NÃO estão disponíveis; eles serão
+disponibilizados {{ ""|obi_date_prova_f1i_public_para_coord }}.</font-->
+
+<ul>
+<!--li><a href="FolhaTeste.pdf">Folha de Teste</a>
+<font color="green">(já disponível, apenas para todos verificarem que
+conseguem baixar e visualizar corretamente um arquivo no formato
+PDF)</font-->
+</li>
+<li><a href="ProvaOBI2019_f1ij.pdf">Nível Júnior</a> 
+</li>
+<li><a href="ProvaOBI2019_f1i1.pdf">Nível 1</a>
+</li>
+<li><a href="ProvaOBI2019_f1i2.pdf">Nível 2</a>
+
+</ul>
+
+<h2>Folhas de Respostas</h2>
+<ul>
+<li>Folhas de Respostas Pré-preenchidas.  Estes arquivos contêm as Folhas de Respostas já
+preenchidas com o nome da escola, nome e número de inscrição dos
+alunos dos alunos classificados.
+</li>
+<ul>
+<li><a href="folhas/IJ">Nível Júnior</a>
+</li>
+<li><a href="folhas/I1">Nível 1</a>
+</li>
+<li><a href="folhas/I2">Nível 2</a>
+</li>
+</ul>
+<!--li><a href="folha_respostas_junior">Folha de Respostas Avulsa para o nível Júnior</a>. A Folha
+de Respostas Avulsa NÃO é mesma para os três níveis (diferentes números de questões); imprima algumas
+cópias para o caso de necessidade, devido a erros de preenchimento ou rasura
+por parte dos alunos. Note que é necessário preeencher
+manualmente o número de inscrição dos competidor.</li-->
+<li><a href="folha_respostas">Folha de Respostas Avulsa</a>. Imprima algumas
+cópias para o caso de necessidade, devido a erros de preenchimento ou rasura
+por parte dos alunos. Note que usando a Folha de Respostas Avulsa é necessário preeencher
+manualmente o número de inscrição do competidor.
+</li>
+</ul>
+
+<h2>Listas de Presença, Modalidade Iniciação</h2>
+<p>As listas de presença são fornecidas apenas para auxiliar a gestão, para saber quem
+  realmente compareceu e quem não compareceu. Elas não são obrigatórias, mas sugerimos o seu uso
+  para o caso de haver disputas, no futuro, sobre a presença ou não do(a) competidor(a) na prova.
+<ul>
+<li><a href="/restrito/fase1/cadernostarefas/ini/lista_presenca/IJ">Nível Júnior</a>
+<li><a href="/restrito/fase1/cadernostarefas/ini/lista_presenca/I1">Nível 1</a>
+<li><a href="/restrito/fase1/cadernostarefas/ini/lista_presenca/I2">Nível 2</a>
+</li>
+</ul>
+
+<hr>
+  </div>
+{% endblock %}

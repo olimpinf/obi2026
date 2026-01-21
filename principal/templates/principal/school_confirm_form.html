@@ -1,0 +1,67 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}{{ pagetitle }}{% endblock %}
+
+{% block header %}<h1>{{ pagetitle }}</h1>{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  <p>&nbsp;</p>   
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="button cancel" name="cancel" value="cancel" onclick="{% go_to_url '/' %}">Cancelar</button>
+  <button type="submit" class="button right" name="save" value="save">Enviar</button>
+</form>  
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    <h2>Instruções</h2>
+  <p>Para confirmar o cadastro da escola você deve informar o seu <em>nome de
+      usuário</em> ou o endereço de e-mail cadastrado na OBI do ano passado.
+
+  <p>Você receberá uma mensagem, no endereço de email cadastrado, 
+    com um link para confirmar o cadastro da escola.
+    
+  <p>Se o Coordenador Local mudou, ou você não lembra nem o nome de
+    usuário nem o email utilizado no cadastro da escola no ano
+    passado, preencha um novo
+    <a href={% url 'principal:cadastra_escola' %}>Cadastro de
+    Escola</a> (se a escola tem o mesmo nome e é na mesma cidade, os
+    cadastros serão consolidados para fins de história na OBI, como
+    número de medalhas).
+    
+</ul>
+   {% endblock browse %}
+
+   {% endblock browse-wrapper %}
+
+</div>
+{% endblock %}

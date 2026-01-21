@@ -1,0 +1,42 @@
+{% extends "admin/add_form.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; 
+<a href="{% url 'admin:app_list' 'fase1' %}">{{ app_label|capfirst }}</a>
+&rsaquo; 
+Modalidade Iniciação
+&rsaquo; 
+Insere Pontuação por Lote
+
+</div>
+{% endblock %}
+{% endif %}
+
+
+{% block content_title %}<h1>Insere Pontuação por Lote</h1>{% endblock %}
+
+{% block content_extra %}
+<h2>Instruções</h2>
+<h3>Formato do arquivo</h3>
+<p>O arquivo deve ter o formato padrão CSV (do inglês "Comma Separated Values", ou seja, "Valores Separados por Vírgula"). 
+Aplicativos de planilhas, como OpenOffice e Excel, permitem salvar o arquivo nesse formato. 
+
+<p>A planilha deve ter os seguintes campos, na ordem dada:</p>
+<ul>
+<li><b>Num. Inscr.</b>: número de inscrição.
+<li><b>Nível</b>: deve ser <b>IJ</b> (iniciação júnior), <b>I1</b> (iniciação 1) ou <b> I2</b> (iniciação 2).
+<li><b>Pontos</b>: Pontos (cada questão certa vale um ponto)
+</ul>
+
+<h3>Passo a passo</h3>
+<ol>
+<li>Obtenha a planilha vazia, já no formato correto, <a href="/static/extras/misc/compet_pontos_lote.csv" download="compet_pontos_lote.csv">clicando aqui</a>.
+<li>Edite a planilha, inserindo os dados dos competidores.
+<li>Salve a planilha em um arquivo no formato CSV.
+<li>Envie o arquivo utilizando o formulário acima.
+</ol>
+{% endblock %}

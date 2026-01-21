@@ -1,0 +1,57 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  {# first button is default, enter key will trigger it #}
+  <button type="submit" class="button right" name="save" value="save">Salvar</button>
+  <button type="submit" class="button cancel" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}"
+>Cancelar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  <h2>Instruções</h2>
+  {% block browse %}
+  <ul>
+    <li>Para cada modalidade, a escola pode escolher aplicar a prova da Fase 1 (Fase Local) ou no Turno A ou no Turno B.
+    <li>As datas das provas do Turno A são as originalmente divulgadas no calendário, ou seja, modalidade Programação dias 15 e 16 de Junho, modalidade Iniciação dias 22 e 23 de Junho.
+    <li>As datas das provas do Turno B serão estabelecidas quando a situação das escolas na pandemia ficar mais clara.
+    <li>As provas do Turno A e Turno B serão diferentes, mas com dificuldades similares.
+  </ul>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

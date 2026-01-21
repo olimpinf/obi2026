@@ -1,0 +1,45 @@
+variables_set,saci_input_int,controls_if,logic_compare,variables_get,math_number,saci_text_print,math_number,logic_compare,variables_get,math_number,saci_text_print,math_number,saci_text_print,math_number
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas seu programa não está produzindo o resultado correto.
+Verifique se selecionou corretamente as operações de comparação nos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_logic_compare.png" height="45px"/>.
+Verifique também que está escrevendo na saída o valor 1 se a distância ≥ 1400, ou 2
+se a distância é ≥ 800, ou 1 caso contrário.
+Leia novamente o enunciado e corrija sua solução. Falta muito pouco!
+<br>
+
+<br>
+
+@variables_set,saci_input_int
+
+Você está no caminho certo, já montou 
+os blocos corretos para ler da entrada o valor da distância. Agora
+você precisa usar um bloco de execução condicional
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para comparar o valor da distância com 1400 e com 800. Se for maior do
+que ou igual a 1400, seu programa deve escrever na saída o valor 1;
+caso contrário se for maior do que ou igual a 800 seu programa deve
+escrever na saída o valor 2; caso contrário seu programa deve escrever na saída o valor 1.
+Note que você deve configurar o bloco de execução
+condicional para a forma "se-então-senão-se-então".
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar criando uma variável para armazenar o valor
+da distância; o valor deve ser lido da entrada com um bloco 
+<img align="middle" src="/static/saci/blockly_images/block_input_num.png" height="40px"/>.
+<p>
+Para criar uma variável clique no menu <b>Variáveis</b> da Barra de Ferramentas,
+e então clique no botão "Crie variável..." e escolha um nome para a variável.
+<br>
+Depois você precisa usar um bloco de execução condicional
+<img align="middle" src="/static/saci/blockly_images/block_control_if.png" height="70px"/>
+para comparar o valor da distância com 1400 e 800. Se for maior do
+que ou igual a 1400, seu programa deve escrever na saída o valor 1;
+caso contrário se for maior do que ou igual a 800 seu programa deve
+escrever na saída o valor 2; caso contrário seu programa deve escrever na saída o valor 1.
+Note que você deve configurar o bloco de execução
+condicional para a forma "se-então-senão-se-então".
+<br>

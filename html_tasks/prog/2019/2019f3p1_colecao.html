@@ -1,0 +1,117 @@
+title:Coleção de Upas
+template:tasks/tarefa_programacao.html
+
+<p>
+Mayuri é uma jovem que adora colecionar Upas. Ela está sempre
+procurando pelos melhores Upas para melhorar sua coleção. Cada Upa
+possui uma cor única e como Mayuri é muito perfeccionista ela não acha
+que todas cores combinam juntas, então ela resolveu escrever uma lista
+com pares de cores que não combinam. No entanto, ela está muito
+confusa em como organizar sua coleção, pois existem Upas mais raros
+que outros e por isso ela também precisa manter sempre os Upas mais
+raros.
+
+<p>Sua coleção é composta por N Upas e ela possui exatamente um Upa de
+cada cor entre 1 e N. Um Upa de cor i possui raridade igual a
+2<sup>i</sup>. Dada a coleção atual de Upas de Mayuri, informe quais
+Upas ela deve manter na sua coleção de modo que todos os Upas possuem
+cores que combinam entre si e tal que a soma das raridades de todos os
+Upas é maior possível.
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém dois números
+inteiros N e M, indicando respectivamente o número de Upas e o tamanho
+da lista de pares de cores que não combinam. As próximas M linhas
+contêm, cada uma, dois inteiros U e V, indicando que as cores U e V
+não combinam.
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir duas linhas de saída. A
+primeira linha da saída é composta por um inteiro Q indicando a
+quantidade de Upas que Mayuri deve manter na coleção. A segunda linha
+da saída deve ser composta por Q inteiros, indicando quais Upas ela
+manter na coleção, <b>em ordem crescente</b> de cor.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N, M  &leq;  10<sup>5</sup>.
+<li> 1  &leq;  U, V  &leq;  N e U  &neq;  V
+<li> Mayuri possui exatamente um Upa para cada cor entre 1 e N
+
+<li> É garantido que existe exatamente uma única resposta
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 20 pontos, 1  &leq;  N  &leq;  10 e 1  &leq;  M  &leq;  15.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, 1  &leq;  N  &leq;  15 e 1  &leq;  M  &leq;  30.
+<li> Para um conjunto de casos de testes valendo outros 20 pontos, 1  &leq;  N, M  &leq;  1000.
+<li> Para um conjunto de casos de testes valendo outros 40 pontos, não existem restrições adicionais.
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 4
+10 9
+8 7
+8 6
+1 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+2 3 4 5 8 10
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+13 19
+12 1
+12 2
+12 3
+12 4
+10 5
+13 6
+3 7
+1 8
+1 9
+11 10
+7 11
+12 13
+1 5
+9 13
+6 2
+8 11
+8 7
+11 3
+7 12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+2 4 5 11 13
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

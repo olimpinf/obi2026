@@ -1,0 +1,135 @@
+title:Teclado
+template:tasks/tarefa_programacao.html
+
+<p>
+Os teclados de telefones mostram teclas com os dígitos de 0 a 9, para
+que possamos digitar o número do telefone que queremos contactar, como
+na figura abaixo.  Mas as teclas também mostram letras, que podem ser
+usadas por exemplo para facilitar a memorização de um número de
+telefone em particular. Por exemplo, para memorizar o número
+
+<div class="center">
+(74) 7622 3623
+</div
+
+<p>podemos associar esse número à cadeia de caracteres
+<span class="ttt">pipocadoce</span>:
+
+<div class="center"><img src="/static/img/task_images/2021f3ps_teclado.png" width="600px" /></div>
+
+<p>
+Claramente, um número pode ser representado por diferentes cadeias de
+caracteres. Por exemplo, o número 3482 pode ser representado por
+<span class="ttt">fita</span>, <span class="ttt">diva</span>, <span class="ttt">dita</span>, <span class="ttt">egua</span>, e muitas
+outras cadeias de caracteres.
+
+<p>
+  Dados um número e uma lista de cadeias de caracteres, sua tarefa é
+determinar quantas cadeias de caracteres da lista podem representar o
+número dado.
+
+<h3>Entrada</h3>
+<p>
+  A primeira linha da entrada contém uma cadeia de caracteres N,
+  o número de telefone. A segunda linha contém um inteiro M, o número
+  de cadeias de caracteres na lista. Cada uma das M linhas seguintes
+  contém uma cadeia de caracteres C<sub>i</sub>.
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha na saída, contendo um único
+  inteiro, o número de cadeias de caracteres da lista que podem
+  representar o número dado.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  comprimento de N  &leq;  1 000
+<li> N contém apenas dígitos entre 2 e 9
+<li> 1  &leq;  M  &leq;  1 000
+<li> C<sub>i</sub> contém apenas letras minúsculas não acentuadas, para 1  &leq;  i  &leq;  M
+<li> 1  &leq;  comprimento de C<sub>i</sub>  &leq;  1 000, para 1  &leq;  i  &leq;  M
+<li> C<sub>i</sub> são todas distintas para 1  &leq;  i  &leq;  M
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 13 pontos, comprimento de N = 1 e M  &leq;  20.
+<li> Para um conjunto de casos de testes valendo outros 87 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3482
+4
+fita
+regua
+milho
+diva
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+7476223623
+5
+pipoca
+pipocadoce
+misobafobe
+doce
+docepipoca
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4444
+3
+mono
+tudo
+nada
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

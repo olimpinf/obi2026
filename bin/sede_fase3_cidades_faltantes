@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+
+STATE=$1
+if [[ "$STATE" == "" ]]
+then
+    STATE='%'
+fi
+
+echo '**********'
+echo 'Iniciação'
+echo '**********'
+echo
+
+psql -d obi2025 -U obi -c "select count(c),school_state, school_city from compet as c, school as s  where c.compet_school_id=school_id and compet_type in (1,2,7) and compet_classif_fase2 and s.school_site_phase3_ini=0 and school_state ilike '${STATE}' group by school_state,school_city order by count desc,school_state, school_city"
+
+echo '***********'
+echo 'Programação'
+echo '***********'
+echo
+
+psql -d obi2025 -U obi -c "select count(c),school_state, school_city from compet as c, school as s  where c.compet_school_id=school_id and compet_type in (3,4,5,6) and compet_classif_fase2 and s.school_site_phase3_prog=0 and school_state ilike '${STATE}' group by school_state,school_city order by count desc,school_state, school_city"
+
+

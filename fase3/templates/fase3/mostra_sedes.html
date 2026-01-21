@@ -1,0 +1,117 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sede da Fase Nacional{% endblock %}
+
+{% block header %}<h1>Sede da Fase Nacional</h1>{% endblock %}
+
+{% block content %}
+
+{% comment %}
+<p>As sedes para ainda não estão todas determinadas, ao longo do dia
+  vamos atualizar a lista de sedes para oferecer sedes mais próximas
+  dos competidores classificados. Se você é professor, seus alunos
+  estão alocados em uma sede muito longe (ou ainda sem sede) e sua
+  escola pode colaborar sediando a Fase Nacional em sua região,
+  preencha o formulário enviado por email para os Coordenadores.
+</p>
+{% endcomment %}
+
+<p><i>As provas da Modalidade Programação acontecem 1/10/2022, sábado, nos
+    seguintes horários:
+    <ul>
+      <li>Nível Júnior: das 8:00 às 11:00
+      <li>Nível 1: das 8:00 às 12:00
+      <li>Níveis 2 e Sênior: das 13:00 às 18:00
+    </ul>
+  </i>
+  
+<p><i>As provas da Modalidade Iniciação acontecem 15/10/2022, sábado:
+    <ul>
+      <li>Nível Júnior, Nível 1 e Nível 2: 9:00 às 11:00
+    </ul>
+    </i>
+
+
+{% for school in items %}
+{% if school.school_site_phase3_type != 2 %}
+<h2>{{ school.school_name}}</h2>
+<ul>
+<li><b>Coordenador</b>: Prof(a). {{school.school_deleg_name}}</li>
+<li><b>Telefone</b>: {{school.school_phone}}</li>
+<li><b>Endereço</b>: {{school.school_address}}, {{school.school_address_number}}<br>
+{% if school.school_address_complement.strip %}
+  {{school.school_address_complement}} 
+{% endif %}
+</li>
+<li><b>Bairro/Distrito</b>: {{school.school_address_district}}</li>
+<li><b>Cidade</b>: {{school.school_city}}</li>
+<li><b>Estado</b>: {{school.school_state}}</li>
+<li><b>CEP</b>: {{school.school_zip}}</li>
+{% if school.school_address_building %}</li>
+<li><b>Local da Prova</b>: {{school.school_address_building}}</li>
+{% endif %}
+{% if school.school_address_map %}</li>
+<li><a href="{{school.school_address_map}}">Mapa</a></li>
+{% endif %}
+</ul>
+{% endif %}
+
+{% if school.school_site_phase3_type == 0 %}
+<!-- Sede da Fase Nacional para as Modalidades Iniciação e Programação -->
+<p>
+Sede da Fase Nacional para a Modalidade Iniciação
+para competidores classificados da(s) cidade(s):<br />
+<i>
+{% with school.school_id|stringformat:"s"|obi_get_phase3_cities as cities %}
+       {{cities}}.
+{% endwith %}
+</i>
+</p>
+
+{% elif school.school_site_phase3_type == 1 %}
+<p>
+Sede da Fase Nacional para a Modalidade Iniciação
+para competidores classificados da(s) cidade(s):<br />
+<i>
+{% with school.school_id|stringformat:"s"|obi_get_phase3_cities as cities %}
+       {{cities}}.
+{% endwith %}
+</i>
+</p>
+
+{% else %}
+{% comment %}
+<p>
+Sede da Fase Nacional para as Modalidade Programação
+para competidores classificados da(s) cidade(s):<br />
+<i>
+{% with school.school_id|stringformat:"s"|obi_get_phase3_cities as cities %}
+       {{cities}}.
+{% endwith %}
+</i>
+</p>
+{% endcomment %}
+
+{% endif %}
+
+<p>
+</p>
+
+{% endfor %}
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+<a href="{% url 'principal:consultas' %}" class="cta">Nova consulta</a>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+</div>
+{% endblock %}

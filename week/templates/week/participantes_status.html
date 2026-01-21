@@ -1,0 +1,149 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Participantes{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+<h2>Participantes</h2>
+
+<p>Participantes serão considerados confirmados quando o formulário de
+  manifestação de interesse (acesso pela página pessoal dos competidores) for preenchido
+  e o pagamento da Taxa de Ressarcimento for confirmado.  
+
+<p><font color="green">Como o processo de confirmação do pagamento da taxa de ressarcimento tem demorado,
+    independente de confirmação todos os convidados poderão assistir às
+    aulas, não se preocupem com eventuais atrasos! </font>
+  
+{% for i in invited %}
+  {% if i.level != "Acompanhantes Pagantes" and i.level != "Acompanhantes não Pagantes" %}
+  <h3>{{ i.level }} ({{ i.participants|length }} competidores)</h3>
+  <table class="basic" width="100%" border="1">
+  <tr>
+    <th width="12%">Num. Inscr.</th>
+    <th width="50%">Nome</th>
+    <th align="center">Manif. interesse</th>
+    <th align="center">Pagto.<br>informado</th>
+    <th align="center">Pagto.<br>confirmado</th>
+  </tr>
+  {% for c in i.participants %}
+  <tr>
+    {# name #}
+    {% if i.level == "Acompanhantes Pagantes"%}
+    <td width="50%"> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }}
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }}
+      {% endif %}
+    </td>
+    {% else %}
+    <td>{{ c.compet.compet_id_full }}</td>
+    <td width="50%">{{ c.compet.compet_name|obi_capitalize_name }}</td>
+    {% endif %}
+    {# form info general#}
+    {% if c.form_info %}
+       <td align="center"><img src="/static/admin/img/icon-yes.svg"></td>
+    {% else %}
+       <td align="center"><img src="/static/admin/img/icon-no.svg"></td>
+    {% endif %}
+
+    {% comment %}
+    {# form arrival #}
+    {% if c.form_arrival %}
+       <td align="center"></td>
+    {% else %}
+       <td align="center"></td>
+    {% endif %}
+    {% endcomment %}
+
+    {# tax sent#}
+    {% if c.tax_paid %}
+      <td align="center"><img src="/static/admin/img/icon-yes.svg"></td>
+    {% else %}
+       <td align="center"><img src="/static/admin/img/icon-no.svg"></td>
+    {% endif %}  
+
+    {# tax received#}
+    {% if c.tax_confirmed %}
+      <td align="center"><img src="/static/admin/img/icon-yes.svg"></td>
+    {% else %}
+       <td align="center"><img src="/static/admin/img/icon-no.svg"></td>
+  {% endif %}  
+  </tr>
+  {% endfor %}
+  </table>
+  {% else %}
+
+{% comment %}
+
+{# acompanhantes não pagantes #}
+  <h3>{{ i.level }}</h3>
+  <table class="simple" border="1">
+  <tr>
+    <th width="70%">Nome</th>
+    <th>Formulário<br>Informações</th>
+    <!--th>Chegadas e<br>Partidas</th-->
+</tr>
+  {% for c in i.participants %}
+  <tr>
+    {# name #}
+    {% if i.level == "Acompanhantes não Pagantes"%}
+    <td width="70%"> 
+      {% if c.colab %}
+      {{ c.colab.colab_name|obi_capitalize_name }} </td>
+      {% elif c.chaperone %}
+      {{ c.chaperone.chaperone_name|obi_capitalize_name }} </td>
+    {% endif %}
+    {% else %}
+    <td width="70%">{{ c.compet.compet_name|obi_capitalize_name }} </td>
+    {% endif %}
+    {# form info general#}
+    {% if c.form_info %}
+       <td bgcolor="#44BB11">
+    {% else %}
+    <!--td>
+    {% endif %}
+    {# form arrival #}
+    {% if c.form_arrival %}
+       <td bgcolor="#44BB11">
+    {% else %}
+    <td-->
+    {% endif %}
+  </tr>
+  {% endfor %}
+  </table>
+{% endcomment %}
+{% endif %} 
+
+
+{% endfor %} {# i in invited #}
+{% endblock %}  
+
+
+
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

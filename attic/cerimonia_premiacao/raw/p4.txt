@@ -1,0 +1,34 @@
+1,1,500,Arthur Lobo Leite Lopes,Colégio Farias Brito Pré-Vestibular Aldeota,Fortaleza,CE
+1,1,500,Rafael Nascimento Soares,Centro Federal de Educação Tecnológica Celso Suckow da Fonseca,Rio de Janeiro,RJ
+1,1,500,Leonardo Valente Nascimento,Colégio Etapa,São Paulo,SP
+1,4,459,Gabriel Lucas Costa Martins,Centro Federal de Educação Tecnológica de Minas Gerais - CEFET-MG,Belo Horizonte,MG
+1,5,442,Marcos Paulo Evers Cordeiro,Colégio Master Bezerra,Fortaleza,CE
+1,6,434,Guilherme Gobo dos Santos,ALFA CASCAVEL PLAZZA C EF M,Cascavel,PR
+1,6,434,Pedro Miguelez,Colégio Santa Cruz,São Paulo,SP
+1,8,424,Pedro Suyama Leston Rey,Colégio Etapa,São Paulo,SP
+1,9,406,Carlos Cabral de Menezes Filho,Facom UFU e UberHub Code Club,Uberlândia,MG
+1,9,406,Luana Amorim Lima,Centro Federal de Educação Tecnológica Celso Suckow da Fonseca,Rio de Janeiro,RJ
+1,9,406,Arthur Henrique Paixão Santos,Colégio Etapa,São Paulo,SP
+1,12,365,Filipe de Souza Lalic,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+1,13,358,Luiz Felipe Funaki Bigarelli,Colégio Etapa,São Paulo,SP
+1,13,358,Rafael Setton Alencar de Carvalho,Maple Bear Canadian School Porto Velho,Porto Velho,RO
+1,15,340,Erick Cassiano da Silva Passos,Colégio pH,Rio de Janeiro,RJ
+1,16,331,Caique Paiva,Colégio Farias Brito Pré-Vestibular Aldeota,Fortaleza,CE
+1,16,331,Samuell Henrique Carvalho Paes Costa,IFPI - São Raimundo Nonato,São Raimundo Nonato,PI
+1,18,325,Vitor Rocha Veiga,Colégio Farias Brito Pré-Vestibular Aldeota,Fortaleza,CE
+1,18,325,Estela Baron Nakamura,Colégio Pódion,Brasília,DF
+1,20,319,Vladimir Arauzo Huisa,Colégio Etapa,São Paulo,SP
+1,21,313,Heitor Raimundo Domingues Pereira do Prado,ESI - Colégio Santa Teresa,Ituiutaba,MG
+1,22,307,Bruno de Moraes Dumont,Colégio Arena,Goiânia,GO
+1,23,303,João Vitor Tomaz Alves Ferreira,Colégio Etapa,São Paulo,SP
+1,25,291,Enzo Dantas de Britto Monte Araujo,Colégio Farias Brito Pré-Vestibular Aldeota,Fortaleza,CE
+1,29,272,Anita Ramos Almeida,Colégio Etapa Valinhos,Valinhos,SP
+1,45,234,Sophia Damm Zogaib Mardones,COESI - Colégio de Orientação e Estudos Integrados,Aracaju,SE
+1,49,230,Maria Elaine de Holanda Cavalcante,FARIAS BRITO PRE VESTIBULAR CENTRAL,Fortaleza,CE
+1,72,200,Patrícia Dias Rodrigues,Etec Sales Gomes,Tatuí,SP
+1,75,195,Ana Margarida Diniz Borges,Escola Educação Criativa,Ipatinga,MG
+1,77,192,Endy Lumy Okamura Miyashita,Colégio Farias Brito Pré-Vestibular Aldeota,Fortaleza,CE
+1,82,189,Maria Luiza Sevilha Seraphico de Assis Carvalho,Colégio Santa Cruz,São Paulo,SP
+1,100,165,Sara Miyuka Abe,Colegio Integrado Objetivo,São Paulo,SP
+1,144,144,Maria Eduarda Bertole Matos,Colegio Integrado Objetivo,São Paulo,SP
+1,193,113,Anna Paula Siqueira da Silva,Centro Federal de Educação Tecnológica Celso Suckow da Fonseca,Rio de Janeiro,RJ

@@ -1,0 +1,172 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+
+<h1>Aplicação das Provas - Fase 1 - Modalidade Iniciação</h1>
+
+
+<p class="emph">A prova deve ser aplicada entre os dias
+  {{ "ini-fase-1-prova"|obi_date|date:'d/m' }}
+  ({{ "ini-fase-1-prova"|obi_date|date:'l'|lower }})
+  e
+  {{ "ini-fase-1-prova"|obi_date_finish|date:'d/m' }}
+  ({{ "ini-fase-1-prova"|obi_date_finish|date:'l'|lower }}).
+</p>
+
+
+<p>Todos os alunos devem realizar a prova presencialmente, na escola em que foram
+  inscritos, no
+  formato "papel e caneta" (não haverá prova online para a Modalidade Iniciação).
+</p>
+
+<p>Veja um <a href="{% url 'fase1:passo_a_passo_ini' %}">passo-a-passo para aplicação da Prova</a>.
+
+<p>Os Cadernos de Tarefas (provas) serão disponibilizados alguns dias antes
+  do início do período de aplicação da prova. Veja a data específica
+nos links abaixo.
+
+<p>Para cada competidor, é necessário imprimir uma cópia do Caderno de
+Tarefas e uma Folha de Respostas (onde o competidor deve marcar suas
+respostas).  Infelizmente a OBI não tem recursos para cobrir essa despesa,
+e agradecemos imensamente a contribuição das escolas na impressão das provas.
+
+
+  <h3>Cadernos de Tarefas</h3>
+  {% comment %}
+<p class="emph">Os Cadernos de Tarefas ainda NÃO estão disponíveis;
+    eles serão disponibilizados
+  {{ "ini-fase-1-prova-publica-coord"|obi_date_finish|date:'d/m' }}
+  ({{ "ini-fase-1-prova-publica-coord"|obi_date_finish|date:'l'|lower }}).
+</p>
+{% endcomment %}
+
+
+<p class="emph">Os Cadernos de Tarefas estão disponíveis, clique nos links abaixo.</p>
+
+<p>
+É de extrema importância que se mantenha sigilo e controle sobre o
+conteúdo da prova e sobre a forma de disponibilização. Solicitamos
+portanto que todo cuidado seja tomado no sentido de preservar o sigilo
+das provas. Em particular, se o computador utilizado é compartilhado,
+remova o arquivo do computador após a impressão dos Cadernos de
+Tarefas.</p>
+
+  <!--p>Se sua escola planeja aplicar a prova presencialmente, considere não
+  participar do Turno A, e participar do Turno B (data ainda indefinida).
+  A Coordenação da OBI se preocupa em que no futuro pais de competidores
+  venham a reclamar que seus filhos se contaminaram devido à sua participação
+  na competição. </p-->
+
+<!--p>
+  A OBI2020 não recomenda a aplicação das provas de forma presencial, por isso disponibilizou o ambiente de prova online e
+  abriu a possibilidade de as provas da Fase 1 (Fase Local) sejam feitas
+  em um de dois turnos independentes, Turno A (agora em junho) e Turno B
+  (em data a ser definida).
+ </p--> 
+<p>Para acessar os Cadernos de Tarefas para impressão clique nos links abaixo. Os
+cadernos estão no formato PDF (pode ser necessário instalar o aplicativo
+gratuito <a href="http://www.adobe.com/br/products/acrobat/readstep2.html">
+Adobe Acrobat Reader</a>).</p>
+
+</font>
+
+<ul>
+<li><a href="pdf/FolhaTeste.pdf">Folha de Teste</a> (já disponível, apenas
+para todos verificarem que conseguem baixar e visualizar corretamente
+um arquivo no formato PDF)
+</li>
+<li><a href="pdf/Prova{{ 'OBI'|obi_date_year }}_f1ij.pdf">Nível Júnior</a> 
+</li>
+<li><a href="pdf/Prova{{ 'OBI'|obi_date_year }}_f1i1.pdf">Nível 1</a>
+</li>
+<li><a href="pdf/Prova{{ 'OBI'|obi_date_year }}_f1i2.pdf">Nível 2</a>
+
+</ul>
+
+
+<h3>Folhas de Respostas</h3>
+<ul>
+<li>Folhas de Respostas Pré-preenchidas.  Estes arquivos contêm as Folhas de Respostas já
+preenchidas com o nome da escola, nome e número de inscrição dos
+alunos dos alunos classificados.
+</li>
+<ul>
+<li><a href="folhas/IJ">Nível Júnior</a>
+</li>
+<li><a href="folhas/I1">Nível 1</a>
+</li>
+<li><a href="folhas/I2">Nível 2</a>
+</li>
+</ul>
+<!--li><a href="folha_respostas_junior">Folha de Respostas Avulsa para o nível Júnior</a>. A Folha
+de Respostas Avulsa NÃO é mesma para os três níveis (diferentes números de questões); imprima algumas
+cópias para o caso de necessidade, devido a erros de preenchimento ou rasura
+por parte dos alunos. Note que é necessário preeencher
+manualmente o número de inscrição dos competidor.</li-->
+<li><a href="folha_respostas">Folha de Respostas Avulsa</a>. Imprima algumas
+cópias para o caso de necessidade, devido a erros de preenchimento ou rasura
+por parte dos alunos. Note que usando a Folha de Respostas Avulsa é necessário preeencher
+manualmente o número de inscrição do competidor.
+</li>
+</ul>
+<h3>Listas de Presença, Modalidade Iniciação</h3>
+<p>As listas de presença são fornecidas apenas para auxiliar a gestão, para saber quem
+  realmente compareceu e quem não compareceu. Elas não são obrigatórias, mas sugerimos o seu uso
+  para o caso de haver disputas, no futuro, sobre a presença ou não do(a) competidor(a) na prova.
+<ul>
+<li><a href="lista_presenca/IJ">Nível Júnior</a>
+<li><a href="lista_presenca/I1">Nível 1</a>
+<li><a href="lista_presenca/I2">Nível 2</a>
+</li>
+</ul>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+<h3>Passo-a-passo</h3>
+<ul>
+<li>Pegue o arquivo do Caderno de Tarefas (prova) nos links ao lado.
+<li>Faça uma cópia do Caderno de Tarefas do respectivo nível (Júnior,
+1 ou 2) para cada competidor.
+<li>Imprima uma Folha de Respostas para cada aluno (veja abaixo), e distribua junto com a prova; também está disponível um "Caderno de Folhas de Respostas" (veja abaixo) com 
+os dados dos alunos já pré-impressos, para facilitar o trabalho (esse caderno é gerado automaticamente, portanto insira primeiro todos os alunos antes de gerar o caderno no link ao lado).
+<li>No dia da prova, distribua o Caderno de Tarefas e uma Folha de Respostas para cada aluno. Certifique-se de que
+os competidores recebam o Caderno de Tarefas do nível em que estão inscritos (Júnior, 1 ou 2).
+<li>Os competidores podem usar apenas lápis, borracha e caneta para fazer a prova.
+<li>Recolha a Folha de Respostas dos alunos; certifique-se de que
+estejam corretamente preenchidos os campos <i>Nome</i> e <i>Número de
+Inscrição</i>. 
+<li>Devido à diferença de horários na aplicação da prova,
+solicitamos que recolham também os Cadernos de Tarefas, de forma que
+os alunos não levem os Caderno de Tarefas para casa logo após a prova.
+Os Cadernos de Tarefas podem ser entregues aos alunos 
+no dia seguinte à prova.
+<li>Corrija as Folhas de Respostas e indique o número de acertos de cada
+  participante, até
+  {{ "ini-fase-1-envio-respostas"|obi_date|date:'d/m' }}.
+  Você pode corrigir as Folhas de Respostas de duas maneiras:
+  manualmente utilizando o gabarito; ou de forma automatizada,
+  utilizando o Sistema Automatizado de correção (nesse último caso
+  será necessário digitalizar as Folhas de Respostas dos alunos). Veja
+  mais detalhes sobre a correção das Folhas de Respostas no bloco
+  Fase 1 da página da Coordenação Local, link <a href={% url 'fase1:correcao_ini' %}>Modalidade Iniciação - Correção</a>.
+<li>Solicitamos que mantenham as Folhas de Respostas dos alunos, para o caso de algum competidor reclamar da correção.
+</ul>
+<p>
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+# Solução do Desafio 1 da Aula 13
+
+L = int(input())
+C = int(input())
+for linha in range(1, 4):
+  for coluna in range(1, 6):
+    if linha == L and coluna == C:
+      print('*', end="")
+    else:
+      print('.', end="")
+  print()

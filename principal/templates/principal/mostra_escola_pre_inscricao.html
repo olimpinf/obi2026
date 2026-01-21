@@ -1,0 +1,45 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras%}
+
+{% block title %}Pré-inscrição de Competidor{% endblock %}
+
+{% block header %}Pré-inscrição de Competidor{% endblock %}
+
+{% block content %}
+<p>Certifique-se de que está é a sua escola. Se não for, clique no botão
+  "Voltar" e selecione a escola correta.
+<p>Se esta é a sua escola, anote o nome do Coordenador Local para
+  entrar em contato se necessário e clique no botão "Seleciona Esta Escola".
+  
+<h2>{{ school.school_name}}</h2>
+<ul>
+<li>Endereço: {{school.school_address}}, {{school.school_address_number}}<br>
+{% if school.school_address_complement.strip %}
+  {{school.school_address_complement}} 
+{% endif %}
+</li>
+<li>Bairro/Distrito: {{school.school_address_district}}</li>
+<li>Cidade: {{school.school_city}}</li>
+<li>Estado: {{school.school_state}}</li>
+<li>CEP: {{school.school_zip}}</li>
+<li>Coordenador Local: {{school.school_deleg_name}}</li>
+{% if school.school_address_building %}</li>
+<li>Local da Prova: {{school.school_address_building}}</li>
+{% endif %}
+{% if school.school_address_map %}</li>
+<li><a href="{{school.school_address_map}}">Mapa</a></li>
+{% endif %}
+</ul>
+
+<p>
+  <a class="btn btn-danger float-end" role="button" href="javascript: history.go(-1)">Voltar</a>
+
+<a class="btn btn-primary" role="button" href="{% url 'principal:pre_inscricao_compet' school.school_id %}">Selecionar Esta Escola</a>
+
+{% endblock %}
+
+{% block content-related %}
+
+    <a href="{% url 'principal:consulta_escolas' %}" class="btn btn-primary btn-sm mb-3" role="button">Nova consulta</a>
+
+{% endblock %}

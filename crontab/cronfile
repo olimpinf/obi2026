@@ -1,0 +1,10 @@
+#* * * * * /home/olimpinf/django5.1/obi2025/crontab/start_cms_execute_commands.sh >/dev/null 2>&1
+#* * * * * /home/olimpinf/django5.1/obi2025/crontab/start_cms_sync_submissions.sh >/dev/null 2>&1
+
+0 23 * * * /home/olimpinf/django5.1/obi2025/crontab/backup_obi.sh >/dev/null 2>&1
+* * * * * /home/olimpinf/django5.1/obi2025/crontab/start_send_queued_messages.sh >/dev/null 2>&1
+* * * * * /home/olimpinf/django5.1/obi2025/crontab/start_send_queued_messages_unicamp.sh > /dev/null 2>&1
+* * * * * /home/olimpinf/django5.1/obi2025/crontab/start_copy_to_grader.sh >> /tmp/LOG 2>&1
+
+# temporary fixes
+#0,5,10,15,20,25,30,35,40,45,50,55 * * * * /home/olimpinf/django5.1/obi2025/fix.sh > /tmp/FIXES 2>&1

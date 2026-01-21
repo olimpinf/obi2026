@@ -1,0 +1,94 @@
+title:Loteria
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Flavinho sabe que a chance de ganhar na loteria é bem pequena. Ele
+gosta muito de estudar probabilidade! Mas, justamente por entender de
+probabilidades, Flavinho segue o ditado, "quem não arrisca, não
+petisca!", e faz um jogo toda semana.</p>
+
+<p>Na loteria preferida dele, o jogador aposta seis números entre 1 e
+99. No sorteio, também são escolhidos seis números ganhadores entre 1
+e 99. Quem acerta 3, 4, 5 ou 6 números ganha como prêmio,
+respectivamente, um "<span class="tt">terno</span>", uma "<span class="tt">quadra</span>", uma "<span class="tt">quina</span>" ou uma "<span class="tt">sena</span>".</p>
+
+<p>Nesta tarefa, você deve escrever um programa que diga qual foi o
+prêmio que Flavinho ganhou, dados os seis números que ele apostou e os
+seis números que foram sorteados.</p>
+<h3>Entrada</h3>
+A entrada consiste de duas linhas apenas. Na primeira linha são dados
+seis números inteiros distintos entre 1 e 99, representando a aposta
+do Flavinho. A segunda linha contém os seis números inteiros distintos
+sorteados.
+<h3>Saída</h3>
+Seu programa deve imprimir uma linha contendo uma palavra: "\tt
+  terno", "<span class="tt">quadra</span>", "<span class="tt">quina</span>" ou "<span class="tt">sena</span>"; caso
+Flavinho tenha acertado, respectivamente, 3, 4, 5, ou 6 números. Caso
+ele tenha acertado menos do que 3 números, imprima a palavra "\tt
+  azar".
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+34 55 77 12 23 99
+5 3 77 55 42 34
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+terno
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+22 41 9 71 88 4
+41 9 88 71 4 22
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+sena
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+25 51 53 17 19 87
+23 33 1 2 81 92
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+azar
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

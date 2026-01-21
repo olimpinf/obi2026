@@ -1,0 +1,141 @@
+title:Passatempo
+template:tasks/tarefa_programacao.html
+
+<p>
+Desafios de lógica e matemática são um ótimo passatempo, atraindo um
+grande número de praticantes, e um mercado que envolve aplicativos
+para celular, atividades on-line, revistas especializadas e até mesmo
+cursos na internet para melhorar o desempenho!
+
+<p>Neste problema sua tarefa é escrever um programa que resolva um novo
+passatempo, mostrado na figura abaixo. O passatempo é composto por um
+quadriculado com letras dentro de cada célula e números ao lado de
+cada linha ou coluna do quadriculado. As letras dentro de cada célula
+representam variáveis, e os números representam as somas dos valores
+das variáveis em cada linha ou coluna.
+
+<div class="center"><img src="/static/img/task_images/2021f2p2_passatempo.png" width="300px" /></div>
+
+<p> O objetivo desse passatempo é determinar o valor de cada
+variável de modo a satisfazer as somas das linhas e colunas
+mostradas. Para permitir que um número maior de pessoas consiga
+resolver o passatempo, ele tem uma propriedade que facilita a sua
+solução: sempre é possível encontrar uma linha ou coluna em que há
+apenas uma variável cujo valor ainda é desconhecido. Assim, uma
+possível maneira de resolver o problema é, a cada passo da solução,
+encontrar o valor de uma variável.
+
+<p>Sua tarefa é, dado um passatempo, determinar os valores das variáveis
+que o solucionam.
+
+
+<h3>Entrada</h3>
+<p>A primeira  linha contém  dois inteiros L  e  C indicando  o número de linhas  e o
+  número  de  colunas  do  passatempo.  Cada  uma  das  L  linhas
+  seguintes contém C nomes de variáveis, seguidos de um inteiro S,
+  a soma resultante das variáveis dessa  linha. A
+  última  linha contém  C inteiros  X<sub>i</sub>,
+  indicando respectivamente a soma das  variáveis na coluna i. Nomes
+  de variáveis  são formados por precisamente  duas letras minúsculas,
+  de 'a' a 'z'.  Todos os passatempos têm solução única, em que todas 
+  as variáveis são números inteiros.
+
+<h3>Saída</h3>
+Seu  programa   deve  produzir  uma   linha  para  cada   variável  do
+passatempo,  contendo  o  nome  da  variável e  o  seu  valor inteiro.  As
+variáveis devem ser escritas em ordem alfabética crescente, ou seja,
+respeitando a ordem 
+
+aa, ab, &mldr;, az, ba, bb, &mldr;, za, zb, &mldr;, zz.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;   L  &leq;  100
+<li> 2  &leq;  C  &leq;  100
+<li> -10<sup>8</sup>  &leq;  S  &leq;  10<sup>8</sup>
+<li> -10<sup>8</sup>  &leq;   X<sub>i</sub>  &leq;   10<sup>8</sup>
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4 5
+df bb cg df df 11
+ee az cg az ee 6
+df cg cg df df 10
+az az cg az az 6
+6 7 8 6 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+az 1
+bb 3
+cg 2
+df 2
+ee 1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 4
+aa bb cc dd 10
+aa bb cc dd 10
+aa bb cc dd 10
+3 6 9 12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+aa 1
+bb 2
+cc 3
+dd 4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3 3
+aa zz aa 27
+vv zz aa -5
+kk kk aa 40
+15 -7 54
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+aa 18
+kk 11
+vv -14
+zz -9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

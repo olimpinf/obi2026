@@ -1,0 +1,150 @@
+title:Muro
+template:tasks/tarefa_programacao.html
+
+<p>
+Nós temos dois tipos de tijolos, como mostrado na parte esquerda da
+figura abaixo. A ideia é construir uma mureta de altura 2 e
+comprimento N. A parte direita da figura ilustra uma forma de usar
+os dois tipos de tijolos para construir uma mureta de comprimento
+N=12.
+
+<div class="center">
+<img src="/static/img/task_images/2018f3p2_muro1.png" width="600px"/>
+</div>
+
+Precisamos saber quantas formas distintas existem de construir a
+mureta com esses dois tipos de tijolos. Para isso, já temos duas
+observações: qualquer mureta de comprimento N vai terminar de uma
+das sete maneiras ilustradas abaixo e; o número de formas distintas de
+construir uma mureta de comprimento 2, 1 e 0 é, respectivamente,
+5, 1 e 1 (sim! Existe uma forma de construir a mureta de comprimento
+0: usar nenhum tijolo).
+
+<div class="center">
+<img src="/static/img/task_images/2018f3p2_muro2.png" width="600px" />
+</div>
+
+Dado N, seu programa deve computar o número de formas distintas de
+construir uma mureta de comprimento N. Como esse número pode ser
+muito grande, seu programa deve imprimir o resto da divisão dele por
+10<sup>9</sup>+7.
+
+
+<h3>Entrada</h3>
+A única linha da entrada contém um inteiro N,
+  representando o comprimento da mureta.
+
+
+<h3>Saída</h3>
+Imprima uma linha contendo um inteiro, o número de formas
+  distintas de construir a mureta com os dois tipos de
+  tijolos. Imprima o resto da divisão desse número por 10<sup>9</sup>+7.
+
+<h3>Restrições</h3>
+<ul>
+ <li> 0 &leq;  N &leq;  10<sup>4</sup>.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+ <li> Para um conjunto de casos de teste valendo 20 pontos, N &leq; 
+   16.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+5
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+11
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+36543
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+241
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8712
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+844673301
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

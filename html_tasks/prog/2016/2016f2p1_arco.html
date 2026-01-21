@@ -1,0 +1,121 @@
+title:Arco e flecha
+template:tasks/tarefa_programacao.html
+
+<p>
+O comitê olímpico está testando uma nova forma de pontuar as
+competições de arco e flecha, baseada em penalidades. O atleta vai atirar N flechas no alvo,
+em sequência. A penalidade da K-ésima flecha atirada é computada
+imediatamente após ela atingir o alvo, antes do próximo lançamento, e
+é igual ao número de flechas que estão no alvo naquele momento cuja
+distância  ao centro do alvo é menor ou igual à
+distância da K-ésima flecha  ao centro, excluindo a própria
+K-ésima flecha. Quer dizer, a penalidade é o número das K-1 flechas lançadas antes
+da K-ésima flecha que estão mais próximas ou à mesma distância do centro
+do alvo, comparadas com a K-ésima flecha.
+
+A penalidade total é a soma das
+penalidades das N flechas. Ganha o atleta que tiver a menor penalidade
+total ao final. Veja que a penalidade total pode ser zero, se o atleta
+for bom o bastante para acertar numa sequência estritamente
+decrescente de distâncias  ao centro do alvo.
+  
+<div class="center">
+<img src="/static/img/task_images/2016f2p1_arco.png" width="300px" />
+</div>
+
+Neste problema, o centro do alvo está na origem (0,0). Dada a
+sequência de coordenadas dos pontos em que as sucessivas flechas
+atingiram o alvo, seu programa deve computar a penalidade total final
+do atleta.
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N, representando a
+quantidade de flechas lançadas. Cada uma das N linhas seguintes
+contém dois inteiros, X e Y, indicando as coordenadas do ponto em
+que cada flecha atingiu o alvo, definindo a sequência de lançamentos.
+
+<h3>Saída</h3>
+Imprima uma linha contendo um inteiro representando a penalidade total
+do atleta.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1 &leq;  N &leq;  10<sup>5</sup>
+<li> -10<sup>6</sup> &leq;  X,Y &leq;  10<sup>6</sup>
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+  <li> Em um conjunto de testes somando 20 pontos, N &leq;  10<sup>4</sup>
+</ul>
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+2
+1 3
+5 4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+-100 85
+-25 -60
+18 33
+0 0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+0
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+1 1
+2 2
+2 2
+3 3
+3 3
+3 3
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+15
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

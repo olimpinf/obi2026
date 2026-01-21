@@ -1,0 +1,1 @@
+\copy (select compet_type,compet_rank_final,compet_points_fase3,compet_name,school_name,school_city,school_state from compet as c, school as s,week as w where c.compet_school_id=s.school_id and w.compet_id=c.compet_id and w.school_id=s.school_id and compet_type in (1,2,3,4,5) order by compet_type, compet_rank_final,compet_name) to 'all_compets.csv' CSV;

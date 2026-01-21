@@ -1,0 +1,63 @@
+text_print,saci_math_arithmetic,math_number,saci_math_arithmetic,math_number,math_number
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas os valores não estão corretos.
+Verifique novamente o enunciado e corrija sua solução, alterando
+o conteúdo dos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+<br>
+
+@text_print,saci_math_arithmetic,saci_math_arithmetic,math_number,math_number,math_number
+
+Muito bem, você está no caminho certo, está usando
+os blocos corretos, mas os valores não estão corretos.
+Verifique novamente o enunciado e corrija sua solução, alterando
+como necessário os valores dos blocos
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/> e
+  as operações do bloco
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e 
+<br>
+
+@text_print,saci_math_arithmetic,math_number,math_number
+
+Muito bom, você está no caminho certo, já montou alguns blocos.
+Mas na sua expressão você precisa usar mais um <em>bloco de aritmética</em>
+  <img align="middle" src="/static/saci/blockly_images/block_math_arithmetic.png" height="45px"/> e
+  mais um <em>bloco de número</em> 
+  <img align="middle" src="/static/saci/blockly_images/block_math_number.png" height="40px"/>.
+  O novo <em>bloco de aritmética</em> deve ser encaixado como um dos valores
+  do <em>bloco de aritmética</em> que você já montou.
+  <p>
+  Revise o enunciado do desafio e corrija sua expressão.
+<br>
+
+@text_print
+
+Muito bem, você está no caminho certo, está usando
+o bloco   <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>.
+Agora precisa encaixar nele o bloco
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/> e preencher
+  esse bloco com as palavras corretas.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>
+clique em <b>Texto</b> na Barra de Ferramentas e arraste
+o bloco para a área de Programa, encaixando um bloco no outro. Depois é só
+preencher o bloco de texto com a frase especificada no enunciado como a primeira
+linha da saída.
+<br>
+
+@empty
+
+Vamos lá: você precisa iniciar usando
+um bloco  <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+com um bloco 
+  <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px" />
+encaixado.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_print.png" height="40px"/>
+clique em E/S (entrada e saída) na Barra de Ferramentas e arraste
+o bloco para a área de Programa.
+Para usar o bloco <img align="middle" src="/static/saci/blockly_images/block_text.png" height="40px"/>
+clique em <b>Texto</b> na Barra de Ferramentas e arraste
+o bloco para a área de Programa, encaixando um bloco no outro. Depois é só
+preencher o bloco de texto com a frase especificada no enunciado.
+<br>

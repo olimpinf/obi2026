@@ -1,0 +1,125 @@
+title:Tabela do campeonato
+template:tasks/tarefa_programacao.html
+
+<p>
+Joana adora futebol e conseguiu um estágio no clube pelo qual torce.
+Na sala de troféus Joana encontrou uma caderneta em que um antigo
+conselheiro do clube anotou os resultados de todos os campeonatos que o
+time participou.
+
+<p>
+Para cada campeonato há uma anotação na caderneta informando cinco
+dados: o número de jogos, o número de pontos, o número de vitórias, o
+número de empates e o número de derrotas do time naquele campeonato.
+Em todos os campeonatos, cada vitória vale três pontos, cada empate vale um
+ponto e derrotas não valem pontos.
+
+<p>
+Infelizmente, a caderneta era muito velha e alguns desses números
+estavam ilegíveis. Joana, no entanto, percebeu que, para cada
+campeonato, se algum número estivesse ilegível ele poderia ser
+computado utilizando os números legíveis daquele campeonato.
+
+<p>
+Sua tarefa é escrever um programa para completar as informações
+encontradas na caderneta.
+
+<h3>Entrada</h3>
+A primeira e única linha da entrada contém cinco inteiros J, P, V, E e D, indicando
+respectivamente o número de jogos, o número de pontos, o número de
+vitórias, o número de empates e o número de derrotas para um
+campeonato.  Um ou dois desses números tem o valor -1, indicando
+que o número é ilegível na caderneta.
+Todos os casos da entrada têm solução.
+
+
+<h3>Saída</h3> 
+<p>
+Seu programa deve produzir uma única linha, contendo
+uma única linha, com exatamente cinco números inteiros, os valores
+corrigidos da caderneta para o campeonato da entrada. Os números devem
+ser dados na mesma ordem fornecida na entrada: o número de jogos, o
+número de pontos, o número de vitórias, o número de empates e o número
+de derrotas, separados por exatamente um espaço em branco. Note que no
+resultado devem valer as equações J = V + E + D e P = 3*V + E.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  J  &leq;  100;
+0  &leq;  P  &leq;  300;
+0  &leq;  V  &leq;  100;
+0  &leq;  E  &leq;  100;
+0  &leq;  D  &leq;  100.
+<li> Na entrada, um ou dois dos valores entre J, P, V, E e D é
+igual a -1 (e somente nesses casos as restrições acima não são obedecidas).
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 10 pontos, 
+P,V,E,D &geq; 0 e J = -1.
+
+
+<li> Para um conjunto de casos de testes valendo outros 40 pontos, 
+apenas um dos valores da entrada é -1.
+</ul>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+10 20 6 2 -1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+10 20 6 2 2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+-1 64 18 10 10
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+38 64 18 10 10
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+-1 47 14 -1 9
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+28 47 14 5 9
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

@@ -1,0 +1,47 @@
+<p>Vamos usar duas variáveis <span class="tt">L</span>
+  e <span class="tt">C</span> para armazenar respectivamente o número
+  de linhas e o número de colunas da bandeira. Então usamos um laço
+  com a variável <span class="tt">linha</span> de 1 a L e encaixado
+  nesse um outro laço com a variável <span class="tt">coluna</span> de
+  1 até C. A cada passo da repetição da linha, verificamos se o valor
+  de <span class="tt">linha </span> é par ou ímpar. Se for ímpar,
+  fazemos uma variável de
+  nome <span class="tt">caractere_da_linha</span> valer '.' (esse vai
+  ser o caractere escrito nesta linha, que é ímpar). Se for par,
+  fazemos a variável de
+  nome <span class="tt">caractere_da_linha</span> valer '*'.
+
+<p>Então, no laço de repetição da coluna, usamos um bloco <em>imprima
+  com final</em> para escrever a linha com a
+  variável <span class="tt">caractere_da_linha</span>.  Note que temos
+  que usar um bloco <em>imprima</em> para fazer o computador mudar de
+  linha.
+
+<table width="100%">
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Blockly</h3>
+      <p>
+	<img src="/static/saci/blockly_images/sol_class_13_2.png"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <h3>Python</h3>
+      <pre class="code">
+# Solução do Desafio 2 da Aula 13
+
+L = int(input())
+C = int(input())
+for linha in range(1, L + 1):
+    if linha % 2 == 1:
+        caracter_da_linha = '.'
+    else:
+        caracter_da_linha = '*'
+    for coluna in range(1, C + 1):
+        print(caracter_da_linha, end="")
+    print()
+</pre>
+    </td>
+  </tr>
+</table>

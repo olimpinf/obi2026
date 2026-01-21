@@ -1,0 +1,54 @@
+{% extends "base_two_columns.html" %}
+
+{% block title %}Certificados{% endblock %}
+
+{% block header %}<h1>Certificados</h1>{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="btn btn-primary mt-4">Consulta</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+    <h4>Instruções</h4>
+    <p>Você pode gerar certificados de participação de OBIs de anos anteriores, utilizando o formulário ao lado.</p>
+    <ul>
+    <li>Inicie selecionando o ano da OBI de interesse e o tipo de
+    participação.</li>
+    <li>Insira parte do nome do participante para restringir a
+    consulta (você pode também inserir o nome completo, mas em alguns
+    casos o professor inseriu o nome abreviado, e a busca pode não ter
+    sucesso).</li>
+    <li>Utilize os outros campos do formulário para restringir ainda
+    mais a busca. Por exemplo, inserindo "Castelo" no campo <i>Nome da
+    Escola</i> restringirá a busca apenas a alunos de escolas que
+    contenham "Castelo" no nome.</li>
+    <li>Clique em no botão <b>Consulta</b>; a lista com os participantes
+    que obedecem ao critério de busca é mostrada a seguir.</li>
+    </ul>
+
+{% endblock %}

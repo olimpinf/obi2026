@@ -1,0 +1,84 @@
+title:Número de Envelopes
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>Aldo é um garoto muito esperto que adora promoções e sorteios. Como já participou de muitas promoções da
+forma "para participar, envie <i>n</i> rótulos de produtos ...", Aldo tem o costume de guardar o rótulo de todos os
+produtos que compra. Dessa forma, sempre que uma empresa faz uma promoção ele já tem um monte de rótulos
+para mandar.</p>
+<p>A SBC (Super Balas e Caramelos) está fazendo uma nova promoção, e, como era de se esperar, Aldo quer
+participar. Para participar da promoção é preciso enviar um envelope contendo um rótulo de cada tipo de bala
+que a SBC produz. Por exemplo, se a SBC produz 3 tipos de balas, A, B, C, e uma pessoa tem 3 rótulos de A,
+3 de B e 2 de C, ela pode enviar no máximo 2 envelopes, já que falta um rótulo de C para compor o terceiro
+envelope. não há limite para o número de envelopes que uma pessoa pode enviar.</p>
+<p>Balas são a segunda coisa de que Aldo mais gosta (a primeira como você sabe são promoções). Por causa disso a
+quantidade de rótulos de balas que ele tem é muito grande, e ele não está conseguindo determinar a quantidade
+máxima de envelopes que ele pode enviar.</p>
+<p>Como você é o melhor amigo de Aldo ele pediu sua ajuda para fazer o cálculo, de modo que ele compre o número
+exato de envelopes.</p>
+
+<h3>Tarefa</h3>
+<p>Você deve escrever um programa que, a partir da lista de rótulos de Aldo, calcula o número máximo de envelopes
+válidos que ele pode enviar.</p>
+
+<h3>Entrada</h3>
+<p>A entrada contém um único conjunto de testes, que deve ser lido do <i>dispositivo de entrada padrão</i> (normalmente
+o teclado).</p>
+<p>A primeira linha contém dois números inteiros <i>N</i> (1 ≤ <i>N</i> ≤ 1000000) e <i>K</i> (1 ≤ <i>K</i> ≤ 1000) representando
+respectivamente a quantidade de rótulos de balas que Aldo possui e o número de tipos diferentes de bala que
+a SBC produz. Os tipos de balas são identificados por inteiros de 1 a <i>K</i>. A segunda linha contém <i>N</i> números
+inteiros <i>X</i><sub>i</sub>, cada um representando um rótulo de bala que Aldo possui (1 ≤ <i>X</i><sub>i</sub> ≤ <i>K</i>, para 1 ≤ <i>i</i> ≤ <i>N</i>).</p>
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir, na <i>saída padrão</i>, o número máximo de envelopes válidos que Aldo pode enviar.</p>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li>Em um conjunto de casos de teste que totaliza 30 pontos, <i>N</i> ≤ 10 e <i>X</i><sub>i</sub> ≤ 10.</li>
+	<li>Em um conjunto de casos de teste que totaliza 80 pontos, <i>N</i> ≤ 100 e <i>X</i><sub>i</sub> ≤ 100.</li>	
+</ul>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="60%">
+			<b>Entrada</b>
+			<pre>
+10 2
+1 1 1 1 1 2 2 2 2 2			
+			</pre>
+		</td>
+		<td valign="top" width="60%">
+			<b>Saída</b>
+			<pre>
+5			
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="60%">
+			<b>Entrada</b>
+			<pre>
+20 5
+1 2 3 4 1 2 3 4 1 2 3 4 5 1 2 3 4 5 4 4
+			</pre>
+		</td>
+		<td valign="top" width="40%">
+			<b>Saída</b>
+			<pre>
+2
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+      

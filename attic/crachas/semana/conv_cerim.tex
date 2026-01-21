@@ -1,0 +1,97 @@
+
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+\usepackage{geometry}
+\pagestyle{empty}
+\geometry{
+  paperwidth=8in,paperheight=10in,
+  top=10mm,
+  bottom=10mm,
+  %bindingoffset=25mm,
+  left=0mm,right=0mm
+}
+\usepackage[a4,center]{crop}
+
+\setlength\fboxrule{0.2pt}
+\newcommand{\cracha}[3] {
+\fbox{
+  \begin{minipage}[b][105mm]{72mm}
+    \begin{center}
+      \vfill
+      \includegraphics[width=28mm]{#3}
+      \Large
+      \vfill
+          {\textbf{#1}}\\[12pt]
+ 
+          #2
+
+          \vspace{1.0cm}
+
+          {\normalsize \textbf{Semana Olímpica da OBI2018}\\[3pt]
+            \footnotesize Sociedade Brasileira de Computação\\[3pt]
+                          {\bf Instituto de Computação -- UNICAMP}\\
+                          \vspace{2mm}
+                          \includegraphics[width=60mm]{logos_patrocinadores.pdf}
+                          \vspace{2mm}
+          }
+    \end{center}
+  \end{minipage}
+  }
+}
+
+\newcommand{\verso}[1] {
+\setlength\fboxrule{0.0pt}
+\fbox{
+\begin{minipage}[c][105mm]{75mm}
+
+\noindent
+{\bf Alergias}
+
+#1
+
+\vspace*{0.5cm}
+{\bf Telefones em caso de emergência}
+\begin{itemize}
+\item Coordenador da OBI2018:\\
+Prof. Ricardo Anido (19) 99915-5515 
+\item Monitor-chefe:\\
+Francisco Nardi (19) 98236-8607
+\item Secretaria OBI:\\
+(19) 3521-5863
+\item Vigilância do Campus:\\
+(19) 3521-6000
+\end{itemize}
+\end{minipage}
+}
+}
+
+
+
+\begin{document}
+
+
+\begin{center}
+\cracha{Prof. Dr. Munir S. Skaf}{Coordenador e-Science CEPID-FAPESP}{logo_obi_vermelho.pdf}
+\cracha{Profa. Dra. Eliana M. Amaral}{Pró-Reitora de Graduação - UNICAMP}{logo_obi_vermelho.pdf}
+\end{center}
+
+\begin{center}
+\cracha{Profa. Dra. Esther L. Colombini}{Diretora de Competições - SBC}{logo_obi_vermelho.pdf}
+\cracha{Daniel J. Capeleto}{Apresentador IC-UNICAMP}{logo_obi_vermelho.pdf}
+\end{center}
+
+
+\begin{center}
+\cracha{Prof. Dr. Lucas F. Wanner}{Coordenador de Graduação - IC/UNICAMP}{logo_obi_vermelho.pdf}
+\cracha{Nome}{Modalidade}{logo_obi_vermelho.pdf}
+\end{center}
+
+\begin{center}
+\cracha{Nome}{Modalidade}{logo_obi_vermelho.pdf}
+\cracha{Nome}{Modalidade}{logo_obi_vermelho.pdf}
+\end{center}
+
+
+\end{document}
+

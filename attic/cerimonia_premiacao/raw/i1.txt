@@ -1,0 +1,18 @@
+1,1,39,Felipe Somavila Bley,Escola de Educação Básica da URI - Santo Ângelo,Santo Ângelo,RS
+1,1,39,Joubert Yuri da Silva Delmondes,Escola de Referência em Ensino Fundamental e Médio Aplicação do Recife,Recife,PE
+1,1,39,Luiz Pedro Araujo Souza,CENTRO DE EDUCAÇÃO INTEGRADA S.A - RF,Natal,RN
+2,1,39,Matheus de Lima Barros,Colégio Militar do Rio de Janeiro,Rio de Janeiro,RJ
+2,1,39,Saulo Ribeiro Amaral,Colégio Pedro II - Campus Humaitá II,Rio de Janeiro,RJ
+3,8,38,Davi Luiz Alves Pilé Silva,Escola de Referência em Ensino Fundamental e Médio Aplicação do Recife,Recife,PE
+3,8,38,Francisco Josue Oliveira Fernandes,Colégio Farias Brito Sobralense,Sobral,CE
+3,8,38,Letícia Nicoletti Capriles,Colégio Militar do Rio de Janeiro,Rio de Janeiro,RJ
+4,8,38,Lucca Fontes Aragão,COLÉGIO MILITAR DE FORTALEZA,Fortaleza,CE
+4,8,38,Raul Batista Pereira Wakahara,Colégio Santa Cruz,São Paulo,SP
+5,14,37,Caio do Nascimento Rodrigues,COLÉGIO AGOSTINIANO SÃO JOSÉ,São Paulo,SP
+5,14,37,Daniel Alves Breijão,Escola Educação Criativa,Ipatinga,MG
+5,14,37,Daniel Alves Mendes,Colégio Militar do Rio de Janeiro,Rio de Janeiro,RJ
+6,14,37,Daniel Kenzo Hayashi,Colégio Etapa - Vila Mariana,São Paulo,SP
+6,14,37,Giovani Vieira de Oliveira,Colégio Ábaco,São Bernardo do Campo,SP
+6,14,37,Guilherme Moura de Oliveira,Escola de Referência em Ensino Fundamental e Médio Aplicação do Recife,Recife,PE
+7,14,37,Joao Emanuel Cardoso Sales,ARI DE SÁ CAVALCANTE SEDE MAJOR FACUNDO,Fortaleza,CE
+7,14,37,Matheus Oliver Berger,Colégio Móbile,São Paulo,SP

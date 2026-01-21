@@ -1,0 +1,137 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Passo a passo: aplicação da Prova Fase 2 - Modalidade Programação</h1>
+
+<h2>Antes da prova</h2>
+
+<h4>Preparação dos laboratórios</h4>
+<ol>    
+  <li>Para desenvolver suas soluções, cada aluno deve ter à sua
+    disposição um computador com editores de texto e pelo menos um
+    compilador entre C, C++, Java ou o interpretador
+    Python. Normalmente os alunos usam o que já está instalado nos
+    laboratórios da escola. Se a escola não tem
+    compiladores ou ambientes de desenvolvimento já instalados, veja
+    em {% url 'aplicativos' %} alguns aplicativos algumas sugestões de
+    aplicativos que podem ser instalados.
+
+   <li>Os alunos acessam o Ambiente de Prova usando um navegador internet (como Firefox, Chrome, Safari, etc.).
+
+    <li>O aluno não deve acessar a Internet a não ser através do
+      Ambiente de Prova da {{ 'OBI'|obi_date_year }}. Se possível,
+      o ideal é permitir o acesso apenas aos endereços do Ambiente de Prova da OBI (veja abaixo).
+      Se isso não é possível, os professores devem supervisionar os alunos
+      de forma a que não acessem outros endereços da Internet.
+
+    <li>Os alunos devem fazer as provas individualmente, sem consulta a qualquer
+      material impresso (como livros ou apostilas) ou digital (como programas feitos anteriormente).
+</ol>
+
+<h4>Caso Especial: Provas no ambiente Saci</h4>
+<p>Alguns (poucos) alunos estudaram programação pelo ambiente Saci,
+da OBI, que tem dois cursos disponívels, Javascript e Blockly/Python
+
+Para esses alunos, preparamos uma versão especial do Editor Saci para as provas da OBI, 
+para que os alunos tenham o mesmo ambiente e para que possam desenvolver e testar suas
+soluções em Javascript ou Python.
+
+<p>Se algum aluno de sua escola solicitar acesso ao Editor Saci, siga os passos:
+<ul>
+<li> Faça o download
+do Editor Saci no link abaixo (arquivo .zip)
+<li> Copie o arquivo .zip para o computador onde o aluno vai fazer a
+prova (por exemplo, saci.zip).
+<li> Descompacte o arquivo. Vai ser criada uma pasta (de nome saci)
+<li> Dentro da pasta criada, clique duas vezes no arquivo de nome "index.html";
+o navegador padrão (Firefox, Chrome, Opera...) do sistema deve abrir e mostrar a prova.
+<li> Se não funcionar, abra uma janela de um navegador (Firefox, Chrome...)
+e abra o arquivo "index.html" pelo navegador. O ambiente de desenvolvimento deve aparecer como uma
+página do navegador.
+
+<!--font color="red"> (ainda NÃO disponíveis, serão
+disponibilizadas 12:00 (meio-dia) do dia 28/05, terça-feira)</font-->
+
+<ul>
+<li><a href="zip/saci.zip">Editor Saci Javascript</a>
+<li><a href="">Editor Saci Blockly/Python</a>
+(infelizmente não é possível disponibilizar o editor como um
+  arquivo. Instrua os seus competidores a utilizarem o
+<a href="/saci/cursos/python/15/">
+  Editor Blockly/Python</a> disponível no site da OBI.
+</ul>
+</ul>
+
+
+<h2>No dia da prova</h2>
+<ol>
+  <li>Baixe e imprima as senhas de acesso ao Ambiente de Prova.
+    <ol>
+      <li>Na página de coordenação, Seção "Fase 2", linha "Modalidade Programação",
+      clique em "Senhas Prova". Um arquivo PDF no formato de "cartões"
+      é gerado, cada cartão com as informações de um competidor (nome, usuário, senha).
+    </ol>
+  <li>Imprima as Listas de Presença
+    <ol>
+      <li>As listas de presença não são obrigatórias, mas é recomendável que os alunos
+	assinem. Guarde as listas assinadas para comprovar a participação dos alunos em caso
+	de problemas com a prova ou a correção.
+      <li>Para imprimir as listas de presença, na página de coordenação, Seção "Fase 2", linha "Modalidade Programação",
+      clique em "Aplicação da Prova", e procure a seção Listas de Presença.
+    </ol>
+
+  <li>Distribua as senhas para os alunos.
+    <ul>
+      <li>Os cartões estão no formato de etiquetas auto-colantes, mas podem ser
+	recortados manualmente para serem entregues para os alunos.
+    </ul>
+  <li>O nome de usuário é o número de inscrição (completo, por exemplo 01234-B).
+  <li>Informe os endereços do Ambiente de Prova para os alunos (veja os endereços abaixo).
+  <li>Supervisione os alunos, para garantir que façam a prova individualmente e sem uso de
+    qualquer material externo (livros, internet, anotações, arquivos de problemas já feitos, etc)
+  <li>O tempo de prova, controlado pelo Ambiente de Prova, é duas horas para os níveis Júnior e 1,
+    e três horas para os níveis 2 e Sênior.
+</ol>
+
+<h4>Endereços do Ambiente de prova</h4>
+<ul>
+  <li>São utilizados quatro endereços diferentes para o Ambiente de Prova, um para
+    cada nível da modalidade Programação:
+    <ul>
+      <li>Nível Júnior: <a href="https://pj.provas.ic.unicamp.br"><span class="ttt">https://pj.provas.ic.unicamp.br</span></a>
+      <li>Nível 1: <a href="https://p1.provas.ic.unicamp.br"><span class="ttt">https://p1.provas.ic.unicamp.br</span></a>
+      <li>Nível 2: <a href="https://p2.provas.ic.unicamp.br"><span class="ttt">https://p2.provas.ic.unicamp.br</span></a>
+      <li>Nível Sênior: <a href="https://ps.provas.ic.unicamp.br"><span class="ttt">https://ps.provas.ic.unicamp.br</span></a>
+    </ul>
+  <li>O ambiente de prova estará aberto das 08:00 às 20:00 (horário estendido a pedido das escolas). Note que o
+   ambiente FECHA às 20:00, para todos os níveis, não sendo possível
+   submeter soluções após esse horário.
+
+</ul>
+
+<h4>Resultados da Prova</h4>
+<ol>
+  <li>Após o período de aplicação da prova,  competidores e coordenadores locais poderão ver
+    a correção das soluções submetidas.
+  <li>Os resultados são provisórios, pois pode haver re-julgamento das soluções em caso de necessidade.
+  <li>Os resultados finais serão divulgados de acordo com o calendário.
+</ol>
+
+{% endblock %}
+
+{% block content-related %}
+
+  {% block browse-wrapper %}
+  {% block browse %}
+  
+
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+      
+
+{% endblock %}

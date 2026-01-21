@@ -1,0 +1,47 @@
+{% load obi_extras exams %}
+
+<ul>
+  <li>Para realizar a prova você deve ter acesso a um ambiente para
+    desenvolvimento de programas de computador, para a linguagem de
+    programação de sua preferência (entre C, C++, Python, Java ou
+    Javascript). Se você aprendeu a programar no ambiente
+    Saci, pode usar o <a href="/saci/cursos/provaf1/2020/"> ambiente de
+    desenvolvimento Javascript do Saci</a> para desenvolver e testar
+    seus programas.
+  <li>O nome do arquivo de solução somente é significativo para
+    soluções na linguagem Java.  Nesse caso, o nome do arquivo deve
+    ser sempre, independente da tarefa, <span class='ttt'>solucao.java</span> (todas as letras
+    minúsculas, sem acento) e o nome da classe principal do programa
+    deve ser <span class='ttt'>solucao</span> (todas as letras
+    minúsculas, sem acento). Para as outras linguagens o nome
+    do arquivo não tem importância.
+  <li>Uma solução submetida é <em>aceita</em> se passa em um caso de teste
+    trivial; caso contrário ela é <em>rejeitada</em>.
+    Uma solução ser aceita para correção não significa que está
+    correta ou que o competidor vai ganhar pontos pela tarefa.
+  <li>Você pode fazer no máximo {{ f.exam_subm_max }} submissões de soluções
+   no total, não havendo limite de submissões por tarefa.
+  <li>Para fins de correção e atribuição da pontuação será
+    considerada, para cada tarefa, a última submissão enviada que
+    foi <em>aceita</em>.  Cada tarefa vale 100 pontos.  A correção das
+    tarefas será realizada após o período de aplicação da prova e o
+    resultado será divulgado posteriormente.
+  <li>Compile e execute a sua solução no seu ambiente de desenvolvimento antes de submetê-la,
+    com testes criados por você mesmo (usando como base os Exemplos de Entrada da tarefa);
+    não use o sistema de correção como ambiente de testes.
+  <li>Veja <a href="{% url 'exams:start_exam' f.exam_descriptor %}">exemplos de programas</a>
+    nas diferentes linguagens, com indicações de como os comandos de
+    entrada e saída devem ser usados em cada linguagem.
+  <li>Obedeça estritamente o formato de saída especificado no enunciado da
+  tarefa. Em particular, não escreva na saída antes de fazer a leitura
+  da entrada. Ou seja, não escreva frases como "Entre com o valor de N:",
+  pois isto viola o formato de saída especificado.
+  <li>A prova é individual e sem consulta a qualquer material. Você pode
+    usar caneta, lápis, papel em branco, borracha e régua. Você pode
+    consultar o manual da linguagem de programação que estiver usando.
+  <li>Não divulgue ou comente as tarefas da prova com outros competidores até o
+    término do período de aplicação da prova.
+</ul>
+<hr><br>
+  <p><a class="myButton action" href="{% url 'exams:finish_exam' f.exam_descriptor %}" onclick="return confirm('Encerrar a prova? Encerrando a prova não será mais possível enviar novas soluções.')">Encerrar a Prova</a>
+  <p>Atenção: ao clicar no botão <em>Encerrar a Prova</em> não será mais possível submeter soluções.

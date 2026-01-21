@@ -1,0 +1,28 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block header %}
+<h1>Saci</h1>
+{% endblock %}
+{% block content %}
+<p>É necessário estar registrado para acessar esta aula. Se você está inscrito como
+  competidor da OBI, pode utilizar as mesmas credenciais que usa para entrar
+  na sua página pessoal da {{ 'OBI'|obi_date_year }} (ou seja, seu número de inscrição
+  como nome de usuário e a senha enviada por email). Se não é competidor, professor
+  ou colaborador cadastrado na {{ 'OBI'|obi_date_year }}, será necessário registrar-se (é simples e rápido).</p>
+<a href="/contas/login/?next={{ request.get_full_path }}" class="cta">Já sou registrado</a>
+<a href="{% url 'saci:saci_register' %}" class="cta">Quero me registrar</a>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+  {% block browse-wrapper %}
+  {% include "saci/includes/course_menu.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% endblock breadcrumbs-wrapper %}
+</div>
+{% endblock %}

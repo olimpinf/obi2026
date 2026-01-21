@@ -1,0 +1,110 @@
+title:Competição de chocolate
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>Carlos e Paula acabaram de ganhar um saco com bolinhas de chocolate. Como sabem que vão comer tudo
+muito rápido inventaram uma brincadeira:</p>
+<ul>
+	<p><li>Eles vão comer de forma alternada, um depois o outro, sendo que sempre a Paula começa.</li>
+	<li>A cada vez, só se pode comer de 1 a <i>M</i> bolinhas, sendo o <i>M</i> decidido pela mãe de Paula, de forma que
+não engasguem com o chocolate.</li></p>
+	<p><li>Se um comeu <i>K</i> bolinhas em sua vez, o próximo não pode comer o mesmo tanto, tendo que comer um
+número de bolinhas distinto.</li></p>
+	<p><li>Quem não puder mais jogar de maneira válida perde.</li></p>	
+</ul>
+<p>Um exemplo de partida para <i>M</i> = 5 e 20 bolinhas, onde Carlos ganhou:</p>
+
+<center> 
+	<img src="/static/img/task_images/2009f2p1_chocolate.png" width="500" height="250">
+</center>
+<p>Observe que no final Carlos não poderia comer 2 bolinhas para ganhar, pois seria o mesmo que Paula comeu
+na vez anterior. Mas Paula também não pôde comer a última bolinha, pois Carlos havia comido apenas uma
+na rodada anterior, assim Paula ficou sem opção de jogada e perdeu.</p>
+<p>Ambos são muito espertos e jogam de maneira ótima, de forma que se existe para um deles uma sequência de
+jogadas que garante a vitória independente da jogada do outro, essa pessoa jogará dessa forma.</p>
+
+<h3>Tarefa</h3>
+<p>Sua tarefa é determinar quem vai ganhar a brincadeira, se ambos jogam de forma ótima.</p>
+
+<h3>Entrada</h3>
+<p>A entrada contém um único conjunto de testes, que deve ser lido do <i>dispositivo de entrada padrão</i> (normalmente
+o teclado).</p>
+<p>A entrada consiste de uma linha contendo dois inteiros <i>N</i> (2 ≤ <i>N</i> ≤ 10<sup>6</sup> e <i>M</i> (2 ≤ <i>M</i> ≤ 10<sup>3</sup>), sendo <i>N</i> o
+número de bolinhas de chocolate e <i>M</i> o número de bolinhas permitidas por vez.</p>
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir, na <i>saída padrão</i>, uma linha, contendo o nome do vencedor, como exemplificado
+abaixo.</p>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+	<li>Em um conjunto de casos de teste que totaliza 50 pontos, <i>N</i> ≤ 50 e <i>M</i> ≤ 5.</li>
+	<li>Em um conjunto de casos de teste que totaliza 80 pontos, <i>N</i> ≤ 10<sup>4</sup> e <i>M</i> ≤ 100.</li>	
+</ul>
+
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+5 3			
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+Paula		
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+20 5
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+Carlos
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+5 6
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+Paula
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+
+      

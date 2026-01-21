@@ -1,0 +1,140 @@
+title:Falha de segurança
+template:tasks/tarefa_programacao.html
+
+<p>
+Rafael foi contratado como programador por um grande banco que está
+atualizando todo o sistema computacional.  O novo sistema vai ser
+instalado amanhã, mas Rafael acabou de descobrir uma falha grave na
+nova  autenticação para acesso às contas do banco: se um
+usuário digitar como senha uma cadeia de caracteres que contenha,
+como sub-cadeia contígua, a senha correta para esse usuário, o sistema
+se confunde e permite o acesso.
+
+<p>Por exemplo, se a senha correta é 'senhafraca' e o usuário digitar<br>
+<div class="center">
+`quesenhafracameu' ou `senhafraca123',
+</div>
+
+<p>o sistema permite o
+acesso. Note que nesse caso o sistema não permite o acesso se o
+usuário digitar<br>
+
+<div class="center">
+`senha' ou `nhafra' ou `senha123fraca'.
+</div>
+
+<p>O chefe de Rafael chamou um programador mais experiente para alterar a
+autenticação do novo sistema, mas solicitou que Rafael determinasse,
+para o conjunto de senhas existentes, quantos pares ordenados (A,B) de
+usuários distintos existem tal que o usuário A, usando sua senha,
+consegue acesso à conta do usuário B. Você poderia por favor ajudar
+Rafael?
+
+
+
+
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um número inteiro N,
+  o número de usuários no sistema.
+  
+<p>  Cada uma das N linhas seguintes contém uma senha S<sub>i</sub>, a senha do
+  i-ésimo usuário.
+
+
+
+
+
+<h3>Saída</h3>
+<p>Seu programa deve produzir uma única linha, contendo um único inteiro,
+o número de pares ordenados (A,B) de usuários distintos tal que o usuário A,
+usando sua senha, consegue acesso à conta do usuário B.
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  20 000
+<li> S<sub>i</sub> inicia com letra minúscula sem acento e contém apenas letras
+minúsculas sem acento e dígitos de 0 a 9, para 1  &leq;  i  &leq;  N
+<li> 1  &leq;   comprimento de S<sub>i</sub>  &leq;  10 
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 12 pontos, comprimento de S<sub>i</sub>=1 e N  &leq;  1000.
+<li> Para um conjunto de casos de testes valendo outros 28 pontos, N  &leq;  2000.
+<li> Para um conjunto de casos de testes valendo outros 60 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+xxx
+x23
+xx
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+1
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+a
+a
+a8
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+4
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+jus
+justa
+ta
+us
+t
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+6
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

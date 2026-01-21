@@ -1,0 +1,47 @@
+title:Busca por nome
+template:tasks/tarefa_iniciacao.html
+
+<p>
+Vô João começou a usar uma rede social incentivado pelo seu neto, e
+agora quer saber se seus amigos são membros dessa rede social. Nessa
+rede social é possível fazer uma busca por nomes utilizando um
+formulário. Se a grafia correta do nome procurado não é conhecida,
+podemos usar caracteres especiais que facilitam a busca.  Os seguintes
+caracteres especiais são permitidos na consulta:
+
+<ul>
+<li>  <span class="ttt">?</span> é usado quando exatamente um caractere é desconhecido
+<li>  <span class="ttt">&</span> é usado quando exatamente dois caracteres são desconhecidos
+<li>  <span class="ttt">%</span> é usado quando o resto do nome é desconhecido.
+</ul>
+
+Por exemplo,
+a busca
+<span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Eduard?</span>
+</span> retornaria Eduardo ou Eduarda e a busca
+<span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Car& Silva</span>
+</span> retornaria nomes como Carol Silva ou Carla Silva.
+A busca <span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Silv%</span>
+</span> retornaria nomes como Silvio Santos, Silvia Oliveira, Silvino Batista ou Silveira
+Filho.
+
+
+\question
+Qual das seguintes alternativas poderia ser o resultado da busca
+<center>
+<span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Silvi? Ma&ad? de F%</span>
+</span>?
+</center>
+(A) & Silvinho Machado de Freitas  
+(B) & Silvana Machado de Farias
+(C) & Silvio Malvado Filho
+(D) & Silvia Malvada de Farias  \correct
+(E) & Silvia Maldonado de Freitas 
+
+\question
+A busca que poderia ser usada para encontrar o nome Chico Buarque de Holanda é:
+(A) & <span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">&?& Duarte%</span></span>
+(B) & <span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Chico ?arque de Holanda</span></span>
+(C) & <span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Chi& &arque d? %</span></span> \correct
+(D) & <span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">?&? Buarque d? %</span></span>
+(E) & <span style="background: ghostwhite; padding: 4px; border: 1px solid lightgray; margin: 4px;"><span class="ttt">Chic? ?arque de %</span></span>

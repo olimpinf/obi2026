@@ -1,0 +1,163 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>Correção - Fase 3 - Modalidade Programação</h1>
+
+<center>
+  <table>
+    <tr><th colspan=2>Links Rápidos</th></tr>
+    <tr>
+      <td><ul class="list-tools">
+	  <li> <a href="#turnoA">Gabaritos e exemplos de solução</a>
+	  <li><a href="{% url 'restrito:compet_lista_status_prova_online' 'provaf3' 'A' %}">Status</a>
+	</ul>      
+      </td>
+    </tr>
+  </table>
+</center>
+
+
+{% comment %}
+<p>Na Modalidade Programação, a correção das soluções dos competidores
+é realizada pela Coordenação da OBI.
+{% endcomment %}
+
+
+
+<p>Os coordenadores podem verificar a realização das provas (se o competidor
+  realizou ou não a prova, bem como visualizar as soluções
+  submetidas pelos alunos clicando nos links "Status" acima.
+<p><em>A pontuação mostrada é preliminar e pode ser alterada como resultado de
+    eventuais recorreções durante o período de recursos</em>.
+    
+<h2><a name="turnoA">Prova Fase 3</h2>
+<h3>Nível Júnior</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f3pj.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_ogro.zip">Ogro</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_casamento.zip">Casamento</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_sapo.zip">Sr. Sapo</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_plano.zip">Plano de estacionamento</a></li>
+</ul>
+<li>Exemplo de solução (C++):
+<ul>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_ogro/ogro_cpp.cpp">Ogro</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_casamento/casamento_cpp.cpp">Casamento</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_sapo/sapo_cpp.cpp">Sr. Sapo</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_plano/plano_cpp.cpp">Plano de estacionamento</a></li>
+</ul>
+</ul>
+
+<h3>Nível 1</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f3p1.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_casamento.zip">Casamento</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_sapo.zip">Sr. Sapo</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_plano.zip">Plano de estacionamento</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p1_festa.zip">Festa olímpica</a></li>
+</ul>
+<li>Exemplo de solução (C++):
+<ul>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_casamento/casamento_cpp.cpp">Casamento</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_sapo/sapo_cpp.cpp">Sr. Sapo</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_plano/plano_cpp.cpp">Plano de estacionamento</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p1_festa/arthur.cpp">Festa olímpica</a></li>
+</ul>
+</ul>
+
+<h3>Nível 2</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f3p2.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_casamento.zip">Casamento</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p2_cubo.zip">Cubo e quadrado</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p2_falha.zip">Falha de segurança</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p2_minhoca.zip">Dona Minhoca</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p1_festa.zip">Festa olímpica</a></li>
+</ul>
+<li>Exemplo de solução (C++):
+<ul>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_casamento/casamento_cpp.cpp">Casamento</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3ps_cubo/cubo_cpp.cpp">Cubo e quadrado</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p2_falha/falha_cpp.cpp">Falha de segurança</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p2_minhoca/arthur.cpp">Dona Minhoca</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p1_festa/arthur.cpp">Festa olímpica</a></li>
+</ul>
+</ul>
+
+<h3>Nível Sênior</h3>
+<ul>
+<li><a href="/static/extras/obi2021/provas/ProvaOBI2021_f3ps.pdf">Caderno de tarefas da prova</a></li>
+
+<li>Gabaritos:
+<ul>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3pj_ogro.zip">Ogro</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3ps_teclado.zip">Teclado</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p2_falha.zip">Falha de segurança</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p2_minhoca.zip">Dona Minhoca</a></li>
+<li><a href="/static/extras/obi2021/gabaritos/2021f3p1_festa.zip">Festa olímpica</a></li>
+</ul>
+<li>Exemplo de solução (C++):
+<ul>
+<li><a href="/static/extras/obi2021/solucoes/2021f3pj_ogro/ogro_cpp.cpp">Ogro</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3ps_teclado/teclado_cpp.cpp">Teclado</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p2_falha/falha_cpp.cpp">Falha de segurança</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p2_minhoca/arthur.cpp">Dona Minhoca</a></li>
+<li><a href="/static/extras/obi2021/solucoes/2021f3p1_festa/arthur.cpp">Festa olímpica</a></li>
+</ul>
+</ul>
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  <!--p>Este formulário de submissão é apenas para escolas que realizaram
+    a prova presencial. Competidores que realizaram a Prova Online
+    já enviaram as suas soluções durante a prova.
+    
+<p>A submissão dos programas dos competidores deve ser realizada até 
+{{ "prog-fase1-envio-solucoes"|obi_date|date:'d/m' }}.
+
+<p>
+Solicitamos que mantenham os arquivos de soluções dos alunos, para o caso de algum competidor reclamar da correção.
+</p-->
+<h3>Veja também</h3>
+<ul>
+<li><a href="{% url 'fase3:correcao_ini' %}">Correção Modalidade Iniciação</a>
+<li><a href="{% url 'fase3:correcao_prog' %}">Correção Modalidade Programação</a>
+</ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+    {% block breadcrumbs-wrapper %}
+    {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+    {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

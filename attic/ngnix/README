@@ -1,0 +1,8 @@
+Copy the file obi to /etc/nginx/sites-available/obi
+
+
+To test:
+sudo nginx -t
+
+To restart:
+sudo systemctl restart nginx

@@ -1,0 +1,33 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+{% if msg %}
+  <p>{{ msg|safe }}</p>
+  <H2>&nbsp;</H2>
+  <a class="button action" href="javascript: history.go(-1)">VOLTAR</a>
+{% else %}
+  <p>Os arquivos foram recebidos corretamente e estão sendo
+  processados; o resultado da correção será enviado para o email do
+  Coordenador Local da OBI na escola. As pontuações serão inseridas automaticamente
+  para os competidores com Folhas de Respostas corretamente
+    processadas.
+
+    {% comment %}
+    Após receber o email confirmado a correção, você pode
+  verificar as pontuações de seus competidores no
+  formulário <a href="/restrito/fase1/inserepontosini/">Insere/Modifica
+      Pontuação</a>.
+    {% endcomment %}
+    
+  </p>
+  <p>&nbsp;</p>
+  <a role="button" class="btn btn-primary" href="">Submeter outro arquivo</a>
+  &nbsp;
+  &nbsp;
+  <a role="button" class="btn btn-primary" href="{% url  'restrito:index' %}">OK</a>
+{% endif %}
+
+{% endblock %}

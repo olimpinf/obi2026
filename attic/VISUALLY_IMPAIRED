@@ -1,0 +1,11 @@
+If you don't want to redo everything and have the ability to print on double page paper (A3 in Europe), you can enlarge the whole pages with the command :
+
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[a3paper]
+In the opposite case, or if you should keep the " normal-sized paper" you can have a try on the extsizes package which allows to write:
+
+\documentclass[a4paper,17pt]{extarticle}
+For the figures, it is more intricate, because it depends on their format, size and aspect ratio.
+
+from
+https://tex.stackexchange.com/questions/440059/large-print-version-of-exam

@@ -1,0 +1,215 @@
+{% extends "base_3col.html" %}
+
+{% load weblog calendar %}
+
+{% block sectionid %}homepage{% endblock %}
+{% block body_class %}homepage{% endblock %}
+{% block layout_class %}sidebar-right{% endblock %}
+
+
+{% comment %}
+{% block head_extra %}
+<script>
+document.addEventListener('keydown', function(event) {
+      console.log("keydown");
+    var msgPopupMain = document.getElementById("messageModal");
+    const key = event.key; // const {key} = event; in ES6+
+    if (key === "Escape") {
+	console.log("Escape");
+        if (msgPopupMain.querySelector(".calendar-popup")) {
+            msgPopupMain.style.display = "none";
+            return;
+        }
+    }
+});
+  document.addEventListener('click', function(event) {
+      console.log("click");
+    var msgPopupMain = document.getElementById("messageModal");
+      if (msgPopupMain.querySelector(".calendar-popup")) {
+          msgPopupMain.style.display = "none";
+          return;
+      }
+   
+});
+</script>
+{% endblock %}
+{% endcomment %}
+
+{% block header %}
+    <h1 class="visuallyhidden">obi</h1>
+
+<p class="object-tools">
+    <a href="/semana/">
+      Semana Olímpica
+    </a>
+</p>
+
+{% comment %}
+
+<div id="messageModal" class="calendar-popup-main" style="display:block">
+  <div id="message-popup-main" class="calendar-popup">
+    <span class="cal-close">x</span>
+    <p class="calendar-popup-event-line" style="color:white">Importante
+	<p style="color:white;font-size:90%;padding:10px">Estamos com problemas no envio de mensagens, muitas estão retornando
+	  marcadas com erro. Dessa forma, mensagens de autorização de escolas e de envio de senhas não estão
+	  chegando aos destinatários. Estamos investigando juntamente com o
+	  provedor de email para solucionar o problema.
+	<p style="color:white;font-size:90%;padding:10px">Re-enviaremos todas as
+	  mensagens que retornaram com erro quando o problema for solucionado.
+	<p>
+      </div>
+  </div>
+</div>
+{% endcomment %}
+
+{% comment %}
+<p>Atenção</p>
+<p style="font-size:1.2em">
+As provas da Fase Nacional (Fase 3) da modalidade Iniciação foram adiadas para o dia 30/09/2023.
+Por favor leiam a
+<a href="/noticias/2023/09/18/modalidade-iniciacao-adiamento-da-prova/"><font color="#ff0000">notícia</font></a> divulgada.
+<br>&nbsp;
+<hr>
+
+<p>
+  <em>Vamos aproveitar as férias<br /> para aprender programação?<br /></em>
+<a href="https://www.alurastart.com.br"></a>
+<p style="font-size:1.2em">
+  A <a href="https://www.alurastart.com.br"><img style="margin-bottom:-3px" src="/static/img/logo-alura.svg" width="90px"/></a> está
+  oferecendo três meses de acesso gratuito a seus cursos de pensamento
+  computacional, habilidades digitais e programação de computadores a
+  todos os competidores e professores inscritos na OBI2023.</font>
+</p>
+  <a href="/info/beneficio_alura" class="cta">Saiba mais<br/></a>
+
+ <hr>
+{% endcomment %}
+
+<p>
+        <em>Do quarto ano do Ensino Fundamental<br /> até o primeiro ano do Ensino Superior,<br /> todos podem participar.</em>
+    </p>
+    <p>
+      <a href="/info/como_participar_aluno" class="cta">Como participar<br/><font size="-1">aluno</font></a>
+      <a href="/info/como_participar_escola" class="cta">Como participar<br/><font size="-1">escola</font></a>
+      <a href="/saci" class="cta">Programação para iniciantes<br/><font size="-1">novo curso, em Python!</font></a><br/>
+{% comment %}      
+      <a href="/semana" class="cta">Semana Olímpica<br/>da OBI2023<font size="-1"></font></a><br/>
+{% endcomment %}
+      
+{% comment %}      
+      <a href="{% url 'week_info_seletiva'%}" class="cta" style="background:#880000">Informações sobre a<br/>Seletiva para a IOI2023</a>
+      <a href="/resultados" class="cta">Resultados Finais<br/>Iniciação e Programação</a><br/>
+        <a href="{% url 'fase3:consulta_sedes' %}" class="cta">Lista de Sedes<br />da Fase Nacional</a>
+        <a href="{% url 'fase3:consulta_sua_sede' %}" class="cta">Consulte sua Sede<br />da Fase Nacional</a-->
+        <a href="/resultados" class="cta">Quadro de Medalhas e<br />Convidados para Semana Olímpica </a>
+        <a href="{% url 'estude' %}" class="cta">Se você é estudante,<br />quer aprender a programar?</a>
+{% endcomment %}
+    </p>
+<!--p style="font-size:14pt">Os recursos solicitando revisão da correção estão sendo processados, a classificação
+final será divulgada em breve!</p-->
+<!--p style="font-size:18pt">Notícia Importante: devido a dificuldades
+operacionais, a prova da Fase Nacional da Modalidade Iniciação da OBI2019 foi adiada
+do dia 14/9 para o dia 5/10 (sábado).</p-->  
+{% endblock %}
+
+{% block body_onload %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="section">
+        <h1>Duas modalidades, sete níveis</h1>
+        <dl class="list-features">
+          <dt><i class="icon icon-desktop"></i><span class="large">Modalidade Programação</span</dt>
+          <dd>
+	    <p>Na Modalidade Programação, competidores fazem as provas no computador, com tarefas de programação
+            que podem ser resolvidas com uma linguagem de programação entre Python, C, C++, Java e Javascript.
+            Os níveis são:</p>
+                <ul>
+                    <li>Nível Júnior, para alunos de qualquer ano do Ensino Fundamental;</li>
+                    <li>Nível 1, para alunos do Ensino Fundamental ao 1&ordm; ano do Ensino Médio;</li>
+                    <li>Nível 2, para alunos do Ensino Fundamental ao 3&ordm; ano do Ensino Médio;</li>
+                    <li>Nível Sênior, para alunos do 4&ordm; ano do Ensino Técnico e alunos cursando pela primeira vez o 1&ordm; ano de um curso de graduação.</li>
+                </ul>
+          </dd>
+          <dt><i class="icon icon-paper-pencil"></i><span class="large">Modalidade Iniciação</span</dt>
+          <dd>
+	    <p>Na modalidade Iniciação, competidores que ainda não sabem programar fazem as
+               provas com papel e lápis, com tarefas no formato de múltipla escolha sobre lógica
+               e raciocínio computacional. Os níveis são:</p>
+            <ul>
+               <li>Nível Júnior, para alunos do 4º e 5º anos do Ensino Fundamental;</li>
+               <li>Nível 1, para alunos do 6º e 7º anos do Ensino Fundamental;</li>
+               <li>Nível 2, para alunos do 8º e 9º anos do Ensino Fundamental.</li>
+            </ul>
+          </dd>
+        </dl>
+
+        <a href="{% url 'apresenta' %}" class="cta outline">Saiba mais sobre a OBI</a>
+    </div>
+
+    <!--div class="section">
+      <!--img width="150px" align="middle" src="/static/img/logo-alura.svg" /></a>
+       <h1>A      	<a href="https://www.alurastart.com.br">AluraStart</a> apoia a OBI2019</h1>
+
+<p>Como benefício, professores e competidores recebem acesso a
+três meses de uso da plataforma e cursos on-line.
+
+        <a href="{% url 'apoios' %}" class="cta outline">Veja detalhes dos benefícios</a>
+
+    </div-->
+
+{% comment %}
+    <div class="section">
+    <h1>Stay in the loop</h1>
+    <p>Subscribe to one of our mailing lists to stay up to date with everything in the Django community:</p>
+    {% include "includes/mailing_lists.html" %}
+    </div>
+{% endcomment %}
+
+    <!-- END #content-secondary -->
+{% endblock %}
+
+{% block content-related %}
+  <div role="complementary">
+      {% comment %}
+      <a href="{% url 'datas' %}" class="cta">
+          Download <em>latest release: {{ DJANGO_VERSION }}</em>
+      </a>
+
+      {% donation_snippet %}
+      {% endcomment %}
+
+      <h3>Últimas notícias</h3>
+      {% render_latest_blog_entries 2 hide_readmore=False summary_first=True header_tag='h4' %}
+      <a href="{% url 'weblog:index' %}" class="link-readmore">Mais notícias</a>
+
+
+      <h3>Próximos eventos da OBI2023</h3>
+      <dl class="list-links-small news-list">
+	{% render_next_cal_entries 4 header_tag='dt' %}
+	
+      <a href="{% url 'cal:obi_completo' %}" class="link-readmore">Veja o calendário completo</a>
+  </div>
+
+{% endblock %}
+
+{% block alert %}
+  {% comment %}
+  <div role="alert">
+    <div class="container">
+      <dl>
+        <dt>
+          <i class="icon icon-bullhorn"></i>
+          <a href="#">Django Fundraising Drive 2014</a>
+        </dt>
+        <dd>
+          The quickest &amp; most fun way to support Django.
+          <a href="#" class="link-readmore">Learn more</a>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  {% endcomment %}
+
+{% endblock %}

@@ -1,0 +1,99 @@
+title:Quadrado Mágico
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>Chama-se de <i>quadrado mágico</i> um arranjo, na forma de um quadrado, de <i>N</i>×<i>N</i> números inteiros tal que todas
+as linhas, colunas e diagonais têm a mesma soma.</p>
+<p>Por exemplo, o quadrado abaixo</p>
+<center>2 7 6<br>9 5 1<br>4 3 8</center>
+<p>é um quadrado mágico de soma 15, pois todas as linhas (2+7+6 = 15, 9+5+1 = 15 e 4+3+8 = 15), colunas
+(2 + 9 + 4 = 15, 7 + 5 + 3 = 15 e 6 + 1 + 8 = 15) e diagonais (2 + 5 + 8 = 15 e 6 + 5 + 4 = 15) têm a mesma
+soma (15).</p>
+
+<h3>Tarefa</h3>
+<p>Escreva um programa que, dado um quadrado, determine se ele é magico ou não e qual a soma dele (caso seja
+mágico).</p>
+<h3>Entrada</h3>
+<p>A entrada contém um único conjunto de testes, que deve ser lido do <i>dispositivo de entrada padrão</i> (normalmente
+o teclado). A primeira linha da entrada de cada caso de teste contém um inteiro <i>N</i> (2 < <i>N</i> < 10). As <i>N</i>
+linhas seguintes contêm <i>N</i> inteiros cada, separados por exatamente um espaço em branco. Os inteiros dentro
+do quadrado são todos maiores que 0 (zero) e menores que 1.000.</p>
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir, na <i>saída padrão</i>, uma única linha com um inteiro representando a soma do
+quadrado mágico ou -1 caso o quadrado não seja mágico.</p>
+
+<h3>Exemplos</h3>
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+3
+2 7 6
+9 5 1
+4 3 8			
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+15			
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+3
+1 2 3
+4 5 6
+7 8 9
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+-1
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+<table width="100%" cellspace="2" border="1">
+	<tr>
+		<td valign="top" width="50%">
+			<b>Entrada</b>
+			<pre>
+4
+16 3 2 13
+5 10 11 8
+9 6 7 12
+4 15 14 1			
+			</pre>
+		</td>
+		<td valign="top" width="50%">
+			<b>Saída</b>
+			<pre>
+34			
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+      

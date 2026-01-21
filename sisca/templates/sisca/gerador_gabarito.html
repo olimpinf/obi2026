@@ -1,0 +1,110 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Sisca - Gerador de Folhas de Respostas{% endblock %}
+{% block header %}<h1>Sisca - Sistema de Correção Automatizada</h1>{% endblock %}
+
+{% block head_extra %}
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<h2>Gerador de Gabarito</h2>
+
+<p><font color="#aa0000"><em>O sistema Sisca será desativado permanentemente em 31/07/2023.</em></font>
+
+<p><font color="#aa0000"><em>Um sistema com funcionalidade similar, mas tecnologia de processamento de imagens
+      mais avançada, está disponível para testes no link a seguir.</em></font>
+
+<p><font color="#aa0000"><em><a href="https://web.scangrader.com/pt">https://web.scangrader.com/pt</a></em></font>
+
+<p><font color="#aa0000"><em>Note que folhas de respostas geradas pelo
+      Sisca, apesar de similares em formato, NÃO poderão ser
+      processadas nesse novo sistema. Você deve usar as folhas de
+      respostas geradas pelo novo sistema.</em></font>
+  
+
+{% if comment %}
+<p><em>Gabarito para <b>{{comment|safe}}</b></em></p>
+{% endif%}
+
+<form action="" method="post" >
+  {% csrf_token %}
+  {% if form.errors %}
+  <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  
+    {%comment%}
+    {{ form.as_table }}
+    {%endcomment%}
+
+    <table width="100%">
+      {% for field in form %}
+      {% if field.errors %}
+      <tr style="background-color:#ff99cc">
+      {% else %}
+      <tr style="background-color:#f0f0f0">
+      {% endif %}
+        <td style="padding: 0 5px 0 5px"><b>{{ field.label_tag }}</b></td>
+	{% for k in field %}
+	  {% if k.data.value == 'X'%}
+	  <td style="padding: 0 5px 0 15px;float:right">{{ k }}</td>
+	  {% elif k.data.value == 'U'%}
+	  <td style="padding: 0 5px 0 15px;float:right">{{ k }}</td>
+	  {% else %}
+	  <td style="padding: 0 0 0 5px">{{ k }}</td>
+	  {% endif %}
+	{% endfor %}
+      </tr>
+      <tr>
+	<td colspan="8">{{ field.errors }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+
+<p>
+  {% if form.errors%}
+  <button type="validate" name="validate" class="button right">Validar</button>
+  {% else %}
+  <button type="submit" name="submit" class="button right">Gerar Arquivo</button>
+  {% endif %}
+  <button type="clean" name="clean" class="button" onclick="{% go_to_url '/sisca/gerador_gabarito' %}">Limpar</button>
+</form>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Veja também</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+    {% block browse %}
+    {% include 'sisca/includes/see_also_sisca.html' %}
+  
+  <h2>Instruções</h2>
+<ul>
+<li>Para cada questão, assinale uma ou mais alternativas corretas.
+</ul>
+<hr>
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li><a href="{% url 'sisca_index' %}">Sisca</a></li>
+      <ul><li>Gerador de Folhas de Respostas</li></ul></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

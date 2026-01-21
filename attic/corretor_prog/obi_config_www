@@ -1,0 +1,93 @@
+#
+# -*- coding: utf-8 -*-
+
+COMPETITION = "obi"	# may be "acm" or "obi"; diffs in some messages
+                        # and source of problem names
+TEST_SERVER_ID = 'localhost'
+TEST_SERVER_PORT = 9999
+
+#HOST = "localhost"
+#HOST = "143.106.7.180"
+#HOST = "143.106.73.36"
+HOST = "192.168.0.44"
+DB_NAME = "corretor"
+TABLE_SUBMISSION = "sub_www"
+TABLE_RESULT = "res_www"
+USER_NAME = "obi"
+PASSWORD = "guga.LC"
+#PASSWORD = ""         ## the program will ask
+
+PROBLEMS_DIR = "/home/exec_corretor/www/testes" 
+
+#LOG_FILE = ""   ## in case of no logging
+LOG_FILE = "/home/exec_corretor/www/LOG"   ## in case of no logging
+TIME_FILE = "TIME"
+TEMP_DIR = "/tmp"
+TEMP_FILE_SUFFIX = ".obi"
+COMPILE_LOG_FILE = "COMPILE_LOG"
+TEST_LOG_FILE = "TEST_LOG"
+TEST_PREFIX = ""
+TEST_SUFFIX_MAX = 100
+INPUT_SUFFIX_MAX = 100
+INPUT_FILE = "in"
+#OUTPUT_FILE = "sol"
+OUTPUT_FILE = "out"
+RESULT_FILE = "result"
+LIMITS_FILE = "limits"
+POINTS_FILE = "points"
+EXEC_UID = 501
+EXEC_GID = 501
+CHECKING_PROGRAM = "corretor"
+#SANDBOX_PROGRAM = "/home/corretor/bin/safee_new"
+SANDBOX_PROGRAM = ""
+#FILTER_PROGRAM = "/home/corretor/bin/filtro_fase1.py "
+FILTER_PROGRAM = "cat  "
+DIFF="/usr/bin/diff --text --brief --ignore-blank-lines --ignore-space-change --ignore-case "
+SLEEP_TIME = 5 # secs
+MAX_TRIALS = 720 # times SLEEP_TIME (= every hour)
+LOCK_SLEEP_TIME = 1 # secs
+MAX_LOCK_TRIALS = 5 
+
+# Key words for the report
+
+# REPORT_HEADER = "RELATÓRIO DE TESTES PARA O TIME %d (sub_id %d)\n\n"
+REPORT_HEADER = "RELATÓRIO DE TESTES (submissão %d)\n\n"
+
+HEADER_SEPARATOR = ""
+
+PROBLEM_NAME = "TAREFA: %s\n"
+TEAM_ID = "COMPETIDOR: %s\n"
+LANGUAGE_NAME = "LINGUAGEM: %s\n\n"
+
+COMPILATION_SUCCESSFUL = "Compilação correta\n"
+COMPILATION_UNSUCCESSFUL = "Compilação com erros\n"
+COMPILATION_NOT_A_SOURCE = "   Arquivo não é texto (executável?)\n" 
+COMPILATION_SOURCE_EMPTY = "   Arquivo fonte vazio\n"
+LEGEND = """
+Legenda: 
+  .: resultado correto           X: resultado incorreto
+  E: erro em tempo de execução   M: Referência a memória inválida  
+  S: programa não gerou saída    T: tempo limite excedido
+  V: violação de recursos
+"""
+TESTING_PHASE = "\nFase de testes -- Tempo Limite para cada execução: %03d ms\n"
+#TESTING_PHASE = "\nFase de testes \n "
+TEST_HEADER = "Teste %2d: "
+TEST_CASE_HEADER = ""
+EXECUTION_TIME = ""
+# Execution error codes
+RUN_TIME_ERROR = "E"
+EMPTY_OUTPUT_ERROR = "S"
+SIGKILL_ERROR = "V"
+TIME_LIMIT_EXCEEDED = "T"
+INVALID_REF_ERROR = "M"
+INCORRECT_RESULT = "X"
+CORRECT_RESULT = "."
+
+EXECUTION_MESSAGE = ""
+CORRECT_TESTS = "\nTotal de pontos: %d\n"
+POINTS_RECEIVED = "     (%d pontos)\n"
+TOTAL_POINTS_RECEIVED = "\nTotal: %d pontos (de %d possíveis)\n"
+
+TEST_SEPARATOR = ""
+TEST_CASE_SEPARATOR = ""

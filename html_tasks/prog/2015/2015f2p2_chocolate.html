@@ -1,0 +1,87 @@
+title:Chocolate em Barra
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Vô Quico comprou uma barra de chocolate para suas duas netas Lúcia e
+Beatriz. A barra é composta de N linhas e N colunas de quadrados,
+onde N é sempre um número par. Em exatamente dois quadrados, que
+podem estar em qualquer posição na barra, há uma figurinha colada. Vô
+Quico gostaria de dar dois pedaços de tamanhos iguais, um para cada
+neta, cada pedaço contendo uma figurinha. Mais precisamente, ele gostaria de
+dividir a barra bem na metade, com um único corte vertical ou horizontal, deixando
+uma figurinha em cada pedaço.</p>
+
+<p>
+<center>
+<img src="/static/img/task_images/2015f2p2_chocolate.png" width="50%">
+</center></p>
+
+<p>
+A figura acima mostra dois exemplos. A barra da esquerda, com N=4,
+vô Quico pode dividir na metade com um corte horizontal, 
+e cada metade contém uma figurinha. Mas a barra da direita, com
+N=6, ele não consegue dividir em dois pedaços iguais,
+separando as figurinhas, com um único corte horizontal ou vertical.</p>
+
+<p>Dados N e as posições das duas figurinhas, seu programa deve dizer se
+é, ou não, possível dividir a barra em dois pedaços de tamanhos
+iguais, com um único corte horizontal ou vertical, deixando uma figurinha em cada pedaço.</p>
+<h3>Entrada</h3>A primeira linha da entrada contém um inteiro N, representando as
+dimensões da barra (número de linhas e de colunas). A segunda linha
+contém dois inteiros X_1 e Y_1, representando as coordenadas da
+primeira figurinha. A terceira linha contém dois inteiros X_2 e
+Y_2, representando as coordenadas da segunda figurinha.<h3>Saída</h3>Seu programa deve imprimir apenas uma linha contendo um único caractere:
+"<span class="tt">S</span>", caso seja possível dividir a barra em pedaços iguais com um único corte horizontal ou vertical,
+separando as figurinhas, ou "<span class="tt">N</span>" caso não seja possível.
+<h3>Restrições</h3><ul>
+<li> 2 ≤  N ≤  1000, N é sempre par;</li>
+<li> 1 ≤  X_1,Y_1,X_2,Y_2 ≤  N.</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+1 2
+4 2
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+6
+3 4
+2 6
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

@@ -1,0 +1,329 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Semana Olímpica - Monitores{% endblock %}
+
+{% block header %}<h1>Semana Olímpica</h1>{% endblock %}
+
+{% block content %}
+<h2>Monitores</h2>
+
+<p>Os monitores acompanham os convidados durante toda a semana, em todas as atividades. Os monitores são alunos e alunas de cursos de graduação e pós-graduação da Unicamp.</p>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%">
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/lua.jpg" width=200>
+</td>
+<td><b>Luã Marcelo Muriana</b><br>
+  Doutorado em Ciência da Computação<br>
+  Monitor-Chefe
+  <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/arathi.jpg" width=200>
+</td>
+<td><b>Árathi Zanvettor Guedes</b><br>
+Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/aline.jpg" width=200>
+</td>
+<td><b>Aline Hesley Silva Sousa</b><br>
+Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/caio.jpg" width=200>
+</td>
+<td><b>Caio Vinicius Castro dos Santos</b><br>
+Engenharia de Controle e Automação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/jarol.jpg" width=200>
+</td>
+<td><b>Jarol Butron Soria</b><br>
+Mestrado em Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/leandro.jpg" width=200>
+</td>
+<td><b>Leandro Ponsano Corimbaba</b><br>
+Engenharia de Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/lethycia.jpg" width=200>
+</td>
+<td><b>Lethycia Maia De Souza</b><br>
+Engenharia de Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/leticia_bomfim.jpg" width=200>
+</td>
+<td><b>Leticia da Silva Bomfim</b><br>
+Doutorado em Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/luis_gustavo.jpg" width=200>
+</td>
+<td><b>Luis Gustavo da Soledade Gonzaga</b><br>
+Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/paulo.jpg" width=200>
+</td>
+<td><b>Paulo Bassani</b><br>
+Engenharia de Computação<br>
+</td>
+</tr>
+
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/vitor.jpg" width=200>
+</td>
+<td><b>Vítor Gomes Chagas</b><br>
+Doutorado em Ciência da Computação<br>
+</td>
+</tr>
+</table>
+
+  
+{% comment %}
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/leticia_bomfim.jpg" width=200>
+</td>
+<td><b>Letícia da Silva Bomfim</b><br>
+Doutorado em Ciência da Computação - IC/Unicamp<br>
+</td>
+</tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/lua_muriana.jpg" width=200>
+</td>
+<td><b>Luã Marcelo Muriana</b><br>
+Doutorado em Ciência da Computação - IC/Unicamp<br><br>
+</td>
+</tr>
+<td width=200>
+<img src="/static/extras/obi2022/semana/fotos_monitores/rafael_souza.jpg" width=200>
+</td>
+<td><b>Rafael de Queiroz Souza</b><br>
+Ciência da Computação - IC/Unicamp<br><br>
+</td>
+</tr>
+</table>
+
+<h3>Modalidade Iniciação, Níveis 1 e 2</h3>
+<ul>
+<li>André Gomes Regino (Unicamp, Doutorado)  [<a href="{% url 'week:emite_certificado' 'monitor' 2 %}">certificado</a>]
+<li>Beatriz Cardoso de Oliveira (USP, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 3 %}">certificado</a>]
+<li>Beatriz Lomes da Silva (USP, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 4 %}">certificado</a>]
+<li>Carlos Alexandre Pinheiro de Souza (Unicamp, Mestrado)  [<a href="{% url 'week:emite_certificado' 'monitor' 5 %}">certificado</a>]
+<li>Eduardo Ribeiro Silva de Oliveira  (USP, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 8 %}">certificado</a>]
+<li>Gustavo de Souza dos Reis  (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 10 %}">certificado</a>]
+<li>Ilan Francisco da Silva (Unicamp, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 12 %}">certificado</a>]
+<li>João Pedro Carolino Morais (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 14 %}">certificado</a>]
+<li>Lethycia Maia de Souza (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 17 %}">certificado</a>]
+<li>Leticia Mara Berto (Unicamp, Doutorado)  [<a href="{% url 'week:emite_certificado' 'monitor' 18 %}">certificado</a>]
+<li>Luã Marcelo Muriana (Unicamp, Doutorado)  [<a href="{% url 'week:emite_certificado' 'monitor' 20 %}">certificado</a>]
+<li>Mateus Ferreira Gomes (USP, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 25 %}">certificado</a>]
+<li>Milena Heidecher de Oliveira (USP, Mestrado)  [<a href="{% url 'week:emite_certificado' 'monitor' 27 %}">certificado</a>]
+<li>Pedro Oliveira Torrente (USP, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 31 %}">certificado</a>]
+<li>Thaís Steinmuller Farias (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 36 %}">certificado</a>]
+<li>Wesley Soares Ferreira (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 39 %}">certificado</a>]
+<li>Willian Miura Mori (USP, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 40 %}">certificado</a>]
+</ul>
+
+<h3>Modalidade Programação Nível Júnior</h3>
+<ul>
+<li>Ana Laura Chioca Vieira (USP, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 1 %}">certificado</a>]
+<li>Diego da Silva Parra (USP, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 7 %}">certificado</a>]
+<li>Guilherme Paixão (USP, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 9 %}">certificado</a>]
+<li>Helder Betiol (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 11 %}">certificado</a>]
+<li>Jonas Cardoso Gonçalves (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 15 %}">certificado</a>]
+<li>Raphael Augusto Silva Giannattasio (USP, Estatística)  [<a href="{% url 'week:emite_certificado' 'monitor' 33 %}">certificado</a>]
+<li>Tomás Silva (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 37 %}">certificado</a>]
+</ul>
+
+<h3>Modalidade Programação Nível 1</h3>
+<ul>
+<li>Daniel Yuji Hosomi (Unicamp, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 6 %}">certificado</a>]
+<li>Luiz Gustavo Silva Aguiar (Unicamp, Engenharia da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 22 %}">certificado</a>]
+<li>Matheus Diógenes Andrade (Unicamp, Doutorado)  [<a href="{% url 'week:emite_certificado' 'monitor' 26 %}">certificado</a>]
+<li>Natan Henrique Sanches (ICMC-USP, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 28 %}">certificado</a>]
+<li>Rafael de Queiroz Souza (Unicamp, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 32 %}">certificado</a>]
+<li>Rian Radeck Santos Costa (Unicamp, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 34 %}">certificado</a>]
+</ul>
+
+<h3>Social</h3>
+<ul>
+<li>Isabella Silva de Faria (Universidade Federal de Catalão, Psicologia)  [<a href="{% url 'week:emite_certificado' 'monitor' 13 %}">certificado</a>]
+<li>Paulo Henrique Marçal Martins Souza (USP, Matemática)  [<a href="{% url 'week:emite_certificado' 'monitor' 29 %}">certificado</a>]
+<li>Wellington Tavares Alexandre da Silva (Unicamp, Ciência da Computação)  [<a href="{% url 'week:emite_certificado' 'monitor' 38 %}">certificado</a>]
+</ul>
+
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%"> 
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/francisco_nardi.jpg" width=200>
+</td>
+<td><b>Francisco Nardi</b><br>
+<i>Monitor-Chefe</i><br>
+Doutorado em Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/andre_regino.jpg" width=200>
+</td>
+<td><b>André Gomes Regino</b><br>
+Ciência da Computação<br><br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/andressa_santos.jpg" width=200>
+</td>
+<td><b>Andressa Cristina Santos</b><br>
+Mestrado em Ciência da Computação<br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/andreza_santos.jpg" width=200>
+</td>
+<td><b>Andreza Aparecida dos Santos</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/daniela_velasco.jpg" width=200>
+</td>
+<td><b>Daniela Maria Casas Velasco</b><br>
+Engenharia de Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/gustavo_borges.jpg" width=200>
+</td>
+<td><b>Gustavo Caetano Borges</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/lethycia_souza.jpg" width=200>
+</td>
+<td><b>Lethycia Maia de Souza</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/lua_muriana.png" width=200>
+</td>
+<td><b>Luã Marcelo Muriana</b><br>
+Engenharia de Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/lucas_agustini.jpg" width=200>
+</td>
+<td><b>Lucas Cunha Agustini</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/marcela_ferreira.jpg" width=200>
+</td>
+<td><b>Marcela Medicina Ferreira</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/rafael_imamura.png" width=200>
+</td>
+<td><b>Rafael Eiki Matheus Imamura</b><br>
+Ciência da Computação <br>
+</td>
+</tr>
+
+<tr>
+<td width=200>
+<img src="/static/extras/obi2019/semana/fotos_monitores/thamiris_coelho.png" width=200>
+</td>
+<td><b>Thamiris Florindo Coelho<br></b>
+  <br>Ciência da Computação <br>
+</td>
+</tr>
+</table>
+<p>&nbsp</p>
+{% endcomment %}
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">OBI</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% include "week/includes/see_also.html" %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  {% comment %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Semana Olímpica</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endcomment %}
+  {% endblock breadcrumbs-wrapper %}
+
+</div>
+{% endblock %}

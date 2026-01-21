@@ -1,0 +1,19 @@
+{% extends "admin/add_form.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+
+{% block content_title %}<h1>Modalidade Programação - Submissão de Soluções</h1>{% endblock %}
+
+{% block content_before %}
+{% endblock %}
+
+{% block content_extra %}
+<p>Veja instruções sobre o formato do arquivo a ser submetido em
+<a href = "/restrito/fase1/correcaoprogramacao/">Modalidade Programação - Correção</a>.
+
+<p>Após o envio das soluções dos alunos, você pode 
+<a href="/restrito/fase1/submsolucoes/consulta_subm_aceitas">Consultar as
+Soluções de seus alunos aceitas para correção</a>, e recuperá-las se
+necessário.
+
+{% endblock %}

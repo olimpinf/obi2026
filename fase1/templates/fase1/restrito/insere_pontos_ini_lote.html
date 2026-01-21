@@ -1,0 +1,76 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          <strong>{{ field.label_tag }}</strong>
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+<br>
+  <button type="submit" class="button cancel" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}"
+>Cancelar</button>
+  <button type="submit" class="button right" name="save" value="save">Enviar</button>
+</form>
+<p>
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  <h2>Instruções</h2>
+  <p>O envio das Folhas de Respostas (se optar pela a correção
+    automatizada) ou a inserção das pontuações dos competidores (se optar
+    pela correção manual) devem ser realizados até 
+{{ "ini-fase-1-envio-respostas"|obi_date|date:'d/m' }}.
+  <p>
+    Solicitamos que mantenham as Folhas de Respostas dos alunos, para o caso de algum competidor reclamar da correção.
+
+<h3>Formato do arquivo</h3>
+<p>O arquivo deve ter o formato padrão CSV (do inglês "Comma Separated Values", ou seja, "Valores Separados por Vírgula"). 
+Aplicativos de planilhas, como OpenOffice e Excel, permitem salvar o arquivo nesse formato. 
+
+<p>A planilha deve ter os seguintes campos, na ordem dada:</p>
+<ul>
+<li><b>Num. Inscr.</b>: número de inscrição.
+<li><b>Nível</b>: deve ser <b>IJ</b> (iniciação júnior), <b>I1</b> (iniciação 1) ou <b> I2</b> (iniciação 2).
+<li><b>Pontos</b>: Pontos (cada questão certa vale um ponto)
+</ul>
+
+<h3>Passo a passo</h3>
+<ol>
+<li>Obtenha a planilha vazia, já no formato correto, <a href="/static/extras/misc/compet_pontos_lote.csv" download="compet_pontos_lote.csv">clicando aqui</a>.
+<li>Edite a planilha, inserindo os dados dos competidores.
+<li>Salve a planilha em um arquivo no formato CSV.
+<li>Envie o arquivo utilizando o formulário acima.
+</ol>
+    
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+</div>
+{% endblock content-related %}
+

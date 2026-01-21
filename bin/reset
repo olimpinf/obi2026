@@ -1,0 +1,10 @@
+#!/bin/sh                                                                                                    
+
+psql postgres -c "DROP DATABASE obi2024"
+psql postgres -c "DROP USER obi"
+psql postgres -c "CREATE USER obi WITH PASSWORD 'guga.LC'"
+psql postgres -c "CREATE DATABASE obi2024 OWNER obi ENCODING 'UTF8'"
+#find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+#find . -path "*/migrations/*.pyc"  -delete
+#./manage.py makemigrations
+#./manage.py migrate

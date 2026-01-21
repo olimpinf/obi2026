@@ -1,0 +1,109 @@
+{% extends "base_restricted.html" %}
+{% load obi_extras %}
+{% block head_extra %}
+<script>
+  function _flip_all(e) {
+      var inputs, index;
+      inputs = document.getElementsByName('choices_set');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = e.checked;
+      }
+      inputs = document.getElementsByName('choices_unset');
+      for (index = 0; index < inputs.length; ++index) {
+	  inputs[index].checked = !e.checked;
+      }
+  }
+</script>
+{% endblock head_extra %}
+
+{% block content %}
+<h1>{{ pagetitle }}</h1>
+<p class="object-tools">
+    <a href="{% url 'restrito:colab_inscreve' %}" class="addlink">
+      Inscrever Colaborador
+    </a>
+</p>
+{% if items.paginator.count > 0 %}
+  {% if items.paginator.count == 1 %}
+<p>{{ items.paginator.count }} colaborador inscrito</p>
+  {% else %}
+<p>{{ items.paginator.count }}  colaboradores inscritos</p>
+  {% endif %}
+<form action="{% url 'restrito:colab_deleta_lote'%}" method="post">{% csrf_token %}
+  <table class='admin' width="100%">
+    <tr>
+      <td colspan="1"></td>
+      <td style="text-align:center;width:5%">      
+	<input class="mySmallButton" style="text-align:center" type="submit" value="Excluir Marcados" onclick="return confirm('Excluir colaboradores?')">
+      </td>
+    </tr>
+    <tr>
+      <th>Nome</th>
+      <th scope="col" style="text-align:center">
+	<div class="text"><span><input type="checkbox" id="action-toggle" onchange="_flip_all(this)"></span></div>
+	<div class="clear"></div>
+      </th>
+    </tr>
+    {% for c in items %}
+    <tr class="{% cycle 'odd' 'even' %}">
+      <td><a href="colab_edita/{{c.colab_id}}">{{ c.colab_name }}</a></td>
+      <td style="text-align:center">
+	<input type="checkbox" name="choices_set" value="{{c.colab_id}}" id="choice_{{c.colab_id}}" class="action-select"  onchange="document.getElementById('hidden_{{c.colab_id}}').checked=!this.checked;">
+	<input type="checkbox" name="choices_unset" value="{{c.colab_id}}" id="hidden_{{c.colab_id}}" class="action-select" style="display:none">
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% else %}
+<p>Não há colaboradores inscritos.</p>
+{% endif %}
+{% if items.has_other_pages %}
+  <ul class="nav-pagination">
+        <li>Página:</li>
+    {% for i in items.paginator.page_range %}
+      {% if items.number == i %}
+        <li class="current"><span>{{ i }}</span></li>
+      {% else %}
+        <li><a href="{%url 'restrito:colab_lista' %}?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+        <li><a class="show_all" href="{%url 'restrito:colab_lista' %}?page=all">Mostrar tudo</a></li>
+  </ul>
+{% endif %}
+
+
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+  {% block browse %}
+
+  
+  <h2>Instruções</h2>
+
+  <ul>
+    <li>Para editar as informações de um colaborador, ou excluir o colaborador, clique no nome do
+      colaborador.
+  </ul>
+
+    {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>{{ pagetitle }}</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}

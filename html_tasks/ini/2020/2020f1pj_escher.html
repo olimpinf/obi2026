@@ -1,0 +1,91 @@
+title:Escher
+template:tasks/tarefa_programacao.html
+
+<p>
+M. C. Escher foi um artista gráfico holandês que fazia incríveis
+ilustrações onde preenchia a tela com objetos auto-similares, cujos
+contornos encaixam neles próprios, criando simetrias geométricas muito
+impressionantes. Veja um exemplo dessa ideia na figura, que mostra um
+objeto que é um perfil ortogonal definido por uma sequência de números
+naturais representando a sequência de alturas. Podemos pegar uma cópia
+do objeto, rotacionar 180 graus e encaixar perfeitamente no objeto
+original, formando um retângulo.
+
+<div class="center"><img src="/static/img/task_images/provaf1pj_escher.png" width="500px" /></div>
+
+<p>Em termos mais gerais, se uma sequência de N números naturais
+representando a sequência de alturas for A<sub>1</sub>, A<sub>2</sub>,
+A<sub>3</sub>,&hellip;,A<sub>N-2</sub>,A<sub>N-1</sub>, A<sub>N</sub>,
+o perfil definido será chamado de perfil Escher se tivermos
+A<sub>1</sub>+A<sub>N</sub> igual a A<sub>2</sub>+A<sub>N-1</sub>
+igual a A<sub>3</sub>+A<sub>N-2</sub>, e assim por diante. Neste
+problema, será dada a sequência de alturas que definem o perfil e seu
+programa deve decidir se o perfil é Escher, ou não.
+
+<h3>Entrada</h3>
+<p>A primeira linha da entrada contém um número N, indicando quantos
+números tem a sequência. A segunda linha da entrada contém N números
+naturais, A<sub>i</sub>, para 1 &leq; i &leq; N, definindo a sequência de
+alturas do perfil.
+
+<h3>Saída</h3>
+<p>Seu programa deve imprimir uma linha contendo o
+caractere <span class="ttt">S</span>, se o perfil for Escher;
+ou <span class="ttt">N</span>, senão.
+
+<h3>Restrições</h3>
+<ul>
+<li> 3 &leq;  N &leq;  10000.
+<li> 1 &leq;  A<sub>i</sub> &leq;  1000, para todo 1 &leq;  i &leq;  N.
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Em um conjunto de casos de teste somando 20 pontos, N = 3.
+<li> Em um conjunto de casos de teste somando 80 pontos, nenhuma restrição adicional.
+</ul>
+
+<h3>Exemplos</h3>
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+12
+3 6 6 4 3 2 8 7 6 4 4 7
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+S
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+5
+2 1 9 13 12
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+N
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

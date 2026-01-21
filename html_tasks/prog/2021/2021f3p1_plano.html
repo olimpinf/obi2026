@@ -1,0 +1,118 @@
+title:Plano de estacionamento
+template:tasks/tarefa_programacao.html
+
+<p>
+Tio Chico é o dono de um estacionamento para carros, localizado perto
+de um estádio de futebol.  O estacionamento tem N vagas numeradas de
+1 a N e em dias de jogo tem muita procura, podendo até mesmo lotar.
+
+Tio Chico é um tanto excêntrico, e decidiu que, no próximo jogo,
+deverá ser obedecida uma nova regra, que em termos gerais consiste no
+seguinte: o carro do i-ésimo cliente a chegar deverá ocupar uma vaga
+cujo número está dentro de um certo intervalo. Esses intervalos foram
+definidos pelo Tio Chico de acordo com alguns critérios, como espaços
+para manobra, sombreamento, etc.
+
+Mais especificamente, para o i-ésimo cliente que chegar, Tio Chico
+definiu um número V_i e determinou que o automóvel desse cliente
+deve ocupar uma vaga ainda não ocupada cujo número está dentro do
+intervalo 1,2,\ldots,V_i. Vamos chamar de <i>plano de estacionamento</i> a lista dos
+valores V_i, para todos os clientes i.
+
+Se um cliente chegar e não puder estacionar o carro de acordo com o
+plano de estacionamento, esse cliente não será atendido, e o
+estacionamento não aceitará o carro de nenhum outro cliente até o
+final do jogo.
+
+Você ficou muito preocupado com essa esquisitice to Tio Chico, e
+conhecendo o plano de estacionamento que foi definido, precisa determinar qual o
+maior número de clientes que poderão estacionar.
+
+
+
+
+
+<h3>Entrada</h3>
+A primeira linha da entrada contém um inteiro N,
+o número de vagas do estacionamento. A segunda linha contém um inteiro
+M, o número esperado de clientes.  Cada uma das M linhas seguintes
+contém um inteiro V_i, o número definido no plano de estacionamento para
+o i-ésimo cliente a chegar.
+
+
+
+
+
+<h3>Saída</h3>
+Se programa deve produzir uma única linha, contendo um único
+inteiro, o número máximo de carros que poderão estacionar de acordo
+com o plano de estacionamento de Tio Chico.
+
+
+<h3>Restrições</h3>
+<ul>
+<li> 1  &leq;  N  &leq;  100 000
+<li> 1  &leq;  M  &leq;  100 000
+<li> 1  &leq;  V_i  &leq;  N, para 1  &leq;  i  &leq;  N
+</ul>
+
+<h3>Informações sobre a pontuação</h3>
+<ul>
+<li> Para um conjunto de casos de testes valendo 40 pontos, N  &leq;  2000 e M  &leq;  2000.
+<li> Para um conjunto de casos de testes valendo outros 60 pontos, nenhuma restrição adicional.
+</ul>
+
+
+
+
+
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+3
+4
+1
+1
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+2
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+4
+6
+2
+2
+3
+3
+4
+4
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+3
+	</pre>
+      </td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+

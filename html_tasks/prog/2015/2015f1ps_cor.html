@@ -1,0 +1,92 @@
+title:Lápis de Cor
+template:tasks/tarefa_programacao.html
+ 
+      
+
+<p>
+Roberto tem um conjunto de lápis com 10 tons diferentes de uma mesma
+cor, numerados de 0 a 9. Numa folha de caderno quadriculado alguns
+quadrados foram coloridos inicialmente com o tom 0. Roberto precisa
+determinar, para cada quadrado Q não colorido, qual é a distância
+dele para o quadrado mais próximo de tom 0. A distância entre dois
+quadrados é definida com o número mínimo de movimentos ortogonais
+(para: \it esquerda, direita, cima, baixo) para ir de um quadrado
+para o outro. O quadrado Q, então, deve ser colorido com o tom cuja
+numeração corresponde à distância determinada. Se a distância for
+maior ou igual a 9, o quadrado deve ser colorido com o tom 9. Seu
+programa deve colorir e imprimir a folha quadriculada dada na entrada.</p>
+<h3>Entrada</h3>A primeira linha da entrada contém apenas um inteiro N, determinando
+as dimensões da folha quadriculada, Nx N. As N linhas
+seguintes definem a folha inicialmente. Cada linha contém uma
+sequência de N caracteres: `<span class="tt">*</span>" se o quadrado não está
+colorido, e `<span class="tt">0</span>" se está colorido com o tom 0.
+<h3>Saída</h3>Seu programa deve imprimir o tabuleiro totalmente colorido, de acordo
+com a regra definida acima.
+<h3>Restrições</h3><ul>
+<li> 3 ≤  N ≤  1000.</li>
+</ul>
+<h3>Informações sobre a pontuação</h3><ul>
+<li> Em um conjunto de casos de teste somando 40 pontos, N ≤  100</li>
+</ul>
+<h3>Exemplos</h3>
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+8
+**000***
+********
+*****0**
+********
+*****000
+*******0
+0******0
+********
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+21000123
+32111123
+43221012
+34332111
+23321000
+12332110
+01233210
+12344321
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+<table width="100%" cellspace="2" border="1">
+  <tr>
+    <td valign="top" width="50%">
+      <b>Entrada</b>
+      <pre>
+3
+***
+***
+**0
+</pre>
+      </td>
+    <td valign="top" width="50%">
+      <b>Saída</b>
+      <pre>
+432
+321
+210
+	</pre>
+      </td>
+    </tr>
+</table>
+
+
+
+
+
+      

@@ -1,0 +1,29 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+{% load flatpages %}
+
+{% block title %}Pratique{% endblock %}
+
+{% block header %}<h1>Pratique</h1>{% endblock %}
+
+{% block content %}
+
+<h1>Resultado da submissão</h1>
+
+<p>{{ msg }}
+<pre>{{ log }}
+</pre>
+
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Informação Adicional</h1>
+<div role="complementary">
+
+    {% block browse-wrapper %}
+    {% include "tasks/includes/contents_tasks.html" %}
+    {% endblock browse-wrapper %}
+
+</div>
+{% endblock %}
+

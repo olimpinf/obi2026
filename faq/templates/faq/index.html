@@ -1,0 +1,83 @@
+{% extends "base_two_columns.html" %}
+{% load obi_extras %}
+
+{% block title %}Perguntas Frequentes{% endblock %}
+
+{% block header %}<h1>Perguntas Frequentes</h1>{% endblock %}
+
+{% block content %}
+{% if not queryset %}
+<p>Não foram encontradas perguntas contendo os termos selecionados.</p>
+{% endif %}
+{% for item in queryset %}
+{% ifchanged item.topic %}
+<h3>{{item.topic}}</h3>
+{% endifchanged %}
+
+<p>
+<a href="#" id="question-{{ item.id }}-show" class="showLink" onclick="_showHide('question-{{ item.id }}');return false;">
+{{ item.question|safe }}
+</a>
+<div id="question-{{ item.id }}" class="seeMore">
+</p>
+<a href="#" id="question-{{ item.id }}-hide" class="hideLink" onclick="_showHide('question-{{ item.id }}');return false;">
+{{ item.question|safe }}
+</a><br/>
+<div class="seeMoreContent small">
+{{ item.answer|safe }}
+</div>
+</p>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block content-related %}
+<h1 class="visuallyhidden">Instruções</h1>
+<div role="complementary">
+
+  {% block browse-wrapper %}
+<form action="" method="post">
+  {% csrf_token %}
+  {% if form.errors %}
+     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
+  {% endif %}
+  {% for fieldset in form.fieldsets %}
+  <fieldset class="border p-2">
+    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
+    <ul>
+      {% for field in fieldset %}
+        <li>
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+	    <small class="form-text">{{ field.help_text|safe }}</small>
+	  {% endif %}
+          {{ field.errors }}
+        </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+  {% endfor %}
+</form>
+
+  <h2>Instruções</h2>
+  {% block browse %}
+  <p>Clique na pergunta para visualizar a resposta. Clique novamente na pergunta para
+  esconder a resposta.</p>
+  <p>Utilize o formulário acima para restringir as perguntas a serem visualizadas.</p>
+  {% endblock browse %}
+  {% endblock browse-wrapper %}
+
+  {% block breadcrumbs-wrapper %}
+  <h2>Você está aqui:</h2>
+  {% with request.path|obi_you_are_here_paths as you_are_here_paths %}
+      {% for p in you_are_here_paths %}
+      <ul><li><a href="{{ p.0 }}">{{ p.1|safe }}</a>
+      {% endfor %}
+      <ul><li>Perguntas Frequentes</li></ul>
+      {% for p in you_are_here_paths %}</li></ul>{% endfor %}
+  {% endwith %}
+  {% endblock breadcrumbs-wrapper %}
+      
+</div>
+{% endblock %}
