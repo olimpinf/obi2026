@@ -34,7 +34,8 @@ from .forms import (CompetInscreveForm, CompetFemininaInscreveForm, CompetInscre
                     CompetSenhasFiltroForm, CompetFemininaSenhasFiltroForm, CompetSenhasCmsFiltroForm,
                     EscolaEditaForm, EscolaEditaInepForm, CoordEditaForm,
                     ColabInscreveForm, ColabEditaForm,
-                    CompetValidaForm, CompetAutorizaProvaOnlineForm)
+                    CompetValidaForm, CompetAutorizaProvaOnlineForm,
+                    SelectSchoolForm)
 
 from week.forms import ParticSemanaFiltroForm
 
@@ -92,19 +93,37 @@ def in_sbc_group(user):
 def password_reset(request):
     return render(request, 'restrito/index.html', {})
 
+@user_passes_test(in_coord_colab_group, login_url='/contas/login/')
+def seleciona_escola(request):
+    schools = School.objects.filter(school_deleg_username=request.user.username, school_ok=True)
+    
+    if request.method == 'POST':
+        form = SelectSchoolForm(request.POST, schools=schools)
+        if form.is_valid():
+            selected_school_id = int(form.cleaned_data['selected_school'])
+            
+            # Find the selected school in the list
+            selected_school = next(
+                (s for s in schools if s['school_id'] == selected_school_id), 
+                None
+            )
+            
+            if selected_school:
+                return index_exec(request,selected_school)
+            else:
+                messages.error(request, 'Escola inválida.')
+    else:
+        form = SelectSchoolForm(schools=schools)
+    
+    context = {
+        'form': form,
+        'schools': schools,
+    }
+    return render(request, 'restrito/seleciona_escola.html', context)
+
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def index(request):
-
-    
-    # check if there are compets to validate
-    try:
-        school_id = request.user.colab.colab_school.pk
-    except:
-        school_ids = School.objects.filter(school_deleg_username=request.user.username)
-        print("number of schools:", len(school_ids))
-        school_id = request.user.deleg.deleg_school.pk
-    school = School.objects.get(pk=school_id)
 
     try:
         last_access = LastAccess.objects.get(user=request.user)
@@ -112,6 +131,24 @@ def index(request):
         last_access = LastAccess(user=request.user)
     last_access.save()
     
+    try:
+        school_id = request.user.colab.colab_school.pk
+        school = School.objects.get(pk=school_id)
+        return index_exec(request,school)
+    except:
+        schools = School.objects.filter(school_deleg_username=request.user.username, school_ok=True)
+        print("number of schools:", len(schools))
+        if len(schools) == 1:
+            school = schools[0]
+            return index_exec(request,school)
+        else:
+            return redirect('/restrito/seleciona_escola')
+
+@user_passes_test(in_coord_colab_group, login_url='/contas/login/')
+def index_exec(request, school):
+    school_id = school.school_id
+            
+    # check if there are compets to validate
     num_pre_compets = CompetAutoRegister.objects.filter(compet_school_id=school_id, compet_status='new').count()
     num_compets = Compet.objects.filter(compet_school_id=school_id).exclude(compet_type=CF).count()
     num_compets_feminina = Compet.objects.filter(compet_school_id=school_id, competcfobi__isnull=False).count()

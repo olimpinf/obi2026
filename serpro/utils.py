@@ -79,8 +79,8 @@ def consulta_cpf(cpf):
 
 def verifica_nome_cpf(nome,cpf):
 
-    #if DEBUG:
-    #    return True    
+    if DEBUG:
+        return True    
     
     cpf = re.sub(r'\D', '', cpf)
     data = consulta_cpf(cpf)
@@ -99,7 +99,6 @@ def verifica_nome_cpf(nome,cpf):
     nome_receita_limpo = nome_receita_limpo.replace(' DA ', ' ')
     nome_receita_limpo = nome_receita_limpo.replace(' DO ', ' ')
     nome_receita_limpo = unidecode.unidecode(nome_receita_limpo)
-
     
     if nome_receita_limpo != nome_cliente_limpo:
         print("nome_cliente", nome_cliente)

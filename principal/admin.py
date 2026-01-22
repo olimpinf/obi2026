@@ -3,7 +3,7 @@ from os import mkdir, rename
 import logging
 
 from django import forms
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.contrib.admin import AdminSite
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group, User, UserManager
@@ -314,8 +314,6 @@ seguindo o link "Acesso Escolas" no alto da página inicial, usando o nome de us
 nome de usuário: {username}
 senha: {password}
 
-Por favor note que no momento estão abertas apenas as inscrições para a Competição Feminina da OBI2026.
-
 ---
 Coordenação da OBI2026
 Email: olimpinf@ic.unicamp.br
@@ -325,6 +323,11 @@ Organização:  Instituto de  Computação -  UNICAMP
 Promoção:  Sociedade Brasileira de Computação
 """
 
+    if School.objects.filter(school_inep_code=q.school_inep_code, school_ok=True).exists():
+        logger.info("authorize_a_school failed, duplicate inep_code: {}, {}, {}".format(q.school_deleg_name, q.school_name, q.school_inep_code))
+        messages.error(request, f'Escola não foi habilitada, tem mesmo código INEP de escola já habilitada: "{q.school_inep_code}"')
+        raise error
+    
     #print("authorize_a_school")
     logger.info("start authorize_a_school: {}, {}".format(q.school_deleg_name, q.school_name))
     try:
@@ -341,11 +344,10 @@ Promoção:  Sociedade Brasileira de Computação
     g.user_set.add(user)
     #print("group", g)
     user.save()
-    deleg = Deleg()
-    deleg.user = user
-    deleg.deleg_school_id = q.pk
-    
-    deleg.save()
+    #deleg = Deleg()
+    #deleg.user = user
+    #deleg.deleg_school_id = q.pk
+    #deleg.save()
     q.school_ok = True
     q.save()
     # send email to new coordinator
@@ -571,11 +573,11 @@ class SchoolUnregisteredAdmin(admin.ModelAdmin):
         schools_authorized = 0
         schools_failed = 0
         for q in queryset:
-            if True:
+            try:
                 password = make_password()
                 authorize_a_school(request,q,password)
                 schools_authorized += 1
-            else:
+            except:
                 schools_failed += 1
         if schools_authorized == 0:
             message_bit = "nenhuma escola foi autorizada com sucesso"

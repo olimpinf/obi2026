@@ -99,9 +99,8 @@ class RegisterSchoolForm(forms.Form):
             self.cleaned_data['school_inep_code'] = 0
         if school_type in [REGULAR_PUBLIC,REGULAR_PRIVATE] and school_inep_code == 0:
             self.add_error('school_inep_code','Informe o Código INEP da Escola')
-        if School.objects.filter(school_inep_code=school_inep_code).exists():
-            self.add_error('school_inep_code','Escola com esse código INEP já cadastrada nessa cidade.')
-        #    messages.error(request, 'Aviso: escola com esse nome já cadastrada nessa cidade, cadastro efetuado mas entraremos em contato para esclarecer a situação. ')
+        if School.objects.filter(school_inep_code=school_inep_code, school_ok=True).exists():
+            self.add_error('school_inep_code','Escola com esse código INEP já está cadastrada.')
 
         # check document and name are OK
         name = cleaned_data.get('school_deleg_name')
@@ -110,8 +109,6 @@ class RegisterSchoolForm(forms.Form):
         if not verifica_nome_cpf(name, validated):
             self.add_error("school_deleg_cpf", "Nome não confere com o CPF nos registros da Receita Federal. Por favor informe o nome completo, como consta do CPF.")
 
-        return validated
-        
         return self.cleaned_data
 
     def clean_school_deleg_cpf(self):

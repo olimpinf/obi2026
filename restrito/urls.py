@@ -56,4 +56,5 @@ urlpatterns = [
     path('lista_desclassif', views.compet_lista_desclassif, name='compet_lista_desclassif'),
     path('relatorio_desclassif', views.compet_relatorio_desclassif, name='compet_relatorio_desclassif'),
 
+    path('seleciona_escola', views.seleciona_escola, name='seleciona_escola'),
 ]

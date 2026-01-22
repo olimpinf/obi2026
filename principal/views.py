@@ -384,8 +384,9 @@ def school_name_repeated(name,city):
 
 def exec_cadastra_escola(f, is_auto=False):
     logger.info('in exec_cadastra_escola')
-    if school_name_repeated(f['school_name'],f['school_city']):
-        logger.info('escola com esse nome já cadastrada nessa cidade.')
+    print('in exec_cadastra_escola',f)
+    #if school_name_repeated(f['school_name'],f['school_city']):
+        #logger.info('escola com esse nome já cadastrada nessa cidade.')
         #messages.error(request, 'Aviso: escola com esse nome já cadastrada nessa cidade, cadastro efetuado mas entraremos em contato para esclarecer a situação. ')
         #return False, "Erro: Escola com esse nome já cadastrada nessa cidade.", None
     subject = obi_year() + ' - Cadastro em processamento'

@@ -21,6 +21,36 @@ SCHOOL_YEAR_CHOICES_FORM_CFOBI = (('',u'Selecione...'),) + SCHOOL_YEAR_CHOICES_C
 
 FORM_ID_CFOBI = ['index', 'prog', 'ini', 'nova']
 
+from django import forms
+
+class SelectSchoolForm(forms.Form):
+    selected_school = forms.ChoiceField(
+        label='Selecione a Escola',
+        widget=forms.RadioSelect(attrs={'class': 'form-check-input form-control'}),
+        required=True
+    )
+    
+    def __init__(self, *args, **kwargs):
+        schools = kwargs.pop('schools', [])
+        super().__init__(*args, **kwargs)
+        
+        choices = []
+        for school in schools:
+            # Each choice is (value, label)
+            # value = school_id or school_inep_code
+            # label = formatted string showing name and code
+            label = f"{school.school_name} - INEP: {school.school_inep_code}"
+            choices.append((school.school_id, label))
+        
+        self.fields['selected_school'].choices = choices
+
+    class Meta:
+        fieldsets = (
+            ('Escolas', {
+                'fields': ('selected_school')}
+             ),
+        )
+        
 class CompetInscreveForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
