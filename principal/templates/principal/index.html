@@ -26,12 +26,14 @@ window.addEventListener("load", (event) => {
 	    todos podem participar. A participação é gratuita para escolas e competidores.</h2>
 	  <div class="is-authenticated"> 
 	    {% if user.is_authenticated %}
-	    <a href={% if request.user.compet %}"/compet"{% else %}"/restrito"{% endif %}>
-	    <img class="me-2" style="vertical-align:bottom" src="{% static 'assets/img/icon-home-yellow.svg' %}" height="30px">
-	    Autenticado como {{ user.last_name }}
-	    </a>
+	       {% if request.user.compet %}
+	          <a href="/compet" role="button" class="btn btn-info btn-sm float-begin">Página Competidor</a>
+  	       {% else %}
+	          <a href="/restrito" role="button" class="btn btn-info btn-sm float-begin">Portal de Coordenação</a>
+  	       {% endif %}
+	       <br/>Autenticado como {{ user.last_name }}
+  	    {% endif %}
 
-	  {% endif %}
 	  </div>
         </div>
 	

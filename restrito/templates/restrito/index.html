@@ -6,6 +6,9 @@
     <a href="/restrito/instrucoes" role="button" class="btn btn-info btn-sm float-end">
       Instruções
     </a>
+    <a href="/restrito/seleciona_escola" role="button" class="btn btn-info btn-sm float-begin">
+      Trocar escola
+    </a>
 </div>
 
 
@@ -103,13 +106,17 @@
 {% endif %}
 
 
-{% comment %}
 <h2 class="mt-5">Fase 0 (Prova Teste)</h2>
-{% xcomment %}
+
+{% comment %}
 <p class="small"><em>O período da prova teste terminou, a prova não está mais disponível.</em></p>
-{% xendcomment %}
+{% endcomment %}
 <p class="small"><em>A Prova Teste, opcional, é apenas para a modalidade Programação. Ela tem o objetivo
-  de familiarizar os competidores com o Ambiente de Prova da OBI2025. A Prova Teste estará disponível do dia 5 ao dia 9 de junho.</em></p>
+  de familiarizar os competidores com o Ambiente de Prova da OBI2026. A Prova Teste estará disponível do dia 5 ao dia 9 de junho.</em></p>
+
+<p><em>Ainda não disponível</em></p>
+
+{% comment %}
 <div class="small">
 <table class="table table-sm">
 
@@ -130,7 +137,6 @@
 
 </table>
 </div>
-
 {% endcomment %}
 
 <h2 class="mt-4 pt-4">Fase 1</h2>
@@ -168,9 +174,8 @@
 <h2 class="mt-4 pt-4">Fase 2</h2>
 
 
-{% comment %}
 <p><em>Ainda não disponível</em></p>
-{% endcomment %}
+{% comment %}
 
 <div class="small">
 <table class="table table-sm">
@@ -182,23 +187,25 @@
     <td align="right"><a href="{% url 'fase2:resultado_ini' %}">Resultado</a></td>
   <tr>
     <th>Modalidade Programação</th>
-    {% comment %}
+    {% xcomment %}
     <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas Prova</a></td>
-    {% endcomment %}
+    {% xendcomment %}
     <td align="right"><a href="{% url 'fase2:cadernos_tarefas_prog' %}">Aplicação da Prova</a></td>
     <td align="right"><a href="{% url 'fase2:correcao_prog' %}">Correção da Prova</a></td>
     <td></td>
     <td align="right"><a href="{% url 'fase2:resultado_prog' %}">Resultado</a></td>    
   </tr>
-{% comment %}
+{% xcomment %}
     <th>Listas de Classificados</th>
     <td></td>
     <td align="right"><a href="{% url 'fase2:compet_lista_classif_ini' %}">Modalidade<br> Iniciação</a></td>    
     <td align="right"><a href="{% url 'fase2:compet_lista_classif_prog' %}">Modalidade<br> Programação</a></td>    
   </tr>
-{% endcomment %}
+{% xendcomment %}
 </table>
 </div>
+
+{% endcomment %}
 
 {% comment %}
 <h2 class="mt-4 pt-4">Fase 2, Turno B</h2>
@@ -225,10 +232,9 @@
 
 <h2 class="mt-4 pt-4">Competição Feminina</h2>
 
-{% comment %}
 <p><em>Ainda não disponível</em></p>
-{% endcomment %}
 
+{% comment %}
 <div class="small">
 <table class="table table-sm">
   <tr>
@@ -239,7 +245,7 @@
   </tr>
 
   {# junto com as outras fases #}
-  {% comment %}
+  {% xcomment %}
   {% if has_desclassif %}
   <tr>
     <th>Listas de Desclassificadas</th>
@@ -247,9 +253,9 @@
     <td align="right"><a href="{% url 'cfobi:compet_lista_desclassif' %}">Lista</a></td>    
   </tr>
   {% endif %}
-  {% endcomment %}
+  {% xendcomment %}
     
-{% comment %}   
+{% xcomment %}   
   <tr>
     <th>Listas de Classificados</th>
     <td></td>
@@ -257,16 +263,17 @@
   </tr>
 </table>
 </div>
-{% endcomment %}   
+{% xendcomment %}   
 </table>
 </div>
 
+{% endcomment %}
+
 <h2 class="mt-4 pt-4">Fase 3</h2>
 
-{% comment %}
 <p><em>Ainda não disponível</em></p>
-{% endcomment %}   
 
+{% comment %}
 
 <div class="small">
 <table class="table table-sm">
@@ -293,9 +300,9 @@
   <tr>
     <th>Modalidade Programação</th>
     {% if school.school_site_phase3_prog == school.school_id %}
-    {% comment %}
+    {% xcomment %}
     <td align="right"><a href="{% url 'restrito:compet_cartoes_senhas_cms' %}">Senhas da Prova</a></td>
-    {% endcomment %}
+    {% xendcomment %}
     <td align="right"></td>
     <td align="right"></td>
     <td align="right"><a href="{% url 'fase3:cadernos_tarefas_prog' %}">Aplicação</a></td>
@@ -315,10 +322,13 @@
   </tr>
 </table>
 </div>
-
-
+{% endcomment %}
 
 <h2 class="mt-4 pt-4">Certificados</h2>
+
+<p><em>Ainda não disponível</em></p>
+
+{% comment %}
 
 <div class="small">
   <table class="table table-sm">
@@ -341,7 +351,7 @@
   </tr>
   <tr>
     {% endif %}
-    {% comment %}
+    {% xcomment %}
     {% if num_compets_feminina %}
     <th>Competicao Feminina</th>
     <td align="right"><a href="{% url 'restrito:emite_certificados_escola_cf' 'pj' %}">Nível Júnior</a></td>
@@ -350,7 +360,7 @@
     <td align="right"></td>
   </tr>
     {% endif %}
-    {% endcomment %}
+    {% xendcomment %}
   <tr>
     <th>Coordenador e Colaboradores</th>
     <td align="right"></td>
@@ -360,8 +370,13 @@
   </tr>
 </table>
 </div>
+{% endcomment %}
 
 <h2 class="mt-4 pt-4">Classificação Final</h2>
+<p><em>Ainda não disponível</em></p>
+
+{% comment %}
+
 <div class="small">
 <table class="table table-sm">
     {% if num_compets_ini %}
@@ -393,7 +408,6 @@
     {% endif %}
 </table>
 </div>
-{% comment %}
 {% endcomment %}
 
 

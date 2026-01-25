@@ -95,7 +95,7 @@ def password_reset(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def seleciona_escola(request):
-    schools = School.objects.filter(school_deleg_username=request.user.username, school_ok=True)
+    schools = School.objects.filter(school_deleg_username=request.user.username, school_ok=True).order_by('school_name')
     
     if request.method == 'POST':
         form = SelectSchoolForm(request.POST, schools=schools)
@@ -103,11 +103,12 @@ def seleciona_escola(request):
             selected_school_id = int(form.cleaned_data['selected_school'])
             
             # Find the selected school in the list
-            selected_school = next(
-                (s for s in schools if s['school_id'] == selected_school_id), 
-                None
-            )
-            
+            selected_school = None
+            for s in schools:
+                if selected_school_id == s.school_id:
+                    selected_school = s
+                    break
+                
             if selected_school:
                 return index_exec(request,selected_school)
             else:
@@ -122,6 +123,7 @@ def seleciona_escola(request):
     return render(request, 'restrito/seleciona_escola.html', context)
 
 
+
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def index(request):
 
@@ -130,23 +132,38 @@ def index(request):
     except:
         last_access = LastAccess(user=request.user)
     last_access.save()
-    
+
+    # check if already managing school
+    selected_school_id = request.session.get('selected_school_id', None)
+    if selected_school_id:
+        print("already selected school")
+        school = School.objects.get(school_id=selected_school_id)
+        print("school",school)
+        return index_exec(request,school)
+
     try:
         school_id = request.user.colab.colab_school.pk
-        school = School.objects.get(pk=school_id)
+        school = School.objects.get(school_id=school_id)
+        request.session['num_managed_schools'] = 1
+        request.session['selected_school_id'] = school.school_id
         return index_exec(request,school)
     except:
         schools = School.objects.filter(school_deleg_username=request.user.username, school_ok=True)
+        print('schools',schools)
         print("number of schools:", len(schools))
+        request.session['num_managed_schools'] = len(schools)
         if len(schools) == 1:
             school = schools[0]
+            request.session['selected_school_id'] = school.school_id
             return index_exec(request,school)
         else:
             return redirect('/restrito/seleciona_escola')
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def index_exec(request, school):
+    print("in index_exec", school)
     school_id = school.school_id
+    request.session['selected_school_id'] = school_id
             
     # check if there are compets to validate
     num_pre_compets = CompetAutoRegister.objects.filter(compet_school_id=school_id, compet_status='new').count()
@@ -166,11 +183,11 @@ def index_exec(request, school):
                 week_receipts.append(partic.payment)
 
     has_desclassif =  CompetDesclassif.objects.filter(compet_school_id=school_id).exists()
-
+    num_managed_schools = request.session['num_managed_schools']
     return render(request, 'restrito/index.html',
                  {'school': school, 'num_colabs': num_colabs,
                   'num_pre_compets': num_pre_compets, 'num_compets': num_compets, 'num_compets_feminina': num_compets_feminina,
-                  'user': request.user, 'has_week': has_week, 'week_receipts': week_receipts, 'current_year': YEAR, 'has_desclassif': has_desclassif, 'num_compets_ini': num_compets_ini, 'num_compets_prog': num_compets_prog})
+                  'user': request.user, 'has_week': has_week, 'week_receipts': week_receipts, 'current_year': YEAR, 'has_desclassif': has_desclassif, 'num_compets_ini': num_compets_ini, 'num_compets_prog': num_compets_prog, 'num_managed_schools': num_managed_schools})
 
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
@@ -187,10 +204,8 @@ def erro(request, msg):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_lista_desclassif(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     pagetitle = 'Competidores desclassificados'
     compets = CompetDesclassif.objects.filter(compet_school_id=school.school_id)
@@ -265,6 +280,8 @@ def compet_lista_desclassif(request):
     
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_relatorio_desclassif(request):
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     try:
         school = request.user.deleg.deleg_school
     except:
@@ -483,10 +500,8 @@ def compet_create_user(request, c, compet_type, school, school_password=None, co
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_recupera_cadastro(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     response = HttpResponse(
         content_type='text/csv; charset=utf-8',
@@ -505,10 +520,8 @@ def compet_recupera_cadastro(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_feminina_recupera_cadastro(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     response = HttpResponse(
         content_type='text/csv; charset=utf-8',
@@ -672,10 +685,8 @@ def compet_inscreve_lote(request):
     msg = 'Período de inscrições terminou.'
     return aviso(request, msg)
 
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     school_id = school.school_id
 
     #msg = 'Sistema em manutenção, por favor aguarde'
@@ -719,10 +730,8 @@ def compet_feminina_inscreve_lote(request):
     #msg = 'Período de inscrições ainda não iniciou.'
     return aviso(request, msg)
 
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     school_id = school.school_id
 
@@ -760,10 +769,8 @@ def compet_feminina_inscreve_lote(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_recupera_elegivel_inscricao_cfobi(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     response = HttpResponse(
         content_type='text/csv; charset=utf-8',
@@ -787,10 +794,8 @@ def compet_recupera_elegivel_inscricao_cfobi(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_inscreve_lote_senha(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     school_id = school.school_id
     if request.method == 'POST':
         form = CompetInscreveLoteForm(request.POST, request.FILES)
@@ -909,10 +914,8 @@ https://www.sbc.org.br/obi
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_atualiza_senhas_lote(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     school_id = school.school_id
     if request.method == 'POST':
         form = CompetInscreveLoteForm(request.POST, request.FILES)
@@ -1085,16 +1088,12 @@ def send_email_colab_registered(request,c,colab_school,password,reason,group_nam
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_inscreve(request):
-    #msg = 'Sistema em manutenção, por favor aguarde'
-    msg = 'Período de inscrições terminou.'
-    return aviso(request, msg)
+    # msg = 'Sistema em manutenção, por favor aguarde'
+    # msg = 'Período de inscrições terminou.'
+    # return aviso(request, msg)
 
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
-
-    school_id = school.school_id
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     #if school_id not in (1,557,566,563,562,564,561,558,565,2202,3330):
     #    msg = 'Período de inscrições terminou.'
@@ -1282,10 +1281,8 @@ def compet_feminina_inscreve_prog(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_feminina_inscreve_selecionadas_prog(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     registered = []
     if request.method == 'POST':
@@ -1460,10 +1457,8 @@ def compet_feminina_inscreve_ini(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_feminina_inscreve_selecionadas_ini(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     registered = []
     if request.method == 'POST':
@@ -1514,10 +1509,9 @@ def compet_feminina_inscreve_selecionadas_ini(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_lista(request):
-    try:
-        school_id = request.user.deleg.deleg_school.pk
-    except:
-        school_id = request.user.colab.colab_school.pk
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
+
     compets = Compet.objects.filter(compet_school_id=school_id, compet_type__in=LEVEL.values())
     total = len(compets)
     if request.method == 'POST':
@@ -1767,10 +1761,8 @@ def compet_feminina_remove(request, c, school):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_deleta_lote(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     delete = []
     if request.method == 'POST':
@@ -1796,10 +1788,8 @@ def compet_deleta_lote(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_feminina_deleta_lote(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     delete = []
 
@@ -1829,10 +1819,8 @@ def compet_feminina_deleta_lote(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_deleta(request,compet_id):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     try:
         c = Compet.objects.get(compet_id=compet_id,compet_school=school)
     except:
@@ -1853,10 +1841,8 @@ def compet_deleta(request,compet_id):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_feminina_deleta(request,compet_id):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     try:
         c = Compet.objects.get(compet_id=compet_id,compet_school=school)
     except:
@@ -1874,10 +1860,8 @@ def compet_feminina_deleta(request,compet_id):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_edita(request,compet_id):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     school_id = school.school_id
     try:
         c = Compet.objects.get(compet_id=compet_id,compet_school_id=school_id)
@@ -1971,10 +1955,8 @@ def compet_edita(request,compet_id):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_feminina_edita(request, compet_id):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     school_id = school.school_id
 
     try:
@@ -2067,10 +2049,8 @@ def compet_feminina_edita(request, compet_id):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def escola_edita(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     instance = {
         'school_name': school.school_name,
         'school_type': school.school_type,
@@ -2128,10 +2108,8 @@ def escola_edita(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def coord_edita(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     instance = {
         'school_deleg_name': school.school_deleg_name,
         'school_deleg_phone': school.school_deleg_phone,
@@ -2535,10 +2513,8 @@ def compet_feminina_pre_inscricao_lista(request):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_valida(request,id):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
     school_id = school.pk
     try:
         cpre = CompetAutoRegister.objects.get(id=id,compet_school_id=school_id,compet_status='new')
@@ -2648,10 +2624,8 @@ def compet_valida(request,id):
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_lista_aut_prova_online(request, exam_descr, turn):
     exam_title = EXAMS[exam_descr]['exam_title']
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     compets = select_turn_compets(request,exam_descr,turn,school)
     total = len(compets)
@@ -2763,10 +2737,8 @@ def compet_lista_status_prova_online(request, exam_descr, turn):
     if turn == 'B':
         exam_descr = exam_descr+'b'
     exam_title = EXAMS[exam_descr]['exam_title']
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     compets = select_turn_compets(request,exam_descr,turn,school)
     total = len(compets)
@@ -2873,10 +2845,8 @@ def compet_lista_status_prova_online(request, exam_descr, turn):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def compet_aut_prova_online(request, exam_descr, turn):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     compets = select_turn_compets(request,exam_descr,turn,school)
     # let all compets to be examined
@@ -2941,10 +2911,8 @@ def compet_aut_prova_online(request, exam_descr, turn):
 
 @user_passes_test(in_coord_colab_group, login_url='/contas/login/')
 def partic_lista_status_semana(request):
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     participants = Week.objects.filter(school=school)
     total = len(participants)
@@ -3365,10 +3333,8 @@ def consulta_sede_fase3(request,hash,reply_type):
         msg = 'Erro: solicitação inválida.'
         logger.info(f'consulta_escola_fase3 failed, wrong hash: {hash}')
         return render(request, 'principal/pagina_com_mensagem.html', {'msg': msg, 'pagetitle':'Consulta Sobre Sede Fase 3'})
-    try:
-        school = request.user.deleg.deleg_school
-    except:
-        school = request.user.colab.colab_school
+    school_id = request.session['selected_school_id']
+    school = School.objects.get(school_id=school_id)
 
     if school.school_id != site.school_id:
         msg = 'Erro: solicitação inválida.'

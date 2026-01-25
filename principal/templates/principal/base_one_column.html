@@ -7,8 +7,11 @@
 <section id="authenticated" class="authenticated {% if user.is_authenticated %}black{% endif %}">
   <div class="container align-items-center">
 	{% if user.is_authenticated %}
-	<div class="is-authenticated float-end align-middle"> 
-	 Autenticado como {{ user.last_name }} <a href="/restrito"><img src="{% static 'assets/img/icon-home.svg' %}" height="25px"></a> 
+	<div class="is-authenticated float-end align-bottom light-gray"> 
+	  Autenticado como {{ user.last_name }}
+	  <a href={% if request.user.compet %}"/compet"{% else %}"/restrito"{% endif %}>
+	    <img class="ms-2" src="{% static 'assets/img/icon-home-yellow.svg' %}" height="20px">
+	  </a> 
 	</div>
 	{% endif %}
       <div class="not-authenticated"><span class="float-right">27<sup><u>a</u></sup> Olimpíada Brasileira de Informática</div>

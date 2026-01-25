@@ -1,35 +1,51 @@
-{% extends "base_restricted.html" %}
+{% extends "base_one_column.html" %}
 {% load obi_extras %}
 
 {% block content %}
-<h1>Seleciona Escola</h1>
-<form action="" method="post">
-  {% csrf_token %}
-  {% if form.errors %}
-     <p class="errorlist">Por favor corrija os erros indicados abaixo.</p>
-  {% endif %}
-  {% for fieldset in form.fieldsets %}
-  <fieldset class="border p-2">
-    <legend class="float-none w-auto p-2">{{ fieldset.title }}</legend>    
-    <ul>
-      {% for field in fieldset %}
-        <li>
-          {{ field.label_tag }}
-          {{ field }}
-          {% if field.help_text %}
-	    <small class="form-text">{{ field.help_text|safe }}</small>
-	  {% endif %}
-          {{ field.errors }}
-        </li>
-      {% endfor %}
-    </ul>
-  </fieldset>
-  {% endfor %}
-<br/>
-  <button type="submit" class="btn btn-primary" name="save" value="save">Salvar</button>
-  <button type="submit" class="btn btn-danger float-end" name="cancel" value="cancel" onclick="{% go_to_url '/restrito' %}">Cancelar</button>
 
-</form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Selecione a Escola</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-4">
+                        Você coordena {{ schools|length }} escolas. 
+                        Selecione qual deseja administrar:
+                    </p>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        {% if form.errors %}
+                            <div class="alert alert-danger">
+                                {{ form.errors }}
+                            </div>
+                        {% endif %}
+                        
+                        <div class="mb-3">
+                            {% for choice in form.selected_school %}
+                                <div class="form-check mb-2">
+                                    {{ choice.tag }}&nbsp;&nbsp;
+                                    <label class="form-check-label" for="{{ choice.id_for_label }}">
+                                        {{ choice.choice_label }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            Continuar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 {% block content-related %}
